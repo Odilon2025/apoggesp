@@ -11,10 +11,10 @@ const SiteFooter = () => (
         <div className="md:col-span-5">
           <span className="text-xs font-sans font-medium tracking-luxury uppercase opacity-60">APOGESP</span>
           <p className="mt-6 text-sm font-light leading-relaxed opacity-70 max-w-sm">
-            Associação dos Analistas de Políticas Públicas e Gestão Governamental do Município de São Paulo.
+            Associação dos Analistas de Políticas Públicas e Gestão Governamental do Município de São Paulo. Uma década fortalecendo a gestão pública da maior cidade da América Latina.
           </p>
           <p className="mt-4 text-xs font-light opacity-40">
-            Fortalecendo a gestão pública por meio de excelência técnica.
+            Onde a técnica encontra o compromisso público.
           </p>
         </div>
 

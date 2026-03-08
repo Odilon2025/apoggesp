@@ -19,72 +19,72 @@ const casos: CasoAtuacao[] = [
   {
     titulo: "Ciências Comportamentais para Alimentação Escolar",
     area: "Inovação e Ciências Comportamentais",
-    contexto: "Necessidade de aumentar a aceitação dos alimentos menos consumidos e reduzir o desperdício entre estudantes do 6º ao 9º ano da rede municipal.",
-    atuacao: "O Lab11 conduziu o projeto em parceria com a CODAE/SME. Intervenções incluíram reposicionamento da lixeira, comunicação visual atrativa com linguagem de redes sociais e contagem digital de refeições. Metodologia mista com observação, entrevistas e mensuração em oito escolas.",
-    resultados: "Aumento da aceitação dos alimentos e redução do desperdício. Maior adesão à alimentação escolar — mais estudantes passaram a consumir regularmente as refeições oferecidas.",
+    contexto: "Nas escolas municipais, estudantes do 6º ao 9º ano desperdiçavam alimentos e rejeitavam pratos menos conhecidos. O problema não era a comida — era como ela era apresentada, percebida e descartada.",
+    atuacao: "O Lab11, em parceria com a CODAE/SME, redesenhou a experiência da refeição. Lixeiras foram reposicionadas para tornar o desperdício visível. Painéis com linguagem de redes sociais tornaram pratos desconhecidos familiares. Contagem digital substituiu estimativas manuais. Em oito escolas, observação direta, entrevistas e mensuração validaram cada intervenção.",
+    resultados: "Mais crianças passaram a comer regularmente na escola. A aceitação de alimentos antes rejeitados aumentou. O desperdício caiu — não por decreto, mas por design.",
   },
   {
-    titulo: "Sistema de Monitoramento e Acompanhamento Estratégico (SMAE)",
+    titulo: "SMAE — O Sistema que Deu Olhos à Prefeitura",
     area: "Planejamento e Monitoramento",
-    contexto: "Desafios persistentes no planejamento estratégico: ausência de estrutura conceitual consolidada, conhecimento tácito não institucionalizado e processos manuais sujeitos a erros na gestão do Programa de Metas.",
-    atuacao: "APPGGs tiveram papel central no desenvolvimento do SMAE, em parceria com a FGV, utilizando metodologia ágil e software livre (AGPL v3). O sistema garante soberania sobre dados e possibilidade de compartilhamento com outros entes públicos.",
-    resultados: "Sistema com 5 módulos operacionais (Programa de Metas, Planos Setoriais, Gestão de Projetos, Monitoramento de Obras e Transferências Voluntárias), 500+ usuários ativos e institucionalização por decreto municipal.",
+    contexto: "Durante anos, o monitoramento do Programa de Metas dependeu de planilhas, e-mails e memória individual. O conhecimento estava nas pessoas, não nas instituições. Erros manuais eram frequentes. A Prefeitura planejava no escuro.",
+    atuacao: "APPGGs lideraram o desenvolvimento do SMAE em parceria com a FGV, usando metodologia ágil e software livre (licença AGPL v3). A decisão por código aberto não foi ideológica — foi estratégica: garantiu soberania sobre os dados e possibilidade de compartilhamento com outros entes públicos.",
+    resultados: "Cinco módulos operacionais — Programa de Metas, Planos Setoriais, Gestão de Projetos, Monitoramento de Obras e Transferências Voluntárias. Mais de 500 usuários ativos. E um decreto municipal que transformou o sistema em patrimônio público permanente.",
   },
   {
-    titulo: "Política da Primeira Infância e Intersetorialidade",
+    titulo: "Primeira Infância — Quando Silos Precisam Cair",
     area: "Políticas Intersetoriais",
-    contexto: "Problemas complexos da primeira infância exigem articulação entre múltiplas secretarias, rompendo silos setoriais tradicionais da administração pública.",
-    atuacao: "APPGGs estabeleceram conexões entre diferentes atores institucionais, promovendo ligações entre secretarias e trabalhando de forma intersetorial na formulação e implementação da política municipal da primeira infância.",
-    resultados: "Construção de uma política integrada que articula saúde, educação, assistência social e outras áreas, com participação ativa da carreira como articulador institucional.",
+    contexto: "Uma criança de dois anos não sabe se seu problema é de saúde, educação ou assistência social. Mas a Prefeitura organizava suas respostas como se a criança soubesse. A política da primeira infância exigia integração — e a estrutura administrativa, por natureza, resiste a ela.",
+    atuacao: "APPGGs assumiram o papel de articuladores intersetoriais: construíram pontes entre secretarias que historicamente operavam em paralelo, facilitaram diálogos que não aconteceriam espontaneamente e ajudaram a traduzir a linguagem de cada área para as demais.",
+    resultados: "Uma política integrada que articula saúde, educação, assistência social e outras áreas — com a carreira funcionando como o tecido conectivo que mantém a rede coesa.",
   },
   {
-    titulo: "Reformulação do Portal SP156",
+    titulo: "SP156 — Redesenhando a Porta de Entrada Digital da Cidade",
     area: "Inovação e Ciências Comportamentais",
-    contexto: "Canais digitais avaliados como complexos, visualmente poluídos e com linguagem pouco acessível. Alta taxa de desistência no uso do portal de serviços municipais.",
-    atuacao: "Lab11 conduziu reformulação com metodologia ágil e design centrado no usuário. Foram realizados testes de usabilidade com 320 cidadãos, reorganização taxonômica via card sorting e prototipagem iterativa em três ciclos.",
-    resultados: "Redução de 30% na taxa de desistência do portal. Navegação 41% mais rápida na nova taxonomia. Aumento de 200% nas visualizações da categoria trânsito e transporte.",
+    contexto: "O portal SP156 era a principal interface entre o cidadão e os serviços municipais. Mas era também complexo, visualmente poluído e escrito em linguagem burocrática. Muitos desistiam antes de concluir o que precisavam.",
+    atuacao: "O Lab11 conduziu uma reformulação radical: testes de usabilidade com 320 cidadãos, reorganização da taxonomia por card sorting, prototipagem iterativa em três ciclos. Cada decisão de design foi validada com quem realmente usaria o portal.",
+    resultados: "A taxa de desistência caiu 30%. A navegação ficou 41% mais rápida. Na categoria trânsito e transporte, as visualizações aumentaram 200%. O portal passou a funcionar para quem ele deveria sempre ter funcionado: o cidadão.",
   },
   {
-    titulo: "Programa de Residência em Gestão Pública",
+    titulo: "Residência em Gestão Pública",
     area: "Gestão Institucional",
-    contexto: "Necessidade de trazer profissionais com visões renovadas e vínculos flexíveis para contribuir com inovações na administração pública.",
-    atuacao: "Estruturação de programa que permite a profissionais observarem o funcionamento do setor público e, ao mesmo tempo, contribuírem com soluções inovadoras para problemas públicos, com vínculo por tempo determinado.",
-    resultados: "Criação de um mecanismo institucional de renovação de perspectivas e capacitação prática em gestão pública.",
+    contexto: "A administração pública precisa de renovação constante — não apenas de quadros, mas de perspectivas. Ao mesmo tempo, profissionais de fora raramente têm oportunidade de entender como a máquina pública realmente funciona.",
+    atuacao: "APPGGs estruturaram um programa que resolve os dois problemas simultaneamente: profissionais com vínculo flexível e tempo determinado entram na Prefeitura para observar, aprender e contribuir — trazendo olhares novos para problemas antigos.",
+    resultados: "Um mecanismo institucional de renovação que beneficia tanto a administração quanto os residentes — e que demonstra que a gestão pública pode ser, ao mesmo tempo, estável e permeável.",
   },
   {
     titulo: "I Plano Municipal de Educação Ambiental",
     area: "Educação Ambiental",
-    contexto: "Necessidade de alinhar estratégias intersetoriais para construção do primeiro plano municipal de educação ambiental, envolvendo múltiplos níveis de governo.",
-    atuacao: "APPGGs participaram do alinhamento de estratégias entre secretarias e níveis de governo, utilizando teoria de múltiplos fluxos para viabilizar a construção do plano.",
-    resultados: "Aprovação do I Plano Municipal de Educação Ambiental com articulação multinível e participação de diversas secretarias.",
+    contexto: "São Paulo nunca havia tido um plano municipal de educação ambiental. Construí-lo exigia alinhar secretarias com agendas diferentes, níveis de governo com tempos distintos e atores com prioridades por vezes conflitantes.",
+    atuacao: "APPGGs participaram do alinhamento estratégico entre secretarias e entre níveis de governo, utilizando o ferramental da teoria de múltiplos fluxos para identificar a janela de oportunidade e viabilizar a construção do plano.",
+    resultados: "Aprovação do I Plano Municipal de Educação Ambiental — um marco que só foi possível porque alguém soube conectar agendas, traduzir urgências e coordenar atores que, sozinhos, não teriam chegado ao mesmo resultado.",
   },
   {
-    titulo: "Reestruturação do Arquivo Histórico Municipal",
+    titulo: "Modernização do Arquivo Histórico Municipal",
     area: "Gestão Institucional",
-    contexto: "Necessidade de modernização institucional do Arquivo Histórico Municipal de São Paulo, com desafios de gestão da mudança durante a pandemia de COVID-19.",
-    atuacao: "APPGGs conduziram projeto de reestruturação baseado em princípios da Nova Gestão Pública, enfrentando desafios de cultura organizacional, insegurança e desconfiança dos funcionários agravados pelo contexto pandêmico.",
-    resultados: "Resultados positivos na modernização do Arquivo, com lições importantes sobre gestão da mudança e adaptação cultural em organizações públicas.",
+    contexto: "O Arquivo Histórico Municipal de São Paulo guardava a memória da cidade, mas sua gestão precisava de atualização. A pandemia de COVID-19 tornou o desafio mais complexo: como modernizar uma instituição quando a equipe está dispersa, insegura e resistente à mudança?",
+    atuacao: "APPGGs conduziram o projeto de reestruturação aplicando princípios da Nova Gestão Pública ao contexto real — com todas as suas contradições. Enfrentaram cultura organizacional arraigada, desconfiança legítima e limitações impostas pelo cenário pandêmico.",
+    resultados: "Avanços concretos na modernização, mas, sobretudo, lições valiosas sobre os limites da reforma quando ela não dialoga com a cultura da organização. Um caso honesto sobre o que funciona — e o que não funciona — em gestão da mudança.",
   },
   {
     titulo: "Gestão Documental na Rede Municipal de Ensino",
     area: "Gestão Documental",
-    contexto: "Necessidade de construir uma política e governança de gestão documental para a Rede Municipal de Ensino de São Paulo.",
-    atuacao: "Desenvolvimento de política institucional integrando arquivos, memória e educação, com construção de governança para gestão documental nas unidades de ensino.",
-    resultados: "Estabelecimento de diretrizes e estrutura de governança para gestão documental, preservando a memória institucional da rede de ensino municipal.",
+    contexto: "A maior rede de ensino municipal do país não tinha uma política estruturada de gestão documental. Arquivos se perdiam, memórias institucionais desapareciam e cada escola tratava seus documentos de forma diferente.",
+    atuacao: "APPGGs desenvolveram uma política institucional que integra arquivos, memória e educação — com governança clara para que a gestão documental nas unidades de ensino deixasse de ser improviso e passasse a ser método.",
+    resultados: "Diretrizes e estrutura de governança estabelecidas para toda a rede municipal de ensino. A memória institucional da educação paulistana passou a ter um sistema para ser preservada.",
   },
   {
-    titulo: "Aplicativo MEI Nota Fácil",
+    titulo: "MEI Nota Fácil — Simplificando o Complexo",
     area: "Inovação e Ciências Comportamentais",
-    contexto: "Sistema complexo de emissão de notas fiscais eletrônicas para Microempreendedores Individuais, com 15% de taxa de erro e público com 33% de baixa escolaridade.",
-    atuacao: "Lab11 conduziu pesquisa com usuários, mapeamento de jornada, desenvolvimento e testes de protótipos. Testes de usabilidade validaram interface simples e design minimalista, com foco em linguagem acessível.",
-    resultados: "12.514 dispositivos ativos, 5.773 notas emitidas no período inicial, nota 4,8 na Play Store e 80% das avaliações com 5 estrelas.",
+    contexto: "Emitir uma nota fiscal eletrônica deveria ser simples. Para os Microempreendedores Individuais de São Paulo — 33% com baixa escolaridade — o sistema existente tinha 15% de taxa de erro. O digital que deveria facilitar estava, na prática, excluindo.",
+    atuacao: "O Lab11 fez o que a boa gestão pública exige: ouviu antes de desenhar. Pesquisa com usuários, mapeamento de jornada, prototipagem e testes de usabilidade resultaram em uma interface minimalista, com linguagem acessível e fluxo intuitivo.",
+    resultados: "12.514 dispositivos ativos. 5.773 notas emitidas no período inicial. Nota 4,8 na Play Store, com 80% das avaliações em 5 estrelas. Inclusão digital não como slogan, mas como resultado mensurável.",
   },
   {
-    titulo: "Campanha Comportamental COVID-19 nos Terminais de Ônibus",
+    titulo: "COVID-19 nos Terminais de Ônibus",
     area: "Inovação e Ciências Comportamentais",
-    contexto: "Necessidade de incentivar comportamentos preventivos (uso de máscara, distanciamento, higienização) em terminais de transporte público durante a pandemia.",
-    atuacao: "Desenvolvimento de campanhas baseadas em ciências comportamentais com análise observacional via câmeras de segurança para avaliar padrões de comportamento dos usuários após intervenções.",
-    resultados: "Identificação de pontos críticos e comportamentos de risco, subsidiando mudanças operacionais e campanhas futuras da SPTrans.",
+    contexto: "Durante a pandemia, terminais de ônibus eram pontos críticos de transmissão. Milhares de pessoas circulavam diariamente, e campanhas tradicionais de comunicação não mudavam comportamentos reais — uso de máscara, distanciamento, higienização.",
+    atuacao: "O Lab11 desenvolveu campanhas baseadas em ciências comportamentais e usou análise observacional por câmeras de segurança para mapear padrões reais de comportamento — não o que as pessoas diziam fazer, mas o que de fato faziam.",
+    resultados: "Identificação precisa de pontos críticos e comportamentos de risco, gerando subsídios concretos para mudanças operacionais e campanhas futuras da SPTrans. Evidência no lugar de intuição.",
   },
 ];
 
@@ -97,12 +97,12 @@ const AtuacaoPage = () => {
       <PageHero
         label="Impacto"
         title="Atuação dos APPGGs"
-        subtitle="Casos documentados de contribuição para a gestão pública municipal, baseados no Caderno Gestão Pública em Rede (2025)."
+        subtitle="Dez casos que mostram o que acontece quando rigor técnico encontra compromisso público. Todos documentados no Caderno Gestão Pública em Rede (2025)."
       />
 
       <section className="py-24 md:py-32 bg-card">
         <div className="container">
-          <SectionTitle label="Casos Documentados" title="Contribuições por Área" subtitle="Os casos a seguir são baseados nos artigos publicados no Caderno Gestão Pública em Rede — 1ª edição (2025)." />
+          <SectionTitle label="Casos Documentados" title="Onde a Carreira Fez Diferença" subtitle="Cada caso abaixo é baseado em artigos publicados por APPGGs no Caderno Gestão Pública em Rede — 1ª edição (2025). Não são promessas: são registros." />
 
           {/* Filter */}
           <div className="flex flex-wrap gap-2 mb-12">
@@ -163,13 +163,13 @@ const AtuacaoPage = () => {
       {/* Eixos */}
       <section className="py-24 md:py-32 bg-section-alt">
         <div className="container max-w-3xl">
-          <SectionTitle label="Organização" title="Eixos Temáticos do Caderno" />
+          <SectionTitle label="Organização" title="Os Três Eixos do Caderno" />
           <FadeIn>
             <div className="space-y-0 border-t border-luxury-border">
               {[
-                { num: "I", title: "Capacidades Transversais Emergentes no Estado", desc: "Ciências comportamentais, sistema SMAE e gestão documental na rede de ensino." },
-                { num: "II", title: "Gestão Pública como Prática Social Histórica", desc: "Arquivo Histórico Municipal, Assessoria de Planejamento da Saúde e Residência em Gestão Pública." },
-                { num: "III", title: "Problemas Complexos, Políticas e a Atuação dos APPGGs", desc: "Política da Primeira Infância, Educação Ambiental e recuperação de fachadas." },
+                { num: "I", title: "Capacidades Transversais Emergentes no Estado", desc: "Ciências comportamentais, o sistema SMAE e a gestão documental na rede de ensino — três histórias sobre como construir ferramentas que a Prefeitura não sabia que precisava." },
+                { num: "II", title: "Gestão Pública como Prática Social Histórica", desc: "O Arquivo Histórico, a Assessoria de Planejamento da Saúde e a Residência em Gestão Pública — três reflexões sobre o que significa gerir o público ao longo do tempo." },
+                { num: "III", title: "Problemas Complexos, Políticas e a Atuação dos APPGGs", desc: "Primeira infância, educação ambiental e recuperação de fachadas — três casos em que a solução exigia cruzar fronteiras que o organograma não cruzaria sozinho." },
               ].map((eixo) => (
                 <div key={eixo.num} className="py-6 border-b border-luxury-border">
                   <div className="flex items-start gap-4">
