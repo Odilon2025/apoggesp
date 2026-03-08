@@ -6,30 +6,32 @@ import FadeIn from "@/components/FadeIn";
 import { ArrowRight, FileText } from "lucide-react";
 
 const timelineItems = [
-  { year: "2007", text: "Criação da carreira pela Lei Municipal nº 14.591" },
-  { year: "2008", text: "Primeiro concurso público para a carreira" },
-  { year: "2012", text: "Fundação da APOGESP" },
-  { year: "2015", text: "Consolidação em secretarias estratégicas" },
-  { year: "2019", text: "Primeiro relatório institucional da APOGESP" },
-  { year: "2023", text: "Ampliação em inovação e governo digital" },
+  { year: "2015", text: "Criação da carreira de APPGG pela Lei Municipal nº 16.193" },
+  { year: "2016", text: "Ingresso dos primeiros Analistas na Prefeitura de São Paulo" },
+  { year: "2017", text: "Atuação no Programa de Metas 2017–2020 e estruturação institucional" },
+  { year: "2018", text: "Criação do Lab11 — Laboratório de Inovação Pública na SEGES" },
+  { year: "2021", text: "Portaria SEGES nº 13/2021 prioriza alocação de APPGGs em projetos estratégicos" },
+  { year: "2022", text: "Desenvolvimento do SMAE em parceria com a FGV" },
+  { year: "2024", text: "SMAE institucionalizado pelo Decreto nº 63.336/2024 com 500+ usuários" },
+  { year: "2025", text: "Publicação do Caderno Gestão Pública em Rede — 10 anos da carreira" },
 ];
 
 const atuacaoDestaques = [
-  { area: "Saúde", desc: "Reestruturação da rede de atenção básica com foco em territorialização e indicadores de desempenho." },
-  { area: "Educação", desc: "Formulação de políticas de avaliação e monitoramento da qualidade do ensino municipal." },
-  { area: "Gestão", desc: "Implantação de sistemas de governança e transformação digital na administração municipal." },
+  { area: "Inovação", desc: "Ciências comportamentais aplicadas à alimentação escolar, redução de absenteísmo e prevenção durante a COVID-19 pelo Lab11." },
+  { area: "Planejamento", desc: "Desenvolvimento do SMAE — sistema de monitoramento estratégico com 5 módulos e 500+ usuários ativos na Prefeitura." },
+  { area: "Primeira Infância", desc: "Articulação intersetorial para a política da primeira infância, rompendo silos entre secretarias." },
 ];
 
 const publicacoesRecentes = [
-  { titulo: "Relatório Institucional 2023", tipo: "Relatório", ano: "2023" },
-  { titulo: "Nota Técnica: Aprimoramento da Carreira", tipo: "Nota Técnica", ano: "2023" },
-  { titulo: "APPGGs em Números: Perfil e Distribuição", tipo: "Relatório", ano: "2022" },
+  { titulo: "Caderno Gestão Pública em Rede — 1ª Edição", tipo: "Publicação", ano: "2025" },
+  { titulo: "O Potencial das Ciências Comportamentais para Serviços Públicos", tipo: "Artigo", ano: "2025" },
+  { titulo: "O Sistema SMAE: Um Patrimônio Feito Sob Medida", tipo: "Artigo", ano: "2025" },
 ];
 
 const stats = [
-  { num: "~200", label: "profissionais ativos" },
-  { num: "20+", label: "órgãos de atuação" },
-  { num: "16", label: "anos de carreira" },
+  { num: "100+", label: "analistas em exercício" },
+  { num: "500+", label: "usuários do SMAE" },
+  { num: "10", label: "anos de carreira" },
 ];
 
 const Index = () => {
@@ -64,7 +66,7 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className="mt-8 text-base md:text-lg text-primary-foreground/50 font-light max-w-lg leading-relaxed"
               >
-                Fortalecendo a administração municipal de São Paulo por meio de análise técnica e excelência institucional.
+                Dez anos fortalecendo a administração municipal de São Paulo por meio de análise técnica, articulação intersetorial e compromisso com o interesse público.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
@@ -115,14 +117,31 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Citação editorial */}
+      <section className="py-20 md:py-24 bg-card">
+        <div className="container">
+          <FadeIn>
+            <div className="max-w-3xl mx-auto text-center">
+              <blockquote className="text-lg md:text-xl font-display font-normal text-foreground leading-relaxed italic">
+                "Em uma cidade da dimensão e diversidade de São Paulo, a gestão pública é, inevitavelmente, uma obra em rede. Os APPGGs se somam como agentes que ajudam a integrar políticas, territórios e pessoas."
+              </blockquote>
+              <div className="luxury-divider mt-6 mb-4" />
+              <cite className="text-[11px] font-light text-text-caption not-italic tracking-wide">
+                Marcela Arruda — Secretária Municipal de Gestão
+              </cite>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Destaques - Three pillars */}
-      <section className="py-24 md:py-32 bg-card">
+      <section className="py-24 md:py-32 bg-section-alt">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-luxury-border">
             {[
-              { title: "Carreira Estratégica", desc: "Profissionais de nível superior dedicados à análise e formulação de políticas públicas na administração municipal." },
-              { title: "Atuação Transversal", desc: "Presença em mais de 20 órgãos, contribuindo em saúde, educação, gestão, planejamento e inovação." },
-              { title: "Produção Técnica", desc: "Relatórios, notas técnicas e propostas que subsidiam decisões estratégicas de governo." },
+              { title: "Capacidades Transversais", desc: "Atuação integrada em todos os órgãos da Prefeitura, fortalecendo a gestão pública com profundidade técnica e sensibilidade para temas estratégicos." },
+              { title: "Valor Público", desc: "Competências a serviço de projetos e políticas que geram valor para os paulistanos — da formulação à implementação de soluções concretas." },
+              { title: "Gestão em Rede", desc: "Articulação intersetorial, conexão entre diferentes atores e construção de instituições e políticas duradouras baseadas em evidências." },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 0.1}>
                 <div className="bg-card p-10 md:p-12 h-full">
@@ -137,14 +156,14 @@ const Index = () => {
       </section>
 
       {/* Atuação */}
-      <section className="py-24 md:py-32 bg-section-alt">
+      <section className="py-24 md:py-32 bg-card">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <SectionTitle
                 label="Impacto"
                 title="Atuação em Políticas Públicas"
-                subtitle="Contribuições concretas dos APPGGs para a gestão municipal."
+                subtitle="Contribuições documentadas dos APPGGs para a gestão municipal."
               />
               <Link
                 to="/atuacao"
@@ -157,7 +176,7 @@ const Index = () => {
             <div className="lg:col-span-8 space-y-px">
               {atuacaoDestaques.map((item, i) => (
                 <FadeIn key={item.area} delay={i * 0.1}>
-                  <div className="p-8 bg-card border-b border-luxury-border group hover:bg-card-hover transition-colors duration-300">
+                  <div className="p-8 bg-section-alt border-b border-luxury-border group hover:bg-card-hover transition-colors duration-300">
                     <div className="flex items-start justify-between gap-6">
                       <div>
                         <span className="text-[10px] font-medium tracking-luxury uppercase text-gold">{item.area}</span>
@@ -174,7 +193,7 @@ const Index = () => {
       </section>
 
       {/* Publicações */}
-      <section className="py-24 md:py-32 bg-card">
+      <section className="py-24 md:py-32 bg-section-alt">
         <div className="container">
           <SectionTitle label="Biblioteca" title="Publicações Recentes" />
           <div className="mt-4 space-y-0 border-t border-luxury-border">
@@ -200,7 +219,7 @@ const Index = () => {
       </section>
 
       {/* Timeline */}
-      <section className="py-24 md:py-32 bg-section-alt">
+      <section className="py-24 md:py-32 bg-card">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
@@ -222,18 +241,18 @@ const Index = () => {
         </div>
       </section>
 
-      {/* APOGESP CTA */}
-      <section className="py-24 md:py-32 bg-card">
+      {/* Prefácio CTA */}
+      <section className="py-24 md:py-32 bg-section-alt">
         <div className="container">
           <div className="max-w-xl mx-auto text-center">
             <FadeIn>
-              <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-6">Institucional</span>
-              <h2 className="text-2xl md:text-3xl font-display font-normal text-foreground leading-tight text-balance">
-                Uma associação a serviço da gestão pública
+              <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-6">Prefácio</span>
+              <h2 className="text-2xl md:text-3xl font-display font-normal text-foreground leading-tight text-balance italic">
+                "A carreira não atua como uma coisa só, mas por meio de servidores que se engajam em políticas e projetos com objetivos de interesse público."
               </h2>
-              <div className="luxury-divider mt-6" />
-              <p className="mt-6 text-sm font-light text-text-body leading-relaxed">
-                A APOGESP atua na valorização da carreira, na produção de conhecimento e na articulação institucional com governo e sociedade civil desde 2012.
+              <div className="luxury-divider mt-6 mb-4" />
+              <p className="text-[11px] font-light text-text-caption tracking-wide">
+                Cibele Franzese — Professora da FGV EAESP
               </p>
               <Link
                 to="/apogesp"
