@@ -123,11 +123,11 @@ const Index = () => {
           <FadeIn>
             <div className="max-w-3xl mx-auto text-center">
               <blockquote className="text-lg md:text-xl font-display font-normal text-foreground leading-relaxed italic">
-                "Em uma cidade da dimensão e diversidade de São Paulo, a gestão pública é, inevitavelmente, uma obra em rede. Os APPGGs se somam como agentes que ajudam a integrar políticas, territórios e pessoas."
+                "Em uma cidade de 12 milhões de habitantes, a gestão pública é, inevitavelmente, uma obra em rede. Os APPGGs se somam como agentes que ajudam a integrar políticas, territórios e pessoas."
               </blockquote>
               <div className="luxury-divider mt-6 mb-4" />
               <cite className="text-[11px] font-light text-text-caption not-italic tracking-wide">
-                Marcela Arruda — Secretária Municipal de Gestão
+                APOGESP
               </cite>
             </div>
           </FadeIn>
