@@ -1,17 +1,18 @@
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
+import FadeIn from "@/components/FadeIn";
 
 const timelineItems = [
-  { year: "2007", text: "Criação da carreira pela Lei Municipal nº 14.591, inserida na estrutura da administração direta da Prefeitura de São Paulo." },
-  { year: "2008", text: "Realização do primeiro concurso público. Aprovados são distribuídos em diversas secretarias." },
+  { year: "2007", text: "Criação da carreira pela Lei Municipal nº 14.591, inserida na administração direta da Prefeitura de São Paulo." },
+  { year: "2008", text: "Realização do primeiro concurso público. Aprovados distribuídos em diversas secretarias." },
   { year: "2010", text: "Primeiras contribuições estruturadas em programas de governo e monitoramento de políticas." },
   { year: "2012", text: "Fundação da APOGESP para representar e articular os interesses da carreira." },
   { year: "2014", text: "Participação ativa na formulação do Programa de Metas da gestão municipal." },
   { year: "2016", text: "Segundo concurso público amplia o contingente de APPGGs." },
-  { year: "2019", text: "Publicação do primeiro relatório institucional com mapeamento da atuação dos APPGGs." },
-  { year: "2021", text: "Atuação significativa na resposta à pandemia de COVID-19 em diversas secretarias." },
-  { year: "2023", text: "Ampliação do protagonismo em inovação, governo digital e gestão baseada em evidências." },
+  { year: "2019", text: "Publicação do primeiro relatório institucional com mapeamento da atuação." },
+  { year: "2021", text: "Atuação na resposta à pandemia de COVID-19 em diversas secretarias." },
+  { year: "2023", text: "Protagonismo em inovação, governo digital e gestão baseada em evidências." },
 ];
 
 const areasAtuacao = [
@@ -21,94 +22,120 @@ const areasAtuacao = [
   "Gestão orçamentária e financeira",
   "Inovação e transformação digital",
   "Análise de dados para tomada de decisão",
-  "Articulação intersetorial e coordenação de projetos",
+  "Articulação intersetorial e coordenação",
   "Relações institucionais e intergovernamentais",
 ];
 
 const CarreiraPage = () => (
   <PageLayout>
     <PageHero
-      title="A Carreira de APPGG"
-      subtitle="Analistas de Políticas Públicas e Gestão Governamental: uma carreira estratégica para a administração municipal de São Paulo."
+      label="A Carreira"
+      title="Analistas de Políticas Públicas e Gestão Governamental"
+      subtitle="Uma carreira estratégica para a administração municipal de São Paulo."
     />
 
-    <section className="py-16 bg-card">
-      <div className="container max-w-3xl">
-        <SectionTitle title="O que é a carreira" />
-        <div className="prose-institutional">
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            A carreira de Analista de Políticas Públicas e Gestão Governamental (APPGG) é uma carreira de nível superior da administração direta da Prefeitura de São Paulo, criada pela Lei Municipal nº 14.591 de 2007.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Os APPGGs desempenham funções de planejamento, formulação, monitoramento e avaliação de políticas públicas, além de atividades de gestão governamental em diversas secretarias e órgãos da administração municipal.
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            A carreira foi concebida para fortalecer a capacidade técnica e institucional do governo municipal, inspirando-se em experiências semelhantes no governo federal (EPPGG) e em outros estados e municípios brasileiros.
-          </p>
+    <section className="py-24 md:py-32 bg-card">
+      <div className="container">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="lg:col-span-4">
+            <SectionTitle label="Sobre" title="O que é a carreira" />
+          </div>
+          <div className="lg:col-span-8">
+            <FadeIn>
+              <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
+                <p>
+                  A carreira de Analista de Políticas Públicas e Gestão Governamental (APPGG) é uma carreira de nível superior da administração direta da Prefeitura de São Paulo, criada pela Lei Municipal nº 14.591 de 2007.
+                </p>
+                <p>
+                  Os APPGGs desempenham funções de planejamento, formulação, monitoramento e avaliação de políticas públicas, além de atividades de gestão governamental em diversas secretarias e órgãos.
+                </p>
+                <p>
+                  A carreira foi concebida para fortalecer a capacidade técnica e institucional do governo municipal, inspirando-se em experiências semelhantes no governo federal e em outros entes da federação.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </div>
     </section>
 
-    <section className="py-16 bg-section-alt">
-      <div className="container max-w-3xl">
-        <SectionTitle title="Perfil Profissional" />
-        <p className="text-muted-foreground leading-relaxed mb-4">
-          Os integrantes da carreira possuem formação diversificada em áreas como administração pública, ciências sociais, economia, direito, engenharia e outras disciplinas. O ingresso ocorre por concurso público de provas e títulos, exigindo nível superior completo.
-        </p>
-        <p className="text-muted-foreground leading-relaxed">
-          Os APPGGs atuam em posições técnicas e de assessoramento em secretarias municipais, subprefeituras, autarquias e órgãos da administração direta, contribuindo para a qualificação da gestão pública.
-        </p>
+    <section className="py-24 md:py-32 bg-section-alt">
+      <div className="container">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="lg:col-span-4">
+            <SectionTitle label="Perfil" title="Profissionais" />
+          </div>
+          <div className="lg:col-span-8">
+            <FadeIn>
+              <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
+                <p>
+                  Os integrantes da carreira possuem formação diversificada em áreas como administração pública, ciências sociais, economia, direito, engenharia e outras disciplinas. O ingresso ocorre por concurso público de provas e títulos.
+                </p>
+                <p>
+                  Atuam em posições técnicas e de assessoramento em secretarias municipais, subprefeituras, autarquias e órgãos da administração direta.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section className="py-16 bg-card">
-      <div className="container max-w-3xl">
-        <SectionTitle title="Áreas de Atuação" />
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {areasAtuacao.map((area) => (
-            <div key={area} className="flex items-start gap-2 p-3 border border-border rounded">
-              <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
-              <span className="text-sm text-foreground">{area}</span>
-            </div>
+    <section className="py-24 md:py-32 bg-card">
+      <div className="container">
+        <SectionTitle label="Competências" title="Áreas de Atuação" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-luxury-border mt-8">
+          {areasAtuacao.map((area, i) => (
+            <FadeIn key={area} delay={i * 0.05}>
+              <div className="bg-card p-6 flex items-start gap-4">
+                <span className="text-[10px] font-medium text-gold mt-0.5">0{i + 1}</span>
+                <span className="text-sm font-light text-foreground">{area}</span>
+              </div>
+            </FadeIn>
           ))}
         </div>
       </div>
     </section>
 
-    <section className="py-16 bg-section-alt">
-      <div className="container max-w-3xl">
-        <SectionTitle title="Evolução Histórica" />
-        <div className="space-y-0">
-          {timelineItems.map((item, i) => (
-            <div key={item.year} className="flex gap-4">
-              <div className="flex flex-col items-center">
-                <div className="w-3 h-3 rounded-full bg-accent shrink-0 mt-1.5" />
-                {i < timelineItems.length - 1 && <div className="w-px flex-1 bg-border" />}
-              </div>
-              <div className="pb-6">
-                <span className="text-sm font-semibold text-accent">{item.year}</span>
-                <p className="text-sm text-muted-foreground mt-0.5">{item.text}</p>
-              </div>
+    <section className="py-24 md:py-32 bg-section-alt">
+      <div className="container">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="lg:col-span-4">
+            <SectionTitle label="Cronologia" title="Evolução Histórica" />
+          </div>
+          <div className="lg:col-span-8">
+            <div className="border-l border-luxury-border pl-8 space-y-0">
+              {timelineItems.map((item, i) => (
+                <FadeIn key={item.year} delay={i * 0.05}>
+                  <div className="relative pb-8">
+                    <div className="absolute -left-[calc(2rem+0.5px)] top-1.5 w-1.5 h-1.5 rounded-full bg-gold" />
+                    <span className="text-xs font-display text-gold">{item.year}</span>
+                    <p className="text-sm font-light text-text-body mt-1 leading-relaxed">{item.text}</p>
+                  </div>
+                </FadeIn>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
 
-    <section className="py-16 bg-card">
-      <div className="container max-w-3xl">
-        <SectionTitle title="APPGGs em Números" />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <section className="py-24 md:py-32 bg-card">
+      <div className="container">
+        <SectionTitle label="Dados" title="APPGGs em Números" center />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-luxury-border mt-8 max-w-3xl mx-auto">
           {[
             { num: "~200", label: "Profissionais ativos" },
             { num: "20+", label: "Órgãos de atuação" },
             { num: "2", label: "Concursos realizados" },
             { num: "16", label: "Anos de carreira" },
-          ].map((stat) => (
-            <div key={stat.label} className="p-4 border border-border rounded text-center">
-              <p className="text-2xl font-bold text-accent">{stat.num}</p>
-              <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
-            </div>
+          ].map((stat, i) => (
+            <FadeIn key={stat.label} delay={i * 0.08}>
+              <div className="bg-card p-8 text-center">
+                <span className="text-3xl font-display font-normal text-gold">{stat.num}</span>
+                <span className="block text-[11px] font-light text-text-caption mt-2 tracking-wide">{stat.label}</span>
+              </div>
+            </FadeIn>
           ))}
         </div>
       </div>

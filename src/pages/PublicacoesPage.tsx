@@ -2,6 +2,7 @@ import { useState } from "react";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
+import FadeIn from "@/components/FadeIn";
 import { FileText, Download } from "lucide-react";
 
 interface Publicacao {
@@ -18,37 +19,37 @@ const publicacoes: Publicacao[] = [
     titulo: "Relatório Institucional APOGESP 2023",
     ano: "2023",
     tipo: "Relatório Institucional",
-    resumo: "Panorama completo da atuação da APOGESP e dos APPGGs ao longo de 2023, incluindo dados sobre distribuição dos profissionais, áreas de atuação e principais realizações da associação.",
+    resumo: "Panorama completo da atuação da APOGESP e dos APPGGs, incluindo dados sobre distribuição, áreas de atuação e realizações.",
   },
   {
-    titulo: "Nota Técnica: Proposta de Aprimoramento da Carreira de APPGG",
+    titulo: "Nota Técnica: Proposta de Aprimoramento da Carreira",
     ano: "2023",
     tipo: "Nota Técnica",
-    resumo: "Análise das condições atuais da carreira e propostas de aprimoramento em temas como remuneração, progressão funcional, lotação e desenvolvimento profissional.",
+    resumo: "Análise das condições atuais e propostas em temas como remuneração, progressão funcional e desenvolvimento profissional.",
   },
   {
-    titulo: "APPGGs em Números: Perfil e Distribuição na Administração Municipal",
+    titulo: "APPGGs em Números: Perfil e Distribuição",
     ano: "2022",
     tipo: "Relatório Institucional",
-    resumo: "Levantamento quantitativo e qualitativo dos integrantes da carreira, incluindo formação acadêmica, tempo de serviço, secretarias de lotação e perfil demográfico.",
+    resumo: "Levantamento quantitativo e qualitativo dos integrantes, incluindo formação, tempo de serviço e perfil demográfico.",
   },
   {
-    titulo: "Memória Institucional: 15 Anos da Carreira de APPGG",
+    titulo: "Memória Institucional: 15 Anos da Carreira",
     ano: "2022",
     tipo: "Documento Histórico",
-    resumo: "Registro histórico dos principais marcos da carreira desde sua criação em 2007, incluindo depoimentos, documentos e análise da evolução institucional.",
+    resumo: "Registro dos principais marcos desde a criação em 2007, com depoimentos, documentos e análise da evolução institucional.",
   },
   {
-    titulo: "Proposta de Política de Desenvolvimento de Pessoas para APPGGs",
+    titulo: "Proposta de Política de Desenvolvimento de Pessoas",
     ano: "2021",
     tipo: "Proposta de Aprimoramento",
-    resumo: "Documento propositivo com diretrizes para capacitação, formação continuada e desenvolvimento de competências dos integrantes da carreira.",
+    resumo: "Diretrizes para capacitação, formação continuada e desenvolvimento de competências dos integrantes da carreira.",
   },
   {
     titulo: "Apresentação Institucional da APOGESP",
     ano: "2023",
     tipo: "Apresentação Institucional",
-    resumo: "Material de apresentação da associação para interlocução com órgãos públicos, entidades parceiras e imprensa.",
+    resumo: "Material de apresentação para interlocução com órgãos públicos, entidades parceiras e imprensa.",
   },
 ];
 
@@ -67,68 +68,70 @@ const PublicacoesPage = () => {
   return (
     <PageLayout>
       <PageHero
+        label="Biblioteca"
         title="Publicações"
-        subtitle="Biblioteca institucional da APOGESP: relatórios, notas técnicas, propostas e documentos de referência."
+        subtitle="Relatórios, notas técnicas, propostas e documentos de referência institucional."
       />
 
-      <section className="py-16 bg-card">
+      <section className="py-24 md:py-32 bg-card">
         <div className="container">
-          <SectionTitle title="Acervo Documental" />
+          <SectionTitle label="Acervo" title="Documentos Institucionais" />
 
-          {/* Filtros */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-8">
+          {/* Filters */}
+          <div className="flex flex-col sm:flex-row gap-6 mb-12">
             <div>
-              <label className="text-xs font-medium text-muted-foreground mb-1 block">Tipo</label>
+              <label className="text-[10px] font-medium tracking-luxury uppercase text-text-caption mb-2 block">Tipo</label>
               <select
                 value={tipoFiltro}
                 onChange={(e) => setTipoFiltro(e.target.value)}
-                className="text-sm border border-border rounded px-3 py-1.5 bg-card text-foreground"
+                className="text-sm font-light border border-luxury-border px-4 py-2.5 bg-card text-foreground focus:outline-none focus:border-gold transition-colors duration-300 min-w-[220px]"
               >
-                {tipos.map((t) => (
-                  <option key={t} value={t}>{t}</option>
-                ))}
+                {tipos.map((t) => <option key={t} value={t}>{t}</option>)}
               </select>
             </div>
             <div>
-              <label className="text-xs font-medium text-muted-foreground mb-1 block">Ano</label>
+              <label className="text-[10px] font-medium tracking-luxury uppercase text-text-caption mb-2 block">Ano</label>
               <select
                 value={anoFiltro}
                 onChange={(e) => setAnoFiltro(e.target.value)}
-                className="text-sm border border-border rounded px-3 py-1.5 bg-card text-foreground"
+                className="text-sm font-light border border-luxury-border px-4 py-2.5 bg-card text-foreground focus:outline-none focus:border-gold transition-colors duration-300"
               >
-                {anos.map((a) => (
-                  <option key={a} value={a}>{a}</option>
-                ))}
+                {anos.map((a) => <option key={a} value={a}>{a}</option>)}
               </select>
             </div>
           </div>
 
-          {/* Lista */}
-          <div className="space-y-4">
-            {filtradas.map((pub) => (
-              <article key={pub.titulo} className="p-5 border border-border rounded bg-card hover:border-accent/30 transition-colors">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-start gap-3 flex-1">
-                    <FileText size={20} className="text-accent mt-0.5 shrink-0" />
-                    <div>
-                      <h3 className="text-base font-semibold text-foreground font-serif">{pub.titulo}</h3>
-                      <div className="flex gap-2 mt-1">
-                        <span className="text-xs bg-secondary text-secondary-foreground px-2 py-0.5 rounded">{pub.tipo}</span>
-                        <span className="text-xs text-muted-foreground">{pub.ano}</span>
+          {/* List */}
+          <div className="border-t border-luxury-border">
+            {filtradas.map((pub, i) => (
+              <FadeIn key={pub.titulo} delay={i * 0.06}>
+                <article className="py-8 border-b border-luxury-border group hover:bg-card-hover transition-colors duration-300 -mx-4 px-4">
+                  <div className="flex items-start justify-between gap-6">
+                    <div className="flex items-start gap-4 flex-1">
+                      <FileText size={16} strokeWidth={1.5} className="text-gold mt-1 shrink-0" />
+                      <div>
+                        <h3 className="text-base font-display font-normal text-foreground group-hover:text-gold transition-colors duration-300">{pub.titulo}</h3>
+                        <div className="flex items-center gap-3 mt-2">
+                          <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption">{pub.tipo}</span>
+                          <span className="text-luxury-border">·</span>
+                          <span className="text-[11px] font-light text-text-caption">{pub.ano}</span>
+                        </div>
+                        <p className="text-sm font-light text-text-body mt-3 leading-relaxed max-w-2xl">{pub.resumo}</p>
                       </div>
-                      <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{pub.resumo}</p>
                     </div>
+                    <button className="shrink-0 p-3 text-luxury-border hover:text-gold transition-colors duration-300" title="Download">
+                      <Download size={16} strokeWidth={1.5} />
+                    </button>
                   </div>
-                  <button className="shrink-0 p-2 text-muted-foreground hover:text-accent transition-colors" title="Download">
-                    <Download size={18} />
-                  </button>
-                </div>
-              </article>
+                </article>
+              </FadeIn>
             ))}
           </div>
 
           {filtradas.length === 0 && (
-            <p className="text-sm text-muted-foreground text-center py-8">Nenhuma publicação encontrada com os filtros selecionados.</p>
+            <div className="py-16 text-center">
+              <p className="text-sm font-light text-text-caption">Nenhuma publicação encontrada.</p>
+            </div>
           )}
         </div>
       </section>
