@@ -20,7 +20,7 @@ const SiteHeader = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2">
           <div className="flex h-9 w-9 items-center justify-center rounded bg-primary">
-            <span className="text-sm font-bold text-primary-foreground">AP</span>
+            <span className="text-sm font-bold text-primary-foreground font-sans">AP</span>
           </div>
           <span className="text-lg font-semibold text-primary font-sans">APOGESP</span>
         </Link>
@@ -31,7 +31,7 @@ const SiteHeader = () => {
             <Link
               key={item.path}
               to={item.path}
-              className={`px-3 py-2 text-sm font-medium rounded transition-colors ${
+              className={`px-3 py-2 text-sm font-medium rounded transition-colors font-sans ${
                 location.pathname === item.path
                   ? "text-primary bg-secondary"
                   : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
@@ -59,7 +59,7 @@ const SiteHeader = () => {
               key={item.path}
               to={item.path}
               onClick={() => setMobileOpen(false)}
-              className={`block px-3 py-2.5 text-sm font-medium rounded transition-colors ${
+              className={`block px-3 py-2.5 text-sm font-medium rounded transition-colors font-sans ${
                 location.pathname === item.path
                   ? "text-primary bg-secondary"
                   : "text-muted-foreground hover:text-foreground"
