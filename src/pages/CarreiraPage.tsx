@@ -178,7 +178,7 @@ const CarreiraPage = () => (
                   Em 2021, a Portaria SEGES nº 13 deu o próximo passo: formalizou que os APPGGs devem ser alocados prioritariamente na elaboração do Programa de Metas, no planejamento orçamentário (LOA e PPA) e em projetos de reestruturação institucional. A portaria não criou a prática — apenas reconheceu o que a carreira já vinha demonstrando no campo.
                 </p>
                 <p>
-                  O marco mais recente veio em 2024, quando o Decreto nº 63.336 institucionalizou o SMAE como sistema oficial de monitoramento e criou a Rede SMAE — uma comunidade de mais de 500 servidores, coordenada pela SEPEP e composta majoritariamente por APPGGs. O decreto transformou um projeto em política permanente, e uma ferramenta em patrimônio público.
+                  O marco mais recente veio em 2024, quando o Decreto nº 63.336 institucionalizou o SMAE como sistema oficial de monitoramento e criou a Rede SMAE — uma comunidade de mais de 500 servidores. O decreto transformou um projeto em política permanente, e uma ferramenta em patrimônio público.
                 </p>
               </div>
             </FadeIn>

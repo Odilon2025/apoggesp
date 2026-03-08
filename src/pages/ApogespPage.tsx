@@ -3,15 +3,6 @@ import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
 
-const diretoria = [
-  { nome: "Maria Emília Nascimento Santos", cargo: "Assessoria de Carreiras Transversais (ACT)" },
-  { nome: "Bruna Almeida Braga Soares", cargo: "ACT — Coordenação editorial" },
-  { nome: "Erika Caracho Ribeiro", cargo: "ACT" },
-  { nome: "Lucas Guimarães de Almeida", cargo: "ACT" },
-  { nome: "Rafaela Bastianelli", cargo: "ACT" },
-  { nome: "Carolina Teixeira", cargo: "Diagramação" },
-];
-
 const objetivos = [
   "Promover o reconhecimento institucional da carreira como pilar estratégico da gestão municipal",
   "Contribuir para que políticas públicas sejam formuladas com rigor técnico e implementadas com efetividade",
@@ -42,10 +33,10 @@ const ApogespPage = () => (
                   A APOGESP nasceu de uma convicção simples: profissionais que compartilham uma missão precisam de um espaço para pensar juntos. Como entidade representativa dos Analistas de Políticas Públicas e Gestão Governamental do Município de São Paulo, a associação existe para amplificar o impacto coletivo de uma carreira que, por natureza, trabalha nos bastidores.
                 </p>
                 <p>
-                  A carreira de APPGG foi criada em 2015 pela Lei Municipal nº 16.193 e tem sua coordenação institucional vinculada à Assessoria de Carreiras Transversais (ACT), no gabinete da Secretaria Municipal de Gestão. A ACT é responsável pela alocação, desenvolvimento e articulação dos integrantes — o elo entre a carreira e as demandas estratégicas da Prefeitura.
+                  A APOGESP é uma entidade civil, sem fins lucrativos, independente de governo e de partidos. Sua atuação se organiza em três frentes: valorização da carreira, produção de conhecimento sobre gestão municipal e interlocução com órgãos públicos, entidades parceiras e sociedade civil. Não é um sindicato, nem uma entidade corporativa — é um espaço autônomo de reflexão e ação sobre o que significa servir ao público.
                 </p>
                 <p>
-                  Sem fins lucrativos e orientada por princípios de independência e transparência, a APOGESP atua em três frentes: valorização da carreira, produção de conhecimento sobre gestão municipal e articulação com órgãos de governo, entidades parceiras e sociedade civil. Não é um sindicato, nem uma entidade corporativa — é um espaço de reflexão e ação sobre o que significa servir ao público.
+                  A independência da APOGESP é condição para sua relevância. É ela que permite à associação dialogar com diferentes governos, propor aprimoramentos à carreira com franqueza e produzir análises técnicas sem constrangimentos institucionais. A APOGESP fala em nome dos seus associados — e só deles.
                 </p>
               </div>
             </FadeIn>
@@ -54,24 +45,7 @@ const ApogespPage = () => (
       </div>
     </section>
 
-    {/* Citação */}
-    <section className="py-20 md:py-24 bg-section-alt">
-      <div className="container">
-        <FadeIn>
-          <div className="max-w-3xl mx-auto text-center">
-            <blockquote className="text-lg md:text-xl font-display font-normal text-foreground leading-relaxed italic">
-              "Os 9 textos que compõem esse livro mostram como os servidores públicos da carreira de APPGG utilizaram suas competências a serviço de projetos e políticas públicas que geraram valor para os paulistanos."
-            </blockquote>
-            <div className="luxury-divider mt-6 mb-4" />
-            <cite className="text-[11px] font-light text-text-caption not-italic tracking-wide">
-              Cibele Franzese — Prefácio do Caderno Gestão Pública em Rede
-            </cite>
-          </div>
-        </FadeIn>
-      </div>
-    </section>
-
-    <section className="py-24 md:py-32 bg-card">
+    <section className="py-24 md:py-32 bg-section-alt">
       <div className="container">
         <div className="max-w-xl mx-auto text-center">
           <SectionTitle label="Propósito" title="Missão" center />
@@ -84,31 +58,15 @@ const ApogespPage = () => (
       </div>
     </section>
 
-    <section className="py-24 md:py-32 bg-section-alt">
+    <section className="py-24 md:py-32 bg-card">
       <div className="container">
         <SectionTitle label="Diretrizes" title="Objetivos" />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-luxury-border mt-8">
           {objetivos.map((obj, i) => (
             <FadeIn key={obj} delay={i * 0.05}>
-              <div className="bg-section-alt p-6 flex items-start gap-4">
+              <div className="bg-card p-6 flex items-start gap-4">
                 <span className="text-[10px] font-medium text-gold mt-0.5">0{i + 1}</span>
                 <span className="text-sm font-light text-foreground leading-relaxed">{obj}</span>
-              </div>
-            </FadeIn>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section className="py-24 md:py-32 bg-card">
-      <div className="container">
-        <SectionTitle label="Equipe editorial" title="Assessoria de Carreiras Transversais" subtitle="A equipe que coordena a carreira no dia a dia e que tornou possível o Caderno Gestão Pública em Rede — a primeira publicação coletiva dos APPGGs." />
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-luxury-border mt-8">
-          {diretoria.map((membro, i) => (
-            <FadeIn key={membro.nome} delay={i * 0.06}>
-              <div className="bg-card p-8">
-                <p className="text-sm font-normal text-foreground">{membro.nome}</p>
-                <p className="text-[11px] font-light text-text-caption mt-1">{membro.cargo}</p>
               </div>
             </FadeIn>
           ))}
@@ -120,19 +78,19 @@ const ApogespPage = () => (
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
-            <SectionTitle label="Contexto" title="Vinculação Institucional" />
+            <SectionTitle label="Posicionamento" title="Uma Entidade Independente" />
           </div>
           <div className="lg:col-span-8">
             <FadeIn>
               <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
                 <p>
-                  A carreira de APPGG está abrigada na Secretaria Municipal de Gestão (SEGES), sob a liderança da Secretária Marcela Arruda e da Secretária Adjunta Regina Silvério. A SEGES é o órgão responsável pela política de gestão de pessoas e carreiras transversais — o que faz dela, na prática, a guardiã institucional dos APPGGs.
+                  A carreira de APPGG foi criada em 2015 e está vinculada à estrutura administrativa da Prefeitura de São Paulo. A APOGESP, por sua vez, é uma associação civil autônoma — não integra o governo, não depende dele e não fala por ele.
                 </p>
                 <p>
-                  Dentro da SEGES, a Assessoria de Carreiras Transversais (ACT) é quem opera essa relação cotidianamente. A ACT coordena a alocação dos analistas, articula oportunidades de desenvolvimento e funciona como o ponto de contato entre a carreira e as prioridades estratégicas do governo. Em 2021, a Portaria SEGES nº 13 formalizou o que já era tendência: APPGGs devem ser priorizados para atuar no Programa de Metas, no planejamento orçamentário e em projetos de reestruturação institucional.
+                  Essa separação é deliberada. A associação existe para representar os interesses de seus associados, propor melhorias à carreira, produzir conhecimento técnico e manter um canal de diálogo permanente com a administração pública — sempre a partir de uma posição de independência.
                 </p>
                 <p>
-                  O resultado dessa arquitetura é uma carreira presente em praticamente todos os órgãos da administração direta — não como figurantes, mas como articuladores que conectam planejamento a execução, dados a decisões, e secretarias umas às outras.
+                  A APOGESP reconhece e valoriza o trabalho das instâncias governamentais responsáveis pela gestão da carreira, mas preserva sua autonomia para analisar, propor e, quando necessário, divergir. É essa independência que sustenta a credibilidade da associação perante seus associados e a sociedade.
                 </p>
               </div>
             </FadeIn>
