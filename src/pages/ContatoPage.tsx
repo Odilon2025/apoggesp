@@ -18,7 +18,7 @@ const ContatoPage = () => {
       <PageHero
         label="Fale Conosco"
         title="Contato"
-        subtitle="Canal institucional de comunicação da APOGESP."
+        subtitle="Se você é servidor, pesquisador, gestor ou cidadão interessado em gestão pública municipal, este é o canal."
       />
 
       <section className="py-24 md:py-32 bg-card">
@@ -43,6 +43,9 @@ const ContatoPage = () => {
                       <span className="text-sm font-light text-foreground">São Paulo — SP, Brasil</span>
                     </div>
                   </div>
+                  <p className="text-sm font-light text-text-body leading-relaxed mt-4">
+                    A APOGESP recebe mensagens de associados, gestores públicos, pesquisadores, jornalistas e de qualquer cidadão interessado na carreira de APPGG e na gestão pública municipal de São Paulo. Respondemos em até cinco dias úteis.
+                  </p>
                 </div>
               </FadeIn>
             </div>
@@ -53,8 +56,8 @@ const ContatoPage = () => {
                 {enviado ? (
                   <div className="p-12 border border-gold/20 text-center">
                     <div className="luxury-divider mb-6" />
-                    <p className="text-base font-display font-normal text-foreground">Mensagem enviada</p>
-                    <p className="text-sm font-light text-text-caption mt-2">Retornaremos em breve pelo e-mail informado.</p>
+                    <p className="text-base font-display font-normal text-foreground">Mensagem recebida</p>
+                    <p className="text-sm font-light text-text-caption mt-2">Obrigado pelo contato. Retornaremos em breve pelo e-mail informado.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">

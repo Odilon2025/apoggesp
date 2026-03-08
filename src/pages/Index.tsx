@@ -6,20 +6,20 @@ import FadeIn from "@/components/FadeIn";
 import { ArrowRight, FileText } from "lucide-react";
 
 const timelineItems = [
-  { year: "2015", text: "Criação da carreira de APPGG pela Lei Municipal nº 16.193" },
-  { year: "2016", text: "Ingresso dos primeiros Analistas na Prefeitura de São Paulo" },
-  { year: "2017", text: "Atuação no Programa de Metas 2017–2020 e estruturação institucional" },
-  { year: "2018", text: "Criação do Lab11 — Laboratório de Inovação Pública na SEGES" },
-  { year: "2021", text: "Portaria SEGES nº 13/2021 prioriza alocação de APPGGs em projetos estratégicos" },
-  { year: "2022", text: "Desenvolvimento do SMAE em parceria com a FGV" },
-  { year: "2024", text: "SMAE institucionalizado pelo Decreto nº 63.336/2024 com 500+ usuários" },
-  { year: "2025", text: "Publicação do Caderno Gestão Pública em Rede — 10 anos da carreira" },
+  { year: "2015", text: "A Lei Municipal nº 16.193 cria a carreira de APPGG — uma aposta na profissionalização da gestão pública paulistana" },
+  { year: "2016", text: "Os primeiros analistas tomam posse e começam a ocupar secretarias por toda a cidade" },
+  { year: "2017", text: "A carreira assume papel central no Programa de Metas 2017–2020, traduzindo compromissos em entregas mensuráveis" },
+  { year: "2018", text: "Nasce o Lab11 — o laboratório que levou ciências comportamentais para dentro da máquina pública" },
+  { year: "2021", text: "A Portaria SEGES nº 13 reconhece formalmente o que já era prática: APPGGs lideram projetos estratégicos" },
+  { year: "2022", text: "Começa o desenvolvimento do SMAE, o sistema que daria à Prefeitura olhos sobre suas próprias metas" },
+  { year: "2024", text: "O Decreto nº 63.336 institucionaliza o SMAE — 500 servidores já o utilizam diariamente" },
+  { year: "2025", text: "O Caderno Gestão Pública em Rede registra, pela primeira vez, uma década de contribuições em nove artigos" },
 ];
 
 const atuacaoDestaques = [
-  { area: "Inovação", desc: "Ciências comportamentais aplicadas à alimentação escolar, redução de absenteísmo e prevenção durante a COVID-19 pelo Lab11." },
-  { area: "Planejamento", desc: "Desenvolvimento do SMAE — sistema de monitoramento estratégico com 5 módulos e 500+ usuários ativos na Prefeitura." },
-  { area: "Primeira Infância", desc: "Articulação intersetorial para a política da primeira infância, rompendo silos entre secretarias." },
+  { area: "Inovação", desc: "No Lab11, APPGGs provaram que nudges bem desenhados podem fazer crianças comerem melhor na escola, cidadãos usarem máscara no transporte público e microempreendedores emitirem notas fiscais sem erro." },
+  { area: "Planejamento", desc: "O SMAE não é apenas um software — é a memória institucional da Prefeitura. Cinco módulos, 500 usuários e um decreto que o tornou patrimônio público permanente." },
+  { area: "Primeira Infância", desc: "Quando a política de primeira infância exigiu que saúde, educação e assistência social falassem a mesma língua, foram APPGGs que construíram as pontes entre as secretarias." },
 ];
 
 const publicacoesRecentes = [
@@ -66,7 +66,7 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className="mt-8 text-base md:text-lg text-primary-foreground/50 font-light max-w-lg leading-relaxed"
               >
-                Dez anos fortalecendo a administração municipal de São Paulo por meio de análise técnica, articulação intersetorial e compromisso com o interesse público.
+                Uma década construindo capacidade institucional na maior cidade da América Latina. Onde outros veem burocracia, nós vemos a engenharia silenciosa que faz uma metrópole de 12 milhões funcionar.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
@@ -139,9 +139,9 @@ const Index = () => {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-luxury-border">
             {[
-              { title: "Capacidades Transversais", desc: "Atuação integrada em todos os órgãos da Prefeitura, fortalecendo a gestão pública com profundidade técnica e sensibilidade para temas estratégicos." },
-              { title: "Valor Público", desc: "Competências a serviço de projetos e políticas que geram valor para os paulistanos — da formulação à implementação de soluções concretas." },
-              { title: "Gestão em Rede", desc: "Articulação intersetorial, conexão entre diferentes atores e construção de instituições e políticas duradouras baseadas em evidências." },
+              { title: "Capacidades Transversais", desc: "Presentes em praticamente todos os órgãos da Prefeitura, os APPGGs não pertencem a uma secretaria — pertencem à cidade. Essa transversalidade é, ao mesmo tempo, seu maior desafio e sua maior força." },
+              { title: "Valor Público", desc: "Cada projeto documentado neste portal representa horas de análise, articulação e implementação a serviço de uma pergunta simples: como gerar mais valor para os paulistanos com os recursos disponíveis?" },
+              { title: "Gestão em Rede", desc: "Políticas públicas não respeitam organogramas. Os APPGGs aprenderam a construir pontes entre secretarias, entre níveis de governo e entre o planejado e o executado." },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 0.1}>
                 <div className="bg-card p-10 md:p-12 h-full">
@@ -162,8 +162,8 @@ const Index = () => {
             <div className="lg:col-span-4">
               <SectionTitle
                 label="Impacto"
-                title="Atuação em Políticas Públicas"
-                subtitle="Contribuições documentadas dos APPGGs para a gestão municipal."
+                title="Onde a Teoria Encontra a Rua"
+                subtitle="Três exemplos de como o trabalho técnico dos APPGGs se traduz em mudanças concretas na vida da cidade."
               />
               <Link
                 to="/atuacao"
@@ -223,7 +223,7 @@ const Index = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
-              <SectionTitle label="História" title="Marcos da Carreira" />
+              <SectionTitle label="Cronologia" title="Uma Carreira que se Construiu Fazendo" />
             </div>
             <div className="lg:col-span-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-0">
@@ -248,7 +248,7 @@ const Index = () => {
             <FadeIn>
               <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-6">Prefácio</span>
               <h2 className="text-2xl md:text-3xl font-display font-normal text-foreground leading-tight text-balance italic">
-                "A carreira não atua como uma coisa só, mas por meio de servidores que se engajam em políticas e projetos com objetivos de interesse público."
+                "A carreira é feita de pessoas e estas conseguem se adaptar ao novo e, ainda mais, são capazes de antecipar e formular o novo."
               </h2>
               <div className="luxury-divider mt-6 mb-4" />
               <p className="text-[11px] font-light text-text-caption tracking-wide">

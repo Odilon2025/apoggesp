@@ -20,74 +20,74 @@ const publicacoes: Publicacao[] = [
     titulo: "Caderno Gestão Pública em Rede — 1ª Edição",
     ano: "2025",
     tipo: "Caderno",
-    resumo: "Publicação comemorativa dos 10 anos da carreira de APPGG, com 9 artigos organizados em três eixos: capacidades transversais, gestão pública como prática histórica e problemas complexos. Produzido pela Assessoria de Carreiras Transversais (ACT) da SEGES.",
+    resumo: "A primeira publicação coletiva dos APPGGs reúne nove artigos escritos por quem esteve na linha de frente. Organizado pela ACT/SEGES para celebrar uma década de carreira, o Caderno não é um catálogo de realizações — é um exercício de reflexão crítica sobre o que foi construído, o que funcionou e o que ainda precisa ser feito.",
   },
   {
     titulo: "O Potencial das Ciências Comportamentais para a Melhoria dos Serviços Públicos",
     ano: "2025",
     tipo: "Artigo",
-    resumo: "Analisa o uso de ciências comportamentais e design centrado no usuário em políticas municipais, com casos do Lab11 em alimentação escolar, absenteísmo, COVID-19, SP156, MEI Nota Fácil e Simplifica AI.",
+    resumo: "Como nudges, design centrado no usuário e experimentos controlados transformaram serviços públicos em São Paulo — da alimentação escolar ao aplicativo de notas fiscais para microempreendedores. Um mapa prático de como a ciência comportamental entra na máquina pública.",
     autores: "Brenda Machado, Bruno Martinelli Fonseca",
   },
   {
     titulo: "O Sistema SMAE: Um Patrimônio Feito Sob Medida",
     ano: "2025",
     tipo: "Artigo",
-    resumo: "Estudo de caso sobre o desenvolvimento e implementação do Sistema de Monitoramento e Acompanhamento Estratégico na Prefeitura, com metodologia ágil, software livre e parceria FGV. Cinco módulos e 500+ usuários.",
+    resumo: "A história de como um grupo de APPGGs construiu, junto com a FGV, o sistema que deu à Prefeitura de São Paulo a capacidade de enxergar suas próprias metas. Cinco módulos, 500 usuários e um decreto que o tornou permanente.",
   },
   {
     titulo: "Arquivos, Memória e Educação: Gestão Documental na Rede Municipal de Ensino",
     ano: "2025",
     tipo: "Artigo",
-    resumo: "Relata a construção da política e da governança de gestão documental na Rede Municipal de Ensino de São Paulo.",
+    resumo: "A maior rede de ensino municipal do país precisava de uma política documental. Este artigo conta como ela foi construída — integrando arquivos, memória institucional e educação em um sistema de governança que funciona escola a escola.",
   },
   {
     titulo: "Nova Gestão Pública e Gestão da Mudança: O Arquivo Histórico Municipal (2021–2024)",
     ano: "2025",
     tipo: "Artigo",
-    resumo: "Estudo sobre a modernização do Arquivo Histórico Municipal de São Paulo, evidenciando os limites da NPM à cultura organizacional e os desafios de gestão da mudança durante a pandemia.",
+    resumo: "Um relato honesto sobre os limites da modernização quando ela encontra a cultura organizacional. O caso do Arquivo Histórico Municipal mostra que gestão da mudança durante uma pandemia exige mais do que manuais — exige escuta.",
   },
   {
     titulo: "Um Lugar para o Planejar: Assessoria de Planejamento na SMS de São Paulo",
     ano: "2025",
     tipo: "Artigo",
-    resumo: "Registra a importância do planejamento na área da saúde e como este foi sendo institucionalizado ao longo dos anos na Secretaria Municipal da Saúde.",
+    resumo: "Como o planejamento foi sendo institucionalizado na Secretaria Municipal da Saúde — e por que ter um lugar dedicado a planejar é, paradoxalmente, uma das inovações mais difíceis de implementar na gestão pública.",
   },
   {
     titulo: "O Programa de Residência em Gestão Pública da Prefeitura de São Paulo",
     ano: "2025",
     tipo: "Artigo",
-    resumo: "Apresenta o programa que traz profissionais com vínculo flexível e tempo determinado para contribuir com inovações, observar o funcionamento do setor público e trazer visões renovadas.",
+    resumo: "Um programa que abre a Prefeitura para profissionais de fora — e que, ao fazer isso, renova perspectivas internas. Este artigo apresenta o desenho, os aprendizados e as tensões de um mecanismo que tenta tornar a gestão pública permeável sem perder estabilidade.",
   },
   {
     titulo: "Problemas Complexos e Intersetorialidade: A Política da Primeira Infância",
     ano: "2025",
     tipo: "Artigo",
-    resumo: "Relata como APPGGs estabeleceram conexões entre diferentes atores institucionais, rompendo silos setoriais na política da primeira infância no município.",
+    resumo: "Quando o problema não cabe em uma secretaria, quem costura a resposta? Este artigo examina como APPGGs atuaram como articuladores na política da primeira infância — rompendo silos e construindo linguagem comum entre áreas que historicamente não conversavam.",
   },
   {
     titulo: "Atuação Multinível no I Plano Municipal de Educação Ambiental",
     ano: "2025",
     tipo: "Artigo",
-    resumo: "Analisa como a teoria de múltiplos fluxos de John Kingdon explica a criação do I Plano Municipal de Educação Ambiental e a participação de APPGGs em sua construção.",
+    resumo: "Usando a teoria de múltiplos fluxos de John Kingdon, este artigo analisa como a janela de oportunidade para o primeiro plano de educação ambiental de São Paulo se abriu — e como APPGGs ajudaram a atravessá-la.",
   },
   {
     titulo: "O APPGG como Articulador Intersetorial: Recuperação de Fachadas em São Paulo",
     ano: "2025",
     tipo: "Artigo",
-    resumo: "Lições aprendidas na reformulação da política de incentivo à recuperação de fachadas, analisando o papel de burocracia de médio escalão e articulação intersetorial.",
+    resumo: "Lições aprendidas na reformulação de uma política aparentemente simples — recuperar fachadas — que se revelou um caso de estudo sobre articulação intersetorial, burocracia de médio escalão e os caminhos tortuosos entre a intenção e o resultado.",
   },
   {
     titulo: "Nota Técnica: Proposta de Aprimoramento da Carreira de APPGG",
     ano: "2023",
     tipo: "Nota Técnica",
-    resumo: "Análise das condições da carreira e propostas em temas como remuneração, progressão funcional, lotação e desenvolvimento profissional.",
+    resumo: "Diagnóstico das condições da carreira e propostas concretas em remuneração, progressão funcional, critérios de lotação e desenvolvimento profissional. Um documento que traduz reivindicações em argumentos técnicos.",
   },
   {
     titulo: "Proposta de Política de Desenvolvimento de Pessoas para APPGGs",
     ano: "2021",
     tipo: "Proposta de Aprimoramento",
-    resumo: "Diretrizes para capacitação, formação continuada e desenvolvimento de competências dos integrantes da carreira.",
+    resumo: "Diretrizes para capacitação continuada e desenvolvimento de competências — porque uma carreira transversal precisa de formação que acompanhe a amplitude de seus desafios.",
   },
 ];
 
@@ -108,7 +108,7 @@ const PublicacoesPage = () => {
       <PageHero
         label="Biblioteca"
         title="Publicações"
-        subtitle="Acervo documental da carreira de APPGG: cadernos, artigos, notas técnicas e propostas institucionais."
+        subtitle="O que a carreira de APPGG pensa, documenta e publica. Artigos, notas técnicas e propostas — escritos por quem faz gestão pública, não por quem teoriza sobre ela."
       />
 
       <section className="py-24 md:py-32 bg-card">
@@ -119,7 +119,7 @@ const PublicacoesPage = () => {
               <span className="text-[10px] font-medium tracking-luxury uppercase text-gold block mb-4">Destaque</span>
               <h3 className="text-xl md:text-2xl font-display font-normal text-foreground">Caderno Gestão Pública em Rede — 1ª Edição</h3>
               <p className="text-sm font-light text-text-body mt-3 leading-relaxed max-w-3xl">
-                Publicação comemorativa dos 10 anos da carreira, com 9 artigos que registram contribuições dos APPGGs em inovação, planejamento, intersetorialidade e gestão institucional. Organizado pela Assessoria de Carreiras Transversais (ACT) da Secretaria Municipal de Gestão.
+                Nove artigos. Nove histórias de quem esteve dentro da máquina pública, tentando fazê-la funcionar melhor. A primeira publicação coletiva dos APPGGs celebra uma década de carreira com o que ela faz de melhor: análise rigorosa, experiência de campo e compromisso com o registro. Organizado pela Assessoria de Carreiras Transversais (ACT) da Secretaria Municipal de Gestão.
               </p>
               <div className="flex items-center gap-4 mt-6">
                 <span className="text-[11px] font-light text-text-caption">Dezembro 2025 · Prefeitura de São Paulo</span>

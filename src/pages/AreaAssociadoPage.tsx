@@ -8,7 +8,7 @@ const AreaAssociadoPage = () => (
     <PageHero
       label="Associados"
       title="Área do Associado"
-      subtitle="Espaço reservado para comunicações e documentos de interesse dos associados."
+      subtitle="Um espaço que está sendo construído — com o mesmo cuidado que dedicamos a tudo que fazemos."
     />
 
     <section className="py-24 md:py-32 bg-card">
@@ -19,7 +19,7 @@ const AreaAssociadoPage = () => (
             <h2 className="text-xl font-display font-normal text-foreground mb-2">Em breve</h2>
             <div className="luxury-divider my-6" />
             <p className="text-sm font-light text-text-body leading-relaxed">
-              Esta área será destinada aos associados da APOGESP, com acesso a comunicados internos, documentos exclusivos e informações de interesse da carreira.
+              Estamos preparando um espaço exclusivo para os associados da APOGESP. Aqui, você encontrará comunicados internos, documentos de interesse da carreira e informações que não circulam em outro lugar. Porque quem constrói a gestão pública de São Paulo merece um canal à altura.
             </p>
             <p className="text-[11px] font-light text-text-caption mt-6">
               contato@apogesp.org.br
