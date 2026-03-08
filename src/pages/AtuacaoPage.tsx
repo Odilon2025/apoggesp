@@ -13,64 +13,78 @@ interface CasoAtuacao {
   resultados: string;
 }
 
-const areas = ["Todas", "Saúde", "Educação", "Assistência Social", "Mobilidade", "Cultura", "Gestão e Inovação", "Fazenda e Planejamento", "Desenvolvimento Econômico"];
+const areas = ["Todas", "Inovação e Ciências Comportamentais", "Planejamento e Monitoramento", "Políticas Intersetoriais", "Gestão Institucional", "Educação Ambiental", "Gestão Documental"];
 
 const casos: CasoAtuacao[] = [
   {
-    titulo: "Reestruturação da Atenção Básica",
-    area: "Saúde",
-    contexto: "Necessidade de reorganização dos serviços de atenção básica com foco em territorialização e equidade.",
-    atuacao: "Redesenho dos fluxos de atendimento, criação de indicadores de desempenho e monitoramento de metas por território.",
-    resultados: "Melhoria na cobertura territorial e no acompanhamento de indicadores de saúde por região.",
+    titulo: "Ciências Comportamentais para Alimentação Escolar",
+    area: "Inovação e Ciências Comportamentais",
+    contexto: "Necessidade de aumentar a aceitação dos alimentos menos consumidos e reduzir o desperdício entre estudantes do 6º ao 9º ano da rede municipal.",
+    atuacao: "O Lab11 conduziu o projeto em parceria com a CODAE/SME. Intervenções incluíram reposicionamento da lixeira, comunicação visual atrativa com linguagem de redes sociais e contagem digital de refeições. Metodologia mista com observação, entrevistas e mensuração em oito escolas.",
+    resultados: "Aumento da aceitação dos alimentos e redução do desperdício. Maior adesão à alimentação escolar — mais estudantes passaram a consumir regularmente as refeições oferecidas.",
   },
   {
-    titulo: "Sistema de Avaliação da Qualidade do Ensino",
-    area: "Educação",
-    contexto: "Ausência de sistema integrado de monitoramento da qualidade educacional na rede municipal.",
-    atuacao: "Formulação de modelo de avaliação baseado em evidências, com coleta padronizada e análise comparativa.",
-    resultados: "Implantação de painel de indicadores educacionais e subsídios para políticas de formação docente.",
+    titulo: "Sistema de Monitoramento e Acompanhamento Estratégico (SMAE)",
+    area: "Planejamento e Monitoramento",
+    contexto: "Desafios persistentes no planejamento estratégico: ausência de estrutura conceitual consolidada, conhecimento tácito não institucionalizado e processos manuais sujeitos a erros na gestão do Programa de Metas.",
+    atuacao: "APPGGs tiveram papel central no desenvolvimento do SMAE, em parceria com a FGV, utilizando metodologia ágil e software livre (AGPL v3). O sistema garante soberania sobre dados e possibilidade de compartilhamento com outros entes públicos.",
+    resultados: "Sistema com 5 módulos operacionais (Programa de Metas, Planos Setoriais, Gestão de Projetos, Monitoramento de Obras e Transferências Voluntárias), 500+ usuários ativos e institucionalização por decreto municipal.",
   },
   {
-    titulo: "Plano Municipal de Assistência Social",
-    area: "Assistência Social",
-    contexto: "Necessidade de atualização do plano municipal com diagnóstico territorial e participação social.",
-    atuacao: "Coordenação técnica do processo de elaboração, sistematização de dados e facilitação de audiências públicas.",
-    resultados: "Aprovação do novo plano com metas e indicadores alinhados ao SUAS.",
+    titulo: "Política da Primeira Infância e Intersetorialidade",
+    area: "Políticas Intersetoriais",
+    contexto: "Problemas complexos da primeira infância exigem articulação entre múltiplas secretarias, rompendo silos setoriais tradicionais da administração pública.",
+    atuacao: "APPGGs estabeleceram conexões entre diferentes atores institucionais, promovendo ligações entre secretarias e trabalhando de forma intersetorial na formulação e implementação da política municipal da primeira infância.",
+    resultados: "Construção de uma política integrada que articula saúde, educação, assistência social e outras áreas, com participação ativa da carreira como articulador institucional.",
   },
   {
-    titulo: "Modernização do Bilhete Único",
-    area: "Mobilidade",
-    contexto: "Demanda por modernização do sistema de bilhetagem eletrônica de transporte público.",
-    atuacao: "Análise de modelos internacionais, elaboração de termos de referência e acompanhamento de processos licitatórios.",
-    resultados: "Contribuição para a especificação técnica do novo sistema de bilhetagem.",
+    titulo: "Reformulação do Portal SP156",
+    area: "Inovação e Ciências Comportamentais",
+    contexto: "Canais digitais avaliados como complexos, visualmente poluídos e com linguagem pouco acessível. Alta taxa de desistência no uso do portal de serviços municipais.",
+    atuacao: "Lab11 conduziu reformulação com metodologia ágil e design centrado no usuário. Foram realizados testes de usabilidade com 320 cidadãos, reorganização taxonômica via card sorting e prototipagem iterativa em três ciclos.",
+    resultados: "Redução de 30% na taxa de desistência do portal. Navegação 41% mais rápida na nova taxonomia. Aumento de 200% nas visualizações da categoria trânsito e transporte.",
   },
   {
-    titulo: "Fomento à Cultura nas Periferias",
-    area: "Cultura",
-    contexto: "Baixa capilaridade dos programas de fomento cultural em territórios periféricos.",
-    atuacao: "Mapeamento de equipamentos culturais, análise de distribuição de recursos e proposta de critérios territoriais.",
-    resultados: "Redistribuição de editais com critérios de vulnerabilidade social e territorial.",
+    titulo: "Programa de Residência em Gestão Pública",
+    area: "Gestão Institucional",
+    contexto: "Necessidade de trazer profissionais com visões renovadas e vínculos flexíveis para contribuir com inovações na administração pública.",
+    atuacao: "Estruturação de programa que permite a profissionais observarem o funcionamento do setor público e, ao mesmo tempo, contribuírem com soluções inovadoras para problemas públicos, com vínculo por tempo determinado.",
+    resultados: "Criação de um mecanismo institucional de renovação de perspectivas e capacitação prática em gestão pública.",
   },
   {
-    titulo: "Implantação do Programa de Metas",
-    area: "Gestão e Inovação",
-    contexto: "Obrigatoriedade legal de apresentação de Programa de Metas no início de cada gestão.",
-    atuacao: "Coordenação técnica da metodologia de construção, monitoramento e prestação de contas.",
-    resultados: "Consolidação de ciclos de monitoramento e relatórios públicos de acompanhamento.",
+    titulo: "I Plano Municipal de Educação Ambiental",
+    area: "Educação Ambiental",
+    contexto: "Necessidade de alinhar estratégias intersetoriais para construção do primeiro plano municipal de educação ambiental, envolvendo múltiplos níveis de governo.",
+    atuacao: "APPGGs participaram do alinhamento de estratégias entre secretarias e níveis de governo, utilizando teoria de múltiplos fluxos para viabilizar a construção do plano.",
+    resultados: "Aprovação do I Plano Municipal de Educação Ambiental com articulação multinível e participação de diversas secretarias.",
   },
   {
-    titulo: "Reforma da Governança Orçamentária",
-    area: "Fazenda e Planejamento",
-    contexto: "Fragmentação dos processos de planejamento e execução orçamentária entre secretarias.",
-    atuacao: "Desenho de novo modelo de governança com integração entre PPA, LOA e execução setorial.",
-    resultados: "Maior articulação entre planejamento e orçamento, com redução de remanejamentos.",
+    titulo: "Reestruturação do Arquivo Histórico Municipal",
+    area: "Gestão Institucional",
+    contexto: "Necessidade de modernização institucional do Arquivo Histórico Municipal de São Paulo, com desafios de gestão da mudança durante a pandemia de COVID-19.",
+    atuacao: "APPGGs conduziram projeto de reestruturação baseado em princípios da Nova Gestão Pública, enfrentando desafios de cultura organizacional, insegurança e desconfiança dos funcionários agravados pelo contexto pandêmico.",
+    resultados: "Resultados positivos na modernização do Arquivo, com lições importantes sobre gestão da mudança e adaptação cultural em organizações públicas.",
   },
   {
-    titulo: "Estratégia de Desenvolvimento Econômico",
-    area: "Desenvolvimento Econômico",
-    contexto: "Necessidade de visão integrada para políticas de emprego, renda e desenvolvimento local.",
-    atuacao: "Elaboração de diagnóstico econômico territorial e proposta de eixos estratégicos.",
-    resultados: "Documento base para articulação de programas de emprego e qualificação profissional.",
+    titulo: "Gestão Documental na Rede Municipal de Ensino",
+    area: "Gestão Documental",
+    contexto: "Necessidade de construir uma política e governança de gestão documental para a Rede Municipal de Ensino de São Paulo.",
+    atuacao: "Desenvolvimento de política institucional integrando arquivos, memória e educação, com construção de governança para gestão documental nas unidades de ensino.",
+    resultados: "Estabelecimento de diretrizes e estrutura de governança para gestão documental, preservando a memória institucional da rede de ensino municipal.",
+  },
+  {
+    titulo: "Aplicativo MEI Nota Fácil",
+    area: "Inovação e Ciências Comportamentais",
+    contexto: "Sistema complexo de emissão de notas fiscais eletrônicas para Microempreendedores Individuais, com 15% de taxa de erro e público com 33% de baixa escolaridade.",
+    atuacao: "Lab11 conduziu pesquisa com usuários, mapeamento de jornada, desenvolvimento e testes de protótipos. Testes de usabilidade validaram interface simples e design minimalista, com foco em linguagem acessível.",
+    resultados: "12.514 dispositivos ativos, 5.773 notas emitidas no período inicial, nota 4,8 na Play Store e 80% das avaliações com 5 estrelas.",
+  },
+  {
+    titulo: "Campanha Comportamental COVID-19 nos Terminais de Ônibus",
+    area: "Inovação e Ciências Comportamentais",
+    contexto: "Necessidade de incentivar comportamentos preventivos (uso de máscara, distanciamento, higienização) em terminais de transporte público durante a pandemia.",
+    atuacao: "Desenvolvimento de campanhas baseadas em ciências comportamentais com análise observacional via câmeras de segurança para avaliar padrões de comportamento dos usuários após intervenções.",
+    resultados: "Identificação de pontos críticos e comportamentos de risco, subsidiando mudanças operacionais e campanhas futuras da SPTrans.",
   },
 ];
 
@@ -83,12 +97,12 @@ const AtuacaoPage = () => {
       <PageHero
         label="Impacto"
         title="Atuação dos APPGGs"
-        subtitle="Casos concretos de contribuição para a gestão pública municipal."
+        subtitle="Casos documentados de contribuição para a gestão pública municipal, baseados no Caderno Gestão Pública em Rede (2025)."
       />
 
       <section className="py-24 md:py-32 bg-card">
         <div className="container">
-          <SectionTitle label="Casos" title="Contribuições por Área" subtitle="Selecione uma área para filtrar." />
+          <SectionTitle label="Casos Documentados" title="Contribuições por Área" subtitle="Os casos a seguir são baseados nos artigos publicados no Caderno Gestão Pública em Rede — 1ª edição (2025)." />
 
           {/* Filter */}
           <div className="flex flex-wrap gap-2 mb-12">
@@ -123,7 +137,7 @@ const AtuacaoPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                       {[
                         { label: "Contexto", text: caso.contexto },
-                        { label: "Atuação", text: caso.atuacao },
+                        { label: "Atuação dos APPGGs", text: caso.atuacao },
                         { label: "Resultados", text: caso.resultados },
                       ].map((col) => (
                         <div key={col.label}>
@@ -137,6 +151,38 @@ const AtuacaoPage = () => {
               </FadeIn>
             ))}
           </div>
+
+          {casosFiltrados.length === 0 && (
+            <div className="py-16 text-center">
+              <p className="text-sm font-light text-text-caption">Nenhum caso encontrado para esta área.</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Eixos */}
+      <section className="py-24 md:py-32 bg-section-alt">
+        <div className="container max-w-3xl">
+          <SectionTitle label="Organização" title="Eixos Temáticos do Caderno" />
+          <FadeIn>
+            <div className="space-y-0 border-t border-luxury-border">
+              {[
+                { num: "I", title: "Capacidades Transversais Emergentes no Estado", desc: "Ciências comportamentais, sistema SMAE e gestão documental na rede de ensino." },
+                { num: "II", title: "Gestão Pública como Prática Social Histórica", desc: "Arquivo Histórico Municipal, Assessoria de Planejamento da Saúde e Residência em Gestão Pública." },
+                { num: "III", title: "Problemas Complexos, Políticas e a Atuação dos APPGGs", desc: "Política da Primeira Infância, Educação Ambiental e recuperação de fachadas." },
+              ].map((eixo) => (
+                <div key={eixo.num} className="py-6 border-b border-luxury-border">
+                  <div className="flex items-start gap-4">
+                    <span className="text-xs font-display text-gold mt-0.5">Eixo {eixo.num}</span>
+                    <div>
+                      <h3 className="text-base font-display font-normal text-foreground">{eixo.title}</h3>
+                      <p className="text-sm font-light text-text-body mt-1 leading-relaxed">{eixo.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
         </div>
       </section>
     </PageLayout>
