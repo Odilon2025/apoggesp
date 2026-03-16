@@ -145,9 +145,9 @@ const CarreiraPage = () => (
         <SectionTitle label="Dados" title="APPGGs em Números" center />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-luxury-border mt-8 max-w-3xl mx-auto">
           {[
-            { num: "100+", label: "Analistas em exercício" },
-            { num: "500+", label: "Usuários do SMAE" },
-            { num: "5", label: "Módulos do SMAE" },
+            { num: "169", label: "APPGGs em exercício" },
+            { num: "22", label: "Órgãos e entidades com APPGGs" },
+            { num: "57", label: "Em funções de liderança" },
             { num: "10", label: "Anos de carreira" },
           ].map((stat, i) => (
             <FadeIn key={stat.label} delay={i * 0.08}>
