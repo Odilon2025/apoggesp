@@ -8,6 +8,7 @@ const navItems = [
   { label: "A Carreira", path: "/carreira" },
   { label: "Atuação", path: "/atuacao" },
   { label: "Publicações", path: "/publicacoes" },
+  { label: "Diversidade", path: "/diversidade" },
   { label: "A APOGESP", path: "/apogesp" },
   { label: "Contato", path: "/contato" },
 ];
