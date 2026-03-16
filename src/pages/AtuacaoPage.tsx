@@ -497,16 +497,16 @@ const AtuacaoPage = () => {
         </div>
       </section>
 
-      {/* Eixos */}
+      {/* Eixos da Carreira */}
       <section className="py-24 md:py-32 bg-section-alt">
         <div className="container max-w-3xl">
-          <SectionTitle label="Organização" title="Os Três Eixos do Caderno" />
+          <SectionTitle label="Vocação" title="Os Três Eixos da Carreira" />
           <FadeIn>
             <div className="space-y-0 border-t border-luxury-border">
               {[
-                { num: "I", title: "Capacidades Transversais Emergentes no Estado", desc: "Ciências comportamentais, o sistema SMAE e a gestão documental na rede de ensino — três histórias sobre como construir ferramentas que a Prefeitura não sabia que precisava." },
-                { num: "II", title: "Gestão Pública como Prática Social Histórica", desc: "O Arquivo Histórico, a Assessoria de Planejamento da Saúde e a Residência em Gestão Pública — três reflexões sobre o que significa gerir o público ao longo do tempo." },
-                { num: "III", title: "Problemas Complexos, Políticas e a Atuação dos APPGGs", desc: "Primeira infância, educação ambiental e recuperação de fachadas — três casos em que a solução exigia cruzar fronteiras que o organograma não cruzaria sozinho." },
+                { num: "I", title: "Formulação de Políticas Públicas", desc: "Antes de qualquer obra, decreto ou programa, alguém precisa traduzir um problema difuso em uma política viável. O APPGG é quem senta à mesa com dados, evidências e experiência de campo para desenhar soluções que resistam à troca de gestão — porque políticas públicas sérias não podem depender de quem ocupa a cadeira." },
+                { num: "II", title: "Gestão Estratégica e Governança", desc: "Gerir uma cidade de 12 milhões de pessoas exige mais do que boa vontade. Exige método, visão sistêmica e alguém capaz de conectar secretarias que não se falam, alinhar orçamentos que competem entre si e garantir que a máquina entregue o que prometeu. É esse o trabalho silencioso que mantém a engrenagem girando — e que raramente aparece nos holofotes." },
+                { num: "III", title: "Articulação Transversal e Inovação", desc: "Os problemas mais urgentes da cidade — primeira infância, mudanças climáticas, transformação digital — não cabem dentro de uma única secretaria. O APPGG atua nas fronteiras do organograma, costurando soluções que nenhuma área sozinha conseguiria entregar. É o profissional que cruza silos, provoca desconforto produtivo e faz a inovação acontecer onde ela é mais necessária: dentro do Estado." },
               ].map((eixo) => (
                 <div key={eixo.num} className="py-6 border-b border-luxury-border">
                   <div className="flex items-start gap-4">
