@@ -10,6 +10,7 @@ const navItems = [
   { label: "Publicações", path: "/publicacoes" },
   { label: "Diversidade", path: "/diversidade" },
   { label: "A APOGESP", path: "/apogesp" },
+  { label: "Área do Associado", path: "/area-associado" },
   { label: "Contato", path: "/contato" },
 ];
 
