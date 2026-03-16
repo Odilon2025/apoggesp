@@ -28,6 +28,7 @@ const App = () => (
           <Route path="/publicacoes" element={<PublicacoesPage />} />
           <Route path="/apogesp" element={<ApogespPage />} />
           <Route path="/contato" element={<ContatoPage />} />
+          <Route path="/diversidade" element={<DiversidadePage />} />
           <Route path="/area-associado" element={<AreaAssociadoPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
