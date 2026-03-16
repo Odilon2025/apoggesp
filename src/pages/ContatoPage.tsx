@@ -1,17 +1,10 @@
-import { useState } from "react";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
-import { Mail, Send, ArrowRight } from "lucide-react";
+import { Mail, ArrowRight } from "lucide-react";
 
 const ContatoPage = () => {
-  const [enviado, setEnviado] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setEnviado(true);
-  };
 
   return (
     <PageLayout>
