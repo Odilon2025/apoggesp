@@ -10,6 +10,7 @@ import PublicacoesPage from "./pages/PublicacoesPage";
 import ApogespPage from "./pages/ApogespPage";
 import ContatoPage from "./pages/ContatoPage";
 import AreaAssociadoPage from "./pages/AreaAssociadoPage";
+import DiversidadePage from "./pages/DiversidadePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
