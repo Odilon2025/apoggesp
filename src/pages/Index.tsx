@@ -29,8 +29,8 @@ const publicacoesRecentes = [
 ];
 
 const stats = [
-  { num: "100+", label: "analistas em exercício" },
-  { num: "500+", label: "usuários do SMAE" },
+  { num: "169", label: "analistas em exercício" },
+  { num: "22", label: "órgãos e entidades" },
   { num: "10", label: "anos de carreira" },
 ];
 
