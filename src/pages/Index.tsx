@@ -246,13 +246,13 @@ const Index = () => {
         <div className="container">
           <div className="max-w-xl mx-auto text-center">
             <FadeIn>
-              <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-6">Prefácio</span>
+              <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-6">Mensagem da Presidente</span>
               <h2 className="text-2xl md:text-3xl font-display font-normal text-foreground leading-tight text-balance italic">
-                "A carreira é feita de pessoas e estas conseguem se adaptar ao novo e, ainda mais, são capazes de antecipar e formular o novo."
+                "Fortalecer a carreira de APPGG é fortalecer a capacidade do município de entregar políticas públicas de qualidade para quem mais precisa."
               </h2>
               <div className="luxury-divider mt-6 mb-4" />
               <p className="text-[11px] font-light text-text-caption tracking-wide">
-                Cibele Franzese — Professora da FGV EAESP
+                Maria Camila Florêncio — Presidente da APOGESP
               </p>
               <Link
                 to="/apogesp"
