@@ -44,8 +44,8 @@ const CampanhaNomeacaoPage = () => {
     <PageLayout>
       <PageHero
         label="Nomeação Já"
-        title="41 Analistas Aprovados. Zero Nomeações."
-        subtitle="Um concurso público legítimo, candidatos aprovados dentro das vagas e uma cidade que precisa deles. Falta apenas a caneta."
+        title="144 Classificados. 80 Nomeados. ~60 Ainda Esperam."
+        subtitle="O concurso foi feito, as provas foram vencidas. 80 já servem a cidade — mas cerca de 60 aprovados seguem aguardando a caneta que falta."
       />
 
       {/* Narrativa */}
