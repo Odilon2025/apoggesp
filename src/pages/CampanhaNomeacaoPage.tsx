@@ -8,13 +8,13 @@ import { ArrowRight, Users, Clock, Building2, ShieldCheck } from "lucide-react";
 const porQueNomear = [
   {
     icon: Users,
-    titulo: "41 Profissionais Prontos",
-    desc: "O concurso público foi realizado, os candidatos foram aprovados e classificados dentro do número de vagas. A nomeação não é um favor — é o cumprimento de uma obrigação do Estado.",
+    titulo: "60 Profissionais Prontos",
+    desc: "Dos 144 classificados no concurso, 80 já foram nomeados — 50 em julho de 2024 e 30 em janeiro de 2026. Restam cerca de 60 aprovados aguardando. A nomeação não é um favor — é o cumprimento de uma obrigação do Estado.",
   },
   {
     icon: Building2,
     titulo: "22 Órgãos com Demanda Real",
-    desc: "Os 169 APPGGs em exercício estão distribuídos em 22 órgãos e entidades. A demanda por analistas de gestão não diminuiu — cresceu. Cada secretaria que perde um APPGG sente o impacto imediatamente.",
+    desc: "Os APPGGs em exercício estão distribuídos em 22 órgãos e entidades. A demanda por analistas de gestão não diminuiu — cresceu. Cada secretaria que perde um APPGG sente o impacto imediatamente.",
   },
   {
     icon: Clock,
