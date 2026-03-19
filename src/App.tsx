@@ -11,6 +11,8 @@ import ApogespPage from "./pages/ApogespPage";
 import ContatoPage from "./pages/ContatoPage";
 import AreaAssociadoPage from "./pages/AreaAssociadoPage";
 import DiversidadePage from "./pages/DiversidadePage";
+import CampanhaSalarialPage from "./pages/CampanhaSalarialPage";
+import CampanhaNomeacaoPage from "./pages/CampanhaNomeacaoPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
