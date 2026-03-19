@@ -91,9 +91,9 @@ const CampanhaNomeacaoPage = () => {
           <SectionTitle label="Em Números" title="O Impacto da Nomeação" center />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-luxury-border max-w-3xl mx-auto mt-2">
             {[
-              { num: "41", label: "aprovados aguardando nomeação" },
-              { num: "24%", label: "de ampliação do quadro atual" },
-              { num: "210", label: "analistas após a nomeação" },
+              { num: "~60", label: "aprovados aguardando nomeação" },
+              { num: "144", label: "classificados no concurso" },
+              { num: "80", label: "já nomeados e em exercício" },
             ].map((stat, i) => (
               <FadeIn key={stat.label} delay={i * 0.1}>
                 <div className="bg-card p-10 text-center">
