@@ -57,7 +57,7 @@ const CampanhaNomeacaoPage = () => {
                 Em 2015, a Lei Municipal nº 16.193 criou a carreira de Analista de Políticas Públicas e Gestão Governamental como uma aposta na profissionalização da gestão de São Paulo. Dez anos depois, essa aposta se provou acertada: APPGGs lideram o SMAE, coordenam o Programa de Metas e constroem pontes entre secretarias que nunca conversaram.
               </p>
               <p className="text-base md:text-lg font-light text-text-body leading-relaxed mb-6">
-                Mas a máquina precisa de mais braços. O último concurso aprovou <strong className="text-foreground">41 novos analistas</strong> — profissionais que passaram por um dos processos seletivos mais rigorosos do serviço público municipal. Eles estão prontos. A cidade precisa deles. O que falta é a nomeação.
+                Mas a máquina precisa de mais braços. O último concurso classificou <strong className="text-foreground">144 candidatos</strong>. Desses, 50 foram nomeados em julho de 2024 e mais 30 em janeiro de 2026 — profissionais que já provaram seu valor. Restam cerca de <strong className="text-foreground">60 aprovados</strong> prontos para servir. A cidade precisa deles. O que falta é a nomeação.
               </p>
               <p className="text-base md:text-lg font-light text-text-body leading-relaxed">
                 Não nomear não é apenas uma decisão administrativa. É aceitar que projetos estratégicos operem com equipes subdimensionadas, que o conhecimento institucional se concentre em poucos e que a gestão pública municipal perca competitividade frente ao governo federal e ao setor privado.
