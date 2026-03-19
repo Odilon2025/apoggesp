@@ -8,13 +8,13 @@ import { ArrowRight, Users, Clock, Building2, ShieldCheck } from "lucide-react";
 const porQueNomear = [
   {
     icon: Users,
-    titulo: "41 Profissionais Prontos",
-    desc: "O concurso público foi realizado, os candidatos foram aprovados e classificados dentro do número de vagas. A nomeação não é um favor — é o cumprimento de uma obrigação do Estado.",
+    titulo: "60 Profissionais Prontos",
+    desc: "Dos 144 classificados no concurso, 80 já foram nomeados — 50 em julho de 2024 e 30 em janeiro de 2026. Restam cerca de 60 aprovados aguardando. A nomeação não é um favor — é o cumprimento de uma obrigação do Estado.",
   },
   {
     icon: Building2,
     titulo: "22 Órgãos com Demanda Real",
-    desc: "Os 169 APPGGs em exercício estão distribuídos em 22 órgãos e entidades. A demanda por analistas de gestão não diminuiu — cresceu. Cada secretaria que perde um APPGG sente o impacto imediatamente.",
+    desc: "Os APPGGs em exercício estão distribuídos em 22 órgãos e entidades. A demanda por analistas de gestão não diminuiu — cresceu. Cada secretaria que perde um APPGG sente o impacto imediatamente.",
   },
   {
     icon: Clock,
@@ -32,8 +32,10 @@ const timelineConcurso = [
   { etapa: "Publicação do edital", status: "Concluído" },
   { etapa: "Provas objetivas e discursivas", status: "Concluído" },
   { etapa: "Avaliação de títulos", status: "Concluído" },
-  { etapa: "Homologação do resultado final", status: "Concluído" },
-  { etapa: "Nomeação dos 41 aprovados", status: "Pendente" },
+  { etapa: "Homologação — 144 classificados", status: "Concluído" },
+  { etapa: "1ª nomeação — 50 aprovados (jul/2024)", status: "Concluído" },
+  { etapa: "2ª nomeação — 30 aprovados (jan/2026)", status: "Concluído" },
+  { etapa: "Nomeação dos ~60 restantes", status: "Pendente" },
   { etapa: "Posse e exercício", status: "Pendente" },
 ];
 
@@ -42,8 +44,8 @@ const CampanhaNomeacaoPage = () => {
     <PageLayout>
       <PageHero
         label="Nomeação Já"
-        title="41 Analistas Aprovados. Zero Nomeações."
-        subtitle="Um concurso público legítimo, candidatos aprovados dentro das vagas e uma cidade que precisa deles. Falta apenas a caneta."
+        title="144 Classificados. 80 Nomeados. ~60 Ainda Esperam."
+        subtitle="O concurso foi feito, as provas foram vencidas. 80 já servem a cidade — mas cerca de 60 aprovados seguem aguardando a caneta que falta."
       />
 
       {/* Narrativa */}
@@ -55,7 +57,7 @@ const CampanhaNomeacaoPage = () => {
                 Em 2015, a Lei Municipal nº 16.193 criou a carreira de Analista de Políticas Públicas e Gestão Governamental como uma aposta na profissionalização da gestão de São Paulo. Dez anos depois, essa aposta se provou acertada: APPGGs lideram o SMAE, coordenam o Programa de Metas e constroem pontes entre secretarias que nunca conversaram.
               </p>
               <p className="text-base md:text-lg font-light text-text-body leading-relaxed mb-6">
-                Mas a máquina precisa de mais braços. O último concurso aprovou <strong className="text-foreground">41 novos analistas</strong> — profissionais que passaram por um dos processos seletivos mais rigorosos do serviço público municipal. Eles estão prontos. A cidade precisa deles. O que falta é a nomeação.
+                Mas a máquina precisa de mais braços. O último concurso classificou <strong className="text-foreground">144 candidatos</strong>. Desses, 50 foram nomeados em julho de 2024 e mais 30 em janeiro de 2026 — profissionais que já provaram seu valor. Restam cerca de <strong className="text-foreground">60 aprovados</strong> prontos para servir. A cidade precisa deles. O que falta é a nomeação.
               </p>
               <p className="text-base md:text-lg font-light text-text-body leading-relaxed">
                 Não nomear não é apenas uma decisão administrativa. É aceitar que projetos estratégicos operem com equipes subdimensionadas, que o conhecimento institucional se concentre em poucos e que a gestão pública municipal perca competitividade frente ao governo federal e ao setor privado.
@@ -89,9 +91,9 @@ const CampanhaNomeacaoPage = () => {
           <SectionTitle label="Em Números" title="O Impacto da Nomeação" center />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-luxury-border max-w-3xl mx-auto mt-2">
             {[
-              { num: "41", label: "aprovados aguardando nomeação" },
-              { num: "24%", label: "de ampliação do quadro atual" },
-              { num: "210", label: "analistas após a nomeação" },
+              { num: "~60", label: "aprovados aguardando nomeação" },
+              { num: "144", label: "classificados no concurso" },
+              { num: "80", label: "já nomeados e em exercício" },
             ].map((stat, i) => (
               <FadeIn key={stat.label} delay={i * 0.1}>
                 <div className="bg-card p-10 text-center">

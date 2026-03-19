@@ -138,9 +138,9 @@ const Index = () => {
               <Link to="/campanha-nomeacao" className="block bg-card p-10 md:p-12 h-full group hover:bg-card-hover transition-colors duration-300">
                 <Users size={20} strokeWidth={1.5} className="text-gold mb-5" />
                 <span className="text-[10px] font-medium tracking-luxury uppercase text-destructive block mb-3">Nomeação Já</span>
-                <h3 className="text-xl md:text-2xl font-display font-normal text-foreground mb-3 leading-tight">41 Novos APPGGs</h3>
+                <h3 className="text-xl md:text-2xl font-display font-normal text-foreground mb-3 leading-tight">60 APPGGs Aguardam Nomeação</h3>
                 <p className="text-sm font-light text-text-body leading-relaxed mb-6">
-                  Aprovados no concurso, prontos para servir. A nomeação ampliaria o quadro em 24% e fortaleceria a gestão em toda a Prefeitura.
+                  Dos 144 classificados no concurso, 80 já foram nomeados. Restam cerca de 60 aprovados prontos para servir — e a cidade precisa deles.
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-light text-accent group-hover:text-foreground transition-colors duration-300">
                   Entenda a urgência <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
