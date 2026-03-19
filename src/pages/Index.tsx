@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight, FileText, TrendingUp, Users } from "lucide-react";
 
 const timelineItems = [
   { year: "2015", text: "A Lei Municipal nº 16.193 cria a carreira de APPGG — uma aposta na profissionalização da gestão pública paulistana" },
