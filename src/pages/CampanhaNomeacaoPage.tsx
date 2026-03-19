@@ -32,8 +32,10 @@ const timelineConcurso = [
   { etapa: "Publicação do edital", status: "Concluído" },
   { etapa: "Provas objetivas e discursivas", status: "Concluído" },
   { etapa: "Avaliação de títulos", status: "Concluído" },
-  { etapa: "Homologação do resultado final", status: "Concluído" },
-  { etapa: "Nomeação dos 41 aprovados", status: "Pendente" },
+  { etapa: "Homologação — 144 classificados", status: "Concluído" },
+  { etapa: "1ª nomeação — 50 aprovados (jul/2024)", status: "Concluído" },
+  { etapa: "2ª nomeação — 30 aprovados (jan/2026)", status: "Concluído" },
+  { etapa: "Nomeação dos ~60 restantes", status: "Pendente" },
   { etapa: "Posse e exercício", status: "Pendente" },
 ];
 
