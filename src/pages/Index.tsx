@@ -117,20 +117,37 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Citação editorial */}
+      {/* Campanhas — Impacto curto */}
       <section className="py-20 md:py-24 bg-card">
         <div className="container">
-          <FadeIn>
-            <div className="max-w-3xl mx-auto text-center">
-              <blockquote className="text-lg md:text-xl font-display font-normal text-foreground leading-relaxed italic">
-                "Em uma cidade de 12 milhões de habitantes, a gestão pública é, inevitavelmente, uma obra em rede. Os APPGGs se somam como agentes que ajudam a integrar políticas, territórios e pessoas."
-              </blockquote>
-              <div className="luxury-divider mt-6 mb-4" />
-              <cite className="text-[11px] font-light text-text-caption not-italic tracking-wide">
-                APOGESP
-              </cite>
-            </div>
-          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border">
+            <FadeIn>
+              <Link to="/campanha-salarial" className="block bg-card p-10 md:p-12 h-full group hover:bg-card-hover transition-colors duration-300">
+                <TrendingUp size={20} strokeWidth={1.5} className="text-gold mb-5" />
+                <span className="text-[10px] font-medium tracking-luxury uppercase text-destructive block mb-3">Campanha 2026</span>
+                <h3 className="text-xl md:text-2xl font-display font-normal text-foreground mb-3 leading-tight">Campanha Salarial</h3>
+                <p className="text-sm font-light text-text-body leading-relaxed mb-6">
+                  O APPGG inicia com R$ 13.208. O EPPGG federal começa com R$ 20.000 em 2026. Mesma missão, 34% de defasagem. É hora de corrigir.
+                </p>
+                <span className="inline-flex items-center gap-2 text-sm font-light text-accent group-hover:text-foreground transition-colors duration-300">
+                  Conheça os números <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <Link to="/campanha-nomeacao" className="block bg-card p-10 md:p-12 h-full group hover:bg-card-hover transition-colors duration-300">
+                <Users size={20} strokeWidth={1.5} className="text-gold mb-5" />
+                <span className="text-[10px] font-medium tracking-luxury uppercase text-destructive block mb-3">Nomeação Já</span>
+                <h3 className="text-xl md:text-2xl font-display font-normal text-foreground mb-3 leading-tight">41 Novos APPGGs</h3>
+                <p className="text-sm font-light text-text-body leading-relaxed mb-6">
+                  Aprovados no concurso, prontos para servir. A nomeação ampliaria o quadro em 24% e fortaleceria a gestão em toda a Prefeitura.
+                </p>
+                <span className="inline-flex items-center gap-2 text-sm font-light text-accent group-hover:text-foreground transition-colors duration-300">
+                  Entenda a urgência <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </Link>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
