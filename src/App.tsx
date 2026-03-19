@@ -11,6 +11,8 @@ import ApogespPage from "./pages/ApogespPage";
 import ContatoPage from "./pages/ContatoPage";
 import AreaAssociadoPage from "./pages/AreaAssociadoPage";
 import DiversidadePage from "./pages/DiversidadePage";
+import CampanhaSalarialPage from "./pages/CampanhaSalarialPage";
+import CampanhaNomeacaoPage from "./pages/CampanhaNomeacaoPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +32,8 @@ const App = () => (
           <Route path="/contato" element={<ContatoPage />} />
           <Route path="/diversidade" element={<DiversidadePage />} />
           <Route path="/area-associado" element={<AreaAssociadoPage />} />
+          <Route path="/campanha-salarial" element={<CampanhaSalarialPage />} />
+          <Route path="/campanha-nomeacao" element={<CampanhaNomeacaoPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
