@@ -209,31 +209,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Publicações */}
-      <section className="py-24 md:py-32 bg-section-alt">
-        <div className="container">
-          <SectionTitle label="Biblioteca" title="Publicações Recentes" />
-          <div className="mt-4 space-y-0 border-t border-luxury-border">
-            {publicacoesRecentes.map((pub, i) => (
-              <FadeIn key={pub.titulo} delay={i * 0.08}>
-                <Link
-                  to="/publicacoes"
-                  className="flex items-center justify-between py-6 border-b border-luxury-border group"
-                >
-                  <div className="flex items-start gap-4">
-                    <FileText size={16} strokeWidth={1.5} className="text-gold mt-0.5 shrink-0" />
-                    <div>
-                      <p className="text-sm font-light text-foreground group-hover:text-gold transition-colors duration-300">{pub.titulo}</p>
-                      <p className="text-[11px] font-light text-text-caption mt-1">{pub.tipo} · {pub.ano}</p>
-                    </div>
-                  </div>
-                  <ArrowRight size={14} strokeWidth={1.5} className="text-luxury-border group-hover:text-gold transition-all duration-300 group-hover:translate-x-1 shrink-0" />
-                </Link>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Timeline */}
       <section className="py-24 md:py-32 bg-card">
