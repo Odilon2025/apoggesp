@@ -3,7 +3,7 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
-import { ArrowRight, TrendingDown, Scale, AlertTriangle } from "lucide-react";
+import { ArrowRight, TrendingDown, Scale, AlertTriangle, Users } from "lucide-react";
 
 const tabelaAPPGG = [
   { ref: "APPGG1", valor: "13.208,14" },
@@ -24,43 +24,61 @@ const tabelaAPPGG = [
 ];
 
 const tabelaEPPGG = [
-  { classe: "A-I", v2025: "18.033,52", v2026: "20.000,00" },
-  { classe: "A-II", v2025: "18.543,82", v2026: "20.565,95" },
-  { classe: "A-III", v2025: "19.068,57", v2026: "21.147,92" },
-  { classe: "A-IV", v2025: "19.608,16", v2026: "21.746,35" },
-  { classe: "A-V", v2025: "20.163,02", v2026: "22.361,72" },
-  { classe: "B-I", v2025: "21.320,30", v2026: "23.645,19" },
-  { classe: "B-II", v2025: "21.923,61", v2026: "24.314,29" },
-  { classe: "B-III", v2025: "22.543,99", v2026: "25.002,32" },
-  { classe: "B-IV", v2025: "23.181,93", v2026: "25.709,82" },
-  { classe: "B-V", v2025: "23.837,92", v2026: "26.437,35" },
-  { classe: "C-I", v2025: "25.029,82", v2026: "27.759,21" },
-  { classe: "C-II", v2025: "25.738,10", v2026: "28.544,73" },
-  { classe: "C-III", v2025: "26.466,42", v2026: "29.352,48" },
-  { classe: "C-IV", v2025: "27.215,36", v2026: "30.183,08" },
-  { classe: "C-V", v2025: "27.985,48", v2026: "31.037,19" },
-  { classe: "S-I", v2025: "29.591,73", v2026: "32.818,59" },
-  { classe: "S-II", v2025: "30.429,11", v2026: "33.747,27" },
-  { classe: "S-III", v2025: "31.290,17", v2026: "34.702,24" },
-  { classe: "S-IV", v2025: "32.175,61", v2026: "35.684,22" },
-  { classe: "S-V", v2025: "33.086,10", v2026: "36.694,00" },
+  { classe: "A-I", v2026: "20.000,00" },
+  { classe: "A-II", v2026: "20.565,95" },
+  { classe: "A-III", v2026: "21.147,92" },
+  { classe: "A-IV", v2026: "21.746,35" },
+  { classe: "A-V", v2026: "22.361,72" },
+  { classe: "B-I", v2026: "23.645,19" },
+  { classe: "B-II", v2026: "24.314,29" },
+  { classe: "B-III", v2026: "25.002,32" },
+  { classe: "B-IV", v2026: "25.709,82" },
+  { classe: "B-V", v2026: "26.437,35" },
+  { classe: "C-I", v2026: "27.759,21" },
+  { classe: "C-II", v2026: "28.544,73" },
+  { classe: "C-III", v2026: "29.352,48" },
+  { classe: "C-IV", v2026: "30.183,08" },
+  { classe: "C-V", v2026: "31.037,19" },
+  { classe: "S-I", v2026: "32.818,59" },
+  { classe: "S-II", v2026: "33.747,27" },
+  { classe: "S-III", v2026: "34.702,24" },
+  { classe: "S-IV", v2026: "35.684,22" },
+  { classe: "S-V", v2026: "36.694,00" },
+];
+
+const tabelaNiteroi = [
+  { nivel: "Inicial", vencimento: "12.153,98", maximo: "18.230,97" },
+  { nivel: "I", vencimento: "12.918,58", maximo: "19.377,87" },
+  { nivel: "III", vencimento: "13.683,16", maximo: "20.524,74" },
+  { nivel: "IV", vencimento: "14.447,76", maximo: "21.671,64" },
+  { nivel: "V", vencimento: "15.212,37", maximo: "22.818,56" },
+  { nivel: "B-I", vencimento: "15.976,95", maximo: "23.965,43" },
+  { nivel: "B-II", vencimento: "16.741,55", maximo: "25.112,33" },
+  { nivel: "B-III", vencimento: "17.506,15", maximo: "26.259,23" },
+  { nivel: "C-I", vencimento: "18.314,94", maximo: "27.472,41" },
+  { nivel: "C-II", vencimento: "19.035,34", maximo: "28.553,01" },
 ];
 
 const argumentos = [
   {
     icon: TrendingDown,
-    titulo: "Defasagem Crescente",
-    desc: "O APPGG inicia a carreira com R$ 13.208 — 34% abaixo do piso inicial do EPPGG federal (R$ 20.000 em 2026). No topo, a diferença chega a R$ 13.143, uma distância de 56%.",
+    titulo: "Defasagem Frente ao Governo Federal",
+    desc: "O APPGG paulistano inicia a carreira com R$ 13.208 — 34% abaixo do piso do EPPGG federal em 2026 (R$ 20.000). No topo, a diferença chega a R$ 13.143, uma distância de 56%.",
+  },
+  {
+    icon: Users,
+    titulo: "Defasagem Dentro do Próprio Quadro",
+    desc: "Em Niterói, o AMCI — cargo do mesmo Quadro de Políticas Públicas e Gestão Governamental — pode alcançar R$ 28.553 no topo com gratificação. O APPGG de São Paulo, maior cidade do país, fica R$ 5.000 abaixo.",
   },
   {
     icon: Scale,
     titulo: "Mesma Missão, Remuneração Desigual",
-    desc: "APPGGs e EPPGGs exercem funções análogas: formulação, implementação e avaliação de políticas públicas. A diferença não está na complexidade do trabalho, mas no ente federativo que remunera.",
+    desc: "APPGGs, EPPGGs e AMCIs exercem funções análogas: formulação, implementação e avaliação de políticas públicas. A diferença não está na complexidade do trabalho, mas no ente que remunera.",
   },
   {
     icon: AlertTriangle,
     titulo: "Risco de Evasão",
-    desc: "Sem recomposição, a carreira perde competitividade frente ao governo federal e ao setor privado. Cada analista que sai leva consigo anos de conhecimento institucional irrecuperável.",
+    desc: "Sem recomposição, a carreira perde competitividade frente ao governo federal, a outros municípios e ao setor privado. Cada analista que sai leva consigo anos de conhecimento institucional irrecuperável.",
   },
 ];
 
@@ -70,7 +88,7 @@ const CampanhaSalarialPage = () => {
       <PageHero
         label="Campanha 2026"
         title="Remuneração Justa para Quem Constrói a Cidade"
-        subtitle="Uma carreira estratégica não sobrevive com remuneração defasada. Conheça os números e entenda por que a recomposição salarial dos APPGGs é urgente."
+        subtitle="Uma carreira estratégica não sobrevive com remuneração defasada. Conheça os números, compare com o governo federal e com outros municípios — e entenda por que a recomposição salarial dos APPGGs é urgente."
       />
 
       {/* Contexto narrativo */}
@@ -81,7 +99,7 @@ const CampanhaSalarialPage = () => {
               <SectionTitle
                 label="O Problema"
                 title="Uma Década Sem Equiparação"
-                subtitle="Em 2015, a carreira de APPGG foi criada como espelho municipal do EPPGG federal. Dez anos depois, a remuneração das duas carreiras conta histórias muito diferentes."
+                subtitle="Em 2015, a carreira de APPGG foi criada como espelho municipal do EPPGG federal. Dez anos depois, a remuneração não acompanhou — nem o governo federal, nem municípios como Niterói."
               />
             </div>
             <div className="lg:col-span-7">
@@ -124,7 +142,7 @@ const CampanhaSalarialPage = () => {
                 </thead>
                 <tbody>
                   {tabelaAPPGG.map((row, i) => (
-                    <tr key={row.ref} className={`border-b border-luxury-border ${i === 0 ? "bg-gold/5" : ""} ${i === tabelaAPPGG.length - 1 ? "bg-gold/5" : ""}`}>
+                    <tr key={row.ref} className={`border-b border-luxury-border ${i === 0 || i === tabelaAPPGG.length - 1 ? "bg-gold/5" : ""}`}>
                       <td className="py-3 text-sm font-light text-foreground">{row.ref}</td>
                       <td className="py-3 text-sm font-light text-text-body text-right">{row.valor}</td>
                     </tr>
@@ -136,30 +154,28 @@ const CampanhaSalarialPage = () => {
         </div>
       </section>
 
-      {/* Tabela EPPGG */}
+      {/* Tabela EPPGG - apenas 2026 */}
       <section className="py-24 md:py-32 bg-card">
         <div className="container">
           <SectionTitle
             label="Tabela Federal"
-            title="Remuneração do EPPGG — Governo Federal"
-            subtitle="Valores definidos pela Medida Provisória nº 1.286, de 31 de dezembro de 2024."
+            title="Remuneração do EPPGG — Governo Federal (2026)"
+            subtitle="Valores a partir de abril de 2026, conforme Medida Provisória nº 1.286/2024."
           />
           <FadeIn>
             <div className="overflow-x-auto mt-2">
-              <table className="w-full max-w-3xl">
+              <table className="w-full max-w-2xl">
                 <thead>
                   <tr className="border-b border-luxury-border">
                     <th className="text-left text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3">Classe/Padrão</th>
-                    <th className="text-right text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3">2025 (R$)</th>
-                    <th className="text-right text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3">2026 (R$)</th>
+                    <th className="text-right text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3">Subsídio 2026 (R$)</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {tabelaEPPGG.map((row, i) => (
+                  {tabelaEPPGG.map((row) => (
                     <tr key={row.classe} className={`border-b border-luxury-border ${row.classe.startsWith("S") ? "bg-gold/5" : ""}`}>
                       <td className="py-3 text-sm font-light text-foreground">{row.classe}</td>
-                      <td className="py-3 text-sm font-light text-text-body text-right">{row.v2025}</td>
-                      <td className="py-3 text-sm font-light text-foreground text-right font-normal">{row.v2026}</td>
+                      <td className="py-3 text-sm font-light text-foreground text-right">{row.v2026}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -169,55 +185,109 @@ const CampanhaSalarialPage = () => {
         </div>
       </section>
 
-      {/* Comparativo direto */}
+      {/* Tabela Niterói AMCI/APPGG */}
       <section className="py-24 md:py-32 bg-section-alt">
         <div className="container">
           <SectionTitle
+            label="Niterói — AMCI / APPGG"
+            title="Quadro de Políticas Públicas e Gestão Governamental"
+            subtitle="Subsídio + gratificação de desempenho de até 50%. Os valores máximos mostram o teto alcançável na carreira-irmã do APPGG paulistano."
+          />
+          <FadeIn>
+            <div className="overflow-x-auto mt-2">
+              <table className="w-full max-w-3xl">
+                <thead>
+                  <tr className="border-b border-luxury-border">
+                    <th className="text-left text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3">Nível</th>
+                    <th className="text-right text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3">Vencimento Base (R$)</th>
+                    <th className="text-right text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3">Base + 50% (R$)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {tabelaNiteroi.map((row, i) => (
+                    <tr key={row.nivel} className={`border-b border-luxury-border ${i === tabelaNiteroi.length - 1 ? "bg-gold/5" : ""}`}>
+                      <td className="py-3 text-sm font-light text-foreground">{row.nivel}</td>
+                      <td className="py-3 text-sm font-light text-text-body text-right">{row.vencimento}</td>
+                      <td className="py-3 text-sm font-light text-foreground text-right font-normal">{row.maximo}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <p className="text-xs font-light text-text-caption mt-6 max-w-3xl">
+              Fonte: Diário Oficial de Niterói, 28/11/2025. A gratificação de desempenho varia de 25% a 50% sobre o vencimento básico.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Comparativo direto — agora com 3 colunas */}
+      <section className="py-24 md:py-32 bg-card">
+        <div className="container">
+          <SectionTitle
             label="Comparativo"
-            title="O Mesmo Trabalho, Duas Realidades"
+            title="O Mesmo Trabalho, Três Realidades"
             center
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border max-w-3xl mx-auto mt-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-luxury-border max-w-4xl mx-auto mt-2">
             <FadeIn>
-              <div className="bg-card p-10 text-center">
-                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">APPGG · Início</span>
+              <div className="bg-section-alt p-10 text-center h-full">
+                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">APPGG · SP — Início</span>
                 <span className="text-3xl md:text-4xl font-display text-foreground">R$ 13.208</span>
                 <span className="block text-xs font-light text-text-caption mt-2">Municipal — São Paulo</span>
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <div className="bg-card p-10 text-center">
-                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">EPPGG · Início (2026)</span>
-                <span className="text-3xl md:text-4xl font-display text-gold">R$ 20.000</span>
-                <span className="block text-xs font-light text-text-caption mt-2">Federal — Governo da União</span>
+              <div className="bg-section-alt p-10 text-center h-full">
+                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">AMCI · Niterói — Início</span>
+                <span className="text-3xl md:text-4xl font-display text-gold-muted">R$ 18.231</span>
+                <span className="block text-xs font-light text-text-caption mt-2">Municipal — Niterói (c/ 50%)</span>
               </div>
             </FadeIn>
-            <FadeIn delay={0.15}>
-              <div className="bg-card p-10 text-center">
-                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">APPGG · Topo</span>
+            <FadeIn delay={0.2}>
+              <div className="bg-section-alt p-10 text-center h-full">
+                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">EPPGG · Federal — Início</span>
+                <span className="text-3xl md:text-4xl font-display text-gold">R$ 20.000</span>
+                <span className="block text-xs font-light text-text-caption mt-2">Federal — 2026</span>
+              </div>
+            </FadeIn>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-luxury-border max-w-4xl mx-auto">
+            <FadeIn delay={0.25}>
+              <div className="bg-section-alt p-10 text-center h-full">
+                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">APPGG · SP — Topo</span>
                 <span className="text-3xl md:text-4xl font-display text-foreground">R$ 23.551</span>
                 <span className="block text-xs font-light text-text-caption mt-2">Municipal — São Paulo</span>
               </div>
             </FadeIn>
-            <FadeIn delay={0.2}>
-              <div className="bg-card p-10 text-center">
-                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">EPPGG · Topo (2026)</span>
+            <FadeIn delay={0.3}>
+              <div className="bg-section-alt p-10 text-center h-full">
+                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">AMCI · Niterói — Topo</span>
+                <span className="text-3xl md:text-4xl font-display text-gold-muted">R$ 28.553</span>
+                <span className="block text-xs font-light text-text-caption mt-2">Municipal — Niterói (c/ 50%)</span>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.35}>
+              <div className="bg-section-alt p-10 text-center h-full">
+                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">EPPGG · Federal — Topo</span>
                 <span className="text-3xl md:text-4xl font-display text-gold">R$ 36.694</span>
-                <span className="block text-xs font-light text-text-caption mt-2">Federal — Governo da União</span>
+                <span className="block text-xs font-light text-text-caption mt-2">Federal — 2026</span>
               </div>
             </FadeIn>
           </div>
-          <FadeIn delay={0.25}>
-            <p className="text-center text-sm font-light text-text-body mt-10 max-w-xl mx-auto leading-relaxed">
-              A defasagem no início da carreira é de <strong className="text-foreground">34%</strong>. No topo, chega a <strong className="text-foreground">56%</strong>. 
-              São profissionais com a mesma formação, as mesmas competências e a mesma missão — mas com reconhecimento radicalmente diferente.
+          <FadeIn delay={0.4}>
+            <p className="text-center text-sm font-light text-text-body mt-10 max-w-2xl mx-auto leading-relaxed">
+              O APPGG de São Paulo — maior metrópole da América Latina — recebe <strong className="text-foreground">27% menos</strong> que o cargo equivalente em Niterói e <strong className="text-foreground">34% menos</strong> que o EPPGG federal no início da carreira. 
+              No topo, a defasagem frente ao governo federal chega a <strong className="text-foreground">56%</strong>.
             </p>
           </FadeIn>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32 bg-card">
+      <section className="py-24 md:py-32 bg-section-alt">
         <div className="container">
           <div className="max-w-xl mx-auto text-center">
             <FadeIn>
