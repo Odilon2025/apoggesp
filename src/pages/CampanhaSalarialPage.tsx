@@ -5,58 +5,27 @@ import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
 import { ArrowRight, TrendingDown, Scale, AlertTriangle, Users } from "lucide-react";
 
-const tabelaAPPGG = [
-  { ref: "APPGG1", valor: "13.208,14" },
-  { ref: "APPGG2", valor: "14.528,96" },
-  { ref: "APPGG3", valor: "14.892,18" },
-  { ref: "APPGG4", valor: "15.264,48" },
-  { ref: "APPGG5", valor: "15.646,09" },
-  { ref: "APPGG6", valor: "16.037,24" },
-  { ref: "APPGG7", valor: "17.961,73" },
-  { ref: "APPGG8", valor: "18.410,77" },
-  { ref: "APPGG9", valor: "18.871,04" },
-  { ref: "APPGG10", valor: "19.342,80" },
-  { ref: "APPGG11", valor: "19.826,39" },
-  { ref: "APPGG12", valor: "21.869,74" },
-  { ref: "APPGG13", valor: "22.416,47" },
-  { ref: "APPGG14", valor: "22.976,89" },
-  { ref: "APPGG15", valor: "23.551,31" },
-];
-
-const tabelaEPPGG = [
-  { classe: "A-I", v2026: "20.000,00" },
-  { classe: "A-II", v2026: "20.565,95" },
-  { classe: "A-III", v2026: "21.147,92" },
-  { classe: "A-IV", v2026: "21.746,35" },
-  { classe: "A-V", v2026: "22.361,72" },
-  { classe: "B-I", v2026: "23.645,19" },
-  { classe: "B-II", v2026: "24.314,29" },
-  { classe: "B-III", v2026: "25.002,32" },
-  { classe: "B-IV", v2026: "25.709,82" },
-  { classe: "B-V", v2026: "26.437,35" },
-  { classe: "C-I", v2026: "27.759,21" },
-  { classe: "C-II", v2026: "28.544,73" },
-  { classe: "C-III", v2026: "29.352,48" },
-  { classe: "C-IV", v2026: "30.183,08" },
-  { classe: "C-V", v2026: "31.037,19" },
-  { classe: "S-I", v2026: "32.818,59" },
-  { classe: "S-II", v2026: "33.747,27" },
-  { classe: "S-III", v2026: "34.702,24" },
-  { classe: "S-IV", v2026: "35.684,22" },
-  { classe: "S-V", v2026: "36.694,00" },
-];
-
-const tabelaNiteroi = [
-  { nivel: "Inicial", vencimento: "12.153,98", maximo: "18.230,97" },
-  { nivel: "I", vencimento: "12.918,58", maximo: "19.377,87" },
-  { nivel: "III", vencimento: "13.683,16", maximo: "20.524,74" },
-  { nivel: "IV", vencimento: "14.447,76", maximo: "21.671,64" },
-  { nivel: "V", vencimento: "15.212,37", maximo: "22.818,56" },
-  { nivel: "B-I", vencimento: "15.976,95", maximo: "23.965,43" },
-  { nivel: "B-II", vencimento: "16.741,55", maximo: "25.112,33" },
-  { nivel: "B-III", vencimento: "17.506,15", maximo: "26.259,23" },
-  { nivel: "C-I", vencimento: "18.314,94", maximo: "27.472,41" },
-  { nivel: "C-II", vencimento: "19.035,34", maximo: "28.553,01" },
+const tabelaComparativa = [
+  { ref: "1", appgg: "13.208,14", eppgg: "20.000,00", niteroi: "18.230,97" },
+  { ref: "2", appgg: "14.528,96", eppgg: "20.565,95", niteroi: "19.377,87" },
+  { ref: "3", appgg: "14.892,18", eppgg: "21.147,92", niteroi: "20.524,74" },
+  { ref: "4", appgg: "15.264,48", eppgg: "21.746,35", niteroi: "21.671,64" },
+  { ref: "5", appgg: "15.646,09", eppgg: "22.361,72", niteroi: "22.818,56" },
+  { ref: "6", appgg: "16.037,24", eppgg: "23.645,19", niteroi: "23.965,43" },
+  { ref: "7", appgg: "17.961,73", eppgg: "24.314,29", niteroi: "25.112,33" },
+  { ref: "8", appgg: "18.410,77", eppgg: "25.002,32", niteroi: "26.259,23" },
+  { ref: "9", appgg: "18.871,04", eppgg: "25.709,82", niteroi: "27.472,41" },
+  { ref: "10", appgg: "19.342,80", eppgg: "26.437,35", niteroi: "28.553,01" },
+  { ref: "11", appgg: "19.826,39", eppgg: "27.759,21", niteroi: "—" },
+  { ref: "12", appgg: "21.869,74", eppgg: "28.544,73", niteroi: "—" },
+  { ref: "13", appgg: "22.416,47", eppgg: "29.352,48", niteroi: "—" },
+  { ref: "14", appgg: "22.976,89", eppgg: "30.183,08", niteroi: "—" },
+  { ref: "15", appgg: "23.551,31", eppgg: "31.037,19", niteroi: "—" },
+  { ref: "16", appgg: "—", eppgg: "32.818,59", niteroi: "—" },
+  { ref: "17", appgg: "—", eppgg: "33.747,27", niteroi: "—" },
+  { ref: "18", appgg: "—", eppgg: "34.702,24", niteroi: "—" },
+  { ref: "19", appgg: "—", eppgg: "35.684,22", niteroi: "—" },
+  { ref: "20", appgg: "—", eppgg: "36.694,00", niteroi: "—" },
 ];
 
 const argumentos = [
@@ -123,161 +92,50 @@ const CampanhaSalarialPage = () => {
         </div>
       </section>
 
-      {/* Tabela APPGG */}
+      {/* Tabela Comparativa Única */}
       <section className="py-24 md:py-32 bg-section-alt">
         <div className="container">
           <SectionTitle
-            label="Tabela Municipal"
-            title="Remuneração do APPGG — São Paulo"
-            subtitle="Valores vigentes conforme Lei nº 18.235/2025. Jornada de 40 horas semanais."
+            label="Comparativo"
+            title="O Mesmo Trabalho, Três Realidades"
+            subtitle="Remuneração por nível de progressão na carreira. APPGG (São Paulo), EPPGG (Federal, 2026) e APPGG (Niterói, com gratificação de 50%)."
           />
           <FadeIn>
             <div className="overflow-x-auto mt-2">
-              <table className="w-full max-w-2xl">
+              <table className="w-full">
                 <thead>
                   <tr className="border-b border-luxury-border">
-                    <th className="text-left text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3">Referência</th>
-                    <th className="text-right text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3">Remuneração (R$)</th>
+                    <th className="text-left text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3 pr-4">Nível</th>
+                    <th className="text-right text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3 px-4">APPGG · SP (R$)</th>
+                    <th className="text-right text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3 px-4">EPPGG · Federal (R$)</th>
+                    <th className="text-right text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3 pl-4">APPGG · Niterói (R$)</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {tabelaAPPGG.map((row, i) => (
-                    <tr key={row.ref} className={`border-b border-luxury-border ${i === 0 || i === tabelaAPPGG.length - 1 ? "bg-gold/5" : ""}`}>
-                      <td className="py-3 text-sm font-light text-foreground">{row.ref}</td>
-                      <td className="py-3 text-sm font-light text-text-body text-right">{row.valor}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Tabela EPPGG - apenas 2026 */}
-      <section className="py-24 md:py-32 bg-card">
-        <div className="container">
-          <SectionTitle
-            label="Tabela Federal"
-            title="Remuneração do EPPGG — Governo Federal (2026)"
-            subtitle="Valores a partir de abril de 2026, conforme Medida Provisória nº 1.286/2024."
-          />
-          <FadeIn>
-            <div className="overflow-x-auto mt-2">
-              <table className="w-full max-w-2xl">
-                <thead>
-                  <tr className="border-b border-luxury-border">
-                    <th className="text-left text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3">Classe/Padrão</th>
-                    <th className="text-right text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3">Subsídio 2026 (R$)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {tabelaEPPGG.map((row) => (
-                    <tr key={row.classe} className={`border-b border-luxury-border ${row.classe.startsWith("S") ? "bg-gold/5" : ""}`}>
-                      <td className="py-3 text-sm font-light text-foreground">{row.classe}</td>
-                      <td className="py-3 text-sm font-light text-foreground text-right">{row.v2026}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Tabela Niterói AMCI/APPGG */}
-      <section className="py-24 md:py-32 bg-section-alt">
-        <div className="container">
-          <SectionTitle
-            label="Niterói — AMCI / APPGG"
-            title="Quadro de Políticas Públicas e Gestão Governamental"
-            subtitle="Subsídio + gratificação de desempenho de até 50%. Os valores máximos mostram o teto alcançável na carreira-irmã do APPGG paulistano."
-          />
-          <FadeIn>
-            <div className="overflow-x-auto mt-2">
-              <table className="w-full max-w-3xl">
-                <thead>
-                  <tr className="border-b border-luxury-border">
-                    <th className="text-left text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3">Nível</th>
-                    <th className="text-right text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3">Vencimento Base (R$)</th>
-                    <th className="text-right text-[10px] font-medium tracking-luxury uppercase text-text-caption py-3">Base + 50% (R$)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {tabelaNiteroi.map((row, i) => (
-                    <tr key={row.nivel} className={`border-b border-luxury-border ${i === tabelaNiteroi.length - 1 ? "bg-gold/5" : ""}`}>
-                      <td className="py-3 text-sm font-light text-foreground">{row.nivel}</td>
-                      <td className="py-3 text-sm font-light text-text-body text-right">{row.vencimento}</td>
-                      <td className="py-3 text-sm font-light text-foreground text-right font-normal">{row.maximo}</td>
-                    </tr>
-                  ))}
+                  {tabelaComparativa.map((row, i) => {
+                    const isFirst = i === 0;
+                    const isLastAppgg = i === 14;
+                    const isLastEppgg = i === 19;
+                    const highlight = isFirst || isLastAppgg || isLastEppgg;
+                    return (
+                      <tr key={row.ref} className={`border-b border-luxury-border ${highlight ? "bg-gold/5" : ""}`}>
+                        <td className="py-3 text-sm font-light text-text-caption pr-4">{row.ref}</td>
+                        <td className={`py-3 text-sm text-right px-4 ${row.appgg === "—" ? "text-text-caption" : "font-light text-foreground"}`}>{row.appgg}</td>
+                        <td className={`py-3 text-sm text-right px-4 ${row.eppgg === "—" ? "text-text-caption" : "font-light text-gold"}`}>{row.eppgg}</td>
+                        <td className={`py-3 text-sm text-right pl-4 ${row.niteroi === "—" ? "text-text-caption" : "font-light text-gold-muted"}`}>{row.niteroi}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-xs font-light text-text-caption mt-6 max-w-3xl">
-              Fonte: Diário Oficial de Niterói, 28/11/2025. A gratificação de desempenho varia de 25% a 50% sobre o vencimento básico.
+              Fontes: Lei nº 18.235/2025 (APPGG SP); MP nº 1.286/2024 (EPPGG Federal); Diário Oficial de Niterói, 28/11/2025 (APPGG Niterói, com gratificação de desempenho de 50%).
             </p>
           </FadeIn>
-        </div>
-      </section>
-
-      {/* Comparativo direto — agora com 3 colunas */}
-      <section className="py-24 md:py-32 bg-card">
-        <div className="container">
-          <SectionTitle
-            label="Comparativo"
-            title="O Mesmo Trabalho, Três Realidades"
-            center
-          />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-luxury-border max-w-4xl mx-auto mt-2">
-            <FadeIn>
-              <div className="bg-section-alt p-10 text-center h-full">
-                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">APPGG · SP — Início</span>
-                <span className="text-3xl md:text-4xl font-display text-foreground">R$ 13.208</span>
-                <span className="block text-xs font-light text-text-caption mt-2">Municipal — São Paulo</span>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.1}>
-              <div className="bg-section-alt p-10 text-center h-full">
-                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">AMCI · Niterói — Início</span>
-                <span className="text-3xl md:text-4xl font-display text-gold-muted">R$ 18.231</span>
-                <span className="block text-xs font-light text-text-caption mt-2">Municipal — Niterói (c/ 50%)</span>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.2}>
-              <div className="bg-section-alt p-10 text-center h-full">
-                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">EPPGG · Federal — Início</span>
-                <span className="text-3xl md:text-4xl font-display text-gold">R$ 20.000</span>
-                <span className="block text-xs font-light text-text-caption mt-2">Federal — 2026</span>
-              </div>
-            </FadeIn>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-luxury-border max-w-4xl mx-auto">
-            <FadeIn delay={0.25}>
-              <div className="bg-section-alt p-10 text-center h-full">
-                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">APPGG · SP — Topo</span>
-                <span className="text-3xl md:text-4xl font-display text-foreground">R$ 23.551</span>
-                <span className="block text-xs font-light text-text-caption mt-2">Municipal — São Paulo</span>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.3}>
-              <div className="bg-section-alt p-10 text-center h-full">
-                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">AMCI · Niterói — Topo</span>
-                <span className="text-3xl md:text-4xl font-display text-gold-muted">R$ 28.553</span>
-                <span className="block text-xs font-light text-text-caption mt-2">Municipal — Niterói (c/ 50%)</span>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.35}>
-              <div className="bg-section-alt p-10 text-center h-full">
-                <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-4">EPPGG · Federal — Topo</span>
-                <span className="text-3xl md:text-4xl font-display text-gold">R$ 36.694</span>
-                <span className="block text-xs font-light text-text-caption mt-2">Federal — 2026</span>
-              </div>
-            </FadeIn>
-          </div>
-          <FadeIn delay={0.4}>
+          <FadeIn delay={0.2}>
             <p className="text-center text-sm font-light text-text-body mt-10 max-w-2xl mx-auto leading-relaxed">
               O APPGG de São Paulo — maior metrópole da América Latina — recebe <strong className="text-foreground">27% menos</strong> que o cargo equivalente em Niterói e <strong className="text-foreground">34% menos</strong> que o EPPGG federal no início da carreira. 
               No topo, a defasagem frente ao governo federal chega a <strong className="text-foreground">56%</strong>.
