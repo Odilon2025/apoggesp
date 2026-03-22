@@ -136,7 +136,7 @@ const CampanhaSalarialPage = () => {
             </p>
           </FadeIn>
           </div>
-          <FadeIn delay={0.4}>
+          <FadeIn delay={0.2}>
             <p className="text-center text-sm font-light text-text-body mt-10 max-w-2xl mx-auto leading-relaxed">
               O APPGG de São Paulo — maior metrópole da América Latina — recebe <strong className="text-foreground">27% menos</strong> que o cargo equivalente em Niterói e <strong className="text-foreground">34% menos</strong> que o EPPGG federal no início da carreira. 
               No topo, a defasagem frente ao governo federal chega a <strong className="text-foreground">56%</strong>.
