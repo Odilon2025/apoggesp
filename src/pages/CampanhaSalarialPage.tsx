@@ -36,8 +36,8 @@ const argumentos = [
   },
   {
     icon: Users,
-    titulo: "Defasagem Dentro do Próprio Quadro",
-    desc: "Em Niterói, o AMCI — cargo do mesmo Quadro de Políticas Públicas e Gestão Governamental — pode alcançar R$ 28.553 no topo com gratificação. O APPGG de São Paulo, maior cidade do país, fica R$ 5.000 abaixo.",
+    titulo: "Defasagem Entre Municípios",
+    desc: "Em Niterói, o APPGG — cargo equivalente — pode alcançar R$ 28.553 no topo com gratificação. O APPGG de São Paulo, maior cidade do país, fica R$ 5.000 abaixo.",
   },
   {
     icon: Scale,
