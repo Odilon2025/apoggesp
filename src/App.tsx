@@ -13,6 +13,7 @@ import AreaAssociadoPage from "./pages/AreaAssociadoPage";
 import DiversidadePage from "./pages/DiversidadePage";
 import CampanhaSalarialPage from "./pages/CampanhaSalarialPage";
 import CampanhaNomeacaoPage from "./pages/CampanhaNomeacaoPage";
+import PlanosAtuacaoPage from "./pages/PlanosAtuacaoPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
