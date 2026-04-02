@@ -523,6 +523,24 @@ const AtuacaoPage = () => {
           </FadeIn>
         </div>
       </section>
+
+      {/* Link para PAIs */}
+      <section className="py-16 md:py-20 border-t border-luxury-border">
+        <div className="container max-w-3xl text-center">
+          <FadeIn>
+            <Link
+              to="/planos-atuacao"
+              className="inline-flex items-center gap-3 group"
+            >
+              <FileText size={16} className="text-gold" />
+              <span className="text-sm font-light text-text-body group-hover:text-foreground transition-colors duration-300">
+                Conheça os Planos de Atuação Institucional de cada órgão
+              </span>
+              <ArrowRight size={14} className="text-gold group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
     </PageLayout>
   );
 };
