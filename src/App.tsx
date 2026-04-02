@@ -13,6 +13,7 @@ import AreaAssociadoPage from "./pages/AreaAssociadoPage";
 import DiversidadePage from "./pages/DiversidadePage";
 import CampanhaSalarialPage from "./pages/CampanhaSalarialPage";
 import CampanhaNomeacaoPage from "./pages/CampanhaNomeacaoPage";
+import PlanosAtuacaoPage from "./pages/PlanosAtuacaoPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/area-associado" element={<AreaAssociadoPage />} />
           <Route path="/campanha-salarial" element={<CampanhaSalarialPage />} />
           <Route path="/campanha-nomeacao" element={<CampanhaNomeacaoPage />} />
+          <Route path="/planos-atuacao" element={<PlanosAtuacaoPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

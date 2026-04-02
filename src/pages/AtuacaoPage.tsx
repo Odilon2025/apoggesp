@@ -1,9 +1,10 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 
 interface CasoAtuacao {
   titulo: string;
@@ -519,6 +520,24 @@ const AtuacaoPage = () => {
                 </div>
               ))}
             </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Link para PAIs */}
+      <section className="py-16 md:py-20 border-t border-luxury-border">
+        <div className="container max-w-3xl text-center">
+          <FadeIn>
+            <Link
+              to="/planos-atuacao"
+              className="inline-flex items-center gap-3 group"
+            >
+              <FileText size={16} className="text-gold" />
+              <span className="text-sm font-light text-text-body group-hover:text-foreground transition-colors duration-300">
+                Conheça os Planos de Atuação Institucional de cada órgão
+              </span>
+              <ArrowRight size={14} className="text-gold group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
           </FadeIn>
         </div>
       </section>
