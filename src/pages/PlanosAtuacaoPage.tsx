@@ -453,14 +453,14 @@ const PlanosAtuacaoPage = () => {
       <section className="py-20 md:py-28 bg-section-alt">
         <div className="container max-w-3xl text-center">
           <FadeIn>
-            <p className="text-xs font-medium tracking-luxury uppercase text-gold mb-4">Panorama em construção</p>
+            <p className="text-xs font-medium tracking-luxury uppercase text-gold mb-4">Presença institucional</p>
             <h2 className="text-2xl md:text-3xl font-display font-normal text-foreground mb-4">
-              8 de 16 órgãos documentados
+              {planos.length} órgãos com planos formalizados
             </h2>
             <p className="text-sm font-light text-text-body leading-relaxed max-w-xl mx-auto">
-              Os Planos de Atuação Institucional são instrumentos vivos. À medida que novos órgãos formalizam
-              suas demandas por APPGGs, esta página será atualizada para refletir o alcance crescente da carreira
-              na administração municipal.
+              Os Planos de Atuação Institucional são instrumentos vivos. Cada PAI formaliza a demanda
+              estratégica de um órgão por APPGGs, demonstrando o alcance da carreira na
+              modernização da gestão pública de São Paulo.
             </p>
           </FadeIn>
         </div>
