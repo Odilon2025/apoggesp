@@ -11,6 +11,7 @@ import ApogespPage from "./pages/ApogespPage";
 import ContatoPage from "./pages/ContatoPage";
 import AreaAssociadoPage from "./pages/AreaAssociadoPage";
 import DiversidadePage from "./pages/DiversidadePage";
+import SustentabilidadePage from "./pages/SustentabilidadePage";
 import CampanhaSalarialPage from "./pages/CampanhaSalarialPage";
 import CampanhaNomeacaoPage from "./pages/CampanhaNomeacaoPage";
 import PlanosAtuacaoPage from "./pages/PlanosAtuacaoPage";
