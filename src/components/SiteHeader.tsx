@@ -7,6 +7,7 @@ const navItems = [
   { label: "Home", path: "/" },
   { label: "A Carreira", path: "/carreira" },
   { label: "Atuação", path: "/atuacao" },
+  { label: "Planos de Atuação", path: "/planos-atuacao" },
   { label: "Publicações", path: "/publicacoes" },
   { label: "Diversidade", path: "/diversidade" },
   { label: "A APOGESP", path: "/apogesp" },
