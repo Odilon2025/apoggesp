@@ -25,6 +25,7 @@ const SiteFooter = () => (
             {[
               { label: "A Carreira", path: "/carreira" },
               { label: "Atuação", path: "/atuacao" },
+              { label: "Planos de Atuação", path: "/planos-atuacao" },
               { label: "Publicações", path: "/publicacoes" },
               { label: "A APOGESP", path: "/apogesp" },
               { label: "Área do Associado", path: "/area-associado" },
