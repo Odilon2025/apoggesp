@@ -11,6 +11,7 @@ import ApogespPage from "./pages/ApogespPage";
 import ContatoPage from "./pages/ContatoPage";
 import AreaAssociadoPage from "./pages/AreaAssociadoPage";
 import DiversidadePage from "./pages/DiversidadePage";
+import SustentabilidadePage from "./pages/SustentabilidadePage";
 import CampanhaSalarialPage from "./pages/CampanhaSalarialPage";
 import CampanhaNomeacaoPage from "./pages/CampanhaNomeacaoPage";
 import PlanosAtuacaoPage from "./pages/PlanosAtuacaoPage";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/apogesp" element={<ApogespPage />} />
           <Route path="/contato" element={<ContatoPage />} />
           <Route path="/diversidade" element={<DiversidadePage />} />
+          <Route path="/sustentabilidade" element={<SustentabilidadePage />} />
           <Route path="/area-associado" element={<AreaAssociadoPage />} />
           <Route path="/campanha-salarial" element={<CampanhaSalarialPage />} />
           <Route path="/campanha-nomeacao" element={<CampanhaNomeacaoPage />} />
