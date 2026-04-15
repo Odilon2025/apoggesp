@@ -43,7 +43,7 @@ const SiteHeader = () => {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
           {navItems.map((item) => (
             <Link
               key={item.path}
@@ -51,7 +51,7 @@ const SiteHeader = () => {
               className="relative group"
             >
               <span
-                className={`text-[13px] font-sans font-light tracking-wide transition-colors duration-300 ${
+                className={`text-[11.5px] font-sans font-light tracking-wide transition-colors duration-300 ${
                   location.pathname === item.path
                     ? "text-foreground"
                     : "text-text-caption hover:text-foreground"
