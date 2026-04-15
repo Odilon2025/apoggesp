@@ -5,13 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "Home", path: "/" },
-  { label: "A Carreira", path: "/carreira" },
+  { label: "Carreira", path: "/carreira" },
   { label: "Atuação", path: "/atuacao" },
-  { label: "Planos de Atuação", path: "/planos-atuacao" },
+  { label: "PAI", path: "/planos-atuacao" },
   { label: "Publicações", path: "/publicacoes" },
   { label: "Diversidade", path: "/diversidade" },
   { label: "Sustentabilidade", path: "/sustentabilidade" },
-  { label: "A APOGESP", path: "/apogesp" },
+  { label: "Apogesp", path: "/apogesp" },
   { label: "Área do Associado", path: "/area-associado" },
   { label: "Contato", path: "/contato" },
 ];
