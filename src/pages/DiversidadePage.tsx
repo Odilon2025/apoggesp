@@ -4,7 +4,7 @@ import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Users, TrendingUp, Building2, Award } from "lucide-react";
+import { Users, TrendingUp, Building2, Award, Shield, Target, BarChart3, Scale } from "lucide-react";
 
 const indicadores = [
   { numero: "67", label: "Mulheres na carreira", detalhe: "39,6% do total", icon: Users },
@@ -27,6 +27,29 @@ const secretarias = [
   { sigla: "SVMA", total: 9, mulheres: 22, negros: 55 },
 ];
 
+const eixosAtuacao = [
+  {
+    icon: Shield,
+    titulo: "Governança institucional",
+    descricao: "APPGGs integram comitês, comissões e instâncias decisórias onde podem incorporar critérios de equidade a protocolos, normativas e fluxos de trabalho — antes que se tornem regras silenciosas que perpetuam exclusões.",
+  },
+  {
+    icon: BarChart3,
+    titulo: "Planejamento e orçamento",
+    descricao: "Na posição de médio escalão, o APPGG traduz diretrizes em metas concretas. Isso inclui desagregar indicadores por raça e gênero, garantindo que o planejamento governamental enxergue desigualdades que médias gerais tornam invisíveis.",
+  },
+  {
+    icon: Target,
+    titulo: "Desenho de políticas",
+    descricao: "Políticas aparentemente neutras podem produzir efeitos desiguais quando ignoram assimetrias estruturais. O gestor de médio escalão é quem define critérios de elegibilidade, fluxos de atendimento e regras operacionais — e pode calibrá-los para ampliar o acesso.",
+  },
+  {
+    icon: Scale,
+    titulo: "Implementação e avaliação",
+    descricao: "Entre a intenção da política e seu efeito no território, há uma cadeia de decisões operacionais. O APPGG atua nessa fronteira: ajusta procedimentos, identifica riscos de exclusão e corrige rotas com base em evidências.",
+  },
+];
+
 const ProgressBar = ({ value, color, delay = 0 }: { value: number; color: string; delay?: number }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-40px" });
@@ -47,8 +70,8 @@ const DiversidadePage = () => (
   <PageLayout>
     <PageHero
       label="Diversidade"
-      title="Uma carreira que se abre ao Brasil real"
-      subtitle="A trajetória dos APPGGs reflete um compromisso crescente com a representatividade. Mesmo diante das barreiras estruturais da sociedade brasileira, a diversidade avança — concurso após concurso, geração após geração."
+      title="Representatividade como engenharia institucional"
+      subtitle="Desigualdades não se corrigem por inércia. Elas se reproduzem em normas, critérios e rotinas administrativas — muitas vezes sem intenção. Uma burocracia representativa é a primeira linha de defesa contra essa reprodução silenciosa."
     />
 
     {/* Indicadores Gerais */}
@@ -57,7 +80,7 @@ const DiversidadePage = () => (
         <SectionTitle
           label="Panorama"
           title="Quem são os APPGGs"
-          subtitle="169 gestores públicos municipais. Um mosaico cada vez mais diverso de trajetórias, origens e perspectivas a serviço de São Paulo."
+          subtitle="169 gestores públicos municipais. Um corpo técnico cuja composição se aproxima, a cada geração, da diversidade real da cidade que administra."
           center
         />
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -81,13 +104,76 @@ const DiversidadePage = () => (
       </div>
     </section>
 
+    {/* Por que isso importa para a gestão */}
+    <section className="py-20 md:py-28 bg-section-alt">
+      <div className="container">
+        <SectionTitle
+          label="Contexto"
+          title="Por que a composição do corpo técnico importa"
+          subtitle="A literatura em administração pública demonstra que a diversidade do quadro funcional não é uma questão simbólica — é uma variável que afeta a qualidade das decisões e a efetividade das políticas."
+        />
+        <div className="grid md:grid-cols-2 gap-8 max-w-3xl">
+          <FadeIn delay={0.05}>
+            <div className="p-8 border border-luxury-border rounded-sm bg-card">
+              <h3 className="text-sm font-medium text-text-display mb-3">Viés estrutural invisível</h3>
+              <p className="text-sm text-text-body font-light leading-relaxed">
+                Normas e procedimentos administrativos aparentemente neutros podem produzir resultados desiguais quando formulados sem considerar assimetrias estruturais. Critérios de elegibilidade, horários de atendimento, documentação exigida — cada escolha operacional carrega consequências distributivas que frequentemente passam despercebidas.
+              </p>
+            </div>
+          </FadeIn>
+          <FadeIn delay={0.12}>
+            <div className="p-8 border border-luxury-border rounded-sm bg-card">
+              <h3 className="text-sm font-medium text-text-display mb-3">O gestor como calibrador</h3>
+              <p className="text-sm text-text-body font-light leading-relaxed">
+                Entre a diretriz política e o efeito no território, há uma cadeia de decisões técnicas tomadas por gestores de médio escalão. O APPGG ocupa exatamente essa posição: traduz intenções em regras, transforma planos em procedimentos. É nessa tradução que a equidade se constrói — ou se perde.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+
+        <FadeIn delay={0.2}>
+          <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
+            <p className="text-sm text-text-body font-light leading-relaxed italic">
+              "Uma administração pública que não reflete a diversidade da população que serve opera com um repertório incompleto de perspectivas — e tende a reproduzir, por omissão, as desigualdades que deveria combater."
+            </p>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+
+    {/* O papel do APPGG na equidade */}
+    <section className="py-20 md:py-28">
+      <div className="container">
+        <SectionTitle
+          label="Atuação estratégica"
+          title="Onde o APPGG faz a diferença"
+          subtitle="O gestor de políticas públicas não apenas executa — ele desenha, calibra e corrige. Em cada um desses momentos, a diversidade do corpo técnico amplia a capacidade institucional de identificar riscos e produzir resultados mais equitativos."
+        />
+        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl">
+          {eixosAtuacao.map((eixo, i) => (
+            <FadeIn key={eixo.titulo} delay={i * 0.08}>
+              <div className="p-6 md:p-8 border border-luxury-border rounded-sm bg-card h-full">
+                <eixo.icon size={18} strokeWidth={1.2} className="text-gold mb-4" />
+                <h3 className="text-sm font-medium text-text-display mb-3 tracking-wide">
+                  {eixo.titulo}
+                </h3>
+                <p className="text-sm text-text-body font-light leading-relaxed">
+                  {eixo.descricao}
+                </p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+
     {/* Liderança */}
     <section className="py-20 md:py-28 bg-section-alt">
       <div className="container">
         <SectionTitle
           label="Liderança"
           title="Diversidade onde as decisões acontecem"
-          subtitle="A presença de mulheres e pessoas negras em cargos de liderança é um indicador crucial. Os números mostram avanço — e também onde ainda é preciso avançar."
+          subtitle="A presença de mulheres e pessoas negras em cargos de liderança é um indicador crucial de maturidade institucional. Os números mostram avanço — e também onde ainda é preciso avançar."
         />
         <div className="grid md:grid-cols-2 gap-8 max-w-2xl">
           <FadeIn delay={0.05}>
@@ -130,7 +216,7 @@ const DiversidadePage = () => (
         <SectionTitle
           label="Evolução"
           title="Cada concurso, um passo adiante"
-          subtitle="A diversidade racial cresce de forma consistente a cada nova geração de APPGGs — um sinal de que as políticas de inclusão nos concursos públicos produzem resultados concretos."
+          subtitle="A diversidade racial cresce de forma consistente a cada nova geração de APPGGs — evidência de que mecanismos institucionais bem desenhados produzem resultados concretos e mensuráveis."
         />
         <div className="space-y-6 max-w-3xl">
           {geracoes.map((g, i) => (
@@ -179,7 +265,7 @@ const DiversidadePage = () => (
         <FadeIn delay={0.4}>
           <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
             <p className="text-sm text-text-body font-light leading-relaxed italic">
-              "De 27% de pessoas negras na primeira geração para 40% na mais recente — a carreira de APPGG demonstra que é possível construir um serviço público mais representativo, mesmo dentro das limitações estruturais que o Brasil ainda enfrenta."
+              "De 27% de pessoas negras na primeira geração para 40% na mais recente — a carreira de APPGG demonstra que é possível construir um serviço público mais representativo sem comprometer a excelência técnica. Pelo contrário: diversificar o repertório de perspectivas fortalece a capacidade analítica da administração."
             </p>
           </div>
         </FadeIn>
@@ -192,7 +278,7 @@ const DiversidadePage = () => (
         <SectionTitle
           label="Presença Institucional"
           title="Diversidade que se espalha pela cidade"
-          subtitle="Presentes em mais de 22 órgãos municipais, os APPGGs levam perspectivas diversas a diferentes áreas da gestão pública paulistana."
+          subtitle="Presentes em mais de 22 órgãos municipais, os APPGGs levam perspectivas diversas a diferentes áreas da gestão — da saúde ao planejamento urbano, da educação ao meio ambiente."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl">
           {secretarias.map((s, i) => (
@@ -234,16 +320,19 @@ const DiversidadePage = () => (
         <div className="max-w-2xl mx-auto text-center">
           <FadeIn>
             <span className="text-[10px] font-sans font-medium tracking-luxury uppercase text-text-caption block mb-6">
-              Compromisso
+              Compromisso institucional
             </span>
             <h2 className="text-2xl md:text-3xl font-display text-text-display leading-tight text-balance mb-6">
-              A diversidade não é um destino — é uma construção diária
+              Efetividade exige representatividade
             </h2>
             <p className="text-sm text-text-body font-light leading-relaxed mb-4">
-              Os dados mostram que a carreira de APPGG caminha na direção certa. Cada concurso traz novas vozes, cada geração amplia o repertório de experiências. Mas os números também revelam onde é preciso ir além: na equidade de gênero em posições de liderança, na representatividade em determinados órgãos, na inclusão de pessoas com deficiência.
+              As desigualdades não se corrigem por inércia — elas se reproduzem em cada formulário mal desenhado, em cada critério que ignora contextos, em cada rotina que naturaliza a exclusão. Uma burocracia composta por perfis diversos tem mais capacidade de antecipar esses efeitos e corrigi-los antes que se tornem sistêmicos.
+            </p>
+            <p className="text-sm text-text-body font-light leading-relaxed mb-4">
+              Os dados mostram que a carreira de APPGG caminha na direção certa. Cada concurso amplia o repertório de experiências. Mas os números também revelam onde é preciso ir além: na equidade de gênero em posições de liderança, na representatividade em determinados órgãos, na inclusão de pessoas com deficiência.
             </p>
             <p className="text-sm text-text-body font-light leading-relaxed">
-              A APOGESP acompanha essa evolução com dados, transparência e o compromisso de que a gestão pública de São Paulo reflita, cada vez mais, a cidade que serve.
+              A APOGESP acompanha essa evolução com dados, transparência e a convicção de que uma gestão pública mais efetiva começa por uma burocracia que compreende — porque vivencia — a complexidade da cidade que serve.
             </p>
             <div className="mt-8 luxury-divider" />
           </FadeIn>
