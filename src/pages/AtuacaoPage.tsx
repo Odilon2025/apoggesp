@@ -475,8 +475,8 @@ const AtuacaoPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                       {[
                         { label: "Contexto", text: caso.contexto },
-                        { label: "Atuação dos APPGGs", text: caso.atuacao },
-                        { label: "Resultados", text: caso.resultados },
+                        { label: "Colaboração dos APPGGs", text: caso.atuacao },
+                        { label: "Resultados coletivos", text: caso.resultados },
                       ].map((col) => (
                         <div key={col.label}>
                           <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-2">{col.label}</span>
@@ -501,13 +501,13 @@ const AtuacaoPage = () => {
       {/* Eixos da Carreira */}
       <section className="py-24 md:py-32 bg-section-alt">
         <div className="container max-w-3xl">
-          <SectionTitle label="Vocação" title="Os Três Eixos da Carreira" />
+          <SectionTitle label="Vocação" title="Os Três Eixos da Colaboração" />
           <FadeIn>
             <div className="space-y-0 border-t border-luxury-border">
               {[
-                { num: "I", title: "Formulação de Políticas Públicas", desc: "Antes de qualquer obra, decreto ou programa, alguém precisa traduzir um problema difuso em uma política viável. O APPGG é quem senta à mesa com dados, evidências e experiência de campo para desenhar soluções que resistam à troca de gestão — porque políticas públicas sérias não podem depender de quem ocupa a cadeira." },
-                { num: "II", title: "Gestão Estratégica e Governança", desc: "Gerir uma cidade de 12 milhões de pessoas exige mais do que boa vontade. Exige método, visão sistêmica e alguém capaz de conectar secretarias que não se falam, alinhar orçamentos que competem entre si e garantir que a máquina entregue o que prometeu. É esse o trabalho silencioso que mantém a engrenagem girando — e que raramente aparece nos holofotes." },
-                { num: "III", title: "Articulação Transversal e Inovação", desc: "Os problemas mais urgentes da cidade — primeira infância, mudanças climáticas, transformação digital — não cabem dentro de uma única secretaria. O APPGG atua nas fronteiras do organograma, costurando soluções que nenhuma área sozinha conseguiria entregar. É o profissional que cruza silos, provoca desconforto produtivo e faz a inovação acontecer onde ela é mais necessária: dentro do Estado." },
+                { num: "I", title: "Apoio à Formulação de Políticas Públicas", desc: "Antes de qualquer obra, decreto ou programa, é preciso traduzir um problema difuso em uma política viável. O APPGG colabora com esse trabalho — junto a equipes técnicas de outras carreiras e sob coordenação das lideranças setoriais — trazendo dados, evidências e experiência de campo para apoiar o desenho de soluções consistentes." },
+                { num: "II", title: "Colaboração com a Gestão Estratégica e a Governança", desc: "Gerir uma cidade de 12 milhões de pessoas exige método, visão sistêmica e capacidade de articulação. O APPGG contribui para conectar secretarias, alinhar orçamentos e apoiar a implementação das prioridades definidas pela administração superior, sempre dentro dos Planos de Atuação Institucional pactuados em cada órgão." },
+                { num: "III", title: "Articulação Transversal e Participação em Inovação", desc: "Os problemas mais urgentes da cidade — primeira infância, mudanças climáticas, transformação digital — não cabem dentro de uma única secretaria. O APPGG participa do trabalho nas fronteiras do organograma, em parceria com outras carreiras e com os órgãos responsáveis, colaborando com soluções intersetoriais." },
               ].map((eixo) => (
                 <div key={eixo.num} className="py-6 border-b border-luxury-border">
                   <div className="flex items-start gap-4">
