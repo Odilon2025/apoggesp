@@ -34,7 +34,7 @@ const casos: CasoAtuacao[] = [
     titulo: "Ciências Comportamentais para Alimentação Escolar",
     area: "Inovação e Ciências Comportamentais",
     contexto: "Nas escolas municipais, estudantes do 6º ao 9º ano desperdiçavam alimentos e rejeitavam pratos menos conhecidos. O problema não era a comida — era como ela era apresentada, percebida e descartada.",
-    atuacao: "O Lab11, em parceria com a CODAE/SME, redesenhou a experiência da refeição. Lixeiras foram reposicionadas para tornar o desperdício visível. Painéis com linguagem de redes sociais tornaram pratos desconhecidos familiares. Contagem digital substituiu estimativas manuais. Em oito escolas, observação direta, entrevistas e mensuração validaram cada intervenção.",
+    atuacao: "APPGGs colaboraram com o Lab11 e a CODAE/SME no redesenho da experiência da refeição. Lixeiras foram reposicionadas para tornar o desperdício visível. Painéis com linguagem de redes sociais ajudaram a tornar pratos desconhecidos familiares. Contagem digital substituiu estimativas manuais. Em oito escolas, observação direta, entrevistas e mensuração validaram cada intervenção.",
     resultados: "Aumento médio de 13,8% na adesão às refeições. Redução de 3 kg de alimentos desperdiçados por escola. Estimativa de impacto potencial: 4,3 toneladas a menos por dia em toda a rede.",
   },
   {
@@ -55,7 +55,7 @@ const casos: CasoAtuacao[] = [
     titulo: "SP156 — Redesenhando a Porta de Entrada Digital da Cidade",
     area: "Inovação e Ciências Comportamentais",
     contexto: "O portal SP156 era a principal interface entre o cidadão e os serviços municipais. Mas era também complexo, visualmente poluído e escrito em linguagem burocrática. Muitos desistiam antes de concluir o que precisavam.",
-    atuacao: "O Lab11 conduziu uma reformulação radical: testes de usabilidade com 320 cidadãos, reorganização da taxonomia por card sorting, prototipagem iterativa em três ciclos. Cada decisão de design foi validada com quem realmente usaria o portal.",
+    atuacao: "APPGGs colaboraram com o Lab11 em uma reformulação ampla, conduzida em parceria com as áreas responsáveis: testes de usabilidade com 320 cidadãos, reorganização da taxonomia por card sorting e prototipagem iterativa em três ciclos. Cada decisão de design foi validada com quem usaria o portal.",
     resultados: "Taxa de resolutividade elevada para 84%. Redução de 30% na desistência. Aumento de 200% na visualização de serviços de transporte. O portal passou a funcionar para quem ele deveria sempre ter funcionado: o cidadão.",
   },
   {
@@ -90,14 +90,14 @@ const casos: CasoAtuacao[] = [
     titulo: "MEI Nota Fácil — Simplificando o Complexo",
     area: "Inovação e Ciências Comportamentais",
     contexto: "Em São Paulo, mais de 760 mil MEIs dependem da emissão de nota fiscal eletrônica. Para isso, precisavam navegar por um sistema repleto de termos técnicos e etapas desnecessárias. O digital que deveria facilitar estava, na prática, excluindo.",
-    atuacao: "O Lab11 fez o que a boa gestão pública exige: ouviu antes de desenhar. Envolveu 2.044 MEIs, identificou 39 dores na jornada e testou 13 protótipos em ciclos rápidos de experimentação.",
+    atuacao: "APPGGs colaboraram com o Lab11 e parceiros no que a boa gestão pública exige: ouvir antes de desenhar. Foram envolvidos 2.044 MEIs, identificadas 39 dores na jornada e testados 13 protótipos em ciclos rápidos de experimentação.",
     resultados: "12.514 dispositivos ativos. 5.773 notas emitidas no período inicial. Nota 4,8 na Play Store, com 80% das avaliações em 5 estrelas. Inclusão digital não como slogan, mas como resultado mensurável.",
   },
   {
     titulo: "COVID-19 nos Terminais de Ônibus",
     area: "Inovação e Ciências Comportamentais",
     contexto: "Durante a pandemia, terminais de ônibus eram pontos críticos de transmissão. Milhares de pessoas circulavam diariamente, e campanhas tradicionais de comunicação não mudavam comportamentos reais.",
-    atuacao: "O Lab11 desenvolveu campanhas baseadas em ciências comportamentais e enviou 1 milhão de mensagens geolocalizadas para usuários dos 31 terminais, combinando informação, instrução e motivação.",
+    atuacao: "APPGGs colaboraram com o Lab11 no desenvolvimento de campanhas baseadas em ciências comportamentais e no envio de 1 milhão de mensagens geolocalizadas para usuários dos 31 terminais, combinando informação, instrução e motivação.",
     resultados: "Alcance de 87% das pessoas presentes nos terminais. Mais de 10 mil interações com o link informativo. Diagnóstico preciso sobre comportamentos reais em espaços públicos. Evidência no lugar de intuição.",
   },
 
