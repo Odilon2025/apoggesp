@@ -8,18 +8,18 @@ import { ArrowRight, FileText, TrendingUp, Users } from "lucide-react";
 const timelineItems = [
   { year: "2015", text: "A Lei Municipal nº 16.193 cria a carreira de APPGG — uma aposta na profissionalização da gestão pública paulistana" },
   { year: "2016", text: "Os primeiros analistas tomam posse e começam a ocupar secretarias por toda a cidade" },
-  { year: "2017", text: "A carreira assume papel central no Programa de Metas 2017–2020, traduzindo compromissos em entregas mensuráveis" },
-  { year: "2018", text: "Nasce o Lab11 — o laboratório que levou ciências comportamentais para dentro da máquina pública" },
-  { year: "2021", text: "A Portaria SEGES nº 13 reconhece formalmente o que já era prática: APPGGs lideram projetos estratégicos" },
-  { year: "2022", text: "Começa o desenvolvimento do SMAE, o sistema que daria à Prefeitura olhos sobre suas próprias metas" },
+          { year: "2017", text: "A carreira passa a colaborar com o Programa de Metas 2017–2020, apoiando a tradução de compromissos em entregas mensuráveis" },
+  { year: "2018", text: "Em parceria com a SMIT, nasce o Lab11 — laboratório que aproxima as ciências comportamentais da gestão municipal" },
+  { year: "2021", text: "A Portaria SEGES nº 13 reconhece a participação relevante dos APPGGs em projetos estratégicos prioritários" },
+  { year: "2022", text: "Em colaboração com a FGV e sob coordenação da SEPLAN, começa o desenvolvimento do SMAE" },
   { year: "2024", text: "O Decreto nº 63.336 institucionaliza o SMAE — 500 servidores já o utilizam diariamente" },
-  { year: "2025", text: "O Caderno Gestão Pública em Rede registra, pela primeira vez, uma década de contribuições em nove artigos" },
+  { year: "2025", text: "O Caderno Gestão Pública em Rede registra, pela primeira vez, uma década de colaboração em nove artigos" },
 ];
 
 const atuacaoDestaques = [
-  { area: "Inovação", desc: "No Lab11, APPGGs provaram que nudges bem desenhados podem fazer crianças comerem melhor na escola, cidadãos usarem máscara no transporte público e microempreendedores emitirem notas fiscais sem erro." },
-  { area: "Planejamento", desc: "O SMAE não é apenas um software — é a memória institucional da Prefeitura. Cinco módulos, 500 usuários e um decreto que o tornou patrimônio público permanente." },
-  { area: "Primeira Infância", desc: "Quando a política de primeira infância exigiu que saúde, educação e assistência social falassem a mesma língua, foram APPGGs que construíram as pontes entre as secretarias." },
+  { area: "Inovação", desc: "No Lab11, APPGGs colaboraram com equipes técnicas e parceiros para mostrar que nudges bem desenhados podem apoiar políticas de alimentação escolar, saúde pública no transporte e formalização de microempreendedores." },
+  { area: "Planejamento", desc: "O SMAE — desenvolvido em parceria com a FGV e sob diretrizes da administração superior — tornou-se memória institucional da Prefeitura, com cinco módulos, 500 usuários e decreto que o consolidou como patrimônio público permanente." },
+  { area: "Primeira Infância", desc: "Quando a política de primeira infância exigiu integração entre saúde, educação e assistência social, APPGGs participaram da articulação entre secretarias, em colaboração com as lideranças de cada pasta." },
 ];
 
 const publicacoesRecentes = [
@@ -66,7 +66,7 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className="mt-8 text-base md:text-lg text-primary-foreground/50 font-light max-w-lg leading-relaxed"
               >
-                Uma década construindo capacidade institucional na maior cidade da América Latina. Onde outros veem burocracia, nós vemos a engenharia silenciosa que faz uma metrópole de 12 milhões funcionar.
+                Uma década colaborando com a construção de capacidade institucional na maior cidade da América Latina — sempre em parceria com outras carreiras e dentro das prioridades definidas pela administração superior.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
@@ -156,9 +156,9 @@ const Index = () => {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-luxury-border">
             {[
-              { title: "Capacidades Transversais", desc: "Presentes em praticamente todos os órgãos da Prefeitura, os APPGGs não pertencem a uma secretaria — pertencem à cidade. Essa transversalidade é, ao mesmo tempo, seu maior desafio e sua maior força." },
-              { title: "Valor Público", desc: "Cada projeto documentado neste portal representa horas de análise, articulação e implementação a serviço de uma pergunta simples: como gerar mais valor para os paulistanos com os recursos disponíveis?" },
-              { title: "Gestão em Rede", desc: "Políticas públicas não respeitam organogramas. Os APPGGs aprenderam a construir pontes entre secretarias, entre níveis de governo e entre o planejado e o executado." },
+              { title: "Capacidades Transversais", desc: "Presentes em praticamente todos os órgãos da Prefeitura, os APPGGs colaboram com diferentes secretarias e carreiras, sempre a serviço das prioridades fixadas pela administração superior." },
+              { title: "Valor Público", desc: "Cada projeto documentado neste portal envolve análise, articulação e participação relevante em iniciativas conduzidas em conjunto com gestores, técnicos de outras carreiras e parceiros institucionais." },
+              { title: "Gestão em Rede", desc: "Políticas públicas não respeitam organogramas. Os APPGGs colaboram com a construção de pontes entre secretarias, entre níveis de governo e entre o planejado e o executado, dentro dos Planos de Atuação Institucional." },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 0.1}>
                 <div className="bg-card p-10 md:p-12 h-full">
@@ -178,9 +178,9 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <SectionTitle
-                label="Impacto"
+                label="Colaboração"
                 title="Onde a Teoria Encontra a Rua"
-                subtitle="Três exemplos de como o trabalho técnico dos APPGGs se traduz em mudanças concretas na vida da cidade."
+                subtitle="Três exemplos de como a contribuição técnica dos APPGGs apoia entregas conduzidas em conjunto com outras carreiras e com as lideranças da administração."
               />
               <Link
                 to="/atuacao"
