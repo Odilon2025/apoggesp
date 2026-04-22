@@ -34,7 +34,7 @@ const casos: CasoAtuacao[] = [
     titulo: "Ciências Comportamentais para Alimentação Escolar",
     area: "Inovação e Ciências Comportamentais",
     contexto: "Nas escolas municipais, estudantes do 6º ao 9º ano desperdiçavam alimentos e rejeitavam pratos menos conhecidos. O problema não era a comida — era como ela era apresentada, percebida e descartada.",
-    atuacao: "O Lab11, em parceria com a CODAE/SME, redesenhou a experiência da refeição. Lixeiras foram reposicionadas para tornar o desperdício visível. Painéis com linguagem de redes sociais tornaram pratos desconhecidos familiares. Contagem digital substituiu estimativas manuais. Em oito escolas, observação direta, entrevistas e mensuração validaram cada intervenção.",
+    atuacao: "APPGGs colaboraram com o Lab11 e a CODAE/SME no redesenho da experiência da refeição. Lixeiras foram reposicionadas para tornar o desperdício visível. Painéis com linguagem de redes sociais ajudaram a tornar pratos desconhecidos familiares. Contagem digital substituiu estimativas manuais. Em oito escolas, observação direta, entrevistas e mensuração validaram cada intervenção.",
     resultados: "Aumento médio de 13,8% na adesão às refeições. Redução de 3 kg de alimentos desperdiçados por escola. Estimativa de impacto potencial: 4,3 toneladas a menos por dia em toda a rede.",
   },
   {
@@ -55,7 +55,7 @@ const casos: CasoAtuacao[] = [
     titulo: "SP156 — Redesenhando a Porta de Entrada Digital da Cidade",
     area: "Inovação e Ciências Comportamentais",
     contexto: "O portal SP156 era a principal interface entre o cidadão e os serviços municipais. Mas era também complexo, visualmente poluído e escrito em linguagem burocrática. Muitos desistiam antes de concluir o que precisavam.",
-    atuacao: "O Lab11 conduziu uma reformulação radical: testes de usabilidade com 320 cidadãos, reorganização da taxonomia por card sorting, prototipagem iterativa em três ciclos. Cada decisão de design foi validada com quem realmente usaria o portal.",
+    atuacao: "APPGGs colaboraram com o Lab11 em uma reformulação ampla, conduzida em parceria com as áreas responsáveis: testes de usabilidade com 320 cidadãos, reorganização da taxonomia por card sorting e prototipagem iterativa em três ciclos. Cada decisão de design foi validada com quem usaria o portal.",
     resultados: "Taxa de resolutividade elevada para 84%. Redução de 30% na desistência. Aumento de 200% na visualização de serviços de transporte. O portal passou a funcionar para quem ele deveria sempre ter funcionado: o cidadão.",
   },
   {
@@ -90,14 +90,14 @@ const casos: CasoAtuacao[] = [
     titulo: "MEI Nota Fácil — Simplificando o Complexo",
     area: "Inovação e Ciências Comportamentais",
     contexto: "Em São Paulo, mais de 760 mil MEIs dependem da emissão de nota fiscal eletrônica. Para isso, precisavam navegar por um sistema repleto de termos técnicos e etapas desnecessárias. O digital que deveria facilitar estava, na prática, excluindo.",
-    atuacao: "O Lab11 fez o que a boa gestão pública exige: ouviu antes de desenhar. Envolveu 2.044 MEIs, identificou 39 dores na jornada e testou 13 protótipos em ciclos rápidos de experimentação.",
+    atuacao: "APPGGs colaboraram com o Lab11 e parceiros no que a boa gestão pública exige: ouvir antes de desenhar. Foram envolvidos 2.044 MEIs, identificadas 39 dores na jornada e testados 13 protótipos em ciclos rápidos de experimentação.",
     resultados: "12.514 dispositivos ativos. 5.773 notas emitidas no período inicial. Nota 4,8 na Play Store, com 80% das avaliações em 5 estrelas. Inclusão digital não como slogan, mas como resultado mensurável.",
   },
   {
     titulo: "COVID-19 nos Terminais de Ônibus",
     area: "Inovação e Ciências Comportamentais",
     contexto: "Durante a pandemia, terminais de ônibus eram pontos críticos de transmissão. Milhares de pessoas circulavam diariamente, e campanhas tradicionais de comunicação não mudavam comportamentos reais.",
-    atuacao: "O Lab11 desenvolveu campanhas baseadas em ciências comportamentais e enviou 1 milhão de mensagens geolocalizadas para usuários dos 31 terminais, combinando informação, instrução e motivação.",
+    atuacao: "APPGGs colaboraram com o Lab11 no desenvolvimento de campanhas baseadas em ciências comportamentais e no envio de 1 milhão de mensagens geolocalizadas para usuários dos 31 terminais, combinando informação, instrução e motivação.",
     resultados: "Alcance de 87% das pessoas presentes nos terminais. Mais de 10 mil interações com o link informativo. Diagnóstico preciso sobre comportamentos reais em espaços públicos. Evidência no lugar de intuição.",
   },
 
@@ -433,14 +433,14 @@ const AtuacaoPage = () => {
   return (
     <PageLayout>
       <PageHero
-        label="Impacto"
+        label="Colaboração"
         title="Atuação dos APPGGs"
-        subtitle="Mais de 50 casos reais de atuação de Analistas de Políticas Públicas e Gestão Governamental na Prefeitura de São Paulo. Do Caderno Gestão Pública em Rede ao 2º Seminário APPGG."
+        subtitle="Mais de 50 casos de colaboração de Analistas de Políticas Públicas e Gestão Governamental com órgãos e equipes da Prefeitura de São Paulo. Do Caderno Gestão Pública em Rede ao 2º Seminário APPGG."
       />
 
       <section className="py-24 md:py-32 bg-card">
         <div className="container">
-          <SectionTitle label="Casos Documentados" title="Onde a Carreira Fez Diferença" subtitle="Cada caso abaixo é baseado em registros públicos produzidos por APPGGs. Não são promessas: são resultados." />
+          <SectionTitle label="Casos Documentados" title="Onde a Carreira Colaborou" subtitle="Cada caso abaixo registra contribuições de APPGGs em iniciativas conduzidas em conjunto com outras carreiras, gestores e parceiros institucionais, dentro das prioridades fixadas pela administração superior." />
 
           {/* Filter */}
           <div className="flex flex-wrap gap-2 mb-12">
@@ -475,8 +475,8 @@ const AtuacaoPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                       {[
                         { label: "Contexto", text: caso.contexto },
-                        { label: "Atuação dos APPGGs", text: caso.atuacao },
-                        { label: "Resultados", text: caso.resultados },
+                        { label: "Colaboração dos APPGGs", text: caso.atuacao },
+                        { label: "Resultados coletivos", text: caso.resultados },
                       ].map((col) => (
                         <div key={col.label}>
                           <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-2">{col.label}</span>
@@ -501,13 +501,13 @@ const AtuacaoPage = () => {
       {/* Eixos da Carreira */}
       <section className="py-24 md:py-32 bg-section-alt">
         <div className="container max-w-3xl">
-          <SectionTitle label="Vocação" title="Os Três Eixos da Carreira" />
+          <SectionTitle label="Vocação" title="Os Três Eixos da Colaboração" />
           <FadeIn>
             <div className="space-y-0 border-t border-luxury-border">
               {[
-                { num: "I", title: "Formulação de Políticas Públicas", desc: "Antes de qualquer obra, decreto ou programa, alguém precisa traduzir um problema difuso em uma política viável. O APPGG é quem senta à mesa com dados, evidências e experiência de campo para desenhar soluções que resistam à troca de gestão — porque políticas públicas sérias não podem depender de quem ocupa a cadeira." },
-                { num: "II", title: "Gestão Estratégica e Governança", desc: "Gerir uma cidade de 12 milhões de pessoas exige mais do que boa vontade. Exige método, visão sistêmica e alguém capaz de conectar secretarias que não se falam, alinhar orçamentos que competem entre si e garantir que a máquina entregue o que prometeu. É esse o trabalho silencioso que mantém a engrenagem girando — e que raramente aparece nos holofotes." },
-                { num: "III", title: "Articulação Transversal e Inovação", desc: "Os problemas mais urgentes da cidade — primeira infância, mudanças climáticas, transformação digital — não cabem dentro de uma única secretaria. O APPGG atua nas fronteiras do organograma, costurando soluções que nenhuma área sozinha conseguiria entregar. É o profissional que cruza silos, provoca desconforto produtivo e faz a inovação acontecer onde ela é mais necessária: dentro do Estado." },
+                { num: "I", title: "Apoio à Formulação de Políticas Públicas", desc: "Antes de qualquer obra, decreto ou programa, é preciso traduzir um problema difuso em uma política viável. O APPGG colabora com esse trabalho — junto a equipes técnicas de outras carreiras e sob coordenação das lideranças setoriais — trazendo dados, evidências e experiência de campo para apoiar o desenho de soluções consistentes." },
+                { num: "II", title: "Colaboração com a Gestão Estratégica e a Governança", desc: "Gerir uma cidade de 12 milhões de pessoas exige método, visão sistêmica e capacidade de articulação. O APPGG contribui para conectar secretarias, alinhar orçamentos e apoiar a implementação das prioridades definidas pela administração superior, sempre dentro dos Planos de Atuação Institucional pactuados em cada órgão." },
+                { num: "III", title: "Articulação Transversal e Participação em Inovação", desc: "Os problemas mais urgentes da cidade — primeira infância, mudanças climáticas, transformação digital — não cabem dentro de uma única secretaria. O APPGG participa do trabalho nas fronteiras do organograma, em parceria com outras carreiras e com os órgãos responsáveis, colaborando com soluções intersetoriais." },
               ].map((eixo) => (
                 <div key={eixo.num} className="py-6 border-b border-luxury-border">
                   <div className="flex items-start gap-4">

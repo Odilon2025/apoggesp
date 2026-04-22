@@ -93,7 +93,7 @@ const SustentabilidadePage = () => {
       <PageHero
         label="Meio Ambiente"
         title="Sustentabilidade"
-        subtitle="Como os APPGGs contribuem com a construção de uma São Paulo mais sustentável, resiliente e preparada para os desafios ambientais do século XXI."
+        subtitle="Como os APPGGs colaboram com a construção de uma São Paulo mais sustentável, sempre em parceria com outras carreiras e dentro das diretrizes da administração superior."
       />
 
       {/* Intro narrativa */}
@@ -104,7 +104,7 @@ const SustentabilidadePage = () => {
               São Paulo é a maior metrópole da América Latina — e também uma das mais vulneráveis às mudanças climáticas. Enchentes, ilhas de calor, crises hídricas e poluição atmosférica são desafios que exigem políticas públicas sofisticadas, baseadas em evidências e com visão de longo prazo.
             </p>
             <p className="mt-6 text-lg font-light leading-relaxed text-text-body">
-              Nesse cenário, os Analistas de Políticas Públicas e Gestão Governamental desempenham um papel fundamental: são eles que ajudam a traduzir os compromissos ambientais em programas concretos, indicadores mensuráveis e governança efetiva. Da Secretaria do Verde e Meio Ambiente à Secretaria de Infraestrutura Urbana, APPGGs contribuem para que a sustentabilidade deixe de ser uma intenção e se torne realidade administrativa.
+              Nesse cenário, os Analistas de Políticas Públicas e Gestão Governamental colaboram com diferentes secretarias para apoiar a tradução dos compromissos ambientais em programas concretos, indicadores mensuráveis e governança efetiva. Da Secretaria do Verde e Meio Ambiente à Secretaria de Infraestrutura Urbana, APPGGs participam — junto a equipes técnicas de outras carreiras e às lideranças setoriais — de iniciativas pactuadas nos Planos de Atuação Institucional.
             </p>
           </FadeIn>
         </div>
@@ -131,7 +131,7 @@ const SustentabilidadePage = () => {
         <div className="container">
           <SectionTitle
             label="Eixos Temáticos"
-            title="Onde os APPGGs contribuem com a sustentabilidade"
+            title="Onde os APPGGs colaboram com a sustentabilidade"
           />
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -176,10 +176,10 @@ const SustentabilidadePage = () => {
           <FadeIn>
             <div className="mt-12 bg-card border border-border rounded-sm p-10">
               <p className="text-base font-light leading-relaxed text-text-body">
-                A agenda ambiental não é um tema isolado — ela atravessa todas as áreas da gestão pública. Saúde, mobilidade, habitação, educação: cada política setorial tem uma dimensão ambiental que precisa ser considerada. Os APPGGs, por sua formação transversal e capacidade de articulação, são peças-chave para garantir que a sustentabilidade seja tratada como eixo estruturante — e não como pauta secundária.
+                A agenda ambiental não é um tema isolado — ela atravessa todas as áreas da gestão pública. Saúde, mobilidade, habitação, educação: cada política setorial tem uma dimensão ambiental que precisa ser considerada. Os APPGGs, por sua formação transversal e capacidade de articulação, colaboram — em conjunto com as carreiras técnicas finalísticas e sob coordenação das lideranças de cada pasta — para que a sustentabilidade seja tratada como eixo estruturante dentro dos Planos de Atuação Institucional.
               </p>
               <p className="mt-6 text-base font-light leading-relaxed text-text-body">
-                Com o avanço das metas climáticas globais e os compromissos assumidos por São Paulo em fóruns internacionais, a demanda por gestores públicos qualificados na área ambiental só tende a crescer. Fortalecer a carreira de APPGG é, também, fortalecer a capacidade do município de responder aos maiores desafios do nosso tempo.
+                Com o avanço das metas climáticas globais e os compromissos assumidos por São Paulo em fóruns internacionais, a demanda por trabalho colaborativo e qualificado na área ambiental só tende a crescer. Fortalecer a carreira de APPGG é também fortalecer a capacidade do município de responder, em parceria entre carreiras, aos maiores desafios do nosso tempo.
               </p>
             </div>
           </FadeIn>
