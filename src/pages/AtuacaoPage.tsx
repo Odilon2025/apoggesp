@@ -433,14 +433,14 @@ const AtuacaoPage = () => {
   return (
     <PageLayout>
       <PageHero
-        label="Impacto"
+        label="Colaboração"
         title="Atuação dos APPGGs"
-        subtitle="Mais de 50 casos reais de atuação de Analistas de Políticas Públicas e Gestão Governamental na Prefeitura de São Paulo. Do Caderno Gestão Pública em Rede ao 2º Seminário APPGG."
+        subtitle="Mais de 50 casos de colaboração de Analistas de Políticas Públicas e Gestão Governamental com órgãos e equipes da Prefeitura de São Paulo. Do Caderno Gestão Pública em Rede ao 2º Seminário APPGG."
       />
 
       <section className="py-24 md:py-32 bg-card">
         <div className="container">
-          <SectionTitle label="Casos Documentados" title="Onde a Carreira Fez Diferença" subtitle="Cada caso abaixo é baseado em registros públicos produzidos por APPGGs. Não são promessas: são resultados." />
+          <SectionTitle label="Casos Documentados" title="Onde a Carreira Colaborou" subtitle="Cada caso abaixo registra contribuições de APPGGs em iniciativas conduzidas em conjunto com outras carreiras, gestores e parceiros institucionais, dentro das prioridades fixadas pela administração superior." />
 
           {/* Filter */}
           <div className="flex flex-wrap gap-2 mb-12">
