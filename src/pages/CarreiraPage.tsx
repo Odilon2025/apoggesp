@@ -16,14 +16,14 @@ const timelineItems = [
 ];
 
 const areasAtuacao = [
-  "Formulação, implementação e avaliação de políticas públicas em todas as áreas de governo",
-  "Planejamento estratégico e monitoramento do Programa de Metas da cidade",
-  "Gestão de projetos prioritários e coordenação de entregas intersetoriais",
-  "Inovação em serviços públicos por meio de ciências comportamentais e design centrado no cidadão",
-  "Articulação entre secretarias e construção de políticas transversais",
-  "Governança orçamentária, gestão fiscal e transferências entre entes",
-  "Transformação digital, gestão da informação e sistemas de monitoramento",
-  "Formação de lideranças, desenvolvimento de equipes e construção de capacidades estatais",
+  "Colaboração com a formulação, implementação e avaliação de políticas públicas em todas as áreas de governo",
+  "Apoio ao planejamento estratégico e ao monitoramento do Programa de Metas da cidade",
+  "Participação na gestão de projetos prioritários e na coordenação de entregas intersetoriais",
+  "Contribuição com inovação em serviços públicos, em parceria com equipes técnicas, por meio de ciências comportamentais e design centrado no cidadão",
+  "Articulação entre secretarias e colaboração na construção de políticas transversais",
+  "Apoio à governança orçamentária, à gestão fiscal e às transferências entre entes",
+  "Colaboração com a transformação digital, a gestão da informação e os sistemas de monitoramento",
+  "Apoio à formação de lideranças, ao desenvolvimento de equipes e à construção de capacidades estatais",
 ];
 
 const CarreiraPage = () => (
@@ -31,7 +31,7 @@ const CarreiraPage = () => (
     <PageHero
       label="A Carreira"
       title="Analistas de Políticas Públicas e Gestão Governamental"
-      subtitle="A carreira que existe para que São Paulo consiga transformar intenções em entregas — e entregas em legado."
+      subtitle="A carreira que colabora — em conjunto com outras carreiras municipais e dentro das diretrizes da administração superior — para que São Paulo transforme intenções em entregas."
     />
 
     <section className="py-24 md:py-32 bg-card">
@@ -44,13 +44,13 @@ const CarreiraPage = () => (
             <FadeIn>
               <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
                 <p>
-                  Em 2015, São Paulo fez uma aposta: criar uma carreira de nível superior dedicada exclusivamente a fortalecer a capacidade do governo municipal de planejar, implementar e avaliar políticas públicas. A Lei Municipal nº 16.193 deu nome a essa aposta — Analista de Políticas Públicas e Gestão Governamental — e definiu suas atribuições: implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas.
+                  Em 2015, São Paulo fez uma aposta: criar uma carreira de nível superior dedicada a colaborar com o fortalecimento da capacidade do governo municipal de planejar, implementar e avaliar políticas públicas. A Lei Municipal nº 16.193 deu nome a essa aposta — Analista de Políticas Públicas e Gestão Governamental — e definiu suas atribuições: implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas, sempre em apoio às prioridades fixadas pela administração superior.
                 </p>
                 <p>
-                  Uma década depois, os frutos dessa decisão estão espalhados por toda a administração. Os APPGGs se tornaram a engrenagem silenciosa da Prefeitura — profissionais que operam na intersecção entre a formulação técnica e a realidade do território, entre o que o dado revela e o que a política precisa resolver.
+                  Uma década depois, os frutos dessa decisão estão espalhados por toda a administração — sempre como produto de um trabalho conjunto. Os APPGGs colaboram, lado a lado com outras carreiras municipais e com as lideranças de cada pasta, na intersecção entre a formulação técnica e a realidade do território.
                 </p>
                 <p>
-                  A carreira ocupa o que a literatura chama de burocracia de médio escalão: o espaço entre quem decide e quem executa. É ali, nesse elo muitas vezes invisível, que se traduzem diretrizes em projetos, indicadores em ações e compromissos em entregas mensuráveis. Seus integrantes estão presentes em praticamente todos os órgãos da administração direta, atuando de forma transversal — não como observadores, mas como construtores.
+                  A carreira ocupa o que a literatura chama de burocracia de médio escalão: o espaço entre quem decide e quem executa. É ali que se contribui para traduzir diretrizes em projetos, indicadores em ações e compromissos em entregas mensuráveis — sempre em diálogo com as equipes técnicas, gestores e parceiros institucionais que conduzem cada iniciativa.
                 </p>
               </div>
             </FadeIn>
@@ -86,13 +86,13 @@ const CarreiraPage = () => (
             <FadeIn>
               <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
                 <p>
-                  Administradores públicos, economistas, cientistas sociais, engenheiros, advogados — os APPGGs chegam de formações diversas, mas convergem em uma competência comum: a capacidade de traduzir complexidade em ação. O ingresso ocorre por concurso público de provas e títulos, exigindo nível superior. A seleção é rigorosa porque a função exige rigor.
+                  Administradores públicos, economistas, cientistas sociais, engenheiros, advogados — os APPGGs chegam de formações diversas, mas convergem em uma competência comum: a capacidade de colaborar com a tradução da complexidade em ação. O ingresso ocorre por concurso público de provas e títulos, exigindo nível superior.
                 </p>
                 <p>
-                  Na prática, os analistas atuam como intérpretes — de problemas públicos, de dados, de contextos políticos e institucionais. São eles que, muitas vezes, identificam o gap entre uma diretriz e sua execução, e constroem o caminho para preenchê-lo. Ferramentas de gestão e planejamento são o vocabulário; a melhoria das políticas públicas, o objetivo.
+                  Na prática, os analistas atuam como intérpretes — de problemas públicos, de dados, de contextos políticos e institucionais. Em diálogo com as equipes técnicas e com as lideranças de cada órgão, contribuem para identificar lacunas entre uma diretriz e sua execução e participam da construção do caminho para preenchê-las. Ferramentas de gestão e planejamento são o vocabulário; a colaboração com a melhoria das políticas públicas, o objetivo.
                 </p>
                 <p>
-                  Mas o desempenho vai além da técnica. APPGGs lideram projetos, formam novas lideranças, criam laboratórios de inovação, redesenham processos e enfrentam problemas que nenhum manual previu. A carreira se construiu fazendo — e cada desafio superado alargou o entendimento coletivo do que um servidor público transversal pode realizar.
+                  O trabalho vai além da técnica isolada. APPGGs participam de projetos, contribuem com a formação de novas lideranças, colaboram com laboratórios de inovação, apoiam o redesenho de processos e enfrentam — sempre em conjunto com outras carreiras e dentro dos Planos de Atuação Institucional — problemas que nenhum manual previu.
                 </p>
               </div>
             </FadeIn>
@@ -175,7 +175,7 @@ const CarreiraPage = () => (
                   A base legal da carreira está no artigo 13 da Lei nº 16.193/2015, que define suas atribuições com clareza cirúrgica: <em className="text-foreground">"implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas da Administração Direta e Indireta da Prefeitura do Município de São Paulo."</em> Poucas carreiras municipais no Brasil têm um mandato tão amplo — e tão exigente.
                 </p>
                 <p>
-                  Em 2021, a Portaria SEGES nº 13 deu o próximo passo: formalizou que os APPGGs devem ser alocados prioritariamente na elaboração do Programa de Metas, no planejamento orçamentário (LOA e PPA) e em projetos de reestruturação institucional. A portaria não criou a prática — apenas reconheceu o que a carreira já vinha demonstrando no campo.
+                  Em 2021, a Portaria SEGES nº 13 deu o próximo passo: formalizou que os APPGGs devem ser alocados prioritariamente em apoio à elaboração do Programa de Metas, ao planejamento orçamentário (LOA e PPA) e a projetos de reestruturação institucional, sempre conforme as prioridades definidas pela administração superior.
                 </p>
                 <p>
                   O marco mais recente veio em 2024, quando o Decreto nº 63.336 institucionalizou o SMAE como sistema oficial de monitoramento e criou a Rede SMAE — uma comunidade de mais de 500 servidores. O decreto transformou um projeto em política permanente, e uma ferramenta em patrimônio público.
