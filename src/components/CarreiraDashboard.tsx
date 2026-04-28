@@ -130,7 +130,7 @@ const tooltipStyle = {
   fontWeight: 300,
 };
 
-type Tab = "orgaos" | "ingresso" | "sexo" | "raca" | "ref" | "geracao";
+type Tab = "orgaos" | "ingresso" | "sexo" | "raca" | "ref" | "geracao" | "comissao";
 
 const tabs: { id: Tab; label: string }[] = [
   { id: "orgaos", label: "Órgãos" },
@@ -139,6 +139,7 @@ const tabs: { id: Tab; label: string }[] = [
   { id: "sexo", label: "Gênero" },
   { id: "raca", label: "Raça/Cor" },
   { id: "geracao", label: "Geração" },
+  { id: "comissao", label: "Liderança" },
 ];
 
 const CarreiraDashboard = () => {
