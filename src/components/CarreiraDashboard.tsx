@@ -346,9 +346,53 @@ const CarreiraDashboard = () => {
                 </div>
               </div>
             ))}
+
+            <div className="lg:col-span-2 mt-6">
+              <h4 className="text-[11px] font-light text-text-caption tracking-[0.15em] uppercase mb-2">
+                Pirâmide dos cargos comissionados — por referência (CDA)
+              </h4>
+              <p className="text-[11px] font-light text-text-body leading-relaxed mb-5">
+                CDA-1 (base) a CDA-6 (topo). Cada barra mostra a composição interna de cada nível hierárquico.
+              </p>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {[
+                  { title: "Composição por gênero (%)", data: piramideGenero, keys: ["Feminino", "Masculino"] },
+                  { title: "Composição por raça/cor (%)", data: piramideRaca, keys: ["Branca", "Negra", "Amarela"] },
+                ].map((block, idx) => (
+                  <div key={block.title}>
+                    <h5 className="text-[10px] font-light text-text-caption tracking-wide uppercase mb-3">
+                      {block.title}
+                    </h5>
+                    <ResponsiveContainer width="100%" height={260}>
+                      <BarChart data={block.data} margin={{ top: 8, right: 16, left: 0, bottom: 8 }}>
+                        <CartesianGrid stroke={BORDER} strokeDasharray="2 4" />
+                        <XAxis dataKey="ref" stroke={MUTED} tick={{ fontSize: 11 }} />
+                        <YAxis stroke={MUTED} tick={{ fontSize: 11 }} tickFormatter={(v) => `${v}%`} domain={[0, 100]} />
+                        <Tooltip
+                          contentStyle={tooltipStyle}
+                          cursor={{ fill: "hsl(var(--muted) / 0.3)" }}
+                          formatter={(v: number, n) => [`${v}%`, n]}
+                          labelFormatter={(l, p) => `${l} · ${p?.[0]?.payload?.total ?? 0} cargos`}
+                        />
+                        <Legend wrapperStyle={{ fontSize: 10 }} />
+                        {block.keys.map((k, i) => (
+                          <Bar
+                            key={k}
+                            dataKey={k}
+                            stackId="a"
+                            fill={idx === 0 ? [GOLD, "hsl(var(--foreground))"][i] : [GOLD, "hsl(var(--foreground))", "hsl(var(--muted-foreground))"][i]}
+                          />
+                        ))}
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             <div className="lg:col-span-2 mt-4 p-5 border border-luxury-border bg-section-alt">
               <p className="text-[11px] font-light text-text-body leading-relaxed">
-                <span className="text-gold">Leitura.</span> Dos 185 APPGGs em exercício, 57 (30,8%) ocupam cargos em comissão. A taxa de ocupação é semelhante entre homens (28,3%) e mulheres (34,7%), e entre pessoas brancas (28,2%) e negras — pretas e pardas somadas (36,2%). Os dados sugerem que, dentro da carreira, o acesso a funções de liderança tem se distribuído de forma equitativa entre grupos.
+                <span className="text-gold">Leitura.</span> Dos 185 APPGGs em exercício, 57 (30,8%) ocupam cargos em comissão. A taxa agregada é semelhante entre homens (28,3%) e mulheres (34,7%), e entre pessoas brancas (28,2%) e negras — pretas e pardas somadas (36,2%). <span className="text-foreground">No entanto, o recorte por referência revela um padrão distinto no topo da pirâmide:</span> o CDA-6, cargo comissionado de maior nível ocupado por APPGGs, é composto <span className="text-foreground">100% por servidores de raça/cor branca</span> (0 negros, 0 amarelos). A proporção de mulheres no CDA-6 (41,7%) é próxima à média da carreira (38,9%), mas a presença de servidores negros — que representam 31,4% da carreira — é nula nos dois níveis mais altos (CDA-5 tem 60% brancos, CDA-6 tem 100%). A equidade observada no agregado não se reproduz quando se olha para os postos de decisão mais elevados.
               </p>
             </div>
           </div>
