@@ -84,6 +84,35 @@ const geracao = [
   { faixa: "Geração Z", sub: "1997+", n: 9 },
 ];
 
+// Cargos em comissão: 57 APPGGs (30,8% do total) ocupam funções de liderança
+// Recorte por gênero e raça — permite avaliar equidade no acesso a postos de decisão
+const comissaoGenero = [
+  { grupo: "Feminino", comBase: 72, comComissao: 25 },
+  { grupo: "Masculino", comBase: 113, comComissao: 32 },
+];
+
+const comissaoRaca = [
+  { grupo: "Branca", comBase: 124, comComissao: 35 },
+  { grupo: "Parda", comBase: 29, comComissao: 12 },
+  { grupo: "Preta", comBase: 29, comComissao: 9 },
+  { grupo: "Amarela", comBase: 3, comComissao: 1 },
+];
+
+// Taxa de ocupação de cargos comissionados por grupo (%)
+const taxaGenero = comissaoGenero.map((d) => ({
+  grupo: d.grupo,
+  taxa: Number(((d.comComissao / d.comBase) * 100).toFixed(1)),
+  total: d.comBase,
+  comissao: d.comComissao,
+}));
+
+const taxaRaca = comissaoRaca.map((d) => ({
+  grupo: d.grupo,
+  taxa: Number(((d.comComissao / d.comBase) * 100).toFixed(1)),
+  total: d.comBase,
+  comissao: d.comComissao,
+}));
+
 const GOLD = "hsl(var(--gold))";
 const MUTED = "hsl(var(--muted-foreground))";
 const BORDER = "hsl(var(--luxury-border))";
@@ -101,7 +130,7 @@ const tooltipStyle = {
   fontWeight: 300,
 };
 
-type Tab = "orgaos" | "ingresso" | "sexo" | "raca" | "ref" | "geracao";
+type Tab = "orgaos" | "ingresso" | "sexo" | "raca" | "ref" | "geracao" | "comissao";
 
 const tabs: { id: Tab; label: string }[] = [
   { id: "orgaos", label: "Órgãos" },
@@ -110,6 +139,7 @@ const tabs: { id: Tab; label: string }[] = [
   { id: "sexo", label: "Gênero" },
   { id: "raca", label: "Raça/Cor" },
   { id: "geracao", label: "Geração" },
+  { id: "comissao", label: "Liderança" },
 ];
 
 const CarreiraDashboard = () => {
@@ -227,6 +257,71 @@ const CarreiraDashboard = () => {
               <Bar dataKey="n" fill={GOLD} name="APPGGs" />
             </BarChart>
           </ResponsiveContainer>
+        );
+      case "comissao":
+        return (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {[
+              { title: "Por Gênero", data: taxaGenero },
+              { title: "Por Raça/Cor", data: taxaRaca },
+            ].map((block) => (
+              <div key={block.title}>
+                <h4 className="text-[11px] font-light text-text-caption tracking-[0.15em] uppercase mb-4">
+                  {block.title}
+                </h4>
+                <ResponsiveContainer width="100%" height={280}>
+                  <BarChart
+                    data={block.data}
+                    layout="vertical"
+                    margin={{ left: 20, right: 48, top: 8, bottom: 8 }}
+                  >
+                    <CartesianGrid horizontal={false} stroke={BORDER} strokeDasharray="2 4" />
+                    <XAxis
+                      type="number"
+                      stroke={MUTED}
+                      tick={{ fontSize: 11 }}
+                      domain={[0, 50]}
+                      tickFormatter={(v) => `${v}%`}
+                    />
+                    <YAxis
+                      type="category"
+                      dataKey="grupo"
+                      stroke={MUTED}
+                      tick={{ fontSize: 11 }}
+                      width={80}
+                    />
+                    <Tooltip
+                      contentStyle={tooltipStyle}
+                      cursor={{ fill: "hsl(var(--muted) / 0.3)" }}
+                      formatter={(v: number, _n, p) => [
+                        `${v}% — ${p.payload.comissao} de ${p.payload.total}`,
+                        "Em cargo comissionado",
+                      ]}
+                    />
+                    <Bar dataKey="taxa" fill={GOLD} name="% em comissão" />
+                  </BarChart>
+                </ResponsiveContainer>
+                <div className="mt-3 space-y-1">
+                  {block.data.map((d) => (
+                    <div
+                      key={d.grupo}
+                      className="flex justify-between text-[11px] font-light text-text-body border-b border-luxury-border py-1"
+                    >
+                      <span>{d.grupo}</span>
+                      <span className="text-text-caption">
+                        {d.comissao}/{d.total} · <span className="text-gold">{d.taxa}%</span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+            <div className="lg:col-span-2 mt-4 p-5 border border-luxury-border bg-section-alt">
+              <p className="text-[11px] font-light text-text-body leading-relaxed">
+                <span className="text-gold">Leitura.</span> Dos 185 APPGGs em exercício, 57 (30,8%) ocupam cargos em comissão. A taxa de ocupação é semelhante entre homens (28,3%) e mulheres (34,7%), e entre pessoas brancas (28,2%) e negras — pretas e pardas somadas (36,2%). Os dados sugerem que, dentro da carreira, o acesso a funções de liderança tem se distribuído de forma equitativa entre grupos.
+              </p>
+            </div>
+          </div>
         );
     }
   }, [tab]);
