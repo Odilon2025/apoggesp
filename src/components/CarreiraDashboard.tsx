@@ -113,6 +113,36 @@ const taxaRaca = comissaoRaca.map((d) => ({
   comissao: d.comComissao,
 }));
 
+// Composição dos cargos comissionados por referência (CDA)
+// CDA-1 (mais baixo) → CDA-6 (mais alto). Mostra se o topo da pirâmide reproduz a diversidade da base.
+const piramideCda = [
+  // ref: [Fem, Masc, Branca, Parda, Preta, Amarela, total]
+  { ref: "CDA-1", fem: 2, masc: 0, branca: 0, parda: 1, preta: 1, amarela: 0, total: 2 },
+  { ref: "CDA-2", fem: 4, masc: 0, branca: 3, parda: 1, preta: 0, amarela: 0, total: 4 },
+  { ref: "CDA-3", fem: 1, masc: 6, branca: 1, parda: 3, preta: 2, amarela: 1, total: 7 },
+  { ref: "CDA-4", fem: 8, masc: 13, branca: 14, parda: 4, preta: 3, amarela: 0, total: 21 },
+  { ref: "CDA-5", fem: 5, masc: 5, branca: 4, parda: 3, preta: 3, amarela: 0, total: 10 },
+  { ref: "CDA-6", fem: 5, masc: 7, branca: 12, parda: 0, preta: 0, amarela: 0, total: 12 },
+];
+
+const piramideGenero = piramideCda.map((d) => ({
+  ref: d.ref,
+  Feminino: Number(((d.fem / d.total) * 100).toFixed(1)),
+  Masculino: Number(((d.masc / d.total) * 100).toFixed(1)),
+  total: d.total,
+}));
+
+const piramideRaca = piramideCda.map((d) => {
+  const negras = d.parda + d.preta;
+  return {
+    ref: d.ref,
+    Branca: Number(((d.branca / d.total) * 100).toFixed(1)),
+    Negra: Number(((negras / d.total) * 100).toFixed(1)),
+    Amarela: Number(((d.amarela / d.total) * 100).toFixed(1)),
+    total: d.total,
+  };
+});
+
 const GOLD = "hsl(var(--gold))";
 const MUTED = "hsl(var(--muted-foreground))";
 const BORDER = "hsl(var(--luxury-border))";
