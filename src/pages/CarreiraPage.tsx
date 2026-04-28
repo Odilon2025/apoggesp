@@ -2,6 +2,7 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
+import CarreiraDashboard from "@/components/CarreiraDashboard";
 
 const timelineItems = [
   { year: "2015", text: "A Lei Municipal nº 16.193 cria a carreira de APPGG — a primeira carreira transversal de nível superior da administração direta paulistana." },
@@ -145,10 +146,10 @@ const CarreiraPage = () => (
         <SectionTitle label="Dados" title="APPGGs em Números" center />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-luxury-border mt-8 max-w-3xl mx-auto">
           {[
-            { num: "169", label: "APPGGs em exercício" },
-            { num: "22", label: "Órgãos e entidades com APPGGs" },
+            { num: "185", label: "APPGGs em exercício" },
+            { num: "23", label: "Órgãos e entidades com APPGGs" },
             { num: "57", label: "Em funções de liderança" },
-            { num: "10", label: "Anos de carreira" },
+            { num: "13", label: "Cedidos a outros entes" },
           ].map((stat, i) => (
             <FadeIn key={stat.label} delay={i * 0.08}>
               <div className="bg-section-alt p-8 text-center">
@@ -158,8 +159,13 @@ const CarreiraPage = () => (
             </FadeIn>
           ))}
         </div>
+        <p className="text-[10px] font-light text-text-caption mt-6 tracking-wide text-center">
+          Snapshot fevereiro de 2026
+        </p>
       </div>
     </section>
+
+    <CarreiraDashboard />
 
     {/* Marco Legal */}
     <section className="py-24 md:py-32 bg-card">
