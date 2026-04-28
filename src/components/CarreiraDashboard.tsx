@@ -75,11 +75,13 @@ const ingresso = [
   { ano: "2026", n: 17 },
 ];
 
+// Faixas etárias por marcos geracionais (com base no ano de nascimento)
+// Boomers: até 1964 · Geração X: 1965–1980 · Millennials (Y): 1981–1996 · Geração Z: 1997+
 const geracao = [
-  { faixa: "Antes de 1970", n: 4 },
-  { faixa: "1970–1979", n: 17 },
-  { faixa: "1980–1989", n: 104 },
-  { faixa: "1990 em diante", n: 60 },
+  { faixa: "Boomers", sub: "até 1964", n: 3 },
+  { faixa: "Geração X", sub: "1965–1980", n: 20 },
+  { faixa: "Millennials", sub: "1981–1996", n: 153 },
+  { faixa: "Geração Z", sub: "1997+", n: 9 },
 ];
 
 const GOLD = "hsl(var(--gold))";
@@ -197,11 +199,31 @@ const CarreiraDashboard = () => {
       case "geracao":
         return (
           <ResponsiveContainer width="100%" height={400}>
-            <BarChart data={geracao} margin={{ top: 20, right: 24, left: 0, bottom: 0 }}>
+            <BarChart data={geracao} margin={{ top: 20, right: 24, left: 0, bottom: 40 }}>
               <CartesianGrid stroke={BORDER} strokeDasharray="2 4" />
-              <XAxis dataKey="faixa" stroke={MUTED} tick={{ fontSize: 11 }} />
+              <XAxis
+                dataKey="faixa"
+                stroke={MUTED}
+                tick={({ x, y, payload }) => {
+                  const item = geracao.find((g) => g.faixa === payload.value);
+                  return (
+                    <g transform={`translate(${x},${y})`}>
+                      <text dy={14} textAnchor="middle" fill={MUTED} fontSize={11}>
+                        {payload.value}
+                      </text>
+                      <text dy={30} textAnchor="middle" fill={MUTED} fontSize={9} opacity={0.7}>
+                        {item?.sub}
+                      </text>
+                    </g>
+                  );
+                }}
+              />
               <YAxis stroke={MUTED} tick={{ fontSize: 11 }} />
-              <Tooltip contentStyle={tooltipStyle} cursor={{ fill: "hsl(var(--muted) / 0.3)" }} />
+              <Tooltip
+                contentStyle={tooltipStyle}
+                cursor={{ fill: "hsl(var(--muted) / 0.3)" }}
+                formatter={(v: number, _n, p) => [`${v} APPGGs`, p.payload.sub]}
+              />
               <Bar dataKey="n" fill={GOLD} name="APPGGs" />
             </BarChart>
           </ResponsiveContainer>
