@@ -2,6 +2,7 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
+import CarreiraDashboard from "@/components/CarreiraDashboard";
 
 const timelineItems = [
   { year: "2015", text: "A Lei Municipal nº 16.193 cria a carreira de APPGG — a primeira carreira transversal de nível superior da administração direta paulistana." },
