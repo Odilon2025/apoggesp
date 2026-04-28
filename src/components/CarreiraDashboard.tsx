@@ -199,11 +199,31 @@ const CarreiraDashboard = () => {
       case "geracao":
         return (
           <ResponsiveContainer width="100%" height={400}>
-            <BarChart data={geracao} margin={{ top: 20, right: 24, left: 0, bottom: 0 }}>
+            <BarChart data={geracao} margin={{ top: 20, right: 24, left: 0, bottom: 40 }}>
               <CartesianGrid stroke={BORDER} strokeDasharray="2 4" />
-              <XAxis dataKey="faixa" stroke={MUTED} tick={{ fontSize: 11 }} />
+              <XAxis
+                dataKey="faixa"
+                stroke={MUTED}
+                tick={({ x, y, payload }) => {
+                  const item = geracao.find((g) => g.faixa === payload.value);
+                  return (
+                    <g transform={`translate(${x},${y})`}>
+                      <text dy={14} textAnchor="middle" fill={MUTED} fontSize={11}>
+                        {payload.value}
+                      </text>
+                      <text dy={30} textAnchor="middle" fill={MUTED} fontSize={9} opacity={0.7}>
+                        {item?.sub}
+                      </text>
+                    </g>
+                  );
+                }}
+              />
               <YAxis stroke={MUTED} tick={{ fontSize: 11 }} />
-              <Tooltip contentStyle={tooltipStyle} cursor={{ fill: "hsl(var(--muted) / 0.3)" }} />
+              <Tooltip
+                contentStyle={tooltipStyle}
+                cursor={{ fill: "hsl(var(--muted) / 0.3)" }}
+                formatter={(v: number, _n, p) => [`${v} APPGGs`, p.payload.sub]}
+              />
               <Bar dataKey="n" fill={GOLD} name="APPGGs" />
             </BarChart>
           </ResponsiveContainer>
