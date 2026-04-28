@@ -84,6 +84,35 @@ const geracao = [
   { faixa: "Geração Z", sub: "1997+", n: 9 },
 ];
 
+// Cargos em comissão: 57 APPGGs (30,8% do total) ocupam funções de liderança
+// Recorte por gênero e raça — permite avaliar equidade no acesso a postos de decisão
+const comissaoGenero = [
+  { grupo: "Feminino", comBase: 72, comComissao: 25 },
+  { grupo: "Masculino", comBase: 113, comComissao: 32 },
+];
+
+const comissaoRaca = [
+  { grupo: "Branca", comBase: 124, comComissao: 35 },
+  { grupo: "Parda", comBase: 29, comComissao: 12 },
+  { grupo: "Preta", comBase: 29, comComissao: 9 },
+  { grupo: "Amarela", comBase: 3, comComissao: 1 },
+];
+
+// Taxa de ocupação de cargos comissionados por grupo (%)
+const taxaGenero = comissaoGenero.map((d) => ({
+  grupo: d.grupo,
+  taxa: Number(((d.comComissao / d.comBase) * 100).toFixed(1)),
+  total: d.comBase,
+  comissao: d.comComissao,
+}));
+
+const taxaRaca = comissaoRaca.map((d) => ({
+  grupo: d.grupo,
+  taxa: Number(((d.comComissao / d.comBase) * 100).toFixed(1)),
+  total: d.comBase,
+  comissao: d.comComissao,
+}));
+
 const GOLD = "hsl(var(--gold))";
 const MUTED = "hsl(var(--muted-foreground))";
 const BORDER = "hsl(var(--luxury-border))";
