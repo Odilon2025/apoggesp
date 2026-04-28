@@ -75,11 +75,13 @@ const ingresso = [
   { ano: "2026", n: 17 },
 ];
 
+// Faixas etárias por marcos geracionais (com base no ano de nascimento)
+// Boomers: até 1964 · Geração X: 1965–1980 · Millennials (Y): 1981–1996 · Geração Z: 1997+
 const geracao = [
-  { faixa: "Antes de 1970", n: 4 },
-  { faixa: "1970–1979", n: 17 },
-  { faixa: "1980–1989", n: 104 },
-  { faixa: "1990 em diante", n: 60 },
+  { faixa: "Boomers", sub: "até 1964", n: 1 },
+  { faixa: "Geração X", sub: "1965–1980", n: 34 },
+  { faixa: "Millennials", sub: "1981–1996", n: 137 },
+  { faixa: "Geração Z", sub: "1997+", n: 13 },
 ];
 
 const GOLD = "hsl(var(--gold))";
