@@ -187,7 +187,7 @@ const DiversidadePage = () => (
               </div>
               <ProgressBar value={36.8} color="bg-gold" delay={0.3} />
               <p className="mt-4 text-xs text-text-caption font-light leading-relaxed">
-                Participação próxima à proporção na carreira (39,6%), sinalizando equidade crescente no acesso a posições decisórias.
+                A participação de mulheres em cargos de liderança aproxima-se de sua proporção na carreira (39,6%), o que sugere avanço no acesso a posições decisórias.
               </p>
             </div>
           </FadeIn>
