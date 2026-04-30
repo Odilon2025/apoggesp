@@ -265,7 +265,7 @@ const DiversidadePage = () => (
         <FadeIn delay={0.4}>
           <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
             <p className="text-sm text-text-body font-light leading-relaxed italic">
-              "De 27% de pessoas negras na primeira geração para 40% na mais recente — a carreira de APPGG demonstra que é possível construir um serviço público mais representativo sem comprometer a excelência técnica. Pelo contrário: diversificar o repertório de perspectivas fortalece a capacidade analítica da administração."
+              "A evolução de 27% para 40% de pessoas negras entre a primeira e a mais recente coorte sugere avanço substantivo na representatividade racial. O dado não deve ser tratado como prova automática de efetividade organizacional, mas como evidência de mudança institucional relevante. A literatura sobre burocracia representativa indica que diversidade passiva só se converte em capacidade pública quando encontra condições organizacionais para influenciar decisões, rotinas e prioridades."
             </p>
           </div>
         </FadeIn>
