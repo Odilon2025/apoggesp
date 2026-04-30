@@ -188,9 +188,21 @@ const PublicacoesPage = () => {
                         <p className="text-sm font-light text-text-body mt-3 leading-relaxed max-w-2xl">{pub.resumo}</p>
                       </div>
                     </div>
-                    <button className="shrink-0 p-3 text-luxury-border hover:text-gold transition-colors duration-300" title="Download">
-                      <Download size={16} strokeWidth={1.5} />
-                    </button>
+                    {pub.url ? (
+                      <a
+                        href={pub.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="shrink-0 p-3 text-luxury-border hover:text-gold transition-colors duration-300"
+                        title="Download"
+                      >
+                        <Download size={16} strokeWidth={1.5} />
+                      </a>
+                    ) : (
+                      <button className="shrink-0 p-3 text-luxury-border hover:text-gold transition-colors duration-300" title="Download">
+                        <Download size={16} strokeWidth={1.5} />
+                      </button>
+                    )}
                   </div>
                 </article>
               </FadeIn>
