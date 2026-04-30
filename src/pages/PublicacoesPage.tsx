@@ -11,6 +11,7 @@ interface Publicacao {
   tipo: string;
   resumo: string;
   autores?: string;
+  url?: string;
 }
 
 const tipos = ["Todos", "Caderno", "Artigo", "Nota Técnica", "Proposta de Aprimoramento", "Documento Histórico"];
