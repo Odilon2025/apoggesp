@@ -311,6 +311,14 @@ const DiversidadePage = () => (
             </FadeIn>
           ))}
         </div>
+
+        <FadeIn delay={0.4}>
+          <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
+            <p className="text-sm text-text-body font-light leading-relaxed italic">
+              "A distribuição entre órgãos importa porque diversidade não deve ser observada apenas no agregado. A literatura metodológica recente recomenda olhar não só para quantidade, mas também para dispersão, concentração e presença efetiva dos grupos nos espaços onde decisões são tomadas."
+            </p>
+          </div>
+        </FadeIn>
       </div>
     </section>
 
