@@ -66,11 +66,11 @@ const CarreiraPage = () => (
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center">
             <blockquote className="text-lg md:text-xl font-display font-normal text-foreground leading-relaxed italic">
-              "A carreira é feita de pessoas e estas conseguem se adaptar ao novo e, ainda mais, são capazes de antecipar e formular o novo."
+              "A força da carreira está em colaborar, dentro da legalidade e das prioridades da administração superior, para que cada política pública chegue ao cidadão com técnica, integridade e continuidade."
             </blockquote>
             <div className="luxury-divider mt-6 mb-4" />
             <cite className="text-[11px] font-light text-text-caption not-italic tracking-wide">
-              Cibele Franzese — Professora da FGV EAESP
+              Odilon A. Candido — Diretor Jurídico da APOGESP
             </cite>
           </div>
         </FadeIn>
