@@ -31,22 +31,22 @@ const eixosAtuacao = [
   {
     icon: Shield,
     titulo: "Governança institucional",
-    descricao: "APPGGs integram comitês, comissões e instâncias decisórias onde podem incorporar critérios de equidade a protocolos, normativas e fluxos de trabalho — antes que se tornem regras silenciosas que perpetuam exclusões.",
+    descricao: "APPGGs participam de comitês, grupos de trabalho, comissões e instâncias decisórias. Nesses espaços, podem incorporar critérios de equidade a protocolos, fluxos, minutas, sistemas e rotinas administrativas antes que escolhas aparentemente neutras se consolidem como barreiras de acesso.",
   },
   {
     icon: BarChart3,
     titulo: "Planejamento e orçamento",
-    descricao: "Na posição de médio escalão, o APPGG traduz diretrizes em metas concretas. Isso inclui desagregar indicadores por raça e gênero, garantindo que o planejamento governamental enxergue desigualdades que médias gerais tornam invisíveis.",
+    descricao: "Na posição de médio escalão, o APPGG converte diretrizes em metas, indicadores e alocação de recursos. Isso inclui desagregar informações por raça, gênero, território, deficiência e outros marcadores relevantes, evitando que médias gerais ocultem desigualdades específicas.",
   },
   {
     icon: Target,
     titulo: "Desenho de políticas",
-    descricao: "Políticas aparentemente neutras podem produzir efeitos desiguais quando ignoram assimetrias estruturais. O gestor de médio escalão é quem define critérios de elegibilidade, fluxos de atendimento e regras operacionais — e pode calibrá-los para ampliar o acesso.",
+    descricao: "Critérios de elegibilidade, regras de priorização, modelos de atendimento e requisitos documentais raramente são neutros em seus efeitos. O gestor público pode calibrar esses instrumentos para reduzir barreiras, ampliar acesso e aumentar a efetividade das políticas.",
   },
   {
     icon: Scale,
     titulo: "Implementação e avaliação",
-    descricao: "Entre a intenção da política e seu efeito no território, há uma cadeia de decisões operacionais. O APPGG atua nessa fronteira: ajusta procedimentos, identifica riscos de exclusão e corrige rotas com base em evidências.",
+    descricao: "A implementação é o momento em que a política encontra a realidade. O APPGG atua nessa fronteira: identifica gargalos, monitora exclusões, revisa procedimentos e propõe ajustes com base em evidências. A literatura sobre governança experimental reforça essa lógica: regras gerais precisam ser acompanhadas de revisão, aprendizado e correção a partir da implementação concreta.",
   },
 ];
 
