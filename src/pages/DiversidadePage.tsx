@@ -323,7 +323,7 @@ const DiversidadePage = () => (
     </section>
 
     {/* Fechamento */}
-    <section className="py-20 md:py-28">
+    <section className="py-20 md:py-28 bg-[hsl(150_25%_18%)] text-[hsl(40_30%_94%)]">
       <div className="container">
         <div className="max-w-2xl mx-auto text-center">
           <FadeIn>
