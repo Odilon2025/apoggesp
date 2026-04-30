@@ -95,7 +95,8 @@ const publicacoesBase: Publicacao[] = [
   },
 ];
 
-const PublicacoesPage = () => {
+const publicacoes: Publicacao[] = publicacoesBase.map((p) => ({ ...p, url: p.url ?? CADERNO_URL }));
+
   const [tipoFiltro, setTipoFiltro] = useState("Todos");
   const [anoFiltro, setAnoFiltro] = useState("Todos");
 
