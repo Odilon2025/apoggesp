@@ -173,7 +173,7 @@ const DiversidadePage = () => (
         <SectionTitle
           label="Liderança"
           title="Diversidade onde as decisões acontecem"
-          subtitle="A presença de mulheres e pessoas negras em cargos de liderança é um indicador crucial de maturidade institucional. Os números mostram avanço — e também onde ainda é preciso avançar."
+          subtitle="A presença de mulheres e pessoas negras em cargos de liderança é um indicador relevante de maturidade institucional, mas deve ser lida com cautela. Representatividade em posições decisórias pode ampliar legitimidade interna, oportunidades de ascensão e sensibilidade institucional; sua recepção, contudo, depende do ambiente organizacional e pode gerar resistências quando não há gestão explícita da diversidade."
         />
         <div className="grid md:grid-cols-2 gap-8 max-w-2xl">
           <FadeIn delay={0.05}>
