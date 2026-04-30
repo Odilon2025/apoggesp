@@ -29,7 +29,7 @@ const publicacoesRecentes = [
 ];
 
 const stats = [
-  { num: "169", label: "analistas em exercício" },
+  { num: "185", label: "analistas em exercício" },
   { num: "22", label: "órgãos e entidades" },
   { num: "10", label: "anos de carreira" },
 ];
