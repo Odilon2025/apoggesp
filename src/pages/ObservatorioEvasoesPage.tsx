@@ -86,7 +86,7 @@ const ObservatorioEvasoesPage = () => {
             <div className="lg:col-span-8 space-y-6">
               <FadeIn>
                 <p className="text-base font-light text-text-body leading-relaxed">
-                  O Observatório das Evasões é uma iniciativa de pesquisa conduzida pela APOGESP em colaboração com a administração superior e com as áreas de gestão de pessoas da Prefeitura. Seu objetivo é produzir dados públicos sobre a rotatividade na carreira de Analista de Políticas Públicas e Gestão Governamental.
+                  O Observatório das Evasões é uma iniciativa exclusiva da APOGESP, que se propõe a produzir dados públicos sobre a rotatividade na carreira de Analista de Políticas Públicas e Gestão Governamental.
                 </p>
               </FadeIn>
               <FadeIn delay={0.1}>
