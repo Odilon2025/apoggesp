@@ -146,8 +146,8 @@ const DiversidadePage = () => (
       <div className="container">
         <SectionTitle
           label="Atuação estratégica"
-          title="Onde o APPGG faz a diferença"
-          subtitle="O gestor de políticas públicas não apenas executa — ele desenha, calibra e corrige. Em cada um desses momentos, a diversidade do corpo técnico amplia a capacidade institucional de identificar riscos e produzir resultados mais equitativos."
+          title="Onde o APPGG faz diferença"
+          subtitle="O APPGG não apenas executa políticas. Ele desenha, ajusta, mede e corrige. Em cada uma dessas funções, diversidade e capacidade técnica podem se reforçar mutuamente."
         />
         <div className="grid sm:grid-cols-2 gap-6 max-w-4xl">
           {eixosAtuacao.map((eixo, i) => (
