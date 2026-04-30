@@ -87,7 +87,7 @@ const ApogespPage = () => (
                   A carreira de APPGG foi criada em 2015 e seus integrantes atuam vinculados à estrutura administrativa da Prefeitura de São Paulo. A APOGESP, por sua vez, é uma associação civil sem fins lucrativos, independente e autônoma — não integra a estrutura administrativa da Prefeitura, não depende do governo e não fala por ele.
                 </p>
                 <p>
-                  Essa separação é deliberada. A associação existe para representar os interesses de seus associados, propor melhorias à carreira, produzir conhecimento técnico e manter um canal de diálogo permanente com a administração pública — sempre a partir de uma posição de independência.
+                  Essa separação é deliberada. A APOGESP é, antes de tudo, uma entidade de representação dos interesses de classe dos APPGGs — atua pela valorização da carreira, pela defesa de condições adequadas de trabalho e pelo reconhecimento institucional de seus associados. Ao mesmo tempo, pretende contribuir com o debate público sobre gestão municipal, produzindo conhecimento técnico e mantendo um canal de diálogo permanente com a administração pública.
                 </p>
                 <p>
                   A APOGESP reconhece e valoriza o trabalho das instâncias governamentais responsáveis pela gestão da carreira, mas preserva sua autonomia para analisar, propor e, quando necessário, divergir. É essa independência que sustenta a credibilidade da associação perante seus associados e a sociedade.
