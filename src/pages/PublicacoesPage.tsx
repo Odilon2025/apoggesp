@@ -16,7 +16,9 @@ interface Publicacao {
 
 const tipos = ["Todos", "Caderno", "Artigo", "Nota Técnica", "Proposta de Aprimoramento", "Documento Histórico"];
 
-const publicacoes: Publicacao[] = [
+const CADERNO_URL = "https://prefeitura.sp.gov.br/web/gestao/assessoria_de_carreiras_transversais";
+
+const publicacoesBase: Publicacao[] = [
   {
     titulo: "Caderno Gestão Pública em Rede — 1ª Edição",
     ano: "2025",
