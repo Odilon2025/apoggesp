@@ -70,8 +70,8 @@ const DiversidadePage = () => (
   <PageLayout>
     <PageHero
       label="Diversidade"
-      title="Representatividade como engenharia institucional"
-      subtitle="Desigualdades não se corrigem por inércia. Elas se reproduzem em normas, critérios e rotinas administrativas — muitas vezes sem intenção. Uma burocracia representativa é a primeira linha de defesa contra essa reprodução silenciosa."
+      title="Representatividade como capacidade institucional"
+      subtitle="Desigualdades não se corrigem por inércia. Podem ser reproduzidas por normas, critérios, formulários, fluxos e rotinas administrativas aparentemente neutros. Representatividade no serviço público não é apenas simbólica: é uma condição institucional para ampliar repertórios de análise, identificar riscos de exclusão e calibrar políticas com maior aderência à realidade da população atendida."
     />
 
     {/* Indicadores Gerais */}
