@@ -123,8 +123,17 @@ const PublicacoesPage = () => {
               <p className="text-sm font-light text-text-body mt-3 leading-relaxed max-w-3xl">
                 Nove artigos. Nove histórias de quem esteve dentro da máquina pública, tentando fazê-la funcionar melhor. A primeira publicação coletiva dos APPGGs celebra uma década de carreira com o que ela faz de melhor: análise rigorosa, experiência de campo e compromisso com o registro. Organizado pela Assessoria de Carreiras Transversais (ACT) da Secretaria Municipal de Gestão.
               </p>
-              <div className="flex items-center gap-4 mt-6">
+              <div className="flex items-center justify-between gap-4 mt-6 flex-wrap">
                 <span className="text-[11px] font-light text-text-caption">Dezembro 2025 · Prefeitura de São Paulo</span>
+                <a
+                  href="https://drive.prefeitura.sp.gov.br/cidade/secretarias/upload/gestao/arquivos/Caderno%20Gest%C3%A3o%20P%C3%BAblica%20em%20Rede%20%2010%20anos%20da%20Carreira%20de%20Analista%20de%20Pol%C3%ADticas%20P%C3%BAblicas%20e%20Gest%C3%A3o%20Governamental%20%20%281%29-compactado%20%281%29.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-light text-accent hover:text-foreground transition-colors duration-300"
+                >
+                  <Download size={14} strokeWidth={1.5} />
+                  Baixar PDF
+                </a>
               </div>
             </div>
           </FadeIn>
