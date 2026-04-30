@@ -331,16 +331,19 @@ const DiversidadePage = () => (
               Compromisso institucional
             </span>
             <h2 className="text-2xl md:text-3xl font-display text-text-display leading-tight text-balance mb-6">
-              Efetividade exige representatividade
+              Efetividade exige representatividade, método e governança
             </h2>
             <p className="text-sm text-text-body font-light leading-relaxed mb-4">
-              As desigualdades não se corrigem por inércia — elas se reproduzem em cada formulário mal desenhado, em cada critério que ignora contextos, em cada rotina que naturaliza a exclusão. Uma burocracia composta por perfis diversos tem mais capacidade de antecipar esses efeitos e corrigi-los antes que se tornem sistêmicos.
+              A carreira de APPGG mostra avanço relevante na construção de um corpo técnico mais representativo. Os dados indicam crescimento da diversidade racial, presença expressiva de mulheres e participação de pessoas negras em posições de liderança. Também apontam desafios: ampliar a inclusão de pessoas com deficiência, acompanhar a distribuição por órgão e preservar a equidade no acesso a posições decisórias.
             </p>
             <p className="text-sm text-text-body font-light leading-relaxed mb-4">
-              Os dados mostram que a carreira de APPGG caminha na direção certa. Cada concurso amplia o repertório de experiências. Mas os números também revelam onde é preciso ir além: na equidade de gênero em posições de liderança, na representatividade em determinados órgãos, na inclusão de pessoas com deficiência.
+              A tese central é simples: diversidade não é ornamento institucional. É uma dimensão da capacidade estatal. Uma burocracia mais representativa tende a enxergar melhor a cidade, formular perguntas mais completas e antecipar efeitos que uma administração homogênea pode ignorar.
+            </p>
+            <p className="text-sm text-text-body font-light leading-relaxed mb-4">
+              Mas representatividade só produz efeito público quando combinada com técnica, dados, liderança, rotinas de avaliação e abertura institucional para revisão. É nessa combinação — diversidade, método e governança — que a administração pública se torna mais capaz de enfrentar desigualdades concretas.
             </p>
             <p className="text-sm text-text-body font-light leading-relaxed">
-              A APOGESP acompanha essa evolução com dados, transparência e a convicção de que uma gestão pública mais efetiva começa por uma burocracia que compreende — porque vivencia — a complexidade da cidade que serve.
+              A APOGESP acompanha essa evolução com dados e transparência, defendendo uma gestão pública que reconheça a complexidade da cidade e organize sua burocracia para responder a ela com competência, equidade e responsabilidade institucional.
             </p>
             <div className="mt-8 luxury-divider" />
           </FadeIn>
