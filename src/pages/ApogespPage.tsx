@@ -84,7 +84,7 @@ const ApogespPage = () => (
             <FadeIn>
               <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
                 <p>
-                  A carreira de APPGG foi criada em 2015 e está vinculada à estrutura administrativa da Prefeitura de São Paulo. A APOGESP, por sua vez, é uma associação civil autônoma — não integra o governo, não depende dele e não fala por ele.
+                  A carreira de APPGG foi criada em 2015 e seus integrantes atuam vinculados à estrutura administrativa da Prefeitura de São Paulo. A APOGESP, por sua vez, é uma associação civil sem fins lucrativos, independente e autônoma — não integra a estrutura administrativa da Prefeitura, não depende do governo e não fala por ele.
                 </p>
                 <p>
                   Essa separação é deliberada. A associação existe para representar os interesses de seus associados, propor melhorias à carreira, produzir conhecimento técnico e manter um canal de diálogo permanente com a administração pública — sempre a partir de uma posição de independência.
