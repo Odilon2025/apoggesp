@@ -16,7 +16,9 @@ interface Publicacao {
 
 const tipos = ["Todos", "Caderno", "Artigo", "Nota Técnica", "Proposta de Aprimoramento", "Documento Histórico"];
 
-const publicacoes: Publicacao[] = [
+const CADERNO_URL = "https://prefeitura.sp.gov.br/web/gestao/assessoria_de_carreiras_transversais";
+
+const publicacoesBase: Publicacao[] = [
   {
     titulo: "Caderno Gestão Pública em Rede — 1ª Edição",
     ano: "2025",
@@ -92,6 +94,8 @@ const publicacoes: Publicacao[] = [
     resumo: "Diretrizes para capacitação continuada e desenvolvimento de competências — porque uma carreira transversal precisa de formação que acompanhe a amplitude de seus desafios.",
   },
 ];
+
+const publicacoes: Publicacao[] = publicacoesBase.map((p) => ({ ...p, url: p.url ?? CADERNO_URL }));
 
 const PublicacoesPage = () => {
   const [tipoFiltro, setTipoFiltro] = useState("Todos");
