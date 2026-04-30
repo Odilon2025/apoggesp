@@ -31,22 +31,22 @@ const eixosAtuacao = [
   {
     icon: Shield,
     titulo: "Governança institucional",
-    descricao: "APPGGs integram comitês, comissões e instâncias decisórias onde podem incorporar critérios de equidade a protocolos, normativas e fluxos de trabalho — antes que se tornem regras silenciosas que perpetuam exclusões.",
+    descricao: "APPGGs participam de comitês, grupos de trabalho, comissões e instâncias decisórias. Nesses espaços, podem incorporar critérios de equidade a protocolos, fluxos, minutas, sistemas e rotinas administrativas antes que escolhas aparentemente neutras se consolidem como barreiras de acesso.",
   },
   {
     icon: BarChart3,
     titulo: "Planejamento e orçamento",
-    descricao: "Na posição de médio escalão, o APPGG traduz diretrizes em metas concretas. Isso inclui desagregar indicadores por raça e gênero, garantindo que o planejamento governamental enxergue desigualdades que médias gerais tornam invisíveis.",
+    descricao: "Na posição de médio escalão, o APPGG converte diretrizes em metas, indicadores e alocação de recursos. Isso inclui desagregar informações por raça, gênero, território, deficiência e outros marcadores relevantes, evitando que médias gerais ocultem desigualdades específicas.",
   },
   {
     icon: Target,
     titulo: "Desenho de políticas",
-    descricao: "Políticas aparentemente neutras podem produzir efeitos desiguais quando ignoram assimetrias estruturais. O gestor de médio escalão é quem define critérios de elegibilidade, fluxos de atendimento e regras operacionais — e pode calibrá-los para ampliar o acesso.",
+    descricao: "Critérios de elegibilidade, regras de priorização, modelos de atendimento e requisitos documentais raramente são neutros em seus efeitos. O gestor público pode calibrar esses instrumentos para reduzir barreiras, ampliar acesso e aumentar a efetividade das políticas.",
   },
   {
     icon: Scale,
     titulo: "Implementação e avaliação",
-    descricao: "Entre a intenção da política e seu efeito no território, há uma cadeia de decisões operacionais. O APPGG atua nessa fronteira: ajusta procedimentos, identifica riscos de exclusão e corrige rotas com base em evidências.",
+    descricao: "A implementação é o momento em que a política encontra a realidade. O APPGG atua nessa fronteira: identifica gargalos, monitora exclusões, revisa procedimentos e propõe ajustes com base em evidências. A literatura sobre governança experimental reforça essa lógica: regras gerais precisam ser acompanhadas de revisão, aprendizado e correção a partir da implementação concreta.",
   },
 ];
 
@@ -70,8 +70,8 @@ const DiversidadePage = () => (
   <PageLayout>
     <PageHero
       label="Diversidade"
-      title="Representatividade como engenharia institucional"
-      subtitle="Desigualdades não se corrigem por inércia. Elas se reproduzem em normas, critérios e rotinas administrativas — muitas vezes sem intenção. Uma burocracia representativa é a primeira linha de defesa contra essa reprodução silenciosa."
+      title="Representatividade como capacidade institucional"
+      subtitle="Desigualdades não se corrigem por inércia. Podem ser reproduzidas por normas, critérios, formulários, fluxos e rotinas administrativas aparentemente neutros. Representatividade no serviço público não é apenas simbólica: é uma condição institucional para ampliar repertórios de análise, identificar riscos de exclusão e calibrar políticas com maior aderência à realidade da população atendida."
     />
 
     {/* Indicadores Gerais */}
@@ -80,7 +80,7 @@ const DiversidadePage = () => (
         <SectionTitle
           label="Panorama"
           title="Quem são os APPGGs"
-          subtitle="169 gestores públicos municipais. Um corpo técnico cuja composição se aproxima, a cada geração, da diversidade real da cidade que administra."
+          subtitle="A carreira reúne 169 gestores públicos municipais. Um corpo técnico que, a cada geração, aproxima sua composição da diversidade da cidade que administra."
           center
         />
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -110,14 +110,14 @@ const DiversidadePage = () => (
         <SectionTitle
           label="Contexto"
           title="Por que a composição do corpo técnico importa"
-          subtitle="A literatura em administração pública demonstra que a diversidade do quadro funcional não é uma questão simbólica — é uma variável que afeta a qualidade das decisões e a efetividade das políticas."
+          subtitle="A literatura recente em administração pública trata a diversidade como uma variável organizacional relevante, mas condicionada. Seus efeitos dependem do tipo de diversidade, do desenho dos processos, da qualidade da liderança e da existência de rotinas capazes de transformar diferentes perspectivas em decisões públicas melhores."
         />
         <div className="grid md:grid-cols-2 gap-8 max-w-3xl">
           <FadeIn delay={0.05}>
             <div className="p-8 border border-luxury-border rounded-sm bg-card">
               <h3 className="text-sm font-medium text-text-display mb-3">Viés estrutural invisível</h3>
               <p className="text-sm text-text-body font-light leading-relaxed">
-                Normas e procedimentos administrativos aparentemente neutros podem produzir resultados desiguais quando formulados sem considerar assimetrias estruturais. Critérios de elegibilidade, horários de atendimento, documentação exigida — cada escolha operacional carrega consequências distributivas que frequentemente passam despercebidas.
+                Políticas públicas não produzem efeitos apenas por seus objetivos declarados. Elas produzem efeitos por seus critérios operacionais: quem é elegível, qual documento é exigido, qual canal é utilizado, em que horário o serviço funciona, quais dados são coletados e quais desigualdades permanecem invisíveis. Quando esses critérios são formulados sem considerar assimetrias sociais, a administração pode reproduzir exclusões sem intenção explícita.
               </p>
             </div>
           </FadeIn>
@@ -125,7 +125,7 @@ const DiversidadePage = () => (
             <div className="p-8 border border-luxury-border rounded-sm bg-card">
               <h3 className="text-sm font-medium text-text-display mb-3">O gestor como calibrador</h3>
               <p className="text-sm text-text-body font-light leading-relaxed">
-                Entre a diretriz política e o efeito no território, há uma cadeia de decisões técnicas tomadas por gestores de médio escalão. O APPGG ocupa exatamente essa posição: traduz intenções em regras, transforma planos em procedimentos. É nessa tradução que a equidade se constrói — ou se perde.
+                Entre a diretriz política e o efeito concreto no território existe uma cadeia de decisões técnicas. O APPGG atua nesse ponto intermediário: traduz prioridades em metas, transforma planos em procedimentos, organiza indicadores e acompanha entregas. É nessa tradução que a equidade pode ser incorporada — ou perdida.
               </p>
             </div>
           </FadeIn>
@@ -134,7 +134,7 @@ const DiversidadePage = () => (
         <FadeIn delay={0.2}>
           <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
             <p className="text-sm text-text-body font-light leading-relaxed italic">
-              "Uma administração pública que não reflete a diversidade da população que serve opera com um repertório incompleto de perspectivas — e tende a reproduzir, por omissão, as desigualdades que deveria combater."
+              "Uma burocracia representativa não substitui técnica, mérito ou planejamento. Ao contrário: qualifica a capacidade decisória do Estado quando combinada com dados, liderança, procedimentos transparentes e avaliação permanente."
             </p>
           </div>
         </FadeIn>
@@ -146,8 +146,8 @@ const DiversidadePage = () => (
       <div className="container">
         <SectionTitle
           label="Atuação estratégica"
-          title="Onde o APPGG faz a diferença"
-          subtitle="O gestor de políticas públicas não apenas executa — ele desenha, calibra e corrige. Em cada um desses momentos, a diversidade do corpo técnico amplia a capacidade institucional de identificar riscos e produzir resultados mais equitativos."
+          title="Onde o APPGG faz diferença"
+          subtitle="O APPGG não apenas executa políticas. Ele desenha, ajusta, mede e corrige. Em cada uma dessas funções, diversidade e capacidade técnica podem se reforçar mutuamente."
         />
         <div className="grid sm:grid-cols-2 gap-6 max-w-4xl">
           {eixosAtuacao.map((eixo, i) => (
@@ -173,7 +173,7 @@ const DiversidadePage = () => (
         <SectionTitle
           label="Liderança"
           title="Diversidade onde as decisões acontecem"
-          subtitle="A presença de mulheres e pessoas negras em cargos de liderança é um indicador crucial de maturidade institucional. Os números mostram avanço — e também onde ainda é preciso avançar."
+          subtitle="A presença de mulheres e pessoas negras em cargos de liderança é um indicador relevante de maturidade institucional, mas deve ser lida com cautela. Representatividade em posições decisórias pode ampliar legitimidade interna, oportunidades de ascensão e sensibilidade institucional; sua recepção, contudo, depende do ambiente organizacional e pode gerar resistências quando não há gestão explícita da diversidade."
         />
         <div className="grid md:grid-cols-2 gap-8 max-w-2xl">
           <FadeIn delay={0.05}>
@@ -187,7 +187,7 @@ const DiversidadePage = () => (
               </div>
               <ProgressBar value={36.8} color="bg-gold" delay={0.3} />
               <p className="mt-4 text-xs text-text-caption font-light leading-relaxed">
-                Participação próxima à proporção na carreira (39,6%), sinalizando equidade crescente no acesso a posições decisórias.
+                A participação de mulheres em cargos de liderança aproxima-se de sua proporção na carreira (39,6%), o que sugere avanço no acesso a posições decisórias.
               </p>
             </div>
           </FadeIn>
@@ -202,7 +202,7 @@ const DiversidadePage = () => (
               </div>
               <ProgressBar value={29.8} color="bg-accent" delay={0.4} />
               <p className="mt-4 text-xs text-text-caption font-light leading-relaxed">
-                A representatividade negra nas lideranças acompanha a tendência de crescimento observada nas últimas gerações da carreira.
+                A presença de pessoas negras em liderança acompanha a tendência de crescimento observada nas últimas gerações da carreira, embora ainda indique espaço para acompanhamento contínuo.
               </p>
             </div>
           </FadeIn>
@@ -215,8 +215,8 @@ const DiversidadePage = () => (
       <div className="container">
         <SectionTitle
           label="Evolução"
-          title="Cada concurso, um passo adiante"
-          subtitle="A diversidade racial cresce de forma consistente a cada nova geração de APPGGs — evidência de que mecanismos institucionais bem desenhados produzem resultados concretos e mensuráveis."
+          title="Cada concurso, uma mudança mensurável"
+          subtitle="A diversidade racial da carreira cresce de forma consistente nas coortes informadas. O dado é relevante porque mostra que mecanismos de ingresso, quando bem desenhados, podem alterar a composição do serviço público ao longo do tempo."
         />
         <div className="space-y-6 max-w-3xl">
           {geracoes.map((g, i) => (
@@ -265,7 +265,7 @@ const DiversidadePage = () => (
         <FadeIn delay={0.4}>
           <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
             <p className="text-sm text-text-body font-light leading-relaxed italic">
-              "De 27% de pessoas negras na primeira geração para 40% na mais recente — a carreira de APPGG demonstra que é possível construir um serviço público mais representativo sem comprometer a excelência técnica. Pelo contrário: diversificar o repertório de perspectivas fortalece a capacidade analítica da administração."
+              "A evolução de 27% para 40% de pessoas negras entre a primeira e a mais recente coorte sugere avanço substantivo na representatividade racial. O dado não deve ser tratado como prova automática de efetividade organizacional, mas como evidência de mudança institucional relevante. A literatura sobre burocracia representativa indica que diversidade passiva só se converte em capacidade pública quando encontra condições organizacionais para influenciar decisões, rotinas e prioridades."
             </p>
           </div>
         </FadeIn>
@@ -276,9 +276,9 @@ const DiversidadePage = () => (
     <section className="py-20 md:py-28 bg-section-alt">
       <div className="container">
         <SectionTitle
-          label="Presença Institucional"
-          title="Diversidade que se espalha pela cidade"
-          subtitle="Presentes em mais de 22 órgãos municipais, os APPGGs levam perspectivas diversas a diferentes áreas da gestão — da saúde ao planejamento urbano, da educação ao meio ambiente."
+          label="Presença institucional"
+          title="Diversidade distribuída pela administração"
+          subtitle="Presentes em mais de 22 órgãos municipais, os APPGGs levam capacidades técnicas e repertórios sociais diversos a diferentes áreas da gestão pública: planejamento, educação, meio ambiente, governo, gestão e outras políticas setoriais."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl">
           {secretarias.map((s, i) => (
@@ -311,6 +311,14 @@ const DiversidadePage = () => (
             </FadeIn>
           ))}
         </div>
+
+        <FadeIn delay={0.4}>
+          <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
+            <p className="text-sm text-text-body font-light leading-relaxed italic">
+              "A distribuição entre órgãos importa porque diversidade não deve ser observada apenas no agregado. A literatura metodológica recente recomenda olhar não só para quantidade, mas também para dispersão, concentração e presença efetiva dos grupos nos espaços onde decisões são tomadas."
+            </p>
+          </div>
+        </FadeIn>
       </div>
     </section>
 
@@ -323,16 +331,19 @@ const DiversidadePage = () => (
               Compromisso institucional
             </span>
             <h2 className="text-2xl md:text-3xl font-display text-text-display leading-tight text-balance mb-6">
-              Efetividade exige representatividade
+              Efetividade exige representatividade, método e governança
             </h2>
             <p className="text-sm text-text-body font-light leading-relaxed mb-4">
-              As desigualdades não se corrigem por inércia — elas se reproduzem em cada formulário mal desenhado, em cada critério que ignora contextos, em cada rotina que naturaliza a exclusão. Uma burocracia composta por perfis diversos tem mais capacidade de antecipar esses efeitos e corrigi-los antes que se tornem sistêmicos.
+              A carreira de APPGG mostra avanço relevante na construção de um corpo técnico mais representativo. Os dados indicam crescimento da diversidade racial, presença expressiva de mulheres e participação de pessoas negras em posições de liderança. Também apontam desafios: ampliar a inclusão de pessoas com deficiência, acompanhar a distribuição por órgão e preservar a equidade no acesso a posições decisórias.
             </p>
             <p className="text-sm text-text-body font-light leading-relaxed mb-4">
-              Os dados mostram que a carreira de APPGG caminha na direção certa. Cada concurso amplia o repertório de experiências. Mas os números também revelam onde é preciso ir além: na equidade de gênero em posições de liderança, na representatividade em determinados órgãos, na inclusão de pessoas com deficiência.
+              A tese central é simples: diversidade não é ornamento institucional. É uma dimensão da capacidade estatal. Uma burocracia mais representativa tende a enxergar melhor a cidade, formular perguntas mais completas e antecipar efeitos que uma administração homogênea pode ignorar.
+            </p>
+            <p className="text-sm text-text-body font-light leading-relaxed mb-4">
+              Mas representatividade só produz efeito público quando combinada com técnica, dados, liderança, rotinas de avaliação e abertura institucional para revisão. É nessa combinação — diversidade, método e governança — que a administração pública se torna mais capaz de enfrentar desigualdades concretas.
             </p>
             <p className="text-sm text-text-body font-light leading-relaxed">
-              A APOGESP acompanha essa evolução com dados, transparência e a convicção de que uma gestão pública mais efetiva começa por uma burocracia que compreende — porque vivencia — a complexidade da cidade que serve.
+              A APOGESP acompanha essa evolução com dados e transparência, defendendo uma gestão pública que reconheça a complexidade da cidade e organize sua burocracia para responder a ela com competência, equidade e responsabilidade institucional.
             </p>
             <div className="mt-8 luxury-divider" />
           </FadeIn>
