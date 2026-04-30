@@ -110,14 +110,14 @@ const DiversidadePage = () => (
         <SectionTitle
           label="Contexto"
           title="Por que a composição do corpo técnico importa"
-          subtitle="A literatura em administração pública demonstra que a diversidade do quadro funcional não é uma questão simbólica — é uma variável que afeta a qualidade das decisões e a efetividade das políticas."
+          subtitle="A literatura recente em administração pública trata a diversidade como uma variável organizacional relevante, mas condicionada. Seus efeitos dependem do tipo de diversidade, do desenho dos processos, da qualidade da liderança e da existência de rotinas capazes de transformar diferentes perspectivas em decisões públicas melhores."
         />
         <div className="grid md:grid-cols-2 gap-8 max-w-3xl">
           <FadeIn delay={0.05}>
             <div className="p-8 border border-luxury-border rounded-sm bg-card">
               <h3 className="text-sm font-medium text-text-display mb-3">Viés estrutural invisível</h3>
               <p className="text-sm text-text-body font-light leading-relaxed">
-                Normas e procedimentos administrativos aparentemente neutros podem produzir resultados desiguais quando formulados sem considerar assimetrias estruturais. Critérios de elegibilidade, horários de atendimento, documentação exigida — cada escolha operacional carrega consequências distributivas que frequentemente passam despercebidas.
+                Políticas públicas não produzem efeitos apenas por seus objetivos declarados. Elas produzem efeitos por seus critérios operacionais: quem é elegível, qual documento é exigido, qual canal é utilizado, em que horário o serviço funciona, quais dados são coletados e quais desigualdades permanecem invisíveis. Quando esses critérios são formulados sem considerar assimetrias sociais, a administração pode reproduzir exclusões sem intenção explícita.
               </p>
             </div>
           </FadeIn>
@@ -125,7 +125,7 @@ const DiversidadePage = () => (
             <div className="p-8 border border-luxury-border rounded-sm bg-card">
               <h3 className="text-sm font-medium text-text-display mb-3">O gestor como calibrador</h3>
               <p className="text-sm text-text-body font-light leading-relaxed">
-                Entre a diretriz política e o efeito no território, há uma cadeia de decisões técnicas tomadas por gestores de médio escalão. O APPGG ocupa exatamente essa posição: traduz intenções em regras, transforma planos em procedimentos. É nessa tradução que a equidade se constrói — ou se perde.
+                Entre a diretriz política e o efeito concreto no território existe uma cadeia de decisões técnicas. O APPGG atua nesse ponto intermediário: traduz prioridades em metas, transforma planos em procedimentos, organiza indicadores e acompanha entregas. É nessa tradução que a equidade pode ser incorporada — ou perdida.
               </p>
             </div>
           </FadeIn>
@@ -134,7 +134,7 @@ const DiversidadePage = () => (
         <FadeIn delay={0.2}>
           <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
             <p className="text-sm text-text-body font-light leading-relaxed italic">
-              "Uma administração pública que não reflete a diversidade da população que serve opera com um repertório incompleto de perspectivas — e tende a reproduzir, por omissão, as desigualdades que deveria combater."
+              "Uma burocracia representativa não substitui técnica, mérito ou planejamento. Ao contrário: qualifica a capacidade decisória do Estado quando combinada com dados, liderança, procedimentos transparentes e avaliação permanente."
             </p>
           </div>
         </FadeIn>
