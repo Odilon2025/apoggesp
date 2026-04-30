@@ -323,26 +323,26 @@ const DiversidadePage = () => (
     </section>
 
     {/* Fechamento */}
-    <section className="py-20 md:py-28">
+    <section className="py-20 md:py-28 bg-[hsl(150_25%_18%)] text-[hsl(40_30%_94%)]">
       <div className="container">
         <div className="max-w-2xl mx-auto text-center">
           <FadeIn>
-            <span className="text-[10px] font-sans font-medium tracking-luxury uppercase text-text-caption block mb-6">
+            <span className="text-[10px] font-sans font-medium tracking-luxury uppercase text-[hsl(40_30%_94%/0.6)] block mb-6">
               Compromisso institucional
             </span>
-            <h2 className="text-2xl md:text-3xl font-display text-text-display leading-tight text-balance mb-6">
+            <h2 className="text-2xl md:text-3xl font-display text-[hsl(40_30%_94%)] leading-tight text-balance mb-6">
               Efetividade exige representatividade, método e governança
             </h2>
-            <p className="text-sm text-text-body font-light leading-relaxed mb-4 text-justify">
+            <p className="text-sm text-[hsl(40_30%_94%/0.85)] font-light leading-relaxed mb-4 text-justify">
               A carreira de APPGG mostra avanço relevante na construção de um corpo técnico mais representativo. Os dados indicam crescimento da diversidade racial, presença expressiva de mulheres e participação de pessoas negras em posições de liderança. Também apontam desafios: ampliar a inclusão de pessoas com deficiência, acompanhar a distribuição por órgão e preservar a equidade no acesso a posições decisórias.
             </p>
-            <p className="text-sm text-text-body font-light leading-relaxed mb-4 text-justify">
+            <p className="text-sm text-[hsl(40_30%_94%/0.85)] font-light leading-relaxed mb-4 text-justify">
               A tese central é simples: diversidade não é ornamento institucional. É uma dimensão da capacidade estatal. Uma burocracia mais representativa tende a enxergar melhor a cidade, formular perguntas mais completas e antecipar efeitos que uma administração homogênea pode ignorar.
             </p>
-            <p className="text-sm text-text-body font-light leading-relaxed mb-4 text-justify">
+            <p className="text-sm text-[hsl(40_30%_94%/0.85)] font-light leading-relaxed mb-4 text-justify">
               Mas representatividade só produz efeito público quando combinada com técnica, dados, liderança, rotinas de avaliação e abertura institucional para revisão. É nessa combinação — diversidade, método e governança — que a administração pública se torna mais capaz de enfrentar desigualdades concretas.
             </p>
-            <p className="text-sm text-text-body font-light leading-relaxed text-justify">
+            <p className="text-sm text-[hsl(40_30%_94%/0.85)] font-light leading-relaxed text-justify">
               A APOGESP acompanha essa evolução com dados e transparência, defendendo uma gestão pública que reconheça a complexidade da cidade e organize sua burocracia para responder a ela com competência, equidade e responsabilidade institucional.
             </p>
             <div className="mt-8 luxury-divider" />
