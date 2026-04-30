@@ -117,7 +117,7 @@ const SustentabilidadePage = () => {
             {stats.map((s, i) => (
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="text-center">
-                  <span className="text-3xl md:text-4xl font-display font-bold text-gold">{s.num}</span>
+                  <span className="text-3xl md:text-4xl font-display font-bold text-[hsl(145,55%,32%)]">{s.num}</span>
                   <p className="mt-2 text-sm font-light text-text-caption">{s.label}</p>
                 </div>
               </FadeIn>
@@ -137,10 +137,10 @@ const SustentabilidadePage = () => {
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
             {eixos.map((eixo, i) => (
               <FadeIn key={i} delay={i * 0.08}>
-                <div className="bg-card border border-border rounded-sm p-8 h-full hover:border-gold/30 transition-colors duration-300">
+                <div className="bg-card border border-border rounded-sm p-8 h-full hover:border-[hsl(145,45%,32%)/0.4] transition-colors duration-300">
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-sm bg-gold/10 flex items-center justify-center">
-                      <eixo.icon size={22} className="text-gold" strokeWidth={1.5} />
+                    <div className="w-12 h-12 rounded-sm bg-[hsl(145,45%,32%)/0.1] flex items-center justify-center">
+                      <eixo.icon size={22} className="text-[hsl(145,55%,32%)]" strokeWidth={1.5} />
                     </div>
                     <h3 className="text-lg font-display font-semibold text-foreground leading-tight">
                       {eixo.titulo}
@@ -154,7 +154,7 @@ const SustentabilidadePage = () => {
                   <ul className="space-y-3">
                     {eixo.acoes.map((acao, j) => (
                       <li key={j} className="flex items-start gap-3">
-                        <Leaf size={14} className="text-gold mt-1 flex-shrink-0" strokeWidth={1.5} />
+                        <Leaf size={14} className="text-[hsl(145,55%,32%)] mt-1 flex-shrink-0" strokeWidth={1.5} />
                         <span className="text-sm font-light text-text-caption">{acao}</span>
                       </li>
                     ))}
@@ -195,7 +195,7 @@ const SustentabilidadePage = () => {
             </p>
             <Link
               to="/planos-atuacao"
-              className="inline-flex items-center gap-2 text-sm font-medium text-gold hover:text-gold/80 transition-colors duration-300"
+              className="inline-flex items-center gap-2 text-sm font-medium text-[hsl(145,55%,32%)] hover:text-[hsl(145,45%,28%)] transition-colors duration-300"
             >
               Ver Planos de Atuação <ArrowRight size={16} strokeWidth={1.5} />
             </Link>
