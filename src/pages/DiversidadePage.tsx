@@ -215,8 +215,8 @@ const DiversidadePage = () => (
       <div className="container">
         <SectionTitle
           label="Evolução"
-          title="Cada concurso, um passo adiante"
-          subtitle="A diversidade racial cresce de forma consistente a cada nova geração de APPGGs — evidência de que mecanismos institucionais bem desenhados produzem resultados concretos e mensuráveis."
+          title="Cada concurso, uma mudança mensurável"
+          subtitle="A diversidade racial da carreira cresce de forma consistente nas coortes informadas. O dado é relevante porque mostra que mecanismos de ingresso, quando bem desenhados, podem alterar a composição do serviço público ao longo do tempo."
         />
         <div className="space-y-6 max-w-3xl">
           {geracoes.map((g, i) => (
