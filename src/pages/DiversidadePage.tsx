@@ -202,7 +202,7 @@ const DiversidadePage = () => (
               </div>
               <ProgressBar value={29.8} color="bg-accent" delay={0.4} />
               <p className="mt-4 text-xs text-text-caption font-light leading-relaxed">
-                A representatividade negra nas lideranças acompanha a tendência de crescimento observada nas últimas gerações da carreira.
+                A presença de pessoas negras em liderança acompanha a tendência de crescimento observada nas últimas gerações da carreira, embora ainda indique espaço para acompanhamento contínuo.
               </p>
             </div>
           </FadeIn>
