@@ -66,7 +66,7 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className="mt-8 text-base md:text-lg text-primary-foreground/50 font-light max-w-lg leading-relaxed"
               >
-                Uma década colaborando com a construção de capacidade institucional na maior cidade da América Latina — sempre em parceria com outras carreiras e dentro das prioridades definidas pela administração superior.
+                Uma década colaborando com a construção de capacidade institucional na maior cidade da América Latina.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
