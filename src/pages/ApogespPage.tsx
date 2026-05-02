@@ -10,11 +10,36 @@ import diretorCaio from "@/assets/diretor-caio.jpg";
 import diretorJoao from "@/assets/diretor-joao.jpg";
 
 const diretoria = [
-  { nome: "Maria Camila Florêncio Dotto", cargo: "Diretora Geral", foto: diretoraMariaCamila },
-  { nome: "Odilon Alves Candido", cargo: "Diretor Jurídico", foto: diretorOdilon },
-  { nome: "Caio Rocha", cargo: "Diretor Financeiro", foto: diretorCaio },
-  { nome: "Henrique Pougy", cargo: "Diretor de Formação", foto: diretorHenrique },
-  { nome: "João Resende", cargo: "Diretor de Comunicação", foto: diretorJoao },
+  {
+    nome: "Maria Camila Florêncio Dotto",
+    cargo: "Diretoria Geral",
+    foto: diretoraMariaCamila,
+    bio: "APPGG desde 2017, alocada na PGM. Possui 18 anos de experiência em projetos sociais, políticas públicas, saúde, educação, inovação, tecnologia, transparência, controle e participação social. É bacharel e mestre em Direito, doutora em Administração Pública e Governo.",
+  },
+  {
+    nome: "Odilon Alves Cândido",
+    cargo: "Diretoria de Assuntos Jurídicos",
+    foto: diretorOdilon,
+    bio: "APPGG desde 2024, alocado na SEGES. Bacharel em Direito, advogado e mestrando em Gestão e Políticas Públicas pela FGV, possui 10 anos de experiência no setor público. Atua na valorização da carreira como instrumento de fortalecimento da gestão pública municipal.",
+  },
+  {
+    nome: "Caio Rocha",
+    cargo: "Diretoria Administrativa e Financeira",
+    foto: diretorCaio,
+    bio: "APPGG desde 2024, alocado na PGM. Engenheiro químico e mestre em Economia, tem experiência no setor privado, especialmente em consultoria de gestão. Ingressou no serviço público para contribuir com políticas de maior impacto social na cidade.",
+  },
+  {
+    nome: "Henrique Pougy",
+    cargo: "Diretoria de Assuntos Profissionais e Formação Continuada",
+    foto: diretorHenrique,
+    bio: "APPGG desde 2016, atua com dados e analytics na Prefeitura de São Paulo. Formado em Ciências Sociais, é especialista em Ciência de Dados e Big Data e mestre em Sistemas Inteligentes, com foco em estatística bayesiana. Defende a valorização da carreira e a conversão de seu reconhecimento institucional em melhores condições de trabalho.",
+  },
+  {
+    nome: "João Resende",
+    cargo: "Diretoria de Assuntos Institucionais e Comunicação",
+    foto: diretorJoao,
+    bio: "APPGG desde 2022, alocado na Controladoria Geral do Município. Sociólogo e mestre em Gestão de Políticas Públicas, tem trajetória na CGM, Prefeitura de Osasco e Secretaria Estadual de Desenvolvimento Social de SP, com atuação em transparência pública, planejamento governamental e indicadores sociais. Participou da mobilização pela nomeação de aprovados do primeiro concurso da carreira.",
+  },
 ];
 
 const objetivos = [
@@ -118,13 +143,16 @@ const ApogespPage = () => (
                     loading="lazy"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <span className="text-[10px] font-medium tracking-luxury uppercase text-gold block mb-2">
                     {pessoa.cargo}
                   </span>
-                  <h3 className="text-base font-serif text-foreground leading-tight">
+                  <h3 className="text-base font-serif text-foreground leading-tight mb-4">
                     {pessoa.nome}
                   </h3>
+                  <p className="text-xs font-light text-text-body leading-[1.7] text-justify">
+                    {pessoa.bio}
+                  </p>
                 </div>
               </div>
             </FadeIn>
