@@ -2,6 +2,20 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
+import diretoriaTodos from "@/assets/diretoria-todos.jpg";
+import diretorOdilon from "@/assets/diretor-odilon.jpg";
+import diretoraMariaCamila from "@/assets/diretora-maria-camila.jpg";
+import diretorHenrique from "@/assets/diretor-henrique.jpg";
+import diretorCaio from "@/assets/diretor-caio.jpg";
+import diretorJoao from "@/assets/diretor-joao.jpg";
+
+const diretoria = [
+  { nome: "Maria Camila Florêncio Dotto", cargo: "Diretora Geral", foto: diretoraMariaCamila },
+  { nome: "Odilon Alves Candido", cargo: "Diretor Jurídico", foto: diretorOdilon },
+  { nome: "Caio Rocha", cargo: "Diretor Financeiro", foto: diretorCaio },
+  { nome: "Henrique Pougy", cargo: "Diretor de Formação", foto: diretorHenrique },
+  { nome: "João Resende", cargo: "Diretor de Comunicação", foto: diretorJoao },
+];
 
 const objetivos = [
   "Promover o reconhecimento institucional da carreira como pilar estratégico da gestão municipal",
