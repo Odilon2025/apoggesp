@@ -88,6 +88,51 @@ const ApogespPage = () => (
       </div>
     </section>
 
+    <section className="py-24 md:py-32 bg-card">
+      <div className="container">
+        <SectionTitle label="Gestão" title="Diretoria" />
+
+        <FadeIn>
+          <div className="mb-16 overflow-hidden">
+            <img
+              src={diretoriaTodos}
+              alt="Diretoria da APOGESP reunida em São Paulo"
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+            <p className="mt-4 text-[11px] font-light tracking-luxury uppercase text-text-muted">
+              Diretoria APOGESP — São Paulo
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-luxury-border">
+          {diretoria.map((pessoa, i) => (
+            <FadeIn key={pessoa.nome} delay={i * 0.05}>
+              <div className="bg-card h-full flex flex-col">
+                <div className="aspect-[3/4] overflow-hidden bg-section-alt">
+                  <img
+                    src={pessoa.foto}
+                    alt={`${pessoa.nome} — ${pessoa.cargo} da APOGESP`}
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="p-6">
+                  <span className="text-[10px] font-medium tracking-luxury uppercase text-gold block mb-2">
+                    {pessoa.cargo}
+                  </span>
+                  <h3 className="text-base font-serif text-foreground leading-tight">
+                    {pessoa.nome}
+                  </h3>
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <section className="py-24 md:py-32 bg-section-alt">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
