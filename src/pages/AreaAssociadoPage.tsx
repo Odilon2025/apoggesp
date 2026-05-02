@@ -22,7 +22,7 @@ const AreaAssociadoPage = () => (
               Estamos preparando um espaço exclusivo para os associados da APOGESP. Aqui, você encontrará comunicados internos, documentos de interesse da carreira e informações que não circulam em outro lugar. Porque quem constrói a gestão pública de São Paulo merece um canal à altura.
             </p>
             <p className="text-[11px] font-light text-text-caption mt-6">
-              contato@apogesp.org.br
+              apogesp@gmail.com
             </p>
           </div>
         </FadeIn>
