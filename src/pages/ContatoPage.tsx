@@ -24,7 +24,7 @@ const ContatoPage = () => {
                   <Mail size={14} strokeWidth={1.5} className="text-gold mt-1 shrink-0" />
                   <div>
                     <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-1">E-mail</span>
-                    <span className="text-sm font-light text-foreground">contato@apogesp.org.br</span>
+                    <span className="text-sm font-light text-foreground">apogesp@gmail.com</span>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">

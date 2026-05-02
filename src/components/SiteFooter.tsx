@@ -47,7 +47,7 @@ const SiteFooter = () => (
         {/* Contact */}
         <div className="md:col-span-4">
           <span className="text-[10px] font-medium tracking-luxury uppercase opacity-40 block mb-6">Contato</span>
-          <p className="text-sm font-light opacity-60">contato@apogesp.org.br</p>
+          <p className="text-sm font-light opacity-60">apogesp@gmail.com</p>
           <p className="text-sm font-light opacity-60 mt-2">São Paulo — SP, Brasil</p>
         </div>
       </div>
