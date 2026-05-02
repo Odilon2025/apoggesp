@@ -76,7 +76,7 @@ const DiversidadePage = () => (
 
     {/* Indicadores Gerais */}
     <section className="py-20 md:py-28">
-      <div className="container">
+      <div className="container text-justify">
         <SectionTitle
           label="Panorama"
           title="Quem são os APPGGs"
@@ -106,7 +106,7 @@ const DiversidadePage = () => (
 
     {/* Por que isso importa para a gestão */}
     <section className="py-20 md:py-28 bg-section-alt">
-      <div className="container">
+      <div className="container text-justify">
         <SectionTitle
           label="Contexto"
           title="Por que a composição do corpo técnico importa"
@@ -143,7 +143,7 @@ const DiversidadePage = () => (
 
     {/* O papel do APPGG na equidade */}
     <section className="py-20 md:py-28">
-      <div className="container">
+      <div className="container text-justify">
         <SectionTitle
           label="Atuação estratégica"
           title="Onde o APPGG faz diferença"
@@ -169,7 +169,7 @@ const DiversidadePage = () => (
 
     {/* Liderança */}
     <section className="py-20 md:py-28 bg-section-alt">
-      <div className="container">
+      <div className="container text-justify">
         <SectionTitle
           label="Liderança"
           title="Diversidade onde as decisões acontecem"
@@ -212,7 +212,7 @@ const DiversidadePage = () => (
 
     {/* Evolução por Geração */}
     <section className="py-20 md:py-28">
-      <div className="container">
+      <div className="container text-justify">
         <SectionTitle
           label="Evolução"
           title="Cada concurso, uma mudança mensurável"
@@ -274,7 +274,7 @@ const DiversidadePage = () => (
 
     {/* Diversidade Institucional */}
     <section className="py-20 md:py-28 bg-section-alt">
-      <div className="container">
+      <div className="container text-justify">
         <SectionTitle
           label="Presença institucional"
           title="Diversidade distribuída pela administração"
@@ -324,7 +324,7 @@ const DiversidadePage = () => (
 
     {/* Fechamento */}
     <section className="py-20 md:py-28">
-      <div className="container">
+      <div className="container text-justify">
         <div className="max-w-2xl mx-auto text-center">
           <FadeIn>
             <span className="text-[10px] font-sans font-medium tracking-luxury uppercase text-text-caption block mb-6">
