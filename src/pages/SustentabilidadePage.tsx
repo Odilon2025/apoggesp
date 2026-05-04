@@ -194,10 +194,10 @@ const SustentabilidadePage = () => {
               Conheça os Planos de Atuação Institucional dos órgãos com projetos ambientais
             </p>
             <Link
-              to="/planos-atuacao"
+              to="/planos-ambientais"
               className="inline-flex items-center gap-2 text-sm font-medium text-[hsl(145,55%,32%)] hover:text-[hsl(145,45%,28%)] transition-colors duration-300"
             >
-              Ver Planos de Atuação <ArrowRight size={16} strokeWidth={1.5} />
+              Ver Planos de Atuação Ambientais <ArrowRight size={16} strokeWidth={1.5} />
             </Link>
           </FadeIn>
         </div>
