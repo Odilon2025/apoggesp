@@ -16,16 +16,29 @@ const timelineItems = [
   { year: "2025", text: "O Caderno Gestão Pública em Rede celebra uma década com nove artigos que documentam, pela primeira vez, o que a carreira construiu." },
 ];
 
-const areasAtuacao = [
-  "Colaboração com a formulação, implementação e avaliação de políticas públicas em todas as áreas de governo",
-  "Apoio ao planejamento estratégico e ao monitoramento do Programa de Metas da cidade",
-  "Participação na gestão de projetos prioritários e na coordenação de entregas intersetoriais",
-  "Contribuição com inovação em serviços públicos, em parceria com equipes técnicas, por meio de ciências comportamentais e design centrado no cidadão",
-  "Articulação entre secretarias e colaboração na construção de políticas transversais",
-  "Apoio à governança orçamentária, à gestão fiscal e às transferências entre entes",
-  "Colaboração com a transformação digital, a gestão da informação e os sistemas de monitoramento",
-  "Apoio à formação de lideranças, ao desenvolvimento de equipes e à construção de capacidades estatais",
+const areasAtuacao: { texto: string; destaques: string[] }[] = [
+  { texto: "Colaboração com a formulação, implementação e avaliação de políticas públicas em todas as áreas de governo", destaques: ["formulação", "implementação", "avaliação"] },
+  { texto: "Apoio ao planejamento estratégico e ao monitoramento do Programa de Metas da cidade", destaques: ["planejamento estratégico", "Programa de Metas"] },
+  { texto: "Participação na gestão de projetos prioritários e na coordenação de entregas intersetoriais", destaques: ["gestão de projetos", "entregas intersetoriais"] },
+  { texto: "Contribuição com inovação em serviços públicos, em parceria com equipes técnicas, por meio de ciências comportamentais e design centrado no cidadão", destaques: ["inovação em serviços públicos", "ciências comportamentais", "design centrado no cidadão"] },
+  { texto: "Articulação entre secretarias e colaboração na construção de políticas transversais", destaques: ["políticas transversais"] },
+  { texto: "Apoio à governança orçamentária, à gestão fiscal e às transferências entre entes", destaques: ["governança orçamentária", "gestão fiscal"] },
+  { texto: "Colaboração com a transformação digital, a gestão da informação e os sistemas de monitoramento", destaques: ["transformação digital", "gestão da informação"] },
+  { texto: "Apoio à formação de lideranças, ao desenvolvimento de equipes e à construção de capacidades estatais", destaques: ["formação de lideranças", "capacidades estatais"] },
 ];
+
+const renderComDestaques = (texto: string, destaques: string[]) => {
+  if (destaques.length === 0) return texto;
+  const pattern = new RegExp(`(${destaques.map((d) => d.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|")})`, "g");
+  const parts = texto.split(pattern);
+  return parts.map((part, idx) =>
+    destaques.includes(part) ? (
+      <span key={idx} className="font-medium text-gold">{part}</span>
+    ) : (
+      <span key={idx}>{part}</span>
+    )
+  );
+};
 
 const CarreiraPage = () => (
   <PageLayout>
@@ -107,10 +120,10 @@ const CarreiraPage = () => (
         <SectionTitle label="Competências" title="Áreas de Atuação" />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-luxury-border mt-8">
           {areasAtuacao.map((area, i) => (
-            <FadeIn key={area} delay={i * 0.05}>
+            <FadeIn key={area.texto} delay={i * 0.05}>
               <div className="bg-section-alt p-6 flex items-start gap-4">
                 <span className="text-[10px] font-medium text-gold mt-0.5">0{i + 1}</span>
-                <span className="text-sm font-light text-foreground">{area}</span>
+                <span className="text-sm font-light text-foreground">{renderComDestaques(area.texto, area.destaques)}</span>
               </div>
             </FadeIn>
           ))}
