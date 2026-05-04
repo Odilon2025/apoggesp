@@ -137,14 +137,16 @@ const PublicacoesPage = () => {
                         href={pub.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="shrink-0 p-3 text-luxury-border hover:text-gold transition-colors duration-300"
-                        title="Download"
+                        className="shrink-0 inline-flex items-center gap-2 border border-luxury-border px-4 py-2.5 text-[11px] font-medium tracking-luxury uppercase text-foreground hover:border-gold hover:text-gold transition-colors duration-300"
+                        title="Baixar PDF"
                       >
-                        <Download size={16} strokeWidth={1.5} />
+                        <Download size={14} strokeWidth={1.5} />
+                        Baixar PDF
                       </a>
                     ) : (
-                      <button className="shrink-0 p-3 text-luxury-border hover:text-gold transition-colors duration-300" title="Download">
-                        <Download size={16} strokeWidth={1.5} />
+                      <button className="shrink-0 inline-flex items-center gap-2 border border-luxury-border px-4 py-2.5 text-[11px] font-medium tracking-luxury uppercase text-text-caption" title="Indisponível" disabled>
+                        <Download size={14} strokeWidth={1.5} />
+                        Baixar PDF
                       </button>
                     )}
                   </div>
