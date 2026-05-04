@@ -120,10 +120,10 @@ const CarreiraPage = () => (
         <SectionTitle label="Competências" title="Áreas de Atuação" />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-luxury-border mt-8">
           {areasAtuacao.map((area, i) => (
-            <FadeIn key={area} delay={i * 0.05}>
+            <FadeIn key={area.texto} delay={i * 0.05}>
               <div className="bg-section-alt p-6 flex items-start gap-4">
                 <span className="text-[10px] font-medium text-gold mt-0.5">0{i + 1}</span>
-                <span className="text-sm font-light text-foreground">{area}</span>
+                <span className="text-sm font-light text-foreground">{renderComDestaques(area.texto, area.destaques)}</span>
               </div>
             </FadeIn>
           ))}
