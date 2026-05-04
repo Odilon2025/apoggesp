@@ -45,7 +45,7 @@ const CarreiraPage = () => (
             <FadeIn>
               <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
                 <p>
-                  Em 2015, São Paulo fez uma aposta: criar uma carreira de nível superior dedicada a colaborar com o fortalecimento da capacidade do governo municipal de planejar, implementar e avaliar políticas públicas. A Lei Municipal nº 16.193 deu nome a essa aposta — Analista de Políticas Públicas e Gestão Governamental — e definiu suas atribuições: implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas, sempre em apoio às prioridades fixadas pela administração superior.
+                  Em 2015, o município de São Paulo fez uma aposta: criar uma carreira de nível superior dedicada a colaborar com o fortalecimento da capacidade do governo municipal de planejar, implementar e avaliar políticas públicas. A Lei Municipal nº 16.193 deu nome a essa aposta — Analista de Políticas Públicas e Gestão Governamental — e definiu suas atribuições: implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas, sempre em apoio às prioridades fixadas pela administração superior.
                 </p>
                 <p>
                   Uma década depois, os frutos dessa decisão estão espalhados por toda a administração — sempre como produto de um trabalho conjunto. Os APPGGs colaboram, lado a lado com outras carreiras municipais e com as lideranças de cada pasta, na intersecção entre a formulação técnica e a realidade do território.
