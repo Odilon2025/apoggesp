@@ -20,6 +20,13 @@ const CADERNO_URL = "https://prefeitura.sp.gov.br/web/gestao/assessoria_de_carre
 
 const publicacoesBase: Publicacao[] = [
   {
+    titulo: "Relatório APPGGs",
+    ano: "2026",
+    tipo: "Documento Histórico",
+    resumo: "Relatório institucional sobre a carreira de Analistas de Políticas Públicas e Gestão Governamental do município de São Paulo.",
+    url: "/publicacoes/Relatorio_APPGGS.pdf",
+  },
+  {
     titulo: "Caderno Gestão Pública em Rede — 1ª Edição",
     ano: "2025",
     tipo: "Caderno",
