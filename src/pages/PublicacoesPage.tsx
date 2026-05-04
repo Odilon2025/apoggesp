@@ -24,7 +24,7 @@ const publicacoesBase: Publicacao[] = [
     ano: "2026",
     tipo: "Documento Histórico",
     resumo: "Relatório institucional sobre a carreira de Analistas de Políticas Públicas e Gestão Governamental do município de São Paulo.",
-    url: "/publicacoes/Relatorio_APPGGS.pdf",
+    url: "https://drive.google.com/file/d/1NvgU8Lc1MPwEPTU-z5ZV6KOeXJ98EEfG/view?usp=sharing",
   },
   {
     titulo: "Caderno Gestão Pública em Rede — 1ª Edição",
