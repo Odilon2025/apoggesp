@@ -122,6 +122,31 @@ const CarreiraPage = () => (
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
+            <SectionTitle label="Continuidade" title="Memória Institucional das Políticas Públicas" />
+          </div>
+          <div className="lg:col-span-8">
+            <FadeIn>
+              <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
+                <p>
+                  Governos passam, ciclos políticos se sucedem, secretários chegam e partem. O que permanece — e o que sustenta a capacidade de São Paulo de governar a si mesma — é o conhecimento acumulado sobre como cada política pública foi pensada, executada e revisada ao longo do tempo. Os APPGGs são, em larga medida, os guardiões discretos dessa continuidade.
+                </p>
+                <p>
+                  Por estarem distribuídos nas secretarias, nos órgãos de planejamento, nos sistemas de monitoramento e nos projetos estratégicos, os analistas registram, documentam e preservam a trajetória das decisões: o que motivou determinada escolha, quais alternativas foram descartadas, quais entregas funcionaram, quais aprendizados ficaram. É uma memória técnica que não cabe em um único arquivo, mas que vive nas equipes, nos processos e nos sistemas que a carreira ajuda a construir.
+                </p>
+                <p>
+                  Essa função silenciosa — costurar passado, presente e futuro das políticas públicas municipais — é o que permite que cada nova gestão encontre, ao chegar, não uma página em branco, mas um repertório vivo. Preservar essa memória é, também, preservar o direito da cidade de aprender com a própria história.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-24 md:py-32 bg-section-alt">
+      <div className="container">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="lg:col-span-4">
             <SectionTitle label="Cronologia" title="Uma Década em Construção" />
           </div>
           <div className="lg:col-span-8">
