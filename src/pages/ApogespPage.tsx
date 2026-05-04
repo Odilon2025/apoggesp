@@ -20,7 +20,7 @@ const diretoria = [
     nome: "Odilon Alves Cândido",
     cargo: "Diretoria de Assuntos Jurídicos",
     foto: diretorOdilon,
-    bio: "APPGG desde 2024, alocado na SEGES. Bacharel em Direito, advogado e mestrando em Gestão e Políticas Públicas pela FGV, possui 10 anos de experiência no setor público. Atua na valorização da carreira como instrumento de fortalecimento da gestão pública municipal.",
+    bio: "APPGG desde 2024, alocado na PGM. Bacharel em Direito, advogado e mestrando em Gestão e Políticas Públicas pela FGV, possui 10 anos de experiência no setor público. Atua na valorização da carreira como instrumento de fortalecimento da gestão pública municipal.",
   },
   {
     nome: "Caio Rocha",
