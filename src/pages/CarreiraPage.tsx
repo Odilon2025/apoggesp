@@ -32,7 +32,7 @@ const CarreiraPage = () => (
     <PageHero
       label="A Carreira"
       title="Analistas de Políticas Públicas e Gestão Governamental"
-      subtitle="A carreira que colabora — em conjunto com outras carreiras municipais e dentro das diretrizes da administração superior — para que São Paulo transforme intenções em entregas."
+      subtitle="A carreira que colabora — em conjunto com outras carreiras municipais e dentro das diretrizes da administração superior — para que São Paulo transforme intenções em entregas que mudam a realidade e promovem uma cidade mais pujante, justa e democrática."
     />
 
     <section className="py-24 md:py-32 bg-card">
