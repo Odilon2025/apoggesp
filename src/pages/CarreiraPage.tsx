@@ -203,7 +203,7 @@ const CarreiraPage = () => (
             <FadeIn>
               <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
                 <p>
-                  A base legal da carreira está no artigo 13 da Lei nº 16.193/2015, que define suas atribuições com clareza cirúrgica: <em className="text-foreground">"implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas da Administração Direta e Indireta da Prefeitura do Município de São Paulo."</em> Poucas carreiras municipais no Brasil têm um mandato tão amplo — e tão exigente.
+                  A base legal da carreira está no artigo 13 da Lei nº 16.193/2015, que define suas atribuições como: <em className="text-foreground">"implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas da Administração Direta e Indireta da Prefeitura do Município de São Paulo."</em> Poucas carreiras municipais no Brasil têm um mandato tão amplo — e tão exigente.
                 </p>
                 <p>
                   Em 2021, a Portaria SEGES nº 13 deu o próximo passo: formalizou que os APPGGs devem ser alocados prioritariamente em apoio à elaboração do Programa de Metas, ao planejamento orçamentário (LOA e PPA) e a projetos de reestruturação institucional, sempre conforme as prioridades definidas pela administração superior.
