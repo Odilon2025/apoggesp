@@ -42,7 +42,7 @@ const argumentos = [
   {
     icon: Scale,
     titulo: "Mesma Missão, Remuneração Desigual",
-    desc: "APPGGs, EPPGGs e AMCIs exercem funções análogas: formulação, implementação e avaliação de políticas públicas. A diferença não está na complexidade do trabalho, mas no ente que remunera.",
+    desc: "APPGGs e EPPGGs exercem funções análogas: formulação, implementação e avaliação de políticas públicas. A diferença não está na complexidade do trabalho, mas no ente que remunera.",
   },
   {
     icon: AlertTriangle,
