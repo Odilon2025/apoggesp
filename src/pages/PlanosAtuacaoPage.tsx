@@ -371,7 +371,7 @@ const planos: PlanoAtuacao[] = [
     descricao:
       "Articula a política municipal para pessoas com deficiência e executa serviços finalísticos como Paraoficina Móvel, Central de Intermediação em Libras (CIL), CIPTEA, Observatório Municipal e os Centros TEA e Casa Mãe Paulistana.",
     vigencia: "24 meses",
-    appggsNecessarios: 0,
+    appggsNecessarios: 3,
     projetos: [
       { nome: "Programa de Metas, PPA e Inclui Sampa", descricao: "Acompanhamento da execução do PdM 2025-2028, dos PPAs 2022-2025 e 2026-2029 e do Inclui Sampa, garantindo diálogo entre as peças de planejamento." },
       { nome: "Observatório Municipal da Pessoa com Deficiência", descricao: "Apoio ao planejamento e execução das atividades do Observatório, com atualização do portal, sistematização de dados, indicadores e articulações interinstitucionais." },
