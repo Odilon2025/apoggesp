@@ -329,4 +329,24 @@ export const planos: PlanoAtuacao[] = [
     ],
     destaques: ["Educação", "Equidade", "BID", "Planejamento"],
   },
+  {
+    sigla: "SVMA",
+    orgao: "Secretaria do Verde e do Meio Ambiente",
+    descricao:
+      "Responsável pela política ambiental do município, coordenando planos setoriais de áreas verdes, arborização, mata atlântica, educação ambiental, ação climática e gestão de resíduos sólidos, além do licenciamento e fiscalização ambiental.",
+    vigencia: "24 meses",
+    appggsNecessarios: 0,
+    projetos: [
+      { nome: "Planejamento Programático e Orçamentário", descricao: "Elaboração e monitoramento do Programa de Metas, PPA, LOA e participação no Orçamento Cidadão, em articulação com a Secretaria da Fazenda." },
+      { nome: "Monitoramento dos Planos Setoriais", descricao: "Apoio à execução, monitoramento e revisão dos seis planos coordenados pela SVMA: PLANPAVEL, PMAU, PMMA, PMEA-SP, PlanClima SP e PMSA." },
+      { nome: "Gestão de Informações Ambientais", descricao: "Aperfeiçoamento do Relatório de Gestão Ambiental e estruturação do Monitoramento da Vegetação Paulistana (MVP) com sensoriamento remoto e geoprocessamento." },
+      { nome: "Modernização de Licenciamento e Fiscalização", descricao: "Revisão e padronização de fluxos de fiscalização ambiental, licenciamento e Termos de Compromisso Ambiental (TCA), com desenvolvimento de sistemas informatizados." },
+      { nome: "Gestão de Licitações e Contratos", descricao: "Qualificação dos procedimentos de compras e contratos, incluindo desenvolvimento de sistemas e planejamento das atividades." },
+      { nome: "Participação Social", descricao: "Apoio aos conselhos CADES, CONFEMA, CADES Regionais, conselhos de parques e organização da etapa municipal da Conferência do Meio Ambiente." },
+      { nome: "Gestão de Resíduos Sólidos", descricao: "Estruturação da atuação da SVMA como coordenadora do Comitê de Gestão de Resíduos Sólidos e atualização do Plano de Gestão Integrada de Resíduos Sólidos." },
+      { nome: "Cooperação Internacional", descricao: "Apoio à participação em eventos internacionais e busca por convênios, parcerias e troca de boas práticas em políticas ambientais." },
+    ],
+    destaques: ["Meio ambiente", "Clima", "Resíduos sólidos", "Licenciamento"],
+    ambiental: true,
+  },
 ];
