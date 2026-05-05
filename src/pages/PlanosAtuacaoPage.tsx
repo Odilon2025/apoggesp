@@ -350,6 +350,22 @@ const planos: PlanoAtuacao[] = [
     ],
     destaques: ["Meio ambiente", "Clima", "Resíduos sólidos", "Licenciamento"],
   },
+  {
+    sigla: "SMSUB",
+    orgao: "Secretaria Municipal das Subprefeituras",
+    descricao:
+      "Apoia gerencial e administrativamente as decisões do Prefeito sobre as 32 Subprefeituras, acompanhando metas, indicadores, recursos e a execução das diretrizes de zeladoria, fiscalização e planejamento regional.",
+    vigencia: "12 meses",
+    appggsNecessarios: 7,
+    projetos: [
+      { nome: "#TodosPeloCentro", descricao: "Atuação no Comitê Intersecretarial de articulação das intervenções urbanas e ações de regulamentação, ativação e eventos para a transformação da Região Central." },
+      { nome: "Reestruturação Organizacional", descricao: "Mapeamento das estruturas, competências e atribuições da SMSUB e elaboração de proposta de nova estrutura, superando sobreposições herdadas desde 2003." },
+      { nome: "Mapeamento e Redesenho de Fluxos", descricao: "Diagnóstico e redesenho dos processos das áreas da Secretaria, qualificando a interlocução interna e com as 32 subprefeituras." },
+      { nome: "Reestruturação da Coordenadoria de Planejamento", descricao: "Apoio à reorganização da COPLAN e aos sistemas SGZ, SGF, Urano e Painel Zeladoria, integrados ao SP156 para monitoramento de zeladoria, chuvas e Ordens de Serviço." },
+      { nome: "Projetos das Coordenadorias", descricao: "Diagnóstico, elaboração, implementação e monitoramento de projetos de zeladoria, pavimentação, recapeamento e fiscalização nas coordenadorias e subprefeituras." },
+    ],
+    destaques: ["Subprefeituras", "Zeladoria", "Centro", "Processos"],
+  },
 ];
 
 const totalAppggs = planos.reduce((sum, p) => sum + p.appggsNecessarios, 0);
