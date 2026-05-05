@@ -54,7 +54,7 @@ const PublicacoesPage = () => {
       <PageHero
         label="Biblioteca"
         title="Publicações"
-        subtitle="O que a carreira de APPGG pensa, documenta e publica. Artigos, notas técnicas e propostas — escritos por quem faz gestão pública, não por quem teoriza sobre ela."
+        subtitle="O que a carreira de APPGG pensa, documenta e publica. Artigos, notas técnicas e propostas."
       />
 
       <section className="py-24 md:py-32 bg-card">
