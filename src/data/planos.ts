@@ -124,15 +124,14 @@ export const planos: PlanoAtuacao[] = [
     sigla: "SEHAB",
     orgao: "Secretaria Municipal de Habitação",
     descricao:
-      "Responsável pela política habitacional de interesse social, gestão de programas habitacionais, planejamento urbano e gestão do Fundo Municipal de Saneamento Ambiental e Infraestrutura.",
+      "Responsável pela política habitacional de interesse social, gestão de programas habitacionais e planejamento urbano.",
     vigencia: "24 meses",
-    appggsNecessarios: 9,
+    appggsNecessarios: 6,
     projetos: [
       { nome: "Planejamento da Política Habitacional", descricao: "Integração entre peças de planejamento, gestão do patrimônio imobiliário e estruturação de critérios de priorização." },
       { nome: "Gestão Integrada de Programas Habitacionais", descricao: "Mapeamento, redesenho e melhoria de processos de atendimento habitacional provisório e definitivo." },
       { nome: "Gestão de Informações da SEHAB", descricao: "Desenvolvimento do HabitaSampa, aperfeiçoamento de cadastros e sistemas de informação." },
       { nome: "Interlocução entre Planejamento e Áreas Técnicas", descricao: "Articulação entre os diversos setores da Secretaria e instrumentos de planejamento." },
-      { nome: "Gestão do FMSAI", descricao: "Fortalecimento dos mecanismos de controle sobre receitas e execução orçamentária do fundo." },
     ],
     destaques: ["Habitação", "Planejamento urbano", "Dados", "Processos"],
     ambiental: true,
