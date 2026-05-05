@@ -366,6 +366,45 @@ const planos: PlanoAtuacao[] = [
     ],
     destaques: ["Subprefeituras", "Zeladoria", "Centro", "Processos"],
   },
+  {
+    sigla: "SMPED",
+    orgao: "Secretaria Municipal da Pessoa com Deficiência",
+    descricao:
+      "Articula a política municipal para pessoas com deficiência e executa serviços finalísticos como Paraoficina Móvel, Central de Intermediação em Libras (CIL), CIPTEA, Observatório Municipal e os Centros TEA e Casa Mãe Paulistana.",
+    vigencia: "24 meses",
+    appggsNecessarios: 0,
+    projetos: [
+      { nome: "Programa de Metas, PPA e Inclui Sampa", descricao: "Acompanhamento da execução do PdM 2025-2028, dos PPAs 2022-2025 e 2026-2029 e do Inclui Sampa, garantindo diálogo entre as peças de planejamento." },
+      { nome: "Observatório Municipal da Pessoa com Deficiência", descricao: "Apoio ao planejamento e execução das atividades do Observatório, com atualização do portal, sistematização de dados, indicadores e articulações interinstitucionais." },
+      { nome: "Chamamentos Públicos e Emendas Parlamentares", descricao: "Apoio aos processos de chamamentos públicos, recebimento de emendas, orientação a entidades executoras e prestação de contas." },
+      { nome: "Monitoramento de Parcerias com OSCs", descricao: "Análise, monitoramento e avaliação dos projetos executados via Termos de Fomento, Colaboração e Acordo de Cooperação." },
+      { nome: "Centro TEA Zona Norte", descricao: "Monitoramento e avaliação da unidade do Centro Municipal para Pessoas com Transtorno do Espectro do Autismo." },
+      { nome: "Casa Mãe Paulistana Zona Leste", descricao: "Acompanhamento e implantação da unidade especializada de atendimento multiprofissional a mães e cuidadoras de pessoas com deficiência." },
+      { nome: "Documentos Editalícios do PdM", descricao: "Elaboração de documentos editalícios para os projetos do Programa de Metas sob responsabilidade da SMPED." },
+    ],
+    destaques: ["Pessoa com deficiência", "TEA", "Observatório", "Parcerias"],
+  },
+  {
+    sigla: "SMS",
+    orgao: "Secretaria Municipal da Saúde",
+    descricao:
+      "Responsável pela gestão municipal do SUS em São Paulo, com orçamento e responsabilidades federativas que demandam qualificação contínua do planejamento, monitoramento, parcerias, compras e políticas de saúde.",
+    vigencia: "24 meses",
+    appggsNecessarios: 20,
+    projetos: [
+      { nome: "Planejamento Estratégico", descricao: "Desenvolvimento de processos de planejamento estratégico para a SMS e suas áreas, com metodologia de gestão de programas e projetos." },
+      { nome: "Instrumentos de Gestão do SUS", descricao: "Elaboração e monitoramento do Plano Municipal de Saúde, Programação Anual, Relatórios Quadrimestrais e Anuais e planos setoriais e intersecretariais." },
+      { nome: "Integração entre Planejamento e Orçamento", descricao: "Monitoramento físico-financeiro do PPA, Programa de Metas, regionalização do Fundo Municipal de Saúde, Agenda 2030 e Orçamento Cidadão." },
+      { nome: "Gestão Estratégica de Compras e Logística", descricao: "Aprimoramento dos mecanismos de controle, abastecimento, fluxo de informações e gestão de estoques." },
+      { nome: "Contratos, Convênios e Parcerias", descricao: "Aprimoramento de instrumentos contratuais, modelos de avaliação, fluxos de monitoramento e capacitação das unidades descentralizadas para gestão de parcerias." },
+      { nome: "Aperfeiçoamento das Políticas de Saúde", descricao: "Suporte técnico ao desenho, monitoramento e avaliação das políticas públicas municipais de saúde, com proposição de indicadores." },
+      { nome: "Desenvolvimento Institucional e Organizacional", descricao: "Aprimoramento da estrutura organizacional, gestão documental, gestão do conhecimento e disseminação de metodologias de gestão de projetos." },
+      { nome: "Gestão de Pessoas e Formação Continuada", descricao: "Subsídio ao planejamento, monitoramento e desenvolvimento de competências da força de trabalho da Secretaria." },
+      { nome: "Governo Digital e Transformação de Processos", descricao: "Coordenação de projetos de tecnologia, digitalização de processos e implantação do processo eletrônico." },
+      { nome: "Rede de Planejamento e Programa de Metas", descricao: "Articulação com áreas internas e órgãos externos para construção e monitoramento de indicadores e operação do SMAE." },
+    ],
+    destaques: ["SUS", "Planejamento", "Parcerias", "Governo digital"],
+  },
 ];
 
 const totalAppggs = planos.reduce((sum, p) => sum + p.appggsNecessarios, 0);
