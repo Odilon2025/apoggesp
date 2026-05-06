@@ -184,12 +184,12 @@ const DiversidadePage = () => (
                 Mulheres em Liderança
               </span>
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-4xl font-display text-text-display">36,8%</span>
-                <span className="text-sm text-text-caption font-light">21 de 57</span>
+                <span className="text-4xl font-display text-text-display">40,5%</span>
+                <span className="text-sm text-text-caption font-light">30 de 74</span>
               </div>
-              <ProgressBar value={36.8} color="bg-gold" delay={0.3} />
+              <ProgressBar value={40.5} color="bg-gold" delay={0.3} />
               <p className="mt-4 text-xs text-text-caption font-light leading-relaxed">
-                A participação de mulheres em cargos de liderança aproxima-se de sua proporção na carreira (39,6%), o que sugere avanço no acesso a posições decisórias.
+                A participação de mulheres em cargos de liderança supera sua proporção na carreira (38,8%), o que sugere avanço no acesso a posições decisórias.
               </p>
             </div>
           </FadeIn>
@@ -199,12 +199,12 @@ const DiversidadePage = () => (
                 Negros em Liderança
               </span>
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-4xl font-display text-text-display">29,8%</span>
-                <span className="text-sm text-text-caption font-light">17 de 57</span>
+                <span className="text-4xl font-display text-text-display">31,1%</span>
+                <span className="text-sm text-text-caption font-light">23 de 74</span>
               </div>
-              <ProgressBar value={29.8} color="bg-accent" delay={0.4} />
+              <ProgressBar value={31.1} color="bg-accent" delay={0.4} />
               <p className="mt-4 text-xs text-text-caption font-light leading-relaxed">
-                A presença de pessoas negras em liderança acompanha a tendência de crescimento observada nas últimas gerações da carreira, embora ainda indique espaço para acompanhamento contínuo.
+                A presença de pessoas negras em liderança acompanha sua proporção na carreira (31,3%), embora ainda indique espaço para acompanhamento contínuo.
               </p>
             </div>
           </FadeIn>
