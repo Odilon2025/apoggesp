@@ -5,29 +5,20 @@ import FadeIn from "@/components/FadeIn";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Users, TrendingUp, Building2, Award, Shield, Target, BarChart3, Scale } from "lucide-react";
+import { snapshot } from "@/data/snapshot";
+
+const fmtPct = (n: number) => `${n.toString().replace(".", ",")}%`;
+const ind = snapshot.indicadores;
 
 const indicadores = [
-  { numero: "93", label: "Mulheres na carreira", detalhe: "38,8% do total", icon: Users },
-  { numero: "75", label: "Negros e afrodescendentes", detalhe: "31,3% do total", icon: Users },
-  { numero: "14", label: "Pessoas com deficiência", detalhe: "5,8% do total", icon: Users },
-  { numero: "74", label: "Em cargos de liderança", detalhe: "30,8% do efetivo", icon: Award },
+  { numero: String(ind.mulheres), label: "Mulheres na carreira", detalhe: `${fmtPct(ind.mulheresPct)} do total`, icon: Users },
+  { numero: String(ind.negros), label: "Negros e afrodescendentes", detalhe: `${fmtPct(ind.negrosPct)} do total`, icon: Users },
+  { numero: String(ind.pcd), label: "Pessoas com deficiência", detalhe: `${fmtPct(ind.pcdPct)} do total`, icon: Users },
+  { numero: String(ind.lideranca), label: "Em cargos de liderança", detalhe: `${fmtPct(ind.liderancaPct)} do efetivo`, icon: Award },
 ];
 
-const geracoes = [
-  { periodo: "2016–2018", total: 94, negros: 37, mulheres: 48, label: "Geração pioneira" },
-  { periodo: "2021–2022", total: 71, negros: 27, mulheres: 31, label: "Expansão da carreira" },
-  { periodo: "2024", total: 47, negros: 26, mulheres: 28, label: "Consolidação técnica" },
-  { periodo: "2026", total: 17, negros: 35, mulheres: 41, label: "Coorte mais recente" },
-];
-
-const secretarias = [
-  { sigla: "SEGES", total: 68, mulheres: 49, negros: 31 },
-  { sigla: "CGM", total: 59, mulheres: 39, negros: 31 },
-  { sigla: "SEPLAN", total: 17, mulheres: 24, negros: 12 },
-  { sigla: "SVMA", total: 10, mulheres: 30, negros: 20 },
-  { sigla: "SME", total: 10, mulheres: 40, negros: 20 },
-  { sigla: "SGM", total: 9, mulheres: 56, negros: 44 },
-];
+const geracoes = snapshot.coortes;
+const secretarias = snapshot.secretariasDiv;
 
 const eixosAtuacao = [
   {
@@ -82,7 +73,7 @@ const DiversidadePage = () => (
         <SectionTitle
           label="Panorama"
           title="Quem são os APPGGs"
-          subtitle="A carreira reúne 240 gestores públicos municipais. Um corpo técnico que, a cada geração, aproxima sua composição da diversidade da cidade que administra."
+          subtitle={`A carreira reúne ${snapshot.total} gestores públicos municipais. Um corpo técnico que, a cada geração, aproxima sua composição da diversidade da cidade que administra.`}
           center
         />
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -184,12 +175,12 @@ const DiversidadePage = () => (
                 Mulheres em Liderança
               </span>
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-4xl font-display text-text-display">40,5%</span>
-                <span className="text-sm text-text-caption font-light">30 de 74</span>
+                <span className="text-4xl font-display text-text-display">{fmtPct(snapshot.lideranca.mulheresPct)}</span>
+                <span className="text-sm text-text-caption font-light">{snapshot.lideranca.mulheres} de {snapshot.lideranca.total}</span>
               </div>
-              <ProgressBar value={40.5} color="bg-gold" delay={0.3} />
+              <ProgressBar value={snapshot.lideranca.mulheresPct} color="bg-gold" delay={0.3} />
               <p className="mt-4 text-xs text-text-caption font-light leading-relaxed">
-                A participação de mulheres em cargos de liderança supera sua proporção na carreira (38,8%), o que sugere avanço no acesso a posições decisórias.
+                A participação de mulheres em cargos de liderança ({fmtPct(snapshot.lideranca.mulheresPct)}) comparada à sua proporção na carreira ({fmtPct(ind.mulheresPct)}) é um indicador relevante do acesso a posições decisórias.
               </p>
             </div>
           </FadeIn>
@@ -199,12 +190,12 @@ const DiversidadePage = () => (
                 Negros em Liderança
               </span>
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-4xl font-display text-text-display">31,1%</span>
-                <span className="text-sm text-text-caption font-light">23 de 74</span>
+                <span className="text-4xl font-display text-text-display">{fmtPct(snapshot.lideranca.negrosPct)}</span>
+                <span className="text-sm text-text-caption font-light">{snapshot.lideranca.negros} de {snapshot.lideranca.total}</span>
               </div>
-              <ProgressBar value={31.1} color="bg-accent" delay={0.4} />
+              <ProgressBar value={snapshot.lideranca.negrosPct} color="bg-accent" delay={0.4} />
               <p className="mt-4 text-xs text-text-caption font-light leading-relaxed">
-                A presença de pessoas negras em liderança acompanha sua proporção na carreira (31,3%), embora ainda indique espaço para acompanhamento contínuo.
+                A presença de pessoas negras em liderança ({fmtPct(snapshot.lideranca.negrosPct)}) frente à sua proporção na carreira ({fmtPct(ind.negrosPct)}) permite acompanhar a equidade no acesso a posições decisórias.
               </p>
             </div>
           </FadeIn>
@@ -280,7 +271,7 @@ const DiversidadePage = () => (
         <SectionTitle
           label="Presença institucional"
           title="Diversidade distribuída pela administração"
-          subtitle="Presentes em mais de 23 órgãos municipais, os APPGGs levam capacidades técnicas e repertórios sociais diversos a diferentes áreas da gestão pública: planejamento, controle, meio ambiente, governo, gestão e outras políticas setoriais."
+          subtitle={`Presentes em mais de ${snapshot.totalOrgaos} órgãos municipais, os APPGGs levam capacidades técnicas e repertórios sociais diversos a diferentes áreas da gestão pública: planejamento, controle, meio ambiente, governo, gestão e outras políticas setoriais.`}
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl">
           {secretarias.map((s, i) => (
