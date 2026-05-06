@@ -328,7 +328,7 @@ const CarreiraDashboard = () => {
         <SectionTitle label="Painel Interativo" title="Retrato da Carreira" />
         <FadeIn>
           <p className="text-sm font-light text-text-body leading-[1.8] max-w-2xl mt-6">
-            Dados de servidores ativos em fevereiro de 2026. Selecione uma dimensão para explorar a
+            Dados de servidores ativos em {mesReferencia}. Selecione uma dimensão para explorar a
             composição da carreira.
           </p>
         </FadeIn>
