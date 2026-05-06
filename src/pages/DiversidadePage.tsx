@@ -7,10 +7,10 @@ import { useRef } from "react";
 import { Users, TrendingUp, Building2, Award, Shield, Target, BarChart3, Scale } from "lucide-react";
 
 const indicadores = [
-  { numero: "67", label: "Mulheres na carreira", detalhe: "39,6% do total", icon: Users },
-  { numero: "58", label: "Negros e afrodescendentes", detalhe: "34,3% do total", icon: Users },
-  { numero: "11", label: "Pessoas com deficiência", detalhe: "6,5% do total", icon: Users },
-  { numero: "57", label: "Em cargos de liderança", detalhe: "33,7% do efetivo", icon: Award },
+  { numero: "93", label: "Mulheres na carreira", detalhe: "38,8% do total", icon: Users },
+  { numero: "75", label: "Negros e afrodescendentes", detalhe: "31,3% do total", icon: Users },
+  { numero: "14", label: "Pessoas com deficiência", detalhe: "5,8% do total", icon: Users },
+  { numero: "74", label: "Em cargos de liderança", detalhe: "30,8% do efetivo", icon: Award },
 ];
 
 const geracoes = [
