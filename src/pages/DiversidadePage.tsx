@@ -5,29 +5,20 @@ import FadeIn from "@/components/FadeIn";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Users, TrendingUp, Building2, Award, Shield, Target, BarChart3, Scale } from "lucide-react";
+import { snapshot } from "@/data/snapshot";
+
+const fmtPct = (n: number) => `${n.toString().replace(".", ",")}%`;
+const ind = snapshot.indicadores;
 
 const indicadores = [
-  { numero: "93", label: "Mulheres na carreira", detalhe: "38,8% do total", icon: Users },
-  { numero: "75", label: "Negros e afrodescendentes", detalhe: "31,3% do total", icon: Users },
-  { numero: "14", label: "Pessoas com deficiência", detalhe: "5,8% do total", icon: Users },
-  { numero: "74", label: "Em cargos de liderança", detalhe: "30,8% do efetivo", icon: Award },
+  { numero: String(ind.mulheres), label: "Mulheres na carreira", detalhe: `${fmtPct(ind.mulheresPct)} do total`, icon: Users },
+  { numero: String(ind.negros), label: "Negros e afrodescendentes", detalhe: `${fmtPct(ind.negrosPct)} do total`, icon: Users },
+  { numero: String(ind.pcd), label: "Pessoas com deficiência", detalhe: `${fmtPct(ind.pcdPct)} do total`, icon: Users },
+  { numero: String(ind.lideranca), label: "Em cargos de liderança", detalhe: `${fmtPct(ind.liderancaPct)} do efetivo`, icon: Award },
 ];
 
-const geracoes = [
-  { periodo: "2016–2018", total: 94, negros: 37, mulheres: 48, label: "Geração pioneira" },
-  { periodo: "2021–2022", total: 71, negros: 27, mulheres: 31, label: "Expansão da carreira" },
-  { periodo: "2024", total: 47, negros: 26, mulheres: 28, label: "Consolidação técnica" },
-  { periodo: "2026", total: 17, negros: 35, mulheres: 41, label: "Coorte mais recente" },
-];
-
-const secretarias = [
-  { sigla: "SEGES", total: 68, mulheres: 49, negros: 31 },
-  { sigla: "CGM", total: 59, mulheres: 39, negros: 31 },
-  { sigla: "SEPLAN", total: 17, mulheres: 24, negros: 12 },
-  { sigla: "SVMA", total: 10, mulheres: 30, negros: 20 },
-  { sigla: "SME", total: 10, mulheres: 40, negros: 20 },
-  { sigla: "SGM", total: 9, mulheres: 56, negros: 44 },
-];
+const geracoes = snapshot.coortes;
+const secretarias = snapshot.secretariasDiv;
 
 const eixosAtuacao = [
   {
