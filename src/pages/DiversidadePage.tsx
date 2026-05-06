@@ -82,7 +82,7 @@ const DiversidadePage = () => (
         <SectionTitle
           label="Panorama"
           title="Quem são os APPGGs"
-          subtitle="A carreira reúne 185 gestores públicos municipais. Um corpo técnico que, a cada geração, aproxima sua composição da diversidade da cidade que administra."
+          subtitle="A carreira reúne 240 gestores públicos municipais. Um corpo técnico que, a cada geração, aproxima sua composição da diversidade da cidade que administra."
           center
         />
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
