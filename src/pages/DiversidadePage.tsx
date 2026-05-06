@@ -14,17 +14,19 @@ const indicadores = [
 ];
 
 const geracoes = [
-  { periodo: "2016–2017", total: 52, negros: 27, mulheres: 44, label: "Geração pioneira" },
-  { periodo: "2021–2022", total: 74, negros: 36, mulheres: 42, label: "Expansão e diversificação" },
-  { periodo: "2024", total: 43, negros: 40, mulheres: 30, label: "Avanço na representatividade racial" },
+  { periodo: "2016–2018", total: 94, negros: 37, mulheres: 48, label: "Geração pioneira" },
+  { periodo: "2021–2022", total: 71, negros: 27, mulheres: 31, label: "Expansão da carreira" },
+  { periodo: "2024", total: 47, negros: 26, mulheres: 28, label: "Consolidação técnica" },
+  { periodo: "2026", total: 17, negros: 35, mulheres: 41, label: "Coorte mais recente" },
 ];
 
 const secretarias = [
-  { sigla: "SEGES", total: 53, mulheres: 41, negros: 32 },
-  { sigla: "SEPLAN", total: 18, mulheres: 33, negros: 28 },
-  { sigla: "SME", total: 12, mulheres: 50, negros: 25 },
-  { sigla: "SGM", total: 10, mulheres: 50, negros: 30 },
-  { sigla: "SVMA", total: 9, mulheres: 22, negros: 55 },
+  { sigla: "SEGES", total: 68, mulheres: 49, negros: 31 },
+  { sigla: "CGM", total: 59, mulheres: 39, negros: 31 },
+  { sigla: "SEPLAN", total: 17, mulheres: 24, negros: 12 },
+  { sigla: "SVMA", total: 10, mulheres: 30, negros: 20 },
+  { sigla: "SME", total: 10, mulheres: 40, negros: 20 },
+  { sigla: "SGM", total: 9, mulheres: 56, negros: 44 },
 ];
 
 const eixosAtuacao = [
