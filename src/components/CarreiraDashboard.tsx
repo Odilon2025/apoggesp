@@ -16,119 +16,41 @@ import {
 } from "recharts";
 import FadeIn from "@/components/FadeIn";
 import SectionTitle from "@/components/SectionTitle";
+import { snapshot } from "@/data/snapshot";
 
-// Dados snapshot fevereiro/2026 — 185 APPGGs ativos
-const orgaos = [
-  { sigla: "SEGES", n: 68 },
-  { sigla: "SEPLAN", n: 17 },
-  { sigla: "SME", n: 10 },
-  { sigla: "SVMA", n: 10 },
-  { sigla: "SGM", n: 9 },
-  { sigla: "SMS", n: 8 },
-  { sigla: "SEHAB", n: 7 },
-  { sigla: "SMUL", n: 6 },
-  { sigla: "SMDET", n: 6 },
-  { sigla: "SMADS", n: 6 },
-  { sigla: "SMT", n: 5 },
-  { sigla: "PGM", n: 5 },
-  { sigla: "CGM", n: 5 },
-  { sigla: "SMDHC", n: 4 },
-  { sigla: "SMC", n: 4 },
-  { sigla: "SEME", n: 4 },
-  { sigla: "SF", n: 3 },
-  { sigla: "SIURB", n: 2 },
-  { sigla: "SMSU", n: 2 },
-  { sigla: "SMPED", n: 1 },
-  { sigla: "SMSUB", n: 1 },
-  { sigla: "CASA CIVIL", n: 1 },
-  { sigla: "GAB. PREFEITO", n: 1 },
-];
+const {
+  total: TOTAL,
+  orgaos,
+  sexo,
+  raca,
+  referencias,
+  ingresso,
+  geracao,
+  comissaoGenero,
+  comissaoRaca,
+  piramideCda,
+  lideranca,
+  mesReferencia,
+} = snapshot;
 
-const sexo = [
-  { name: "Masculino", value: 113 },
-  { name: "Feminino", value: 72 },
-];
-
-const raca = [
-  { name: "Branca", value: 124 },
-  { name: "Parda", value: 29 },
-  { name: "Preta", value: 29 },
-  { name: "Amarela", value: 3 },
-];
-
-const referencias = [
-  { ref: "APPGG1", n: 69 },
-  { ref: "APPGG2", n: 60 },
-  { ref: "APPGG3", n: 2 },
-  { ref: "APPGG4", n: 1 },
-  { ref: "APPGG5", n: 16 },
-  { ref: "APPGG6", n: 37 },
-];
-
-const ingresso = [
-  { ano: "2016", n: 45 },
-  { ano: "2017", n: 10 },
-  { ano: "2018", n: 1 },
-  { ano: "2021", n: 34 },
-  { ano: "2022", n: 31 },
-  { ano: "2024", n: 47 },
-  { ano: "2026", n: 17 },
-];
-
-// Faixas etárias por marcos geracionais (com base no ano de nascimento)
-// Boomers: até 1964 · Geração X: 1965–1980 · Millennials (Y): 1981–1996 · Geração Z: 1997+
-const geracao = [
-  { faixa: "Boomers", sub: "até 1964", n: 3 },
-  { faixa: "Geração X", sub: "1965–1980", n: 20 },
-  { faixa: "Millennials", sub: "1981–1996", n: 153 },
-  { faixa: "Geração Z", sub: "1997+", n: 9 },
-];
-
-// Cargos em comissão: 57 APPGGs (30,8% do total) ocupam funções de liderança
-// Recorte por gênero e raça — permite avaliar equidade no acesso a postos de decisão
-const comissaoGenero = [
-  { grupo: "Feminino", comBase: 72, comComissao: 25 },
-  { grupo: "Masculino", comBase: 113, comComissao: 32 },
-];
-
-const comissaoRaca = [
-  { grupo: "Branca", comBase: 124, comComissao: 35 },
-  { grupo: "Parda", comBase: 29, comComissao: 12 },
-  { grupo: "Preta", comBase: 29, comComissao: 9 },
-  { grupo: "Amarela", comBase: 3, comComissao: 1 },
-];
-
-// Taxa de ocupação de cargos comissionados por grupo (%)
 const taxaGenero = comissaoGenero.map((d) => ({
   grupo: d.grupo,
-  taxa: Number(((d.comComissao / d.comBase) * 100).toFixed(1)),
+  taxa: d.comBase === 0 ? 0 : Number(((d.comComissao / d.comBase) * 100).toFixed(1)),
   total: d.comBase,
   comissao: d.comComissao,
 }));
 
 const taxaRaca = comissaoRaca.map((d) => ({
   grupo: d.grupo,
-  taxa: Number(((d.comComissao / d.comBase) * 100).toFixed(1)),
+  taxa: d.comBase === 0 ? 0 : Number(((d.comComissao / d.comBase) * 100).toFixed(1)),
   total: d.comBase,
   comissao: d.comComissao,
 }));
 
-// Composição dos cargos comissionados por referência (CDA)
-// CDA-1 (mais baixo) → CDA-6 (mais alto). Mostra se o topo da pirâmide reproduz a diversidade da base.
-const piramideCda = [
-  // ref: [Fem, Masc, Branca, Parda, Preta, Amarela, total]
-  { ref: "CDA-1", fem: 2, masc: 0, branca: 0, parda: 1, preta: 1, amarela: 0, total: 2 },
-  { ref: "CDA-2", fem: 4, masc: 0, branca: 3, parda: 1, preta: 0, amarela: 0, total: 4 },
-  { ref: "CDA-3", fem: 1, masc: 6, branca: 1, parda: 3, preta: 2, amarela: 1, total: 7 },
-  { ref: "CDA-4", fem: 8, masc: 13, branca: 14, parda: 4, preta: 3, amarela: 0, total: 21 },
-  { ref: "CDA-5", fem: 5, masc: 5, branca: 4, parda: 3, preta: 3, amarela: 0, total: 10 },
-  { ref: "CDA-6", fem: 5, masc: 7, branca: 12, parda: 0, preta: 0, amarela: 0, total: 12 },
-];
-
 const piramideGenero = piramideCda.map((d) => ({
   ref: d.ref,
-  Feminino: Number(((d.fem / d.total) * 100).toFixed(1)),
-  Masculino: Number(((d.masc / d.total) * 100).toFixed(1)),
+  Feminino: d.total === 0 ? 0 : Number(((d.fem / d.total) * 100).toFixed(1)),
+  Masculino: d.total === 0 ? 0 : Number(((d.masc / d.total) * 100).toFixed(1)),
   total: d.total,
 }));
 
@@ -136,9 +58,9 @@ const piramideRaca = piramideCda.map((d) => {
   const negras = d.parda + d.preta;
   return {
     ref: d.ref,
-    Branca: Number(((d.branca / d.total) * 100).toFixed(1)),
-    Negra: Number(((negras / d.total) * 100).toFixed(1)),
-    Amarela: Number(((d.amarela / d.total) * 100).toFixed(1)),
+    Branca: d.total === 0 ? 0 : Number(((d.branca / d.total) * 100).toFixed(1)),
+    Negra: d.total === 0 ? 0 : Number(((negras / d.total) * 100).toFixed(1)),
+    Amarela: d.total === 0 ? 0 : Number(((d.amarela / d.total) * 100).toFixed(1)),
     total: d.total,
   };
 });
