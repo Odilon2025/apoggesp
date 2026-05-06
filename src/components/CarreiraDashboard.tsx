@@ -354,7 +354,7 @@ const CarreiraDashboard = () => {
         </FadeIn>
 
         <p className="text-[10px] font-light text-text-caption mt-6 tracking-wide">
-          Fonte: Base de dados de pessoal da Prefeitura de São Paulo — snapshot fev/2026. 185 APPGGs em exercício.
+          Fonte: Base de dados de pessoal da Prefeitura de São Paulo — snapshot {mesReferencia}. {TOTAL} APPGGs em exercício.
         </p>
       </div>
     </section>
