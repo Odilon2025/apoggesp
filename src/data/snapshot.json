@@ -1,0 +1,395 @@
+{
+  "geradoEm": "2026-05-06T00:12:51.396Z",
+  "mesReferencia": "fev/2026",
+  "total": 240,
+  "totalOrgaos": 23,
+  "indicadores": {
+    "mulheres": 93,
+    "mulheresPct": 38.8,
+    "negros": 75,
+    "negrosPct": 31.3,
+    "pcd": 14,
+    "pcdPct": 5.8,
+    "lideranca": 74,
+    "liderancaPct": 30.8
+  },
+  "lideranca": {
+    "total": 74,
+    "mulheres": 30,
+    "mulheresPct": 40.5,
+    "negros": 23,
+    "negrosPct": 31.1
+  },
+  "orgaos": [
+    {
+      "sigla": "SEGES",
+      "n": 68
+    },
+    {
+      "sigla": "CGM",
+      "n": 59
+    },
+    {
+      "sigla": "SEPLAN",
+      "n": 17
+    },
+    {
+      "sigla": "SME",
+      "n": 10
+    },
+    {
+      "sigla": "SVMA",
+      "n": 10
+    },
+    {
+      "sigla": "SGM",
+      "n": 9
+    },
+    {
+      "sigla": "SMS",
+      "n": 8
+    },
+    {
+      "sigla": "SEHAB",
+      "n": 7
+    },
+    {
+      "sigla": "SMUL",
+      "n": 6
+    },
+    {
+      "sigla": "SMDET",
+      "n": 6
+    },
+    {
+      "sigla": "SMADS",
+      "n": 6
+    },
+    {
+      "sigla": "SMDHC",
+      "n": 5
+    },
+    {
+      "sigla": "PGM",
+      "n": 5
+    },
+    {
+      "sigla": "SMT",
+      "n": 5
+    },
+    {
+      "sigla": "SMC",
+      "n": 4
+    },
+    {
+      "sigla": "SEME",
+      "n": 4
+    },
+    {
+      "sigla": "SF",
+      "n": 3
+    },
+    {
+      "sigla": "SMSU",
+      "n": 2
+    },
+    {
+      "sigla": "SIURB",
+      "n": 2
+    },
+    {
+      "sigla": "SMSUB",
+      "n": 1
+    },
+    {
+      "sigla": "CASA CIVIL",
+      "n": 1
+    },
+    {
+      "sigla": "SMPED",
+      "n": 1
+    },
+    {
+      "sigla": "GAB. PREFEITO",
+      "n": 1
+    }
+  ],
+  "sexo": [
+    {
+      "name": "Masculino",
+      "value": 147
+    },
+    {
+      "name": "Feminino",
+      "value": 93
+    }
+  ],
+  "raca": [
+    {
+      "name": "Branca",
+      "value": 153
+    },
+    {
+      "name": "Parda",
+      "value": 42
+    },
+    {
+      "name": "Preta",
+      "value": 33
+    },
+    {
+      "name": "Amarela",
+      "value": 12
+    }
+  ],
+  "referencias": [
+    {
+      "ref": "APPGG1",
+      "n": 69
+    },
+    {
+      "ref": "APPGG2",
+      "n": 60
+    },
+    {
+      "ref": "APPGG3",
+      "n": 2
+    },
+    {
+      "ref": "APPGG4",
+      "n": 1
+    },
+    {
+      "ref": "APPGG5",
+      "n": 16
+    },
+    {
+      "ref": "APPGG6",
+      "n": 37
+    }
+  ],
+  "ingresso": [
+    {
+      "ano": "2016",
+      "n": 67
+    },
+    {
+      "ano": "2017",
+      "n": 22
+    },
+    {
+      "ano": "2018",
+      "n": 5
+    },
+    {
+      "ano": "2019",
+      "n": 10
+    },
+    {
+      "ano": "2020",
+      "n": 1
+    },
+    {
+      "ano": "2021",
+      "n": 35
+    },
+    {
+      "ano": "2022",
+      "n": 36
+    },
+    {
+      "ano": "2024",
+      "n": 47
+    },
+    {
+      "ano": "2026",
+      "n": 17
+    }
+  ],
+  "geracao": [
+    {
+      "faixa": "Boomers",
+      "sub": "até 1964",
+      "n": 3
+    },
+    {
+      "faixa": "Geração X",
+      "sub": "1965–1980",
+      "n": 36
+    },
+    {
+      "faixa": "Millennials",
+      "sub": "1981–1996",
+      "n": 192
+    },
+    {
+      "faixa": "Geração Z",
+      "sub": "1997+",
+      "n": 9
+    }
+  ],
+  "comissaoGenero": [
+    {
+      "grupo": "Feminino",
+      "comBase": 93,
+      "comComissao": 30
+    },
+    {
+      "grupo": "Masculino",
+      "comBase": 147,
+      "comComissao": 44
+    }
+  ],
+  "comissaoRaca": [
+    {
+      "grupo": "Branca",
+      "comBase": 153,
+      "comComissao": 44
+    },
+    {
+      "grupo": "Parda",
+      "comBase": 42,
+      "comComissao": 14
+    },
+    {
+      "grupo": "Preta",
+      "comBase": 33,
+      "comComissao": 9
+    },
+    {
+      "grupo": "Amarela",
+      "comBase": 12,
+      "comComissao": 7
+    }
+  ],
+  "piramideCda": [
+    {
+      "ref": "CDA-1",
+      "fem": 2,
+      "masc": 0,
+      "branca": 0,
+      "parda": 1,
+      "preta": 1,
+      "amarela": 0,
+      "total": 2
+    },
+    {
+      "ref": "CDA-2",
+      "fem": 4,
+      "masc": 3,
+      "branca": 5,
+      "parda": 1,
+      "preta": 0,
+      "amarela": 1,
+      "total": 7
+    },
+    {
+      "ref": "CDA-3",
+      "fem": 3,
+      "masc": 6,
+      "branca": 2,
+      "parda": 3,
+      "preta": 2,
+      "amarela": 2,
+      "total": 9
+    },
+    {
+      "ref": "CDA-4",
+      "fem": 10,
+      "masc": 20,
+      "branca": 18,
+      "parda": 6,
+      "preta": 3,
+      "amarela": 3,
+      "total": 30
+    },
+    {
+      "ref": "CDA-5",
+      "fem": 5,
+      "masc": 6,
+      "branca": 5,
+      "parda": 3,
+      "preta": 3,
+      "amarela": 0,
+      "total": 11
+    },
+    {
+      "ref": "CDA-6",
+      "fem": 6,
+      "masc": 8,
+      "branca": 13,
+      "parda": 0,
+      "preta": 0,
+      "amarela": 1,
+      "total": 14
+    }
+  ],
+  "coortes": [
+    {
+      "periodo": "2016–2018",
+      "label": "Geração pioneira",
+      "total": 94,
+      "negros": 37.2,
+      "mulheres": 47.9
+    },
+    {
+      "periodo": "2021–2022",
+      "label": "Expansão da carreira",
+      "total": 71,
+      "negros": 26.8,
+      "mulheres": 31
+    },
+    {
+      "periodo": "2024",
+      "label": "Consolidação técnica",
+      "total": 47,
+      "negros": 25.5,
+      "mulheres": 27.7
+    },
+    {
+      "periodo": "2026",
+      "label": "Coorte mais recente",
+      "total": 17,
+      "negros": 35.3,
+      "mulheres": 41.2
+    }
+  ],
+  "secretariasDiv": [
+    {
+      "sigla": "SEGES",
+      "total": 68,
+      "mulheres": 48.5,
+      "negros": 30.9
+    },
+    {
+      "sigla": "CGM",
+      "total": 59,
+      "mulheres": 39,
+      "negros": 30.5
+    },
+    {
+      "sigla": "SEPLAN",
+      "total": 17,
+      "mulheres": 23.5,
+      "negros": 11.8
+    },
+    {
+      "sigla": "SME",
+      "total": 10,
+      "mulheres": 40,
+      "negros": 20
+    },
+    {
+      "sigla": "SVMA",
+      "total": 10,
+      "mulheres": 30,
+      "negros": 20
+    },
+    {
+      "sigla": "SGM",
+      "total": 9,
+      "mulheres": 55.6,
+      "negros": 44.4
+    }
+  ]
+}
