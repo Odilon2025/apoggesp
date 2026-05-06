@@ -271,7 +271,7 @@ const DiversidadePage = () => (
         <SectionTitle
           label="Presença institucional"
           title="Diversidade distribuída pela administração"
-          subtitle="Presentes em mais de 23 órgãos municipais, os APPGGs levam capacidades técnicas e repertórios sociais diversos a diferentes áreas da gestão pública: planejamento, controle, meio ambiente, governo, gestão e outras políticas setoriais."
+          subtitle={`Presentes em mais de ${snapshot.totalOrgaos} órgãos municipais, os APPGGs levam capacidades técnicas e repertórios sociais diversos a diferentes áreas da gestão pública: planejamento, controle, meio ambiente, governo, gestão e outras políticas setoriais.`}
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl">
           {secretarias.map((s, i) => (
