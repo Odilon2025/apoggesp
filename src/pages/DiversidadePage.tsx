@@ -175,12 +175,12 @@ const DiversidadePage = () => (
                 Mulheres em Liderança
               </span>
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-4xl font-display text-text-display">40,5%</span>
-                <span className="text-sm text-text-caption font-light">30 de 74</span>
+                <span className="text-4xl font-display text-text-display">{fmtPct(snapshot.lideranca.mulheresPct)}</span>
+                <span className="text-sm text-text-caption font-light">{snapshot.lideranca.mulheres} de {snapshot.lideranca.total}</span>
               </div>
-              <ProgressBar value={40.5} color="bg-gold" delay={0.3} />
+              <ProgressBar value={snapshot.lideranca.mulheresPct} color="bg-gold" delay={0.3} />
               <p className="mt-4 text-xs text-text-caption font-light leading-relaxed">
-                A participação de mulheres em cargos de liderança supera sua proporção na carreira (38,8%), o que sugere avanço no acesso a posições decisórias.
+                A participação de mulheres em cargos de liderança ({fmtPct(snapshot.lideranca.mulheresPct)}) comparada à sua proporção na carreira ({fmtPct(ind.mulheresPct)}) é um indicador relevante do acesso a posições decisórias.
               </p>
             </div>
           </FadeIn>
@@ -190,12 +190,12 @@ const DiversidadePage = () => (
                 Negros em Liderança
               </span>
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-4xl font-display text-text-display">31,1%</span>
-                <span className="text-sm text-text-caption font-light">23 de 74</span>
+                <span className="text-4xl font-display text-text-display">{fmtPct(snapshot.lideranca.negrosPct)}</span>
+                <span className="text-sm text-text-caption font-light">{snapshot.lideranca.negros} de {snapshot.lideranca.total}</span>
               </div>
-              <ProgressBar value={31.1} color="bg-accent" delay={0.4} />
+              <ProgressBar value={snapshot.lideranca.negrosPct} color="bg-accent" delay={0.4} />
               <p className="mt-4 text-xs text-text-caption font-light leading-relaxed">
-                A presença de pessoas negras em liderança acompanha sua proporção na carreira (31,3%), embora ainda indique espaço para acompanhamento contínuo.
+                A presença de pessoas negras em liderança ({fmtPct(snapshot.lideranca.negrosPct)}) frente à sua proporção na carreira ({fmtPct(ind.negrosPct)}) permite acompanhar a equidade no acesso a posições decisórias.
               </p>
             </div>
           </FadeIn>
