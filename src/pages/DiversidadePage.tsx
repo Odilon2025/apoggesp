@@ -7,24 +7,26 @@ import { useRef } from "react";
 import { Users, TrendingUp, Building2, Award, Shield, Target, BarChart3, Scale } from "lucide-react";
 
 const indicadores = [
-  { numero: "67", label: "Mulheres na carreira", detalhe: "39,6% do total", icon: Users },
-  { numero: "58", label: "Negros e afrodescendentes", detalhe: "34,3% do total", icon: Users },
-  { numero: "11", label: "Pessoas com deficiência", detalhe: "6,5% do total", icon: Users },
-  { numero: "57", label: "Em cargos de liderança", detalhe: "33,7% do efetivo", icon: Award },
+  { numero: "93", label: "Mulheres na carreira", detalhe: "38,8% do total", icon: Users },
+  { numero: "75", label: "Negros e afrodescendentes", detalhe: "31,3% do total", icon: Users },
+  { numero: "14", label: "Pessoas com deficiência", detalhe: "5,8% do total", icon: Users },
+  { numero: "74", label: "Em cargos de liderança", detalhe: "30,8% do efetivo", icon: Award },
 ];
 
 const geracoes = [
-  { periodo: "2016–2017", total: 52, negros: 27, mulheres: 44, label: "Geração pioneira" },
-  { periodo: "2021–2022", total: 74, negros: 36, mulheres: 42, label: "Expansão e diversificação" },
-  { periodo: "2024", total: 43, negros: 40, mulheres: 30, label: "Avanço na representatividade racial" },
+  { periodo: "2016–2018", total: 94, negros: 37, mulheres: 48, label: "Geração pioneira" },
+  { periodo: "2021–2022", total: 71, negros: 27, mulheres: 31, label: "Expansão da carreira" },
+  { periodo: "2024", total: 47, negros: 26, mulheres: 28, label: "Consolidação técnica" },
+  { periodo: "2026", total: 17, negros: 35, mulheres: 41, label: "Coorte mais recente" },
 ];
 
 const secretarias = [
-  { sigla: "SEGES", total: 53, mulheres: 41, negros: 32 },
-  { sigla: "SEPLAN", total: 18, mulheres: 33, negros: 28 },
-  { sigla: "SME", total: 12, mulheres: 50, negros: 25 },
-  { sigla: "SGM", total: 10, mulheres: 50, negros: 30 },
-  { sigla: "SVMA", total: 9, mulheres: 22, negros: 55 },
+  { sigla: "SEGES", total: 68, mulheres: 49, negros: 31 },
+  { sigla: "CGM", total: 59, mulheres: 39, negros: 31 },
+  { sigla: "SEPLAN", total: 17, mulheres: 24, negros: 12 },
+  { sigla: "SVMA", total: 10, mulheres: 30, negros: 20 },
+  { sigla: "SME", total: 10, mulheres: 40, negros: 20 },
+  { sigla: "SGM", total: 9, mulheres: 56, negros: 44 },
 ];
 
 const eixosAtuacao = [
@@ -80,7 +82,7 @@ const DiversidadePage = () => (
         <SectionTitle
           label="Panorama"
           title="Quem são os APPGGs"
-          subtitle="A carreira reúne 185 gestores públicos municipais. Um corpo técnico que, a cada geração, aproxima sua composição da diversidade da cidade que administra."
+          subtitle="A carreira reúne 240 gestores públicos municipais. Um corpo técnico que, a cada geração, aproxima sua composição da diversidade da cidade que administra."
           center
         />
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -182,12 +184,12 @@ const DiversidadePage = () => (
                 Mulheres em Liderança
               </span>
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-4xl font-display text-text-display">36,8%</span>
-                <span className="text-sm text-text-caption font-light">21 de 57</span>
+                <span className="text-4xl font-display text-text-display">40,5%</span>
+                <span className="text-sm text-text-caption font-light">30 de 74</span>
               </div>
-              <ProgressBar value={36.8} color="bg-gold" delay={0.3} />
+              <ProgressBar value={40.5} color="bg-gold" delay={0.3} />
               <p className="mt-4 text-xs text-text-caption font-light leading-relaxed">
-                A participação de mulheres em cargos de liderança aproxima-se de sua proporção na carreira (39,6%), o que sugere avanço no acesso a posições decisórias.
+                A participação de mulheres em cargos de liderança supera sua proporção na carreira (38,8%), o que sugere avanço no acesso a posições decisórias.
               </p>
             </div>
           </FadeIn>
@@ -197,12 +199,12 @@ const DiversidadePage = () => (
                 Negros em Liderança
               </span>
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-4xl font-display text-text-display">29,8%</span>
-                <span className="text-sm text-text-caption font-light">17 de 57</span>
+                <span className="text-4xl font-display text-text-display">31,1%</span>
+                <span className="text-sm text-text-caption font-light">23 de 74</span>
               </div>
-              <ProgressBar value={29.8} color="bg-accent" delay={0.4} />
+              <ProgressBar value={31.1} color="bg-accent" delay={0.4} />
               <p className="mt-4 text-xs text-text-caption font-light leading-relaxed">
-                A presença de pessoas negras em liderança acompanha a tendência de crescimento observada nas últimas gerações da carreira, embora ainda indique espaço para acompanhamento contínuo.
+                A presença de pessoas negras em liderança acompanha sua proporção na carreira (31,3%), embora ainda indique espaço para acompanhamento contínuo.
               </p>
             </div>
           </FadeIn>
@@ -278,7 +280,7 @@ const DiversidadePage = () => (
         <SectionTitle
           label="Presença institucional"
           title="Diversidade distribuída pela administração"
-          subtitle="Presentes em mais de 22 órgãos municipais, os APPGGs levam capacidades técnicas e repertórios sociais diversos a diferentes áreas da gestão pública: planejamento, educação, meio ambiente, governo, gestão e outras políticas setoriais."
+          subtitle="Presentes em mais de 23 órgãos municipais, os APPGGs levam capacidades técnicas e repertórios sociais diversos a diferentes áreas da gestão pública: planejamento, controle, meio ambiente, governo, gestão e outras políticas setoriais."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl">
           {secretarias.map((s, i) => (
