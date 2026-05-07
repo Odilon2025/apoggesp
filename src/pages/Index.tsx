@@ -4,6 +4,7 @@ import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
 import { ArrowRight, FileText, TrendingUp, Users, LineChart } from "lucide-react";
+import { snapshot } from "@/data/snapshot";
 
 const timelineItems = [
   { year: "2015", text: "A Lei Municipal nº 16.193 cria a carreira de APPGG — uma aposta na profissionalização da gestão pública paulistana" },
@@ -29,8 +30,8 @@ const publicacoesRecentes = [
 ];
 
 const stats = [
-  { num: "185", label: "analistas em exercício" },
-  { num: "22", label: "órgãos e entidades" },
+  { num: String(snapshot.total), label: "analistas em exercício" },
+  { num: String(snapshot.totalOrgaos), label: "órgãos e entidades" },
   { num: "11", label: "anos de carreira" },
 ];
 
