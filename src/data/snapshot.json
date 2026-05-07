@@ -1,33 +1,29 @@
 {
-  "geradoEm": "2026-05-06T00:12:51.396Z",
+  "geradoEm": "2026-05-07T12:46:12.349Z",
   "mesReferencia": "fev/2026",
-  "total": 240,
+  "total": 185,
   "totalOrgaos": 23,
   "indicadores": {
-    "mulheres": 93,
-    "mulheresPct": 38.8,
-    "negros": 75,
-    "negrosPct": 31.3,
-    "pcd": 14,
-    "pcdPct": 5.8,
-    "lideranca": 74,
+    "mulheres": 72,
+    "mulheresPct": 38.9,
+    "negros": 58,
+    "negrosPct": 31.4,
+    "pcd": 11,
+    "pcdPct": 5.9,
+    "lideranca": 57,
     "liderancaPct": 30.8
   },
   "lideranca": {
-    "total": 74,
-    "mulheres": 30,
-    "mulheresPct": 40.5,
-    "negros": 23,
-    "negrosPct": 31.1
+    "total": 57,
+    "mulheres": 25,
+    "mulheresPct": 43.9,
+    "negros": 21,
+    "negrosPct": 36.8
   },
   "orgaos": [
     {
       "sigla": "SEGES",
       "n": 68
-    },
-    {
-      "sigla": "CGM",
-      "n": 59
     },
     {
       "sigla": "SEPLAN",
@@ -66,7 +62,7 @@
       "n": 6
     },
     {
-      "sigla": "SMDHC",
+      "sigla": "CGM",
       "n": 5
     },
     {
@@ -83,6 +79,10 @@
     },
     {
       "sigla": "SEME",
+      "n": 4
+    },
+    {
+      "sigla": "SMDHC",
       "n": 4
     },
     {
@@ -117,29 +117,29 @@
   "sexo": [
     {
       "name": "Masculino",
-      "value": 147
+      "value": 113
     },
     {
       "name": "Feminino",
-      "value": 93
+      "value": 72
     }
   ],
   "raca": [
     {
       "name": "Branca",
-      "value": 153
+      "value": 124
     },
     {
       "name": "Parda",
-      "value": 42
+      "value": 29
     },
     {
       "name": "Preta",
-      "value": 33
+      "value": 29
     },
     {
       "name": "Amarela",
-      "value": 12
+      "value": 3
     }
   ],
   "referencias": [
@@ -171,31 +171,23 @@
   "ingresso": [
     {
       "ano": "2016",
-      "n": 67
+      "n": 45
     },
     {
       "ano": "2017",
-      "n": 22
-    },
-    {
-      "ano": "2018",
-      "n": 5
-    },
-    {
-      "ano": "2019",
       "n": 10
     },
     {
-      "ano": "2020",
+      "ano": "2018",
       "n": 1
     },
     {
       "ano": "2021",
-      "n": 35
+      "n": 34
     },
     {
       "ano": "2022",
-      "n": 36
+      "n": 31
     },
     {
       "ano": "2024",
@@ -215,12 +207,12 @@
     {
       "faixa": "Geração X",
       "sub": "1965–1980",
-      "n": 36
+      "n": 20
     },
     {
       "faixa": "Millennials",
       "sub": "1981–1996",
-      "n": 192
+      "n": 153
     },
     {
       "faixa": "Geração Z",
@@ -231,35 +223,35 @@
   "comissaoGenero": [
     {
       "grupo": "Feminino",
-      "comBase": 93,
-      "comComissao": 30
+      "comBase": 72,
+      "comComissao": 25
     },
     {
       "grupo": "Masculino",
-      "comBase": 147,
-      "comComissao": 44
+      "comBase": 113,
+      "comComissao": 32
     }
   ],
   "comissaoRaca": [
     {
       "grupo": "Branca",
-      "comBase": 153,
-      "comComissao": 44
+      "comBase": 124,
+      "comComissao": 35
     },
     {
       "grupo": "Parda",
-      "comBase": 42,
-      "comComissao": 14
+      "comBase": 29,
+      "comComissao": 12
     },
     {
       "grupo": "Preta",
-      "comBase": 33,
+      "comBase": 29,
       "comComissao": 9
     },
     {
       "grupo": "Amarela",
-      "comBase": 12,
-      "comComissao": 7
+      "comBase": 3,
+      "comComissao": 1
     }
   ],
   "piramideCda": [
@@ -276,68 +268,68 @@
     {
       "ref": "CDA-2",
       "fem": 4,
-      "masc": 3,
-      "branca": 5,
+      "masc": 0,
+      "branca": 3,
       "parda": 1,
       "preta": 0,
+      "amarela": 0,
+      "total": 4
+    },
+    {
+      "ref": "CDA-3",
+      "fem": 1,
+      "masc": 6,
+      "branca": 1,
+      "parda": 3,
+      "preta": 2,
       "amarela": 1,
       "total": 7
     },
     {
-      "ref": "CDA-3",
-      "fem": 3,
-      "masc": 6,
-      "branca": 2,
-      "parda": 3,
-      "preta": 2,
-      "amarela": 2,
-      "total": 9
-    },
-    {
       "ref": "CDA-4",
-      "fem": 10,
-      "masc": 20,
-      "branca": 18,
-      "parda": 6,
+      "fem": 8,
+      "masc": 13,
+      "branca": 14,
+      "parda": 4,
       "preta": 3,
-      "amarela": 3,
-      "total": 30
+      "amarela": 0,
+      "total": 21
     },
     {
       "ref": "CDA-5",
       "fem": 5,
-      "masc": 6,
-      "branca": 5,
+      "masc": 5,
+      "branca": 4,
       "parda": 3,
       "preta": 3,
       "amarela": 0,
-      "total": 11
+      "total": 10
     },
     {
       "ref": "CDA-6",
-      "fem": 6,
-      "masc": 8,
-      "branca": 13,
+      "fem": 5,
+      "masc": 7,
+      "branca": 12,
       "parda": 0,
       "preta": 0,
-      "amarela": 1,
-      "total": 14
+      "amarela": 0,
+      "total": 12
     }
   ],
   "coortes": [
     {
       "periodo": "2016–2018",
       "label": "Geração pioneira",
-      "total": 94,
-      "negros": 37.2,
-      "mulheres": 47.9
+      "total": 56,
+      "negros": 37.5,
+      "mulheres": 53.6
     },
     {
       "periodo": "2021–2022",
       "label": "Expansão da carreira",
-      "total": 71,
-      "negros": 26.8,
-      "mulheres": 31
+      "total": 65,
+      "negros": 29.2,
+      "mulheres": 33.8
     },
     {
       "periodo": "2024",
@@ -362,12 +354,6 @@
       "negros": 30.9
     },
     {
-      "sigla": "CGM",
-      "total": 59,
-      "mulheres": 39,
-      "negros": 30.5
-    },
-    {
       "sigla": "SEPLAN",
       "total": 17,
       "mulheres": 23.5,
@@ -390,6 +376,12 @@
       "total": 9,
       "mulheres": 55.6,
       "negros": 44.4
+    },
+    {
+      "sigla": "SMS",
+      "total": 8,
+      "mulheres": 25,
+      "negros": 50
     }
   ]
 }
