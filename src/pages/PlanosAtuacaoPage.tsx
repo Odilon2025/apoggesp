@@ -4,6 +4,24 @@ import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
 import { Building2, ChevronDown, ChevronUp, Target, Users } from "lucide-react";
+import { snapshot } from "@/data/snapshot";
+
+// Mapeia a sigla do PAI para a sigla usada no snapshot mensal da Prefeitura.
+// Sub-unidades vinculadas à SGM (SECLIMA, SEDP, SEPE, SERI) não aparecem
+// segregadas na folha — ficam contabilizadas dentro de SGM.
+const SIGLA_SNAPSHOT: Record<string, string> = {
+  "Casa Civil": "CASA CIVIL",
+  SECLIMA: "SGM",
+  SEDP: "SGM",
+  SEPE: "SGM",
+  SERI: "SGM",
+};
+
+const appggsAtuaisPorSigla = (sigla: string): number | null => {
+  const key = SIGLA_SNAPSHOT[sigla] ?? sigla.toUpperCase();
+  const o = snapshot.orgaos.find((x) => x.sigla === key);
+  return o ? o.n : null;
+};
 
 interface Projeto {
   nome: string;
