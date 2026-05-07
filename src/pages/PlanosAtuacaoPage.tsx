@@ -489,7 +489,13 @@ const PlanosAtuacaoPage = () => {
                         <div className="flex items-center gap-2 flex-wrap">
                           <span className="text-xs font-medium tracking-wider uppercase text-gold">{plano.sigla}</span>
                           <span className="text-[11px] text-text-caption">·</span>
-                          <span className="text-[11px] text-text-caption">{plano.appggsNecessarios} APPGG{plano.appggsNecessarios > 1 ? "s" : ""}</span>
+                          <span className="text-[11px] text-text-caption">
+                            {(() => {
+                              const atuais = appggsAtuaisPorSigla(plano.sigla);
+                              const n = atuais ?? plano.appggsNecessarios;
+                              return `${n} APPGG${n === 1 ? "" : "s"}`;
+                            })()}
+                          </span>
                           <span className="text-[11px] text-text-caption">·</span>
                           <span className="text-[11px] text-text-caption">{plano.projetos.length} projeto{plano.projetos.length > 1 ? "s" : ""}</span>
                         </div>
