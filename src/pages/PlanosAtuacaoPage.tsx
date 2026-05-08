@@ -464,6 +464,9 @@ const PlanosAtuacaoPage = () => {
               </div>
             </FadeIn>
           </div>
+          <p className="text-[10px] font-light tracking-luxury uppercase text-text-caption/70 text-center mt-8">
+            APPGGs em exercício por órgão · snapshot de {snapshot.mesReferencia}
+          </p>
         </div>
       </section>
 

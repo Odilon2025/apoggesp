@@ -112,6 +112,9 @@ const Index = () => {
                     <span className="block text-[11px] font-light text-primary-foreground/40 mt-1 tracking-wide">{stat.label}</span>
                   </motion.div>
                 ))}
+                <p className="text-[9px] font-light tracking-luxury uppercase text-primary-foreground/30 pt-2">
+                  Dados de {snapshot.mesReferencia}
+                </p>
               </motion.div>
             </div>
           </div>
