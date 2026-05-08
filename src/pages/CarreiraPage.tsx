@@ -103,7 +103,7 @@ const CarreiraPage = () => (
                   Administradores públicos, economistas, cientistas sociais, engenheiros, advogados — os APPGGs chegam de formações diversas, mas convergem em uma competência comum: a capacidade de colaborar com a tradução da complexidade em ação. O ingresso ocorre por concurso público de provas e títulos, exigindo nível superior.
                 </p>
                 <p>
-                  Na prática, os analistas atuam como intérpretes — de problemas públicos, de dados, de contextos políticos e institucionais. Em diálogo com as equipes técnicas e com as lideranças de cada órgão, contribuem para identificar lacunas entre uma diretriz e sua execução e participam da construção do caminho para preenchê-las. Ferramentas de gestão e planejamento são o vocabulário; a colaboração com a melhoria das políticas públicas, o objetivo.
+                  Na prática, os analistas atuam como intérpretes — de problemas públicos, de dados, de contextos políticos e institucionais. Em diálogo com as equipes técnicas e com as lideranças de cada órgão, contribuem para identificar lacunas entre a diretriz e sua execução e participam da construção do caminho para preenchê-las. Ferramentas de gestão e planejamento são o vocabulário; a colaboração com a melhoria das políticas públicas, o objetivo.
                 </p>
                 <p>
                   O trabalho vai além da técnica isolada. APPGGs participam de projetos, contribuem com a formação de novas lideranças, colaboram com laboratórios de inovação, apoiam o redesenho de processos e enfrentam — sempre em conjunto com outras carreiras e dentro dos Planos de Atuação Institucional — problemas que nenhum manual previu.
