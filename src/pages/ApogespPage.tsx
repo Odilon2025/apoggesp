@@ -46,7 +46,7 @@ const objetivos = [
   "Promover o reconhecimento institucional da carreira como pilar estratégico da gestão municipal",
   "Contribuir para que políticas públicas sejam formuladas com rigor técnico e implementadas com efetividade",
   "Produzir e disseminar conhecimento original sobre gestão governamental na esfera municipal",
-  "Representar os interesses dos associados com independência e transparência perante órgãos públicos e sociedade",
+  "Representar os interesses dos associados com independência e transparência perante órgãos públicos e a sociedade",
   "Investir no desenvolvimento profissional contínuo e na construção de capacidades estatais duradouras",
   "Estimular o debate público qualificado sobre administração pública e o futuro das políticas municipais",
 ];
