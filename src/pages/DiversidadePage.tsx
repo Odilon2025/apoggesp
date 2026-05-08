@@ -94,6 +94,9 @@ const DiversidadePage = () => (
             </FadeIn>
           ))}
         </div>
+        <p className="text-[10px] font-light tracking-luxury uppercase text-text-caption/70 text-center mt-8">
+          Snapshot da base de pessoal — {snapshot.mesReferencia}
+        </p>
       </div>
     </section>
 
