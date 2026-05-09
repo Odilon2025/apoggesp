@@ -45,7 +45,8 @@ const App = () => (
           <Route path="/planos-ambientais" element={<PlanosAmbientaisPage />} />
           <Route path="/observatorio-evasoes" element={<ObservatorioEvasoesPage />} />
           <Route path="*" element={<NotFound />} />
-        </Routes>
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
