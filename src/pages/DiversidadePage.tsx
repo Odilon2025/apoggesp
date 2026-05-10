@@ -63,8 +63,8 @@ const DiversidadePage = () => (
   <PageLayout>
     <PageHero
       label="Diversidade"
-      title="Representatividade como capacidade institucional"
-      subtitle="Desigualdades não se corrigem por inércia. Podem ser reproduzidas por normas, critérios, formulários, fluxos e rotinas administrativas aparentemente neutros. Representatividade no serviço público não é apenas simbólica: é uma condição institucional para ampliar repertórios de análise, identificar riscos de exclusão e calibrar políticas com maior aderência à realidade da população atendida."
+      title="Representar a cidade ainda é uma agenda em disputa"
+      subtitle="A APOGESP olha para a composição da carreira sem complacência. Os números mostram avanços, mas também distâncias persistentes em relação à cidade que administramos — e oscilações entre concursos que contradizem qualquer narrativa de progresso automático. Diversidade não se corrige por inércia: depende de regras de ingresso, critérios de promoção, abertura a posições decisórias e disposição institucional para revisar o que está naturalizado."
     />
 
     {/* Indicadores Gerais */}
@@ -72,8 +72,8 @@ const DiversidadePage = () => (
       <div className="container text-justify">
         <SectionTitle
           label="Panorama"
-          title="Quem são os APPGGs"
-          subtitle={`A carreira reúne ${snapshot.total} gestores públicos municipais. Um corpo técnico que, a cada geração, aproxima sua composição da diversidade da cidade que administra.`}
+          title="O retrato — e o que ele cobra"
+          subtitle={`A carreira reúne ${snapshot.total} gestores públicos municipais. Em uma cidade onde a maioria da população é negra, ${fmtPct(ind.negrosPct)} de APPGGs negros e apenas ${ind.pcd} pessoas com deficiência (${fmtPct(ind.pcdPct)}) ainda não traduzem a São Paulo real. O dado é ponto de partida, não conquista.`}
           center
         />
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -105,23 +105,23 @@ const DiversidadePage = () => (
       <div className="container text-justify">
         <SectionTitle
           label="Contexto"
-          title="Por que a composição do corpo técnico importa"
-          subtitle="A literatura recente em administração pública trata a diversidade como uma variável organizacional relevante, mas condicionada. Seus efeitos dependem do tipo de diversidade, do desenho dos processos, da qualidade da liderança e da existência de rotinas capazes de transformar diferentes perspectivas em decisões públicas melhores."
+          title="A neutralidade administrativa é uma ficção conveniente"
+          subtitle="Critérios de elegibilidade, modelos de atendimento, fluxos de aprovação e bases de dados raramente são neutros em seus efeitos. Quando o corpo técnico que os formula reproduz uma única perspectiva social, a administração tende a confundir suas próprias zonas cegas com universalidade — e a tratar como exceção o que é, na verdade, exclusão sistemática."
         />
         <div className="grid md:grid-cols-2 gap-8 max-w-3xl">
           <FadeIn delay={0.05}>
             <div className="p-8 border border-luxury-border rounded-sm bg-card">
-              <h3 className="text-sm font-medium text-text-display mb-3">Viés estrutural invisível</h3>
+              <h3 className="text-sm font-medium text-text-display mb-3">Exclusão sem autoria explícita</h3>
               <p className="text-sm text-text-body font-light leading-relaxed">
-                Políticas públicas não produzem efeitos apenas por seus objetivos declarados. Elas produzem efeitos por seus critérios operacionais: quem é elegível, qual documento é exigido, qual canal é utilizado, em que horário o serviço funciona, quais dados são coletados e quais desigualdades permanecem invisíveis. Quando esses critérios são formulados sem considerar assimetrias sociais, a administração pode reproduzir exclusões sem intenção explícita.
+                Políticas públicas não falham apenas por má-fé ou subfinanciamento. Falham, com frequência, em decisões aparentemente técnicas: o documento exigido, o canal eleito como padrão, o horário de atendimento, o indicador escolhido para medir sucesso. Cada uma dessas escolhas filtra quem acessa, quem é contado e quem permanece invisível. Sem diversidade no desenho, o filtro opera no automático.
               </p>
             </div>
           </FadeIn>
           <FadeIn delay={0.12}>
             <div className="p-8 border border-luxury-border rounded-sm bg-card">
-              <h3 className="text-sm font-medium text-text-display mb-3">O gestor como calibrador</h3>
+              <h3 className="text-sm font-medium text-text-display mb-3">Onde a diretriz se perde</h3>
               <p className="text-sm text-text-body font-light leading-relaxed">
-                Entre a diretriz política e o efeito concreto no território existe uma cadeia de decisões técnicas. O APPGG atua nesse ponto intermediário: traduz prioridades em metas, transforma planos em procedimentos, organiza indicadores e acompanha entregas. É nessa tradução que a equidade pode ser incorporada — ou perdida.
+                Entre o discurso de equidade e o efeito concreto no território existe uma cadeia longa de decisões técnicas. É nessa cadeia — operada por gestores como o APPGG — que prioridades viram procedimentos e procedimentos viram acesso (ou barreira). Tratar essa camada como neutra é o que permite que governos defendam pautas progressistas enquanto suas burocracias seguem produzindo desigualdade.
               </p>
             </div>
           </FadeIn>
@@ -130,7 +130,7 @@ const DiversidadePage = () => (
         <FadeIn delay={0.2}>
           <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
             <p className="text-sm text-text-body font-light leading-relaxed italic">
-              "Uma burocracia representativa não substitui técnica, mérito ou planejamento. Ao contrário: qualifica a capacidade decisória do Estado quando combinada com dados, liderança, procedimentos transparentes e avaliação permanente."
+              "Burocracia representativa não é concessão simbólica nem cota a tolerar. É uma exigência técnica: ampliar repertórios de análise no Estado é o que permite identificar exclusões antes que elas se consolidem em política pública."
             </p>
           </div>
         </FadeIn>
@@ -168,8 +168,8 @@ const DiversidadePage = () => (
       <div className="container text-justify">
         <SectionTitle
           label="Liderança"
-          title="Diversidade onde as decisões acontecem"
-          subtitle="A presença de mulheres e pessoas negras em cargos de liderança é um indicador relevante de maturidade institucional, mas deve ser lida com cautela. Representatividade em posições decisórias pode ampliar legitimidade interna, oportunidades de ascensão e sensibilidade institucional; sua recepção, contudo, depende do ambiente organizacional e pode gerar resistências quando não há gestão explícita da diversidade."
+          title="Quem decide ainda não reflete quem entra"
+          subtitle="A presença de mulheres e pessoas negras em cargos de liderança é um dos testes mais duros da maturidade institucional. Os números abaixo mostram avanços relativos — mulheres e pessoas negras estão proporcionalmente mais presentes na liderança do que na carreira como um todo. Mas isso não autoriza autocomplacência: liderança ainda é majoritariamente branca e masculina, e o acesso a essas posições segue dependente de redes informais que a APOGESP entende como objeto legítimo de escrutínio."
         />
         <div className="grid md:grid-cols-2 gap-8 max-w-2xl">
           <FadeIn delay={0.05}>
@@ -211,8 +211,8 @@ const DiversidadePage = () => (
       <div className="container text-justify">
         <SectionTitle
           label="Evolução"
-          title="Cada concurso, uma mudança mensurável"
-          subtitle="A diversidade racial da carreira cresce de forma consistente nas coortes informadas. O dado é relevante porque mostra que mecanismos de ingresso, quando bem desenhados, podem alterar a composição do serviço público ao longo do tempo."
+          title="O progresso não é linear — e os dados mostram"
+          subtitle="A leitura honesta das coortes desautoriza qualquer narrativa de avanço automático. A representatividade racial caiu da geração pioneira (37,5%) para os concursos de 2021–2022 (29,2%) e 2024 (25,5%), recuperando-se em parte em 2026 (35,3%) — ainda abaixo do patamar inicial e muito distante da composição racial da cidade. Cada concurso é uma decisão política sobre quem o Estado escolhe formar."
         />
         <div className="space-y-6 max-w-3xl">
           {geracoes.map((g, i) => (
@@ -261,7 +261,7 @@ const DiversidadePage = () => (
         <FadeIn delay={0.4}>
           <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
             <p className="text-sm text-text-body font-light leading-relaxed italic">
-              "A evolução de 27% para 40% de pessoas negras entre a primeira e a mais recente coorte sugere avanço substantivo na representatividade racial. O dado não deve ser tratado como prova automática de efetividade organizacional, mas como evidência de mudança institucional relevante. A literatura sobre burocracia representativa indica que diversidade passiva só se converte em capacidade pública quando encontra condições organizacionais para influenciar decisões, rotinas e prioridades."
+              "A oscilação entre coortes não é detalhe estatístico: é evidência de que regras de seleção, políticas afirmativas, formato das provas e critérios de pontuação produzem efeitos diretos e mensuráveis na composição do serviço público. Tratar a diversidade do ingresso como agenda permanente — e não como bandeira a hastear em ano par — é responsabilidade institucional. A APOGESP cobra essa continuidade."
             </p>
           </div>
         </FadeIn>
@@ -273,8 +273,8 @@ const DiversidadePage = () => (
       <div className="container text-justify">
         <SectionTitle
           label="Presença institucional"
-          title="Diversidade distribuída pela administração"
-          subtitle={`Presentes em mais de ${snapshot.totalOrgaos} órgãos municipais, os APPGGs levam capacidades técnicas e repertórios sociais diversos a diferentes áreas da gestão pública: planejamento, controle, meio ambiente, governo, gestão e outras políticas setoriais.`}
+          title="Distribuição desigual entre os órgãos"
+          subtitle={`Estar em ${snapshot.totalOrgaos} órgãos não significa estar bem distribuído em todos. Os números abaixo expõem assimetrias relevantes: secretarias estratégicas para o orçamento, o planejamento e o ambiente apresentam percentuais de mulheres e de pessoas negras visivelmente inferiores aos da carreira como um todo. Onde a diversidade rareia, costumam rarear também as perguntas que ela ajudaria a formular.`}
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl">
           {secretarias.map((s, i) => (
@@ -311,7 +311,7 @@ const DiversidadePage = () => (
         <FadeIn delay={0.4}>
           <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
             <p className="text-sm text-text-body font-light leading-relaxed italic">
-              "A distribuição entre órgãos importa porque diversidade não deve ser observada apenas no agregado. A literatura metodológica recente recomenda olhar não só para quantidade, mas também para dispersão, concentração e presença efetiva dos grupos nos espaços onde decisões são tomadas."
+              "Distribuição importa porque concentração é, por definição, ausência em outro lugar. Acompanhar onde a diversidade está — e onde ela falta — é parte do trabalho de uma associação que leva a sério a representatividade do corpo técnico que ajuda a decidir o orçamento, o planejamento e as políticas da cidade."
             </p>
           </div>
         </FadeIn>
@@ -324,22 +324,19 @@ const DiversidadePage = () => (
         <div className="max-w-2xl mx-auto text-center">
           <FadeIn>
             <span className="text-[10px] font-sans font-medium tracking-luxury uppercase text-text-caption block mb-6">
-              Compromisso institucional
+              Posição da APOGESP
             </span>
             <h2 className="text-2xl md:text-3xl font-display text-text-display leading-tight text-balance mb-6">
-              Efetividade exige representatividade, método e governança
+              Reconhecer o avanço sem dispensar a cobrança
             </h2>
             <p className="text-sm text-text-body font-light leading-relaxed mb-4 text-justify">
-              A carreira de APPGG mostra avanço relevante na construção de um corpo técnico mais representativo. Os dados indicam crescimento da diversidade racial, presença expressiva de mulheres e participação de pessoas negras em posições de liderança. Também apontam desafios: ampliar a inclusão de pessoas com deficiência, acompanhar a distribuição por órgão e preservar a equidade no acesso a posições decisórias.
+              Os dados desta página descrevem uma carreira que avançou — e que segue devendo. A presença de mulheres e de pessoas negras melhorou em relação a outras carreiras de Estado, mas continua aquém da composição de São Paulo. A inclusão de pessoas com deficiência permanece marginal. A liderança ainda é majoritariamente branca e masculina. E o ingresso, longe de uma trajetória ascendente, oscila concurso a concurso, em função de regras que mudam, políticas afirmativas que enfraquecem e prioridades que se deslocam.
             </p>
             <p className="text-sm text-text-body font-light leading-relaxed mb-4 text-justify">
-              A tese central é simples: diversidade não é ornamento institucional. É uma dimensão da capacidade estatal. Uma burocracia mais representativa tende a enxergar melhor a cidade, formular perguntas mais completas e antecipar efeitos que uma administração homogênea pode ignorar.
-            </p>
-            <p className="text-sm text-text-body font-light leading-relaxed mb-4 text-justify">
-              Mas representatividade só produz efeito público quando combinada com técnica, dados, liderança, rotinas de avaliação e abertura institucional para revisão. É nessa combinação — diversidade, método e governança — que a administração pública se torna mais capaz de enfrentar desigualdades concretas.
+              A APOGESP rejeita duas posições igualmente confortáveis: celebrar conquistas como se estivessem consolidadas e diagnosticar problemas como se fossem inevitáveis. Diversidade na carreira não é favor concedido pela administração nem ornamento de relatório institucional — é condição para que o Estado enxergue a cidade que pretende governar.
             </p>
             <p className="text-sm text-text-body font-light leading-relaxed text-justify">
-              A APOGESP acompanha essa evolução com dados e transparência, defendendo uma gestão pública que reconheça a complexidade da cidade e organize sua burocracia para responder a ela com competência, equidade e responsabilidade institucional.
+              Continuaremos publicando os dados, apontando os retrocessos, defendendo políticas afirmativas robustas no ingresso e cobrando que o acesso a posições de liderança siga critérios técnicos verificáveis. Representar os APPGGs também é representar a expectativa pública de que essa carreira se pareça, cada vez mais, com a São Paulo que serve.
             </p>
             <div className="mt-8 luxury-divider" />
           </FadeIn>
