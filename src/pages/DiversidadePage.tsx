@@ -63,8 +63,8 @@ const DiversidadePage = () => (
   <PageLayout>
     <PageHero
       label="Diversidade"
-      title="Representatividade como capacidade institucional"
-      subtitle="Desigualdades não se corrigem por inércia. Podem ser reproduzidas por normas, critérios, formulários, fluxos e rotinas administrativas aparentemente neutros. Representatividade no serviço público não é apenas simbólica: é uma condição institucional para ampliar repertórios de análise, identificar riscos de exclusão e calibrar políticas com maior aderência à realidade da população atendida."
+      title="Representar a cidade ainda é uma agenda em disputa"
+      subtitle="A APOGESP olha para a composição da carreira sem complacência. Os números mostram avanços, mas também distâncias persistentes em relação à cidade que administramos — e oscilações entre concursos que contradizem qualquer narrativa de progresso automático. Diversidade não se corrige por inércia: depende de regras de ingresso, critérios de promoção, abertura a posições decisórias e disposição institucional para revisar o que está naturalizado."
     />
 
     {/* Indicadores Gerais */}
