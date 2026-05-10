@@ -105,23 +105,23 @@ const DiversidadePage = () => (
       <div className="container text-justify">
         <SectionTitle
           label="Contexto"
-          title="Por que a composição do corpo técnico importa"
-          subtitle="A literatura recente em administração pública trata a diversidade como uma variável organizacional relevante, mas condicionada. Seus efeitos dependem do tipo de diversidade, do desenho dos processos, da qualidade da liderança e da existência de rotinas capazes de transformar diferentes perspectivas em decisões públicas melhores."
+          title="A neutralidade administrativa é uma ficção conveniente"
+          subtitle="Critérios de elegibilidade, modelos de atendimento, fluxos de aprovação e bases de dados raramente são neutros em seus efeitos. Quando o corpo técnico que os formula reproduz uma única perspectiva social, a administração tende a confundir suas próprias zonas cegas com universalidade — e a tratar como exceção o que é, na verdade, exclusão sistemática."
         />
         <div className="grid md:grid-cols-2 gap-8 max-w-3xl">
           <FadeIn delay={0.05}>
             <div className="p-8 border border-luxury-border rounded-sm bg-card">
-              <h3 className="text-sm font-medium text-text-display mb-3">Viés estrutural invisível</h3>
+              <h3 className="text-sm font-medium text-text-display mb-3">Exclusão sem autoria explícita</h3>
               <p className="text-sm text-text-body font-light leading-relaxed">
-                Políticas públicas não produzem efeitos apenas por seus objetivos declarados. Elas produzem efeitos por seus critérios operacionais: quem é elegível, qual documento é exigido, qual canal é utilizado, em que horário o serviço funciona, quais dados são coletados e quais desigualdades permanecem invisíveis. Quando esses critérios são formulados sem considerar assimetrias sociais, a administração pode reproduzir exclusões sem intenção explícita.
+                Políticas públicas não falham apenas por má-fé ou subfinanciamento. Falham, com frequência, em decisões aparentemente técnicas: o documento exigido, o canal eleito como padrão, o horário de atendimento, o indicador escolhido para medir sucesso. Cada uma dessas escolhas filtra quem acessa, quem é contado e quem permanece invisível. Sem diversidade no desenho, o filtro opera no automático.
               </p>
             </div>
           </FadeIn>
           <FadeIn delay={0.12}>
             <div className="p-8 border border-luxury-border rounded-sm bg-card">
-              <h3 className="text-sm font-medium text-text-display mb-3">O gestor como calibrador</h3>
+              <h3 className="text-sm font-medium text-text-display mb-3">Onde a diretriz se perde</h3>
               <p className="text-sm text-text-body font-light leading-relaxed">
-                Entre a diretriz política e o efeito concreto no território existe uma cadeia de decisões técnicas. O APPGG atua nesse ponto intermediário: traduz prioridades em metas, transforma planos em procedimentos, organiza indicadores e acompanha entregas. É nessa tradução que a equidade pode ser incorporada — ou perdida.
+                Entre o discurso de equidade e o efeito concreto no território existe uma cadeia longa de decisões técnicas. É nessa cadeia — operada por gestores como o APPGG — que prioridades viram procedimentos e procedimentos viram acesso (ou barreira). Tratar essa camada como neutra é o que permite que governos defendam pautas progressistas enquanto suas burocracias seguem produzindo desigualdade.
               </p>
             </div>
           </FadeIn>
@@ -130,7 +130,7 @@ const DiversidadePage = () => (
         <FadeIn delay={0.2}>
           <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
             <p className="text-sm text-text-body font-light leading-relaxed italic">
-              "Uma burocracia representativa não substitui técnica, mérito ou planejamento. Ao contrário: qualifica a capacidade decisória do Estado quando combinada com dados, liderança, procedimentos transparentes e avaliação permanente."
+              "Burocracia representativa não é concessão simbólica nem cota a tolerar. É uma exigência técnica: ampliar repertórios de análise no Estado é o que permite identificar exclusões antes que elas se consolidem em política pública."
             </p>
           </div>
         </FadeIn>
