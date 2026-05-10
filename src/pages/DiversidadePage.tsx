@@ -211,8 +211,8 @@ const DiversidadePage = () => (
       <div className="container text-justify">
         <SectionTitle
           label="Evolução"
-          title="Cada concurso, uma mudança mensurável"
-          subtitle="A diversidade racial da carreira cresce de forma consistente nas coortes informadas. O dado é relevante porque mostra que mecanismos de ingresso, quando bem desenhados, podem alterar a composição do serviço público ao longo do tempo."
+          title="O progresso não é linear — e os dados mostram"
+          subtitle="A leitura honesta das coortes desautoriza qualquer narrativa de avanço automático. A representatividade racial caiu da geração pioneira (37,5%) para os concursos de 2021–2022 (29,2%) e 2024 (25,5%), recuperando-se em parte em 2026 (35,3%) — ainda abaixo do patamar inicial e muito distante da composição racial da cidade. Cada concurso é uma decisão política sobre quem o Estado escolhe formar."
         />
         <div className="space-y-6 max-w-3xl">
           {geracoes.map((g, i) => (
