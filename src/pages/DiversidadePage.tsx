@@ -261,7 +261,7 @@ const DiversidadePage = () => (
         <FadeIn delay={0.4}>
           <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
             <p className="text-sm text-text-body font-light leading-relaxed italic">
-              "A evolução de 27% para 40% de pessoas negras entre a primeira e a mais recente coorte sugere avanço substantivo na representatividade racial. O dado não deve ser tratado como prova automática de efetividade organizacional, mas como evidência de mudança institucional relevante. A literatura sobre burocracia representativa indica que diversidade passiva só se converte em capacidade pública quando encontra condições organizacionais para influenciar decisões, rotinas e prioridades."
+              "A oscilação entre coortes não é detalhe estatístico: é evidência de que regras de seleção, políticas afirmativas, formato das provas e critérios de pontuação produzem efeitos diretos e mensuráveis na composição do serviço público. Tratar a diversidade do ingresso como agenda permanente — e não como bandeira a hastear em ano par — é responsabilidade institucional. A APOGESP cobra essa continuidade."
             </p>
           </div>
         </FadeIn>
