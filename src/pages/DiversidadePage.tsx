@@ -72,8 +72,8 @@ const DiversidadePage = () => (
       <div className="container text-justify">
         <SectionTitle
           label="Panorama"
-          title="Quem são os APPGGs"
-          subtitle={`A carreira reúne ${snapshot.total} gestores públicos municipais. Um corpo técnico que, a cada geração, aproxima sua composição da diversidade da cidade que administra.`}
+          title="O retrato — e o que ele cobra"
+          subtitle={`A carreira reúne ${snapshot.total} gestores públicos municipais. Em uma cidade onde a maioria da população é negra, ${fmtPct(ind.negrosPct)} de APPGGs negros e apenas ${ind.pcd} pessoas com deficiência (${fmtPct(ind.pcdPct)}) ainda não traduzem a São Paulo real. O dado é ponto de partida, não conquista.`}
           center
         />
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
