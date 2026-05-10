@@ -324,22 +324,19 @@ const DiversidadePage = () => (
         <div className="max-w-2xl mx-auto text-center">
           <FadeIn>
             <span className="text-[10px] font-sans font-medium tracking-luxury uppercase text-text-caption block mb-6">
-              Compromisso institucional
+              Posição da APOGESP
             </span>
             <h2 className="text-2xl md:text-3xl font-display text-text-display leading-tight text-balance mb-6">
-              Efetividade exige representatividade, método e governança
+              Reconhecer o avanço sem dispensar a cobrança
             </h2>
             <p className="text-sm text-text-body font-light leading-relaxed mb-4 text-justify">
-              A carreira de APPGG mostra avanço relevante na construção de um corpo técnico mais representativo. Os dados indicam crescimento da diversidade racial, presença expressiva de mulheres e participação de pessoas negras em posições de liderança. Também apontam desafios: ampliar a inclusão de pessoas com deficiência, acompanhar a distribuição por órgão e preservar a equidade no acesso a posições decisórias.
+              Os dados desta página descrevem uma carreira que avançou — e que segue devendo. A presença de mulheres e de pessoas negras melhorou em relação a outras carreiras de Estado, mas continua aquém da composição de São Paulo. A inclusão de pessoas com deficiência permanece marginal. A liderança ainda é majoritariamente branca e masculina. E o ingresso, longe de uma trajetória ascendente, oscila concurso a concurso, em função de regras que mudam, políticas afirmativas que enfraquecem e prioridades que se deslocam.
             </p>
             <p className="text-sm text-text-body font-light leading-relaxed mb-4 text-justify">
-              A tese central é simples: diversidade não é ornamento institucional. É uma dimensão da capacidade estatal. Uma burocracia mais representativa tende a enxergar melhor a cidade, formular perguntas mais completas e antecipar efeitos que uma administração homogênea pode ignorar.
-            </p>
-            <p className="text-sm text-text-body font-light leading-relaxed mb-4 text-justify">
-              Mas representatividade só produz efeito público quando combinada com técnica, dados, liderança, rotinas de avaliação e abertura institucional para revisão. É nessa combinação — diversidade, método e governança — que a administração pública se torna mais capaz de enfrentar desigualdades concretas.
+              A APOGESP rejeita duas posições igualmente confortáveis: celebrar conquistas como se estivessem consolidadas e diagnosticar problemas como se fossem inevitáveis. Diversidade na carreira não é favor concedido pela administração nem ornamento de relatório institucional — é condição para que o Estado enxergue a cidade que pretende governar.
             </p>
             <p className="text-sm text-text-body font-light leading-relaxed text-justify">
-              A APOGESP acompanha essa evolução com dados e transparência, defendendo uma gestão pública que reconheça a complexidade da cidade e organize sua burocracia para responder a ela com competência, equidade e responsabilidade institucional.
+              Continuaremos publicando os dados, apontando os retrocessos, defendendo políticas afirmativas robustas no ingresso e cobrando que o acesso a posições de liderança siga critérios técnicos verificáveis. Representar os APPGGs também é representar a expectativa pública de que essa carreira se pareça, cada vez mais, com a São Paulo que serve.
             </p>
             <div className="mt-8 luxury-divider" />
           </FadeIn>
