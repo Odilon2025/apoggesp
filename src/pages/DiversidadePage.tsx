@@ -273,8 +273,8 @@ const DiversidadePage = () => (
       <div className="container text-justify">
         <SectionTitle
           label="Presença institucional"
-          title="Diversidade distribuída pela administração"
-          subtitle={`Presentes em mais de ${snapshot.totalOrgaos} órgãos municipais, os APPGGs levam capacidades técnicas e repertórios sociais diversos a diferentes áreas da gestão pública: planejamento, controle, meio ambiente, governo, gestão e outras políticas setoriais.`}
+          title="Distribuição desigual entre os órgãos"
+          subtitle={`Estar em ${snapshot.totalOrgaos} órgãos não significa estar bem distribuído em todos. Os números abaixo expõem assimetrias relevantes: secretarias estratégicas para o orçamento, o planejamento e o ambiente apresentam percentuais de mulheres e de pessoas negras visivelmente inferiores aos da carreira como um todo. Onde a diversidade rareia, costumam rarear também as perguntas que ela ajudaria a formular.`}
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl">
           {secretarias.map((s, i) => (
