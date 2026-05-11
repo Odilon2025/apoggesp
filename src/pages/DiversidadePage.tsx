@@ -39,7 +39,7 @@ const eixosAtuacao = [
   {
     icon: Scale,
     titulo: "Implementação e avaliação",
-    descricao: "A implementação é o momento em que a política encontra a realidade. O APPGG atua nessa fronteira: identifica gargalos, monitora exclusões, revisa procedimentos e propõe ajustes com base em evidências. A literatura sobre governança experimental reforça essa lógica: regras gerais precisam ser acompanhadas de revisão, aprendizado e correção a partir da implementação concreta.",
+    descricao: "A implementação é o momento em que a política encontra a realidade. O APPGG atua nessa fronteira: identifica gargalos, monitora exclusões, revisa procedimentos e propõe ajustes com base em evidências. Regras gerais precisam ser acompanhadas de revisão, aprendizado e correção a partir da implementação concreta.",
   },
 ];
 
@@ -129,8 +129,8 @@ const DiversidadePage = () => (
 
         <FadeIn delay={0.2}>
           <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
-            <p className="text-sm text-text-body font-light leading-relaxed italic">
-              "Burocracia representativa não é concessão simbólica nem cota a tolerar. É uma exigência técnica: ampliar repertórios de análise no Estado é o que permite identificar exclusões antes que elas se consolidem em política pública."
+            <p className="text-sm text-text-body font-light leading-relaxed">
+              Para a APOGESP, burocracia representativa não é concessão simbólica nem cota a tolerar. É uma exigência técnica: ampliar repertórios de análise no Estado é o que permite identificar exclusões antes que elas se consolidem em política pública.
             </p>
           </div>
         </FadeIn>
@@ -260,8 +260,8 @@ const DiversidadePage = () => (
 
         <FadeIn delay={0.4}>
           <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
-            <p className="text-sm text-text-body font-light leading-relaxed italic">
-              "A oscilação entre coortes não é detalhe estatístico: é evidência de que regras de seleção, políticas afirmativas, formato das provas e critérios de pontuação produzem efeitos diretos e mensuráveis na composição do serviço público. Tratar a diversidade do ingresso como agenda permanente — e não como bandeira a hastear em ano par — é responsabilidade institucional. A APOGESP cobra essa continuidade."
+            <p className="text-sm text-text-body font-light leading-relaxed">
+              A oscilação entre coortes não é detalhe estatístico: é evidência de que regras de seleção, políticas afirmativas, formato das provas e critérios de pontuação produzem efeitos diretos e mensuráveis na composição do serviço público. Tratar a diversidade do ingresso como agenda permanente — e não como bandeira a hastear em ano par — é responsabilidade institucional. A APOGESP cobra essa continuidade.
             </p>
           </div>
         </FadeIn>
@@ -310,8 +310,8 @@ const DiversidadePage = () => (
 
         <FadeIn delay={0.4}>
           <div className="mt-10 max-w-3xl p-6 border-l-2 border-gold bg-card rounded-sm">
-            <p className="text-sm text-text-body font-light leading-relaxed italic">
-              "Distribuição importa porque concentração é, por definição, ausência em outro lugar. Acompanhar onde a diversidade está — e onde ela falta — é parte do trabalho de uma associação que leva a sério a representatividade do corpo técnico que ajuda a decidir o orçamento, o planejamento e as políticas da cidade."
+            <p className="text-sm text-text-body font-light leading-relaxed">
+              Distribuição importa porque concentração é, por definição, ausência em outro lugar. Acompanhar onde a diversidade está — e onde ela falta — é parte do trabalho de uma associação que leva a sério a representatividade do corpo técnico que ajuda a decidir o orçamento, o planejamento e as políticas da cidade.
             </p>
           </div>
         </FadeIn>

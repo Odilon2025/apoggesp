@@ -61,7 +61,7 @@ const CarreiraPage = () => (
                   Uma década depois, os frutos dessa decisão estão espalhados por toda a administração — sempre como produto de um trabalho conjunto. Os APPGGs colaboram, lado a lado com outras carreiras municipais e com as lideranças de cada pasta, na intersecção entre a formulação técnica e a realidade do território.
                 </p>
                 <p>
-                  A carreira ocupa o que a literatura chama de burocracia de médio escalão: o espaço entre quem decide e quem executa. É ali que se contribui para traduzir diretrizes em projetos, indicadores em ações e compromissos em entregas mensuráveis — sempre em diálogo com as equipes técnicas, gestores e parceiros institucionais que conduzem cada iniciativa.
+                  A carreira atua na chamada burocracia de médio escalão: o espaço entre quem decide e quem executa. É ali que se contribui para traduzir diretrizes em projetos, indicadores em ações e compromissos em entregas mensuráveis — sempre em diálogo com as equipes técnicas, gestores e parceiros institucionais que conduzem cada iniciativa.
                 </p>
               </div>
             </FadeIn>
@@ -97,7 +97,7 @@ const CarreiraPage = () => (
             <FadeIn>
               <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
                 <p>
-                  Administradores públicos, economistas, cientistas sociais, engenheiros, advogados — os APPGGs chegam de formações diversas, mas convergem em uma competência comum: a capacidade de colaborar com a tradução da complexidade em ação. O ingresso ocorre por concurso público de provas e títulos, exigindo nível superior.
+                  Administradores públicos, economistas, cientistas sociais, engenheiros, advogados — os APPGGs chegam de formações diversas, mas convergem em uma competência comum: a capacidade de traduzir problemas complexos em decisões implementáveis. O ingresso ocorre por concurso público de provas e títulos, exigindo nível superior.
                 </p>
                 <p>
                   Na prática, os analistas atuam como intérpretes — de problemas públicos, de dados, de contextos políticos e institucionais. Em diálogo com as equipes técnicas e com as lideranças de cada órgão, contribuem para identificar lacunas entre a diretriz e sua execução e participam da construção do caminho para preenchê-las. Ferramentas de gestão e planejamento são o vocabulário; a colaboração com a melhoria das políticas públicas, o objetivo.
@@ -138,7 +138,7 @@ const CarreiraPage = () => (
             <FadeIn>
               <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
                 <p>
-                  Governos passam, ciclos políticos se sucedem, secretários chegam e partem. O que permanece — e o que sustenta a capacidade de São Paulo de governar a si mesma — é o conhecimento acumulado sobre como cada política pública foi pensada, executada e revisada ao longo do tempo. Os APPGGs são, em larga medida, os guardiões discretos dessa continuidade.
+                  Governos passam, ciclos políticos se sucedem, secretários chegam e partem. O que permanece — e o que sustenta a capacidade de São Paulo de governar a si mesma — é o conhecimento acumulado sobre como cada política pública foi pensada, executada e revisada ao longo do tempo. Os APPGGs são, em larga medida, responsáveis por preservar essa continuidade.
                 </p>
                 <p>
                   Por estarem distribuídos nas secretarias, nos órgãos de planejamento, nos sistemas de monitoramento e nos projetos estratégicos, os analistas registram, documentam e preservam a trajetória das decisões: o que motivou determinada escolha, quais alternativas foram descartadas, quais entregas funcionaram, quais aprendizados ficaram. É uma memória técnica que não cabe em um único arquivo, mas que vive nas equipes, nos processos e nos sistemas que a carreira ajuda a construir.

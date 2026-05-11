@@ -7,7 +7,7 @@ import { ArrowRight, FileText, TrendingUp, Users, LineChart } from "lucide-react
 import { snapshot } from "@/data/snapshot";
 
 const timelineItems = [
-  { year: "2015", text: "A Lei Municipal nº 16.193 cria a carreira de APPGG — uma aposta na profissionalização da gestão pública paulistana" },
+  { year: "2015", text: "A Lei Municipal nº 16.193 cria a carreira de APPGG — marco da profissionalização da gestão pública paulistana" },
   { year: "2016", text: "Os primeiros analistas tomam posse e começam a ocupar secretarias por toda a cidade" },
           { year: "2017", text: "A carreira passa a colaborar com o Programa de Metas 2017–2020, apoiando a tradução de compromissos em entregas mensuráveis" },
   { year: "2018", text: "Em parceria com a SMIT, nasce o Lab11 — laboratório que aproxima as ciências comportamentais da gestão municipal" },
@@ -67,7 +67,7 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className="mt-8 text-base md:text-lg text-primary-foreground/50 font-light max-w-lg leading-relaxed"
               >
-                Uma década colaborando com a construção de capacidade institucional na maior cidade da América Latina.
+                Uma década contribuindo para a capacidade institucional da maior cidade da América Latina.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 15 }}

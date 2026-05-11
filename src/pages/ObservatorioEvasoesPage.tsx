@@ -96,8 +96,8 @@ const ObservatorioEvasoesPage = () => {
               </FadeIn>
               <FadeIn delay={0.2}>
                 <div className="mt-4 p-6 bg-section-alt border-l-2 border-gold">
-                  <p className="text-sm font-light text-text-body leading-relaxed italic">
-                    "Compreender os padrões de evasão é o primeiro passo para desenhar políticas de retenção que dialoguem com a realidade da carreira e com as prioridades da administração municipal."
+                  <p className="text-sm font-light text-text-body leading-relaxed">
+                    Compreender os padrões de evasão é o primeiro passo para desenhar políticas de retenção que dialoguem com a realidade da carreira e com as prioridades da administração municipal.
                   </p>
                 </div>
               </FadeIn>
