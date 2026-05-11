@@ -83,7 +83,7 @@ const eixos = [
 const stats = [
   { num: "6", label: "Eixos de atuação ambiental" },
   { num: "24+", label: "Ações e programas mapeados" },
-  { num: "12M", label: "Habitantes beneficiados" },
+  { num: "12M", label: "População da cidade de São Paulo" },
   { num: "18", label: "Órgãos com APPGGs em sustentabilidade" },
 ];
 

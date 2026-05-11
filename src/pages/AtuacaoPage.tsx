@@ -38,21 +38,21 @@ const casos: CasoAtuacao[] = [
     resultados: "Aumento médio de 13,8% na adesão às refeições. Redução de 3 kg de alimentos desperdiçados por escola. Estimativa de impacto potencial: 4,3 toneladas a menos por dia em toda a rede.",
   },
   {
-    titulo: "SMAE — O Sistema que Deu Olhos à Prefeitura",
+    titulo: "SMAE — Sistema Municipal de Acompanhamento Estratégico",
     area: "Planejamento e Monitoramento",
     contexto: "Durante anos, o monitoramento do Programa de Metas dependeu de planilhas, e-mails e memória individual. O conhecimento estava nas pessoas, não nas instituições. Erros manuais eram frequentes. A Prefeitura planejava no escuro.",
     atuacao: "APPGGs contribuíram com o desenvolvimento do SMAE, em parceria com a FGV, utilizando metodologia ágil e software livre (licença AGPL v3). A decisão por código aberto não foi ideológica — foi estratégica: garantiu soberania sobre os dados e possibilidade de compartilhamento com outros entes públicos.",
     resultados: "Cinco módulos operacionais — Programa de Metas, Planos Setoriais, Gestão de Projetos, Monitoramento de Obras e Transferências Voluntárias. Mais de 500 usuários ativos. E um decreto municipal que transformou o sistema em patrimônio público permanente.",
   },
   {
-    titulo: "Primeira Infância — Quando Silos Precisam Cair",
+    titulo: "Política Municipal da Primeira Infância — Articulação Intersetorial",
     area: "Políticas Intersetoriais",
-    contexto: "Uma criança de dois anos não sabe se seu problema é de saúde, educação ou assistência social. Mas a Prefeitura organizava suas respostas como se a criança soubesse. A política da primeira infância exigia integração — e a estrutura administrativa, por natureza, resiste a ela.",
+    contexto: "A política municipal de primeira infância exigia respostas integradas entre saúde, educação e assistência social — agendas tradicionalmente operadas em paralelo, com fluxos, sistemas e culturas institucionais distintos. A estrutura administrativa, por natureza, resiste à integração transversal.",
     atuacao: "APPGGs contribuíram como articuladores intersetoriais: ajudaram a construir pontes entre secretarias que historicamente operavam em paralelo, facilitaram diálogos que não aconteceriam espontaneamente e ajudaram a traduzir a linguagem de cada área para as demais.",
     resultados: "Uma política integrada que articula saúde, educação, assistência social e outras áreas — com a carreira funcionando como o tecido conectivo que mantém a rede coesa.",
   },
   {
-    titulo: "SP156 — Redesenhando a Porta de Entrada Digital da Cidade",
+    titulo: "SP156 — Reformulação do Portal Municipal de Atendimento",
     area: "Inovação e Ciências Comportamentais",
     contexto: "O portal SP156 era a principal interface entre o cidadão e os serviços municipais. Mas era também complexo, visualmente poluído e escrito em linguagem burocrática. Muitos desistiam antes de concluir o que precisavam.",
     atuacao: "APPGGs colaboraram com o Lab11 em uma reformulação ampla, conduzida em parceria com as áreas responsáveis: testes de usabilidade com 320 cidadãos, reorganização da taxonomia por card sorting e prototipagem iterativa em três ciclos. Cada decisão de design foi validada com quem usaria o portal.",
@@ -69,7 +69,7 @@ const casos: CasoAtuacao[] = [
     titulo: "I Plano Municipal de Educação Ambiental",
     area: "Educação Ambiental",
     contexto: "São Paulo nunca havia tido um plano municipal de educação ambiental. Construí-lo exigia alinhar secretarias com agendas diferentes, níveis de governo com tempos distintos e atores com prioridades por vezes conflitantes.",
-    atuacao: "APPGGs participaram do alinhamento estratégico entre secretarias e entre níveis de governo, utilizando o ferramental da teoria de múltiplos fluxos para identificar a janela de oportunidade e viabilizar a construção do plano.",
+    atuacao: "APPGGs participaram do alinhamento estratégico entre secretarias e entre níveis de governo, identificando a janela de oportunidade política e viabilizando a construção do plano.",
     resultados: "Aprovação do I Plano Municipal de Educação Ambiental — um marco que só foi possível porque alguém soube conectar agendas, traduzir urgências e coordenar atores que, sozinhos, não teriam chegado ao mesmo resultado.",
   },
   {
@@ -87,7 +87,7 @@ const casos: CasoAtuacao[] = [
     resultados: "Diretrizes e estrutura de governança estabelecidas para toda a rede municipal de ensino. A memória institucional da educação paulistana passou a ter um sistema para ser preservada.",
   },
   {
-    titulo: "MEI Nota Fácil — Simplificando o Complexo",
+    titulo: "MEI Nota Fácil — Emissão de Nota Fiscal Eletrônica para Microempreendedores",
     area: "Inovação e Ciências Comportamentais",
     contexto: "Em São Paulo, mais de 760 mil MEIs dependem da emissão de nota fiscal eletrônica. Para isso, precisavam navegar por um sistema repleto de termos técnicos e etapas desnecessárias. O digital que deveria facilitar estava, na prática, excluindo.",
     atuacao: "APPGGs colaboraram com o Lab11 e parceiros no que a boa gestão pública exige: ouvir antes de desenhar. Foram envolvidos 2.044 MEIs, identificadas 39 dores na jornada e testados 13 protótipos em ciclos rápidos de experimentação.",
