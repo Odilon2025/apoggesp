@@ -7,13 +7,7 @@ import CarreiraDashboard from "@/components/CarreiraDashboard";
 const timelineItems = [
   { year: "2015", text: "A Lei Municipal nº 16.193 cria a carreira de APPGG — a primeira carreira transversal de nível superior da administração direta paulistana." },
   { year: "2016–17", text: "Os primeiros concursados tomam posse. Distribuídos por dezenas de secretarias, começam a aprender que a gestão pública se faz no terreno, não no gabinete." },
-  { year: "2017", text: "A carreira encontra seu primeiro grande teste: estruturar a execução do Programa de Metas 2017–2020. Planejamento vira prática." },
-  { year: "2018", text: "Nasce o Lab11, o Laboratório de Inovação Pública — prova de que ciências comportamentais podem mudar a forma como São Paulo entrega serviços." },
   { year: "2021", text: "A Portaria SEGES nº 13 formaliza a alocação prioritária dos APPGGs em projetos estratégicos, Programa de Metas e planejamento orçamentário." },
-  { year: "2022", text: "Começa o desenvolvimento do SMAE em parceria com a FGV. Metodologia ágil, software livre, soberania sobre os dados públicos." },
-  { year: "2023", text: "O SMAE entra em operação com módulos de Programa de Metas, Gestão de Projetos, Planos Setoriais e Obras. A Prefeitura passa a enxergar suas próprias entregas." },
-  { year: "2024", text: "O Decreto nº 63.336 institucionaliza o SMAE como sistema oficial. A Rede SMAE reúne mais de 500 servidores. O que era projeto vira política." },
-  { year: "2025", text: "O Caderno Gestão Pública em Rede celebra uma década com nove artigos que documentam, pela primeira vez, o que a carreira construiu." },
 ];
 
 const areasAtuacao: { texto: string; destaques: string[] }[] = [
