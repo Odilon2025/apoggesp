@@ -131,6 +131,42 @@ const ApogespPage = () => (
           </div>
         </FadeIn>
 
+        <FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border mb-16">
+            {[
+              {
+                titulo: "Conselho de Ética",
+                membros: [
+                  "José Carlos Callegari",
+                  "Mônica de Azevedo Costa Nogara",
+                  "Nathalia Leone Marco",
+                ],
+              },
+              {
+                titulo: "Conselho Fiscal",
+                membros: [
+                  "Cassiana Montesião de Sousa",
+                  "Larissa Diana Michelam",
+                  "Og Oliveira Pinto",
+                ],
+              },
+            ].map((conselho) => (
+              <div key={conselho.titulo} className="bg-card p-8">
+                <span className="text-[10px] font-medium tracking-luxury uppercase text-gold block mb-4">
+                  {conselho.titulo}
+                </span>
+                <ul className="space-y-2">
+                  {conselho.membros.map((nome) => (
+                    <li key={nome} className="text-sm font-light text-foreground leading-relaxed">
+                      {nome}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </FadeIn>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-luxury-border">
           {diretoria.map((pessoa, i) => (
             <FadeIn key={pessoa.nome} delay={i * 0.05}>
