@@ -179,6 +179,78 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Atos Normativos */}
+      <section className="py-24 md:py-32 bg-section-alt">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div className="lg:col-span-4">
+              <SectionTitle label="Marco Legal" title="Atos Normativos da Carreira" />
+              <FadeIn>
+                <a
+                  href={atosNormativos.principal.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block group"
+                >
+                  <Scale size={20} strokeWidth={1.5} className="text-gold mb-4" />
+                  <h3 className="text-lg md:text-xl font-display font-normal text-foreground leading-tight group-hover:text-accent transition-colors duration-300">
+                    {atosNormativos.principal.titulo}
+                  </h3>
+                  <p className="text-sm font-light text-text-body mt-3 leading-relaxed">
+                    {atosNormativos.principal.descricao}
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-xs font-light text-accent mt-5 group-hover:text-foreground transition-colors duration-300">
+                    Texto integral
+                    <ExternalLink size={12} strokeWidth={1.5} />
+                  </span>
+                </a>
+              </FadeIn>
+            </div>
+
+            <div className="lg:col-span-8 space-y-12">
+              {[
+                { label: "Alterações", items: atosNormativos.alteracoes },
+                { label: "Anexos", items: atosNormativos.anexos },
+                { label: "Correlações", items: atosNormativos.correlacoes },
+              ].map((bloco) => (
+                <div key={bloco.label}>
+                  <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-5">
+                    {bloco.label}
+                  </span>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
+                    {bloco.items.map((item, i) => (
+                      <FadeIn key={item.url + i} delay={i * 0.05}>
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-start gap-3 py-4 border-b border-luxury-border"
+                        >
+                          <FileText size={14} strokeWidth={1.5} className="text-gold mt-1 shrink-0" />
+                          <div className="flex-1">
+                            <p className="text-sm font-light text-foreground group-hover:text-accent transition-colors duration-300 leading-snug">
+                              {item.titulo}
+                            </p>
+                            <p className="text-xs font-light text-text-body mt-1 leading-relaxed">
+                              {item.descricao}
+                            </p>
+                          </div>
+                          <ExternalLink
+                            size={12}
+                            strokeWidth={1.5}
+                            className="text-text-caption mt-1.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          />
+                        </a>
+                      </FadeIn>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Timeline */}
       <section className="py-24 md:py-32 bg-card">
