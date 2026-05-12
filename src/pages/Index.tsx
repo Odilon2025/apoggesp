@@ -276,9 +276,8 @@ const Index = () => {
       </section>
 
       {/* Prefácio CTA */}
-      <section className="py-24 md:py-32 bg-section-alt">
-        <div className="container">
-          <div className="max-w-xl mx-auto text-center">
+      <section className="py-24 md:py-32 bg-card">
+
             <FadeIn>
               <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-6">Mensagem da Presidente</span>
               <h2 className="text-2xl md:text-3xl font-display font-normal text-foreground leading-tight text-balance italic">
