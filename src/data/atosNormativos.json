@@ -1,0 +1,58 @@
+{
+  "principal": {
+    "titulo": "Lei nº 16.193, de 5 de maio de 2015",
+    "descricao": "Cria a carreira de Analista de Políticas Públicas e Gestão Governamental (APPGG) no Quadro dos Profissionais de Gestão Governamental — QPGG.",
+    "url": "https://legislacao.prefeitura.sp.gov.br/leis/lei-16193-de-05-de-maio-de-2015"
+  },
+  "alteracoes": [
+    {
+      "titulo": "Lei nº 17.841/2022",
+      "descricao": "Altera os artigos 15, 22 e 29.",
+      "url": "https://legislacao.prefeitura.sp.gov.br/leis/lei-17841-de-19-de-agosto-de-2022"
+    },
+    {
+      "titulo": "Lei nº 17.913/2023",
+      "descricao": "Altera o artigo 13.",
+      "url": "https://legislacao.prefeitura.sp.gov.br/leis/lei-17913-de-17-de-fevereiro-de-2023"
+    },
+    {
+      "titulo": "Lei nº 17.969/2023",
+      "descricao": "Altera para 230 a quantidade de cargos do Anexo I.",
+      "url": "https://legislacao.prefeitura.sp.gov.br/leis/lei-17969-de-23-de-junho-de-2023"
+    },
+    {
+      "titulo": "Lei nº 17.997/2023",
+      "descricao": "Altera disposições gerais da Lei.",
+      "url": "https://legislacao.prefeitura.sp.gov.br/leis/lei-17997-de-28-de-setembro-de-2023"
+    }
+  ],
+  "anexos": [
+    {
+      "titulo": "Anexo I",
+      "descricao": "Quantitativo de cargos.",
+      "url": "https://legislacao.prefeitura.sp.gov.br/leis/lei-16193-de-05-de-maio-de-2015/anexo/6516ddc21411925fce1a90c9/Anexo%20I%20da%20Lei%2016193_2015.pdf"
+    },
+    {
+      "titulo": "Anexo II",
+      "descricao": "Atribuições da carreira.",
+      "url": "https://legislacao.prefeitura.sp.gov.br/leis/lei-16193-de-05-de-maio-de-2015/anexo/6516ddc21411925fce1a90cb/Anexo%20II%20da%20Lei%2016193_2015.pdf"
+    },
+    {
+      "titulo": "Anexo III",
+      "descricao": "Tabela de remuneração por subsídio.",
+      "url": "https://legislacao.prefeitura.sp.gov.br/leis/lei-16193-de-05-de-maio-de-2015/anexo/6516ddc21411925fce1a90cf/Anexo%20III%20da%20Lei%2016193_2015.pdf"
+    },
+    {
+      "titulo": "Anexo IV",
+      "descricao": "Retribuição por cargo em comissão e função de confiança.",
+      "url": "https://legislacao.prefeitura.sp.gov.br/leis/lei-16193-de-05-de-maio-de-2015/anexo/6516ddc21411925fce1a90cd/Anexo%20IV%20da%20Lei%2016193_2015.pdf"
+    }
+  ],
+  "correlacoes": [
+    {
+      "titulo": "Portaria CGM nº 16/2023",
+      "descricao": "Aprova cursos e atividades de aperfeiçoamento para promoção na carreira do QPGG.",
+      "url": "https://legislacao.prefeitura.sp.gov.br/leis/portaria-controladoria-geral-do-municipio-cgm-16-de-24-de-abril-de-2023"
+    }
+  ]
+}
