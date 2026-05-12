@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
-import { ArrowRight, FileText, TrendingUp, Users, LineChart } from "lucide-react";
+import { ArrowRight, FileText, TrendingUp, Users, LineChart, Scale, ExternalLink } from "lucide-react";
 import { snapshot } from "@/data/snapshot";
 import { cronologia as timelineItems } from "@/data/cronologia";
+import { atosNormativos } from "@/data/atosNormativos";
 
 const atuacaoDestaques = [
   { area: "Inovação", desc: "No Lab11, APPGGs colaboraram com equipes técnicas e parceiros para mostrar que nudges bem desenhados podem apoiar políticas de alimentação escolar, saúde pública no transporte e formalização de microempreendedores." },
