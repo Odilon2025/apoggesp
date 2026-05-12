@@ -5,15 +5,7 @@ import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
 import { ArrowRight, FileText, TrendingUp, Users, LineChart } from "lucide-react";
 import { snapshot } from "@/data/snapshot";
-
-const timelineItems = [
-  { year: "2015", text: "A Lei Municipal nº 16.193 cria a carreira de APPGG — a primeira carreira transversal de nível superior da administração direta paulistana." },
-  { year: "2016–17", text: "Os primeiros concursados tomam posse e começam a ocupar dezenas de secretarias da administração municipal." },
-  { year: "2021", text: "A Portaria SEGES nº 13 formaliza a alocação prioritária dos APPGGs em projetos estratégicos, Programa de Metas e planejamento orçamentário." },
-  { year: "2023", text: "Realização do segundo concurso público da carreira, ampliando o quadro após quase uma década do primeiro certame." },
-  { year: "2024", text: "Primeira leva de posse do segundo concurso: 50 novos APPGGs ingressam na administração municipal em julho." },
-  { year: "2026", text: "Segunda posse do segundo concurso: 30 novos APPGGs reforçam o quadro da carreira." },
-];
+import { cronologia as timelineItems } from "@/data/cronologia";
 
 const atuacaoDestaques = [
   { area: "Inovação", desc: "No Lab11, APPGGs colaboraram com equipes técnicas e parceiros para mostrar que nudges bem desenhados podem apoiar políticas de alimentação escolar, saúde pública no transporte e formalização de microempreendedores." },
