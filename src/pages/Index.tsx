@@ -7,14 +7,12 @@ import { ArrowRight, FileText, TrendingUp, Users, LineChart } from "lucide-react
 import { snapshot } from "@/data/snapshot";
 
 const timelineItems = [
-  { year: "2015", text: "A Lei Municipal nº 16.193 cria a carreira de APPGG — marco da profissionalização da gestão pública paulistana" },
-  { year: "2016", text: "Os primeiros analistas tomam posse e começam a ocupar secretarias por toda a cidade" },
-          { year: "2017", text: "A carreira passa a colaborar com o Programa de Metas 2017–2020, apoiando a tradução de compromissos em entregas mensuráveis" },
-  { year: "2018", text: "Em parceria com a SMIT, nasce o Lab11 — laboratório que aproxima as ciências comportamentais da gestão municipal" },
-  { year: "2021", text: "A Portaria SEGES nº 13 reconhece a participação relevante dos APPGGs em projetos estratégicos prioritários" },
-  { year: "2022", text: "Em colaboração com a FGV e sob coordenação da SEPLAN, começa o desenvolvimento do SMAE" },
-  { year: "2024", text: "O Decreto nº 63.336 institucionaliza o SMAE — 500 servidores já o utilizam diariamente" },
-  { year: "2025", text: "O Caderno Gestão Pública em Rede registra, pela primeira vez, uma década de colaboração em nove artigos" },
+  { year: "2015", text: "A Lei Municipal nº 16.193 cria a carreira de APPGG — a primeira carreira transversal de nível superior da administração direta paulistana." },
+  { year: "2016–17", text: "Os primeiros concursados tomam posse e começam a ocupar dezenas de secretarias da administração municipal." },
+  { year: "2021", text: "A Portaria SEGES nº 13 formaliza a alocação prioritária dos APPGGs em projetos estratégicos, Programa de Metas e planejamento orçamentário." },
+  { year: "2023", text: "Realização do segundo concurso público da carreira, ampliando o quadro após quase uma década do primeiro certame." },
+  { year: "2024", text: "Primeira leva de posse do segundo concurso: 50 novos APPGGs ingressam na administração municipal em julho." },
+  { year: "2026", text: "Segunda posse do segundo concurso: 30 novos APPGGs reforçam o quadro da carreira." },
 ];
 
 const atuacaoDestaques = [
