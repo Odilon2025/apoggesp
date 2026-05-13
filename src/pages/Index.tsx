@@ -30,6 +30,11 @@ const stats = [
 ];
 
 const Index = () => {
+  const [noticias, setNoticias] = useState<Noticia[]>([]);
+  useEffect(() => {
+    listPublicadas(3).then(setNoticias).catch(() => setNoticias([]));
+  }, []);
+
   return (
     <PageLayout>
       {/* Hero */}
