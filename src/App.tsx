@@ -18,6 +18,11 @@ import CampanhaNomeacaoPage from "./pages/CampanhaNomeacaoPage";
 import PlanosAtuacaoPage from "./pages/PlanosAtuacaoPage";
 import PlanosAmbientaisPage from "./pages/PlanosAmbientaisPage";
 import ObservatorioEvasoesPage from "./pages/ObservatorioEvasoesPage";
+import NoticiasPage from "./pages/NoticiasPage";
+import NoticiaDetalhePage from "./pages/NoticiaDetalhePage";
+import NoticiasAdminPage from "./pages/admin/NoticiasAdminPage";
+import NoticiaEditorPage from "./pages/admin/NoticiaEditorPage";
+import ResetPasswordPage from "./pages/ResetPasswordPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +49,12 @@ const App = () => (
           <Route path="/planos-atuacao" element={<PlanosAtuacaoPage />} />
           <Route path="/planos-ambientais" element={<PlanosAmbientaisPage />} />
           <Route path="/observatorio-evasoes" element={<ObservatorioEvasoesPage />} />
+          <Route path="/noticias" element={<NoticiasPage />} />
+          <Route path="/noticias/:slug" element={<NoticiaDetalhePage />} />
+          <Route path="/admin/noticias" element={<NoticiasAdminPage />} />
+          <Route path="/admin/noticias/nova" element={<NoticiaEditorPage />} />
+          <Route path="/admin/noticias/:id" element={<NoticiaEditorPage />} />
+          <Route path="/reset-password" element={<ResetPasswordPage />} />
           <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
