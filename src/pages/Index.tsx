@@ -120,6 +120,31 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Notícias */}
+      {noticias.length > 0 && (
+        <section className="py-20 md:py-24 bg-card">
+          <div className="container">
+            <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
+              <SectionTitle label="Comunicados" title="Notícias" />
+              <Link
+                to="/noticias"
+                className="group inline-flex items-center gap-2 text-sm font-light text-accent hover:text-foreground transition-colors duration-300"
+              >
+                <span>Ver todas</span>
+                <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10">
+              {noticias.map((n, i) => (
+                <FadeIn key={n.id} delay={i * 0.06}>
+                  <NoticiaCard noticia={n} />
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Campanhas — Impacto curto */}
       <section className="py-20 md:py-24 bg-card">
         <div className="container">
