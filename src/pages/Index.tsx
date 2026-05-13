@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
+import NoticiaCard from "@/components/NoticiaCard";
 import { ArrowRight, FileText, TrendingUp, Users, LineChart, Scale, ExternalLink } from "lucide-react";
 import { snapshot } from "@/data/snapshot";
 import { cronologia as timelineItems } from "@/data/cronologia";
 import { atosNormativos } from "@/data/atosNormativos";
+import { Noticia, listPublicadas } from "@/lib/noticias";
 
 const atuacaoDestaques = [
   { area: "Inovação", desc: "No Lab11, APPGGs colaboraram com equipes técnicas e parceiros para mostrar que nudges bem desenhados podem apoiar políticas de alimentação escolar, saúde pública no transporte e formalização de microempreendedores." },
@@ -27,6 +30,11 @@ const stats = [
 ];
 
 const Index = () => {
+  const [noticias, setNoticias] = useState<Noticia[]>([]);
+  useEffect(() => {
+    listPublicadas(3).then(setNoticias).catch(() => setNoticias([]));
+  }, []);
+
   return (
     <PageLayout>
       {/* Hero */}
@@ -111,6 +119,31 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Notícias */}
+      {noticias.length > 0 && (
+        <section className="py-20 md:py-24 bg-card">
+          <div className="container">
+            <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
+              <SectionTitle label="Comunicados" title="Notícias" />
+              <Link
+                to="/noticias"
+                className="group inline-flex items-center gap-2 text-sm font-light text-accent hover:text-foreground transition-colors duration-300"
+              >
+                <span>Ver todas</span>
+                <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10">
+              {noticias.map((n, i) => (
+                <FadeIn key={n.id} delay={i * 0.06}>
+                  <NoticiaCard noticia={n} />
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Campanhas — Impacto curto */}
       <section className="py-20 md:py-24 bg-card">

@@ -32,12 +32,72 @@ export type Database = {
         }
         Relationships: []
       }
+      noticias: {
+        Row: {
+          autor: string
+          capa_url: string | null
+          conteudo: string
+          created_at: string
+          id: string
+          publicado: boolean
+          publicado_em: string
+          resumo: string
+          slug: string
+          titulo: string
+          updated_at: string
+        }
+        Insert: {
+          autor: string
+          capa_url?: string | null
+          conteudo: string
+          created_at?: string
+          id?: string
+          publicado?: boolean
+          publicado_em?: string
+          resumo: string
+          slug: string
+          titulo: string
+          updated_at?: string
+        }
+        Update: {
+          autor?: string
+          capa_url?: string | null
+          conteudo?: string
+          created_at?: string
+          id?: string
+          publicado?: boolean
+          publicado_em?: string
+          resumo?: string
+          slug?: string
+          titulo?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      noticias_editores: {
+        Row: {
+          added_at: string
+          email: string
+          nome: string | null
+        }
+        Insert: {
+          added_at?: string
+          email: string
+          nome?: string | null
+        }
+        Update: {
+          added_at?: string
+          email?: string
+          nome?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_editor: { Args: { _email: string }; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
