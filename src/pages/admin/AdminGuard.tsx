@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, Navigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
@@ -98,15 +98,16 @@ export const AdminGuard = ({ children }: AdminGuardProps) => {
   const { user, loading, signOut } = useAuth();
   const [autorizado, setAutorizado] = useState<boolean | null>(null);
 
-  if (loading) return null;
-  if (!user) return <PageLayout><AdminLogin /></PageLayout>;
-
-  if (autorizado === null) {
+  useEffect(() => {
+    if (!user) return;
     supabase
       .rpc("is_editor", { _email: user.email ?? "" })
       .then(({ data }) => setAutorizado(Boolean(data)));
-    return null;
-  }
+  }, [user]);
+
+  if (loading) return null;
+  if (!user) return <PageLayout><AdminLogin /></PageLayout>;
+  if (autorizado === null) return null;
 
   if (!autorizado) {
     return (
