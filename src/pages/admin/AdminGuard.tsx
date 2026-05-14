@@ -6,48 +6,33 @@ import PageLayout from "@/components/PageLayout";
 
 const AdminLogin = () => {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [erro, setErro] = useState<string | null>(null);
   const [carregando, setCarregando] = useState(false);
-  const [resetEnviado, setResetEnviado] = useState(false);
+  const [enviado, setEnviado] = useState(false);
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleMagicLink = async (e: React.FormEvent) => {
     e.preventDefault();
     setErro(null);
     setCarregando(true);
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-    setCarregando(false);
-    if (error) setErro(error.message);
-  };
-
-  const handleSignup = async () => {
-    setErro(null);
-    setCarregando(true);
-    const { error } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signInWithOtp({
       email,
-      password,
-      options: { emailRedirectTo: `${window.location.origin}/admin/noticias` },
+      options: {
+        emailRedirectTo: `${window.location.origin}/admin/noticias`,
+        shouldCreateUser: true,
+      },
     });
     setCarregando(false);
     if (error) setErro(error.message);
-    else setErro("Conta criada. Você já pode entrar.");
-  };
-
-  const handleReset = async () => {
-    if (!email) return setErro("Informe seu e-mail acima primeiro.");
-    setErro(null);
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/reset-password`,
-    });
-    if (error) setErro(error.message);
-    else setResetEnviado(true);
+    else setEnviado(true);
   };
 
   return (
     <div className="min-h-[60vh] flex items-center justify-center py-20 bg-section-alt">
-      <form onSubmit={handleLogin} className="w-full max-w-sm bg-card p-10 border border-luxury-border space-y-5">
+      <form onSubmit={handleMagicLink} className="w-full max-w-sm bg-card p-10 border border-luxury-border space-y-5">
         <h1 className="text-2xl font-display font-normal text-foreground">Painel de Notícias</h1>
-        <p className="text-xs font-light text-text-caption">Acesso restrito a editores autorizados.</p>
+        <p className="text-xs font-light text-text-caption">
+          Acesso restrito a editores autorizados. Informe seu e-mail e enviaremos um link de acesso.
+        </p>
         <div>
           <label className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-2">E-mail</label>
           <input
@@ -58,33 +43,19 @@ const AdminLogin = () => {
             className="w-full bg-transparent border border-luxury-border px-3 py-2 text-sm font-light focus:outline-none focus:border-gold"
           />
         </div>
-        <div>
-          <label className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-2">Senha</label>
-          <input
-            type="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full bg-transparent border border-luxury-border px-3 py-2 text-sm font-light focus:outline-none focus:border-gold"
-          />
-        </div>
         {erro && <p className="text-xs font-light text-destructive">{erro}</p>}
-        {resetEnviado && <p className="text-xs font-light text-accent">E-mail de redefinição enviado.</p>}
+        {enviado && (
+          <p className="text-xs font-light text-accent">
+            Link enviado. Confira sua caixa de entrada e clique no link para entrar.
+          </p>
+        )}
         <button
           type="submit"
-          disabled={carregando}
+          disabled={carregando || enviado}
           className="w-full bg-foreground text-background py-2.5 text-sm font-light hover:bg-accent transition-colors duration-300 disabled:opacity-50"
         >
-          {carregando ? "Entrando…" : "Entrar"}
+          {carregando ? "Enviando…" : enviado ? "Link enviado" : "Enviar link de acesso"}
         </button>
-        <div className="flex justify-between text-xs font-light text-text-caption pt-2">
-          <button type="button" onClick={handleSignup} className="hover:text-foreground transition-colors">
-            Criar conta
-          </button>
-          <button type="button" onClick={handleReset} className="hover:text-foreground transition-colors">
-            Esqueci a senha
-          </button>
-        </div>
       </form>
     </div>
   );
