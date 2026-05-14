@@ -1,0 +1,83 @@
+/**
+ * Esquemas dos dados estruturados gerenciados pelo CMS.
+ * Cada tabela mapeia para uma lista de campos do JSON `dados`.
+ */
+export type FieldType = "text" | "textarea" | "number" | "url" | "select";
+
+export interface FieldDef {
+  key: string;
+  label: string;
+  type: FieldType;
+  options?: string[]; // para select
+  rows?: number; // para textarea
+  required?: boolean;
+}
+
+export interface TableSchema {
+  table: string;
+  titulo: string;
+  descricao: string;
+  campos: FieldDef[];
+  /** Função opcional para gerar um label curto do item na listagem. */
+  resumo: (dados: any) => string;
+}
+
+export const TABELAS: Record<string, TableSchema> = {
+  cronologia_itens: {
+    table: "cronologia_itens",
+    titulo: "Cronologia",
+    descricao: "Marcos históricos da carreira de APPGG.",
+    campos: [
+      { key: "year", label: "Ano (ou intervalo)", type: "text", required: true },
+      { key: "text", label: "Descrição", type: "textarea", rows: 3, required: true },
+    ],
+    resumo: (d) => `${d?.year ?? ""} — ${d?.text?.slice(0, 80) ?? ""}…`,
+  },
+  atos_normativos_itens: {
+    table: "atos_normativos_itens",
+    titulo: "Atos normativos",
+    descricao: "Lei principal, alterações, anexos e correlações.",
+    campos: [
+      { key: "categoria", label: "Categoria", type: "select", options: ["principal", "alteracao", "anexo", "correlacao"], required: true },
+      { key: "titulo", label: "Título", type: "text", required: true },
+      { key: "descricao", label: "Descrição", type: "textarea", rows: 2 },
+      { key: "url", label: "URL", type: "url", required: true },
+    ],
+    resumo: (d) => `[${d?.categoria}] ${d?.titulo ?? ""}`,
+  },
+  planos_itens: {
+    table: "planos_itens",
+    titulo: "Planos estratégicos",
+    descricao: "Planos de atuação por órgão.",
+    campos: [
+      { key: "sigla", label: "Sigla", type: "text", required: true },
+      { key: "orgao", label: "Órgão", type: "text", required: true },
+      { key: "descricao", label: "Descrição", type: "textarea", rows: 4 },
+      { key: "vigencia", label: "Vigência", type: "text" },
+      { key: "appggsNecessarios", label: "APPGGs necessários", type: "number" },
+    ],
+    resumo: (d) => `${d?.sigla} — ${d?.orgao ?? ""}`,
+  },
+  publicacoes_itens: {
+    table: "publicacoes_itens",
+    titulo: "Publicações",
+    descricao: "Publicações e artigos exibidos no site.",
+    campos: [
+      { key: "titulo", label: "Título", type: "text", required: true },
+      { key: "tipo", label: "Tipo", type: "text" },
+      { key: "ano", label: "Ano", type: "text" },
+      { key: "url", label: "URL", type: "url" },
+    ],
+    resumo: (d) => `${d?.titulo ?? ""} (${d?.ano ?? ""})`,
+  },
+  atuacao_destaques: {
+    table: "atuacao_destaques",
+    titulo: "Destaques de atuação (home)",
+    descricao: "Cards de área de atuação exibidos na página inicial.",
+    campos: [
+      { key: "area", label: "Área", type: "text", required: true },
+      { key: "desc", label: "Descrição", type: "textarea", rows: 4, required: true },
+    ],
+    resumo: (d) => `${d?.area ?? ""}`,
+  },
+};
