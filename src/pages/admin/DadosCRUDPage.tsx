@@ -47,7 +47,7 @@ const Inner = () => {
       .eq("deletado", false)
       .order("ordem", { ascending: true });
     if (error) toast({ title: "Erro", description: error.message });
-    setRows((data ?? []) as Row[]);
+    setRows(((data ?? []) as unknown) as Row[]);
     setCarregando(false);
   };
 
@@ -130,7 +130,7 @@ const Inner = () => {
     if (error) toast({ title: "Erro", description: error.message });
     else {
       await carregar();
-      iniciarEdicao(data as Row);
+      iniciarEdicao(data as unknown as Row);
     }
   };
 
