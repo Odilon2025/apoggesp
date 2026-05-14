@@ -22,6 +22,11 @@ import NoticiasPage from "./pages/NoticiasPage";
 import NoticiaDetalhePage from "./pages/NoticiaDetalhePage";
 import NoticiasAdminPage from "./pages/admin/NoticiasAdminPage";
 import NoticiaEditorPage from "./pages/admin/NoticiaEditorPage";
+import AdminHubPage from "./pages/admin/AdminHubPage";
+import ConteudoListPage from "./pages/admin/ConteudoListPage";
+import ConteudoEditorPage from "./pages/admin/ConteudoEditorPage";
+import DadosCRUDPage from "./pages/admin/DadosCRUDPage";
+import SnapshotEditorPage from "./pages/admin/SnapshotEditorPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 import NotFound from "./pages/NotFound";
 
@@ -51,9 +56,14 @@ const App = () => (
           <Route path="/observatorio-evasoes" element={<ObservatorioEvasoesPage />} />
           <Route path="/noticias" element={<NoticiasPage />} />
           <Route path="/noticias/:slug" element={<NoticiaDetalhePage />} />
+          <Route path="/admin" element={<AdminHubPage />} />
           <Route path="/admin/noticias" element={<NoticiasAdminPage />} />
           <Route path="/admin/noticias/nova" element={<NoticiaEditorPage />} />
           <Route path="/admin/noticias/:id" element={<NoticiaEditorPage />} />
+          <Route path="/admin/conteudo" element={<ConteudoListPage />} />
+          <Route path="/admin/conteudo/:pagina" element={<ConteudoEditorPage />} />
+          <Route path="/admin/dados/snapshot_carreira" element={<SnapshotEditorPage />} />
+          <Route path="/admin/dados/:tabela" element={<DadosCRUDPage />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
           <Route path="*" element={<NotFound />} />
           </Routes>
