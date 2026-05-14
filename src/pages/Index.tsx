@@ -6,34 +6,60 @@ import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
 import NoticiaCard from "@/components/NoticiaCard";
 import { ArrowRight, FileText, TrendingUp, Users, LineChart, Scale, ExternalLink } from "lucide-react";
-import { snapshot } from "@/data/snapshot";
-import { cronologia as timelineItems } from "@/data/cronologia";
-import { atosNormativos } from "@/data/atosNormativos";
+import { snapshot as snapshotFallback } from "@/data/snapshot";
+import { cronologia as cronologiaFallback } from "@/data/cronologia";
+import { atosNormativos as atosFallback } from "@/data/atosNormativos";
 import { Noticia, listPublicadas } from "@/lib/noticias";
+import {
+  getAtos,
+  getAtuacaoDestaques,
+  getCronologia,
+  getSnapshot,
+  field,
+} from "@/lib/cms";
+import { usePageFields, useCMSList } from "@/hooks/useCMS";
 
-const atuacaoDestaques = [
+const atuacaoFallback = [
   { area: "Inovação", desc: "No Lab11, APPGGs colaboraram com equipes técnicas e parceiros para mostrar que nudges bem desenhados podem apoiar políticas de alimentação escolar, saúde pública no transporte e formalização de microempreendedores." },
   { area: "Planejamento", desc: "O SMAE — desenvolvido em parceria com a FGV e sob diretrizes da administração superior — tornou-se memória institucional da Prefeitura, com cinco módulos, 500 usuários e decreto que o consolidou como patrimônio público permanente." },
   { area: "Primeira Infância", desc: "Quando a política de primeira infância exigiu integração entre saúde, educação e assistência social, APPGGs participaram da articulação entre secretarias, em colaboração com as lideranças de cada pasta." },
 ];
 
-const publicacoesRecentes = [
-  { titulo: "Caderno Gestão Pública em Rede — 1ª Edição", tipo: "Publicação", ano: "2025" },
-  { titulo: "O Potencial das Ciências Comportamentais para Serviços Públicos", tipo: "Artigo", ano: "2025" },
-  { titulo: "O Sistema SMAE: Um Patrimônio Feito Sob Medida", tipo: "Artigo", ano: "2025" },
-];
-
-const stats = [
-  { num: String(snapshot.total), label: "analistas em exercício" },
-  { num: String(snapshot.totalOrgaos), label: "órgãos e entidades" },
-  { num: "11", label: "anos de carreira" },
-];
+// Reorganiza atos vindos do CMS no formato { principal, alteracoes, anexos, correlacoes }
+function agruparAtos(items: { categoria: string; titulo: string; descricao: string; url: string }[]) {
+  if (!items || items.length === 0) return atosFallback;
+  const principal = items.find((i) => i.categoria === "principal") ?? atosFallback.principal;
+  const alteracoes = items.filter((i) => i.categoria === "alteracao");
+  const anexos = items.filter((i) => i.categoria === "anexo");
+  const correlacoes = items.filter((i) => i.categoria === "correlacao");
+  return {
+    principal,
+    alteracoes: alteracoes.length ? alteracoes : atosFallback.alteracoes,
+    anexos: anexos.length ? anexos : atosFallback.anexos,
+    correlacoes: correlacoes.length ? correlacoes : atosFallback.correlacoes,
+  };
+}
 
 const Index = () => {
+  const fields = usePageFields("Home");
   const [noticias, setNoticias] = useState<Noticia[]>([]);
+  const [snap, setSnap] = useState(snapshotFallback);
+  const cronologiaItems = useCMSList(getCronologia, cronologiaFallback);
+  const atosItems = useCMSList(getAtos, []);
+  const atuacaoDestaques = useCMSList(getAtuacaoDestaques, atuacaoFallback);
+
   useEffect(() => {
     listPublicadas(3).then(setNoticias).catch(() => setNoticias([]));
+    getSnapshot<typeof snapshotFallback>().then((s) => s && setSnap(s));
   }, []);
+
+  const atos = agruparAtos(atosItems);
+
+  const stats = [
+    { num: String(snap.total), label: "analistas em exercício" },
+    { num: String(snap.totalOrgaos), label: "órgãos e entidades" },
+    { num: "11", label: "anos de carreira" },
+  ];
 
   return (
     <PageLayout>
@@ -48,7 +74,7 @@ const Index = () => {
                 transition={{ duration: 0.8 }}
                 className="text-[10px] font-sans font-medium tracking-luxury uppercase text-primary-foreground/35 block mb-8"
               >
-                Associação dos APPGGs — São Paulo
+                {field(fields, "home.hero.eyebrow", "Associação dos APPGGs — São Paulo")}
               </motion.span>
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
@@ -56,9 +82,9 @@ const Index = () => {
                 transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-normal text-primary-foreground leading-[1.05] text-balance"
               >
-                Políticas Públicas,{" "}
-                <em className="italic text-gold-muted">Gestão</em>{" "}
-                Governamental
+                {field(fields, "home.hero.titulo_pre", "Políticas Públicas,")}{" "}
+                <em className="italic text-gold-muted">{field(fields, "home.hero.titulo_italico", "Gestão")}</em>{" "}
+                {field(fields, "home.hero.titulo_pos", "Governamental")}
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -66,7 +92,7 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className="mt-8 text-base md:text-lg text-primary-foreground/50 font-light max-w-lg leading-relaxed"
               >
-                Uma década contribuindo para a capacidade institucional da maior cidade da América Latina.
+                {field(fields, "home.hero.subtitulo", "Uma década contribuindo para a capacidade institucional da maior cidade da América Latina.")}
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
@@ -78,7 +104,7 @@ const Index = () => {
                   to="/carreira"
                   className="group inline-flex items-center gap-2 text-sm font-light text-primary-foreground/80 hover:text-primary-foreground transition-colors duration-300"
                 >
-                  <span>Conheça a carreira</span>
+                  <span>{field(fields, "home.hero.cta1_label", "Conheça a carreira")}</span>
                   <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
                 <span className="text-primary-foreground/15">|</span>
@@ -86,7 +112,7 @@ const Index = () => {
                   to="/publicacoes"
                   className="group inline-flex items-center gap-2 text-sm font-light text-primary-foreground/50 hover:text-primary-foreground transition-colors duration-300"
                 >
-                  <span>Publicações</span>
+                  <span>{field(fields, "home.hero.cta2_label", "Publicações")}</span>
                   <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
               </motion.div>
@@ -112,7 +138,7 @@ const Index = () => {
                   </motion.div>
                 ))}
                 <p className="text-[9px] font-light tracking-luxury uppercase text-primary-foreground/30 pt-2">
-                  Dados de {snapshot.mesReferencia}
+                  {field(fields, "home.stats.legenda", "Dados de")} {snap.mesReferencia}
                 </p>
               </motion.div>
             </div>
@@ -125,7 +151,10 @@ const Index = () => {
         <section className="py-20 md:py-24 bg-card">
           <div className="container">
             <div className="flex items-end justify-between mb-10 flex-wrap gap-4">
-              <SectionTitle label="Comunicados" title="Notícias" />
+              <SectionTitle
+                label={field(fields, "home.noticias.label", "Comunicados")}
+                title={field(fields, "home.noticias.titulo", "Notícias")}
+              />
               <Link
                 to="/noticias"
                 className="group inline-flex items-center gap-2 text-sm font-light text-accent hover:text-foreground transition-colors duration-300"
@@ -152,10 +181,14 @@ const Index = () => {
             <FadeIn>
               <Link to="/campanha-salarial" className="block bg-card p-10 md:p-12 h-full group hover:bg-card-hover transition-colors duration-300">
                 <TrendingUp size={20} strokeWidth={1.5} className="text-gold mb-5" />
-                <span className="text-[10px] font-medium tracking-luxury uppercase text-destructive block mb-3">Campanha 2026</span>
-                <h3 className="text-xl md:text-2xl font-display font-normal text-foreground mb-3 leading-tight">Campanha Salarial</h3>
+                <span className="text-[10px] font-medium tracking-luxury uppercase text-destructive block mb-3">
+                  {field(fields, "home.campanhas.salarial.eyebrow", "Campanha 2026")}
+                </span>
+                <h3 className="text-xl md:text-2xl font-display font-normal text-foreground mb-3 leading-tight">
+                  {field(fields, "home.campanhas.salarial.titulo", "Campanha Salarial")}
+                </h3>
                 <p className="text-sm font-light text-text-body leading-relaxed mb-6">
-                  O APPGG inicia com R$ 13.208. O EPPGG federal começa com R$ 20.000 em 2026. Mesma missão, 34% de defasagem. É hora de corrigir.
+                  {field(fields, "home.campanhas.salarial.texto", "O APPGG inicia com R$ 13.208. O EPPGG federal começa com R$ 20.000 em 2026. Mesma missão, 34% de defasagem. É hora de corrigir.")}
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-light text-accent group-hover:text-foreground transition-colors duration-300">
                   Conheça os números <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -165,10 +198,14 @@ const Index = () => {
             <FadeIn delay={0.1}>
               <Link to="/campanha-nomeacao" className="block bg-card p-10 md:p-12 h-full group hover:bg-card-hover transition-colors duration-300">
                 <Users size={20} strokeWidth={1.5} className="text-gold mb-5" />
-                <span className="text-[10px] font-medium tracking-luxury uppercase text-destructive block mb-3">Nomeação Já</span>
-                <h3 className="text-xl md:text-2xl font-display font-normal text-foreground mb-3 leading-tight">53 APPGGs Aguardam Nomeação</h3>
+                <span className="text-[10px] font-medium tracking-luxury uppercase text-destructive block mb-3">
+                  {field(fields, "home.campanhas.nomeacao.eyebrow", "Nomeação Já")}
+                </span>
+                <h3 className="text-xl md:text-2xl font-display font-normal text-foreground mb-3 leading-tight">
+                  {field(fields, "home.campanhas.nomeacao.titulo", "53 APPGGs Aguardam Nomeação")}
+                </h3>
                 <p className="text-sm font-light text-text-body leading-relaxed mb-6">
-                  242 candidatos por vaga. 144 classificados. 80 nomeados. Restam 53 aprovados prontos — e 102 cargos vagos esperando por eles.
+                  {field(fields, "home.campanhas.nomeacao.texto", "242 candidatos por vaga. 144 classificados. 80 nomeados. Restam 53 aprovados prontos — e 102 cargos vagos esperando por eles.")}
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-light text-accent group-hover:text-foreground transition-colors duration-300">
                   Entenda a urgência <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -191,13 +228,13 @@ const Index = () => {
                 <div className="lg:col-span-8">
                   <LineChart size={22} strokeWidth={1.5} className="text-gold mb-5" />
                   <span className="text-[10px] font-medium tracking-luxury uppercase text-gold block mb-3">
-                    Pesquisa institucional
+                    {field(fields, "home.observatorio.eyebrow", "Pesquisa institucional")}
                   </span>
                   <h3 className="text-2xl md:text-3xl font-display font-normal text-foreground mb-4 leading-tight">
-                    Observatório das Evasões
+                    {field(fields, "home.observatorio.titulo", "Observatório das Evasões")}
                   </h3>
                   <p className="text-sm md:text-base font-light text-text-body leading-relaxed max-w-2xl">
-                    Quem deixa a carreira de APPGG, por quais caminhos e com quais implicações? Um esforço de memória institucional sobre exonerações, licenças para tratar de interesses particulares, cedências e aposentadorias.
+                    {field(fields, "home.observatorio.texto", "Quem deixa a carreira de APPGG, por quais caminhos e com quais implicações? Um esforço de memória institucional sobre exonerações, licenças para tratar de interesses particulares, cedências e aposentadorias.")}
                   </p>
                 </div>
                 <div className="lg:col-span-4 lg:text-right">
@@ -217,20 +254,23 @@ const Index = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
-              <SectionTitle label="Marco Legal" title="Atos Normativos da Carreira" />
+              <SectionTitle
+                label={field(fields, "home.atos.label", "Marco Legal")}
+                title={field(fields, "home.atos.titulo", "Atos Normativos da Carreira")}
+              />
               <FadeIn>
                 <a
-                  href={atosNormativos.principal.url}
+                  href={atos.principal.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block group"
                 >
                   <Scale size={20} strokeWidth={1.5} className="text-gold mb-4" />
                   <h3 className="text-lg md:text-xl font-display font-normal text-foreground leading-tight group-hover:text-accent transition-colors duration-300">
-                    {atosNormativos.principal.titulo}
+                    {atos.principal.titulo}
                   </h3>
                   <p className="text-sm font-light text-text-body mt-3 leading-relaxed">
-                    {atosNormativos.principal.descricao}
+                    {atos.principal.descricao}
                   </p>
                   <span className="inline-flex items-center gap-2 text-xs font-light text-accent mt-5 group-hover:text-foreground transition-colors duration-300">
                     Texto integral
@@ -242,9 +282,9 @@ const Index = () => {
 
             <div className="lg:col-span-8 space-y-12">
               {[
-                { label: "Alterações", items: atosNormativos.alteracoes },
-                { label: "Anexos", items: atosNormativos.anexos },
-                { label: "Correlações", items: atosNormativos.correlacoes },
+                { label: "Alterações", items: atos.alteracoes },
+                { label: "Anexos", items: atos.anexos },
+                { label: "Correlações", items: atos.correlacoes },
               ].map((bloco) => (
                 <div key={bloco.label}>
                   <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-5">
@@ -290,12 +330,15 @@ const Index = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
-              <SectionTitle label="Cronologia" title="Uma Carreira que se Construiu Fazendo" />
+              <SectionTitle
+                label={field(fields, "home.cronologia.label", "Cronologia")}
+                title={field(fields, "home.cronologia.titulo", "Uma Carreira que se Construiu Fazendo")}
+              />
             </div>
             <div className="lg:col-span-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-0">
-                {timelineItems.map((item, i) => (
-                  <FadeIn key={item.year} delay={i * 0.06}>
+                {cronologiaItems.map((item, i) => (
+                  <FadeIn key={item.year + i} delay={i * 0.06}>
                     <div className="py-5 border-b border-luxury-border">
                       <span className="text-xs font-display text-gold">{item.year}</span>
                       <p className="text-sm font-light text-text-body mt-1.5 leading-relaxed">{item.text}</p>
@@ -313,19 +356,21 @@ const Index = () => {
         <div className="container">
           <div className="max-w-xl mx-auto text-center">
             <FadeIn>
-              <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-6">Mensagem da Presidente</span>
+              <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-6">
+                {field(fields, "home.presidente.label", "Mensagem da Presidente")}
+              </span>
               <h2 className="text-2xl md:text-3xl font-display font-normal text-foreground leading-tight text-balance italic">
-                "Fortalecer a carreira de APPGG é fortalecer a capacidade do município de entregar políticas públicas de qualidade para quem mais precisa."
+                "{field(fields, "home.presidente.frase", "Fortalecer a carreira de APPGG é fortalecer a capacidade do município de entregar políticas públicas de qualidade para quem mais precisa.")}"
               </h2>
               <div className="luxury-divider mt-6 mb-4" />
               <p className="text-[11px] font-light text-text-caption tracking-wide">
-                Maria Camila Florêncio — Presidente da APOGESP
+                {field(fields, "home.presidente.assinatura", "Maria Camila Florêncio — Presidente da APOGESP")}
               </p>
               <Link
                 to="/apogesp"
                 className="group inline-flex items-center gap-2 text-sm font-light text-accent hover:text-foreground transition-colors duration-300 mt-8"
               >
-                <span>Sobre a APOGESP</span>
+                <span>{field(fields, "home.presidente.cta", "Sobre a APOGESP")}</span>
                 <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
             </FadeIn>
