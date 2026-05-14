@@ -32,6 +32,123 @@ export type Database = {
         }
         Relationships: []
       }
+      atos_normativos_itens: {
+        Row: {
+          created_at: string
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          deletado: boolean
+          id: string
+          ordem: number
+          publicado: boolean
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
+      atuacao_destaques: {
+        Row: {
+          created_at: string
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          deletado: boolean
+          id: string
+          ordem: number
+          publicado: boolean
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
+      cronologia_itens: {
+        Row: {
+          created_at: string
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          deletado: boolean
+          id: string
+          ordem: number
+          publicado: boolean
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
       noticias: {
         Row: {
           autor: string
@@ -92,12 +209,165 @@ export type Database = {
         }
         Relationships: []
       }
+      page_fields: {
+        Row: {
+          descricao: string | null
+          key: string
+          ordem: number
+          pagina: string
+          tem_rascunho: boolean
+          tipo: string
+          updated_at: string
+          updated_by: string | null
+          value_publicado: string | null
+          value_rascunho: string | null
+        }
+        Insert: {
+          descricao?: string | null
+          key: string
+          ordem?: number
+          pagina: string
+          tem_rascunho?: boolean
+          tipo?: string
+          updated_at?: string
+          updated_by?: string | null
+          value_publicado?: string | null
+          value_rascunho?: string | null
+        }
+        Update: {
+          descricao?: string | null
+          key?: string
+          ordem?: number
+          pagina?: string
+          tem_rascunho?: boolean
+          tipo?: string
+          updated_at?: string
+          updated_by?: string | null
+          value_publicado?: string | null
+          value_rascunho?: string | null
+        }
+        Relationships: []
+      }
+      planos_itens: {
+        Row: {
+          created_at: string
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          deletado: boolean
+          id: string
+          ordem: number
+          publicado: boolean
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
+      publicacoes_itens: {
+        Row: {
+          created_at: string
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          deletado: boolean
+          id: string
+          ordem: number
+          publicado: boolean
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
+      snapshot_carreira: {
+        Row: {
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          id: string
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          id?: string
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          id?: string
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
+      discard_field_draft: { Args: { _key: string }; Returns: undefined }
       is_editor: { Args: { _email: string }; Returns: boolean }
+      publish_cms_all: { Args: { _table: string }; Returns: undefined }
+      publish_cms_item: {
+        Args: { _id: string; _table: string }
+        Returns: undefined
+      }
+      publish_field: { Args: { _key: string }; Returns: undefined }
+      publish_page: { Args: { _pagina: string }; Returns: undefined }
+      publish_snapshot: { Args: never; Returns: undefined }
     }
     Enums: {
       [_ in never]: never
