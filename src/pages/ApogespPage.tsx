@@ -2,6 +2,9 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
+import CMSMarkdown from "@/components/CMSMarkdown";
+import { usePageFields } from "@/hooks/useCMS";
+import { field } from "@/lib/cms";
 import diretoriaTodos from "@/assets/diretoria-todos.jpg";
 import diretorOdilon from "@/assets/diretor-odilon.jpg";
 import diretoraMariaCamila from "@/assets/diretora-maria-camila.jpg";
@@ -51,33 +54,30 @@ const objetivos = [
   "Estimular o debate público qualificado sobre administração pública e o futuro das políticas municipais",
 ];
 
-const ApogespPage = () => (
+const ApogespPage = () => {
+  const f = usePageFields("apogesp");
+  return (
   <PageLayout>
     <PageHero
-      label="Institucional"
-      title="A APOGESP"
-      subtitle="A voz coletiva de quem dedica a carreira a fazer a gestão pública de São Paulo funcionar melhor."
+      label={field(f, "apogesp.hero.label", "Institucional")}
+      title={field(f, "apogesp.hero.titulo", "A APOGESP")}
+      subtitle={field(f, "apogesp.hero.subtitulo", "A voz coletiva de quem dedica a carreira a fazer a gestão pública de São Paulo funcionar melhor.")}
     />
 
     <section className="py-24 md:py-32 bg-card">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
-            <SectionTitle label="Sobre" title="Quem Somos" />
+            <SectionTitle label={field(f, "apogesp.quem-somos.label", "Sobre")} title={field(f, "apogesp.quem-somos.titulo", "Quem Somos")} />
           </div>
           <div className="lg:col-span-8">
             <FadeIn>
-              <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
-                <p>
-                  A APOGESP nasceu de uma convicção simples: profissionais que compartilham uma missão precisam de um espaço para pensar juntos. Como entidade representativa dos Analistas de Políticas Públicas e Gestão Governamental do Município de São Paulo, a associação existe para amplificar o impacto coletivo da carreira.
-                </p>
-                <p>
-                  A APOGESP é uma entidade civil, sem fins lucrativos, independente de governo e de partidos. Sua atuação se organiza em três frentes: valorização da carreira, produção de conhecimento sobre gestão municipal e interlocução com órgãos públicos, entidades parceiras e sociedade civil.
-                </p>
-                <p>
-                  A independência da APOGESP é condição para sua relevância. É ela que permite à associação dialogar com diferentes governos, propor aprimoramentos à carreira com franqueza e produzir análises técnicas sem constrangimentos institucionais. A APOGESP fala em nome dos seus associados — e só deles.
-                </p>
-              </div>
+              <CMSMarkdown
+                fields={f}
+                fieldKey="apogesp.quem-somos.texto"
+                fallback={"A APOGESP nasceu de uma convicção simples: profissionais que compartilham uma missão precisam de um espaço para pensar juntos. Como entidade representativa dos Analistas de Políticas Públicas e Gestão Governamental do Município de São Paulo, a associação existe para amplificar o impacto coletivo da carreira.\n\nA APOGESP é uma entidade civil, sem fins lucrativos, independente de governo e de partidos. Sua atuação se organiza em três frentes: valorização da carreira, produção de conhecimento sobre gestão municipal e interlocução com órgãos públicos, entidades parceiras e sociedade civil.\n\nA independência da APOGESP é condição para sua relevância. É ela que permite à associação dialogar com diferentes governos, propor aprimoramentos à carreira com franqueza e produzir análises técnicas sem constrangimentos institucionais. A APOGESP fala em nome dos seus associados — e só deles."}
+                className="space-y-5 text-sm font-light text-text-body leading-[1.8]"
+              />
             </FadeIn>
           </div>
         </div>
@@ -87,11 +87,14 @@ const ApogespPage = () => (
     <section className="py-24 md:py-32 bg-section-alt">
       <div className="container">
         <div className="max-w-xl mx-auto text-center">
-          <SectionTitle label="Propósito" title="Missão" center />
+          <SectionTitle label={field(f, "apogesp.missao.label", "Propósito")} title={field(f, "apogesp.missao.titulo", "Missão")} center />
           <FadeIn>
-            <p className="text-sm font-light text-text-body leading-[1.8]">
-              Fortalecer a carreira de APPGG e contribuir para o aprimoramento da gestão pública no município de São Paulo — não com discursos, mas com produção técnica, representação institucional qualificada, articulação entre setores e investimento permanente em capacidades estatais. A missão da APOGESP é garantir que a experiência acumulada por seus integrantes se converta em memória, método e legado.
-            </p>
+            <CMSMarkdown
+              fields={f}
+              fieldKey="apogesp.missao.texto"
+              fallback="Fortalecer a carreira de APPGG e contribuir para o aprimoramento da gestão pública no município de São Paulo — não com discursos, mas com produção técnica, representação institucional qualificada, articulação entre setores e investimento permanente em capacidades estatais. A missão da APOGESP é garantir que a experiência acumulada por seus integrantes se converta em memória, método e legado."
+              className="text-sm font-light text-text-body leading-[1.8]"
+            />
           </FadeIn>
         </div>
       </div>
@@ -99,7 +102,7 @@ const ApogespPage = () => (
 
     <section className="py-24 md:py-32 bg-card">
       <div className="container">
-        <SectionTitle label="Diretrizes" title="Objetivos" />
+        <SectionTitle label={field(f, "apogesp.objetivos.label", "Diretrizes")} title={field(f, "apogesp.objetivos.titulo", "Objetivos")} />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-luxury-border mt-8">
           {objetivos.map((obj, i) => (
             <FadeIn key={obj} delay={i * 0.05}>
