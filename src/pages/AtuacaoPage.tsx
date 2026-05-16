@@ -430,19 +430,24 @@ const casos: CasoAtuacao[] = [
 
 const AtuacaoPage = () => {
   const [areaFiltro, setAreaFiltro] = useState("Todas");
+  const f = usePageFields("atuacao");
   const casosFiltrados = areaFiltro === "Todas" ? casos : casos.filter((c) => c.area === areaFiltro);
 
   return (
     <PageLayout>
       <PageHero
-        label="Colaboração"
-        title="Atuação dos APPGGs"
-        subtitle="Mais de 50 casos de colaboração de Analistas de Políticas Públicas e Gestão Governamental com órgãos e equipes da Prefeitura de São Paulo. Do Caderno Gestão Pública em Rede ao 2º Seminário APPGG."
+        label={field(f, "atuacao.hero.label", "Colaboração")}
+        title={field(f, "atuacao.hero.titulo", "Atuação dos APPGGs")}
+        subtitle={field(f, "atuacao.hero.subtitulo", "Mais de 50 casos de colaboração de Analistas de Políticas Públicas e Gestão Governamental com órgãos e equipes da Prefeitura de São Paulo. Do Caderno Gestão Pública em Rede ao 2º Seminário APPGG.")}
       />
 
       <section className="py-24 md:py-32 bg-card">
         <div className="container">
-          <SectionTitle label="Casos Documentados" title="Onde a Carreira Colaborou" subtitle="Cada caso abaixo registra contribuições de APPGGs em iniciativas conduzidas em conjunto com outras carreiras, gestores e parceiros institucionais, dentro das prioridades fixadas pela administração superior." />
+          <SectionTitle
+            label={field(f, "atuacao.casos.label", "Casos Documentados")}
+            title={field(f, "atuacao.casos.titulo", "Onde a Carreira Colaborou")}
+            subtitle={field(f, "atuacao.casos.subtitulo", "Cada caso abaixo registra contribuições de APPGGs em iniciativas conduzidas em conjunto com outras carreiras, gestores e parceiros institucionais, dentro das prioridades fixadas pela administração superior.")}
+          />
 
           {/* Filter */}
           <div className="flex flex-wrap gap-2 mb-12">
