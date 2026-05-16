@@ -41,6 +41,7 @@ const publicacoesBase: Publicacao[] = [
 const publicacoes: Publicacao[] = publicacoesBase.map((p) => ({ ...p, url: p.url ?? CADERNO_URL }));
 
 const PublicacoesPage = () => {
+  const f = usePageFields("publicacoes");
   const [tipoFiltro, setTipoFiltro] = useState("Todos");
   const [anoFiltro, setAnoFiltro] = useState("Todos");
 
@@ -55,9 +56,9 @@ const PublicacoesPage = () => {
   return (
     <PageLayout>
       <PageHero
-        label="Biblioteca"
-        title="Publicações"
-        subtitle="O que a carreira de APPGG pensa, documenta e publica. Artigos, notas técnicas e propostas."
+        label={field(f, "publicacoes.hero.label", "Biblioteca")}
+        title={field(f, "publicacoes.hero.titulo", "Publicações")}
+        subtitle={field(f, "publicacoes.hero.subtitulo", "O que a carreira de APPGG pensa, documenta e publica. Artigos, notas técnicas e propostas.")}
       />
 
       <section className="py-24 md:py-32 bg-card">
@@ -65,13 +66,16 @@ const PublicacoesPage = () => {
           {/* Destaque principal */}
           <FadeIn>
             <div className="border border-luxury-border p-8 md:p-12 mb-16">
-              <span className="text-[10px] font-medium tracking-luxury uppercase text-gold block mb-4">Destaque</span>
-              <h3 className="text-xl md:text-2xl font-display font-normal text-foreground">Caderno Gestão Pública em Rede — 1ª Edição</h3>
-              <p className="text-sm font-light text-text-body mt-3 leading-relaxed max-w-3xl">
-                Nove artigos. Nove histórias de quem esteve dentro da máquina pública, tentando fazê-la funcionar melhor. A primeira publicação coletiva dos APPGGs celebra uma década de carreira com o que ela faz de melhor: análise rigorosa, experiência de campo e compromisso com o registro. Organizado pela Assessoria de Carreiras Transversais (ACT) da Secretaria Municipal de Gestão.
-              </p>
+              <span className="text-[10px] font-medium tracking-luxury uppercase text-gold block mb-4">{field(f, "publicacoes.destaque.label", "Destaque")}</span>
+              <h3 className="text-xl md:text-2xl font-display font-normal text-foreground">{field(f, "publicacoes.destaque.titulo", "Caderno Gestão Pública em Rede — 1ª Edição")}</h3>
+              <CMSMarkdown
+                fields={f}
+                fieldKey="publicacoes.destaque.texto"
+                fallback="Nove artigos. Nove histórias de quem esteve dentro da máquina pública, tentando fazê-la funcionar melhor. A primeira publicação coletiva dos APPGGs celebra uma década de carreira com o que ela faz de melhor: análise rigorosa, experiência de campo e compromisso com o registro. Organizado pela Assessoria de Carreiras Transversais (ACT) da Secretaria Municipal de Gestão."
+                className="text-sm font-light text-text-body mt-3 leading-relaxed max-w-3xl"
+              />
               <div className="flex items-center justify-between gap-4 mt-6 flex-wrap">
-                <span className="text-[11px] font-light text-text-caption">Dezembro 2025 · Prefeitura de São Paulo</span>
+                <span className="text-[11px] font-light text-text-caption">{field(f, "publicacoes.destaque.meta", "Dezembro 2025 · Prefeitura de São Paulo")}</span>
                 <a
                   href="https://prefeitura.sp.gov.br/web/gestao/assessoria_de_carreiras_transversais"
                   target="_blank"
@@ -85,7 +89,7 @@ const PublicacoesPage = () => {
             </div>
           </FadeIn>
 
-          <SectionTitle label="Acervo" title="Documentos Institucionais" />
+          <SectionTitle label={field(f, "publicacoes.acervo.label", "Acervo")} title={field(f, "publicacoes.acervo.titulo", "Documentos Institucionais")} />
 
           {/* Filters */}
           <div className="flex flex-col sm:flex-row gap-6 mb-12">
