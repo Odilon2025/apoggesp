@@ -135,9 +135,9 @@ const CampanhaNomeacaoPage = () => {
       <section className="py-24 md:py-32 bg-section-alt">
         <div className="container">
           <SectionTitle
-            label="Capital Humano"
-            title="Quem São os 53 Aprovados"
-            subtitle="Profissionais selecionados no concurso mais competitivo da carreira, com formação multidisciplinar e experiência comprovada."
+            label={field(f, "campanha-nomeacao.perfil.label", "Capital Humano")}
+            title={field(f, "campanha-nomeacao.perfil.titulo", "Quem São os 53 Aprovados")}
+            subtitle={field(f, "campanha-nomeacao.perfil.subtitulo", "Profissionais selecionados no concurso mais competitivo da carreira, com formação multidisciplinar e experiência comprovada.")}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border mt-2">
             {perfilAprovados.map((item, i) => (
