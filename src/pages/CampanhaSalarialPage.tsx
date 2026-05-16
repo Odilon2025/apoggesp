@@ -136,14 +136,16 @@ const CampanhaSalarialPage = () => {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-xs font-light text-text-caption mt-6 max-w-3xl">
-              Fontes: Lei nº 18.235/2025 (APPGG SP); MP nº 1.286/2024 (EPPGG Federal); Diário Oficial de Niterói, 28/11/2025 (APPGG Niterói, com gratificação de desempenho de 50%).
+              {field(f, "campanha-salarial.comparativo.fontes", "Fontes: Lei nº 18.235/2025 (APPGG SP); MP nº 1.286/2024 (EPPGG Federal); Diário Oficial de Niterói, 28/11/2025 (APPGG Niterói, com gratificação de desempenho de 50%).")}
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <p className="text-center text-sm font-light text-text-body mt-10 max-w-2xl mx-auto leading-relaxed">
-              O APPGG de São Paulo — maior metrópole da América Latina — recebe <strong className="text-foreground">27% menos</strong> que o cargo equivalente em Niterói e <strong className="text-foreground">34% menos</strong> que o EPPGG federal no início da carreira. 
-              No topo, a defasagem frente ao governo federal chega a <strong className="text-foreground">56%</strong>.
-            </p>
+            <CMSMarkdown
+              fields={f}
+              fieldKey="campanha-salarial.comparativo.sintese"
+              fallback="O APPGG de São Paulo — maior metrópole da América Latina — recebe **27% menos** que o cargo equivalente em Niterói e **34% menos** que o EPPGG federal no início da carreira. No topo, a defasagem frente ao governo federal chega a **56%**."
+              className="text-center text-sm font-light text-text-body mt-10 max-w-2xl mx-auto leading-relaxed"
+            />
           </FadeIn>
         </div>
       </section>
@@ -154,15 +156,15 @@ const CampanhaSalarialPage = () => {
           <div className="max-w-xl mx-auto text-center">
             <FadeIn>
               <h2 className="text-2xl md:text-3xl font-display font-normal text-foreground leading-tight text-balance italic">
-                "Não se trata de privilégio. Trata-se de reter os profissionais que a cidade precisa para funcionar."
+                "{field(f, "campanha-salarial.cta.frase", "Não se trata de privilégio. Trata-se de reter os profissionais que a cidade precisa para funcionar.")}"
               </h2>
               <div className="luxury-divider mt-6 mb-4" />
-              <p className="text-[11px] font-light text-text-caption tracking-wide">APOGESP — Campanha Salarial 2026</p>
+              <p className="text-[11px] font-light text-text-caption tracking-wide">{field(f, "campanha-salarial.cta.assinatura", "APOGESP — Campanha Salarial 2026")}</p>
               <Link
                 to="/contato"
                 className="group inline-flex items-center gap-2 text-sm font-light text-accent hover:text-foreground transition-colors duration-300 mt-8"
               >
-                <span>Apoie a campanha</span>
+                <span>{field(f, "campanha-salarial.cta.link", "Apoie a campanha")}</span>
                 <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
             </FadeIn>
