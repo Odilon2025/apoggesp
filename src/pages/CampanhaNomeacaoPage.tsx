@@ -112,7 +112,7 @@ const CampanhaNomeacaoPage = () => {
       {/* Números */}
       <section className="py-24 md:py-32 bg-card">
         <div className="container">
-          <SectionTitle label="Em Números" title="O Quadro Atual" center />
+          <SectionTitle label={field(f, "campanha-nomeacao.numeros.label", "Em Números")} title={field(f, "campanha-nomeacao.numeros.titulo", "O Quadro Atual")} center />
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-luxury-border max-w-4xl mx-auto mt-2">
             {[
               { num: "300", label: "cargos criados por lei" },
