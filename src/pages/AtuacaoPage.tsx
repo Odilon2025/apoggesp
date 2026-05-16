@@ -4,6 +4,8 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
+import { usePageFields } from "@/hooks/useCMS";
+import { field } from "@/lib/cms";
 import { ArrowRight, FileText } from "lucide-react";
 
 interface CasoAtuacao {
