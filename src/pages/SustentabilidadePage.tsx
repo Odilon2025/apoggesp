@@ -91,24 +91,25 @@ const stats = [
 ];
 
 const SustentabilidadePage = () => {
+  const f = usePageFields("sustentabilidade");
   return (
     <PageLayout>
       <PageHero
-        label="Meio Ambiente"
-        title="Sustentabilidade"
-        subtitle="Como os APPGGs colaboram com a construção de uma São Paulo mais sustentável, sempre em parceria com outras carreiras e dentro das diretrizes da administração superior."
+        label={field(f, "sustentabilidade.hero.label", "Meio Ambiente")}
+        title={field(f, "sustentabilidade.hero.titulo", "Sustentabilidade")}
+        subtitle={field(f, "sustentabilidade.hero.subtitulo", "Como os APPGGs colaboram com a construção de uma São Paulo mais sustentável, sempre em parceria com outras carreiras e dentro das diretrizes da administração superior.")}
       />
 
       {/* Intro narrativa */}
       <section className="py-20 bg-background">
         <div className="container max-w-3xl">
           <FadeIn>
-            <p className="text-lg font-light leading-relaxed text-text-body">
-              São Paulo é a maior metrópole da América Latina — e também uma das mais vulneráveis às mudanças climáticas. Enchentes, ilhas de calor, crises hídricas e poluição atmosférica são desafios que exigem políticas públicas sofisticadas, baseadas em evidências e com visão de longo prazo.
-            </p>
-            <p className="mt-6 text-lg font-light leading-relaxed text-text-body">
-              Nesse cenário, os Analistas de Políticas Públicas e Gestão Governamental colaboram com diferentes secretarias para apoiar a tradução dos compromissos ambientais em programas concretos, indicadores mensuráveis e governança efetiva. Da Secretaria do Verde e Meio Ambiente à Secretaria de Infraestrutura Urbana, APPGGs participam — junto a equipes técnicas de outras carreiras e às lideranças setoriais — de iniciativas pactuadas nos Planos de Atuação Institucional.
-            </p>
+            <CMSMarkdown
+              fields={f}
+              fieldKey="sustentabilidade.intro.texto"
+              fallback={"São Paulo é a maior metrópole da América Latina — e também uma das mais vulneráveis às mudanças climáticas. Enchentes, ilhas de calor, crises hídricas e poluição atmosférica são desafios que exigem políticas públicas sofisticadas, baseadas em evidências e com visão de longo prazo.\n\nNesse cenário, os Analistas de Políticas Públicas e Gestão Governamental colaboram com diferentes secretarias para apoiar a tradução dos compromissos ambientais em programas concretos, indicadores mensuráveis e governança efetiva. Da Secretaria do Verde e Meio Ambiente à Secretaria de Infraestrutura Urbana, APPGGs participam — junto a equipes técnicas de outras carreiras e às lideranças setoriais — de iniciativas pactuadas nos Planos de Atuação Institucional."}
+              className="space-y-6 text-lg font-light leading-relaxed text-text-body"
+            />
           </FadeIn>
         </div>
       </section>
