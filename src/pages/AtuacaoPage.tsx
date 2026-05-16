@@ -508,7 +508,7 @@ const AtuacaoPage = () => {
       {/* Eixos da Carreira */}
       <section className="py-24 md:py-32 bg-section-alt">
         <div className="container max-w-3xl">
-          <SectionTitle label="Vocação" title="Os Três Eixos da Colaboração" />
+          <SectionTitle label={field(f, "atuacao.eixos.label", "Vocação")} title={field(f, "atuacao.eixos.titulo", "Os Três Eixos da Colaboração")} />
           <FadeIn>
             <div className="space-y-0 border-t border-luxury-border">
               {[
@@ -541,7 +541,7 @@ const AtuacaoPage = () => {
             >
               <FileText size={16} className="text-gold" />
               <span className="text-sm font-light text-text-body group-hover:text-foreground transition-colors duration-300">
-                Conheça os Planos de Atuação Institucional de cada órgão
+                {field(f, "atuacao.cta.texto", "Conheça os Planos de Atuação Institucional de cada órgão")}
               </span>
               <ArrowRight size={14} className="text-gold group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
