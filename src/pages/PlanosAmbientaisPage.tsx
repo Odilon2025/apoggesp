@@ -3,6 +3,9 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
+import CMSMarkdown from "@/components/CMSMarkdown";
+import { usePageFields } from "@/hooks/useCMS";
+import { field } from "@/lib/cms";
 import { Building2, ChevronDown, ChevronUp, Target, Leaf } from "lucide-react";
 import { planos } from "@/data/planos";
 
