@@ -55,12 +55,13 @@ const argumentos = [
 ];
 
 const CampanhaSalarialPage = () => {
+  const f = usePageFields("campanha-salarial");
   return (
     <PageLayout>
       <PageHero
-        label="Campanha 2026"
-        title="Remuneração Justa para Quem Constrói a Cidade"
-        subtitle="Uma carreira estratégica não sobrevive com remuneração defasada. Conheça os números, compare com o governo federal e com outros municípios — e entenda por que a recomposição salarial dos APPGGs é urgente."
+        label={field(f, "campanha-salarial.hero.label", "Campanha 2026")}
+        title={field(f, "campanha-salarial.hero.titulo", "Remuneração Justa para Quem Constrói a Cidade")}
+        subtitle={field(f, "campanha-salarial.hero.subtitulo", "Uma carreira estratégica não sobrevive com remuneração defasada. Conheça os números, compare com o governo federal e com outros municípios — e entenda por que a recomposição salarial dos APPGGs é urgente.")}
       />
 
       {/* Contexto narrativo */}
@@ -69,9 +70,9 @@ const CampanhaSalarialPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-5">
               <SectionTitle
-                label="O Problema"
-                title="Uma Década Sem Equiparação"
-                subtitle="Em 2015, a carreira de APPGG foi criada como espelho municipal do EPPGG federal. Dez anos depois, a remuneração não acompanhou — nem o governo federal, nem municípios como Niterói."
+                label={field(f, "campanha-salarial.problema.label", "O Problema")}
+                title={field(f, "campanha-salarial.problema.titulo", "Uma Década Sem Equiparação")}
+                subtitle={field(f, "campanha-salarial.problema.subtitulo", "Em 2015, a carreira de APPGG foi criada como espelho municipal do EPPGG federal. Dez anos depois, a remuneração não acompanhou — nem o governo federal, nem municípios como Niterói.")}
               />
             </div>
             <div className="lg:col-span-7">
