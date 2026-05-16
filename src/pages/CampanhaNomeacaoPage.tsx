@@ -3,6 +3,9 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
+import CMSMarkdown from "@/components/CMSMarkdown";
+import { usePageFields } from "@/hooks/useCMS";
+import { field } from "@/lib/cms";
 import { ArrowRight, Users, Clock, Building2, ShieldCheck, GraduationCap, TrendingUp, Target, BarChart3 } from "lucide-react";
 
 const porQueNomear = [
@@ -63,12 +66,13 @@ const timelineConcurso = [
 ];
 
 const CampanhaNomeacaoPage = () => {
+  const f = usePageFields("campanha-nomeacao");
   return (
     <PageLayout>
       <PageHero
-        label="Nomeação Já"
-        title="53 Aprovados. Zero Razões Para Esperar."
-        subtitle="Um concurso com 242 candidatos por vaga selecionou os melhores. 80 já servem a cidade. Faltam 53 — e 102 cargos vagos esperando por eles."
+        label={field(f, "campanha-nomeacao.hero.label", "Nomeação Já")}
+        title={field(f, "campanha-nomeacao.hero.titulo", "53 Aprovados. Zero Razões Para Esperar.")}
+        subtitle={field(f, "campanha-nomeacao.hero.subtitulo", "Um concurso com 242 candidatos por vaga selecionou os melhores. 80 já servem a cidade. Faltam 53 — e 102 cargos vagos esperando por eles.")}
       />
 
       {/* Narrativa */}
@@ -76,15 +80,12 @@ const CampanhaNomeacaoPage = () => {
         <div className="container">
           <div className="max-w-3xl">
             <FadeIn>
-              <p className="text-base md:text-lg font-light text-text-body leading-relaxed mb-6">
-                Em 2023, a Lei nº 17.913 ampliou o quadro de APPGGs para <strong className="text-foreground">300 cargos</strong> — um reconhecimento de que São Paulo precisa de mais analistas de gestão. Hoje, <strong className="text-foreground">102 desses cargos estão vagos</strong>. Um terço da capacidade projetada simplesmente não existe.
-              </p>
-              <p className="text-base md:text-lg font-light text-text-body leading-relaxed mb-6">
-                Enquanto isso, 53 profissionais aprovados no concurso mais competitivo da história da carreira — <strong className="text-foreground">242 candidatos por vaga</strong> — aguardam nomeação. São pessoas com formação em universidades de referência, experiência combinada nos setores público e privado, e domínio de ferramentas analíticas que a administração precisa.
-              </p>
-              <p className="text-base md:text-lg font-light text-text-body leading-relaxed">
-                O custo da nomeação é marginal frente ao orçamento municipal. Não nomear é aceitar que secretarias continuem operando abaixo da capacidade, que projetos estratégicos percam qualidade técnica e que a prefeitura perca competitividade na atração de talentos frente ao governo federal e ao setor privado.
-              </p>
+              <CMSMarkdown
+                fields={f}
+                fieldKey="campanha-nomeacao.narrativa.texto"
+                fallback={"Em 2023, a Lei nº 17.913 ampliou o quadro de APPGGs para **300 cargos** — um reconhecimento de que São Paulo precisa de mais analistas de gestão. Hoje, **102 desses cargos estão vagos**. Um terço da capacidade projetada simplesmente não existe.\n\nEnquanto isso, 53 profissionais aprovados no concurso mais competitivo da história da carreira — **242 candidatos por vaga** — aguardam nomeação. São pessoas com formação em universidades de referência, experiência combinada nos setores público e privado, e domínio de ferramentas analíticas que a administração precisa.\n\nO custo da nomeação é marginal frente ao orçamento municipal. Não nomear é aceitar que secretarias continuem operando abaixo da capacidade, que projetos estratégicos percam qualidade técnica e que a prefeitura perca competitividade na atração de talentos frente ao governo federal e ao setor privado."}
+                className="space-y-6 text-base md:text-lg font-light text-text-body leading-relaxed"
+              />
             </FadeIn>
           </div>
         </div>
@@ -93,7 +94,7 @@ const CampanhaNomeacaoPage = () => {
       {/* Por que nomear */}
       <section className="py-24 md:py-32 bg-section-alt">
         <div className="container">
-          <SectionTitle label="O Cenário" title="Por Que Nomear Agora" />
+          <SectionTitle label={field(f, "campanha-nomeacao.porque.label", "O Cenário")} title={field(f, "campanha-nomeacao.porque.titulo", "Por Que Nomear Agora")} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border mt-2">
             {porQueNomear.map((item, i) => (
               <FadeIn key={item.titulo} delay={i * 0.1}>
@@ -111,7 +112,7 @@ const CampanhaNomeacaoPage = () => {
       {/* Números */}
       <section className="py-24 md:py-32 bg-card">
         <div className="container">
-          <SectionTitle label="Em Números" title="O Quadro Atual" center />
+          <SectionTitle label={field(f, "campanha-nomeacao.numeros.label", "Em Números")} title={field(f, "campanha-nomeacao.numeros.titulo", "O Quadro Atual")} center />
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-luxury-border max-w-4xl mx-auto mt-2">
             {[
               { num: "300", label: "cargos criados por lei" },
@@ -134,9 +135,9 @@ const CampanhaNomeacaoPage = () => {
       <section className="py-24 md:py-32 bg-section-alt">
         <div className="container">
           <SectionTitle
-            label="Capital Humano"
-            title="Quem São os 53 Aprovados"
-            subtitle="Profissionais selecionados no concurso mais competitivo da carreira, com formação multidisciplinar e experiência comprovada."
+            label={field(f, "campanha-nomeacao.perfil.label", "Capital Humano")}
+            title={field(f, "campanha-nomeacao.perfil.titulo", "Quem São os 53 Aprovados")}
+            subtitle={field(f, "campanha-nomeacao.perfil.subtitulo", "Profissionais selecionados no concurso mais competitivo da carreira, com formação multidisciplinar e experiência comprovada.")}
           />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border mt-2">
             {perfilAprovados.map((item, i) => (
@@ -158,9 +159,9 @@ const CampanhaNomeacaoPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <SectionTitle
-                label="Processo"
-                title="Etapas do Concurso"
-                subtitle="Todas as fases foram cumpridas. Resta apenas o ato administrativo da nomeação."
+                label={field(f, "campanha-nomeacao.timeline.label", "Processo")}
+                title={field(f, "campanha-nomeacao.timeline.titulo", "Etapas do Concurso")}
+                subtitle={field(f, "campanha-nomeacao.timeline.subtitulo", "Todas as fases foram cumpridas. Resta apenas o ato administrativo da nomeação.")}
               />
             </div>
             <div className="lg:col-span-8">
@@ -191,12 +192,15 @@ const CampanhaNomeacaoPage = () => {
           <div className="max-w-3xl">
             <FadeIn>
               <SectionTitle
-                label="Viabilidade"
-                title="O Custo da Nomeação é Marginal"
+                label={field(f, "campanha-nomeacao.viabilidade.label", "Viabilidade")}
+                title={field(f, "campanha-nomeacao.viabilidade.titulo", "O Custo da Nomeação é Marginal")}
               />
-              <p className="text-base md:text-lg font-light text-text-body leading-relaxed mt-6 mb-8">
-                Frente a um orçamento municipal de <strong className="text-foreground">R$ 135 bilhões</strong> e uma despesa de pessoal de <strong className="text-foreground">R$ 44 bilhões</strong>, o investimento na nomeação dos 53 aprovados representa uma fração ínfima — com retorno imediato em capacidade de gestão, qualidade técnica e entrega de resultados para a população.
-              </p>
+              <CMSMarkdown
+                fields={f}
+                fieldKey="campanha-nomeacao.viabilidade.texto"
+                fallback="Frente a um orçamento municipal de **R$ 135 bilhões** e uma despesa de pessoal de **R$ 44 bilhões**, o investimento na nomeação dos 53 aprovados representa uma fração ínfima — com retorno imediato em capacidade de gestão, qualidade técnica e entrega de resultados para a população."
+                className="text-base md:text-lg font-light text-text-body leading-relaxed mt-6 mb-8"
+              />
             </FadeIn>
           </div>
         </div>
@@ -208,15 +212,15 @@ const CampanhaNomeacaoPage = () => {
           <div className="max-w-xl mx-auto text-center">
             <FadeIn>
               <h2 className="text-2xl md:text-3xl font-display font-normal text-foreground leading-tight text-balance italic">
-                "Cada APPGG não nomeado é uma política pública que será coordenada com menos rigor, monitorada com menos precisão e avaliada com menos profundidade."
+                "{field(f, "campanha-nomeacao.cta.frase", "Cada APPGG não nomeado é uma política pública que será coordenada com menos rigor, monitorada com menos precisão e avaliada com menos profundidade.")}"
               </h2>
               <div className="luxury-divider mt-6 mb-4" />
-              <p className="text-[11px] font-light text-text-caption tracking-wide">Maria Camila Florêncio — Presidente da APOGESP</p>
+              <p className="text-[11px] font-light text-text-caption tracking-wide">{field(f, "campanha-nomeacao.cta.assinatura", "Maria Camila Florêncio — Presidente da APOGESP")}</p>
               <Link
                 to="/contato"
                 className="group inline-flex items-center gap-2 text-sm font-light text-accent hover:text-foreground transition-colors duration-300 mt-8"
               >
-                <span>Apoie a nomeação</span>
+                <span>{field(f, "campanha-nomeacao.cta.link", "Apoie a nomeação")}</span>
                 <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
             </FadeIn>

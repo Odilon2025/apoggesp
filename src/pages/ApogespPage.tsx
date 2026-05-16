@@ -225,6 +225,7 @@ const ApogespPage = () => {
       </div>
     </section>
   </PageLayout>
-);
+  );
+};
 
 export default ApogespPage;

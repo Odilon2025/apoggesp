@@ -3,6 +3,9 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
+import CMSMarkdown from "@/components/CMSMarkdown";
+import { usePageFields } from "@/hooks/useCMS";
+import { field } from "@/lib/cms";
 import { Building2, ChevronDown, ChevronUp, Target, Leaf } from "lucide-react";
 import { planos } from "@/data/planos";
 
@@ -12,6 +15,7 @@ const totalAppggs = planosAmbientais.reduce((sum, p) => sum + p.appggsNecessario
 const totalProjetos = planosAmbientais.reduce((sum, p) => sum + p.projetos.length, 0);
 
 const PlanosAmbientaisPage = () => {
+  const f = usePageFields("planos-ambientais");
   const [expandido, setExpandido] = useState<string | null>(null);
 
   const toggle = (sigla: string) => {
@@ -21,9 +25,9 @@ const PlanosAmbientaisPage = () => {
   return (
     <PageLayout>
       <PageHero
-        label="Sustentabilidade"
-        title="Planos de Atuação com Características Ambientais"
-        subtitle="Recorte dos Planos de Atuação Institucional dos órgãos cuja agenda inclui projetos com dimensão ambiental — clima, infraestrutura sustentável, habitação, saneamento e agricultura urbana."
+        label={field(f, "planos-ambientais.hero.label", "Sustentabilidade")}
+        title={field(f, "planos-ambientais.hero.titulo", "Planos de Atuação com Características Ambientais")}
+        subtitle={field(f, "planos-ambientais.hero.subtitulo", "Recorte dos Planos de Atuação Institucional dos órgãos cuja agenda inclui projetos com dimensão ambiental — clima, infraestrutura sustentável, habitação, saneamento e agricultura urbana.")}
       />
 
       {/* Números */}
@@ -55,7 +59,7 @@ const PlanosAmbientaisPage = () => {
       {/* Planos */}
       <section className="py-20 md:py-28">
         <div className="container max-w-4xl">
-          <SectionTitle label="Detalhamento" title="Planos por Órgão" />
+          <SectionTitle label={field(f, "planos-ambientais.detalhamento.label", "Detalhamento")} title={field(f, "planos-ambientais.detalhamento.titulo", "Planos por Órgão")} />
 
           <div className="space-y-4">
             {planosAmbientais.map((plano, i) => (

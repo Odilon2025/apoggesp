@@ -3,6 +3,9 @@ import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
 import CarreiraDashboard from "@/components/CarreiraDashboard";
+import CMSMarkdown from "@/components/CMSMarkdown";
+import { usePageFields } from "@/hooks/useCMS";
+import { field } from "@/lib/cms";
 import { cronologia as timelineItems } from "@/data/cronologia";
 
 const areasAtuacao: { texto: string; destaques: string[] }[] = [
@@ -29,33 +32,30 @@ const renderComDestaques = (texto: string, destaques: string[]) => {
   );
 };
 
-const CarreiraPage = () => (
+const CarreiraPage = () => {
+  const f = usePageFields("carreira");
+  return (
   <PageLayout>
     <PageHero
-      label="A Carreira"
-      title="Analistas de Políticas Públicas e Gestão Governamental"
-      subtitle="A carreira que colabora — em conjunto com outras carreiras municipais e dentro das diretrizes da administração superior — para que São Paulo transforme intenções em entregas que mudam a realidade e promovem uma cidade mais pujante, justa e democrática."
+      label={field(f, "carreira.hero.label", "A Carreira")}
+      title={field(f, "carreira.hero.titulo", "Analistas de Políticas Públicas e Gestão Governamental")}
+      subtitle={field(f, "carreira.hero.subtitulo", "A carreira que colabora — em conjunto com outras carreiras municipais e dentro das diretrizes da administração superior — para que São Paulo transforme intenções em entregas que mudam a realidade e promovem uma cidade mais pujante, justa e democrática.")}
     />
 
     <section className="py-24 md:py-32 bg-card">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
-            <SectionTitle label="Sobre" title="O que é a carreira" />
+            <SectionTitle label={field(f, "carreira.intro.label", "Sobre")} title={field(f, "carreira.intro.titulo", "O que é a carreira")} />
           </div>
           <div className="lg:col-span-8">
             <FadeIn>
-              <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
-                <p>
-                  Em 2015, o município de São Paulo fez uma aposta: criar uma carreira de nível superior dedicada a colaborar com o fortalecimento da capacidade do governo municipal de planejar, implementar e avaliar políticas públicas. A Lei Municipal nº 16.193 deu nome a essa aposta — Analista de Políticas Públicas e Gestão Governamental — e definiu suas atribuições: implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas, sempre em apoio às prioridades fixadas pela administração superior.
-                </p>
-                <p>
-                  Uma década depois, os frutos dessa decisão estão espalhados por toda a administração — sempre como produto de um trabalho conjunto. Os APPGGs colaboram, lado a lado com outras carreiras municipais e com as lideranças de cada pasta, na intersecção entre a formulação técnica e a realidade do território.
-                </p>
-                <p>
-                  A carreira atua na chamada burocracia de médio escalão: o espaço entre quem decide e quem executa. É ali que se contribui para traduzir diretrizes em projetos, indicadores em ações e compromissos em entregas mensuráveis — sempre em diálogo com as equipes técnicas, gestores e parceiros institucionais que conduzem cada iniciativa.
-                </p>
-              </div>
+              <CMSMarkdown
+                fields={f}
+                fieldKey="carreira.intro.texto"
+                fallback={"Em 2015, o município de São Paulo fez uma aposta: criar uma carreira de nível superior dedicada a colaborar com o fortalecimento da capacidade do governo municipal de planejar, implementar e avaliar políticas públicas. A Lei Municipal nº 16.193 deu nome a essa aposta — Analista de Políticas Públicas e Gestão Governamental — e definiu suas atribuições: implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas, sempre em apoio às prioridades fixadas pela administração superior.\n\nUma década depois, os frutos dessa decisão estão espalhados por toda a administração — sempre como produto de um trabalho conjunto. Os APPGGs colaboram, lado a lado com outras carreiras municipais e com as lideranças de cada pasta, na intersecção entre a formulação técnica e a realidade do território.\n\nA carreira atua na chamada burocracia de médio escalão: o espaço entre quem decide e quem executa. É ali que se contribui para traduzir diretrizes em projetos, indicadores em ações e compromissos em entregas mensuráveis — sempre em diálogo com as equipes técnicas, gestores e parceiros institucionais que conduzem cada iniciativa."}
+                className="space-y-5 text-sm font-light text-text-body leading-[1.8]"
+              />
             </FadeIn>
           </div>
         </div>
@@ -68,11 +68,11 @@ const CarreiraPage = () => (
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center">
             <blockquote className="text-lg md:text-xl font-display font-normal text-foreground leading-relaxed italic">
-              "A força da carreira está em colaborar, dentro da legalidade e das prioridades da administração superior, para que cada política pública chegue ao cidadão com técnica, integridade e continuidade."
+              "{field(f, "carreira.citacao.frase", "A força da carreira está em colaborar, dentro da legalidade e das prioridades da administração superior, para que cada política pública chegue ao cidadão com técnica, integridade e continuidade.")}"
             </blockquote>
             <div className="luxury-divider mt-6 mb-4" />
             <cite className="text-[11px] font-light text-text-caption not-italic tracking-wide">
-              Odilon A. Candido — Diretor Jurídico da APOGESP
+              {field(f, "carreira.citacao.autor", "Odilon A. Candido — Diretor Jurídico da APOGESP")}
             </cite>
           </div>
         </FadeIn>
@@ -83,21 +83,16 @@ const CarreiraPage = () => (
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
-            <SectionTitle label="Perfil" title="Quem São os APPGGs" />
+            <SectionTitle label={field(f, "carreira.perfil.label", "Perfil")} title={field(f, "carreira.perfil.titulo", "Quem São os APPGGs")} />
           </div>
           <div className="lg:col-span-8">
             <FadeIn>
-              <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
-                <p>
-                  Administradores públicos, economistas, cientistas sociais, engenheiros, advogados — os APPGGs chegam de formações diversas, mas convergem em uma competência comum: a capacidade de traduzir problemas complexos em decisões implementáveis. O ingresso ocorre por concurso público de provas e títulos, exigindo nível superior.
-                </p>
-                <p>
-                  Na prática, os analistas atuam como intérpretes — de problemas públicos, de dados, de contextos políticos e institucionais. Em diálogo com as equipes técnicas e com as lideranças de cada órgão, contribuem para identificar lacunas entre a diretriz e sua execução e participam da construção do caminho para preenchê-las. Ferramentas de gestão e planejamento são o vocabulário; a colaboração com a melhoria das políticas públicas, o objetivo.
-                </p>
-                <p>
-                  O trabalho vai além da técnica isolada. APPGGs participam de projetos, contribuem com a formação de novas lideranças, colaboram com laboratórios de inovação, apoiam o redesenho de processos e enfrentam — sempre em conjunto com outras carreiras e dentro dos Planos de Atuação Institucional — problemas que nenhum manual previu.
-                </p>
-              </div>
+              <CMSMarkdown
+                fields={f}
+                fieldKey="carreira.perfil.texto"
+                fallback={"Administradores públicos, economistas, cientistas sociais, engenheiros, advogados — os APPGGs chegam de formações diversas, mas convergem em uma competência comum: a capacidade de traduzir problemas complexos em decisões implementáveis. O ingresso ocorre por concurso público de provas e títulos, exigindo nível superior.\n\nNa prática, os analistas atuam como intérpretes — de problemas públicos, de dados, de contextos políticos e institucionais. Em diálogo com as equipes técnicas e com as lideranças de cada órgão, contribuem para identificar lacunas entre a diretriz e sua execução e participam da construção do caminho para preenchê-las. Ferramentas de gestão e planejamento são o vocabulário; a colaboração com a melhoria das políticas públicas, o objetivo.\n\nO trabalho vai além da técnica isolada. APPGGs participam de projetos, contribuem com a formação de novas lideranças, colaboram com laboratórios de inovação, apoiam o redesenho de processos e enfrentam — sempre em conjunto com outras carreiras e dentro dos Planos de Atuação Institucional — problemas que nenhum manual previu."}
+                className="space-y-5 text-sm font-light text-text-body leading-[1.8]"
+              />
             </FadeIn>
           </div>
         </div>
@@ -106,7 +101,7 @@ const CarreiraPage = () => (
 
     <section className="py-24 md:py-32 bg-section-alt">
       <div className="container">
-        <SectionTitle label="Competências" title="Áreas de Atuação" />
+        <SectionTitle label={field(f, "carreira.areas.label", "Competências")} title={field(f, "carreira.areas.titulo", "Áreas de Atuação")} />
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-luxury-border mt-8">
           {areasAtuacao.map((area, i) => (
             <FadeIn key={area.texto} delay={i * 0.05}>
@@ -124,21 +119,16 @@ const CarreiraPage = () => (
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
-            <SectionTitle label="Continuidade" title="Memória Institucional das Políticas Públicas" />
+            <SectionTitle label={field(f, "carreira.memoria.label", "Continuidade")} title={field(f, "carreira.memoria.titulo", "Memória Institucional das Políticas Públicas")} />
           </div>
           <div className="lg:col-span-8">
             <FadeIn>
-              <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
-                <p>
-                  Governos passam, ciclos políticos se sucedem, secretários chegam e partem. O que permanece — e o que sustenta a capacidade de São Paulo de governar a si mesma — é o conhecimento acumulado sobre como cada política pública foi pensada, executada e revisada ao longo do tempo. Os APPGGs são, em larga medida, responsáveis por preservar essa continuidade.
-                </p>
-                <p>
-                  Por estarem distribuídos nas secretarias, nos órgãos de planejamento, nos sistemas de monitoramento e nos projetos estratégicos, os analistas registram, documentam e preservam a trajetória das decisões: o que motivou determinada escolha, quais alternativas foram descartadas, quais entregas funcionaram, quais aprendizados ficaram. É uma memória técnica que não cabe em um único arquivo, mas que vive nas equipes, nos processos e nos sistemas que a carreira ajuda a construir.
-                </p>
-                <p>
-                  Essa função silenciosa — costurar passado, presente e futuro das políticas públicas municipais — é o que permite que cada nova gestão encontre, ao chegar, não uma página em branco, mas um repertório vivo. Preservar essa memória é, também, preservar o direito da cidade de aprender com a própria história.
-                </p>
-              </div>
+              <CMSMarkdown
+                fields={f}
+                fieldKey="carreira.memoria.texto"
+                fallback={"Governos passam, ciclos políticos se sucedem, secretários chegam e partem. O que permanece — e o que sustenta a capacidade de São Paulo de governar a si mesma — é o conhecimento acumulado sobre como cada política pública foi pensada, executada e revisada ao longo do tempo. Os APPGGs são, em larga medida, responsáveis por preservar essa continuidade.\n\nPor estarem distribuídos nas secretarias, nos órgãos de planejamento, nos sistemas de monitoramento e nos projetos estratégicos, os analistas registram, documentam e preservam a trajetória das decisões: o que motivou determinada escolha, quais alternativas foram descartadas, quais entregas funcionaram, quais aprendizados ficaram. É uma memória técnica que não cabe em um único arquivo, mas que vive nas equipes, nos processos e nos sistemas que a carreira ajuda a construir.\n\nEssa função silenciosa — costurar passado, presente e futuro das políticas públicas municipais — é o que permite que cada nova gestão encontre, ao chegar, não uma página em branco, mas um repertório vivo. Preservar essa memória é, também, preservar o direito da cidade de aprender com a própria história."}
+                className="space-y-5 text-sm font-light text-text-body leading-[1.8]"
+              />
             </FadeIn>
           </div>
         </div>
@@ -149,7 +139,7 @@ const CarreiraPage = () => (
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
-            <SectionTitle label="Cronologia" title="Uma Década em Construção" />
+            <SectionTitle label={field(f, "carreira.cronologia.label", "Cronologia")} title={field(f, "carreira.cronologia.titulo", "Uma Década em Construção")} />
           </div>
           <div className="lg:col-span-8">
             <div className="border-l border-luxury-border pl-8 space-y-0">
@@ -170,7 +160,7 @@ const CarreiraPage = () => (
 
     <section className="py-24 md:py-32 bg-section-alt">
       <div className="container">
-        <SectionTitle label="Dados" title="APPGGs em Números" center />
+        <SectionTitle label={field(f, "carreira.numeros.label", "Dados")} title={field(f, "carreira.numeros.titulo", "APPGGs em Números")} center />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-luxury-border mt-8 max-w-3xl mx-auto">
           {[
             { num: "185", label: "APPGGs em exercício" },
@@ -187,7 +177,7 @@ const CarreiraPage = () => (
           ))}
         </div>
         <p className="text-[10px] font-light text-text-caption mt-6 tracking-wide text-center">
-          Snapshot fevereiro de 2026
+          {field(f, "carreira.numeros.legenda", "Snapshot fevereiro de 2026")}
         </p>
       </div>
     </section>
@@ -199,24 +189,23 @@ const CarreiraPage = () => (
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
-            <SectionTitle label="Legislação" title="Marco Legal" />
+            <SectionTitle label={field(f, "carreira.legal.label", "Legislação")} title={field(f, "carreira.legal.titulo", "Marco Legal")} />
           </div>
           <div className="lg:col-span-8">
             <FadeIn>
-              <div className="space-y-5 text-sm font-light text-text-body leading-[1.8]">
-                <p>
-                  A base legal da carreira está no artigo 13 da Lei nº 16.193/2015, que define suas atribuições como: <em className="text-foreground">"implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas da Administração Direta e Indireta da Prefeitura do Município de São Paulo."</em> Poucas carreiras municipais no Brasil têm um mandato tão amplo — e tão exigente.
-                </p>
-                <p>
-                  Em 2021, a Portaria SEGES nº 13 deu o próximo passo: formalizou que os APPGGs devem ser alocados prioritariamente em apoio à elaboração do Programa de Metas, ao planejamento orçamentário (LOA e PPA) e a projetos de reestruturação institucional, sempre conforme as prioridades definidas pela administração superior.
-                </p>
-              </div>
+              <CMSMarkdown
+                fields={f}
+                fieldKey="carreira.legal.texto"
+                fallback={"A base legal da carreira está no artigo 13 da Lei nº 16.193/2015, que define suas atribuições como: *\"implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas da Administração Direta e Indireta da Prefeitura do Município de São Paulo.\"* Poucas carreiras municipais no Brasil têm um mandato tão amplo — e tão exigente.\n\nEm 2021, a Portaria SEGES nº 13 deu o próximo passo: formalizou que os APPGGs devem ser alocados prioritariamente em apoio à elaboração do Programa de Metas, ao planejamento orçamentário (LOA e PPA) e a projetos de reestruturação institucional, sempre conforme as prioridades definidas pela administração superior."}
+                className="space-y-5 text-sm font-light text-text-body leading-[1.8]"
+              />
             </FadeIn>
           </div>
         </div>
       </div>
     </section>
   </PageLayout>
-);
+  );
+};
 
 export default CarreiraPage;

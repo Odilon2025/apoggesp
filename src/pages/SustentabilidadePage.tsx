@@ -3,6 +3,9 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
+import CMSMarkdown from "@/components/CMSMarkdown";
+import { usePageFields } from "@/hooks/useCMS";
+import { field } from "@/lib/cms";
 import { Leaf, Droplets, Sun, Wind, TreePine, ArrowRight, Building2, Globe } from "lucide-react";
 
 const eixos = [
@@ -88,24 +91,25 @@ const stats = [
 ];
 
 const SustentabilidadePage = () => {
+  const f = usePageFields("sustentabilidade");
   return (
     <PageLayout>
       <PageHero
-        label="Meio Ambiente"
-        title="Sustentabilidade"
-        subtitle="Como os APPGGs colaboram com a construção de uma São Paulo mais sustentável, sempre em parceria com outras carreiras e dentro das diretrizes da administração superior."
+        label={field(f, "sustentabilidade.hero.label", "Meio Ambiente")}
+        title={field(f, "sustentabilidade.hero.titulo", "Sustentabilidade")}
+        subtitle={field(f, "sustentabilidade.hero.subtitulo", "Como os APPGGs colaboram com a construção de uma São Paulo mais sustentável, sempre em parceria com outras carreiras e dentro das diretrizes da administração superior.")}
       />
 
       {/* Intro narrativa */}
       <section className="py-20 bg-background">
         <div className="container max-w-3xl">
           <FadeIn>
-            <p className="text-lg font-light leading-relaxed text-text-body">
-              São Paulo é a maior metrópole da América Latina — e também uma das mais vulneráveis às mudanças climáticas. Enchentes, ilhas de calor, crises hídricas e poluição atmosférica são desafios que exigem políticas públicas sofisticadas, baseadas em evidências e com visão de longo prazo.
-            </p>
-            <p className="mt-6 text-lg font-light leading-relaxed text-text-body">
-              Nesse cenário, os Analistas de Políticas Públicas e Gestão Governamental colaboram com diferentes secretarias para apoiar a tradução dos compromissos ambientais em programas concretos, indicadores mensuráveis e governança efetiva. Da Secretaria do Verde e Meio Ambiente à Secretaria de Infraestrutura Urbana, APPGGs participam — junto a equipes técnicas de outras carreiras e às lideranças setoriais — de iniciativas pactuadas nos Planos de Atuação Institucional.
-            </p>
+            <CMSMarkdown
+              fields={f}
+              fieldKey="sustentabilidade.intro.texto"
+              fallback={"São Paulo é a maior metrópole da América Latina — e também uma das mais vulneráveis às mudanças climáticas. Enchentes, ilhas de calor, crises hídricas e poluição atmosférica são desafios que exigem políticas públicas sofisticadas, baseadas em evidências e com visão de longo prazo.\n\nNesse cenário, os Analistas de Políticas Públicas e Gestão Governamental colaboram com diferentes secretarias para apoiar a tradução dos compromissos ambientais em programas concretos, indicadores mensuráveis e governança efetiva. Da Secretaria do Verde e Meio Ambiente à Secretaria de Infraestrutura Urbana, APPGGs participam — junto a equipes técnicas de outras carreiras e às lideranças setoriais — de iniciativas pactuadas nos Planos de Atuação Institucional."}
+              className="space-y-6 text-lg font-light leading-relaxed text-text-body"
+            />
           </FadeIn>
         </div>
       </section>
@@ -130,8 +134,8 @@ const SustentabilidadePage = () => {
       <section className="py-20 bg-background">
         <div className="container">
           <SectionTitle
-            label="Eixos Temáticos"
-            title="Onde os APPGGs colaboram com a sustentabilidade"
+            label={field(f, "sustentabilidade.eixos.label", "Eixos Temáticos")}
+            title={field(f, "sustentabilidade.eixos.titulo", "Onde os APPGGs colaboram com a sustentabilidade")}
           />
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -170,17 +174,17 @@ const SustentabilidadePage = () => {
       <section className="py-20 bg-muted/30">
         <div className="container max-w-3xl">
           <SectionTitle
-            label="Perspectiva"
-            title="Uma cidade que planeja seu futuro"
+            label={field(f, "sustentabilidade.visao.label", "Perspectiva")}
+            title={field(f, "sustentabilidade.visao.titulo", "Uma cidade que planeja seu futuro")}
           />
           <FadeIn>
             <div className="mt-12 bg-card border border-border rounded-sm p-10">
-              <p className="text-base font-light leading-relaxed text-text-body">
-                A agenda ambiental não é um tema isolado — ela atravessa todas as áreas da gestão pública. Saúde, mobilidade, habitação, educação: cada política setorial tem uma dimensão ambiental que precisa ser considerada. Os APPGGs, por sua formação transversal e capacidade de articulação, colaboram — em conjunto com as carreiras técnicas finalísticas e sob coordenação das lideranças de cada pasta — para que a sustentabilidade seja tratada como eixo estruturante dentro dos Planos de Atuação Institucional.
-              </p>
-              <p className="mt-6 text-base font-light leading-relaxed text-text-body">
-                Com o avanço das metas climáticas globais e os compromissos assumidos por São Paulo em fóruns internacionais, a demanda por trabalho colaborativo e qualificado na área ambiental só tende a crescer. Fortalecer a carreira de APPGG é também fortalecer a capacidade do município de responder, em parceria entre carreiras, aos maiores desafios do nosso tempo.
-              </p>
+              <CMSMarkdown
+                fields={f}
+                fieldKey="sustentabilidade.visao.texto"
+                fallback={"A agenda ambiental não é um tema isolado — ela atravessa todas as áreas da gestão pública. Saúde, mobilidade, habitação, educação: cada política setorial tem uma dimensão ambiental que precisa ser considerada. Os APPGGs, por sua formação transversal e capacidade de articulação, colaboram — em conjunto com as carreiras técnicas finalísticas e sob coordenação das lideranças de cada pasta — para que a sustentabilidade seja tratada como eixo estruturante dentro dos Planos de Atuação Institucional.\n\nCom o avanço das metas climáticas globais e os compromissos assumidos por São Paulo em fóruns internacionais, a demanda por trabalho colaborativo e qualificado na área ambiental só tende a crescer. Fortalecer a carreira de APPGG é também fortalecer a capacidade do município de responder, em parceria entre carreiras, aos maiores desafios do nosso tempo."}
+                className="space-y-6 text-base font-light leading-relaxed text-text-body"
+              />
             </div>
           </FadeIn>
         </div>
@@ -191,13 +195,13 @@ const SustentabilidadePage = () => {
         <div className="container text-center">
           <FadeIn>
             <p className="text-sm font-light text-text-caption mb-6">
-              Conheça os Planos de Atuação Institucional dos órgãos com projetos ambientais
+              {field(f, "sustentabilidade.cta.texto", "Conheça os Planos de Atuação Institucional dos órgãos com projetos ambientais")}
             </p>
             <Link
               to="/planos-ambientais"
               className="inline-flex items-center gap-2 text-sm font-medium text-[hsl(145,55%,32%)] hover:text-[hsl(145,45%,28%)] transition-colors duration-300"
             >
-              Ver Planos de Atuação Ambientais <ArrowRight size={16} strokeWidth={1.5} />
+              {field(f, "sustentabilidade.cta.link", "Ver Planos de Atuação Ambientais")} <ArrowRight size={16} strokeWidth={1.5} />
             </Link>
           </FadeIn>
         </div>

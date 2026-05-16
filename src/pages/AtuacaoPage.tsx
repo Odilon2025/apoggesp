@@ -4,6 +4,8 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
+import { usePageFields } from "@/hooks/useCMS";
+import { field } from "@/lib/cms";
 import { ArrowRight, FileText } from "lucide-react";
 
 interface CasoAtuacao {
@@ -428,19 +430,24 @@ const casos: CasoAtuacao[] = [
 
 const AtuacaoPage = () => {
   const [areaFiltro, setAreaFiltro] = useState("Todas");
+  const f = usePageFields("atuacao");
   const casosFiltrados = areaFiltro === "Todas" ? casos : casos.filter((c) => c.area === areaFiltro);
 
   return (
     <PageLayout>
       <PageHero
-        label="Colaboração"
-        title="Atuação dos APPGGs"
-        subtitle="Mais de 50 casos de colaboração de Analistas de Políticas Públicas e Gestão Governamental com órgãos e equipes da Prefeitura de São Paulo. Do Caderno Gestão Pública em Rede ao 2º Seminário APPGG."
+        label={field(f, "atuacao.hero.label", "Colaboração")}
+        title={field(f, "atuacao.hero.titulo", "Atuação dos APPGGs")}
+        subtitle={field(f, "atuacao.hero.subtitulo", "Mais de 50 casos de colaboração de Analistas de Políticas Públicas e Gestão Governamental com órgãos e equipes da Prefeitura de São Paulo. Do Caderno Gestão Pública em Rede ao 2º Seminário APPGG.")}
       />
 
       <section className="py-24 md:py-32 bg-card">
         <div className="container">
-          <SectionTitle label="Casos Documentados" title="Onde a Carreira Colaborou" subtitle="Cada caso abaixo registra contribuições de APPGGs em iniciativas conduzidas em conjunto com outras carreiras, gestores e parceiros institucionais, dentro das prioridades fixadas pela administração superior." />
+          <SectionTitle
+            label={field(f, "atuacao.casos.label", "Casos Documentados")}
+            title={field(f, "atuacao.casos.titulo", "Onde a Carreira Colaborou")}
+            subtitle={field(f, "atuacao.casos.subtitulo", "Cada caso abaixo registra contribuições de APPGGs em iniciativas conduzidas em conjunto com outras carreiras, gestores e parceiros institucionais, dentro das prioridades fixadas pela administração superior.")}
+          />
 
           {/* Filter */}
           <div className="flex flex-wrap gap-2 mb-12">
@@ -501,7 +508,7 @@ const AtuacaoPage = () => {
       {/* Eixos da Carreira */}
       <section className="py-24 md:py-32 bg-section-alt">
         <div className="container max-w-3xl">
-          <SectionTitle label="Vocação" title="Os Três Eixos da Colaboração" />
+          <SectionTitle label={field(f, "atuacao.eixos.label", "Vocação")} title={field(f, "atuacao.eixos.titulo", "Os Três Eixos da Colaboração")} />
           <FadeIn>
             <div className="space-y-0 border-t border-luxury-border">
               {[
@@ -534,7 +541,7 @@ const AtuacaoPage = () => {
             >
               <FileText size={16} className="text-gold" />
               <span className="text-sm font-light text-text-body group-hover:text-foreground transition-colors duration-300">
-                Conheça os Planos de Atuação Institucional de cada órgão
+                {field(f, "atuacao.cta.texto", "Conheça os Planos de Atuação Institucional de cada órgão")}
               </span>
               <ArrowRight size={14} className="text-gold group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
