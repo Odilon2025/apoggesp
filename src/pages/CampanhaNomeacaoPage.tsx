@@ -66,12 +66,13 @@ const timelineConcurso = [
 ];
 
 const CampanhaNomeacaoPage = () => {
+  const f = usePageFields("campanha-nomeacao");
   return (
     <PageLayout>
       <PageHero
-        label="Nomeação Já"
-        title="53 Aprovados. Zero Razões Para Esperar."
-        subtitle="Um concurso com 242 candidatos por vaga selecionou os melhores. 80 já servem a cidade. Faltam 53 — e 102 cargos vagos esperando por eles."
+        label={field(f, "campanha-nomeacao.hero.label", "Nomeação Já")}
+        title={field(f, "campanha-nomeacao.hero.titulo", "53 Aprovados. Zero Razões Para Esperar.")}
+        subtitle={field(f, "campanha-nomeacao.hero.subtitulo", "Um concurso com 242 candidatos por vaga selecionou os melhores. 80 já servem a cidade. Faltam 53 — e 102 cargos vagos esperando por eles.")}
       />
 
       {/* Narrativa */}
@@ -79,15 +80,12 @@ const CampanhaNomeacaoPage = () => {
         <div className="container">
           <div className="max-w-3xl">
             <FadeIn>
-              <p className="text-base md:text-lg font-light text-text-body leading-relaxed mb-6">
-                Em 2023, a Lei nº 17.913 ampliou o quadro de APPGGs para <strong className="text-foreground">300 cargos</strong> — um reconhecimento de que São Paulo precisa de mais analistas de gestão. Hoje, <strong className="text-foreground">102 desses cargos estão vagos</strong>. Um terço da capacidade projetada simplesmente não existe.
-              </p>
-              <p className="text-base md:text-lg font-light text-text-body leading-relaxed mb-6">
-                Enquanto isso, 53 profissionais aprovados no concurso mais competitivo da história da carreira — <strong className="text-foreground">242 candidatos por vaga</strong> — aguardam nomeação. São pessoas com formação em universidades de referência, experiência combinada nos setores público e privado, e domínio de ferramentas analíticas que a administração precisa.
-              </p>
-              <p className="text-base md:text-lg font-light text-text-body leading-relaxed">
-                O custo da nomeação é marginal frente ao orçamento municipal. Não nomear é aceitar que secretarias continuem operando abaixo da capacidade, que projetos estratégicos percam qualidade técnica e que a prefeitura perca competitividade na atração de talentos frente ao governo federal e ao setor privado.
-              </p>
+              <CMSMarkdown
+                fields={f}
+                fieldKey="campanha-nomeacao.narrativa.texto"
+                fallback={"Em 2023, a Lei nº 17.913 ampliou o quadro de APPGGs para **300 cargos** — um reconhecimento de que São Paulo precisa de mais analistas de gestão. Hoje, **102 desses cargos estão vagos**. Um terço da capacidade projetada simplesmente não existe.\n\nEnquanto isso, 53 profissionais aprovados no concurso mais competitivo da história da carreira — **242 candidatos por vaga** — aguardam nomeação. São pessoas com formação em universidades de referência, experiência combinada nos setores público e privado, e domínio de ferramentas analíticas que a administração precisa.\n\nO custo da nomeação é marginal frente ao orçamento municipal. Não nomear é aceitar que secretarias continuem operando abaixo da capacidade, que projetos estratégicos percam qualidade técnica e que a prefeitura perca competitividade na atração de talentos frente ao governo federal e ao setor privado."}
+                className="space-y-6 text-base md:text-lg font-light text-text-body leading-relaxed"
+              />
             </FadeIn>
           </div>
         </div>
@@ -96,7 +94,7 @@ const CampanhaNomeacaoPage = () => {
       {/* Por que nomear */}
       <section className="py-24 md:py-32 bg-section-alt">
         <div className="container">
-          <SectionTitle label="O Cenário" title="Por Que Nomear Agora" />
+          <SectionTitle label={field(f, "campanha-nomeacao.porque.label", "O Cenário")} title={field(f, "campanha-nomeacao.porque.titulo", "Por Que Nomear Agora")} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border mt-2">
             {porQueNomear.map((item, i) => (
               <FadeIn key={item.titulo} delay={i * 0.1}>
