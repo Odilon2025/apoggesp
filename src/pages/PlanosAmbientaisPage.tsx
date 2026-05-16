@@ -59,7 +59,7 @@ const PlanosAmbientaisPage = () => {
       {/* Planos */}
       <section className="py-20 md:py-28">
         <div className="container max-w-4xl">
-          <SectionTitle label="Detalhamento" title="Planos por Órgão" />
+          <SectionTitle label={field(f, "planos-ambientais.detalhamento.label", "Detalhamento")} title={field(f, "planos-ambientais.detalhamento.titulo", "Planos por Órgão")} />
 
           <div className="space-y-4">
             {planosAmbientais.map((plano, i) => (
