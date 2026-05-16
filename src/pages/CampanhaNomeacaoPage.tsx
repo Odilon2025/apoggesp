@@ -192,12 +192,15 @@ const CampanhaNomeacaoPage = () => {
           <div className="max-w-3xl">
             <FadeIn>
               <SectionTitle
-                label="Viabilidade"
-                title="O Custo da Nomeação é Marginal"
+                label={field(f, "campanha-nomeacao.viabilidade.label", "Viabilidade")}
+                title={field(f, "campanha-nomeacao.viabilidade.titulo", "O Custo da Nomeação é Marginal")}
               />
-              <p className="text-base md:text-lg font-light text-text-body leading-relaxed mt-6 mb-8">
-                Frente a um orçamento municipal de <strong className="text-foreground">R$ 135 bilhões</strong> e uma despesa de pessoal de <strong className="text-foreground">R$ 44 bilhões</strong>, o investimento na nomeação dos 53 aprovados representa uma fração ínfima — com retorno imediato em capacidade de gestão, qualidade técnica e entrega de resultados para a população.
-              </p>
+              <CMSMarkdown
+                fields={f}
+                fieldKey="campanha-nomeacao.viabilidade.texto"
+                fallback="Frente a um orçamento municipal de **R$ 135 bilhões** e uma despesa de pessoal de **R$ 44 bilhões**, o investimento na nomeação dos 53 aprovados representa uma fração ínfima — com retorno imediato em capacidade de gestão, qualidade técnica e entrega de resultados para a população."
+                className="text-base md:text-lg font-light text-text-body leading-relaxed mt-6 mb-8"
+              />
             </FadeIn>
           </div>
         </div>
@@ -209,15 +212,15 @@ const CampanhaNomeacaoPage = () => {
           <div className="max-w-xl mx-auto text-center">
             <FadeIn>
               <h2 className="text-2xl md:text-3xl font-display font-normal text-foreground leading-tight text-balance italic">
-                "Cada APPGG não nomeado é uma política pública que será coordenada com menos rigor, monitorada com menos precisão e avaliada com menos profundidade."
+                "{field(f, "campanha-nomeacao.cta.frase", "Cada APPGG não nomeado é uma política pública que será coordenada com menos rigor, monitorada com menos precisão e avaliada com menos profundidade.")}"
               </h2>
               <div className="luxury-divider mt-6 mb-4" />
-              <p className="text-[11px] font-light text-text-caption tracking-wide">Maria Camila Florêncio — Presidente da APOGESP</p>
+              <p className="text-[11px] font-light text-text-caption tracking-wide">{field(f, "campanha-nomeacao.cta.assinatura", "Maria Camila Florêncio — Presidente da APOGESP")}</p>
               <Link
                 to="/contato"
                 className="group inline-flex items-center gap-2 text-sm font-light text-accent hover:text-foreground transition-colors duration-300 mt-8"
               >
-                <span>Apoie a nomeação</span>
+                <span>{field(f, "campanha-nomeacao.cta.link", "Apoie a nomeação")}</span>
                 <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
             </FadeIn>
