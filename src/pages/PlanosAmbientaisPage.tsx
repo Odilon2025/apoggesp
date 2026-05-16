@@ -15,6 +15,7 @@ const totalAppggs = planosAmbientais.reduce((sum, p) => sum + p.appggsNecessario
 const totalProjetos = planosAmbientais.reduce((sum, p) => sum + p.projetos.length, 0);
 
 const PlanosAmbientaisPage = () => {
+  const f = usePageFields("planos-ambientais");
   const [expandido, setExpandido] = useState<string | null>(null);
 
   const toggle = (sigla: string) => {
@@ -24,9 +25,9 @@ const PlanosAmbientaisPage = () => {
   return (
     <PageLayout>
       <PageHero
-        label="Sustentabilidade"
-        title="Planos de Atuação com Características Ambientais"
-        subtitle="Recorte dos Planos de Atuação Institucional dos órgãos cuja agenda inclui projetos com dimensão ambiental — clima, infraestrutura sustentável, habitação, saneamento e agricultura urbana."
+        label={field(f, "planos-ambientais.hero.label", "Sustentabilidade")}
+        title={field(f, "planos-ambientais.hero.titulo", "Planos de Atuação com Características Ambientais")}
+        subtitle={field(f, "planos-ambientais.hero.subtitulo", "Recorte dos Planos de Atuação Institucional dos órgãos cuja agenda inclui projetos com dimensão ambiental — clima, infraestrutura sustentável, habitação, saneamento e agricultura urbana.")}
       />
 
       {/* Números */}
