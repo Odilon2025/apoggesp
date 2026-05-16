@@ -159,9 +159,9 @@ const CampanhaNomeacaoPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <SectionTitle
-                label="Processo"
-                title="Etapas do Concurso"
-                subtitle="Todas as fases foram cumpridas. Resta apenas o ato administrativo da nomeação."
+                label={field(f, "campanha-nomeacao.timeline.label", "Processo")}
+                title={field(f, "campanha-nomeacao.timeline.titulo", "Etapas do Concurso")}
+                subtitle={field(f, "campanha-nomeacao.timeline.subtitulo", "Todas as fases foram cumpridas. Resta apenas o ato administrativo da nomeação.")}
               />
             </div>
             <div className="lg:col-span-8">
