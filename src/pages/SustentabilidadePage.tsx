@@ -134,8 +134,8 @@ const SustentabilidadePage = () => {
       <section className="py-20 bg-background">
         <div className="container">
           <SectionTitle
-            label="Eixos Temáticos"
-            title="Onde os APPGGs colaboram com a sustentabilidade"
+            label={field(f, "sustentabilidade.eixos.label", "Eixos Temáticos")}
+            title={field(f, "sustentabilidade.eixos.titulo", "Onde os APPGGs colaboram com a sustentabilidade")}
           />
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
