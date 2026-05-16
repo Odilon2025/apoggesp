@@ -100,9 +100,9 @@ const CampanhaSalarialPage = () => {
       <section className="py-24 md:py-32 bg-section-alt">
         <div className="container">
           <SectionTitle
-            label="Comparativo"
-            title="O Mesmo Trabalho, Três Realidades"
-            subtitle="Remuneração por nível de progressão na carreira. APPGG (São Paulo), EPPGG (Federal, 2026) e APPGG (Niterói, com gratificação de 50%)."
+            label={field(f, "campanha-salarial.comparativo.label", "Comparativo")}
+            title={field(f, "campanha-salarial.comparativo.titulo", "O Mesmo Trabalho, Três Realidades")}
+            subtitle={field(f, "campanha-salarial.comparativo.subtitulo", "Remuneração por nível de progressão na carreira. APPGG (São Paulo), EPPGG (Federal, 2026) e APPGG (Niterói, com gratificação de 50%).")}
           />
           <FadeIn>
             <div className="overflow-x-auto mt-2">
