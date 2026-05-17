@@ -1,0 +1,31 @@
+
+insert into public.page_fields (key, pagina, tipo, descricao, value_publicado, ordem) values
+  ('diversidade.hero.label', 'diversidade', 'text', 'Rótulo do hero', 'Diversidade', 10),
+  ('diversidade.hero.titulo', 'diversidade', 'text', 'Título do hero', 'Representar a cidade ainda é uma agenda em disputa', 20),
+  ('diversidade.hero.subtitulo', 'diversidade', 'markdown', 'Subtítulo do hero', 'A APOGESP olha para a composição da carreira sem complacência. Os números mostram avanços, mas também distâncias persistentes em relação à cidade que administramos — e oscilações entre concursos que contradizem qualquer narrativa de progresso automático. Diversidade não se corrige por inércia: depende de regras de ingresso, critérios de promoção, abertura a posições decisórias e disposição institucional para revisar o que está naturalizado.', 30),
+  ('diversidade.panorama.label', 'diversidade', 'text', 'Rótulo do panorama', 'Panorama', 40),
+  ('diversidade.panorama.titulo', 'diversidade', 'text', 'Título do panorama', 'O retrato — e o que ele cobra', 50),
+  ('diversidade.contexto.label', 'diversidade', 'text', 'Rótulo do contexto', 'Contexto', 60),
+  ('diversidade.contexto.titulo', 'diversidade', 'text', 'Título do contexto', 'A neutralidade administrativa é uma ficção conveniente', 70),
+  ('diversidade.contexto.subtitulo', 'diversidade', 'markdown', 'Subtítulo do contexto', 'Critérios de elegibilidade, modelos de atendimento, fluxos de aprovação e bases de dados raramente são neutros em seus efeitos. Quando o corpo técnico que os formula reproduz uma única perspectiva social, a administração tende a confundir suas próprias zonas cegas com universalidade — e a tratar como exceção o que é, na verdade, exclusão sistemática.', 80),
+  ('diversidade.atuacao.label', 'diversidade', 'text', 'Rótulo atuação estratégica', 'Atuação estratégica', 90),
+  ('diversidade.atuacao.titulo', 'diversidade', 'text', 'Título atuação', 'Onde o APPGG faz diferença', 100),
+  ('diversidade.atuacao.subtitulo', 'diversidade', 'markdown', 'Subtítulo atuação', 'O APPGG não apenas executa políticas. Ele desenha, ajusta, mede e corrige. Em cada uma dessas funções, diversidade e capacidade técnica podem se reforçar mutuamente.', 110),
+  ('diversidade.lideranca.label', 'diversidade', 'text', 'Rótulo liderança', 'Liderança', 120),
+  ('diversidade.lideranca.titulo', 'diversidade', 'text', 'Título liderança', 'Quem decide ainda não reflete quem entra', 130),
+  ('diversidade.evolucao.label', 'diversidade', 'text', 'Rótulo evolução', 'Evolução', 140),
+  ('diversidade.evolucao.titulo', 'diversidade', 'text', 'Título evolução', 'O progresso não é linear — e os dados mostram', 150),
+  ('diversidade.presenca.label', 'diversidade', 'text', 'Rótulo presença institucional', 'Presença institucional', 160),
+  ('diversidade.presenca.titulo', 'diversidade', 'text', 'Título presença institucional', 'Distribuição desigual entre os órgãos', 170),
+  ('diversidade.fechamento.label', 'diversidade', 'text', 'Rótulo fechamento', 'Posição da APOGESP', 180),
+  ('diversidade.fechamento.titulo', 'diversidade', 'text', 'Título fechamento', 'Reconhecer o avanço sem dispensar a cobrança', 190),
+  ('diversidade.fechamento.corpo', 'diversidade', 'markdown', 'Texto de fechamento', E'Os dados desta página descrevem uma carreira que avançou — e que segue devendo. A presença de mulheres e de pessoas negras melhorou em relação a outras carreiras de Estado, mas continua aquém da composição de São Paulo. A inclusão de pessoas com deficiência permanece marginal. A liderança ainda é majoritariamente branca e masculina. E o ingresso, longe de uma trajetória ascendente, oscila concurso a concurso, em função de regras que mudam, políticas afirmativas que enfraquecem e prioridades que se deslocam.\n\nA APOGESP rejeita duas posições igualmente confortáveis: celebrar conquistas como se estivessem consolidadas e diagnosticar problemas como se fossem inevitáveis. Diversidade na carreira não é favor concedido pela administração nem ornamento de relatório institucional — é condição para que o Estado enxergue a cidade que pretende governar.\n\nContinuaremos publicando os dados, apontando os retrocessos, defendendo políticas afirmativas robustas no ingresso e cobrando que o acesso a posições de liderança siga critérios técnicos verificáveis. Representar os APPGGs também é representar a expectativa pública de que essa carreira se pareça, cada vez mais, com a São Paulo que serve.', 200),
+
+  ('planos-atuacao.hero.titulo', 'planos-atuacao', 'text', 'Título do hero', 'Planos de Atuação Institucional', 10),
+  ('planos-atuacao.hero.subtitulo', 'planos-atuacao', 'markdown', 'Subtítulo do hero', 'Os PAIs formalizam a demanda de cada órgão por APPGGs, detalhando projetos estratégicos, resultados esperados e competências necessárias. Conheça onde e como os analistas contribuem para a modernização da gestão pública em São Paulo.', 20),
+  ('planos-atuacao.stats.orgaos', 'planos-atuacao', 'text', 'Rótulo: órgãos com PAI', 'Órgãos com PAI', 30),
+  ('planos-atuacao.stats.projetos', 'planos-atuacao', 'text', 'Rótulo: projetos estratégicos', 'Projetos Estratégicos', 40),
+  ('planos-atuacao.stats.appggs', 'planos-atuacao', 'text', 'Rótulo: APPGGs demandados', 'APPGGs Demandados', 50),
+  ('planos-atuacao.detalhamento.label', 'planos-atuacao', 'text', 'Rótulo do detalhamento', 'Detalhamento', 60),
+  ('planos-atuacao.detalhamento.titulo', 'planos-atuacao', 'text', 'Título do detalhamento', 'Planos por Órgão', 70)
+on conflict (key) do nothing;
