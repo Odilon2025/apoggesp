@@ -3,6 +3,8 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
+import { usePageFields } from "@/hooks/useCMS";
+import { field } from "@/lib/cms";
 import { Building2, ChevronDown, ChevronUp, Target, Users } from "lucide-react";
 import { snapshot } from "@/data/snapshot";
 
@@ -429,6 +431,7 @@ const totalProjetos = planos.reduce((sum, p) => sum + p.projetos.length, 0);
 
 const PlanosAtuacaoPage = () => {
   const [expandido, setExpandido] = useState<string | null>(null);
+  const f = usePageFields("planos-atuacao");
 
   const toggle = (sigla: string) => {
     setExpandido(expandido === sigla ? null : sigla);
@@ -437,8 +440,8 @@ const PlanosAtuacaoPage = () => {
   return (
     <PageLayout>
       <PageHero
-        title="Planos de Atuação Institucional"
-        subtitle="Os PAIs formalizam a demanda de cada órgão por APPGGs, detalhando projetos estratégicos, resultados esperados e competências necessárias. Conheça onde e como os analistas contribuem para a modernização da gestão pública em São Paulo."
+        title={field(f, "planos-atuacao.hero.titulo", "Planos de Atuação Institucional")}
+        subtitle={field(f, "planos-atuacao.hero.subtitulo", "Os PAIs formalizam a demanda de cada órgão por APPGGs, detalhando projetos estratégicos, resultados esperados e competências necessárias. Conheça onde e como os analistas contribuem para a modernização da gestão pública em São Paulo.")}
       />
 
       {/* Números */}
@@ -448,19 +451,19 @@ const PlanosAtuacaoPage = () => {
             <FadeIn>
               <div>
                 <span className="text-3xl md:text-4xl font-display text-foreground">{planos.length}</span>
-                <p className="text-xs font-light text-text-caption mt-1 tracking-wide uppercase">Órgãos com PAI</p>
+                <p className="text-xs font-light text-text-caption mt-1 tracking-wide uppercase">{field(f, "planos-atuacao.stats.orgaos", "Órgãos com PAI")}</p>
               </div>
             </FadeIn>
             <FadeIn delay={0.1}>
               <div>
                 <span className="text-3xl md:text-4xl font-display text-foreground">{totalProjetos}</span>
-                <p className="text-xs font-light text-text-caption mt-1 tracking-wide uppercase">Projetos Estratégicos</p>
+                <p className="text-xs font-light text-text-caption mt-1 tracking-wide uppercase">{field(f, "planos-atuacao.stats.projetos", "Projetos Estratégicos")}</p>
               </div>
             </FadeIn>
             <FadeIn delay={0.2}>
               <div>
                 <span className="text-3xl md:text-4xl font-display text-foreground">{totalAppggs}</span>
-                <p className="text-xs font-light text-text-caption mt-1 tracking-wide uppercase">APPGGs Demandados</p>
+                <p className="text-xs font-light text-text-caption mt-1 tracking-wide uppercase">{field(f, "planos-atuacao.stats.appggs", "APPGGs Demandados")}</p>
               </div>
             </FadeIn>
           </div>
@@ -473,7 +476,7 @@ const PlanosAtuacaoPage = () => {
       {/* Planos */}
       <section className="py-20 md:py-28">
         <div className="container max-w-4xl">
-          <SectionTitle label="Detalhamento" title="Planos por Órgão" />
+          <SectionTitle label={field(f, "planos-atuacao.detalhamento.label", "Detalhamento")} title={field(f, "planos-atuacao.detalhamento.titulo", "Planos por Órgão")} />
 
           <div className="space-y-4">
             {planos.map((plano, i) => (
