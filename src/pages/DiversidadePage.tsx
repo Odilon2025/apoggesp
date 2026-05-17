@@ -2,6 +2,9 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
+import CMSMarkdown from "@/components/CMSMarkdown";
+import { usePageFields } from "@/hooks/useCMS";
+import { field } from "@/lib/cms";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Users, TrendingUp, Building2, Award, Shield, Target, BarChart3, Scale } from "lucide-react";
@@ -59,20 +62,22 @@ const ProgressBar = ({ value, color, delay = 0 }: { value: number; color: string
   );
 };
 
-const DiversidadePage = () => (
+const DiversidadePage = () => {
+  const f = usePageFields("diversidade");
+  return (
   <PageLayout>
     <PageHero
-      label="Diversidade"
-      title="Representar a cidade ainda é uma agenda em disputa"
-      subtitle="A APOGESP olha para a composição da carreira sem complacência. Os números mostram avanços, mas também distâncias persistentes em relação à cidade que administramos — e oscilações entre concursos que contradizem qualquer narrativa de progresso automático. Diversidade não se corrige por inércia: depende de regras de ingresso, critérios de promoção, abertura a posições decisórias e disposição institucional para revisar o que está naturalizado."
+      label={field(f, "diversidade.hero.label", "Diversidade")}
+      title={field(f, "diversidade.hero.titulo", "Representar a cidade ainda é uma agenda em disputa")}
+      subtitle={field(f, "diversidade.hero.subtitulo", "A APOGESP olha para a composição da carreira sem complacência. Os números mostram avanços, mas também distâncias persistentes em relação à cidade que administramos — e oscilações entre concursos que contradizem qualquer narrativa de progresso automático. Diversidade não se corrige por inércia: depende de regras de ingresso, critérios de promoção, abertura a posições decisórias e disposição institucional para revisar o que está naturalizado.")}
     />
 
     {/* Indicadores Gerais */}
     <section className="py-20 md:py-28">
       <div className="container text-justify">
         <SectionTitle
-          label="Panorama"
-          title="O retrato — e o que ele cobra"
+          label={field(f, "diversidade.panorama.label", "Panorama")}
+          title={field(f, "diversidade.panorama.titulo", "O retrato — e o que ele cobra")}
           subtitle={`A carreira reúne ${snapshot.total} gestores públicos municipais. Em uma cidade onde a maioria da população é negra, ${fmtPct(ind.negrosPct)} de APPGGs negros e apenas ${ind.pcd} pessoas com deficiência (${fmtPct(ind.pcdPct)}) ainda não traduzem a São Paulo real. O dado é ponto de partida, não conquista.`}
           center
         />
@@ -104,9 +109,9 @@ const DiversidadePage = () => (
     <section className="py-20 md:py-28 bg-section-alt">
       <div className="container text-justify">
         <SectionTitle
-          label="Contexto"
-          title="A neutralidade administrativa é uma ficção conveniente"
-          subtitle="Critérios de elegibilidade, modelos de atendimento, fluxos de aprovação e bases de dados raramente são neutros em seus efeitos. Quando o corpo técnico que os formula reproduz uma única perspectiva social, a administração tende a confundir suas próprias zonas cegas com universalidade — e a tratar como exceção o que é, na verdade, exclusão sistemática."
+          label={field(f, "diversidade.contexto.label", "Contexto")}
+          title={field(f, "diversidade.contexto.titulo", "A neutralidade administrativa é uma ficção conveniente")}
+          subtitle={field(f, "diversidade.contexto.subtitulo", "Critérios de elegibilidade, modelos de atendimento, fluxos de aprovação e bases de dados raramente são neutros em seus efeitos. Quando o corpo técnico que os formula reproduz uma única perspectiva social, a administração tende a confundir suas próprias zonas cegas com universalidade — e a tratar como exceção o que é, na verdade, exclusão sistemática.")}
         />
         <div className="grid md:grid-cols-2 gap-8 max-w-3xl">
           <FadeIn delay={0.05}>
@@ -141,9 +146,9 @@ const DiversidadePage = () => (
     <section className="py-20 md:py-28">
       <div className="container text-justify">
         <SectionTitle
-          label="Atuação estratégica"
-          title="Onde o APPGG faz diferença"
-          subtitle="O APPGG não apenas executa políticas. Ele desenha, ajusta, mede e corrige. Em cada uma dessas funções, diversidade e capacidade técnica podem se reforçar mutuamente."
+          label={field(f, "diversidade.atuacao.label", "Atuação estratégica")}
+          title={field(f, "diversidade.atuacao.titulo", "Onde o APPGG faz diferença")}
+          subtitle={field(f, "diversidade.atuacao.subtitulo", "O APPGG não apenas executa políticas. Ele desenha, ajusta, mede e corrige. Em cada uma dessas funções, diversidade e capacidade técnica podem se reforçar mutuamente.")}
         />
         <div className="grid sm:grid-cols-2 gap-6 max-w-4xl">
           {eixosAtuacao.map((eixo, i) => (
@@ -167,8 +172,8 @@ const DiversidadePage = () => (
     <section className="py-20 md:py-28 bg-section-alt">
       <div className="container text-justify">
         <SectionTitle
-          label="Liderança"
-          title="Quem decide ainda não reflete quem entra"
+          label={field(f, "diversidade.lideranca.label", "Liderança")}
+          title={field(f, "diversidade.lideranca.titulo", "Quem decide ainda não reflete quem entra")}
           subtitle="A presença de mulheres e pessoas negras em cargos de liderança é um dos testes mais duros da maturidade institucional. Os números abaixo mostram avanços relativos — mulheres e pessoas negras estão proporcionalmente mais presentes na liderança do que na carreira como um todo. Mas isso não autoriza autocomplacência: liderança ainda é majoritariamente branca e masculina, e o acesso a essas posições segue dependente de redes informais que a APOGESP entende como objeto legítimo de escrutínio."
         />
         <div className="grid md:grid-cols-2 gap-8 max-w-2xl">
@@ -210,8 +215,8 @@ const DiversidadePage = () => (
     <section className="py-20 md:py-28">
       <div className="container text-justify">
         <SectionTitle
-          label="Evolução"
-          title="O progresso não é linear — e os dados mostram"
+          label={field(f, "diversidade.evolucao.label", "Evolução")}
+          title={field(f, "diversidade.evolucao.titulo", "O progresso não é linear — e os dados mostram")}
           subtitle="A leitura honesta das coortes desautoriza qualquer narrativa de avanço automático. A representatividade racial caiu da geração pioneira (37,5%) para os concursos de 2021–2022 (29,2%) e 2024 (25,5%), recuperando-se em parte em 2026 (35,3%) — ainda abaixo do patamar inicial e muito distante da composição racial da cidade. Cada concurso é uma decisão política sobre quem o Estado escolhe formar."
         />
         <div className="space-y-6 max-w-3xl">
@@ -272,8 +277,8 @@ const DiversidadePage = () => (
     <section className="py-20 md:py-28 bg-section-alt">
       <div className="container text-justify">
         <SectionTitle
-          label="Presença institucional"
-          title="Distribuição desigual entre os órgãos"
+          label={field(f, "diversidade.presenca.label", "Presença institucional")}
+          title={field(f, "diversidade.presenca.titulo", "Distribuição desigual entre os órgãos")}
           subtitle={`Estar em ${snapshot.totalOrgaos} órgãos não significa estar bem distribuído em todos. Os números abaixo expõem assimetrias relevantes: secretarias estratégicas para o orçamento, o planejamento e o ambiente apresentam percentuais de mulheres e de pessoas negras visivelmente inferiores aos da carreira como um todo. Onde a diversidade rareia, costumam rarear também as perguntas que ela ajudaria a formular.`}
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl">
@@ -324,26 +329,24 @@ const DiversidadePage = () => (
         <div className="max-w-2xl mx-auto text-center">
           <FadeIn>
             <span className="text-[10px] font-sans font-medium tracking-luxury uppercase text-text-caption block mb-6">
-              Posição da APOGESP
+              {field(f, "diversidade.fechamento.label", "Posição da APOGESP")}
             </span>
             <h2 className="text-2xl md:text-3xl font-display text-text-display leading-tight text-balance mb-6">
-              Reconhecer o avanço sem dispensar a cobrança
+              {field(f, "diversidade.fechamento.titulo", "Reconhecer o avanço sem dispensar a cobrança")}
             </h2>
-            <p className="text-sm text-text-body font-light leading-relaxed mb-4 text-justify">
-              Os dados desta página descrevem uma carreira que avançou — e que segue devendo. A presença de mulheres e de pessoas negras melhorou em relação a outras carreiras de Estado, mas continua aquém da composição de São Paulo. A inclusão de pessoas com deficiência permanece marginal. A liderança ainda é majoritariamente branca e masculina. E o ingresso, longe de uma trajetória ascendente, oscila concurso a concurso, em função de regras que mudam, políticas afirmativas que enfraquecem e prioridades que se deslocam.
-            </p>
-            <p className="text-sm text-text-body font-light leading-relaxed mb-4 text-justify">
-              A APOGESP rejeita duas posições igualmente confortáveis: celebrar conquistas como se estivessem consolidadas e diagnosticar problemas como se fossem inevitáveis. Diversidade na carreira não é favor concedido pela administração nem ornamento de relatório institucional — é condição para que o Estado enxergue a cidade que pretende governar.
-            </p>
-            <p className="text-sm text-text-body font-light leading-relaxed text-justify">
-              Continuaremos publicando os dados, apontando os retrocessos, defendendo políticas afirmativas robustas no ingresso e cobrando que o acesso a posições de liderança siga critérios técnicos verificáveis. Representar os APPGGs também é representar a expectativa pública de que essa carreira se pareça, cada vez mais, com a São Paulo que serve.
-            </p>
+            <CMSMarkdown
+              fields={f}
+              fieldKey="diversidade.fechamento.corpo"
+              fallback={"Os dados desta página descrevem uma carreira que avançou — e que segue devendo. A presença de mulheres e de pessoas negras melhorou em relação a outras carreiras de Estado, mas continua aquém da composição de São Paulo. A inclusão de pessoas com deficiência permanece marginal. A liderança ainda é majoritariamente branca e masculina. E o ingresso, longe de uma trajetória ascendente, oscila concurso a concurso, em função de regras que mudam, políticas afirmativas que enfraquecem e prioridades que se deslocam.\n\nA APOGESP rejeita duas posições igualmente confortáveis: celebrar conquistas como se estivessem consolidadas e diagnosticar problemas como se fossem inevitáveis. Diversidade na carreira não é favor concedido pela administração nem ornamento de relatório institucional — é condição para que o Estado enxergue a cidade que pretende governar.\n\nContinuaremos publicando os dados, apontando os retrocessos, defendendo políticas afirmativas robustas no ingresso e cobrando que o acesso a posições de liderança siga critérios técnicos verificáveis. Representar os APPGGs também é representar a expectativa pública de que essa carreira se pareça, cada vez mais, com a São Paulo que serve."}
+              className="text-sm text-text-body font-light leading-relaxed mb-4 text-justify space-y-4 prose-p:mb-4"
+            />
             <div className="mt-8 luxury-divider" />
           </FadeIn>
         </div>
       </div>
     </section>
   </PageLayout>
-);
+  );
+};
 
 export default DiversidadePage;
