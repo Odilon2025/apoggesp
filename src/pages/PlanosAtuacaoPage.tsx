@@ -3,8 +3,8 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
-import { usePageFields } from "@/hooks/useCMS";
-import { field } from "@/lib/cms";
+import { usePageFields, useCMSList } from "@/hooks/useCMS";
+import { field, getPlanos } from "@/lib/cms";
 import { Building2, ChevronDown, ChevronUp, Target, Users } from "lucide-react";
 import { snapshot } from "@/data/snapshot";
 
@@ -426,12 +426,14 @@ const planos: PlanoAtuacao[] = [
   },
 ];
 
-const totalAppggs = planos.reduce((sum, p) => sum + p.appggsNecessarios, 0);
-const totalProjetos = planos.reduce((sum, p) => sum + p.projetos.length, 0);
+const planosFallback = planos;
 
 const PlanosAtuacaoPage = () => {
   const [expandido, setExpandido] = useState<string | null>(null);
   const f = usePageFields("planos-atuacao");
+  const planosLista = useCMSList<PlanoAtuacao>(getPlanos as any, planosFallback);
+  const totalAppggs = planosLista.reduce((s, p) => s + (p.appggsNecessarios || 0), 0);
+  const totalProjetos = planosLista.reduce((s, p) => s + (p.projetos?.length || 0), 0);
 
   const toggle = (sigla: string) => {
     setExpandido(expandido === sigla ? null : sigla);
@@ -450,7 +452,7 @@ const PlanosAtuacaoPage = () => {
           <div className="grid grid-cols-3 gap-8 text-center">
             <FadeIn>
               <div>
-                <span className="text-3xl md:text-4xl font-display text-foreground">{planos.length}</span>
+                <span className="text-3xl md:text-4xl font-display text-foreground">{planosLista.length}</span>
                 <p className="text-xs font-light text-text-caption mt-1 tracking-wide uppercase">{field(f, "planos-atuacao.stats.orgaos", "Órgãos com PAI")}</p>
               </div>
             </FadeIn>
@@ -479,7 +481,7 @@ const PlanosAtuacaoPage = () => {
           <SectionTitle label={field(f, "planos-atuacao.detalhamento.label", "Detalhamento")} title={field(f, "planos-atuacao.detalhamento.titulo", "Planos por Órgão")} />
 
           <div className="space-y-4">
-            {planos.map((plano, i) => (
+            {planosLista.map((plano, i) => (
               <FadeIn key={plano.sigla} delay={i * 0.03}>
                 <div className="border border-luxury-border rounded-sm overflow-hidden">
                   {/* Header */}
@@ -558,7 +560,7 @@ const PlanosAtuacaoPage = () => {
           <FadeIn>
             <p className="text-xs font-medium tracking-luxury uppercase text-gold mb-4">Presença institucional</p>
             <h2 className="text-2xl md:text-3xl font-display font-normal text-foreground mb-4">
-              {planos.length} órgãos com planos formalizados
+              {planosLista.length} órgãos com planos formalizados
             </h2>
             <p className="text-sm font-light text-text-body leading-relaxed max-w-xl mx-auto">
               Os Planos de Atuação Institucional são instrumentos vivos. Cada PAI formaliza a demanda
