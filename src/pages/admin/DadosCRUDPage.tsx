@@ -115,7 +115,12 @@ const Inner = () => {
   const criarNovo = async () => {
     const ordem = novaOrdem || (rows.length ? rows[rows.length - 1].ordem + 10 : 10);
     const dados: any = {};
-    for (const c of schema.campos) dados[c.key] = c.type === "number" ? 0 : "";
+    for (const c of schema.campos) {
+      if (c.type === "number") dados[c.key] = 0;
+      else if (c.type === "boolean") dados[c.key] = false;
+      else if (c.type === "json") dados[c.key] = [];
+      else dados[c.key] = "";
+    }
     const { data, error } = await supabase
       .from(schema.table as any)
       .insert({
@@ -148,6 +153,37 @@ const Inner = () => {
             <option key={o} value={o}>{o}</option>
           ))}
         </select>
+      );
+    }
+    if (campo.type === "boolean") {
+      return (
+        <label className="flex items-center gap-2 text-sm font-light">
+          <input
+            type="checkbox"
+            checked={!!val}
+            onChange={(e) => setDraft({ ...draft, [campo.key]: e.target.checked })}
+          />
+          Sim
+        </label>
+      );
+    }
+    if (campo.type === "json") {
+      const text = typeof val === "string" ? val : JSON.stringify(val ?? [], null, 2);
+      return (
+        <textarea
+          value={text}
+          rows={campo.rows ?? 6}
+          onChange={(e) => {
+            const raw = e.target.value;
+            try {
+              const parsed = JSON.parse(raw);
+              setDraft({ ...draft, [campo.key]: parsed });
+            } catch {
+              setDraft({ ...draft, [campo.key]: raw });
+            }
+          }}
+          className="w-full bg-transparent border border-luxury-border px-3 py-2 text-xs font-mono"
+        />
       );
     }
     if (campo.type === "textarea") {
