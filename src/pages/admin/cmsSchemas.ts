@@ -2,7 +2,7 @@
  * Esquemas dos dados estruturados gerenciados pelo CMS.
  * Cada tabela mapeia para uma lista de campos do JSON `dados`.
  */
-export type FieldType = "text" | "textarea" | "number" | "url" | "select";
+export type FieldType = "text" | "textarea" | "number" | "url" | "select" | "boolean" | "json";
 
 export interface FieldDef {
   key: string;
@@ -47,14 +47,17 @@ export const TABELAS: Record<string, TableSchema> = {
   },
   planos_itens: {
     table: "planos_itens",
-    titulo: "Planos estratégicos",
-    descricao: "Planos de atuação por órgão.",
+    titulo: "Planos de Atuação Institucional",
+    descricao: "PAI por órgão — descrição, vigência, projetos, destaques e marcação ambiental.",
     campos: [
       { key: "sigla", label: "Sigla", type: "text", required: true },
       { key: "orgao", label: "Órgão", type: "text", required: true },
       { key: "descricao", label: "Descrição", type: "textarea", rows: 4 },
       { key: "vigencia", label: "Vigência", type: "text" },
       { key: "appggsNecessarios", label: "APPGGs necessários", type: "number" },
+      { key: "projetos", label: "Projetos (JSON: [{\"nome\":\"…\",\"descricao\":\"…\"}])", type: "json", rows: 10 },
+      { key: "destaques", label: "Destaques (JSON: [\"tag1\",\"tag2\"])", type: "json", rows: 3 },
+      { key: "ambiental", label: "Faz parte da agenda ambiental?", type: "boolean" },
     ],
     resumo: (d) => `${d?.sigla} — ${d?.orgao ?? ""}`,
   },
