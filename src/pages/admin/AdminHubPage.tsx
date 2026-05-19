@@ -14,6 +14,9 @@ const Inner = () => {
     { to: "/admin/dados/planos_itens", titulo: "Planos estratégicos", desc: "Planos de atuação por órgão." },
     { to: "/admin/dados/publicacoes_itens", titulo: "Publicações", desc: "Lista de publicações exibidas no site." },
     { to: "/admin/dados/atuacao_destaques", titulo: "Destaques de atuação", desc: "Cards de área de atuação na home." },
+    { to: "/admin/dados/casos_atuacao", titulo: "Casos de atuação", desc: "Casos documentados exibidos na página Atuação." },
+    { to: "/admin/dados/observatorio_indicadores", titulo: "Observatório — Indicadores", desc: "Números do Observatório das Evasões." },
+    { to: "/admin/dados/observatorio_categorias", titulo: "Observatório — Categorias", desc: "Eixos de análise do Observatório das Evasões." },
   ];
   return (
     <section className="py-16 bg-card min-h-screen">
