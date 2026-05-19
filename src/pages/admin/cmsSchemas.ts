@@ -83,4 +83,39 @@ export const TABELAS: Record<string, TableSchema> = {
     ],
     resumo: (d) => `${d?.area ?? ""}`,
   },
+  casos_atuacao: {
+    table: "casos_atuacao",
+    titulo: "Casos de atuação",
+    descricao: "Casos documentados de colaboração dos APPGGs exibidos na página Atuação.",
+    campos: [
+      { key: "titulo", label: "Título", type: "text", required: true },
+      { key: "area", label: "Área", type: "text", required: true },
+      { key: "contexto", label: "Contexto", type: "textarea", rows: 4, required: true },
+      { key: "atuacao", label: "Colaboração dos APPGGs", type: "textarea", rows: 4, required: true },
+      { key: "resultados", label: "Resultados coletivos", type: "textarea", rows: 4, required: true },
+    ],
+    resumo: (d) => `[${d?.area ?? ""}] ${d?.titulo ?? ""}`,
+  },
+  observatorio_indicadores: {
+    table: "observatorio_indicadores",
+    titulo: "Observatório — Indicadores",
+    descricao: "Números/indicadores exibidos na página Observatório das Evasões.",
+    campos: [
+      { key: "num", label: "Número", type: "text", required: true },
+      { key: "label", label: "Descrição", type: "text", required: true },
+    ],
+    resumo: (d) => `${d?.num ?? "—"} · ${d?.label ?? ""}`,
+  },
+  observatorio_categorias: {
+    table: "observatorio_categorias",
+    titulo: "Observatório — Categorias",
+    descricao: "Eixos de análise exibidos na página Observatório das Evasões.",
+    campos: [
+      { key: "icon", label: "Ícone (lucide)", type: "select", options: ["LogOut", "Clock", "Users", "TrendingDown", "AlertTriangle", "FileText"], required: true },
+      { key: "titulo", label: "Título", type: "text", required: true },
+      { key: "descricao", label: "Descrição", type: "textarea", rows: 4, required: true },
+      { key: "foco", label: "Focos (JSON: [\"item1\",\"item2\"])", type: "json", rows: 6, required: true },
+    ],
+    resumo: (d) => `${d?.titulo ?? ""}`,
+  },
 };

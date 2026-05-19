@@ -69,6 +69,9 @@ export const getAtos = () => fetchList<{ categoria: string; titulo: string; desc
 export const getPlanos = () => fetchList<any>("planos_itens");
 export const getPublicacoes = () => fetchList<{ titulo: string; tipo: string; ano: string; url?: string }>("publicacoes_itens");
 export const getAtuacaoDestaques = () => fetchList<{ area: string; desc: string }>("atuacao_destaques");
+export const getCasosAtuacao = () => fetchList<{ titulo: string; area: string; contexto: string; atuacao: string; resultados: string }>("casos_atuacao");
+export const getObservatorioIndicadores = () => fetchList<{ num: string; label: string }>("observatorio_indicadores");
+export const getObservatorioCategorias = () => fetchList<{ icon: string; titulo: string; descricao: string; foco: string[] }>("observatorio_categorias");
 
 // --- Snapshot (singleton) ---
 export async function getSnapshot<T = any>(): Promise<T | null> {

@@ -1,139 +1,67 @@
-## Objetivo
+## Status atual da migração para o CMS
 
-Tirar do código todo o texto institucional e os dados estruturados para que editores autorizados (mesma whitelist de Notícias) possam alterá-los pelo painel `/admin`, sem mexer no repositório.
+### Páginas com textos já no CMS (OK)
+- Home, APOGESP, Contato, Carreira, Diversidade, Sustentabilidade, Publicações, Planos Ambientais, Campanha Salarial, Campanha Nomeação.
 
-Modelo: **editor por campo (formulário)** + fluxo **rascunho → publicar** + CRUDs próprios para listas estruturadas.
-
----
-
-## 1. O que vira editável
-
-### A. Conteúdo textual das páginas (chave→valor por campo)
-Páginas: Home (hero, mensagem da presidente, labels de seções), APOGESP, Atuação, Carreira (textos introdutórios, não os dashboards), Contato, Diversidade, Sustentabilidade, Campanha Salarial, Campanha Nomeação, Observatório das Evasões, Publicações (intro), Planos (intro).
-
-Cada página tem um conjunto de campos nomeados, ex.:
-- `home.hero.eyebrow` → "Associação dos APPGGs — São Paulo"
-- `home.hero.title` → "Políticas Públicas, Gestão Governamental"
-- `home.hero.subtitle` → "Uma década contribuindo…"
-- `home.presidente.frase` → "Fortalecer a carreira…"
-- `apogesp.intro.titulo`, `apogesp.intro.corpo`, …
-
-### B. Dados estruturados (CRUD com tela própria)
-- **Snapshot da carreira** (`snapshot.json`) — campos numéricos + mês de referência.
-- **Cronologia** (`cronologia.json`) — lista (ano, texto).
-- **Atos normativos** (`atosNormativos.json`) — principal + alterações + anexos + correlações (cada item: título, descrição, url).
-- **Planos estratégicos** (`planos.ts`) — itens com título, descrição, link.
-- **Publicações recentes** (lista que aparece em Publicações e na home).
-- **Atuação destaques** (3 cards de área/descrição da home).
+### Dados estruturados já no CMS (CRUD no admin)
+- `cronologia_itens`, `atos_normativos_itens`, `planos_itens`, `publicacoes_itens`, `atuacao_destaques`, `snapshot_carreira`.
 
 ---
 
-## 2. Backend (Lovable Cloud)
+## O que ainda falta refatorar
 
-### Tabelas
+### 1. AtuacaoPage — lista de casos (alta prioridade)
+Os textos do hero e seções já vêm do CMS, **mas** os ~50 cases documentados (`casos: CasoAtuacao[]`) e a lista de filtros `areas` continuam hardcoded no arquivo (linhas 19–428, ~400 linhas).
 
-**`page_fields`** — chave/valor por campo
-- `key` (text, PK) — ex.: `home.hero.title`
-- `value_publicado` (text)
-- `value_rascunho` (text)
-- `tipo` (enum: `text`, `markdown`) — controla o renderer no front
-- `descricao` (text) — ajuda para o editor ("Título principal do hero da home")
-- `pagina` (text) — agrupador no admin ("Home", "APOGESP", …)
-- `ordem` (int) — ordem de exibição no formulário
-- `updated_at`, `updated_by` (text email)
+**Proposta**: criar tabela `casos_atuacao` (mesmo padrão dos outros: `dados_publicado`/`dados_rascunho`/`ordem`/`publicado`/`deletado`), seedar com os 50 casos atuais, adicionar schema no admin (`cmsSchemas.ts`) e consumir via `useCMSList`. A lista `areas` pode ser derivada dinamicamente dos casos.
 
-**`snapshot_carreira`** — uma única linha (singleton, `id = 'current'`)
-- Campos numéricos do snapshot + `mes_referencia` + versões `_rascunho` para os mesmos campos + flag `tem_rascunho`.
+### 2. PlanosAtuacaoPage — textos das seções
+Já consome `planos_itens` da base, mas a maioria dos títulos/labels/explicações das seções intermediárias (introdução, legenda, CTAs) ainda está hardcoded (apenas hero e stats foram migrados).
 
-**`cronologia_itens`**
-- `id`, `ano` (text), `texto` (text), `ordem` (int), `publicado` (bool), `rascunho_ano`, `rascunho_texto`.
+**Proposta**: seedar os campos restantes em `page_fields` (pagina = `planos-atuacao`) e trocar strings por `field(f, ...)` / `<CMSMarkdown />`.
 
-**`atos_normativos_itens`**
-- `id`, `categoria` (enum: `principal`, `alteracao`, `anexo`, `correlacao`), `titulo`, `descricao`, `url`, `ordem`, `publicado`, campos `rascunho_*`.
+### 3. ObservatorioEvasoesPage — 100% hardcoded
+251 linhas sem nenhum uso do CMS. Contém:
+- Hero e textos institucionais
+- 4 indicadores (`indicadores`)
+- 4 categorias com `icon` + título + descrição + lista de focos (`categorias`)
+- Seções de metodologia/CTA
 
-**`planos_itens`**, **`publicacoes_itens`**, **`atuacao_destaques`** — mesmo padrão (campos próprios + versão rascunho + `publicado`).
+**Proposta**:
+- Textos institucionais → `page_fields` (pagina = `observatorio-evasoes`).
+- Indicadores → tabela `observatorio_indicadores` (num + label).
+- Categorias → tabela `observatorio_categorias` (icon string + título + descrição + focos[]).
+- Schemas correspondentes no admin.
 
-> Optamos pelo padrão **duas colunas (publicado + rascunho) na mesma linha** (em vez de tabela de versões) para manter simples e barato. Quando o editor clica "Publicar", os campos `_rascunho` são copiados para os `publicado`.
-
-### RLS
-- **Leitura pública:** anon e authenticated leem apenas as colunas/registros publicados (via views `v_*_publico`).
-- **Leitura/escrita completa:** apenas `is_editor(auth.jwt()->>'email')` (função já existe).
-
-### Sem nova auth
-Reutiliza a whitelist `noticias_editores` e o magic link já implementado. (Renomeio mental: "Editores" cobre notícias **e** conteúdo do site.)
+### 4. AreaAssociadoPage — fora do escopo
+Já é uma página minimalista de boas-vindas + logout. Sugestão: deixar como está (não tem conteúdo institucional a editar). Se quiser, dá pra mover só os 2-3 textos curtos para `page_fields`.
 
 ---
 
-## 3. Frontend público
+## Plano sugerido de execução (3 entregas)
 
-Cada página passa a buscar seu conteúdo do backend, com **fallback para os textos atuais hardcoded** (assim o site nunca quebra se a tabela estiver vazia).
+```text
+Entrega A — Atuação (casos)
+  • migration: criar tabela casos_atuacao + RLS
+  • seed: importar os 50 casos atuais
+  • admin: adicionar schema em cmsSchemas.ts (categoria, ano, titulo, area, atuacao, resultados, etc.)
+  • frontend: trocar `casos`/`areas` por useCMSList; derivar filtros
 
-- `src/lib/cms.ts` com:
-  - `getFields(pagina)` → `Record<key, value>` (apenas publicado).
-  - `getSnapshot()`, `getCronologia()`, `getAtos()`, `getPlanos()`, `getPublicacoes()`, `getAtuacaoDestaques()`.
-  - Cache simples em memória por sessão (evita refetch entre rotas).
-- Componente `<CMSText fieldKey="home.hero.title" fallback="…" />` para campos curtos.
-- Componente `<CMSMarkdown fieldKey="…" fallback="…" />` para corpos longos (usa `react-markdown` já instalado).
-- Páginas que hoje importam `snapshot.ts`, `cronologia.ts`, `atosNormativos.ts`, `planos.ts` passam a buscar via React Query. Os arquivos JSON viram **seed inicial** (script popula o backend) e **fallback de build**.
+Entrega B — Planos de Atuação (textos)
+  • seed page_fields para hero secundário, intro, legenda, CTAs
+  • refatorar PlanosAtuacaoPage para usar field()/CMSMarkdown
 
----
-
-## 4. Painel admin
-
-Nova navegação dentro de `/admin`:
-
-```
-/admin
-├── /admin/noticias              (já existe)
-├── /admin/conteudo              ← novo: lista de páginas com campos editáveis
-│   └── /admin/conteudo/:pagina  ← formulário com todos os campos da página
-├── /admin/snapshot              ← form único do snapshot
-├── /admin/cronologia            ← lista + adicionar/editar/excluir/reordenar
-├── /admin/atos                  ← lista por categoria
-├── /admin/planos                ← lista
-├── /admin/publicacoes           ← lista
-└── /admin/atuacao-destaques     ← lista (3 itens fixos)
+Entrega C — Observatório de Evasões (completo)
+  • migration: observatorio_indicadores + observatorio_categorias
+  • seed page_fields (textos) + dados das tabelas
+  • admin: 2 schemas novos
+  • refatorar ObservatorioEvasoesPage
 ```
 
-### Padrão de cada tela
-- **Banner de status:** "Você tem alterações em rascunho não publicadas."
-- **Botões:** `Salvar rascunho` / `Publicar alterações` / `Descartar rascunho`.
-- **Diff visual simples** (publicado × rascunho lado a lado nos campos modificados).
-- Validação com `zod` (limites de tamanho, URL válida em links).
-
-### Layout do formulário de conteúdo
-Para `/admin/conteudo/:pagina`, renderiza dinamicamente cada campo conforme `tipo`:
-- `text` → `<Input>` (com contador de caracteres)
-- `markdown` → `<Textarea>` + preview com `react-markdown`
+Cada entrega é independente — posso ir em qualquer ordem.
 
 ---
 
-## 5. Migração e seed
+## Pergunta
 
-1. Migration cria todas as tabelas + RLS + função helper para "publicar rascunho" (`publish_field(key)`, `publish_all_drafts(pagina)`).
-2. Script de seed (executado via SQL) lê os valores atuais hardcoded e insere em `page_fields`, `snapshot_carreira`, `cronologia_itens`, etc., já marcados como **publicado** (sem rascunho pendente).
-3. Componentes do front são refatorados para consumir o backend, mantendo os JSONs como fallback de segurança até validarmos.
-
----
-
-## 6. Ordem de execução
-
-1. **Migration** das tabelas + RLS + funções `publish_*`. (Você confirma.)
-2. **Seed inicial** copiando todo o texto atual para o backend.
-3. **`src/lib/cms.ts`** + componentes `<CMSText>` / `<CMSMarkdown>`.
-4. **Refator das páginas** (uma por vez, começando pela Home) para consumir o CMS.
-5. **Painel admin**: tela de conteúdo por página, depois CRUDs estruturados (snapshot → cronologia → atos → planos → publicações → atuação).
-6. Smoke test com você logado: editar um campo, publicar, conferir no site.
-
----
-
-## 7. Detalhes técnicos relevantes
-
-- **Sem cache server-side**: dados leves, `useQuery` com `staleTime: 60s` é suficiente.
-- **Sem ISR/SSR**: app é SPA; mudanças aparecem na próxima navegação/refresh.
-- **Reordenação**: campo `ordem` (int) editável via setas ↑/↓ no admin (sem drag-and-drop na v1).
-- **Histórico de versões**: fora do escopo. Se quiser depois, adicionamos tabela `*_historico` com snapshots a cada publicação.
-- **Imagens**: nesta primeira versão não há upload de imagens institucionais (todas continuam no `src/assets`). Notícias seguem usando o bucket `noticias`.
-- **Internacionalização**: fora do escopo (site é só PT-BR).
-
-Após aprovação eu: (1) rodo a migration, (2) faço o seed, (3) implemento `cms.ts` + refator da Home como prova de conceito, (4) sigo com o restante das páginas e telas admin.
+Quer começar por **A (Atuação/casos — o maior bloco hardcoded)**, **C (Observatório — página inteira)**, ou prefere **B (Planos textos — mais rápido)**? Posso também executar as três em sequência.

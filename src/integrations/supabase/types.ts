@@ -110,6 +110,45 @@ export type Database = {
         }
         Relationships: []
       }
+      casos_atuacao: {
+        Row: {
+          created_at: string
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          deletado: boolean
+          id: string
+          ordem: number
+          publicado: boolean
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
       cronologia_itens: {
         Row: {
           created_at: string
@@ -206,6 +245,84 @@ export type Database = {
           added_at?: string
           email?: string
           nome?: string | null
+        }
+        Relationships: []
+      }
+      observatorio_categorias: {
+        Row: {
+          created_at: string
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          deletado: boolean
+          id: string
+          ordem: number
+          publicado: boolean
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
+      observatorio_indicadores: {
+        Row: {
+          created_at: string
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          deletado: boolean
+          id: string
+          ordem: number
+          publicado: boolean
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
         }
         Relationships: []
       }

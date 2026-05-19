@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
-import { usePageFields } from "@/hooks/useCMS";
-import { field } from "@/lib/cms";
+import { usePageFields, useCMSList } from "@/hooks/useCMS";
+import { field, getCasosAtuacao } from "@/lib/cms";
 import { ArrowRight, FileText } from "lucide-react";
 
 interface CasoAtuacao {
@@ -16,21 +16,7 @@ interface CasoAtuacao {
   resultados: string;
 }
 
-const areas = [
-  "Todas",
-  "Inovação e Ciências Comportamentais",
-  "Planejamento e Monitoramento",
-  "Políticas Intersetoriais",
-  "Gestão Institucional",
-  "Transformação Digital",
-  "Participação Social",
-  "Segurança Urbana",
-  "Políticas Sociais",
-  "Educação Ambiental",
-  "Gestão Documental",
-];
-
-const casos: CasoAtuacao[] = [
+const casosFallback: CasoAtuacao[] = [
   // ── Caderno Gestão Pública em Rede (2025) ──
   {
     titulo: "Ciências Comportamentais para Alimentação Escolar",
@@ -431,6 +417,11 @@ const casos: CasoAtuacao[] = [
 const AtuacaoPage = () => {
   const [areaFiltro, setAreaFiltro] = useState("Todas");
   const f = usePageFields("atuacao");
+  const casos = useCMSList<CasoAtuacao>(getCasosAtuacao, casosFallback);
+  const areas = useMemo(
+    () => ["Todas", ...Array.from(new Set(casos.map((c) => c.area)))],
+    [casos],
+  );
   const casosFiltrados = areaFiltro === "Todas" ? casos : casos.filter((c) => c.area === areaFiltro);
 
   return (
