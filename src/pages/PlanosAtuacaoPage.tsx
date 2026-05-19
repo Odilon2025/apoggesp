@@ -558,14 +558,14 @@ const PlanosAtuacaoPage = () => {
       <section className="py-20 md:py-28 bg-section-alt">
         <div className="container max-w-3xl text-center">
           <FadeIn>
-            <p className="text-xs font-medium tracking-luxury uppercase text-gold mb-4">Presença institucional</p>
+            <p className="text-xs font-medium tracking-luxury uppercase text-gold mb-4">
+              {field(f, "planos-atuacao.cta.label", "Presença institucional")}
+            </p>
             <h2 className="text-2xl md:text-3xl font-display font-normal text-foreground mb-4">
-              {planosLista.length} órgãos com planos formalizados
+              {field(f, "planos-atuacao.cta.titulo", "{n} órgãos com planos formalizados").replace("{n}", String(planosLista.length))}
             </h2>
             <p className="text-sm font-light text-text-body leading-relaxed max-w-xl mx-auto">
-              Os Planos de Atuação Institucional são instrumentos vivos. Cada PAI formaliza a demanda
-              estratégica de um órgão por APPGGs, demonstrando o alcance da carreira na
-              modernização da gestão pública de São Paulo.
+              {field(f, "planos-atuacao.cta.texto", "Os Planos de Atuação Institucional são instrumentos vivos. Cada PAI formaliza a demanda estratégica de um órgão por APPGGs, demonstrando o alcance da carreira na modernização da gestão pública de São Paulo.")}
             </p>
           </FadeIn>
         </div>
