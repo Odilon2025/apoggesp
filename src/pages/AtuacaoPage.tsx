@@ -16,21 +16,7 @@ interface CasoAtuacao {
   resultados: string;
 }
 
-const areas = [
-  "Todas",
-  "Inovação e Ciências Comportamentais",
-  "Planejamento e Monitoramento",
-  "Políticas Intersetoriais",
-  "Gestão Institucional",
-  "Transformação Digital",
-  "Participação Social",
-  "Segurança Urbana",
-  "Políticas Sociais",
-  "Educação Ambiental",
-  "Gestão Documental",
-];
-
-const casos: CasoAtuacao[] = [
+const casosFallback: CasoAtuacao[] = [
   // ── Caderno Gestão Pública em Rede (2025) ──
   {
     titulo: "Ciências Comportamentais para Alimentação Escolar",
