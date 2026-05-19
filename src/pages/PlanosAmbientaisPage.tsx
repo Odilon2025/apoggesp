@@ -7,15 +7,16 @@ import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields } from "@/hooks/useCMS";
 import { field } from "@/lib/cms";
 import { Building2, ChevronDown, ChevronUp, Target, Leaf } from "lucide-react";
-import { planos } from "@/data/planos";
-
-const planosAmbientais = planos.filter((p) => p.ambiental);
-
-const totalAppggs = planosAmbientais.reduce((sum, p) => sum + p.appggsNecessarios, 0);
-const totalProjetos = planosAmbientais.reduce((sum, p) => sum + p.projetos.length, 0);
+import { planos as planosFallback } from "@/data/planos";
+import { useCMSList } from "@/hooks/useCMS";
+import { getPlanos } from "@/lib/cms";
 
 const PlanosAmbientaisPage = () => {
   const f = usePageFields("planos-ambientais");
+  const allPlanos = useCMSList(getPlanos, planosFallback as any[]);
+  const planosAmbientais = (allPlanos as any[]).filter((p) => p.ambiental);
+  const totalAppggs = planosAmbientais.reduce((sum, p) => sum + (p.appggsNecessarios || 0), 0);
+  const totalProjetos = planosAmbientais.reduce((sum, p) => sum + (p.projetos?.length || 0), 0);
   const [expandido, setExpandido] = useState<string | null>(null);
 
   const toggle = (sigla: string) => {
