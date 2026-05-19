@@ -417,6 +417,11 @@ const casosFallback: CasoAtuacao[] = [
 const AtuacaoPage = () => {
   const [areaFiltro, setAreaFiltro] = useState("Todas");
   const f = usePageFields("atuacao");
+  const casos = useCMSList<CasoAtuacao>(getCasosAtuacao, casosFallback);
+  const areas = useMemo(
+    () => ["Todas", ...Array.from(new Set(casos.map((c) => c.area)))],
+    [casos],
+  );
   const casosFiltrados = areaFiltro === "Todas" ? casos : casos.filter((c) => c.area === areaFiltro);
 
   return (
