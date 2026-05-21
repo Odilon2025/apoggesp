@@ -5,6 +5,7 @@ import { supabase } from "@/integrations/supabase/client";
 import PageLayout from "@/components/PageLayout";
 import { AdminGuard } from "./AdminGuard";
 import { Noticia, getById, slugify } from "@/lib/noticias";
+import NotasPanel from "@/components/admin/NotasPanel";
 
 const emptyForm = {
   titulo: "",
@@ -94,9 +95,14 @@ const Inner = () => {
         <Link to="/admin/noticias" className="text-xs font-light text-text-caption hover:text-foreground transition-colors">
           ← Voltar
         </Link>
-        <h1 className="text-3xl font-display font-normal text-foreground mt-4 mb-10">
-          {editing ? "Editar notícia" : "Nova notícia"}
-        </h1>
+        <div className="flex items-end justify-between mt-4 mb-10 flex-wrap gap-3">
+          <h1 className="text-3xl font-display font-normal text-foreground">
+            {editing ? "Editar notícia" : "Nova notícia"}
+          </h1>
+          {editing && id && (
+            <NotasPanel escopo="noticia" alvo={id} alvoLabel={`Notícia · ${form.titulo || id}`} />
+          )}
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="space-y-5">

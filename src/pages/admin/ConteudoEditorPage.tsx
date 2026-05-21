@@ -6,6 +6,7 @@ import { AdminGuard } from "./AdminGuard";
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "@/hooks/use-toast";
 import { clearCmsCache } from "@/lib/cms";
+import NotasPanel from "@/components/admin/NotasPanel";
 
 interface Field {
   key: string;
@@ -127,14 +128,21 @@ const Inner = () => {
                 <label className="text-[11px] font-medium tracking-luxury uppercase text-text-caption">
                   {f.descricao || f.key}
                 </label>
-                {f.tem_rascunho && (
-                  <button
-                    onClick={() => descartar(f.key)}
-                    className="text-[10px] text-destructive hover:opacity-70"
-                  >
-                    Descartar rascunho
-                  </button>
-                )}
+                <div className="flex items-center gap-3">
+                  <NotasPanel
+                    escopo="page_field"
+                    alvo={f.key}
+                    alvoLabel={`${decoded} · ${f.descricao || f.key}`}
+                  />
+                  {f.tem_rascunho && (
+                    <button
+                      onClick={() => descartar(f.key)}
+                      className="text-[10px] text-destructive hover:opacity-70"
+                    >
+                      Descartar rascunho
+                    </button>
+                  )}
+                </div>
               </div>
               {f.tipo === "markdown" ? (
                 <textarea

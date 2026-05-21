@@ -7,6 +7,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { toast } from "@/hooks/use-toast";
 import { TABELAS } from "./cmsSchemas";
 import { clearCmsCache } from "@/lib/cms";
+import NotasPanel from "@/components/admin/NotasPanel";
 
 interface Row {
   id: string;
@@ -256,7 +257,12 @@ const Inner = () => {
                       </div>
                       <p className="text-sm font-light text-foreground">{schema.resumo(dadosAtuais)}</p>
                     </div>
-                    <div className="flex gap-3 text-xs">
+                    <div className="flex gap-3 text-xs items-center">
+                      <NotasPanel
+                        escopo="cms_item"
+                        alvo={`${schema.table}:${r.id}`}
+                        alvoLabel={`${schema.titulo} · ${schema.resumo(dadosAtuais).slice(0, 60)}`}
+                      />
                       <button onClick={() => iniciarEdicao(r)} className="text-accent hover:text-foreground">Editar</button>
                       {r.tem_rascunho && (
                         <button onClick={() => publicarItem(r.id)} className="text-accent hover:text-foreground">Publicar</button>

@@ -1,67 +1,111 @@
-## Status atual da migração para o CMS
+## Objetivo
 
-### Páginas com textos já no CMS (OK)
-- Home, APOGESP, Contato, Carreira, Diversidade, Sustentabilidade, Publicações, Planos Ambientais, Campanha Salarial, Campanha Nomeação.
+Permitir que revisores deixem **notas de revisão** (comentários, sugestões, dúvidas de estilo) vinculadas a qualquer conteúdo editável do painel — sem mexer no texto publicado nem no rascunho. Serve como camada de discussão antes do editor aplicar a mudança.
 
-### Dados estruturados já no CMS (CRUD no admin)
-- `cronologia_itens`, `atos_normativos_itens`, `planos_itens`, `publicacoes_itens`, `atuacao_destaques`, `snapshot_carreira`.
+## Estratégia recomendada: tabela única `cms_notas`
 
----
+Uma única tabela polimórfica indexa todas as notas, ancoradas no alvo por dois campos:
 
-## O que ainda falta refatorar
+- `escopo` — identifica o "tipo" de conteúdo: `page_field`, `cms_item`, `snapshot`, `noticia`.
+- `alvo` — identificador dentro do escopo:
+  - `page_field` → `key` do campo (ex.: `home.hero.titulo`)
+  - `cms_item` → `{tabela}:{id}` (ex.: `casos_atuacao:uuid`)
+  - `snapshot` → `current`
+  - `noticia` → `id` da notícia
 
-### 1. AtuacaoPage — lista de casos (alta prioridade)
-Os textos do hero e seções já vêm do CMS, **mas** os ~50 cases documentados (`casos: CasoAtuacao[]`) e a lista de filtros `areas` continuam hardcoded no arquivo (linhas 19–428, ~400 linhas).
+Vantagens vs. tabelas separadas por entidade:
+- Uma migration só, um conjunto de RLS, uma UI de notas reutilizável em todas as telas.
+- Permite filtrar "tudo o que tem nota aberta" no hub do admin.
+- Fácil estender para futuras entidades (basta adicionar um `escopo`).
 
-**Proposta**: criar tabela `casos_atuacao` (mesmo padrão dos outros: `dados_publicado`/`dados_rascunho`/`ordem`/`publicado`/`deletado`), seedar com os 50 casos atuais, adicionar schema no admin (`cmsSchemas.ts`) e consumir via `useCMSList`. A lista `areas` pode ser derivada dinamicamente dos casos.
-
-### 2. PlanosAtuacaoPage — textos das seções
-Já consome `planos_itens` da base, mas a maioria dos títulos/labels/explicações das seções intermediárias (introdução, legenda, CTAs) ainda está hardcoded (apenas hero e stats foram migrados).
-
-**Proposta**: seedar os campos restantes em `page_fields` (pagina = `planos-atuacao`) e trocar strings por `field(f, ...)` / `<CMSMarkdown />`.
-
-### 3. ObservatorioEvasoesPage — 100% hardcoded
-251 linhas sem nenhum uso do CMS. Contém:
-- Hero e textos institucionais
-- 4 indicadores (`indicadores`)
-- 4 categorias com `icon` + título + descrição + lista de focos (`categorias`)
-- Seções de metodologia/CTA
-
-**Proposta**:
-- Textos institucionais → `page_fields` (pagina = `observatorio-evasoes`).
-- Indicadores → tabela `observatorio_indicadores` (num + label).
-- Categorias → tabela `observatorio_categorias` (icon string + título + descrição + focos[]).
-- Schemas correspondentes no admin.
-
-### 4. AreaAssociadoPage — fora do escopo
-Já é uma página minimalista de boas-vindas + logout. Sugestão: deixar como está (não tem conteúdo institucional a editar). Se quiser, dá pra mover só os 2-3 textos curtos para `page_fields`.
-
----
-
-## Plano sugerido de execução (3 entregas)
+### Schema proposto
 
 ```text
-Entrega A — Atuação (casos)
-  • migration: criar tabela casos_atuacao + RLS
-  • seed: importar os 50 casos atuais
-  • admin: adicionar schema em cmsSchemas.ts (categoria, ano, titulo, area, atuacao, resultados, etc.)
-  • frontend: trocar `casos`/`areas` por useCMSList; derivar filtros
+cms_notas
+  id            uuid pk
+  escopo        text   ('page_field' | 'cms_item' | 'snapshot' | 'noticia')
+  alvo          text   (chave/id conforme escopo acima)
+  alvo_label    text   (rótulo legível p/ listagens: "Home → hero.titulo")
+  campo         text   (opcional — sub-campo dentro de um item JSON, ex.: "resultados")
+  autor_email   text
+  texto         text   (markdown curto)
+  status        text   ('aberta' | 'resolvida')   default 'aberta'
+  resolvida_por text
+  resolvida_em  timestamptz
+  created_at    timestamptz
+  updated_at    timestamptz
 
-Entrega B — Planos de Atuação (textos)
-  • seed page_fields para hero secundário, intro, legenda, CTAs
-  • refatorar PlanosAtuacaoPage para usar field()/CMSMarkdown
-
-Entrega C — Observatório de Evasões (completo)
-  • migration: observatorio_indicadores + observatorio_categorias
-  • seed page_fields (textos) + dados das tabelas
-  • admin: 2 schemas novos
-  • refatorar ObservatorioEvasoesPage
+índices: (escopo, alvo, status), (status, created_at desc)
 ```
 
-Cada entrega é independente — posso ir em qualquer ordem.
+**RLS**: mesma política dos demais — `SELECT/INSERT/UPDATE/DELETE` somente para `is_editor(jwt.email)`. Nada público.
 
----
+### Por que não usar `value_rascunho`?
+O rascunho já tem semântica de "próxima versão a publicar". Misturar comentário com texto poluiria a publicação e exigiria edição destrutiva pra resolver. Notas são uma camada paralela, não-publicável.
 
-## Pergunta
+## UI — três pontos de integração
 
-Quer começar por **A (Atuação/casos — o maior bloco hardcoded)**, **C (Observatório — página inteira)**, ou prefere **B (Planos textos — mais rápido)**? Posso também executar as três em sequência.
+### 1. Editor de textos (`ConteudoEditorPage`)
+Ao lado de cada `<input>`/`<textarea>` de `page_fields`:
+- Badge "X notas" (vermelho se houver aberta) abre um drawer/popover lateral.
+- Drawer mostra notas existentes (autor, data, status) + campo pra adicionar nova + botão "Resolver".
+
+### 2. Editor de itens estruturados (`DadosCRUDPage`)
+Cada linha de `casos_atuacao`, `planos_itens`, etc. ganha:
+- Botão "Notas" no header da linha (escopo=`cms_item`, alvo=`{tabela}:{id}`).
+- Opcionalmente, ao editar, mesmo drawer por sub-campo (`campo`), pra comentar especificamente "resultados" ou "atuacao".
+
+### 3. Snapshot + Notícias
+Mesmo padrão: botão "Notas" no topo do editor.
+
+### 4. Hub do admin
+Novo card "**Revisões pendentes (N)**" listando todas as notas `status=aberta`, agrupadas por página/entidade, com link direto pro editor correspondente. Permite ao editor varrer tudo o que precisa discutir antes de publicar.
+
+## Componente reutilizável
+
+Um único componente `<NotasPanel escopo alvo campo? label />` encapsula:
+- Fetch das notas (`supabase.from('cms_notas').select(...).eq('escopo', e).eq('alvo', a)`)
+- Lista + form de nova nota + ação resolver
+- Realtime opcional (subscription) para colaboração ao vivo.
+
+## Migrações e arquivos previstos
+
+```text
+supabase/migrations/<ts>_cms_notas.sql
+  • create table cms_notas + RLS
+
+src/lib/notas.ts
+  • listNotas, addNota, resolveNota, deleteNota, countByAlvo, countAbertas
+
+src/components/admin/NotasPanel.tsx
+  • drawer/popover reutilizável
+
+src/components/admin/NotasBadge.tsx
+  • bolinha "3 abertas" usada nos editores
+
+src/pages/admin/RevisoesPendentesPage.tsx
+  • lista global agrupada, rota /admin/revisoes
+
+edições:
+  • AdminHubPage.tsx          → card "Revisões pendentes"
+  • ConteudoEditorPage.tsx    → badge + drawer por campo
+  • DadosCRUDPage.tsx         → badge + drawer por linha
+  • SnapshotEditorPage.tsx    → drawer no topo
+  • NoticiaEditorPage.tsx     → drawer no topo
+```
+
+## Fluxo de uso
+
+1. Revisor abre `/admin/conteudo/home`, clica no balão ao lado de `hero.titulo`, escreve "Sugiro trocar 'gestores' por 'líderes municipais' — soa menos técnico" e salva.
+2. Editor recebe a discussão (lista no hub mostra "1 nota aberta em Home → hero.titulo").
+3. Editor aplica (ou não) a mudança no rascunho normalmente, depois marca a nota como **resolvida** — o histórico permanece.
+4. Notas resolvidas continuam visíveis em modo recolhido pra auditoria.
+
+## Pontos abertos pra decidir antes de implementar
+
+- **Threading**: notas simples (lista plana) ou conversas com respostas? Sugiro começar plano e adicionar `parent_id` depois se necessário.
+- **Menção/notificação**: avisar editores por e-mail quando nota for criada? Pode entrar numa segunda fase via edge function.
+- **Permissões**: qualquer editor pode resolver qualquer nota, ou só autor + admin? Sugiro: qualquer editor resolve (já é grupo confiável).
+- **Sub-campo em itens estruturados**: usar `campo` granular ou só uma thread por item? Granular dá mais precisão mas exige mais UI; começar por thread-por-item é mais simples.
+
+Se topar a abordagem, sigo com a migration + componente + integração nas 4 telas do admin.

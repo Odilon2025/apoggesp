@@ -6,6 +6,7 @@ import { AdminGuard } from "./AdminGuard";
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "@/hooks/use-toast";
 import { clearCmsCache } from "@/lib/cms";
+import NotasPanel from "@/components/admin/NotasPanel";
 
 const Inner = () => {
   const { user } = useAuth();
@@ -70,7 +71,10 @@ const Inner = () => {
     <section className="py-16 bg-card min-h-screen">
       <div className="container max-w-4xl">
         <Link to="/admin" className="text-xs text-text-caption hover:text-foreground">← Painel</Link>
-        <h1 className="text-3xl font-display text-foreground mt-3 mb-2">Snapshot da carreira</h1>
+        <div className="flex items-end justify-between mt-3 mb-2 flex-wrap gap-3">
+          <h1 className="text-3xl font-display text-foreground">Snapshot da carreira</h1>
+          <NotasPanel escopo="snapshot" alvo="current" alvoLabel="Snapshot da carreira" />
+        </div>
         <p className="text-xs font-light text-text-caption mb-2">
           Edite o JSON do snapshot completo (números, indicadores, gráficos). Use cuidado: a estrutura precisa
           continuar a mesma para os gráficos funcionarem.

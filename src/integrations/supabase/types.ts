@@ -149,6 +149,51 @@ export type Database = {
         }
         Relationships: []
       }
+      cms_notas: {
+        Row: {
+          alvo: string
+          alvo_label: string | null
+          autor_email: string
+          campo: string | null
+          created_at: string
+          escopo: string
+          id: string
+          resolvida_em: string | null
+          resolvida_por: string | null
+          status: string
+          texto: string
+          updated_at: string
+        }
+        Insert: {
+          alvo: string
+          alvo_label?: string | null
+          autor_email: string
+          campo?: string | null
+          created_at?: string
+          escopo: string
+          id?: string
+          resolvida_em?: string | null
+          resolvida_por?: string | null
+          status?: string
+          texto: string
+          updated_at?: string
+        }
+        Update: {
+          alvo?: string
+          alvo_label?: string | null
+          autor_email?: string
+          campo?: string | null
+          created_at?: string
+          escopo?: string
+          id?: string
+          resolvida_em?: string | null
+          resolvida_por?: string | null
+          status?: string
+          texto?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       cronologia_itens: {
         Row: {
           created_at: string
