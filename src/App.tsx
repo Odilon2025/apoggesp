@@ -27,6 +27,7 @@ import ConteudoListPage from "./pages/admin/ConteudoListPage";
 import ConteudoEditorPage from "./pages/admin/ConteudoEditorPage";
 import DadosCRUDPage from "./pages/admin/DadosCRUDPage";
 import SnapshotEditorPage from "./pages/admin/SnapshotEditorPage";
+import RevisoesPendentesPage from "./pages/admin/RevisoesPendentesPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 import NotFound from "./pages/NotFound";
 
@@ -64,6 +65,7 @@ const App = () => (
           <Route path="/admin/conteudo/:pagina" element={<ConteudoEditorPage />} />
           <Route path="/admin/dados/snapshot_carreira" element={<SnapshotEditorPage />} />
           <Route path="/admin/dados/:tabela" element={<DadosCRUDPage />} />
+          <Route path="/admin/revisoes" element={<RevisoesPendentesPage />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
           <Route path="*" element={<NotFound />} />
           </Routes>

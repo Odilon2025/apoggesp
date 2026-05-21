@@ -6,6 +6,7 @@ import { AdminGuard } from "./AdminGuard";
 const Inner = () => {
   const { user, signOut } = useAuth();
   const links = [
+    { to: "/admin/revisoes", titulo: "Revisões pendentes", desc: "Notas de revisão abertas em qualquer conteúdo." },
     { to: "/admin/noticias", titulo: "Notícias", desc: "Criar, editar e publicar notícias do site." },
     { to: "/admin/conteudo", titulo: "Textos das páginas", desc: "Editar títulos, subtítulos e descrições de cada página." },
     { to: "/admin/dados/snapshot_carreira", titulo: "Snapshot da carreira", desc: "Atualizar números, indicadores e gráficos da carreira." },
