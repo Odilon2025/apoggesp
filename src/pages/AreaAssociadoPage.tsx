@@ -6,11 +6,12 @@ import { useState, FormEvent } from "react";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
+import PainelAssociadoPage from "./area-associado/PainelPage";
 
 const emailSchema = z.string().trim().email("E-mail inválido").max(255);
 
 const AreaAssociadoPage = () => {
-  const { user, loading, signOut } = useAuth();
+  const { user, loading } = useAuth();
 
   if (loading) {
     return (
@@ -20,28 +21,27 @@ const AreaAssociadoPage = () => {
     );
   }
 
+  if (user) return <PainelAssociadoPage />;
+
   return (
     <PageLayout>
       <PageHero
         label="Associados"
         title="Área do Associado"
-        subtitle={
-          user
-            ? "Bem-vindo. Este espaço está sendo construído com o mesmo cuidado que dedicamos a tudo que fazemos."
-            : "Acesso restrito aos associados da APOGESP. Informe seu e-mail cadastrado para receber um link de acesso."
-        }
+        subtitle="Acesso restrito aos associados da APOGESP. Informe seu e-mail cadastrado para receber um link de acesso."
       />
 
       <section className="py-24 md:py-32 bg-card">
         <div className="container max-w-xl">
           <FadeIn>
-            {user ? <SignedInPanel email={user.email ?? ""} onSignOut={signOut} /> : <MagicLinkForm />}
+            <MagicLinkForm />
           </FadeIn>
         </div>
       </section>
     </PageLayout>
   );
 };
+
 
 const MagicLinkForm = () => {
   const [email, setEmail] = useState("");
