@@ -14,6 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      associado_avisos: {
+        Row: {
+          created_at: string
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          deletado: boolean
+          id: string
+          ordem: number
+          publicado: boolean
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
       associate_whitelist: {
         Row: {
           added_at: string
@@ -72,6 +111,45 @@ export type Database = {
         Relationships: []
       }
       atuacao_destaques: {
+        Row: {
+          created_at: string
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          deletado: boolean
+          id: string
+          ordem: number
+          publicado: boolean
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
+      biblioteca_itens: {
         Row: {
           created_at: string
           dados_publicado: Json | null
@@ -195,6 +273,45 @@ export type Database = {
         Relationships: []
       }
       cronologia_itens: {
+        Row: {
+          created_at: string
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          deletado: boolean
+          id: string
+          ordem: number
+          publicado: boolean
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
+      grupos_trabalho: {
         Row: {
           created_at: string
           dados_publicado: Json | null
@@ -509,6 +626,84 @@ export type Database = {
           dados_publicado?: Json | null
           dados_rascunho?: Json | null
           id?: string
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
+      transparencia_itens: {
+        Row: {
+          created_at: string
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          deletado: boolean
+          id: string
+          ordem: number
+          publicado: boolean
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
+      valorizacao_acoes: {
+        Row: {
+          created_at: string
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          deletado: boolean
+          id: string
+          ordem: number
+          publicado: boolean
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
           tem_rascunho?: boolean
           updated_at?: string
           updated_by?: string | null

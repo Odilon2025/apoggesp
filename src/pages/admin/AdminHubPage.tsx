@@ -18,7 +18,13 @@ const Inner = () => {
     { to: "/admin/dados/casos_atuacao", titulo: "Casos de atuação", desc: "Casos documentados exibidos na página Atuação." },
     { to: "/admin/dados/observatorio_indicadores", titulo: "Observatório — Indicadores", desc: "Números do Observatório das Evasões." },
     { to: "/admin/dados/observatorio_categorias", titulo: "Observatório — Categorias", desc: "Eixos de análise do Observatório das Evasões." },
+    { to: "/admin/dados/associado_avisos", titulo: "Associado — Avisos", desc: "Avisos exibidos no Painel do Associado." },
+    { to: "/admin/dados/biblioteca_itens", titulo: "Associado — Biblioteca", desc: "Documentos e materiais da Biblioteca da Carreira." },
+    { to: "/admin/dados/valorizacao_acoes", titulo: "Associado — Valorização", desc: "Ações da página Valorização e Advocacy." },
+    { to: "/admin/dados/grupos_trabalho", titulo: "Associado — Grupos de Trabalho", desc: "Grupos de Trabalho ativos." },
+    { to: "/admin/dados/transparencia_itens", titulo: "Associado — Transparência", desc: "Documentos de Transparência APOGESP." },
   ];
+
   return (
     <section className="py-16 bg-card min-h-screen">
       <div className="container max-w-5xl">
