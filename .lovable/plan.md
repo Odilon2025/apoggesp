@@ -1,111 +1,87 @@
+# Área do Associado — 5 novas páginas com CMS
+
 ## Objetivo
+Expandir `/area-associado` (hoje apenas login) com um hub autenticado e 5 sub-páginas, todas com conteúdo editável pelo painel admin no mesmo padrão já estabelecido (page_fields + listas estruturadas + notas de revisão).
 
-Permitir que revisores deixem **notas de revisão** (comentários, sugestões, dúvidas de estilo) vinculadas a qualquer conteúdo editável do painel — sem mexer no texto publicado nem no rascunho. Serve como camada de discussão antes do editor aplicar a mudança.
+## Páginas
 
-## Estratégia recomendada: tabela única `cms_notas`
+1. **Painel do Associado** (`/area-associado`) — hub pós-login com cards para as 4 áreas + boas-vindas e avisos institucionais.
+2. **Biblioteca da Carreira** (`/area-associado/biblioteca`) — documentos, materiais e referências organizados por categoria.
+3. **Valorização e Advocacy** (`/area-associado/valorizacao`) — status das campanhas, ações em curso, materiais de apoio.
+4. **Grupos de Trabalho** (`/area-associado/grupos`) — GTs ativos, coordenação, agenda, como participar.
+5. **Transparência APOGESP** (`/area-associado/transparencia`) — prestação de contas, atas, documentos institucionais.
 
-Uma única tabela polimórfica indexa todas as notas, ancoradas no alvo por dois campos:
+Todas exigem login (mesmo guard de `useAuth`). Sem login, redireciona para o formulário de magic link atual.
 
-- `escopo` — identifica o "tipo" de conteúdo: `page_field`, `cms_item`, `snapshot`, `noticia`.
-- `alvo` — identificador dentro do escopo:
-  - `page_field` → `key` do campo (ex.: `home.hero.titulo`)
-  - `cms_item` → `{tabela}:{id}` (ex.: `casos_atuacao:uuid`)
-  - `snapshot` → `current`
-  - `noticia` → `id` da notícia
+## Modelo de conteúdo
 
-Vantagens vs. tabelas separadas por entidade:
-- Uma migration só, um conjunto de RLS, uma UI de notas reutilizável em todas as telas.
-- Permite filtrar "tudo o que tem nota aberta" no hub do admin.
-- Fácil estender para futuras entidades (basta adicionar um `escopo`).
+Cada página combina dois tipos de conteúdo CMS já usados no projeto:
 
-### Schema proposto
+### A) page_fields (textos institucionais)
+Por página: `hero_label`, `hero_titulo`, `hero_subtitulo`, `intro`, `cta_titulo`, `cta_texto`. Markdown nos campos longos.
 
-```text
-cms_notas
-  id            uuid pk
-  escopo        text   ('page_field' | 'cms_item' | 'snapshot' | 'noticia')
-  alvo          text   (chave/id conforme escopo acima)
-  alvo_label    text   (rótulo legível p/ listagens: "Home → hero.titulo")
-  campo         text   (opcional — sub-campo dentro de um item JSON, ex.: "resultados")
-  autor_email   text
-  texto         text   (markdown curto)
-  status        text   ('aberta' | 'resolvida')   default 'aberta'
-  resolvida_por text
-  resolvida_em  timestamptz
-  created_at    timestamptz
-  updated_at    timestamptz
+### B) Listas estruturadas (tabelas CMS novas)
 
-índices: (escopo, alvo, status), (status, created_at desc)
-```
+| Tabela | Página | Campos JSON |
+|---|---|---|
+| `associado_avisos` | Painel | `titulo`, `texto` (md), `tipo` (info/alerta/destaque), `data` |
+| `biblioteca_itens` | Biblioteca | `titulo`, `categoria`, `descricao`, `tipo` (PDF/Vídeo/Link/Planilha), `url`, `restrito` (bool) |
+| `valorizacao_acoes` | Valorização | `titulo`, `eixo` (Salarial/Nomeação/Carreira/Institucional), `status` (Em curso/Conquista/Em análise), `descricao` (md), `proxima_etapa` |
+| `grupos_trabalho` | GTs | `nome`, `tema`, `coordenacao`, `descricao` (md), `frequencia`, `como_participar` (md), `ativo` (bool) |
+| `transparencia_itens` | Transparência | `titulo`, `categoria` (Atas/Financeiro/Estatuto/Relatórios), `periodo`, `descricao`, `url` |
 
-**RLS**: mesma política dos demais — `SELECT/INSERT/UPDATE/DELETE` somente para `is_editor(jwt.email)`. Nada público.
+Todas seguem o mesmo padrão das tabelas existentes (`casos_atuacao`, `observatorio_indicadores`): colunas `id, ordem, publicado, deletado, dados_publicado, dados_rascunho, tem_rascunho, created_at, updated_at, updated_by`, RLS pública para publicados + RLS de editor para escrita.
 
-### Por que não usar `value_rascunho`?
-O rascunho já tem semântica de "próxima versão a publicar". Misturar comentário com texto poluiria a publicação e exigiria edição destrutiva pra resolver. Notas são uma camada paralela, não-publicável.
+### Decisão sobre visibilidade
+Conteúdo da Área do Associado **é restrito**. Duas opções:
 
-## UI — três pontos de integração
+- **Opção 1 (mais simples, recomendada):** mantemos RLS pública nas tabelas (já que o conteúdo institucional não é sigiloso) e protegemos só pela rota (guard de auth na UI). Vantagem: reaproveita 100% do padrão atual, inclusive admin/CRUD.
+- **Opção 2:** RLS exige autenticação (`auth.uid() is not null`) para leitura. Mais seguro contra scraping, mas exige `select` autenticado nos hooks.
 
-### 1. Editor de textos (`ConteudoEditorPage`)
-Ao lado de cada `<input>`/`<textarea>` de `page_fields`:
-- Badge "X notas" (vermelho se houver aberta) abre um drawer/popover lateral.
-- Drawer mostra notas existentes (autor, data, status) + campo pra adicionar nova + botão "Resolver".
+Vou seguir Opção 1 salvo indicação contrária — confirmar antes de migrar caso prefira Opção 2.
 
-### 2. Editor de itens estruturados (`DadosCRUDPage`)
-Cada linha de `casos_atuacao`, `planos_itens`, etc. ganha:
-- Botão "Notas" no header da linha (escopo=`cms_item`, alvo=`{tabela}:{id}`).
-- Opcionalmente, ao editar, mesmo drawer por sub-campo (`campo`), pra comentar especificamente "resultados" ou "atuacao".
+## Mudanças técnicas
 
-### 3. Snapshot + Notícias
-Mesmo padrão: botão "Notas" no topo do editor.
+### Banco (migração única)
+- 5 novas tabelas no padrão CMS draft/publish.
+- Adicionar todas ao whitelist de `publish_cms_item` e `publish_cms_all`.
+- Seed inicial com 2–3 itens por tabela (placeholders editáveis).
+- Seed dos `page_fields` das 5 páginas.
 
-### 4. Hub do admin
-Novo card "**Revisões pendentes (N)**" listando todas as notas `status=aberta`, agrupadas por página/entidade, com link direto pro editor correspondente. Permite ao editor varrer tudo o que precisa discutir antes de publicar.
+### Frontend
+- `src/App.tsx`: 5 novas rotas filhas de `/area-associado/*`.
+- `src/pages/area-associado/PainelPage.tsx` (hub) + 4 páginas temáticas.
+- Refatorar `AreaAssociadoPage.tsx`: quando logado, renderiza o **Painel do Associado** (hub) ao invés do `SignedInPanel` atual.
+- Componente `AssociadoLayout` com sub-nav lateral/superior linkando as 5 áreas.
+- Guard de auth reaproveitando `useAuth` — não-logado vê o formulário de magic link.
+- `src/lib/cms.ts`: novos fetchers (`getAssociadoAvisos`, `getBibliotecaItens`, `getValorizacaoAcoes`, `getGruposTrabalho`, `getTransparenciaItens`).
 
-## Componente reutilizável
+### Painel admin
+- `src/pages/admin/AdminHubPage.tsx`: novo grupo "Área do Associado" com 5+5 cards (textos + dados de cada página).
+- `src/pages/admin/cmsSchemas.ts`: 5 novos `TableSchema` para CRUD genérico.
+- Integração automática com `DadosCRUDPage` e `ConteudoEditorPage` existentes — sem código novo de admin além dos schemas e links.
+- `NotasPanel` funciona automaticamente para tudo.
 
-Um único componente `<NotasPanel escopo alvo campo? label />` encapsula:
-- Fetch das notas (`supabase.from('cms_notas').select(...).eq('escopo', e).eq('alvo', a)`)
-- Lista + form de nova nota + ação resolver
-- Realtime opcional (subscription) para colaboração ao vivo.
+## Arquivos
 
-## Migrações e arquivos previstos
+**Criar:**
+- Migração SQL (5 tabelas + seeds + whitelist nas RPCs)
+- `src/pages/area-associado/PainelPage.tsx`
+- `src/pages/area-associado/BibliotecaPage.tsx`
+- `src/pages/area-associado/ValorizacaoPage.tsx`
+- `src/pages/area-associado/GruposPage.tsx`
+- `src/pages/area-associado/TransparenciaPage.tsx`
+- `src/components/AssociadoLayout.tsx` (sub-nav)
 
-```text
-supabase/migrations/<ts>_cms_notas.sql
-  • create table cms_notas + RLS
+**Editar:**
+- `src/App.tsx` (rotas)
+- `src/pages/AreaAssociadoPage.tsx` (render hub se logado)
+- `src/lib/cms.ts` (fetchers)
+- `src/pages/admin/AdminHubPage.tsx` (cards)
+- `src/pages/admin/cmsSchemas.ts` (schemas)
 
-src/lib/notas.ts
-  • listNotas, addNota, resolveNota, deleteNota, countByAlvo, countAbertas
+## Pontos a confirmar antes de implementar
 
-src/components/admin/NotasPanel.tsx
-  • drawer/popover reutilizável
-
-src/components/admin/NotasBadge.tsx
-  • bolinha "3 abertas" usada nos editores
-
-src/pages/admin/RevisoesPendentesPage.tsx
-  • lista global agrupada, rota /admin/revisoes
-
-edições:
-  • AdminHubPage.tsx          → card "Revisões pendentes"
-  • ConteudoEditorPage.tsx    → badge + drawer por campo
-  • DadosCRUDPage.tsx         → badge + drawer por linha
-  • SnapshotEditorPage.tsx    → drawer no topo
-  • NoticiaEditorPage.tsx     → drawer no topo
-```
-
-## Fluxo de uso
-
-1. Revisor abre `/admin/conteudo/home`, clica no balão ao lado de `hero.titulo`, escreve "Sugiro trocar 'gestores' por 'líderes municipais' — soa menos técnico" e salva.
-2. Editor recebe a discussão (lista no hub mostra "1 nota aberta em Home → hero.titulo").
-3. Editor aplica (ou não) a mudança no rascunho normalmente, depois marca a nota como **resolvida** — o histórico permanece.
-4. Notas resolvidas continuam visíveis em modo recolhido pra auditoria.
-
-## Pontos abertos pra decidir antes de implementar
-
-- **Threading**: notas simples (lista plana) ou conversas com respostas? Sugiro começar plano e adicionar `parent_id` depois se necessário.
-- **Menção/notificação**: avisar editores por e-mail quando nota for criada? Pode entrar numa segunda fase via edge function.
-- **Permissões**: qualquer editor pode resolver qualquer nota, ou só autor + admin? Sugiro: qualquer editor resolve (já é grupo confiável).
-- **Sub-campo em itens estruturados**: usar `campo` granular ou só uma thread por item? Granular dá mais precisão mas exige mais UI; começar por thread-por-item é mais simples.
-
-Se topar a abordagem, sigo com a migration + componente + integração nas 4 telas do admin.
+1. **Visibilidade**: Opção 1 (rota protegida, RLS pública) ou Opção 2 (RLS exige login)?
+2. **Sub-nav**: tabs no topo da Área do Associado, ou sidebar lateral?
+3. **Slugs das rotas**: ok usar `/area-associado/biblioteca`, `/valorizacao`, `/grupos`, `/transparencia`?
