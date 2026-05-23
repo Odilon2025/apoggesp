@@ -1,6 +1,6 @@
 import { supabase } from "@/integrations/supabase/client";
 
-export type NotaEscopo = "page_field" | "cms_item" | "snapshot" | "noticia";
+export type NotaEscopo = "page_field" | "cms_item" | "snapshot" | "noticia" | "wiki_secao";
 export type NotaStatus = "aberta" | "resolvida";
 
 export interface CmsNota {

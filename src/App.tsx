@@ -12,6 +12,8 @@ import ApogespPage from "./pages/ApogespPage";
 import ContatoPage from "./pages/ContatoPage";
 import AreaAssociadoPage from "./pages/AreaAssociadoPage";
 import BibliotecaPage from "./pages/area-associado/BibliotecaPage";
+import WikiPage from "./pages/area-associado/WikiPage";
+import WikiVerbetePage from "./pages/area-associado/WikiVerbetePage";
 import ValorizacaoPage from "./pages/area-associado/ValorizacaoPage";
 import GruposPage from "./pages/area-associado/GruposPage";
 import TransparenciaPage from "./pages/area-associado/TransparenciaPage";
@@ -55,6 +57,8 @@ const App = () => (
           <Route path="/sustentabilidade" element={<SustentabilidadePage />} />
           <Route path="/area-associado" element={<AreaAssociadoPage />} />
           <Route path="/area-associado/biblioteca" element={<BibliotecaPage />} />
+          <Route path="/area-associado/wiki" element={<WikiPage />} />
+          <Route path="/area-associado/wiki/:slug" element={<WikiVerbetePage />} />
           <Route path="/area-associado/valorizacao" element={<ValorizacaoPage />} />
           <Route path="/area-associado/grupos" element={<GruposPage />} />
           <Route path="/area-associado/transparencia" element={<TransparenciaPage />} />

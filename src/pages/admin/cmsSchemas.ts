@@ -172,6 +172,21 @@ export const TABELAS: Record<string, TableSchema> = {
     ],
     resumo: (d) => `${d?.nome ?? ""}${d?.ativo === false ? " (inativo)" : ""}`,
   },
+  wiki_verbetes: {
+    table: "wiki_verbetes",
+    titulo: "Wiki da Carreira — Verbetes",
+    descricao: "Verbetes da Wiki da Carreira. Cada verbete possui seções (id, título, corpo em markdown) que os associados podem comentar individualmente.",
+    campos: [
+      { key: "slug", label: "Slug (URL: /area-associado/wiki/SLUG)", type: "text", required: true },
+      { key: "titulo", label: "Título", type: "text", required: true },
+      { key: "categoria", label: "Categoria (ex.: Estrutura, História, Direitos, Glossário)", type: "text", required: true },
+      { key: "resumo", label: "Resumo (1-2 linhas, aparece no índice)", type: "textarea", rows: 2, required: true },
+      { key: "tags", label: "Tags (JSON: [\"tag1\",\"tag2\"])", type: "json", rows: 3 },
+      { key: "secoes", label: "Seções (JSON: [{\"id\":\"slug-secao\",\"titulo\":\"…\",\"corpo_md\":\"…\"}])", type: "json", rows: 16, required: true },
+      { key: "referencias", label: "Referências (JSON: [{\"label\":\"…\",\"url\":\"…\"}])", type: "json", rows: 5 },
+    ],
+    resumo: (d) => `[${d?.categoria ?? ""}] ${d?.titulo ?? ""}`,
+  },
   transparencia_itens: {
     table: "transparencia_itens",
     titulo: "Transparência APOGESP",
