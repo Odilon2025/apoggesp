@@ -7,6 +7,7 @@ import { useAuth } from "@/hooks/useAuth";
 const subnav = [
   { to: "/area-associado", label: "Painel", end: true },
   { to: "/area-associado/biblioteca", label: "Biblioteca da Carreira" },
+  { to: "/area-associado/wiki", label: "Wiki da Carreira" },
   { to: "/area-associado/valorizacao", label: "Valorização e Advocacy" },
   { to: "/area-associado/grupos", label: "Grupos de Trabalho" },
   { to: "/area-associado/transparencia", label: "Transparência APOGESP" },

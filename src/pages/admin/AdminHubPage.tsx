@@ -23,6 +23,7 @@ const Inner = () => {
     { to: "/admin/dados/valorizacao_acoes", titulo: "Associado — Valorização", desc: "Ações da página Valorização e Advocacy." },
     { to: "/admin/dados/grupos_trabalho", titulo: "Associado — Grupos de Trabalho", desc: "Grupos de Trabalho ativos." },
     { to: "/admin/dados/transparencia_itens", titulo: "Associado — Transparência", desc: "Documentos de Transparência APOGESP." },
+    { to: "/admin/dados/wiki_verbetes", titulo: "Associado — Wiki da Carreira", desc: "Verbetes da Wiki da Carreira (seções comentáveis pelos associados)." },
   ];
 
   return (
