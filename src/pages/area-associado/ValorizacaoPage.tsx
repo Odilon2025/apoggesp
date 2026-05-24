@@ -1,6 +1,7 @@
 import FadeIn from "@/components/FadeIn";
 import CMSMarkdown from "@/components/CMSMarkdown";
 import AssociadoLayout from "@/components/AssociadoLayout";
+import MapaAtores from "@/components/valorizacao/MapaAtores";
 import { usePageFields, useCMSList } from "@/hooks/useCMS";
 import { field, getValorizacaoAcoes } from "@/lib/cms";
 import ReactMarkdown from "react-markdown";
@@ -59,6 +60,14 @@ const ValorizacaoPage = () => {
               <p className="bg-card p-8 text-sm font-light text-text-caption">Nenhuma ação cadastrada.</p>
             )}
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28 bg-background border-t border-luxury-border">
+        <div className="container max-w-6xl">
+          <FadeIn>
+            <MapaAtores />
+          </FadeIn>
         </div>
       </section>
     </AssociadoLayout>
