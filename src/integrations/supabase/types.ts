@@ -350,6 +350,90 @@ export type Database = {
         }
         Relationships: []
       }
+      mapa_atores_conexoes: {
+        Row: {
+          created_at: string
+          criado_por: string
+          descricao: string | null
+          destino_id: string
+          id: string
+          origem_id: string
+          rotulo: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          criado_por: string
+          descricao?: string | null
+          destino_id: string
+          id?: string
+          origem_id: string
+          rotulo: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          criado_por?: string
+          descricao?: string | null
+          destino_id?: string
+          id?: string
+          origem_id?: string
+          rotulo?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "mapa_atores_conexoes_destino_id_fkey"
+            columns: ["destino_id"]
+            isOneToOne: false
+            referencedRelation: "mapa_atores_nos"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "mapa_atores_conexoes_origem_id_fkey"
+            columns: ["origem_id"]
+            isOneToOne: false
+            referencedRelation: "mapa_atores_nos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      mapa_atores_nos: {
+        Row: {
+          created_at: string
+          criado_por: string
+          descricao: string | null
+          id: string
+          nome: string
+          posicao_x: number | null
+          posicao_y: number | null
+          tipo: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          criado_por: string
+          descricao?: string | null
+          id?: string
+          nome: string
+          posicao_x?: number | null
+          posicao_y?: number | null
+          tipo: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          criado_por?: string
+          descricao?: string | null
+          id?: string
+          nome?: string
+          posicao_x?: number | null
+          posicao_y?: number | null
+          tipo?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       noticias: {
         Row: {
           autor: string
