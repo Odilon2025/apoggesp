@@ -359,6 +359,7 @@ export type Database = {
           id: string
           origem_id: string
           rotulo: string
+          sentimento: number
           updated_at: string
         }
         Insert: {
@@ -369,6 +370,7 @@ export type Database = {
           id?: string
           origem_id: string
           rotulo: string
+          sentimento?: number
           updated_at?: string
         }
         Update: {
@@ -379,6 +381,7 @@ export type Database = {
           id?: string
           origem_id?: string
           rotulo?: string
+          sentimento?: number
           updated_at?: string
         }
         Relationships: [
