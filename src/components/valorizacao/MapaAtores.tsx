@@ -110,6 +110,8 @@ const MapaAtores = () => {
   const [openNo, setOpenNo] = useState(false);
   const [openConn, setOpenConn] = useState(false);
   const [connFrom, setConnFrom] = useState<No | null>(null);
+  const [editNoId, setEditNoId] = useState<string | null>(null);
+  const [editConnId, setEditConnId] = useState<string | null>(null);
 
   const [fNome, setFNome] = useState("");
   const [fTipo, setFTipo] = useState("prefeito");
