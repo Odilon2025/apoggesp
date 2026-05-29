@@ -640,7 +640,14 @@ const MapaAtores = () => {
                         <span className="text-foreground">{direcao} {outro?.nome ?? "—"}</span>
                         <div className="text-text-caption mt-0.5">{c.rotulo}</div>
                       </div>
-                      {c.criado_por === email && (
+                      <div className="flex items-center gap-1">
+                        <button
+                          onClick={() => openEditConn(c)}
+                          className="text-text-caption hover:text-foreground"
+                          aria-label="Editar conexão"
+                        >
+                          <Pencil className="w-3 h-3" />
+                        </button>
                         <button
                           onClick={() => handleDeleteConn(c.id)}
                           className="text-text-caption hover:text-destructive"
@@ -648,7 +655,7 @@ const MapaAtores = () => {
                         >
                           <Trash2 className="w-3 h-3" />
                         </button>
-                      )}
+                      </div>
                     </div>
                   </div>
                 ))}
