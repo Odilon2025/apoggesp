@@ -1,4 +1,7 @@
-import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import * as d3 from "d3-force";
+import { select } from "d3-selection";
+import { drag } from "d3-drag";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
@@ -21,9 +24,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { Plus, Link2, Trash2, X, Minus, Equal } from "lucide-react";
-
-const ForceGraph2D = lazy(() => import("react-force-graph-2d"));
+import { Plus, Link2, Trash2, X } from "lucide-react";
 
 type No = {
   id: string;
@@ -43,6 +44,21 @@ type Conexao = {
   criado_por: string;
 };
 
+type SimNode = d3.SimulationNodeDatum & {
+  id: string;
+  name: string;
+  tipo: string;
+  color: string;
+  sentSum: number;
+  radius: number;
+};
+
+type SimLink = d3.SimulationLinkDatum<SimNode> & {
+  id: string;
+  label: string;
+  sentimento: number;
+};
+
 const TIPOS: { value: string; label: string }[] = [
   { value: "prefeito", label: "Prefeito(a)" },
   { value: "secretario", label: "Secretário(a)" },
@@ -57,11 +73,10 @@ const TIPOS: { value: string; label: string }[] = [
 
 const tipoLabel = (tipo: string) => TIPOS.find((t) => t.value === tipo)?.label ?? tipo;
 
-// Sentiment palette (HSL-friendly hex — graph canvas requires literal colors)
-const COLOR_POS = "#5ec27a"; // green
-const COLOR_NEU = "#e8c547"; // yellow
-const COLOR_NEG = "#d65a5a"; // red
-const COLOR_VOID = "#6b7280"; // neutral gray (no connections)
+const COLOR_POS = "#5ec27a";
+const COLOR_NEU = "#e8c547";
+const COLOR_NEG = "#d65a5a";
+const COLOR_VOID = "#6b7280";
 
 const sentimentColor = (sum: number, hasConn: boolean) => {
   if (!hasConn) return COLOR_VOID;
@@ -70,7 +85,7 @@ const sentimentColor = (sum: number, hasConn: boolean) => {
   return COLOR_NEU;
 };
 
-const sentimentLinkColor = (s: number) => {
+const linkStroke = (s: number) => {
   if (s > 0) return "rgba(94, 194, 122, 0.7)";
   if (s < 0) return "rgba(214, 90, 90, 0.7)";
   return "rgba(232, 197, 71, 0.6)";
@@ -82,18 +97,18 @@ const MapaAtores = () => {
   const { user } = useAuth();
   const email = user?.email ?? "";
   const containerRef = useRef<HTMLDivElement>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
   const [dims, setDims] = useState({ w: 800, h: 560 });
 
   const [nos, setNos] = useState<No[]>([]);
   const [conexoes, setConexoes] = useState<Conexao[]>([]);
-  const [selected, setSelected] = useState<No | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
   const [filterTipo, setFilterTipo] = useState<string>("all");
 
   const [openNo, setOpenNo] = useState(false);
   const [openConn, setOpenConn] = useState(false);
   const [connFrom, setConnFrom] = useState<No | null>(null);
 
-  // Form states
   const [fNome, setFNome] = useState("");
   const [fTipo, setFTipo] = useState("prefeito");
   const [fDesc, setFDesc] = useState("");
@@ -102,12 +117,13 @@ const MapaAtores = () => {
   const [cDesc, setCDesc] = useState("");
   const [cSent, setCSent] = useState<number>(0);
 
+  // Responsive dims
   useEffect(() => {
     if (!containerRef.current) return;
     const el = containerRef.current;
     const update = () => {
       const w = el.clientWidth || 600;
-      setDims({ w, h: Math.max(480, Math.min(720, w * 0.65)) });
+      setDims({ w, h: Math.max(480, Math.min(720, w * 0.7)) });
     };
     update();
     const ro = new ResizeObserver(update);
@@ -115,6 +131,7 @@ const MapaAtores = () => {
     return () => ro.disconnect();
   }, []);
 
+  // Fetch + realtime
   const fetchAll = useCallback(async () => {
     const [{ data: n, error: en }, { data: c, error: ec }] = await Promise.all([
       sb.from("mapa_atores_nos").select("*").order("created_at", { ascending: true }),
@@ -138,46 +155,112 @@ const MapaAtores = () => {
     };
   }, [fetchAll]);
 
-  // Compute sentiment sum per node (sum of sentiments across all connections involving it)
+  // Sentiment aggregation
   const sentimentByNode = useMemo(() => {
     const map = new Map<string, { sum: number; count: number }>();
     for (const n of nos) map.set(n.id, { sum: 0, count: 0 });
     for (const c of conexoes) {
+      const s = Number(c.sentimento ?? 0);
       const a = map.get(c.origem_id);
       const b = map.get(c.destino_id);
-      const s = Number(c.sentimento ?? 0);
       if (a) { a.sum += s; a.count += 1; }
       if (b) { b.sum += s; b.count += 1; }
     }
     return map;
   }, [nos, conexoes]);
 
-  const graphData = useMemo(() => {
+  // Build sim data (filtered)
+  const { simNodes, simLinks } = useMemo(() => {
     const visible = filterTipo === "all" ? nos : nos.filter((n) => n.tipo === filterTipo);
     const ids = new Set(visible.map((n) => n.id));
-    return {
-      nodes: visible.map((n) => {
-        const sb_ = sentimentByNode.get(n.id) ?? { sum: 0, count: 0 };
-        return {
-          id: n.id,
-          name: n.nome,
-          tipo: n.tipo,
-          color: sentimentColor(sb_.sum, sb_.count > 0),
-          sentSum: sb_.sum,
-          val: 4 + sb_.count * 1.5,
-        };
-      }),
-      links: conexoes
-        .filter((c) => ids.has(c.origem_id) && ids.has(c.destino_id))
-        .map((c) => ({
-          source: c.origem_id,
-          target: c.destino_id,
-          label: c.rotulo,
-          sentimento: Number(c.sentimento ?? 0),
-          id: c.id,
-        })),
-    };
+    const nodes: SimNode[] = visible.map((n) => {
+      const s = sentimentByNode.get(n.id) ?? { sum: 0, count: 0 };
+      return {
+        id: n.id,
+        name: n.nome,
+        tipo: n.tipo,
+        color: sentimentColor(s.sum, s.count > 0),
+        sentSum: s.sum,
+        radius: 8 + Math.min(14, s.count * 2),
+      };
+    });
+    const links: SimLink[] = conexoes
+      .filter((c) => ids.has(c.origem_id) && ids.has(c.destino_id))
+      .map((c) => ({
+        id: c.id,
+        source: c.origem_id,
+        target: c.destino_id,
+        label: c.rotulo,
+        sentimento: Number(c.sentimento ?? 0),
+      }));
+    return { simNodes: nodes, simLinks: links };
   }, [nos, conexoes, filterTipo, sentimentByNode]);
+
+  // Simulation
+  const simRef = useRef<d3.Simulation<SimNode, SimLink> | null>(null);
+  const nodesStateRef = useRef<SimNode[]>([]);
+  const linksStateRef = useRef<SimLink[]>([]);
+  const [, force] = useState(0);
+  const tick = useCallback(() => force((x) => (x + 1) % 1000000), []);
+
+  // Preserve positions across data updates
+  useEffect(() => {
+    const prev = new Map(nodesStateRef.current.map((n) => [n.id, n]));
+    const next = simNodes.map((n) => {
+      const p = prev.get(n.id);
+      return p
+        ? { ...n, x: p.x, y: p.y, vx: p.vx, vy: p.vy, fx: p.fx, fy: p.fy }
+        : { ...n, x: dims.w / 2 + (Math.random() - 0.5) * 120, y: dims.h / 2 + (Math.random() - 0.5) * 120 };
+    });
+    nodesStateRef.current = next;
+    linksStateRef.current = simLinks.map((l) => ({ ...l }));
+
+    if (simRef.current) simRef.current.stop();
+
+    const sim = d3
+      .forceSimulation<SimNode>(nodesStateRef.current)
+      .force(
+        "link",
+        d3
+          .forceLink<SimNode, SimLink>(linksStateRef.current)
+          .id((d) => d.id)
+          .distance(110)
+          .strength(0.4),
+      )
+      .force("charge", d3.forceManyBody<SimNode>().strength(-260))
+      .force("center", d3.forceCenter(dims.w / 2, dims.h / 2))
+      .force("collide", d3.forceCollide<SimNode>((d) => d.radius + 6))
+      .alpha(0.8)
+      .alphaDecay(0.04)
+      .on("tick", tick);
+
+    simRef.current = sim;
+    return () => {
+      sim.stop();
+    };
+  }, [simNodes, simLinks, dims.w, dims.h, tick]);
+
+  // Drag behavior
+  useEffect(() => {
+    if (!svgRef.current) return;
+    const svg = select(svgRef.current);
+    const dragBehavior = drag<SVGGElement, SimNode>()
+      .on("start", (event, d) => {
+        if (!event.active) simRef.current?.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+      })
+      .on("drag", (event, d) => {
+        d.fx = event.x;
+        d.fy = event.y;
+      })
+      .on("end", (event, d) => {
+        if (!event.active) simRef.current?.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+      });
+    svg.selectAll<SVGGElement, SimNode>("g.node").call(dragBehavior as any);
+  });
 
   const handleAddNo = async () => {
     if (!fNome.trim() || !email) return;
@@ -187,10 +270,7 @@ const MapaAtores = () => {
       descricao: fDesc.trim() || null,
       criado_por: email,
     });
-    if (error) {
-      toast.error("Erro ao adicionar ator", { description: error.message });
-      return;
-    }
+    if (error) return toast.error("Erro ao adicionar ator", { description: error.message });
     toast.success("Ator adicionado");
     setFNome("");
     setFDesc("");
@@ -207,10 +287,7 @@ const MapaAtores = () => {
       sentimento: cSent,
       criado_por: email,
     });
-    if (error) {
-      toast.error("Erro ao criar conexão", { description: error.message });
-      return;
-    }
+    if (error) return toast.error("Erro ao criar conexão", { description: error.message });
     toast.success("Conexão criada");
     setCRotulo("");
     setCDesc("");
@@ -221,11 +298,10 @@ const MapaAtores = () => {
 
   const handleDeleteNo = async (id: string) => {
     if (!confirm("Remover este ator e todas as suas conexões?")) return;
-    // delete connections first (no FK cascade defined)
     await sb.from("mapa_atores_conexoes").delete().or(`origem_id.eq.${id},destino_id.eq.${id}`);
     const { error } = await sb.from("mapa_atores_nos").delete().eq("id", id);
     if (error) return toast.error(error.message);
-    setSelected(null);
+    setSelectedId(null);
     toast.success("Ator removido");
   };
 
@@ -235,6 +311,8 @@ const MapaAtores = () => {
     toast.success("Conexão removida");
   };
 
+  const selected = useMemo(() => nos.find((n) => n.id === selectedId) ?? null, [nos, selectedId]);
+  const selectedSent = selected ? sentimentByNode.get(selected.id) ?? { sum: 0, count: 0 } : null;
   const selectedConns = useMemo(
     () =>
       selected
@@ -250,11 +328,11 @@ const MapaAtores = () => {
     [selected, conexoes, nos],
   );
 
-  const selectedSent = selected ? sentimentByNode.get(selected.id) ?? { sum: 0, count: 0 } : null;
+  const renderNodes = nodesStateRef.current;
+  const renderLinks = linksStateRef.current;
 
   return (
     <div className="space-y-6">
-      {/* Header / actions */}
       <div className="flex flex-wrap items-end justify-between gap-4 border-b border-luxury-border pb-6">
         <div>
           <p className="text-[10px] font-sans tracking-luxury uppercase text-gold mb-2">Inteligência coletiva</p>
@@ -285,7 +363,6 @@ const MapaAtores = () => {
         </div>
       </div>
 
-      {/* Legenda sentimento */}
       <div className="flex flex-wrap gap-4 text-[11px] font-light text-text-caption">
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 rounded-full" style={{ background: COLOR_POS }} /> Saldo positivo (aliado)
@@ -302,10 +379,9 @@ const MapaAtores = () => {
       </div>
 
       <div className="grid lg:grid-cols-[1fr_320px] gap-6">
-        {/* Grafo */}
         <div
           ref={containerRef}
-          className="relative bg-background border border-luxury-border rounded-sm overflow-hidden"
+          className="relative bg-[#0a0a0a] border border-luxury-border rounded-sm overflow-hidden"
           style={{ minHeight: 480 }}
         >
           {nos.length === 0 ? (
@@ -318,74 +394,98 @@ const MapaAtores = () => {
               </Button>
             </div>
           ) : (
-            <Suspense
-              fallback={
-                <div className="absolute inset-0 flex items-center justify-center text-xs text-text-caption">
-                  Carregando mapa…
-                </div>
-              }
+            <svg
+              ref={svgRef}
+              width={dims.w}
+              height={dims.h}
+              onClick={(e) => {
+                if (e.target === e.currentTarget) setSelectedId(null);
+              }}
+              style={{ display: "block", cursor: "grab" }}
             >
-              <ForceGraph2D
-                graphData={graphData}
-                width={dims.w}
-                height={dims.h}
-                backgroundColor="#0a0a0a"
-                nodeRelSize={5}
-                nodeLabel={(n: any) =>
-                  `${n.name} — ${tipoLabel(n.tipo)} (saldo ${n.sentSum > 0 ? "+" : ""}${n.sentSum})`
-                }
-                nodeCanvasObject={(node: any, ctx, globalScale) => {
-                  const label = node.name as string;
-                  const fontSize = 11 / globalScale;
-                  const r = Math.sqrt(node.val) * 2.4;
-                  ctx.beginPath();
-                  ctx.arc(node.x, node.y, r, 0, 2 * Math.PI, false);
-                  ctx.fillStyle = node.color;
-                  ctx.globalAlpha = selected && selected.id !== node.id ? 0.35 : 1;
-                  ctx.fill();
-                  if (selected?.id === node.id) {
-                    ctx.lineWidth = 2 / globalScale;
-                    ctx.strokeStyle = "#ffffff";
-                    ctx.stroke();
-                  }
-                  ctx.globalAlpha = 1;
-                  ctx.font = `${fontSize}px Inter, sans-serif`;
-                  ctx.textAlign = "center";
-                  ctx.textBaseline = "top";
-                  ctx.fillStyle = "#e5e5e5";
-                  ctx.fillText(label, node.x, node.y + r + 2);
-                }}
-                linkColor={(l: any) => sentimentLinkColor(l.sentimento ?? 0)}
-                linkWidth={1.4}
-                linkDirectionalArrowLength={4}
-                linkDirectionalArrowRelPos={1}
-                linkLabel={(l: any) => l.label}
-                linkCanvasObjectMode={() => "after"}
-                linkCanvasObject={(link: any, ctx, globalScale) => {
-                  if (globalScale < 1.5) return;
-                  const start = link.source;
-                  const end = link.target;
-                  if (typeof start !== "object" || typeof end !== "object") return;
-                  const mx = (start.x + end.x) / 2;
-                  const my = (start.y + end.y) / 2;
-                  const fontSize = 9 / globalScale;
-                  ctx.font = `${fontSize}px Inter, sans-serif`;
-                  ctx.fillStyle = "#a3a3a3";
-                  ctx.textAlign = "center";
-                  ctx.fillText(link.label, mx, my);
-                }}
-                cooldownTicks={120}
-                onNodeClick={(node: any) => {
-                  const real = nos.find((n) => n.id === node.id) ?? null;
-                  setSelected(real);
-                }}
-                onBackgroundClick={() => setSelected(null)}
-              />
-            </Suspense>
+              <defs>
+                <marker
+                  id="arrow"
+                  viewBox="0 -5 10 10"
+                  refX="14"
+                  refY="0"
+                  markerWidth="6"
+                  markerHeight="6"
+                  orient="auto"
+                >
+                  <path d="M0,-5L10,0L0,5" fill="#999" />
+                </marker>
+              </defs>
+              <g>
+                {renderLinks.map((l) => {
+                  const s = l.source as SimNode;
+                  const t = l.target as SimNode;
+                  if (!s || !t || s.x == null || t.x == null) return null;
+                  const mx = (s.x + t.x) / 2;
+                  const my = (s.y! + t.y!) / 2;
+                  return (
+                    <g key={l.id}>
+                      <line
+                        x1={s.x}
+                        y1={s.y}
+                        x2={t.x}
+                        y2={t.y}
+                        stroke={linkStroke(l.sentimento)}
+                        strokeWidth={1.4}
+                        markerEnd="url(#arrow)"
+                      />
+                      <text
+                        x={mx}
+                        y={my - 2}
+                        textAnchor="middle"
+                        fill="#a3a3a3"
+                        fontSize={9}
+                        style={{ pointerEvents: "none", fontFamily: "Inter, sans-serif" }}
+                      >
+                        {l.label}
+                      </text>
+                    </g>
+                  );
+                })}
+              </g>
+              <g>
+                {renderNodes.map((n) => {
+                  if (n.x == null || n.y == null) return null;
+                  const isSel = selectedId === n.id;
+                  return (
+                    <g
+                      key={n.id}
+                      className="node"
+                      transform={`translate(${n.x},${n.y})`}
+                      style={{ cursor: "pointer", opacity: selectedId && !isSel ? 0.4 : 1 }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setSelectedId(n.id);
+                      }}
+                    >
+                      <circle
+                        r={n.radius}
+                        fill={n.color}
+                        stroke={isSel ? "#ffffff" : "rgba(255,255,255,0.15)"}
+                        strokeWidth={isSel ? 2 : 1}
+                      />
+                      <text
+                        y={n.radius + 12}
+                        textAnchor="middle"
+                        fill="#e5e5e5"
+                        fontSize={11}
+                        style={{ pointerEvents: "none", fontFamily: "Inter, sans-serif" }}
+                      >
+                        {n.name}
+                      </text>
+                    </g>
+                  );
+                })}
+              </g>
+            </svg>
           )}
         </div>
 
-        {/* Painel lateral */}
         <aside className="bg-background border border-luxury-border rounded-sm p-5 min-h-[480px]">
           {!selected ? (
             <div className="text-xs font-light text-text-caption space-y-3">
@@ -405,7 +505,7 @@ const MapaAtores = () => {
                   </p>
                   <h4 className="text-lg font-display text-foreground leading-tight mt-1">{selected.nome}</h4>
                 </div>
-                <button onClick={() => setSelected(null)} className="text-text-caption hover:text-foreground">
+                <button onClick={() => setSelectedId(null)} className="text-text-caption hover:text-foreground">
                   <X className="w-4 h-4" />
                 </button>
               </div>
@@ -429,7 +529,7 @@ const MapaAtores = () => {
                 por {selected.criado_por}
               </p>
 
-              <div className="pt-3 border-t border-luxury-border">
+              <div className="pt-3 border-t border-luxury-border space-y-2">
                 <Button
                   size="sm"
                   variant="outline"
@@ -441,6 +541,16 @@ const MapaAtores = () => {
                 >
                   <Link2 className="w-3.5 h-3.5" /> Conectar a outro ator
                 </Button>
+                {(selected.criado_por === email) && (
+                  <Button
+                    size="sm"
+                    variant="ghost"
+                    className="w-full gap-2 text-destructive hover:text-destructive"
+                    onClick={() => handleDeleteNo(selected.id)}
+                  >
+                    <Trash2 className="w-3.5 h-3.5" /> Remover ator
+                  </Button>
+                )}
               </div>
 
               <div className="space-y-2">
@@ -448,46 +558,29 @@ const MapaAtores = () => {
                   Conexões ({selectedConns.length})
                 </p>
                 {selectedConns.length === 0 && (
-                  <p className="text-xs font-light text-text-caption">Nenhuma conexão ainda.</p>
+                  <p className="text-[11px] font-light text-text-caption">Nenhuma conexão registrada.</p>
                 )}
                 {selectedConns.map(({ c, outro, direcao }) => (
-                  <div
-                    key={c.id}
-                    className="border border-luxury-border p-2.5 text-xs space-y-1"
-                    style={{ borderLeft: `3px solid ${sentimentLinkColor(c.sentimento ?? 0).replace(/[\d.]+\)$/, "1)")}` }}
-                  >
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="font-light text-foreground">
-                        {direcao} {outro?.nome ?? "—"}
-                      </span>
+                  <div key={c.id} className="border border-luxury-border p-2 text-[11px] space-y-1"
+                    style={{ borderLeft: `3px solid ${linkStroke(c.sentimento).replace("0.7", "1").replace("0.6", "1")}` }}>
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="flex-1">
+                        <span className="text-foreground">{direcao} {outro?.nome ?? "—"}</span>
+                        <div className="text-text-caption mt-0.5">{c.rotulo}</div>
+                      </div>
                       {c.criado_por === email && (
                         <button
                           onClick={() => handleDeleteConn(c.id)}
                           className="text-text-caption hover:text-destructive"
+                          aria-label="Remover conexão"
                         >
                           <Trash2 className="w-3 h-3" />
                         </button>
                       )}
                     </div>
-                    <p className="text-[10px] tracking-luxury uppercase text-gold flex items-center gap-1">
-                      {c.sentimento > 0 && <Plus className="w-3 h-3" />}
-                      {c.sentimento < 0 && <Minus className="w-3 h-3" />}
-                      {c.sentimento === 0 && <Equal className="w-3 h-3" />}
-                      {c.rotulo}
-                    </p>
-                    {c.descricao && <p className="text-text-caption font-light">{c.descricao}</p>}
                   </div>
                 ))}
               </div>
-
-              {selected.criado_por === email && (
-                <button
-                  onClick={() => handleDeleteNo(selected.id)}
-                  className="w-full text-[10px] tracking-luxury uppercase text-destructive/80 hover:text-destructive border border-destructive/30 hover:border-destructive py-2 transition-colors"
-                >
-                  Remover ator
-                </button>
-              )}
             </div>
           )}
         </aside>
@@ -497,16 +590,18 @@ const MapaAtores = () => {
       <Dialog open={openNo} onOpenChange={setOpenNo}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle className="font-display">Novo ator</DialogTitle>
-            <DialogDescription>Adicione um ator-chave ao mapa colaborativo.</DialogDescription>
+            <DialogTitle>Adicionar ator</DialogTitle>
+            <DialogDescription>
+              Cadastre um ator estratégico — pessoa, órgão ou instituição relevante para a carreira.
+            </DialogDescription>
           </DialogHeader>
           <div className="space-y-4">
-            <div className="space-y-1.5">
-              <Label className="text-xs uppercase tracking-luxury">Nome</Label>
-              <Input value={fNome} onChange={(e) => setFNome(e.target.value)} placeholder="Ex.: Ricardo Nunes" />
+            <div>
+              <Label className="text-xs">Nome</Label>
+              <Input value={fNome} onChange={(e) => setFNome(e.target.value)} placeholder="Ex.: Prefeito Ricardo Nunes" />
             </div>
-            <div className="space-y-1.5">
-              <Label className="text-xs uppercase tracking-luxury">Tipo</Label>
+            <div>
+              <Label className="text-xs">Tipo</Label>
               <Select value={fTipo} onValueChange={setFTipo}>
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
@@ -516,19 +611,14 @@ const MapaAtores = () => {
                 </SelectContent>
               </Select>
             </div>
-            <div className="space-y-1.5">
-              <Label className="text-xs uppercase tracking-luxury">Descrição (opcional)</Label>
-              <Textarea
-                value={fDesc}
-                onChange={(e) => setFDesc(e.target.value)}
-                placeholder="Cargo, contexto, posicionamento conhecido…"
-                rows={3}
-              />
+            <div>
+              <Label className="text-xs">Descrição (opcional)</Label>
+              <Textarea value={fDesc} onChange={(e) => setFDesc(e.target.value)} rows={3} />
             </div>
           </div>
           <DialogFooter>
-            <Button variant="ghost" onClick={() => setOpenNo(false)}>Cancelar</Button>
-            <Button onClick={handleAddNo} disabled={!fNome.trim()}>Adicionar</Button>
+            <Button variant="outline" onClick={() => setOpenNo(false)}>Cancelar</Button>
+            <Button onClick={handleAddNo} disabled={!fNome.trim() || !email}>Adicionar</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -537,80 +627,64 @@ const MapaAtores = () => {
       <Dialog open={openConn} onOpenChange={setOpenConn}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle className="font-display">Nova ação / conexão</DialogTitle>
+            <DialogTitle>Nova conexão</DialogTitle>
             <DialogDescription>
-              {connFrom ? <>De <strong className="text-foreground">{connFrom.nome}</strong> para…</> : null}
+              {connFrom ? <>De <strong>{connFrom.nome}</strong> → escolha o destino e a ação.</> : "Escolha origem e destino."}
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4">
-            <div className="space-y-1.5">
-              <Label className="text-xs uppercase tracking-luxury">Para qual ator</Label>
+            <div>
+              <Label className="text-xs">Destino</Label>
               <Select value={cDestino} onValueChange={setCDestino}>
-                <SelectTrigger><SelectValue placeholder="Selecione…" /></SelectTrigger>
+                <SelectTrigger><SelectValue placeholder="Selecione um ator" /></SelectTrigger>
                 <SelectContent>
-                  {nos
-                    .filter((n) => n.id !== connFrom?.id)
-                    .map((n) => (
-                      <SelectItem key={n.id} value={n.id}>{n.nome} ({tipoLabel(n.tipo)})</SelectItem>
-                    ))}
+                  {nos.filter((n) => n.id !== connFrom?.id).map((n) => (
+                    <SelectItem key={n.id} value={n.id}>{n.nome} — {tipoLabel(n.tipo)}</SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
-            <div className="space-y-1.5">
-              <Label className="text-xs uppercase tracking-luxury">Ação / relação</Label>
-              <Input
-                value={cRotulo}
-                onChange={(e) => setCRotulo(e.target.value)}
-                placeholder="Ex.: nomeia, articula com, é aliado, vetou, financia…"
-              />
+            <div>
+              <Label className="text-xs">Ação / rótulo</Label>
+              <Input value={cRotulo} onChange={(e) => setCRotulo(e.target.value)} placeholder="Ex.: nomeia, articula com, resiste a" />
             </div>
-
-            <div className="space-y-1.5">
-              <Label className="text-xs uppercase tracking-luxury">Tipo da ação</Label>
-              <div className="grid grid-cols-3 gap-2">
-                {[
-                  { v: 1, label: "Positiva", color: COLOR_POS, icon: Plus },
-                  { v: 0, label: "Neutra", color: COLOR_NEU, icon: Equal },
-                  { v: -1, label: "Negativa", color: COLOR_NEG, icon: Minus },
-                ].map((opt) => {
-                  const Icon = opt.icon;
-                  const active = cSent === opt.v;
-                  return (
-                    <button
-                      key={opt.v}
-                      type="button"
-                      onClick={() => setCSent(opt.v)}
-                      className={`flex flex-col items-center gap-1 border py-3 text-[11px] tracking-luxury uppercase transition-colors ${
-                        active
-                          ? "border-foreground text-foreground"
-                          : "border-luxury-border text-text-caption hover:border-foreground/40"
-                      }`}
-                      style={active ? { borderColor: opt.color, color: opt.color } : undefined}
-                    >
-                      <Icon className="w-4 h-4" style={{ color: opt.color }} />
-                      {opt.label}
-                      <span className="text-[9px] opacity-60">
-                        {opt.v > 0 ? "+1" : opt.v < 0 ? "-1" : "0"}
-                      </span>
-                    </button>
-                  );
-                })}
+            <div>
+              <Label className="text-xs">Sentimento</Label>
+              <div className="grid grid-cols-3 gap-2 mt-1">
+                <button
+                  type="button"
+                  onClick={() => setCSent(1)}
+                  className={`text-xs py-2 border rounded-sm ${cSent === 1 ? "border-foreground" : "border-luxury-border"}`}
+                  style={{ background: cSent === 1 ? COLOR_POS : "transparent", color: cSent === 1 ? "#000" : undefined }}
+                >
+                  +1 Positiva
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setCSent(0)}
+                  className={`text-xs py-2 border rounded-sm ${cSent === 0 ? "border-foreground" : "border-luxury-border"}`}
+                  style={{ background: cSent === 0 ? COLOR_NEU : "transparent", color: cSent === 0 ? "#000" : undefined }}
+                >
+                  0 Neutra
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setCSent(-1)}
+                  className={`text-xs py-2 border rounded-sm ${cSent === -1 ? "border-foreground" : "border-luxury-border"}`}
+                  style={{ background: cSent === -1 ? COLOR_NEG : "transparent", color: cSent === -1 ? "#fff" : undefined }}
+                >
+                  −1 Negativa
+                </button>
               </div>
             </div>
-
-            <div className="space-y-1.5">
-              <Label className="text-xs uppercase tracking-luxury">Detalhes (opcional)</Label>
-              <Textarea
-                value={cDesc}
-                onChange={(e) => setCDesc(e.target.value)}
-                placeholder="Contexto, datas, fonte…"
-                rows={3}
-              />
+            <div>
+              <Label className="text-xs">Descrição (opcional)</Label>
+              <Textarea value={cDesc} onChange={(e) => setCDesc(e.target.value)} rows={3} />
             </div>
           </div>
           <DialogFooter>
-            <Button variant="ghost" onClick={() => setOpenConn(false)}>Cancelar</Button>
-            <Button onClick={handleAddConn} disabled={!cDestino || !cRotulo.trim()}>Registrar</Button>
+            <Button variant="outline" onClick={() => setOpenConn(false)}>Cancelar</Button>
+            <Button onClick={handleAddConn} disabled={!cDestino || !cRotulo.trim() || !email}>Criar conexão</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
