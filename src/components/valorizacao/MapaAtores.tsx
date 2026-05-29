@@ -266,37 +266,97 @@ const MapaAtores = () => {
     svg.selectAll<SVGGElement, SimNode>("g.node").call(dragBehavior as any);
   });
 
-  const handleAddNo = async () => {
-    if (!fNome.trim()) return;
-    const { error } = await sb.from("mapa_atores_nos").insert({
-      nome: fNome.trim(),
-      tipo: fTipo,
-      descricao: fDesc.trim() || null,
-      criado_por: contributor,
-    });
-    if (error) return toast.error("Erro ao adicionar ator", { description: error.message });
-    toast.success("Ator adicionado");
+  const resetNoForm = () => {
     setFNome("");
+    setFTipo("prefeito");
     setFDesc("");
+    setEditNoId(null);
+  };
+
+  const openEditNo = (n: No) => {
+    setEditNoId(n.id);
+    setFNome(n.nome);
+    setFTipo(n.tipo);
+    setFDesc(n.descricao ?? "");
+    setOpenNo(true);
+  };
+
+  const handleSaveNo = async () => {
+    if (!fNome.trim()) return;
+    if (editNoId) {
+      const { error } = await sb
+        .from("mapa_atores_nos")
+        .update({
+          nome: fNome.trim(),
+          tipo: fTipo,
+          descricao: fDesc.trim() || null,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", editNoId);
+      if (error) return toast.error("Erro ao salvar ator", { description: error.message });
+      toast.success("Ator atualizado");
+    } else {
+      const { error } = await sb.from("mapa_atores_nos").insert({
+        nome: fNome.trim(),
+        tipo: fTipo,
+        descricao: fDesc.trim() || null,
+        criado_por: contributor,
+      });
+      if (error) return toast.error("Erro ao adicionar ator", { description: error.message });
+      toast.success("Ator adicionado");
+    }
+    resetNoForm();
     setOpenNo(false);
   };
 
-  const handleAddConn = async () => {
-    if (!connFrom || !cDestino || !cRotulo.trim()) return;
-    const { error } = await sb.from("mapa_atores_conexoes").insert({
-      origem_id: connFrom.id,
-      destino_id: cDestino,
-      rotulo: cRotulo.trim(),
-      descricao: cDesc.trim() || null,
-      sentimento: cSent,
-      criado_por: contributor,
-    });
-    if (error) return toast.error("Erro ao criar conexão", { description: error.message });
-    toast.success("Conexão criada");
+  const resetConnForm = () => {
+    setCDestino("");
     setCRotulo("");
     setCDesc("");
-    setCDestino("");
     setCSent(0);
+    setEditConnId(null);
+  };
+
+  const openEditConn = (c: Conexao) => {
+    setEditConnId(c.id);
+    const origem = nos.find((n) => n.id === c.origem_id) ?? null;
+    setConnFrom(origem);
+    setCDestino(c.destino_id);
+    setCRotulo(c.rotulo);
+    setCDesc(c.descricao ?? "");
+    setCSent(Number(c.sentimento ?? 0));
+    setOpenConn(true);
+  };
+
+  const handleSaveConn = async () => {
+    if (!connFrom || !cDestino || !cRotulo.trim()) return;
+    if (editConnId) {
+      const { error } = await sb
+        .from("mapa_atores_conexoes")
+        .update({
+          origem_id: connFrom.id,
+          destino_id: cDestino,
+          rotulo: cRotulo.trim(),
+          descricao: cDesc.trim() || null,
+          sentimento: cSent,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", editConnId);
+      if (error) return toast.error("Erro ao salvar conexão", { description: error.message });
+      toast.success("Conexão atualizada");
+    } else {
+      const { error } = await sb.from("mapa_atores_conexoes").insert({
+        origem_id: connFrom.id,
+        destino_id: cDestino,
+        rotulo: cRotulo.trim(),
+        descricao: cDesc.trim() || null,
+        sentimento: cSent,
+        criado_por: contributor,
+      });
+      if (error) return toast.error("Erro ao criar conexão", { description: error.message });
+      toast.success("Conexão criada");
+    }
+    resetConnForm();
     setOpenConn(false);
   };
 
@@ -310,6 +370,7 @@ const MapaAtores = () => {
   };
 
   const handleDeleteConn = async (id: string) => {
+    if (!confirm("Remover esta conexão?")) return;
     const { error } = await sb.from("mapa_atores_conexoes").delete().eq("id", id);
     if (error) return toast.error(error.message);
     toast.success("Conexão removida");
