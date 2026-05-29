@@ -24,7 +24,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { Plus, Link2, Trash2, X } from "lucide-react";
+import { Plus, Link2, Trash2, X, Pencil } from "lucide-react";
 
 type No = {
   id: string;
@@ -110,6 +110,8 @@ const MapaAtores = () => {
   const [openNo, setOpenNo] = useState(false);
   const [openConn, setOpenConn] = useState(false);
   const [connFrom, setConnFrom] = useState<No | null>(null);
+  const [editNoId, setEditNoId] = useState<string | null>(null);
+  const [editConnId, setEditConnId] = useState<string | null>(null);
 
   const [fNome, setFNome] = useState("");
   const [fTipo, setFTipo] = useState("prefeito");
@@ -264,37 +266,97 @@ const MapaAtores = () => {
     svg.selectAll<SVGGElement, SimNode>("g.node").call(dragBehavior as any);
   });
 
-  const handleAddNo = async () => {
-    if (!fNome.trim()) return;
-    const { error } = await sb.from("mapa_atores_nos").insert({
-      nome: fNome.trim(),
-      tipo: fTipo,
-      descricao: fDesc.trim() || null,
-      criado_por: contributor,
-    });
-    if (error) return toast.error("Erro ao adicionar ator", { description: error.message });
-    toast.success("Ator adicionado");
+  const resetNoForm = () => {
     setFNome("");
+    setFTipo("prefeito");
     setFDesc("");
+    setEditNoId(null);
+  };
+
+  const openEditNo = (n: No) => {
+    setEditNoId(n.id);
+    setFNome(n.nome);
+    setFTipo(n.tipo);
+    setFDesc(n.descricao ?? "");
+    setOpenNo(true);
+  };
+
+  const handleSaveNo = async () => {
+    if (!fNome.trim()) return;
+    if (editNoId) {
+      const { error } = await sb
+        .from("mapa_atores_nos")
+        .update({
+          nome: fNome.trim(),
+          tipo: fTipo,
+          descricao: fDesc.trim() || null,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", editNoId);
+      if (error) return toast.error("Erro ao salvar ator", { description: error.message });
+      toast.success("Ator atualizado");
+    } else {
+      const { error } = await sb.from("mapa_atores_nos").insert({
+        nome: fNome.trim(),
+        tipo: fTipo,
+        descricao: fDesc.trim() || null,
+        criado_por: contributor,
+      });
+      if (error) return toast.error("Erro ao adicionar ator", { description: error.message });
+      toast.success("Ator adicionado");
+    }
+    resetNoForm();
     setOpenNo(false);
   };
 
-  const handleAddConn = async () => {
-    if (!connFrom || !cDestino || !cRotulo.trim()) return;
-    const { error } = await sb.from("mapa_atores_conexoes").insert({
-      origem_id: connFrom.id,
-      destino_id: cDestino,
-      rotulo: cRotulo.trim(),
-      descricao: cDesc.trim() || null,
-      sentimento: cSent,
-      criado_por: contributor,
-    });
-    if (error) return toast.error("Erro ao criar conexão", { description: error.message });
-    toast.success("Conexão criada");
+  const resetConnForm = () => {
+    setCDestino("");
     setCRotulo("");
     setCDesc("");
-    setCDestino("");
     setCSent(0);
+    setEditConnId(null);
+  };
+
+  const openEditConn = (c: Conexao) => {
+    setEditConnId(c.id);
+    const origem = nos.find((n) => n.id === c.origem_id) ?? null;
+    setConnFrom(origem);
+    setCDestino(c.destino_id);
+    setCRotulo(c.rotulo);
+    setCDesc(c.descricao ?? "");
+    setCSent(Number(c.sentimento ?? 0));
+    setOpenConn(true);
+  };
+
+  const handleSaveConn = async () => {
+    if (!connFrom || !cDestino || !cRotulo.trim()) return;
+    if (editConnId) {
+      const { error } = await sb
+        .from("mapa_atores_conexoes")
+        .update({
+          origem_id: connFrom.id,
+          destino_id: cDestino,
+          rotulo: cRotulo.trim(),
+          descricao: cDesc.trim() || null,
+          sentimento: cSent,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", editConnId);
+      if (error) return toast.error("Erro ao salvar conexão", { description: error.message });
+      toast.success("Conexão atualizada");
+    } else {
+      const { error } = await sb.from("mapa_atores_conexoes").insert({
+        origem_id: connFrom.id,
+        destino_id: cDestino,
+        rotulo: cRotulo.trim(),
+        descricao: cDesc.trim() || null,
+        sentimento: cSent,
+        criado_por: contributor,
+      });
+      if (error) return toast.error("Erro ao criar conexão", { description: error.message });
+      toast.success("Conexão criada");
+    }
+    resetConnForm();
     setOpenConn(false);
   };
 
@@ -308,6 +370,7 @@ const MapaAtores = () => {
   };
 
   const handleDeleteConn = async (id: string) => {
+    if (!confirm("Remover esta conexão?")) return;
     const { error } = await sb.from("mapa_atores_conexoes").delete().eq("id", id);
     if (error) return toast.error(error.message);
     toast.success("Conexão removida");
@@ -537,22 +600,29 @@ const MapaAtores = () => {
                   variant="outline"
                   className="w-full gap-2"
                   onClick={() => {
+                    resetConnForm();
                     setConnFrom(selected);
                     setOpenConn(true);
                   }}
                 >
                   <Link2 className="w-3.5 h-3.5" /> Conectar a outro ator
                 </Button>
-                {(selected.criado_por === email) && (
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    className="w-full gap-2 text-destructive hover:text-destructive"
-                    onClick={() => handleDeleteNo(selected.id)}
-                  >
-                    <Trash2 className="w-3.5 h-3.5" /> Remover ator
-                  </Button>
-                )}
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="w-full gap-2"
+                  onClick={() => openEditNo(selected)}
+                >
+                  <Pencil className="w-3.5 h-3.5" /> Editar ator
+                </Button>
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  className="w-full gap-2 text-destructive hover:text-destructive"
+                  onClick={() => handleDeleteNo(selected.id)}
+                >
+                  <Trash2 className="w-3.5 h-3.5" /> Remover ator
+                </Button>
               </div>
 
               <div className="space-y-2">
@@ -570,7 +640,14 @@ const MapaAtores = () => {
                         <span className="text-foreground">{direcao} {outro?.nome ?? "—"}</span>
                         <div className="text-text-caption mt-0.5">{c.rotulo}</div>
                       </div>
-                      {c.criado_por === email && (
+                      <div className="flex items-center gap-1">
+                        <button
+                          onClick={() => openEditConn(c)}
+                          className="text-text-caption hover:text-foreground"
+                          aria-label="Editar conexão"
+                        >
+                          <Pencil className="w-3 h-3" />
+                        </button>
                         <button
                           onClick={() => handleDeleteConn(c.id)}
                           className="text-text-caption hover:text-destructive"
@@ -578,7 +655,7 @@ const MapaAtores = () => {
                         >
                           <Trash2 className="w-3 h-3" />
                         </button>
-                      )}
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -588,13 +665,15 @@ const MapaAtores = () => {
         </aside>
       </div>
 
-      {/* Dialog: novo ator */}
-      <Dialog open={openNo} onOpenChange={setOpenNo}>
+      {/* Dialog: ator (novo / editar) */}
+      <Dialog open={openNo} onOpenChange={(v) => { setOpenNo(v); if (!v) resetNoForm(); }}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Adicionar ator</DialogTitle>
+            <DialogTitle>{editNoId ? "Editar ator" : "Adicionar ator"}</DialogTitle>
             <DialogDescription>
-              Cadastre um ator estratégico — pessoa, órgão ou instituição relevante para a carreira.
+              {editNoId
+                ? "Atualize as informações deste ator no mapa colaborativo."
+                : "Cadastre um ator estratégico — pessoa, órgão ou instituição relevante para a carreira."}
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4">
@@ -619,17 +698,19 @@ const MapaAtores = () => {
             </div>
           </div>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setOpenNo(false)}>Cancelar</Button>
-            <Button onClick={handleAddNo} disabled={!fNome.trim() || !email}>Adicionar</Button>
+            <Button variant="outline" onClick={() => { setOpenNo(false); resetNoForm(); }}>Cancelar</Button>
+            <Button onClick={handleSaveNo} disabled={!fNome.trim()}>
+              {editNoId ? "Salvar" : "Adicionar"}
+            </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
 
-      {/* Dialog: nova conexão */}
-      <Dialog open={openConn} onOpenChange={setOpenConn}>
+      {/* Dialog: conexão (nova / editar) */}
+      <Dialog open={openConn} onOpenChange={(v) => { setOpenConn(v); if (!v) resetConnForm(); }}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Nova conexão</DialogTitle>
+            <DialogTitle>{editConnId ? "Editar conexão" : "Nova conexão"}</DialogTitle>
             <DialogDescription>
               {connFrom ? <>De <strong>{connFrom.nome}</strong> → escolha o destino e a ação.</> : "Escolha origem e destino."}
             </DialogDescription>
@@ -685,8 +766,10 @@ const MapaAtores = () => {
             </div>
           </div>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setOpenConn(false)}>Cancelar</Button>
-            <Button onClick={handleAddConn} disabled={!cDestino || !cRotulo.trim() || !email}>Criar conexão</Button>
+            <Button variant="outline" onClick={() => { setOpenConn(false); resetConnForm(); }}>Cancelar</Button>
+            <Button onClick={handleSaveConn} disabled={!cDestino || !cRotulo.trim()}>
+              {editConnId ? "Salvar" : "Criar conexão"}
+            </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
