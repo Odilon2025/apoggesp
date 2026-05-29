@@ -706,11 +706,11 @@ const MapaAtores = () => {
         </DialogContent>
       </Dialog>
 
-      {/* Dialog: nova conexão */}
-      <Dialog open={openConn} onOpenChange={setOpenConn}>
+      {/* Dialog: conexão (nova / editar) */}
+      <Dialog open={openConn} onOpenChange={(v) => { setOpenConn(v); if (!v) resetConnForm(); }}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Nova conexão</DialogTitle>
+            <DialogTitle>{editConnId ? "Editar conexão" : "Nova conexão"}</DialogTitle>
             <DialogDescription>
               {connFrom ? <>De <strong>{connFrom.nome}</strong> → escolha o destino e a ação.</> : "Escolha origem e destino."}
             </DialogDescription>
@@ -766,8 +766,10 @@ const MapaAtores = () => {
             </div>
           </div>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setOpenConn(false)}>Cancelar</Button>
-            <Button onClick={handleAddConn} disabled={!cDestino || !cRotulo.trim() || !email}>Criar conexão</Button>
+            <Button variant="outline" onClick={() => { setOpenConn(false); resetConnForm(); }}>Cancelar</Button>
+            <Button onClick={handleSaveConn} disabled={!cDestino || !cRotulo.trim()}>
+              {editConnId ? "Salvar" : "Criar conexão"}
+            </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
