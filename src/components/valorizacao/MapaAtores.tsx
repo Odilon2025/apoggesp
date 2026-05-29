@@ -24,7 +24,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { Plus, Link2, Trash2, X } from "lucide-react";
+import { Plus, Link2, Trash2, X, Pencil } from "lucide-react";
 
 type No = {
   id: string;
