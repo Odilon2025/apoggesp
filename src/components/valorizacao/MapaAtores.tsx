@@ -600,22 +600,29 @@ const MapaAtores = () => {
                   variant="outline"
                   className="w-full gap-2"
                   onClick={() => {
+                    resetConnForm();
                     setConnFrom(selected);
                     setOpenConn(true);
                   }}
                 >
                   <Link2 className="w-3.5 h-3.5" /> Conectar a outro ator
                 </Button>
-                {(selected.criado_por === email) && (
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    className="w-full gap-2 text-destructive hover:text-destructive"
-                    onClick={() => handleDeleteNo(selected.id)}
-                  >
-                    <Trash2 className="w-3.5 h-3.5" /> Remover ator
-                  </Button>
-                )}
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="w-full gap-2"
+                  onClick={() => openEditNo(selected)}
+                >
+                  <Pencil className="w-3.5 h-3.5" /> Editar ator
+                </Button>
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  className="w-full gap-2 text-destructive hover:text-destructive"
+                  onClick={() => handleDeleteNo(selected.id)}
+                >
+                  <Trash2 className="w-3.5 h-3.5" /> Remover ator
+                </Button>
               </div>
 
               <div className="space-y-2">
