@@ -665,13 +665,15 @@ const MapaAtores = () => {
         </aside>
       </div>
 
-      {/* Dialog: novo ator */}
-      <Dialog open={openNo} onOpenChange={setOpenNo}>
+      {/* Dialog: ator (novo / editar) */}
+      <Dialog open={openNo} onOpenChange={(v) => { setOpenNo(v); if (!v) resetNoForm(); }}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Adicionar ator</DialogTitle>
+            <DialogTitle>{editNoId ? "Editar ator" : "Adicionar ator"}</DialogTitle>
             <DialogDescription>
-              Cadastre um ator estratégico — pessoa, órgão ou instituição relevante para a carreira.
+              {editNoId
+                ? "Atualize as informações deste ator no mapa colaborativo."
+                : "Cadastre um ator estratégico — pessoa, órgão ou instituição relevante para a carreira."}
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4">
@@ -696,8 +698,10 @@ const MapaAtores = () => {
             </div>
           </div>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setOpenNo(false)}>Cancelar</Button>
-            <Button onClick={handleAddNo} disabled={!fNome.trim() || !email}>Adicionar</Button>
+            <Button variant="outline" onClick={() => { setOpenNo(false); resetNoForm(); }}>Cancelar</Button>
+            <Button onClick={handleSaveNo} disabled={!fNome.trim()}>
+              {editNoId ? "Salvar" : "Adicionar"}
+            </Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
