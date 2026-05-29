@@ -92,10 +92,12 @@ const linkStroke = (s: number) => {
 };
 
 const sb = supabase as any;
+const PUBLIC_CONTRIBUTOR = "visitante";
 
 const MapaAtores = () => {
   const { user } = useAuth();
   const email = user?.email ?? "";
+  const contributor = email || PUBLIC_CONTRIBUTOR;
   const containerRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const [dims, setDims] = useState({ w: 800, h: 560 });
@@ -263,12 +265,12 @@ const MapaAtores = () => {
   });
 
   const handleAddNo = async () => {
-    if (!fNome.trim() || !email) return;
+    if (!fNome.trim()) return;
     const { error } = await sb.from("mapa_atores_nos").insert({
       nome: fNome.trim(),
       tipo: fTipo,
       descricao: fDesc.trim() || null,
-      criado_por: email,
+      criado_por: contributor,
     });
     if (error) return toast.error("Erro ao adicionar ator", { description: error.message });
     toast.success("Ator adicionado");
@@ -278,14 +280,14 @@ const MapaAtores = () => {
   };
 
   const handleAddConn = async () => {
-    if (!connFrom || !cDestino || !cRotulo.trim() || !email) return;
+    if (!connFrom || !cDestino || !cRotulo.trim()) return;
     const { error } = await sb.from("mapa_atores_conexoes").insert({
       origem_id: connFrom.id,
       destino_id: cDestino,
       rotulo: cRotulo.trim(),
       descricao: cDesc.trim() || null,
       sentimento: cSent,
-      criado_por: email,
+      criado_por: contributor,
     });
     if (error) return toast.error("Erro ao criar conexão", { description: error.message });
     toast.success("Conexão criada");
