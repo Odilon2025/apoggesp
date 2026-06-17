@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
@@ -5,7 +6,7 @@ import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
 import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields } from "@/hooks/useCMS";
-import { field } from "@/lib/cms";
+import { field, getSnapshot } from "@/lib/cms";
 import { ArrowRight, TrendingDown, Scale, AlertTriangle, Users } from "lucide-react";
 
 const tabelaComparativa = [
