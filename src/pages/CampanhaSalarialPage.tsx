@@ -7,7 +7,7 @@ import FadeIn from "@/components/FadeIn";
 import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields } from "@/hooks/useCMS";
 import { field, getSnapshot } from "@/lib/cms";
-import { ArrowRight, TrendingDown, Scale, AlertTriangle, Users, LineChart, FileCheck2, Shield, MonitorSmartphone, Baby, Receipt } from "lucide-react";
+import { ArrowRight, TrendingDown, Scale, AlertTriangle, Users, LineChart, FileCheck2, Shield, Eye, Receipt, BookOpen } from "lucide-react";
 
 const projetosAltoImpacto = [
   {
