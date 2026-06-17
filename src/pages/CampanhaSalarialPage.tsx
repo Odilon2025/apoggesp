@@ -46,11 +46,11 @@ const projetosAltoImpacto = [
     desc: "Incorporação de veículos aéreos não tripulados no planejamento e suporte de atividades de policiamento e defesa civil. Equipe especializada treinada internamente. Referência para forças policiais de todo o Brasil.",
   },
   {
-    icon: BookOpen,
-    titulo: "Glossário de Compras Públicas da Prefeitura",
-    area: "Transparência · Compras",
-    metrica: "~200 termos · 2º lugar Premia Sampa 2024 · integrado ao Diário Oficial",
-    desc: "Documentos e ferramentas de compras públicas traduzidos de linguagem técnica para linguagem acessível. Integrado ao Portal de Transparência e ao Diário Oficial. Menos burocracia, mais controle social e mais empresas competindo em licitações.",
+    icon: AlertTriangle,
+    titulo: "Comitê de Proteção Escolar",
+    area: "Segurança Institucional · SME/SMSU",
+    metrica: "Protocolos emergenciais e preventivos · articulação intersecretarial",
+    desc: "Estruturação de protocolos integrados de prevenção, intervenção e pós-venção para violência contra escolas. Mapeamento de iniciativas, revisão de protocolos e minuta de decreto. Proteção de estudantes como prioridade institucional, com decisões técnicas e não ideológicas.",
   },
 ];
 
