@@ -57,6 +57,17 @@ const argumentos = [
 
 const CampanhaSalarialPage = () => {
   const f = usePageFields("campanha-salarial");
+  const [snap, setSnap] = useState<any>(null);
+  useEffect(() => {
+    getSnapshot().then(setSnap);
+  }, []);
+
+  const total = snap?.total ?? 185;
+  const totalOrgaos = snap?.totalOrgaos ?? 23;
+  const lideranca = snap?.indicadores?.lideranca ?? 57;
+  const liderancaPct = snap?.indicadores?.liderancaPct ?? 30.8;
+  const concursos = Array.isArray(snap?.ingresso) ? snap.ingresso.length : 6;
+
   return (
     <PageLayout>
       <PageHero
