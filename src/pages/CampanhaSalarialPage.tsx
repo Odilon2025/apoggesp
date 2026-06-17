@@ -7,7 +7,52 @@ import FadeIn from "@/components/FadeIn";
 import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields } from "@/hooks/useCMS";
 import { field, getSnapshot } from "@/lib/cms";
-import { ArrowRight, TrendingDown, Scale, AlertTriangle, Users } from "lucide-react";
+import { ArrowRight, TrendingDown, Scale, AlertTriangle, Users, LineChart, FileCheck2, Shield, MonitorSmartphone, Baby, Receipt } from "lucide-react";
+
+const projetosAltoImpacto = [
+  {
+    icon: LineChart,
+    titulo: "SMAE — Sistema de Acompanhamento Estratégico",
+    area: "Planejamento · SEPLAN/FGV",
+    metrica: "500+ usuários · 5 módulos · software livre",
+    desc: "Plataforma que substituiu planilhas e e-mails no monitoramento do Programa de Metas, Planos Setoriais, Projetos, Obras e Transferências Voluntárias. Decreto municipal tornou o sistema patrimônio público permanente.",
+  },
+  {
+    icon: FileCheck2,
+    titulo: "Contratos.gov.br na Prefeitura",
+    area: "Compras & Contratos · SEGES",
+    metrica: "11 mil contratações · ~60 órgãos",
+    desc: "Adaptação e implementação do sistema federal de gestão contratual em conformidade com a Lei 14.133/2021, integrado ao Compras.gov.br e ao PNCP. Padronização ponta a ponta do ciclo de contratação.",
+  },
+  {
+    icon: Shield,
+    titulo: "CompStat Paulistano — Reforma da GCM",
+    area: "Segurança Urbana · SMSU",
+    metrica: "Roteiros diários de policiamento (RDP)",
+    desc: "Substituição de programação por quantidade de rondas por arquitetura de indicadores baseada em criminalidade e produtividade. Integrou proteção de próprios municipais, equipamentos públicos e vítimas de violência doméstica.",
+  },
+  {
+    icon: MonitorSmartphone,
+    titulo: "SP156 — Portal Municipal de Atendimento",
+    area: "Serviços ao Cidadão · Lab11",
+    metrica: "84% de resolutividade · −30% desistência",
+    desc: "Reformulação ampla com testes de usabilidade com 320 cidadãos, card sorting e prototipagem iterativa. Aumento de 200% na visualização de serviços de transporte. Cada decisão validada com quem usa o portal.",
+  },
+  {
+    icon: Baby,
+    titulo: "Política Municipal pela Primeira Infância",
+    area: "Intersetorialidade · SEPE",
+    metrica: "PMPI 2018–2030 com governança ativa",
+    desc: "Articulação entre saúde, educação e assistência social — agendas historicamente operadas em paralelo. APPGGs atuaram como tecido conectivo, traduzindo linguagens setoriais e construindo uma política integrada de fato.",
+  },
+  {
+    icon: Receipt,
+    titulo: "MEI Nota Fácil",
+    area: "Desenvolvimento Econômico · SF/Lab11",
+    metrica: "12.514 dispositivos · nota 4,8 (Play Store)",
+    desc: "Aplicativo de emissão de nota fiscal eletrônica para os 760 mil MEIs da cidade. Construído após escuta de 2.044 empreendedores e 13 ciclos de prototipagem. Inclusão digital mensurável, não como slogan.",
+  },
+];
 
 const tabelaComparativa = [
   { ref: "1", appgg: "13.208,14", eppgg: "20.000,00", niteroi: "18.230,97" },
