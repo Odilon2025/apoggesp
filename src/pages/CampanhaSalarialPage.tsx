@@ -297,8 +297,56 @@ const CampanhaSalarialPage = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Projetos de Alto Impacto */}
       <section className="py-24 md:py-32 bg-section-alt">
+        <div className="container">
+          <SectionTitle
+            label={field(f, "campanha-salarial.projetos.label", "Projetos de Alto Impacto")}
+            title={field(f, "campanha-salarial.projetos.titulo", "O Que a Cidade Construiu com a Colaboração de APPGGs")}
+            subtitle={field(f, "campanha-salarial.projetos.subtitulo", "Uma seleção de iniciativas estruturantes da Prefeitura — governança, contratos, segurança urbana, atendimento, intersetorialidade e desenvolvimento econômico — em que APPGGs colaboraram com gestores, dirigentes e demais carreiras na entrega de resultados mensuráveis.")}
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border border border-luxury-border mt-4">
+            {projetosAltoImpacto.map((p, i) => (
+              <FadeIn key={p.titulo} delay={i * 0.06}>
+                <article className="bg-card p-8 md:p-10 h-full flex flex-col">
+                  <div className="flex items-start gap-4 mb-5">
+                    <p.icon size={20} strokeWidth={1.5} className="text-gold mt-1 shrink-0" />
+                    <div className="flex-1">
+                      <p className="text-[10px] font-medium tracking-luxury uppercase text-text-caption mb-2">{p.area}</p>
+                      <h3 className="text-base md:text-lg font-display font-normal text-foreground leading-snug">{p.titulo}</h3>
+                    </div>
+                  </div>
+                  <p className="text-sm font-light text-text-body leading-relaxed mb-6 flex-1">{p.desc}</p>
+                  <div className="pt-4 border-t border-luxury-border">
+                    <p className="text-xs font-light text-gold-muted tracking-wide">{p.metrica}</p>
+                  </div>
+                </article>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.3}>
+            <p className="text-xs font-light text-text-caption mt-8 max-w-3xl">
+              {field(f, "campanha-salarial.projetos.nota", "Recorte ilustrativo. APPGGs sempre colaboram — nunca substituem gestores, dirigentes ou demais carreiras. A continuidade desses resultados depende de uma carreira competitiva o suficiente para reter o conhecimento institucional acumulado.")}
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.4}>
+            <Link
+              to="/atuacao"
+              className="group inline-flex items-center gap-2 text-sm font-light text-accent hover:text-foreground transition-colors duration-300 mt-6"
+            >
+              <span>Veja todos os casos de atuação</span>
+              <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 md:py-32 bg-card">
+
 
         <div className="container">
           <div className="max-w-xl mx-auto text-center">
