@@ -162,8 +162,99 @@ const CampanhaSalarialPage = () => {
         </div>
       </section>
 
+      {/* Dados Concretos: Importância da carreira + Risco de evasão */}
+      <section className="py-24 md:py-32 bg-card">
+        <div className="container">
+          <SectionTitle
+            label={field(f, "campanha-salarial.dados.label", "Dados Concretos")}
+            title={field(f, "campanha-salarial.dados.titulo", "Por Que Essa Carreira Importa para a Cidade")}
+            subtitle={field(f, "campanha-salarial.dados.subtitulo", "A defasagem salarial não é uma questão corporativa. É uma questão de continuidade das políticas públicas municipais — e os números mostram o tamanho do que está em jogo.")}
+          />
+
+          {/* Bloco A — Impacto da carreira */}
+          <FadeIn>
+            <div className="mt-4 mb-16">
+              <p className="text-sm md:text-base font-light text-text-body leading-relaxed max-w-3xl">
+                {field(
+                  f,
+                  "campanha-salarial.dados.impacto.texto",
+                  "A carreira APPGG é hoje um tecido técnico distribuído pela administração direta da Prefeitura. Não substitui ninguém — colabora com gestores, dirigentes e demais carreiras na formulação, implementação e avaliação de políticas públicas."
+                )}
+              </p>
+            </div>
+          </FadeIn>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-luxury-border border border-luxury-border mb-24">
+            {[
+              { num: String(total), label: "APPGGs em exercício" },
+              { num: String(totalOrgaos), label: "órgãos com APPGGs colaborando" },
+              { num: String(lideranca), label: `em coordenação e liderança · ${liderancaPct.toFixed(0)}% do quadro` },
+              { num: String(concursos), label: "concursos realizados desde 2016" },
+            ].map((kpi, i) => (
+              <FadeIn key={kpi.label} delay={i * 0.08}>
+                <div className="bg-card p-8 h-full flex flex-col justify-between min-h-[160px]">
+                  <span className="text-4xl md:text-5xl font-display font-normal text-gold leading-none">{kpi.num}</span>
+                  <span className="text-[10px] font-sans font-medium tracking-luxury uppercase text-text-caption mt-6 leading-relaxed">
+                    {kpi.label}
+                  </span>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          {/* Bloco B — Risco de evasão */}
+          <div className="border-t border-luxury-border pt-16">
+            <FadeIn>
+              <h3 className="text-xl md:text-2xl font-display font-normal text-foreground mb-6 max-w-2xl">
+                {field(f, "campanha-salarial.dados.risco.titulo", "O custo de não recompor")}
+              </h3>
+              <p className="text-sm md:text-base font-light text-text-body leading-relaxed max-w-3xl mb-12">
+                {field(
+                  f,
+                  "campanha-salarial.dados.risco.texto",
+                  "Cada APPGG que sai leva conhecimento institucional irrecuperável. O Observatório de Evasões da APOGESP acompanha exonerações a pedido, licenças sem vencimento, cedências e aposentadorias — quatro vetores que, somados à defasagem salarial, comprometem a continuidade das políticas públicas municipais."
+                )}
+              </p>
+            </FadeIn>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-luxury-border border border-luxury-border">
+              {[
+                { num: "10", suffix: "anos", label: "desde o primeiro concurso sem equiparação salarial" },
+                { num: "34%", suffix: "", label: "abaixo do piso federal no ingresso — vetor direto de evasão" },
+                { num: "4", suffix: "frentes", label: "de evasão monitoradas: exonerações, LIPs, cedências, aposentadorias" },
+              ].map((kpi, i) => (
+                <FadeIn key={kpi.label} delay={i * 0.08}>
+                  <div className="bg-card p-8 h-full flex flex-col justify-between min-h-[160px]">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-4xl md:text-5xl font-display font-normal text-gold leading-none">{kpi.num}</span>
+                      {kpi.suffix && (
+                        <span className="text-xs font-light text-text-caption uppercase tracking-luxury">{kpi.suffix}</span>
+                      )}
+                    </div>
+                    <span className="text-[10px] font-sans font-medium tracking-luxury uppercase text-text-caption mt-6 leading-relaxed">
+                      {kpi.label}
+                    </span>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+
+            <FadeIn delay={0.3}>
+              <Link
+                to="/observatorio-evasoes"
+                className="group inline-flex items-center gap-2 text-sm font-light text-accent hover:text-foreground transition-colors duration-300 mt-10"
+              >
+                <span>Conheça o Observatório de Evasões</span>
+                <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 md:py-32 bg-section-alt">
+
         <div className="container">
           <div className="max-w-xl mx-auto text-center">
             <FadeIn>
