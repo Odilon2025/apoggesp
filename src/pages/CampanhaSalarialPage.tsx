@@ -303,7 +303,7 @@ const CampanhaSalarialPage = () => {
           <SectionTitle
             label={field(f, "campanha-salarial.projetos.label", "Projetos de Alto Impacto")}
             title={field(f, "campanha-salarial.projetos.titulo", "O Que a Cidade Construiu com a Colaboração de APPGGs")}
-            subtitle={field(f, "campanha-salarial.projetos.subtitulo", "Uma seleção de iniciativas estruturantes da Prefeitura — governança, contratos, segurança urbana, atendimento, intersetorialidade e desenvolvimento econômico — em que APPGGs colaboraram com gestores, dirigentes e demais carreiras na entrega de resultados mensuráveis.")}
+            subtitle={field(f, "campanha-salarial.projetos.subtitulo", "Uma seleção de iniciativas em segurança urbana, arrecadação, controle de contratos, planejamento estratégico e transparência — áreas em que APPGGs colaboraram na entrega de resultados concretos e mensuráveis para a cidade.")}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border border border-luxury-border mt-4">
