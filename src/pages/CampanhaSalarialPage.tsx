@@ -7,7 +7,52 @@ import FadeIn from "@/components/FadeIn";
 import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields } from "@/hooks/useCMS";
 import { field, getSnapshot } from "@/lib/cms";
-import { ArrowRight, TrendingDown, Scale, AlertTriangle, Users } from "lucide-react";
+import { ArrowRight, TrendingDown, Scale, AlertTriangle, Users, LineChart, FileCheck2, Shield, MonitorSmartphone, Baby, Receipt } from "lucide-react";
+
+const projetosAltoImpacto = [
+  {
+    icon: LineChart,
+    titulo: "SMAE — Sistema de Acompanhamento Estratégico",
+    area: "Planejamento · SEPLAN/FGV",
+    metrica: "500+ usuários · 5 módulos · software livre",
+    desc: "Plataforma que substituiu planilhas e e-mails no monitoramento do Programa de Metas, Planos Setoriais, Projetos, Obras e Transferências Voluntárias. Decreto municipal tornou o sistema patrimônio público permanente.",
+  },
+  {
+    icon: FileCheck2,
+    titulo: "Contratos.gov.br na Prefeitura",
+    area: "Compras & Contratos · SEGES",
+    metrica: "11 mil contratações · ~60 órgãos",
+    desc: "Adaptação e implementação do sistema federal de gestão contratual em conformidade com a Lei 14.133/2021, integrado ao Compras.gov.br e ao PNCP. Padronização ponta a ponta do ciclo de contratação.",
+  },
+  {
+    icon: Shield,
+    titulo: "CompStat Paulistano — Reforma da GCM",
+    area: "Segurança Urbana · SMSU",
+    metrica: "Roteiros diários de policiamento (RDP)",
+    desc: "Substituição de programação por quantidade de rondas por arquitetura de indicadores baseada em criminalidade e produtividade. Integrou proteção de próprios municipais, equipamentos públicos e vítimas de violência doméstica.",
+  },
+  {
+    icon: MonitorSmartphone,
+    titulo: "SP156 — Portal Municipal de Atendimento",
+    area: "Serviços ao Cidadão · Lab11",
+    metrica: "84% de resolutividade · −30% desistência",
+    desc: "Reformulação ampla com testes de usabilidade com 320 cidadãos, card sorting e prototipagem iterativa. Aumento de 200% na visualização de serviços de transporte. Cada decisão validada com quem usa o portal.",
+  },
+  {
+    icon: Baby,
+    titulo: "Política Municipal pela Primeira Infância",
+    area: "Intersetorialidade · SEPE",
+    metrica: "PMPI 2018–2030 com governança ativa",
+    desc: "Articulação entre saúde, educação e assistência social — agendas historicamente operadas em paralelo. APPGGs atuaram como tecido conectivo, traduzindo linguagens setoriais e construindo uma política integrada de fato.",
+  },
+  {
+    icon: Receipt,
+    titulo: "MEI Nota Fácil",
+    area: "Desenvolvimento Econômico · SF/Lab11",
+    metrica: "12.514 dispositivos · nota 4,8 (Play Store)",
+    desc: "Aplicativo de emissão de nota fiscal eletrônica para os 760 mil MEIs da cidade. Construído após escuta de 2.044 empreendedores e 13 ciclos de prototipagem. Inclusão digital mensurável, não como slogan.",
+  },
+];
 
 const tabelaComparativa = [
   { ref: "1", appgg: "13.208,14", eppgg: "20.000,00", niteroi: "18.230,97" },
@@ -252,8 +297,56 @@ const CampanhaSalarialPage = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Projetos de Alto Impacto */}
       <section className="py-24 md:py-32 bg-section-alt">
+        <div className="container">
+          <SectionTitle
+            label={field(f, "campanha-salarial.projetos.label", "Projetos de Alto Impacto")}
+            title={field(f, "campanha-salarial.projetos.titulo", "O Que a Cidade Construiu com a Colaboração de APPGGs")}
+            subtitle={field(f, "campanha-salarial.projetos.subtitulo", "Uma seleção de iniciativas estruturantes da Prefeitura — governança, contratos, segurança urbana, atendimento, intersetorialidade e desenvolvimento econômico — em que APPGGs colaboraram com gestores, dirigentes e demais carreiras na entrega de resultados mensuráveis.")}
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border border border-luxury-border mt-4">
+            {projetosAltoImpacto.map((p, i) => (
+              <FadeIn key={p.titulo} delay={i * 0.06}>
+                <article className="bg-card p-8 md:p-10 h-full flex flex-col">
+                  <div className="flex items-start gap-4 mb-5">
+                    <p.icon size={20} strokeWidth={1.5} className="text-gold mt-1 shrink-0" />
+                    <div className="flex-1">
+                      <p className="text-[10px] font-medium tracking-luxury uppercase text-text-caption mb-2">{p.area}</p>
+                      <h3 className="text-base md:text-lg font-display font-normal text-foreground leading-snug">{p.titulo}</h3>
+                    </div>
+                  </div>
+                  <p className="text-sm font-light text-text-body leading-relaxed mb-6 flex-1">{p.desc}</p>
+                  <div className="pt-4 border-t border-luxury-border">
+                    <p className="text-xs font-light text-gold-muted tracking-wide">{p.metrica}</p>
+                  </div>
+                </article>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.3}>
+            <p className="text-xs font-light text-text-caption mt-8 max-w-3xl">
+              {field(f, "campanha-salarial.projetos.nota", "Recorte ilustrativo. APPGGs sempre colaboram — nunca substituem gestores, dirigentes ou demais carreiras. A continuidade desses resultados depende de uma carreira competitiva o suficiente para reter o conhecimento institucional acumulado.")}
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.4}>
+            <Link
+              to="/atuacao"
+              className="group inline-flex items-center gap-2 text-sm font-light text-accent hover:text-foreground transition-colors duration-300 mt-6"
+            >
+              <span>Veja todos os casos de atuação</span>
+              <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 md:py-32 bg-card">
+
 
         <div className="container">
           <div className="max-w-xl mx-auto text-center">
