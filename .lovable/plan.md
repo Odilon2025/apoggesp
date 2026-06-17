@@ -1,128 +1,59 @@
-## Wiki da Carreira — Área do Associado
+## Objetivo
 
-Uma wiki colaborativa sobre a carreira APPGG, organizada por **verbetes** hierárquicos (com categorias), versionada (draft/publicado como o CMS atual) e com **comentários inline por seção** — reaproveitando o sistema `cms_notas` que já existe.
+Continuar o texto da página `/campanha-salarial` mostrando, **com dados concretos**, por que a carreira APPGG é estratégica para a cidade — e por que a defasagem salarial coloca esse patrimônio técnico em risco. Tudo respeitando o tom colaborativo (APPGG nunca como protagonista isolado) e o "quiet luxury" do site.
 
-A diferença em relação a uma wiki tradicional: cada verbete é dividido em **seções nomeadas** (não um blob de markdown), e qualquer associado autenticado pode comentar numa seção específica. Editores publicam/revisam; associados discutem.
+## Onde entra
 
----
+Nova seção inserida **entre o bloco "Comparativo" e o "CTA"** em `src/pages/CampanhaSalarialPage.tsx`. Nada é removido; a tabela comparativa e o CTA permanecem.
 
-### Estrutura de dados (1 nova tabela + reuso)
+## Estrutura da nova seção
 
-**`wiki_verbetes`** — segue o padrão dos outros CMS (`dados_publicado`/`dados_rascunho`/`tem_rascunho`/`publicado`/`deletado`/`ordem`):
-```
-dados = {
-  slug: string,           // "estrutura-da-carreira"
-  titulo: string,
-  categoria: string,      // "Estrutura", "História", "Direitos", "Glossário"…
-  resumo: string,         // 1-2 linhas, aparece no índice
-  tags: string[],
-  secoes: [
-    { id: "historico", titulo: "Histórico", corpo_md: "..." },
-    { id: "ingresso",  titulo: "Ingresso",  corpo_md: "..." },
-    ...
-  ],
-  referencias: [{ label, url }],
-  atualizado_em: ISO,
-}
-```
-- Render do `corpo_md` com `react-markdown` + `remark-gfm` (sanitizado).
-- Cada seção tem `id` estável → endereço único `?#secao=ingresso`.
+Dois blocos curtos com narrativa breve + grid de indicadores numéricos. Todos os textos passam pelo CMS (`field()` / `CMSMarkdown`) para edição posterior.
 
-**Comentários:** reusar `cms_notas` com novo escopo `wiki_secao`:
-- `alvo` = `{verbete_slug}` (ex: `estrutura-da-carreira`)
-- `campo` = `{secao_id}` (ex: `ingresso`) — `null` = comentário no verbete inteiro
-- `alvo_label` = título do verbete (para listagens)
+### Bloco A — "O que está em jogo" (Impacto da carreira)
 
-A função `is_editor` continua governando edição. Para **associados comentarem** (sem ser editores), precisamos de uma policy adicional só para o escopo `wiki_secao`:
-- `INSERT` permitido a qualquer `authenticated` quando `escopo = 'wiki_secao'` e `autor_email = auth.jwt()->>'email'`
-- `SELECT` permitido a qualquer `authenticated` quando `escopo = 'wiki_secao'`
-- `UPDATE/DELETE` apenas pelo autor da nota OU editor (resolver/apagar próprio comentário)
+Fontes: `src/data/snapshot.json` (snapshot fev/2026).
 
-Também adicionar `wiki_verbetes` ao `publish_cms_item` / `publish_cms_all`.
+Indicadores (4 cards em grid):
+- **185** APPGGs em exercício
+- **23** órgãos da administração direta com APPGGs colaborando
+- **57** em posições de coordenação/liderança (≈31% do quadro)
+- **6** concursos realizados desde 2016 (coortes 2016–2026)
 
----
+Texto curto acima do grid:
+> "A carreira APPGG é hoje um tecido técnico distribuído por 23 secretarias e órgãos da Prefeitura. Não substitui ninguém — colabora com gestores, dirigentes e demais carreiras na formulação, implementação e avaliação de políticas públicas."
 
-### Frontend — `/area-associado/wiki`
+### Bloco B — "O custo de não recompor" (Risco de evasão)
 
-**Página índice (`WikiPage.tsx`)**
-- Hero curto + busca client-side por título/tags/categoria.
-- Sidebar à esquerda: lista de **categorias** com verbetes (estilo Notion/MDN).
-- Conteúdo principal: cards de "destaques" (últimos atualizados / mais comentados) + grid por categoria.
+Fontes: coortes do snapshot + categorias do Observatório de Evasões já documentadas no projeto.
 
-**Página de verbete (`WikiVerbetePage.tsx` em `/area-associado/wiki/:slug`)**
-- Layout 3 colunas:
-  - **Esquerda:** índice (TOC) das seções, com badge de nº de comentários abertos por seção.
-  - **Centro:** título, resumo, metadados (categoria, tags, "Atualizado em"), e as seções renderizadas em sequência. No header de cada seção:
-    - botão `💬 N` que abre painel lateral de comentários daquela seção.
-    - botão `🔗` copia link com âncora.
-    - se editor: botão `✎` vai para o editor admin daquele verbete e foca naquela seção.
-  - **Direita (drawer):** painel de comentários da seção ativa — usa o componente `NotasPanel` existente, adaptado para aceitar o escopo `wiki_secao` e mostrar nome/email do autor.
-- Rodapé: "Referências", "Verbetes relacionados" (mesma categoria/tags).
+Indicadores (3 cards):
+- **10 anos** desde o primeiro concurso (2016) sem equiparação salarial
+- **34%** abaixo do piso do EPPGG federal no ingresso (já mencionado, mas aqui ressignificado como vetor de evasão)
+- **4 frentes** de evasão monitoradas pelo Observatório: exonerações, LIPs, cedências, aposentadorias
 
-**Componente novo: `WikiCommentsDrawer.tsx`**
-- Wrapper sobre `NotasPanel` que:
-  - Aceita `escopo="wiki_secao"`, `alvo={slug}`, `campo={secao_id}`.
-  - Permite a qualquer associado autenticado postar (não só editores).
-  - Mostra "resolver" só para editores; "apagar" só para o autor ou editor.
+Texto curto:
+> "Cada APPGG que sai leva conhecimento institucional irrecuperável. O Observatório de Evasões da APOGESP acompanha exonerações a pedido, licenças sem vencimento, cedências e aposentadorias — quatro vetores que, somados à defasagem salarial, comprometem a continuidade das políticas públicas municipais."
 
----
+Link discreto ao final do bloco: "Conheça o Observatório de Evasões →" para `/observatorio-evasoes`.
 
-### Admin — gerenciamento dos verbetes
+## Detalhes técnicos
 
-- Card novo no `AdminHubPage` (grupo "Área do Associado"): **"Wiki da Carreira"** → `DadosCRUDPage` para `wiki_verbetes`.
-- Novo schema em `cmsSchemas.ts`:
-  - Campos top-level: `slug`, `titulo`, `categoria`, `resumo`, `tags` (lista), `referencias` (lista de objetos).
-  - Campo `secoes` como **lista repetível** com `id` (slug), `titulo`, `corpo_md` (textarea grande).
-- Cada verbete herda toda a infra existente: rascunho/publicado, "Revisões pendentes", notas internas (escopo `cms_item`) usadas pelos editores entre si — separadas dos comentários públicos dos associados (escopo `wiki_secao`).
+- Arquivo único editado: `src/pages/CampanhaSalarialPage.tsx`.
+- Importar `getSnapshot` de `@/lib/cms` e consumir via `useEffect`/`useState` (ou criar pequeno hook local) — mesma abordagem usada em outras páginas que leem snapshot.
+- Indicadores em grid 2x2 / 1x3 com tipografia display para o número (text-4xl/5xl, `text-gold`) e caption em uppercase tracking luxury, seguindo o padrão de `ObservatorioEvasoesPage`.
+- Seção com `bg-card` para alternar com os fundos `bg-section-alt` que cercam.
+- Todos os textos (label, título, subtítulo, frases dos dois blocos) ficam atrás de chaves CMS:
+  - `campanha-salarial.dados.label`
+  - `campanha-salarial.dados.titulo`
+  - `campanha-salarial.dados.subtitulo`
+  - `campanha-salarial.dados.impacto.texto`
+  - `campanha-salarial.dados.risco.texto`
+- Nenhuma mudança de schema, migration, RLS ou dependências.
+- Tom: institucional, técnico; APPGG sempre como colaborador.
 
----
+## Fora de escopo
 
-### Diferenciais que tornam a wiki interessante
-
-1. **Discussão ancorada por seção** — não um mural genérico; cada parágrafo tem seu fio.
-2. **Dois canais de notas separados**: internas dos editores (`cms_item` — já existe) vs. públicas dos associados (`wiki_secao` — novo). Editores vêem ambas; associados só as públicas.
-3. **Indicador visual de atividade**: badges de comentários abertos no TOC e no índice geral revelam onde há debate vivo.
-4. **Permalink por seção** (`/wiki/slug#secao=ingresso`) — facilita compartilhar trechos específicos em e-mails/WhatsApp.
-5. **Editor mantém o mesmo fluxo draft/publish** já dominado, então não há retreinamento.
-
----
-
-### Detalhes técnicos
-
-```text
-SQL migration:
-  - CREATE TABLE wiki_verbetes (mesma estrutura dos outros CMS)
-  - RLS: editores CRUD; público lê publicados
-  - ALTER FUNCTION publish_cms_item / publish_cms_all → adicionar 'wiki_verbetes'
-  - Nova policy em cms_notas para escopo 'wiki_secao':
-      * INSERT: authenticated, autor_email = jwt email
-      * SELECT: authenticated AND escopo='wiki_secao' (ou is_editor)
-      * UPDATE/DELETE: autor_email = jwt email OR is_editor
-
-Arquivos novos:
-  - src/pages/area-associado/WikiPage.tsx           (índice)
-  - src/pages/area-associado/WikiVerbetePage.tsx    (verbete)
-  - src/components/wiki/WikiCommentsDrawer.tsx
-  - src/components/wiki/WikiSectionAnchor.tsx       (header com 💬/🔗/✎)
-  - src/lib/wiki.ts                                 (fetchers + tipos)
-  - supabase/migrations/...sql
-
-Arquivos editados:
-  - src/components/AssociadoLayout.tsx              (sub-nav + item "Wiki")
-  - src/App.tsx                                     (rotas /wiki, /wiki/:slug)
-  - src/lib/cms.ts                                  (fetcher wiki_verbetes)
-  - src/lib/notas.ts                                (suportar escopo wiki_secao)
-  - src/pages/admin/cmsSchemas.ts                   (schema wiki_verbetes)
-  - src/pages/admin/AdminHubPage.tsx                (card "Wiki")
-
-Dependências: react-markdown + remark-gfm (provavelmente já instalado; senão adicionar).
-```
-
----
-
-### Perguntas antes de implementar
-
-1. **Quem pode comentar?** Qualquer associado autenticado (na whitelist), ou só editores? *(recomendo: qualquer associado, pra ter discussão real)*
-2. **Comentários são públicos para todos os associados ou privados (só autor + editores)?** *(recomendo: visíveis a todos os associados, como num fórum)*
-3. **Conteúdo das seções:** markdown puro está OK? Ou prefere o mesmo editor rico que já usamos em notícias?
-4. **Sementes iniciais:** quer que eu já popule a wiki com verbetes-base (Estrutura da Carreira, História da APPGG, Ingresso, Direitos e Deveres, Glossário)?
+- Não altera tabela comparativa nem CTA.
+- Não cria novos campos no banco (usa snapshot existente e fallbacks hardcoded).
+- Não adiciona gráficos novos — apenas KPIs numéricos discretos.
