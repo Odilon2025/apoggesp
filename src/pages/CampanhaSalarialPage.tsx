@@ -7,50 +7,50 @@ import FadeIn from "@/components/FadeIn";
 import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields } from "@/hooks/useCMS";
 import { field, getSnapshot } from "@/lib/cms";
-import { ArrowRight, TrendingDown, Scale, AlertTriangle, Users, LineChart, FileCheck2, Shield, MonitorSmartphone, Baby, Receipt } from "lucide-react";
+import { ArrowRight, TrendingDown, Scale, AlertTriangle, Users, LineChart, FileCheck2, Shield, Eye, Receipt, BookOpen } from "lucide-react";
 
 const projetosAltoImpacto = [
   {
-    icon: LineChart,
-    titulo: "SMAE — Sistema de Acompanhamento Estratégico",
-    area: "Planejamento · SEPLAN/FGV",
-    metrica: "500+ usuários · 5 módulos · software livre",
-    desc: "Plataforma que substituiu planilhas e e-mails no monitoramento do Programa de Metas, Planos Setoriais, Projetos, Obras e Transferências Voluntárias. Decreto municipal tornou o sistema patrimônio público permanente.",
+    icon: Shield,
+    titulo: "CompStat Paulistano — Reforma dos Indicadores da GCM",
+    area: "Segurança Urbana · SMSU",
+    metrica: "Roteiros diários de policiamento baseados em dados de criminalidade",
+    desc: "Substituição do modelo rígido de quantidade de rondas por arquitetura de indicadores que cruza criminalidade, produtividade policial e proteção de equipamentos públicos. Policiamento mais eficiente, menos improvisado e orientado por evidências.",
   },
   {
     icon: FileCheck2,
     titulo: "Contratos.gov.br na Prefeitura",
     area: "Compras & Contratos · SEGES",
-    metrica: "11 mil contratações · ~60 órgãos",
-    desc: "Adaptação e implementação do sistema federal de gestão contratual em conformidade com a Lei 14.133/2021, integrado ao Compras.gov.br e ao PNCP. Padronização ponta a ponta do ciclo de contratação.",
+    metrica: "11 mil contratações · ~60 órgãos · integração federal",
+    desc: "Implementação do sistema federal de gestão contratual em conformidade com a Lei 14.133/2021. Padronização ponta a ponta do ciclo de contratação, com integração ao Compras.gov.br e ao PNCP. Transparência e controle em escala.",
   },
   {
-    icon: Shield,
-    titulo: "CompStat Paulistano — Reforma da GCM",
-    area: "Segurança Urbana · SMSU",
-    metrica: "Roteiros diários de policiamento (RDP)",
-    desc: "Substituição de programação por quantidade de rondas por arquitetura de indicadores baseada em criminalidade e produtividade. Integrou proteção de próprios municipais, equipamentos públicos e vítimas de violência doméstica.",
-  },
-  {
-    icon: MonitorSmartphone,
-    titulo: "SP156 — Portal Municipal de Atendimento",
-    area: "Serviços ao Cidadão · Lab11",
-    metrica: "84% de resolutividade · −30% desistência",
-    desc: "Reformulação ampla com testes de usabilidade com 320 cidadãos, card sorting e prototipagem iterativa. Aumento de 200% na visualização de serviços de transporte. Cada decisão validada com quem usa o portal.",
-  },
-  {
-    icon: Baby,
-    titulo: "Política Municipal pela Primeira Infância",
-    area: "Intersetorialidade · SEPE",
-    metrica: "PMPI 2018–2030 com governança ativa",
-    desc: "Articulação entre saúde, educação e assistência social — agendas historicamente operadas em paralelo. APPGGs atuaram como tecido conectivo, traduzindo linguagens setoriais e construindo uma política integrada de fato.",
+    icon: LineChart,
+    titulo: "SMAE — Sistema de Acompanhamento Estratégico",
+    area: "Planejamento · SEPLAN/FGV",
+    metrica: "500+ usuários · 5 módulos · patrimônio público permanente",
+    desc: "Plataforma que substituiu planilhas e e-mails no monitoramento do Programa de Metas, Planos Setoriais, Projetos, Obras e Transferências Voluntárias. Decreto municipal tornou o sistema patrimônio público permanente — soberania sobre os dados.",
   },
   {
     icon: Receipt,
-    titulo: "MEI Nota Fácil",
-    area: "Desenvolvimento Econômico · SF/Lab11",
-    metrica: "12.514 dispositivos · nota 4,8 (Play Store)",
-    desc: "Aplicativo de emissão de nota fiscal eletrônica para os 760 mil MEIs da cidade. Construído após escuta de 2.044 empreendedores e 13 ciclos de prototipagem. Inclusão digital mensurável, não como slogan.",
+    titulo: "CADIN IPTU — Recuperação de Inadimplência",
+    area: "Arrecadação · Fazenda/Lab11",
+    metrica: "+R$ 60 milhões em arrecadação · 15.348 contribuintes no experimento",
+    desc: "Redesenho do comunicado de cobrança validado em experimento randomizado com 15.348 contribuintes. A versão vencedora elevou a regularização em 8,4%. Eficiência fiscal mensurável: cada real investido em inteligência retornou multiplicado.",
+  },
+  {
+    icon: Eye,
+    titulo: "Dronepol — Monitoramento Aéreo de Segurança Urbana",
+    area: "Segurança Urbana · SMSU",
+    metrica: "Menção honrosa Premia Sampa · referência nacional em policiamento",
+    desc: "Incorporação de veículos aéreos não tripulados no planejamento e suporte de atividades de policiamento e defesa civil. Equipe especializada treinada internamente. Referência para forças policiais de todo o Brasil.",
+  },
+  {
+    icon: BookOpen,
+    titulo: "Glossário de Compras Públicas da Prefeitura",
+    area: "Transparência · Compras",
+    metrica: "~200 termos · 2º lugar Premia Sampa 2024 · integrado ao Diário Oficial",
+    desc: "Documentos e ferramentas de compras públicas traduzidos de linguagem técnica para linguagem acessível. Integrado ao Portal de Transparência e ao Diário Oficial. Menos burocracia, mais controle social e mais empresas competindo em licitações.",
   },
 ];
 
@@ -303,7 +303,7 @@ const CampanhaSalarialPage = () => {
           <SectionTitle
             label={field(f, "campanha-salarial.projetos.label", "Projetos de Alto Impacto")}
             title={field(f, "campanha-salarial.projetos.titulo", "O Que a Cidade Construiu com a Colaboração de APPGGs")}
-            subtitle={field(f, "campanha-salarial.projetos.subtitulo", "Uma seleção de iniciativas estruturantes da Prefeitura — governança, contratos, segurança urbana, atendimento, intersetorialidade e desenvolvimento econômico — em que APPGGs colaboraram com gestores, dirigentes e demais carreiras na entrega de resultados mensuráveis.")}
+            subtitle={field(f, "campanha-salarial.projetos.subtitulo", "Uma seleção de iniciativas em segurança urbana, arrecadação, controle de contratos, planejamento estratégico e transparência — áreas em que APPGGs colaboraram na entrega de resultados concretos e mensuráveis para a cidade.")}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border border border-luxury-border mt-4">
