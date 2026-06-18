@@ -7,50 +7,95 @@ import FadeIn from "@/components/FadeIn";
 import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields } from "@/hooks/useCMS";
 import { field, getSnapshot } from "@/lib/cms";
-import { ArrowRight, TrendingDown, Scale, AlertTriangle, Users, LineChart, FileCheck2, Shield, Eye, Receipt, BookOpen } from "lucide-react";
+import { ArrowRight, TrendingDown, Scale, AlertTriangle, Users, LineChart, FileCheck2, Shield, Eye, Receipt, Landmark, Gavel, Building2, ClipboardCheck, Coins, Briefcase } from "lucide-react";
 
+// Ordenação: prioridade para temas de eficiência fiscal, segurança, controle de
+// contratos, redução de desperdício e modernização — pautas que mais ressoam
+// com leitores de centro-direita interessados em resultado e responsabilidade.
 const projetosAltoImpacto = [
+  {
+    icon: Receipt,
+    titulo: "CADIN IPTU — Recuperação de Inadimplência",
+    area: "Arrecadação · Fazenda/Lab11",
+    metrica: "+R$ 60 milhões em arrecadação · 15.348 contribuintes no experimento",
+    desc: "Redesenho do comunicado de cobrança validado em experimento randomizado. A versão vencedora elevou a regularização em 8,4%. Eficiência fiscal mensurável: cada real investido em inteligência retornou multiplicado.",
+  },
   {
     icon: Shield,
     titulo: "CompStat Paulistano — Reforma dos Indicadores da GCM",
     area: "Segurança Urbana · SMSU",
     metrica: "Roteiros diários de policiamento baseados em dados de criminalidade",
-    desc: "Substituição do modelo rígido de quantidade de rondas por arquitetura de indicadores que cruza criminalidade, produtividade policial e proteção de equipamentos públicos. Policiamento mais eficiente, menos improvisado e orientado por evidências.",
+    desc: "Substituição do modelo rígido de quantidade de rondas por arquitetura de indicadores que cruza criminalidade, produtividade policial e proteção de equipamentos públicos. Policiamento orientado por evidências.",
   },
   {
     icon: FileCheck2,
     titulo: "Contratos.gov.br na Prefeitura",
     area: "Compras & Contratos · SEGES",
     metrica: "11 mil contratações · ~60 órgãos · integração federal",
-    desc: "Implementação do sistema federal de gestão contratual em conformidade com a Lei 14.133/2021. Padronização ponta a ponta do ciclo de contratação, com integração ao Compras.gov.br e ao PNCP. Transparência e controle em escala.",
+    desc: "Implementação do sistema federal de gestão contratual em conformidade com a Lei 14.133/2021. Padronização ponta a ponta do ciclo de contratação, com integração ao Compras.gov.br e ao PNCP.",
+  },
+  {
+    icon: Eye,
+    titulo: "Dronepol — Monitoramento Aéreo de Segurança Urbana",
+    area: "Segurança Urbana · SMSU",
+    metrica: "Menção honrosa Premia Sampa · referência nacional",
+    desc: "Incorporação de veículos aéreos não tripulados no planejamento e suporte de atividades de policiamento e defesa civil. Equipe especializada treinada internamente. Referência para forças policiais do Brasil.",
+  },
+  {
+    icon: Coins,
+    titulo: "Revisão de Renúncias Fiscais",
+    area: "Receita & Política Tributária · SF",
+    metrica: "Mapeamento de benefícios fiscais e custo-efetividade",
+    desc: "Análise técnica das renúncias tributárias municipais, identificando incentivos com baixo retorno social e econômico. Insumo para decisões de cortar gastos tributários ineficientes e proteger a base de arrecadação.",
+  },
+  {
+    icon: ClipboardCheck,
+    titulo: "Painel de Acompanhamento de Obras",
+    area: "Infraestrutura · SIURB/SEPLAN",
+    metrica: "Visibilidade ponta a ponta do cronograma físico-financeiro",
+    desc: "Monitoramento centralizado de obras públicas, com indicadores de execução, desvios de cronograma e empenhos. Reduz espaço para aditivos abusivos e dá transparência ao contribuinte sobre cada real investido.",
   },
   {
     icon: LineChart,
     titulo: "SMAE — Sistema de Acompanhamento Estratégico",
     area: "Planejamento · SEPLAN/FGV",
     metrica: "500+ usuários · 5 módulos · patrimônio público permanente",
-    desc: "Plataforma que substituiu planilhas e e-mails no monitoramento do Programa de Metas, Planos Setoriais, Projetos, Obras e Transferências Voluntárias. Decreto municipal tornou o sistema patrimônio público permanente — soberania sobre os dados.",
+    desc: "Plataforma que substituiu planilhas e e-mails no monitoramento do Programa de Metas, Planos Setoriais, Projetos, Obras e Transferências Voluntárias. Decreto tornou o sistema patrimônio público permanente.",
   },
   {
-    icon: Receipt,
-    titulo: "CADIN IPTU — Recuperação de Inadimplência",
-    area: "Arrecadação · Fazenda/Lab11",
-    metrica: "+R$ 60 milhões em arrecadação · 15.348 contribuintes no experimento",
-    desc: "Redesenho do comunicado de cobrança validado em experimento randomizado com 15.348 contribuintes. A versão vencedora elevou a regularização em 8,4%. Eficiência fiscal mensurável: cada real investido em inteligência retornou multiplicado.",
-  },
-  {
-    icon: Eye,
-    titulo: "Dronepol — Monitoramento Aéreo de Segurança Urbana",
-    area: "Segurança Urbana · SMSU",
-    metrica: "Menção honrosa Premia Sampa · referência nacional em policiamento",
-    desc: "Incorporação de veículos aéreos não tripulados no planejamento e suporte de atividades de policiamento e defesa civil. Equipe especializada treinada internamente. Referência para forças policiais de todo o Brasil.",
+    icon: Gavel,
+    titulo: "Implementação da Nova Lei de Licitações",
+    area: "Compras & Contratos · SEGES/PGM",
+    metrica: "Capacitação de pregoeiros e padronização de editais",
+    desc: "Adequação da Prefeitura à Lei 14.133/2021: novos fluxos de planejamento, gestão de riscos, matriz de responsabilidades e modelos de edital. Mais segurança jurídica e menos contestação em contratações.",
   },
   {
     icon: AlertTriangle,
     titulo: "Comitê de Proteção Escolar",
     area: "Segurança Institucional · SME/SMSU",
     metrica: "Protocolos emergenciais e preventivos · articulação intersecretarial",
-    desc: "Estruturação de protocolos integrados de prevenção, intervenção e pós-venção para violência contra escolas. Mapeamento de iniciativas, revisão de protocolos e minuta de decreto. Proteção de estudantes como prioridade institucional, com decisões técnicas e não ideológicas.",
+    desc: "Protocolos integrados de prevenção, intervenção e pós-venção para violência contra escolas. Mapeamento de iniciativas, revisão de protocolos e minuta de decreto. Decisões técnicas, não ideológicas.",
+  },
+  {
+    icon: Landmark,
+    titulo: "Concessões e Parcerias Público-Privadas",
+    area: "Desestatização · SGM/SF",
+    metrica: "Modelagem técnica de ativos para concessão ao setor privado",
+    desc: "Apoio técnico na estruturação de PPPs e concessões de parques, mercados, iluminação e equipamentos urbanos. Atração de investimento privado, redução de custo fiscal e modernização de serviços.",
+  },
+  {
+    icon: Building2,
+    titulo: "Reforma Administrativa Municipal",
+    area: "Gestão de Pessoas · SGM/SUBSEC",
+    metrica: "Diagnóstico de cargos, funções e produtividade",
+    desc: "Estudos técnicos para racionalização da máquina pública: revisão de estruturas, eliminação de sobreposições e foco em entregas. Estado menor, mais ágil e orientado a resultado.",
+  },
+  {
+    icon: Briefcase,
+    titulo: "Desburocratização do Ambiente de Negócios",
+    area: "Desenvolvimento Econômico · SMDET",
+    metrica: "Redução de prazos e exigências para alvarás e licenças",
+    desc: "Revisão de processos de licenciamento e abertura de empresas, com digitalização e padronização de exigências. Menos burocracia para empreendedores, mais formalização e geração de emprego.",
   },
 ];
 
