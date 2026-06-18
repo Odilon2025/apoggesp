@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import { ArrowLeft } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import FadeIn from "@/components/FadeIn";
+import SEO from "@/components/SEO";
 import { Noticia, formatDate, getBySlug } from "@/lib/noticias";
 
 const NoticiaDetalhePage = () => {
@@ -12,14 +13,7 @@ const NoticiaDetalhePage = () => {
 
   useEffect(() => {
     if (!slug) return;
-    getBySlug(slug).then((n) => {
-      setNoticia(n);
-      if (n) {
-        document.title = `${n.titulo} — APOGESP`;
-        const meta = document.querySelector('meta[name="description"]');
-        if (meta) meta.setAttribute("content", n.resumo.slice(0, 160));
-      }
-    });
+    getBySlug(slug).then((n) => setNoticia(n));
   }, [slug]);
 
   if (noticia === undefined) {
@@ -45,6 +39,21 @@ const NoticiaDetalhePage = () => {
 
   return (
     <PageLayout>
+      <SEO
+        title={`${noticia.titulo} — APOGESP`}
+        description={noticia.resumo.slice(0, 160)}
+        path={`/noticias/${noticia.slug ?? slug}`}
+        ogType="article"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: noticia.titulo,
+          description: noticia.resumo,
+          datePublished: noticia.publicado_em,
+          author: { "@type": "Person", name: noticia.autor },
+          image: noticia.capa_url ? [noticia.capa_url] : undefined,
+        }}
+      />
       <article className="bg-card">
         {noticia.capa_url && (
           <div className="w-full max-h-[500px] overflow-hidden">
