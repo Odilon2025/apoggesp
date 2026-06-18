@@ -153,7 +153,7 @@ const CampanhaSalarialPage = () => {
     getSnapshot().then(setSnap);
   }, []);
 
-  const total = snap?.total ?? 185;
+  const total = snap?.total ?? 195;
   const totalOrgaos = snap?.totalOrgaos ?? 23;
   const lideranca = snap?.indicadores?.lideranca ?? 57;
   const liderancaPct = snap?.indicadores?.liderancaPct ?? 30.8;
@@ -308,11 +308,13 @@ const CampanhaSalarialPage = () => {
               </p>
             </FadeIn>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-luxury-border border border-luxury-border">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-luxury-border border border-luxury-border">
               {[
-                { num: "10", suffix: "anos", label: "desde o primeiro concurso sem equiparação salarial" },
+                { num: "195", suffix: "/ 300", label: "APPGGs em exercício · 105 vagas em aberto no quadro" },
+                { num: "27", suffix: "", label: "exonerações a pedido — perda técnica irrecuperável" },
+                { num: "8", suffix: "", label: "em licença para interesse particular (LIP)" },
+                { num: "14", suffix: "", label: "afastados para outros órgãos (cedências e colaborações)" },
                 { num: "34%", suffix: "", label: "abaixo do piso federal no ingresso — vetor direto de evasão" },
-                { num: "4", suffix: "frentes", label: "de evasão monitoradas: exonerações, LIPs, cedências, aposentadorias" },
               ].map((kpi, i) => (
                 <FadeIn key={kpi.label} delay={i * 0.08}>
                   <div className="bg-card p-8 h-full flex flex-col justify-between min-h-[160px]">
