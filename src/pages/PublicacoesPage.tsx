@@ -7,6 +7,7 @@ import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields } from "@/hooks/useCMS";
 import { field } from "@/lib/cms";
 import { FileText, Download } from "lucide-react";
+import SEO from "@/components/SEO";
 
 interface Publicacao {
   titulo: string;
@@ -55,6 +56,7 @@ const PublicacoesPage = () => {
 
   return (
     <PageLayout>
+      <SEO title="Publica\u00e7\u00f5es \u2014 Cadernos, artigos e notas t\u00e9cnicas | APOGESP" description="Biblioteca de publica\u00e7\u00f5es da carreira APPGG: cadernos, artigos, notas t\u00e9cnicas e propostas de aprimoramento da gest\u00e3o p\u00fablica municipal de S\u00e3o Paulo." path="/publicacoes" />
       <PageHero
         label={field(f, "publicacoes.hero.label", "Biblioteca")}
         title={field(f, "publicacoes.hero.titulo", "Publicações")}

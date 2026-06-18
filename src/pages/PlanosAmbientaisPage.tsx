@@ -10,6 +10,7 @@ import { Building2, ChevronDown, ChevronUp, Target, Leaf } from "lucide-react";
 import { planos as planosFallback } from "@/data/planos";
 import { useCMSList } from "@/hooks/useCMS";
 import { getPlanos } from "@/lib/cms";
+import SEO from "@/components/SEO";
 
 const PlanosAmbientaisPage = () => {
   const f = usePageFields("planos-ambientais");
@@ -25,6 +26,7 @@ const PlanosAmbientaisPage = () => {
 
   return (
     <PageLayout>
+      <SEO title="Planos Ambientais \u2014 Contribui\u00e7\u00e3o da carreira | APOGESP" description="Contribui\u00e7\u00f5es t\u00e9cnicas da carreira APPGG para os planos ambientais e a sustentabilidade do munic\u00edpio de S\u00e3o Paulo." path="/planos-ambientais" />
       <PageHero
         label={field(f, "planos-ambientais.hero.label", "Sustentabilidade")}
         title={field(f, "planos-ambientais.hero.titulo", "Planos de Atuação com Características Ambientais")}

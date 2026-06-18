@@ -9,6 +9,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { usePageFields } from "@/hooks/useCMS";
 import { field, getSnapshot } from "@/lib/cms";
 import { ArrowRight, TrendingDown, Scale, AlertTriangle, Users, LineChart, FileCheck2, Shield, Eye, Receipt, Landmark, Gavel, Building2, ClipboardCheck, Coins, Briefcase } from "lucide-react";
+import SEO from "@/components/SEO";
 
 // Ordenação: prioridade para temas de eficiência fiscal, segurança, controle de
 // contratos, redução de desperdício e modernização — pautas que mais ressoam
@@ -161,6 +162,7 @@ const CampanhaSalarialPage = () => {
 
   return (
     <PageLayout>
+      <SEO title="Campanha pela Recomposi\u00e7\u00e3o Salarial | APOGESP" description="Dados, fundamentos e atualiza\u00e7\u00f5es da campanha pela recomposi\u00e7\u00e3o salarial da carreira de Analistas de Pol\u00edticas P\u00fablicas e Gest\u00e3o Governamental de S\u00e3o Paulo." path="/campanha-salarial" />
       <PageHero
         label={field(f, "campanha-salarial.hero.label", "Campanha 2026")}
         title={field(f, "campanha-salarial.hero.titulo", "Remuneração Justa para Quem Constrói a Cidade")}

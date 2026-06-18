@@ -7,6 +7,7 @@ import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import PainelAssociadoPage from "./area-associado/PainelPage";
+import SEO from "@/components/SEO";
 
 const emailSchema = z.string().trim().email("E-mail inválido").max(255);
 
@@ -16,6 +17,7 @@ const AreaAssociadoPage = () => {
   if (loading) {
     return (
       <PageLayout>
+      <SEO title="\u00c1rea do Associado | APOGESP" description="Espa\u00e7o dos associados APOGESP: biblioteca, wiki, grupos de trabalho e portal de transpar\u00eancia." path="/area-associado" />
         <PageHero label="Associados" title="Área do Associado" subtitle="Carregando…" />
       </PageLayout>
     );

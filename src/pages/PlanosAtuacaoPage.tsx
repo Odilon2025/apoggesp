@@ -7,6 +7,7 @@ import { usePageFields, useCMSList } from "@/hooks/useCMS";
 import { field, getPlanos } from "@/lib/cms";
 import { Building2, ChevronDown, ChevronUp, Target, Users } from "lucide-react";
 import { snapshot } from "@/data/snapshot";
+import SEO from "@/components/SEO";
 
 // Mapeia a sigla do PAI para a sigla usada no snapshot mensal da Prefeitura.
 // Sub-unidades vinculadas à SGM (SECLIMA, SEDP, SEPE, SERI) não aparecem
@@ -441,6 +442,7 @@ const PlanosAtuacaoPage = () => {
 
   return (
     <PageLayout>
+      <SEO title="PAI \u2014 Planos de Atua\u00e7\u00e3o Institucional | APOGESP" description="Planos de atua\u00e7\u00e3o institucional e cases de impacto da carreira APPGG na administra\u00e7\u00e3o municipal de S\u00e3o Paulo." path="/planos-atuacao" />
       <PageHero
         title={field(f, "planos-atuacao.hero.titulo", "Planos de Atuação Institucional")}
         subtitle={field(f, "planos-atuacao.hero.subtitulo", "Os PAIs formalizam a demanda de cada órgão por APPGGs, detalhando projetos estratégicos, resultados esperados e competências necessárias. Conheça onde e como os analistas contribuem para a modernização da gestão pública em São Paulo.")}

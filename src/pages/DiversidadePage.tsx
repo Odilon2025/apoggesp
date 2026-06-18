@@ -9,6 +9,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Users, TrendingUp, Building2, Award, Shield, Target, BarChart3, Scale } from "lucide-react";
 import { snapshot } from "@/data/snapshot";
+import SEO from "@/components/SEO";
 
 const fmtPct = (n: number) => `${n.toString().replace(".", ",")}%`;
 const ind = snapshot.indicadores;
@@ -66,6 +67,7 @@ const DiversidadePage = () => {
   const f = usePageFields("diversidade");
   return (
   <PageLayout>
+      <SEO title="Diversidade na carreira APPGG | APOGESP" description="Composi\u00e7\u00e3o demogr\u00e1fica, dados e diretrizes de diversidade na carreira de Analistas de Pol\u00edticas P\u00fablicas e Gest\u00e3o Governamental de S\u00e3o Paulo." path="/diversidade" />
     <PageHero
       label={field(f, "diversidade.hero.label", "Diversidade")}
       title={field(f, "diversidade.hero.titulo", "Representar a cidade ainda é uma agenda em disputa")}

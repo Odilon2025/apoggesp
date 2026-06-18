@@ -18,6 +18,7 @@ import {
   field,
 } from "@/lib/cms";
 import { usePageFields, useCMSList } from "@/hooks/useCMS";
+import SEO from "@/components/SEO";
 
 const atuacaoFallback = [
   { area: "Inovação", desc: "No Lab11, APPGGs colaboraram com equipes técnicas e parceiros para mostrar que nudges bem desenhados podem apoiar políticas de alimentação escolar, saúde pública no transporte e formalização de microempreendedores." },
@@ -63,6 +64,7 @@ const Index = () => {
 
   return (
     <PageLayout>
+      <SEO title="APOGESP \u2014 Carreira APPGG da Prefeitura de S\u00e3o Paulo" description="Portal institucional da APOGESP: dados, atua\u00e7\u00e3o t\u00e9cnica, publica\u00e7\u00f5es e campanhas dos Analistas de Pol\u00edticas P\u00fablicas e Gest\u00e3o Governamental do Munic\u00edpio de S\u00e3o Paulo." path="/" />
       {/* Hero */}
       <section className="relative grain overflow-hidden" style={{ background: "var(--hero-gradient)" }}>
         <div className="container relative z-10 py-28 md:py-40 lg:py-48">
