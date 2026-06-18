@@ -352,25 +352,30 @@ const CampanhaSalarialPage = () => {
             subtitle={field(f, "campanha-salarial.projetos.subtitulo", "Uma seleção de iniciativas em segurança urbana, arrecadação, controle de contratos, planejamento estratégico e transparência — áreas em que APPGGs colaboraram na entrega de resultados concretos e mensuráveis para a cidade.")}
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border border border-luxury-border mt-4">
-            {projetosAltoImpacto.map((p, i) => (
-              <FadeIn key={p.titulo} delay={i * 0.06}>
-                <article className="bg-card p-8 md:p-10 h-full flex flex-col">
-                  <div className="flex items-start gap-4 mb-5">
-                    <p.icon size={20} strokeWidth={1.5} className="text-gold mt-1 shrink-0" />
-                    <div className="flex-1">
-                      <p className="text-[10px] font-medium tracking-luxury uppercase text-text-caption mb-2">{p.area}</p>
-                      <h3 className="text-base md:text-lg font-display font-normal text-foreground leading-snug">{p.titulo}</h3>
+          <FadeIn>
+            <p className="text-[10px] font-medium tracking-luxury uppercase text-text-caption mt-4 mb-3">
+              {projetosAltoImpacto.length} projetos · role para ver todos
+            </p>
+            <ScrollArea className="h-[640px] border border-luxury-border bg-luxury-border">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-px">
+                {projetosAltoImpacto.map((p) => (
+                  <article key={p.titulo} className="bg-card p-8 md:p-10 h-full flex flex-col">
+                    <div className="flex items-start gap-4 mb-5">
+                      <p.icon size={20} strokeWidth={1.5} className="text-gold mt-1 shrink-0" />
+                      <div className="flex-1">
+                        <p className="text-[10px] font-medium tracking-luxury uppercase text-text-caption mb-2">{p.area}</p>
+                        <h3 className="text-base md:text-lg font-display font-normal text-foreground leading-snug">{p.titulo}</h3>
+                      </div>
                     </div>
-                  </div>
-                  <p className="text-sm font-light text-text-body leading-relaxed mb-6 flex-1">{p.desc}</p>
-                  <div className="pt-4 border-t border-luxury-border">
-                    <p className="text-xs font-light text-gold-muted tracking-wide">{p.metrica}</p>
-                  </div>
-                </article>
-              </FadeIn>
-            ))}
-          </div>
+                    <p className="text-sm font-light text-text-body leading-relaxed mb-6 flex-1">{p.desc}</p>
+                    <div className="pt-4 border-t border-luxury-border">
+                      <p className="text-xs font-light text-gold-muted tracking-wide">{p.metrica}</p>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </ScrollArea>
+          </FadeIn>
 
           <FadeIn delay={0.3}>
             <p className="text-xs font-light text-text-caption mt-8 max-w-3xl">
