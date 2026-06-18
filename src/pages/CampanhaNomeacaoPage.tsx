@@ -43,9 +43,9 @@ const CampanhaNomeacaoPage = () => {
   return (
     <PageLayout>
       <PageHero
-        label={field(f, "campanha-nomeacao.hero.label", "Agradecimento Institucional")}
-        title={field(f, "campanha-nomeacao.hero.titulo", "Os 53 aprovados foram nomeados. Nosso muito obrigado.")}
-        subtitle={field(f, "campanha-nomeacao.hero.subtitulo", "A APOGESP agradece à Prefeitura de São Paulo, à Secretaria Municipal de Gestão e à Câmara Municipal pela nomeação dos APPGGs aprovados que aguardavam chamada.")}
+        label={field(f, "campanha-nomeacao.hero.label", "Reconhecimento Institucional")}
+        title={field(f, "campanha-nomeacao.hero.titulo", "Agradecemos à administração pela nomeação dos 53 APPGGs")}
+        subtitle={field(f, "campanha-nomeacao.hero.subtitulo", "A recomposição do quadro fortalece a capacidade técnica da Prefeitura. A APOGESP registra seu reconhecimento ao Prefeito, à Secretaria Municipal de Gestão e à Câmara Municipal.")}
       />
 
       {/* Narrativa */}
