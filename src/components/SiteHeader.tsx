@@ -74,6 +74,8 @@ const SiteHeader = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Menu"
+          aria-expanded={mobileOpen}
           className="lg:hidden p-2 text-text-caption hover:text-foreground transition-colors duration-300"
         >
           {mobileOpen ? <X size={18} strokeWidth={1.5} /> : <Menu size={18} strokeWidth={1.5} />}

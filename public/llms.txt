@@ -1,0 +1,26 @@
+# APOGESP
+
+> Portal institucional da APOGESP — Associação dos Analistas de Políticas Públicas e Gestão Governamental do Município de São Paulo. Conteúdo técnico sobre a carreira de APPGG, atuação institucional, publicações e campanhas de valorização.
+
+A APOGESP é uma associação civil independente que reúne os Analistas de Políticas Públicas e Gestão Governamental (APPGGs) da Prefeitura de São Paulo. O site documenta a carreira, registra a atuação técnica, publica análises e acompanha temas de gestão pública municipal.
+
+## Pages
+
+- [Home](/): Visão geral da carreira APPGG e da APOGESP.
+- [Carreira](/carreira): História, dados demográficos e estrutura da carreira de Analista de Políticas Públicas e Gestão Governamental.
+- [Atuação](/atuacao): Áreas técnicas em que os APPGGs atuam na administração municipal de São Paulo.
+- [Notícias](/noticias): Atualizações institucionais e análises sobre gestão pública.
+- [PAI — Planos de Atuação](/planos-atuacao): Planos de atuação institucional e cases de impacto.
+- [Planos Ambientais](/planos-ambientais): Contribuições da carreira para sustentabilidade e meio ambiente.
+- [Publicações](/publicacoes): Cadernos, artigos, notas técnicas e documentos institucionais.
+- [Diversidade](/diversidade): Composição demográfica e políticas de diversidade na carreira.
+- [Sustentabilidade](/sustentabilidade): Eixo estratégico de sustentabilidade na atuação técnica.
+- [APOGESP](/apogesp): Sobre a associação, missão, estrutura e governança.
+- [Contato](/contato): Canais institucionais de contato.
+- [Campanha Salarial](/campanha-salarial): Dados e fundamentos da campanha por recomposição salarial.
+- [Campanha de Nomeação](/campanha-nomeacao): Reconhecimento institucional à nomeação dos 53 APPGGs aprovados.
+- [Observatório de Evasões](/observatorio-evasoes): Monitoramento de afastamentos, licenças e exonerações na carreira.
+
+## Optional
+
+- [Área do Associado](/area-associado): Espaço com biblioteca, wiki, grupos e transparência (acesso restrito a associados).

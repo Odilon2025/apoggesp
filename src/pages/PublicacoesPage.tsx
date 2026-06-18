@@ -67,7 +67,7 @@ const PublicacoesPage = () => {
           <FadeIn>
             <div className="border border-luxury-border p-8 md:p-12 mb-16">
               <span className="text-[10px] font-medium tracking-luxury uppercase text-gold block mb-4">{field(f, "publicacoes.destaque.label", "Destaque")}</span>
-              <h3 className="text-xl md:text-2xl font-display font-normal text-foreground">{field(f, "publicacoes.destaque.titulo", "Caderno Gestão Pública em Rede — 1ª Edição")}</h3>
+              <h2 className="text-xl md:text-2xl font-display font-normal text-foreground">{field(f, "publicacoes.destaque.titulo", "Caderno Gestão Pública em Rede — 1ª Edição")}</h2>
               <CMSMarkdown
                 fields={f}
                 fieldKey="publicacoes.destaque.texto"
@@ -94,8 +94,9 @@ const PublicacoesPage = () => {
           {/* Filters */}
           <div className="flex flex-col sm:flex-row gap-6 mb-12">
             <div>
-              <label className="text-[10px] font-medium tracking-luxury uppercase text-text-caption mb-2 block">Tipo</label>
+              <label htmlFor="filtro-tipo" className="text-[10px] font-medium tracking-luxury uppercase text-text-caption mb-2 block">Tipo</label>
               <select
+                id="filtro-tipo"
                 value={tipoFiltro}
                 onChange={(e) => setTipoFiltro(e.target.value)}
                 className="text-sm font-light border border-luxury-border px-4 py-2.5 bg-card text-foreground focus:outline-none focus:border-gold transition-colors duration-300 min-w-[220px]"
@@ -104,8 +105,9 @@ const PublicacoesPage = () => {
               </select>
             </div>
             <div>
-              <label className="text-[10px] font-medium tracking-luxury uppercase text-text-caption mb-2 block">Ano</label>
+              <label htmlFor="filtro-ano" className="text-[10px] font-medium tracking-luxury uppercase text-text-caption mb-2 block">Ano</label>
               <select
+                id="filtro-ano"
                 value={anoFiltro}
                 onChange={(e) => setAnoFiltro(e.target.value)}
                 className="text-sm font-light border border-luxury-border px-4 py-2.5 bg-card text-foreground focus:outline-none focus:border-gold transition-colors duration-300"
