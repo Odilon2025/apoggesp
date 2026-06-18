@@ -6,63 +6,36 @@ import FadeIn from "@/components/FadeIn";
 import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields } from "@/hooks/useCMS";
 import { field } from "@/lib/cms";
-import { ArrowRight, Users, Clock, Building2, ShieldCheck, GraduationCap, TrendingUp, Target, BarChart3 } from "lucide-react";
+import { ArrowRight, Landmark, Building2, Users, HandshakeIcon, Heart, CheckCircle2 } from "lucide-react";
 
-const porQueNomear = [
+const agradecimentos = [
+  {
+    icon: Landmark,
+    titulo: "Ao Prefeito de São Paulo",
+    desc: "Pela decisão de fortalecer a capacidade técnica da administração municipal e por reconhecer, com a nomeação, o papel estratégico dos Analistas de Planejamento e Políticas Públicas na entrega do Programa de Metas 2025–2028.",
+  },
   {
     icon: Building2,
-    titulo: "102 Cargos Vagos",
-    desc: "Dos 300 cargos criados por lei, 102 estão vagos — 34% do quadro. Os 100 cargos criados em 2023 sequer começaram a ser preenchidos. A estrutura existe; falta apenas a decisão de ocupá-la.",
+    titulo: "À Secretaria Municipal de Gestão",
+    desc: "Pela condução cuidadosa do processo, pelo diálogo permanente com a carreira e pelo empenho em viabilizar a chamada dos aprovados dentro do prazo de validade do concurso.",
   },
   {
     icon: Users,
-    titulo: "53 Profissionais Prontos",
-    desc: "Dos 144 classificados, 80 já foram nomeados e estão em exercício. Restam 53 aprovados aguardando — profissionais que já provaram competência no concurso mais disputado da carreira.",
+    titulo: "À Câmara Municipal e às Vereadoras e Vereadores",
+    desc: "Pelo apoio institucional à recomposição do quadro de APPGGs e pela compreensão de que uma administração pública moderna depende de servidores concursados, qualificados e em número adequado.",
   },
   {
-    icon: Clock,
-    titulo: "Prazo que se Esgota",
-    desc: "A validade do concurso tem prazo. Cada mês sem nomeação é um mês a menos de possibilidade. Deixar expirar a lista significaria desperdiçar todo o investimento público em um processo que atraiu 7.760 candidatos.",
-  },
-  {
-    icon: ShieldCheck,
-    titulo: "Programa de Metas 2025–2028",
-    desc: "São 126 metas prioritárias distribuídas em 4 eixos. Coordenação intersetorial, monitoramento de indicadores e entregas mensuráveis demandam exatamente o perfil dos APPGGs aprovados.",
+    icon: HandshakeIcon,
+    titulo: "Às demais carreiras e equipes parceiras",
+    desc: "Aos servidores das secretarias, subprefeituras e órgãos que receberão os novos colegas. A APOGESP reafirma seu compromisso de colaborar, dentro dos Planos de Atuação Institucional, com as prioridades definidas pela administração superior.",
   },
 ];
 
-const perfilAprovados = [
-  {
-    icon: GraduationCap,
-    titulo: "Formação de Excelência",
-    desc: "75% formados em universidades de referência — USP, UNICAMP, FGV, PUC-SP. Um em cada cinco tem mestrado ou doutorado.",
-  },
-  {
-    icon: BarChart3,
-    titulo: "Fluência Digital e Analítica",
-    desc: "Quase metade domina ferramentas de estatística e dados. Mais de um terço trabalha com Business Intelligence e geoprocessamento. São profissionais prontos para a gestão baseada em evidências.",
-  },
-  {
-    icon: TrendingUp,
-    titulo: "Experiência que Combina Setores",
-    desc: "Em média, 7,5 anos de experiência profissional, combinando passagens pelo setor público e privado. Mais da metade já ocupou posições de liderança.",
-  },
-  {
-    icon: Target,
-    titulo: "Visão Internacional",
-    desc: "Quase dois terços com inglês avançado ou fluente. Profissionais com repertório para conectar São Paulo às melhores práticas globais de gestão pública.",
-  },
-];
-
-const timelineConcurso = [
-  { etapa: "Publicação do edital — 32 vagas", status: "Concluído" },
-  { etapa: "7.760 inscritos — 242 candidatos por vaga", status: "Concluído" },
-  { etapa: "Provas objetivas e discursivas", status: "Concluído" },
-  { etapa: "Homologação — 144 classificados", status: "Concluído" },
-  { etapa: "1ª nomeação — 50 aprovados (jul/2024)", status: "Concluído" },
-  { etapa: "2ª nomeação — 30 aprovados (jan/2026)", status: "Concluído" },
-  { etapa: "Nomeação dos 53 remanescentes", status: "Pendente" },
-  { etapa: "Posse e exercício", status: "Pendente" },
+const compromissos = [
+  "Integrar-se com humildade às equipes e colaborar com as carreiras técnicas e finalísticas já em exercício.",
+  "Atuar dentro das prioridades fixadas pela administração superior e dos Planos de Atuação Institucional (PAI).",
+  "Contribuir com rigor analítico, gestão baseada em evidências e foco em resultados para a população paulistana.",
+  "Apoiar a continuidade e o monitoramento das 126 metas prioritárias do Programa de Metas 2025–2028.",
 ];
 
 const CampanhaNomeacaoPage = () => {
@@ -70,9 +43,9 @@ const CampanhaNomeacaoPage = () => {
   return (
     <PageLayout>
       <PageHero
-        label={field(f, "campanha-nomeacao.hero.label", "Nomeação Já")}
-        title={field(f, "campanha-nomeacao.hero.titulo", "53 Aprovados. Zero Razões Para Esperar.")}
-        subtitle={field(f, "campanha-nomeacao.hero.subtitulo", "Um concurso com 242 candidatos por vaga selecionou os melhores. 80 já servem a cidade. Faltam 53 — e 102 cargos vagos esperando por eles.")}
+        label={field(f, "campanha-nomeacao.hero.label", "Agradecimento Institucional")}
+        title={field(f, "campanha-nomeacao.hero.titulo", "Os 53 aprovados foram nomeados. Nosso muito obrigado.")}
+        subtitle={field(f, "campanha-nomeacao.hero.subtitulo", "A APOGESP agradece à Prefeitura de São Paulo, à Secretaria Municipal de Gestão e à Câmara Municipal pela nomeação dos APPGGs aprovados que aguardavam chamada.")}
       />
 
       {/* Narrativa */}
@@ -83,7 +56,7 @@ const CampanhaNomeacaoPage = () => {
               <CMSMarkdown
                 fields={f}
                 fieldKey="campanha-nomeacao.narrativa.texto"
-                fallback={"Em 2023, a Lei nº 17.913 ampliou o quadro de APPGGs para **300 cargos** — um reconhecimento de que São Paulo precisa de mais analistas de gestão. Hoje, **102 desses cargos estão vagos**. Um terço da capacidade projetada simplesmente não existe.\n\nEnquanto isso, 53 profissionais aprovados no concurso mais competitivo da história da carreira — **242 candidatos por vaga** — aguardam nomeação. São pessoas com formação em universidades de referência, experiência combinada nos setores público e privado, e domínio de ferramentas analíticas que a administração precisa.\n\nO custo da nomeação é marginal frente ao orçamento municipal. Não nomear é aceitar que secretarias continuem operando abaixo da capacidade, que projetos estratégicos percam qualidade técnica e que a prefeitura perca competitividade na atração de talentos frente ao governo federal e ao setor privado."}
+                fallback={"Com a nomeação dos **53 aprovados remanescentes**, encerra-se um ciclo importante para a carreira de Analista de Planejamento e Políticas Públicas e para a administração municipal de São Paulo.\n\nA decisão fortalece a capacidade técnica das secretarias, valoriza o investimento público feito no concurso mais competitivo da história da carreira — **242 candidatos por vaga** — e sinaliza, de forma concreta, o compromisso da administração com uma gestão pública qualificada, baseada em evidências e orientada por resultados.\n\nA APOGESP registra publicamente seu agradecimento ao **Prefeito**, à **Secretaria Municipal de Gestão**, às **Vereadoras e Vereadores** que apoiaram a recomposição do quadro, e a todas as equipes técnicas que viabilizaram o processo. Que os novos colegas sejam bem-recebidos e que possam colaborar, com humildade e competência, com as prioridades da cidade."}
                 className="space-y-6 text-base md:text-lg font-light text-text-body leading-relaxed"
               />
             </FadeIn>
@@ -91,12 +64,15 @@ const CampanhaNomeacaoPage = () => {
         </div>
       </section>
 
-      {/* Por que nomear */}
+      {/* Agradecimentos */}
       <section className="py-24 md:py-32 bg-section-alt">
         <div className="container">
-          <SectionTitle label={field(f, "campanha-nomeacao.porque.label", "O Cenário")} title={field(f, "campanha-nomeacao.porque.titulo", "Por Que Nomear Agora")} />
+          <SectionTitle
+            label={field(f, "campanha-nomeacao.agradecimentos.label", "Nosso Reconhecimento")}
+            title={field(f, "campanha-nomeacao.agradecimentos.titulo", "A quem agradecemos")}
+          />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border mt-2">
-            {porQueNomear.map((item, i) => (
+            {agradecimentos.map((item, i) => (
               <FadeIn key={item.titulo} delay={i * 0.1}>
                 <div className="bg-card p-10 h-full">
                   <item.icon size={20} strokeWidth={1.5} className="text-gold mb-4" />
@@ -109,16 +85,20 @@ const CampanhaNomeacaoPage = () => {
         </div>
       </section>
 
-      {/* Números */}
+      {/* Marco da nomeação */}
       <section className="py-24 md:py-32 bg-card">
         <div className="container">
-          <SectionTitle label={field(f, "campanha-nomeacao.numeros.label", "Em Números")} title={field(f, "campanha-nomeacao.numeros.titulo", "O Quadro Atual")} center />
+          <SectionTitle
+            label={field(f, "campanha-nomeacao.marco.label", "Marco")}
+            title={field(f, "campanha-nomeacao.marco.titulo", "Concurso concluído, quadro fortalecido")}
+            center
+          />
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-luxury-border max-w-4xl mx-auto mt-2">
             {[
-              { num: "300", label: "cargos criados por lei" },
-              { num: "102", label: "cargos vagos hoje" },
-              { num: "53", label: "aprovados aguardando" },
-              { num: "242:1", label: "candidatos por vaga" },
+              { num: "53", label: "aprovados agora nomeados" },
+              { num: "133", label: "APPGGs do concurso em exercício" },
+              { num: "242:1", label: "candidatos por vaga no certame" },
+              { num: "100%", label: "lista de aprovados convocada" },
             ].map((stat, i) => (
               <FadeIn key={stat.label} delay={i * 0.1}>
                 <div className="bg-card p-8 md:p-10 text-center">
@@ -131,52 +111,24 @@ const CampanhaNomeacaoPage = () => {
         </div>
       </section>
 
-      {/* Perfil dos aprovados */}
+      {/* Compromissos */}
       <section className="py-24 md:py-32 bg-section-alt">
-        <div className="container">
-          <SectionTitle
-            label={field(f, "campanha-nomeacao.perfil.label", "Capital Humano")}
-            title={field(f, "campanha-nomeacao.perfil.titulo", "Quem São os 53 Aprovados")}
-            subtitle={field(f, "campanha-nomeacao.perfil.subtitulo", "Profissionais selecionados no concurso mais competitivo da carreira, com formação multidisciplinar e experiência comprovada.")}
-          />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border mt-2">
-            {perfilAprovados.map((item, i) => (
-              <FadeIn key={item.titulo} delay={i * 0.1}>
-                <div className="bg-card p-10 h-full">
-                  <item.icon size={20} strokeWidth={1.5} className="text-gold mb-4" />
-                  <h3 className="text-base font-display font-normal text-foreground mb-3">{item.titulo}</h3>
-                  <p className="text-sm font-light text-text-body leading-relaxed">{item.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline do concurso */}
-      <section className="py-24 md:py-32 bg-card">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
               <SectionTitle
-                label={field(f, "campanha-nomeacao.timeline.label", "Processo")}
-                title={field(f, "campanha-nomeacao.timeline.titulo", "Etapas do Concurso")}
-                subtitle={field(f, "campanha-nomeacao.timeline.subtitulo", "Todas as fases foram cumpridas. Resta apenas o ato administrativo da nomeação.")}
+                label={field(f, "campanha-nomeacao.compromissos.label", "Nosso Compromisso")}
+                title={field(f, "campanha-nomeacao.compromissos.titulo", "O que a carreira devolve à cidade")}
+                subtitle={field(f, "campanha-nomeacao.compromissos.subtitulo", "Recebemos a nomeação como reconhecimento e como responsabilidade. A APOGESP reafirma o tom colaborativo da carreira.")}
               />
             </div>
             <div className="lg:col-span-8">
               <div className="space-y-0">
-                {timelineConcurso.map((item, i) => (
-                  <FadeIn key={item.etapa} delay={i * 0.08}>
-                    <div className="flex items-center gap-6 py-5 border-b border-luxury-border">
-                      <span className={`text-[10px] font-medium tracking-luxury uppercase px-3 py-1 rounded-sm whitespace-nowrap ${
-                        item.status === "Concluído"
-                          ? "bg-gold/10 text-gold"
-                          : "bg-destructive/10 text-destructive"
-                      }`}>
-                        {item.status}
-                      </span>
-                      <span className="text-sm font-light text-foreground">{item.etapa}</span>
+                {compromissos.map((item, i) => (
+                  <FadeIn key={item} delay={i * 0.08}>
+                    <div className="flex items-start gap-5 py-6 border-b border-luxury-border">
+                      <CheckCircle2 size={18} strokeWidth={1.5} className="text-gold mt-0.5 shrink-0" />
+                      <span className="text-sm md:text-base font-light text-foreground leading-relaxed">{item}</span>
                     </div>
                   </FadeIn>
                 ))}
@@ -186,33 +138,14 @@ const CampanhaNomeacaoPage = () => {
         </div>
       </section>
 
-      {/* Impacto orçamentário */}
-      <section className="py-24 md:py-32 bg-section-alt">
-        <div className="container">
-          <div className="max-w-3xl">
-            <FadeIn>
-              <SectionTitle
-                label={field(f, "campanha-nomeacao.viabilidade.label", "Viabilidade")}
-                title={field(f, "campanha-nomeacao.viabilidade.titulo", "O Custo da Nomeação é Marginal")}
-              />
-              <CMSMarkdown
-                fields={f}
-                fieldKey="campanha-nomeacao.viabilidade.texto"
-                fallback="Frente a um orçamento municipal de **R$ 135 bilhões** e uma despesa de pessoal de **R$ 44 bilhões**, o investimento na nomeação dos 53 aprovados representa uma fração ínfima — com retorno imediato em capacidade de gestão, qualidade técnica e entrega de resultados para a população."
-                className="text-base md:text-lg font-light text-text-body leading-relaxed mt-6 mb-8"
-              />
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
       {/* Citação CTA */}
       <section className="py-24 md:py-32 bg-card">
         <div className="container">
           <div className="max-w-xl mx-auto text-center">
             <FadeIn>
+              <Heart size={20} strokeWidth={1.5} className="text-gold mx-auto mb-8" />
               <h2 className="text-2xl md:text-3xl font-display font-normal text-foreground leading-tight text-balance italic">
-                "{field(f, "campanha-nomeacao.cta.frase", "Cada APPGG não nomeado é uma política pública que será coordenada com menos rigor, monitorada com menos precisão e avaliada com menos profundidade.")}"
+                "{field(f, "campanha-nomeacao.cta.frase", "Servir São Paulo é privilégio e responsabilidade. Agradecemos pela confiança e seguiremos colaborando, com técnica e humildade, para uma administração pública à altura da cidade.")}"
               </h2>
               <div className="luxury-divider mt-6 mb-4" />
               <p className="text-[11px] font-light text-text-caption tracking-wide">{field(f, "campanha-nomeacao.cta.assinatura", "Maria Camila Florêncio — Presidente da APOGESP")}</p>
@@ -220,7 +153,7 @@ const CampanhaNomeacaoPage = () => {
                 to="/contato"
                 className="group inline-flex items-center gap-2 text-sm font-light text-accent hover:text-foreground transition-colors duration-300 mt-8"
               >
-                <span>{field(f, "campanha-nomeacao.cta.link", "Apoie a nomeação")}</span>
+                <span>{field(f, "campanha-nomeacao.cta.link", "Fale com a APOGESP")}</span>
                 <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
               </Link>
             </FadeIn>
