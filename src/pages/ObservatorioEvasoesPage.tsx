@@ -7,6 +7,7 @@ import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields, useCMSList } from "@/hooks/useCMS";
 import { field, getObservatorioIndicadores, getObservatorioCategorias } from "@/lib/cms";
 import { ArrowRight, LogOut, Clock, TrendingDown, Users, FileText, AlertTriangle, type LucideIcon } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const ICON_MAP: Record<string, LucideIcon> = {
   LogOut,
@@ -82,6 +83,7 @@ const ObservatorioEvasoesPage = () => {
 
   return (
     <PageLayout>
+      <SEO title="Observat\u00f3rio de Evas\u00f5es da carreira APPGG | APOGESP" description="Monitoramento de afastamentos, licen\u00e7as e exonera\u00e7\u00f5es na carreira de Analistas de Pol\u00edticas P\u00fablicas e Gest\u00e3o Governamental de S\u00e3o Paulo." path="/observatorio-evasoes" />
       <PageHero
         label={field(f, "observatorio-evasoes.hero.label", "Observatório")}
         title={field(f, "observatorio-evasoes.hero.titulo", "Observatório das Evasões")}

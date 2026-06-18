@@ -11,6 +11,7 @@ import diretoraMariaCamila from "@/assets/diretora-maria-camila.jpg";
 import diretorHenrique from "@/assets/diretor-henrique.jpg";
 import diretorCaio from "@/assets/diretor-caio.jpg";
 import diretorJoao from "@/assets/diretor-joao.jpg";
+import SEO from "@/components/SEO";
 
 const diretoria = [
   {
@@ -58,6 +59,7 @@ const ApogespPage = () => {
   const f = usePageFields("apogesp");
   return (
   <PageLayout>
+      <SEO title="Sobre a APOGESP \u2014 Miss\u00e3o e governan\u00e7a | APOGESP" description="Quem \u00e9 a APOGESP, associa\u00e7\u00e3o civil independente dos APPGGs da Prefeitura de S\u00e3o Paulo: miss\u00e3o, estrutura, governan\u00e7a e princ\u00edpios." path="/apogesp" />
     <PageHero
       label={field(f, "apogesp.hero.label", "Institucional")}
       title={field(f, "apogesp.hero.titulo", "A APOGESP")}

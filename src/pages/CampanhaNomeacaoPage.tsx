@@ -7,6 +7,7 @@ import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields } from "@/hooks/useCMS";
 import { field } from "@/lib/cms";
 import { ArrowRight, Landmark, Building2, Users, HandshakeIcon, Heart, CheckCircle2 } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const agradecimentos = [
   {
@@ -42,6 +43,7 @@ const CampanhaNomeacaoPage = () => {
   const f = usePageFields("campanha-nomeacao");
   return (
     <PageLayout>
+      <SEO title="Reconhecimento Institucional pela Nomea\u00e7\u00e3o | APOGESP" description="A APOGESP registra reconhecimento ao Prefeito, \u00e0 Secretaria Municipal de Gest\u00e3o e \u00e0 C\u00e2mara Municipal pela nomea\u00e7\u00e3o dos 53 APPGGs aprovados." path="/campanha-nomeacao" />
       <PageHero
         label={field(f, "campanha-nomeacao.hero.label", "Reconhecimento Institucional")}
         title={field(f, "campanha-nomeacao.hero.titulo", "Agradecemos à administração pela nomeação dos 53 APPGGs")}

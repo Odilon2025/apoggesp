@@ -7,6 +7,7 @@ import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields } from "@/hooks/useCMS";
 import { field } from "@/lib/cms";
 import { Leaf, Droplets, Sun, Wind, TreePine, ArrowRight, Building2, Globe } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const eixos = [
   {
@@ -94,6 +95,7 @@ const SustentabilidadePage = () => {
   const f = usePageFields("sustentabilidade");
   return (
     <PageLayout>
+      <SEO title="Sustentabilidade \u2014 Eixo estrat\u00e9gico | APOGESP" description="Atua\u00e7\u00e3o t\u00e9cnica da carreira APPGG em sustentabilidade e meio ambiente na administra\u00e7\u00e3o municipal de S\u00e3o Paulo." path="/sustentabilidade" />
       <PageHero
         label={field(f, "sustentabilidade.hero.label", "Meio Ambiente")}
         title={field(f, "sustentabilidade.hero.titulo", "Sustentabilidade")}

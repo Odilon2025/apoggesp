@@ -6,11 +6,13 @@ import CMSMarkdown from "@/components/CMSMarkdown";
 import { Mail, ArrowRight } from "lucide-react";
 import { usePageFields } from "@/hooks/useCMS";
 import { field } from "@/lib/cms";
+import SEO from "@/components/SEO";
 
 const ContatoPage = () => {
   const f = usePageFields("contato");
   return (
     <PageLayout>
+      <SEO title="Contato | APOGESP" description="Canais institucionais de contato da APOGESP \u2014 Associa\u00e7\u00e3o dos Analistas de Pol\u00edticas P\u00fablicas e Gest\u00e3o Governamental do Munic\u00edpio de S\u00e3o Paulo." path="/contato" />
       <PageHero
         label={field(f, "contato.hero.label", "Fale Conosco")}
         title={field(f, "contato.hero.titulo", "Contato")}

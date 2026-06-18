@@ -7,6 +7,7 @@ import FadeIn from "@/components/FadeIn";
 import { usePageFields, useCMSList } from "@/hooks/useCMS";
 import { field, getCasosAtuacao } from "@/lib/cms";
 import { ArrowRight, FileText } from "lucide-react";
+import SEO from "@/components/SEO";
 
 interface CasoAtuacao {
   titulo: string;
@@ -426,6 +427,7 @@ const AtuacaoPage = () => {
 
   return (
     <PageLayout>
+      <SEO title="Atua\u00e7\u00e3o t\u00e9cnica dos APPGGs | APOGESP" description="\u00c1reas em que os Analistas de Pol\u00edticas P\u00fablicas e Gest\u00e3o Governamental atuam na administra\u00e7\u00e3o municipal de S\u00e3o Paulo: inova\u00e7\u00e3o, planejamento, pol\u00edticas sociais." path="/atuacao" />
       <PageHero
         label={field(f, "atuacao.hero.label", "Colaboração")}
         title={field(f, "atuacao.hero.titulo", "Atuação dos APPGGs")}

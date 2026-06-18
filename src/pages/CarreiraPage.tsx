@@ -7,6 +7,7 @@ import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields } from "@/hooks/useCMS";
 import { field } from "@/lib/cms";
 import { cronologia as timelineItems } from "@/data/cronologia";
+import SEO from "@/components/SEO";
 
 const areasAtuacao: { texto: string; destaques: string[] }[] = [
   { texto: "Colaboração com a formulação, implementação e avaliação de políticas públicas em todas as áreas de governo", destaques: ["formulação", "implementação", "avaliação"] },
@@ -36,6 +37,7 @@ const CarreiraPage = () => {
   const f = usePageFields("carreira");
   return (
   <PageLayout>
+      <SEO title="Carreira APPGG \u2014 Hist\u00f3ria e estrutura | APOGESP" description="Conhe\u00e7a a carreira de Analista de Pol\u00edticas P\u00fablicas e Gest\u00e3o Governamental do Munic\u00edpio de S\u00e3o Paulo: hist\u00f3rico, atribui\u00e7\u00f5es, dados demogr\u00e1ficos e estrutura." path="/carreira" />
     <PageHero
       label={field(f, "carreira.hero.label", "A Carreira")}
       title={field(f, "carreira.hero.titulo", "Analistas de Políticas Públicas e Gestão Governamental")}
