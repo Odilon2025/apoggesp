@@ -41,7 +41,7 @@ const CarreiraPage = () => {
     <PageHero
       label={field(f, "carreira.hero.label", "A Carreira")}
       title={field(f, "carreira.hero.titulo", "Analistas de Políticas Públicas e Gestão Governamental")}
-      subtitle={field(f, "carreira.hero.subtitulo", "A carreira que colabora — em conjunto com outras carreiras municipais e dentro das diretrizes da administração superior — para que São Paulo transforme intenções em entregas que mudam a realidade e promovem uma cidade mais pujante, justa e democrática.")}
+      subtitle={field(f, "carreira.hero.subtitulo", "A carreira que colabora para que São Paulo transforme intenções em entregas que mudam a realidade e promovem uma cidade mais pujante, justa e democrática.")}
     />
 
     <section className="py-24 md:py-32 bg-card">
@@ -70,7 +70,7 @@ const CarreiraPage = () => {
         <FadeIn>
           <div className="max-w-3xl mx-auto text-center">
             <blockquote className="text-lg md:text-xl font-display font-normal text-foreground leading-relaxed italic">
-              "{field(f, "carreira.citacao.frase", "A força da carreira está em colaborar, dentro da legalidade e das prioridades da administração superior, para que cada política pública chegue ao cidadão com técnica, integridade e continuidade.")}"
+              "{field(f, "carreira.citacao.frase", "A força da carreira está em colaborar para que cada política pública chegue ao cidadão com técnica, integridade e continuidade.")}"
             </blockquote>
             <div className="luxury-divider mt-6 mb-4" />
             <cite className="text-[11px] font-light text-text-caption not-italic tracking-wide">
@@ -92,7 +92,7 @@ const CarreiraPage = () => {
               <CMSMarkdown
                 fields={f}
                 fieldKey="carreira.perfil.texto"
-                fallback={"Administradores públicos, economistas, cientistas sociais, engenheiros, advogados — os APPGGs chegam de formações diversas, mas convergem em uma competência comum: a capacidade de traduzir problemas complexos em decisões implementáveis. O ingresso ocorre por concurso público de provas e títulos, exigindo nível superior.\n\nNa prática, os analistas atuam como intérpretes — de problemas públicos, de dados, de contextos políticos e institucionais. Em diálogo com as equipes técnicas e com as lideranças de cada órgão, contribuem para identificar lacunas entre a diretriz e sua execução e participam da construção do caminho para preenchê-las. Ferramentas de gestão e planejamento são o vocabulário; a colaboração com a melhoria das políticas públicas, o objetivo.\n\nO trabalho vai além da técnica isolada. APPGGs participam de projetos, contribuem com a formação de novas lideranças, colaboram com laboratórios de inovação, apoiam o redesenho de processos e enfrentam — sempre em conjunto com outras carreiras e dentro dos Planos de Atuação Institucional — problemas que nenhum manual previu."}
+                fallback={"Administradores públicos, economistas, cientistas sociais, engenheiros, advogados — os APPGGs chegam de formações diversas, mas convergem em uma competência comum: a capacidade de traduzir problemas complexos em decisões implementáveis. O ingresso ocorre por concurso público de provas e títulos, exigindo nível superior.\n\nNa prática, os analistas atuam como intérpretes — de problemas públicos, de dados, de contextos políticos e institucionais. Em diálogo com as equipes técnicas e com as lideranças de cada órgão, contribuem para identificar lacunas entre a diretriz e sua execução e participam da construção do caminho para preenchê-las. Ferramentas de gestão e planejamento são o vocabulário; a colaboração com a melhoria das políticas públicas, o objetivo.\n\nO trabalho vai além da técnica isolada. APPGGs participam de projetos, contribuem com a formação de novas lideranças, colaboram com laboratórios de inovação, apoiam o redesenho de processos e enfrentam problemas que nenhum manual previu."}
                 className="space-y-5 text-sm font-light text-text-body leading-[1.8]"
               />
             </FadeIn>
@@ -198,7 +198,7 @@ const CarreiraPage = () => {
               <CMSMarkdown
                 fields={f}
                 fieldKey="carreira.legal.texto"
-                fallback={"A base legal da carreira está no artigo 13 da Lei nº 16.193/2015, que define suas atribuições como: *\"implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas da Administração Direta e Indireta da Prefeitura do Município de São Paulo.\"* Poucas carreiras municipais no Brasil têm um mandato tão amplo — e tão exigente.\n\nEm 2021, a Portaria SEGES nº 13 deu o próximo passo: formalizou que os APPGGs devem ser alocados prioritariamente em apoio à elaboração do Programa de Metas, ao planejamento orçamentário (LOA e PPA) e a projetos de reestruturação institucional, sempre conforme as prioridades definidas pela administração superior."}
+                fallback={"O artigo 13 da Lei nº 16.193/2015 define as atribuições do APPGG como: *\"implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas da Administração Direta e Indireta da Prefeitura do Município de São Paulo.\"* Poucas carreiras municipais no Brasil têm um mandato tão amplo — e tão exigente.\n\nOs APPGGs devem ser alocados prioritariamente em apoio à elaboração do Programa de Metas, ao planejamento orçamentário (LOA e PPA) e a projetos de reestruturação institucional. A alocação é realizada pela Assessoria de Carreiras Transversais da Secretaria Municipal de Gestão do Município de São Paulo.\u00a0"}
                 className="space-y-5 text-sm font-light text-text-body leading-[1.8]"
               />
             </FadeIn>
