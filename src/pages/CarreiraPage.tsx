@@ -41,7 +41,7 @@ const CarreiraPage = () => {
     <PageHero
       label={field(f, "carreira.hero.label", "A Carreira")}
       title={field(f, "carreira.hero.titulo", "Analistas de Políticas Públicas e Gestão Governamental")}
-      subtitle={field(f, "carreira.hero.subtitulo", "A carreira que colabora — em conjunto com outras carreiras municipais e dentro das diretrizes da administração superior — para que São Paulo transforme intenções em entregas que mudam a realidade e promovem uma cidade mais pujante, justa e democrática.")}
+      subtitle={field(f, "carreira.hero.subtitulo", "A carreira que colabora para que São Paulo transforme intenções em entregas que mudam a realidade e promovem uma cidade mais pujante, justa e democrática.")}
     />
 
     <section className="py-24 md:py-32 bg-card">
