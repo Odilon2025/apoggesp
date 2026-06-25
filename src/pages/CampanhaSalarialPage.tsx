@@ -255,6 +255,86 @@ const CampanhaSalarialPage = () => {
         </div>
       </section>
 
+      {/* Precedente institucional — PL do Analista de Meio Ambiente (Of. ATL 159925158) */}
+      <section className="py-24 md:py-32 bg-card">
+        <div className="container">
+          <SectionTitle
+            label={field(f, "campanha-salarial.precedente.label", "Precedente institucional")}
+            title={field(f, "campanha-salarial.precedente.titulo", "Meio Ambiente revalorizado: um passo certo que precisa alcançar o APPGG")}
+            subtitle={field(f, "campanha-salarial.precedente.subtitulo", "O Projeto de Lei encaminhado pelo Prefeito Ricardo Nunes em junho de 2026 cria o Quadro dos Profissionais do Meio Ambiente e propõe nova tabela de subsídios — reconhecendo, com acerto, o valor das carreiras técnicas municipais. A APOGESP saúda a iniciativa e pede que a revalorização do APPGG, contemplada na mesma propositura, seja calibrada à transversalidade e à complexidade da carreira.")}
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-luxury-border border border-luxury-border mt-4 mb-16">
+            {[
+              {
+                num: field(f, "campanha-salarial.precedente.kpi1.num", "R$ 22.716"),
+                label: field(f, "campanha-salarial.precedente.kpi1.label", "topo proposto para Analista de Meio Ambiente · QPMA17"),
+              },
+              {
+                num: field(f, "campanha-salarial.precedente.kpi2.num", "R$ 22.814"),
+                label: field(f, "campanha-salarial.precedente.kpi2.label", "topo proposto para APPGG · QGAS17 — diferença de apenas R$ 98"),
+              },
+              {
+                num: field(f, "campanha-salarial.precedente.kpi3.num", "23"),
+                label: field(f, "campanha-salarial.precedente.kpi3.label", "secretarias com atuação transversal do APPGG na Prefeitura"),
+              },
+            ].map((kpi, i) => (
+              <FadeIn key={kpi.label} delay={i * 0.08}>
+                <div className="bg-section-alt p-8 h-full flex flex-col justify-between min-h-[180px]">
+                  <span className="text-3xl md:text-4xl font-display font-normal text-gold leading-tight">{kpi.num}</span>
+                  <span className="text-[10px] font-sans font-medium tracking-luxury uppercase text-text-caption mt-6 leading-relaxed">
+                    {kpi.label}
+                  </span>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <FadeIn>
+              <div className="p-10 bg-section-alt border-b-2 border-gold/40 h-full">
+                <h3 className="text-lg font-display font-normal text-foreground mb-4">
+                  {field(f, "campanha-salarial.precedente.card1.titulo", "O acerto do Executivo")}
+                </h3>
+                <CMSMarkdown
+                  fields={f}
+                  fieldKey="campanha-salarial.precedente.card1.texto"
+                  fallback={"O Ofício ATL SEI nº 159925158 cria quadro próprio para a carreira ambiental, com gestão centralizada pela Secretaria Municipal do Verde e do Meio Ambiente. A medida fortalece a identidade institucional da área, confere estrutura aderente às especificidades técnicas e atende, nas palavras da própria propositura, à *\"diretriz de valorização do servidor público, sempre orientada à melhoria da qualidade dos serviços oferecidos à população\"*. A APOGESP reconhece o mérito da iniciativa."}
+                  className="text-sm font-light text-text-body leading-relaxed"
+                />
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <div className="p-10 bg-section-alt border-b-2 border-gold/40 h-full">
+                <h3 className="text-lg font-display font-normal text-foreground mb-4">
+                  {field(f, "campanha-salarial.precedente.card2.titulo", "Por que o APPGG precisa de calibragem específica")}
+                </h3>
+                <CMSMarkdown
+                  fields={f}
+                  fieldKey="campanha-salarial.precedente.card2.texto"
+                  fallback={"A mesma propositura contempla a revalorização do Quadro de Gestão Administrativa Superior — QGAS, no qual se insere a carreira de APPGG. O topo proposto, porém, supera o da carreira ambiental em apenas R$ 98. O APPGG atua de forma **transversal** — em planejamento, orçamento, gestão de projetos, modernização administrativa, governança de dados e articulação interinstitucional — colaborando com todas as 23 secretarias municipais. A APOGESP pede que essa revalorização seja **consolidada na tramitação** e calibrada para refletir a amplitude e a complexidade sistêmica da carreira."}
+                  className="text-sm font-light text-text-body leading-relaxed"
+                />
+              </div>
+            </FadeIn>
+          </div>
+
+          <FadeIn delay={0.2}>
+            <blockquote className="border-l-2 border-gold pl-6 py-2 max-w-3xl mx-auto">
+              <p className="font-display text-lg md:text-xl font-light text-foreground italic leading-relaxed">
+                {field(f, "campanha-salarial.precedente.frase", "Se a Prefeitura reconhece, com justiça, a especificidade técnica do Analista de Meio Ambiente, o mesmo princípio se aplica — em maior escala — à carreira responsável por dar coerência transversal a todas as políticas municipais.")}
+              </p>
+            </blockquote>
+          </FadeIn>
+
+          <FadeIn delay={0.3}>
+            <p className="text-xs font-light text-text-caption mt-10 max-w-3xl">
+              {field(f, "campanha-salarial.precedente.fonte", "Fonte: Ofício ATL SEI nº 159925158 e Projeto de Lei correspondente (Processo SEI 6013.2026/0004318-1), encaminhados à Câmara Municipal em 24/06/2026. Tabelas de subsídio do QPMA (Anexo III) e do QGAS (Anexo VI), jornada de 40 horas semanais.")}
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Dados Concretos: Importância da carreira + Risco de evasão */}
       <section className="py-24 md:py-32 bg-card">
         <div className="container">
