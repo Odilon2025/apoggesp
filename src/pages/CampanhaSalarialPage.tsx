@@ -20,84 +20,84 @@ const projetosAltoImpacto = [
     titulo: "CADIN IPTU — Recuperação de Inadimplência",
     area: "Arrecadação · Fazenda/Lab11",
     metrica: "+R$ 60 milhões em arrecadação · 15.348 contribuintes no experimento",
-    desc: "Redesenho do comunicado de cobrança validado em experimento randomizado. A versão vencedora elevou a regularização em 8,4%. Eficiência fiscal mensurável: cada real investido em inteligência retornou multiplicado.",
+    desc: "Redesenho do comunicado de cobrança validado em experimento randomizado. Versão vencedora elevou regularização em 8,4%.",
   },
   {
     icon: Shield,
     titulo: "CompStat Paulistano — Reforma dos Indicadores da GCM",
     area: "Segurança Urbana · SMSU",
     metrica: "Roteiros diários de policiamento baseados em dados de criminalidade",
-    desc: "Substituição do modelo rígido de quantidade de rondas por arquitetura de indicadores que cruza criminalidade, produtividade policial e proteção de equipamentos públicos. Policiamento orientado por evidências.",
+    desc: "Arquitetura de indicadores que cruza criminalidade, produtividade policial e proteção de equipamentos públicos. Policiamento orientado por evidências.",
   },
   {
     icon: FileCheck2,
     titulo: "Contratos.gov.br na Prefeitura",
     area: "Compras & Contratos · SEGES",
     metrica: "11 mil contratações · ~60 órgãos · integração federal",
-    desc: "Implementação do sistema federal de gestão contratual em conformidade com a Lei 14.133/2021. Padronização ponta a ponta do ciclo de contratação, com integração ao Compras.gov.br e ao PNCP.",
+    desc: "Implementação do sistema federal de gestão contratual (Lei 14.133/2021). Padronização ponta a ponta com integração ao Compras.gov.br e ao PNCP.",
   },
   {
     icon: Eye,
     titulo: "Dronepol — Monitoramento Aéreo de Segurança Urbana",
     area: "Segurança Urbana · SMSU",
     metrica: "Menção honrosa Premia Sampa · referência nacional",
-    desc: "Incorporação de veículos aéreos não tripulados no planejamento e suporte de atividades de policiamento e defesa civil. Equipe especializada treinada internamente. Referência para forças policiais do Brasil.",
+    desc: "Incorporação de drones no policiamento e defesa civil. Equipe treinada internamente. Referência nacional.",
   },
   {
     icon: Coins,
     titulo: "Revisão de Renúncias Fiscais",
     area: "Receita & Política Tributária · SF",
     metrica: "Mapeamento de benefícios fiscais e custo-efetividade",
-    desc: "Análise técnica das renúncias tributárias municipais, identificando incentivos com baixo retorno social e econômico. Insumo para decisões de cortar gastos tributários ineficientes e proteger a base de arrecadação.",
+    desc: "Análise das renúncias tributárias municipais, identificando incentivos com baixo retorno. Insumo para cortar gastos ineficientes.",
   },
   {
     icon: ClipboardCheck,
     titulo: "Painel de Acompanhamento de Obras",
     area: "Infraestrutura · SIURB/SEPLAN",
     metrica: "Visibilidade ponta a ponta do cronograma físico-financeiro",
-    desc: "Monitoramento centralizado de obras públicas, com indicadores de execução, desvios de cronograma e empenhos. Reduz espaço para aditivos abusivos e dá transparência ao contribuinte sobre cada real investido.",
+    desc: "Monitoramento centralizado de obras públicas com indicadores de execução e desvios. Reduz aditivos abusivos e dá transparência ao contribuinte.",
   },
   {
     icon: LineChart,
     titulo: "SMAE — Sistema de Acompanhamento Estratégico",
     area: "Planejamento · SEPLAN/FGV",
     metrica: "500+ usuários · 5 módulos · patrimônio público permanente",
-    desc: "Plataforma que substituiu planilhas e e-mails no monitoramento do Programa de Metas, Planos Setoriais, Projetos, Obras e Transferências Voluntárias. Decreto tornou o sistema patrimônio público permanente.",
+    desc: "Plataforma que substituiu planilhas e e-mails no monitoramento de metas, planos, projetos, obras e transferências. Patrimônio público permanente.",
   },
   {
     icon: Gavel,
     titulo: "Implementação da Nova Lei de Licitações",
     area: "Compras & Contratos · SEGES/PGM",
     metrica: "Capacitação de pregoeiros e padronização de editais",
-    desc: "Adequação da Prefeitura à Lei 14.133/2021: novos fluxos de planejamento, gestão de riscos, matriz de responsabilidades e modelos de edital. Mais segurança jurídica e menos contestação em contratações.",
+    desc: "Adequação à Lei 14.133/2021 com novos fluxos, gestão de riscos e modelos de edital. Mais segurança jurídica e menos contestações.",
   },
   {
     icon: AlertTriangle,
     titulo: "Comitê de Proteção Escolar",
     area: "Segurança Institucional · SME/SMSU",
     metrica: "Protocolos emergenciais e preventivos · articulação intersecretarial",
-    desc: "Protocolos integrados de prevenção, intervenção e pós-venção para violência contra escolas. Mapeamento de iniciativas, revisão de protocolos e minuta de decreto. Decisões técnicas, não ideológicas.",
+    desc: "Protocolos de prevenção, intervenção e pós-venção para violência contra escolas. Revisão de protocolos e minuta de decreto.",
   },
   {
     icon: Landmark,
     titulo: "Concessões e Parcerias Público-Privadas",
     area: "Desestatização · SGM/SF",
     metrica: "Modelagem técnica de ativos para concessão ao setor privado",
-    desc: "Apoio técnico na estruturação de PPPs e concessões de parques, mercados, iluminação e equipamentos urbanos. Atração de investimento privado, redução de custo fiscal e modernização de serviços.",
+    desc: "Estruturação de PPPs e concessões de parques, mercados e iluminação. Atrai investimento privado e reduz custo fiscal.",
   },
   {
     icon: Building2,
     titulo: "Reforma Administrativa Municipal",
     area: "Gestão de Pessoas · SGM/SUBSEC",
     metrica: "Diagnóstico de cargos, funções e produtividade",
-    desc: "Estudos técnicos para racionalização da máquina pública: revisão de estruturas, eliminação de sobreposições e foco em entregas. Estado menor, mais ágil e orientado a resultado.",
+    desc: "Estudos para racionalizar a máquina pública: revisão de estruturas e foco em entregas. Estado menor e orientado a resultado.",
   },
   {
     icon: Briefcase,
     titulo: "Desburocratização do Ambiente de Negócios",
     area: "Desenvolvimento Econômico · SMDET",
     metrica: "Redução de prazos e exigências para alvarás e licenças",
-    desc: "Revisão de processos de licenciamento e abertura de empresas, com digitalização e padronização de exigências. Menos burocracia para empreendedores, mais formalização e geração de emprego.",
+    desc: "Digitalização e padronização de licenciamento e abertura de empresas. Menos burocracia, mais formalização e emprego.",
   },
 ];
 
@@ -128,22 +128,22 @@ const argumentos = [
   {
     icon: TrendingDown,
     titulo: "Defasagem Frente ao Governo Federal",
-    desc: "O APPGG paulistano inicia a carreira com R$ 13.208 — 34% abaixo do piso do EPPGG federal em 2026 (R$ 20.000). No topo, a diferença chega a R$ 13.143, uma distância de 56%.",
+    desc: "O APPGG paulistano inicia com R$ 13.208 — 34% abaixo do piso federal (R$ 20.000). No topo, a diferença chega a 56%.",
   },
   {
     icon: Users,
     titulo: "Defasagem Entre Municípios",
-    desc: "Em Niterói, o APPGG — cargo equivalente — pode alcançar R$ 28.553 no topo com gratificação. O APPGG de São Paulo, maior cidade do país, fica R$ 5.000 abaixo.",
+    desc: "Em Niterói, o cargo equivalente alcança R$ 28.553 no topo. Em São Paulo, maior cidade do país, fica R$ 5.000 abaixo.",
   },
   {
     icon: Scale,
     titulo: "Mesma Missão, Remuneração Desigual",
-    desc: "APPGGs e EPPGGs exercem funções análogas: formulação, implementação e avaliação de políticas públicas. A diferença não está na complexidade do trabalho, mas no ente que remunera.",
+    desc: "APPGGs e EPPGGs exercem funções análogas. A diferença não está na complexidade, mas no ente que remunera.",
   },
   {
     icon: AlertTriangle,
     titulo: "Risco de Evasão",
-    desc: "Sem recomposição, a carreira perde competitividade frente ao governo federal, a outros municípios e ao setor privado. Cada analista que sai leva consigo anos de conhecimento institucional irrecuperável.",
+    desc: "Sem recomposição, a carreira perde competitividade. Cada analista que sai leva conhecimento institucional irrecuperável.",
   },
 ];
 
@@ -165,7 +165,7 @@ const CampanhaSalarialPage = () => {
       <SEO title="Campanha pela Recomposi\u00e7\u00e3o Salarial | APOGESP" description="Dados, fundamentos e atualiza\u00e7\u00f5es da campanha pela recomposi\u00e7\u00e3o salarial da carreira de Analistas de Pol\u00edticas P\u00fablicas e Gest\u00e3o Governamental de S\u00e3o Paulo." path="/campanha-salarial" />
       <PageHero
         label={field(f, "campanha-salarial.hero.label", "Campanha 2026")}
-        title={field(f, "campanha-salarial.hero.titulo", "Remuneração Justa para ajuda a construir a Cidade")}
+        title={field(f, "campanha-salarial.hero.titulo", "Remuneração Justa para quem constrói a Cidade")}
         subtitle={field(f, "campanha-salarial.hero.subtitulo", "Uma carreira estratégica não sobrevive com remuneração defasada. Conheça os números e entenda por que a recomposição salarial dos APPGGs é urgente.")}
       />
 
@@ -177,7 +177,7 @@ const CampanhaSalarialPage = () => {
               <SectionTitle
                 label={field(f, "campanha-salarial.problema.label", "O Problema")}
                 title={field(f, "campanha-salarial.problema.titulo", "Uma Década Sem Equiparação")}
-                subtitle={field(f, "campanha-salarial.problema.subtitulo", "A carreira de APPGG foi criada como espelho municipal do EPPGG federal, mas a remuneração não acompanhou — nem o governo federal, nem municípios como Niterói e carrerias congêneres da própria prefeitura estão com projetos de recomposição salarial superior ao dos APPGGs.\u00a0")}
+                subtitle={field(f, "campanha-salarial.problema.subtitulo", "A carreira de APPGG foi criada como espelho municipal do EPPGG federal, mas a remuneração não acompanhou — nem o governo federal, nem municípios como Niterói.\u00a0")}
               />
             </div>
             <div className="lg:col-span-7">
@@ -207,7 +207,7 @@ const CampanhaSalarialPage = () => {
           <SectionTitle
             label={field(f, "campanha-salarial.comparativo.label", "Comparativo")}
             title={field(f, "campanha-salarial.comparativo.titulo", "O Mesmo Trabalho, Três Realidades")}
-            subtitle={field(f, "campanha-salarial.comparativo.subtitulo", "Remuneração por nível de progressão na carreira. APPGG (São Paulo), EPPGG (Federal, 2026) e APPGG (Niterói, com gratificação de 50%).")}
+            subtitle={field(f, "campanha-salarial.comparativo.subtitulo", "Remuneração por nível: APPGG (SP), EPPGG (Federal, 2026) e APPGG (Niterói, com gratificação).")}
           />
           <FadeIn>
             <div className="overflow-x-auto mt-2">
@@ -248,7 +248,7 @@ const CampanhaSalarialPage = () => {
             <CMSMarkdown
               fields={f}
               fieldKey="campanha-salarial.comparativo.sintese"
-              fallback="O APPGG de São Paulo — maior metrópole da América Latina — recebe **27% menos** que o cargo equivalente em Niterói e **34% menos** que o EPPGG federal no início da carreira. No topo, a defasagem frente ao governo federal chega a **56%**."
+              fallback="O APPGG de São Paulo recebe **27% menos** que o equivalente em Niterói e **34% menos** que o EPPGG federal no início. No topo, a defasagem chega a **56%**."
               className="text-center text-sm font-light text-text-body mt-10 max-w-2xl mx-auto leading-relaxed"
             />
           </FadeIn>
@@ -261,7 +261,7 @@ const CampanhaSalarialPage = () => {
           <SectionTitle
             label={field(f, "campanha-salarial.precedente.label", "Precedente institucional")}
             title={field(f, "campanha-salarial.precedente.titulo", "Meio Ambiente revalorizado: um passo certo que precisa alcançar o APPGG")}
-            subtitle={field(f, "campanha-salarial.precedente.subtitulo", "O Projeto de Lei encaminhado pelo Prefeito Ricardo Nunes em junho de 2026 cria o Quadro dos Profissionais do Meio Ambiente e propõe nova tabela de subsídios — reconhecendo, com acerto, o valor das carreiras técnicas municipais. A APOGESP saúda a iniciativa e pede que a revalorização do APPGG, contemplada na mesma propositura, seja calibrada à transversalidade e à complexidade da carreira.")}
+            subtitle={field(f, "campanha-salarial.precedente.subtitulo", "O PL do Prefeito Ricardo Nunes cria o Quadro de Profissionais do Meio Ambiente com nova tabela de subsídios. A APOGESP saúda a iniciativa e pede que a revalorização do APPGG reflita sua transversalidade e complexidade.")}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-luxury-border border border-luxury-border mt-4 mb-16">
@@ -299,7 +299,7 @@ const CampanhaSalarialPage = () => {
                 <CMSMarkdown
                   fields={f}
                   fieldKey="campanha-salarial.precedente.card1.texto"
-                  fallback={"O Ofício ATL SEI nº 159925158 cria quadro próprio para a carreira ambiental, com gestão centralizada pela Secretaria Municipal do Verde e do Meio Ambiente. A medida fortalece a identidade institucional da área, confere estrutura aderente às especificidades técnicas e atende, nas palavras da própria propositura, à *\"diretriz de valorização do servidor público, sempre orientada à melhoria da qualidade dos serviços oferecidos à população\"*. A APOGESP reconhece o mérito da iniciativa."}
+                  fallback={"O Ofício ATL SEI nº 159925158 cria quadro próprio para a carreira ambiental, fortalecendo sua identidade institucional e estrutura técnica. A APOGESP reconhece o mérito da iniciativa."}
                   className="text-sm font-light text-text-body leading-relaxed"
                 />
               </div>
@@ -312,7 +312,7 @@ const CampanhaSalarialPage = () => {
                 <CMSMarkdown
                   fields={f}
                   fieldKey="campanha-salarial.precedente.card2.texto"
-                  fallback={"A mesma propositura contempla a revalorização do Quadro de Gestão Administrativa Superior — QGAS, no qual se insere a carreira de APPGG. O topo proposto, porém, supera o da carreira ambiental em apenas R$ 98. O APPGG atua de forma **transversal** — em planejamento, orçamento, gestão de projetos, modernização administrativa, governança de dados e articulação interinstitucional — colaborando com todas as 23 secretarias municipais. A APOGESP pede que essa revalorização seja **consolidada na tramitação** e calibrada para refletir a amplitude e a complexidade sistêmica da carreira."}
+                  fallback={"A mesma propositura revaloriza o QGAS, que inclui o APPGG, mas o topo proposto supera o da carreira ambiental em apenas R$ 98. O APPGG atua de forma **transversal** em 23 secretarias. A APOGESP pede que a revalorização seja **consolidada** e calibrada à complexidade da carreira."}
                   className="text-sm font-light text-text-body leading-relaxed"
                 />
               </div>
@@ -322,7 +322,7 @@ const CampanhaSalarialPage = () => {
           <FadeIn delay={0.2}>
             <blockquote className="border-l-2 border-gold pl-6 py-2 max-w-3xl mx-auto">
               <p className="font-display text-lg md:text-xl font-light text-foreground italic leading-relaxed">
-                {field(f, "campanha-salarial.precedente.frase", "Se a Prefeitura reconhece, com justiça, a especificidade técnica do Analista de Meio Ambiente, o mesmo princípio se aplica — em maior escala — à carreira responsável por dar coerência transversal a todas as políticas municipais.")}
+                {field(f, "campanha-salarial.precedente.frase", "Se a Prefeitura reconhece a especificidade do Analista de Meio Ambiente, o mesmo princípio — em maior escala — se aplica ao APPGG, que dá coerência transversal às políticas municipais.")}
               </p>
             </blockquote>
           </FadeIn>
@@ -341,7 +341,7 @@ const CampanhaSalarialPage = () => {
           <SectionTitle
             label={field(f, "campanha-salarial.dados.label", "Dados Concretos")}
             title={field(f, "campanha-salarial.dados.titulo", "Por Que Essa Carreira Importa para a Cidade")}
-            subtitle={field(f, "campanha-salarial.dados.subtitulo", "A defasagem salarial não é uma questão corporativa. É uma questão de continuidade das políticas públicas municipais — e os números mostram o tamanho do que está em jogo.")}
+            subtitle={field(f, "campanha-salarial.dados.subtitulo", "A defasagem salarial compromete a continuidade das políticas públicas. Os números mostram o que está em jogo.")}
           />
 
           {/* Bloco A — Impacto da carreira */}
@@ -351,7 +351,7 @@ const CampanhaSalarialPage = () => {
                 {field(
                   f,
                   "campanha-salarial.dados.impacto.texto",
-                  "A carreira APPGG é hoje um tecido técnico distribuído pela administração direta da Prefeitura. Não substitui ninguém — colabora com gestores, dirigentes e demais carreiras na formulação, implementação e avaliação de políticas públicas."
+                  "A carreira APPGG colabora com gestores e demais carreiras na formulação, implementação e avaliação de políticas públicas."
                 )}
               </p>
             </div>
@@ -385,7 +385,7 @@ const CampanhaSalarialPage = () => {
                 {field(
                   f,
                   "campanha-salarial.dados.risco.texto",
-                  "Cada APPGG que sai leva conhecimento institucional irrecuperável. O Observatório de Evasões da APOGESP acompanha exonerações a pedido, licenças sem vencimento, cedências e aposentadorias — quatro vetores que, somados à defasagem salarial, comprometem a continuidade das políticas públicas municipais."
+                  "Cada APPGG que sai leva conhecimento institucional irrecuperável. A defasagem salarial acelera exonerações, licenças, cedências e aposentadorias — vetores que comprometem a continuidade das políticas públicas."
                 )}
               </p>
             </FadeIn>
@@ -433,7 +433,7 @@ const CampanhaSalarialPage = () => {
           <SectionTitle
             label={field(f, "campanha-salarial.projetos.label", "Projetos de Alto Impacto")}
             title={field(f, "campanha-salarial.projetos.titulo", "O Que a Cidade Construiu com a Colaboração de APPGGs")}
-            subtitle={field(f, "campanha-salarial.projetos.subtitulo", "Uma seleção de iniciativas em segurança urbana, arrecadação, controle de contratos, planejamento estratégico e transparência — áreas em que APPGGs colaboraram na entrega de resultados concretos e mensuráveis para a cidade.")}
+            subtitle={field(f, "campanha-salarial.projetos.subtitulo", "Iniciativas em segurança, arrecadação, contratos, planejamento e transparência — áreas em que APPGGs colaboraram com resultados concretos para a cidade.")}
           />
 
           <FadeIn>
@@ -463,7 +463,7 @@ const CampanhaSalarialPage = () => {
 
           <FadeIn delay={0.3}>
             <p className="text-xs font-light text-text-caption mt-8 max-w-3xl">
-              {field(f, "campanha-salarial.projetos.nota", "Recorte ilustrativo. APPGGs sempre colaboram — nunca substituem gestores, dirigentes ou demais carreiras. A continuidade desses resultados depende de uma carreira competitiva o suficiente para reter o conhecimento institucional acumulado.")}
+              {field(f, "campanha-salarial.projetos.nota", "Recorte ilustrativo. A continuidade desses resultados depende de uma carreira competitiva o suficiente para reter talentos.")}
             </p>
           </FadeIn>
 
@@ -487,7 +487,7 @@ const CampanhaSalarialPage = () => {
           <div className="max-w-xl mx-auto text-center">
             <FadeIn>
               <h2 className="text-2xl md:text-3xl font-display font-normal text-foreground leading-tight text-balance italic">
-                "{field(f, "campanha-salarial.cta.frase", "Não se trata de privilégio. Trata-se de reter os profissionais que a cidade precisa para funcionar.")}"
+                "{field(f, "campanha-salarial.cta.frase", "Não é privilégio. É reter os profissionais que a cidade precisa.")}"
               </h2>
               <div className="luxury-divider mt-6 mb-4" />
               <p className="text-[11px] font-light text-text-caption tracking-wide">{field(f, "campanha-salarial.cta.assinatura", "APOGESP — Campanha Salarial 2026")}</p>
