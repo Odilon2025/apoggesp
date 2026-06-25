@@ -20,84 +20,84 @@ const projetosAltoImpacto = [
     titulo: "CADIN IPTU — Recuperação de Inadimplência",
     area: "Arrecadação · Fazenda/Lab11",
     metrica: "+R$ 60 milhões em arrecadação · 15.348 contribuintes no experimento",
-    desc: "Redesenho do comunicado de cobrança validado em experimento randomizado. A versão vencedora elevou a regularização em 8,4%. Eficiência fiscal mensurável: cada real investido em inteligência retornou multiplicado.",
+    desc: "Redesenho do comunicado de cobrança validado em experimento randomizado. Versão vencedora elevou regularização em 8,4%.",
   },
   {
     icon: Shield,
     titulo: "CompStat Paulistano — Reforma dos Indicadores da GCM",
     area: "Segurança Urbana · SMSU",
     metrica: "Roteiros diários de policiamento baseados em dados de criminalidade",
-    desc: "Substituição do modelo rígido de quantidade de rondas por arquitetura de indicadores que cruza criminalidade, produtividade policial e proteção de equipamentos públicos. Policiamento orientado por evidências.",
+    desc: "Arquitetura de indicadores que cruza criminalidade, produtividade policial e proteção de equipamentos públicos. Policiamento orientado por evidências.",
   },
   {
     icon: FileCheck2,
     titulo: "Contratos.gov.br na Prefeitura",
     area: "Compras & Contratos · SEGES",
     metrica: "11 mil contratações · ~60 órgãos · integração federal",
-    desc: "Implementação do sistema federal de gestão contratual em conformidade com a Lei 14.133/2021. Padronização ponta a ponta do ciclo de contratação, com integração ao Compras.gov.br e ao PNCP.",
+    desc: "Implementação do sistema federal de gestão contratual (Lei 14.133/2021). Padronização ponta a ponta com integração ao Compras.gov.br e ao PNCP.",
   },
   {
     icon: Eye,
     titulo: "Dronepol — Monitoramento Aéreo de Segurança Urbana",
     area: "Segurança Urbana · SMSU",
     metrica: "Menção honrosa Premia Sampa · referência nacional",
-    desc: "Incorporação de veículos aéreos não tripulados no planejamento e suporte de atividades de policiamento e defesa civil. Equipe especializada treinada internamente. Referência para forças policiais do Brasil.",
+    desc: "Incorporação de drones no policiamento e defesa civil. Equipe treinada internamente. Referência nacional.",
   },
   {
     icon: Coins,
     titulo: "Revisão de Renúncias Fiscais",
     area: "Receita & Política Tributária · SF",
     metrica: "Mapeamento de benefícios fiscais e custo-efetividade",
-    desc: "Análise técnica das renúncias tributárias municipais, identificando incentivos com baixo retorno social e econômico. Insumo para decisões de cortar gastos tributários ineficientes e proteger a base de arrecadação.",
+    desc: "Análise das renúncias tributárias municipais, identificando incentivos com baixo retorno. Insumo para cortar gastos ineficientes.",
   },
   {
     icon: ClipboardCheck,
     titulo: "Painel de Acompanhamento de Obras",
     area: "Infraestrutura · SIURB/SEPLAN",
     metrica: "Visibilidade ponta a ponta do cronograma físico-financeiro",
-    desc: "Monitoramento centralizado de obras públicas, com indicadores de execução, desvios de cronograma e empenhos. Reduz espaço para aditivos abusivos e dá transparência ao contribuinte sobre cada real investido.",
+    desc: "Monitoramento centralizado de obras públicas com indicadores de execução e desvios. Reduz aditivos abusivos e dá transparência ao contribuinte.",
   },
   {
     icon: LineChart,
     titulo: "SMAE — Sistema de Acompanhamento Estratégico",
     area: "Planejamento · SEPLAN/FGV",
     metrica: "500+ usuários · 5 módulos · patrimônio público permanente",
-    desc: "Plataforma que substituiu planilhas e e-mails no monitoramento do Programa de Metas, Planos Setoriais, Projetos, Obras e Transferências Voluntárias. Decreto tornou o sistema patrimônio público permanente.",
+    desc: "Plataforma que substituiu planilhas e e-mails no monitoramento de metas, planos, projetos, obras e transferências. Patrimônio público permanente.",
   },
   {
     icon: Gavel,
     titulo: "Implementação da Nova Lei de Licitações",
     area: "Compras & Contratos · SEGES/PGM",
     metrica: "Capacitação de pregoeiros e padronização de editais",
-    desc: "Adequação da Prefeitura à Lei 14.133/2021: novos fluxos de planejamento, gestão de riscos, matriz de responsabilidades e modelos de edital. Mais segurança jurídica e menos contestação em contratações.",
+    desc: "Adequação à Lei 14.133/2021 com novos fluxos, gestão de riscos e modelos de edital. Mais segurança jurídica e menos contestações.",
   },
   {
     icon: AlertTriangle,
     titulo: "Comitê de Proteção Escolar",
     area: "Segurança Institucional · SME/SMSU",
     metrica: "Protocolos emergenciais e preventivos · articulação intersecretarial",
-    desc: "Protocolos integrados de prevenção, intervenção e pós-venção para violência contra escolas. Mapeamento de iniciativas, revisão de protocolos e minuta de decreto. Decisões técnicas, não ideológicas.",
+    desc: "Protocolos de prevenção, intervenção e pós-venção para violência contra escolas. Revisão de protocolos e minuta de decreto.",
   },
   {
     icon: Landmark,
     titulo: "Concessões e Parcerias Público-Privadas",
     area: "Desestatização · SGM/SF",
     metrica: "Modelagem técnica de ativos para concessão ao setor privado",
-    desc: "Apoio técnico na estruturação de PPPs e concessões de parques, mercados, iluminação e equipamentos urbanos. Atração de investimento privado, redução de custo fiscal e modernização de serviços.",
+    desc: "Estruturação de PPPs e concessões de parques, mercados e iluminação. Atrai investimento privado e reduz custo fiscal.",
   },
   {
     icon: Building2,
     titulo: "Reforma Administrativa Municipal",
     area: "Gestão de Pessoas · SGM/SUBSEC",
     metrica: "Diagnóstico de cargos, funções e produtividade",
-    desc: "Estudos técnicos para racionalização da máquina pública: revisão de estruturas, eliminação de sobreposições e foco em entregas. Estado menor, mais ágil e orientado a resultado.",
+    desc: "Estudos para racionalizar a máquina pública: revisão de estruturas e foco em entregas. Estado menor e orientado a resultado.",
   },
   {
     icon: Briefcase,
     titulo: "Desburocratização do Ambiente de Negócios",
     area: "Desenvolvimento Econômico · SMDET",
     metrica: "Redução de prazos e exigências para alvarás e licenças",
-    desc: "Revisão de processos de licenciamento e abertura de empresas, com digitalização e padronização de exigências. Menos burocracia para empreendedores, mais formalização e geração de emprego.",
+    desc: "Digitalização e padronização de licenciamento e abertura de empresas. Menos burocracia, mais formalização e emprego.",
   },
 ];
 
@@ -248,7 +248,7 @@ const CampanhaSalarialPage = () => {
             <CMSMarkdown
               fields={f}
               fieldKey="campanha-salarial.comparativo.sintese"
-              fallback="O APPGG de São Paulo — maior metrópole da América Latina — recebe **27% menos** que o cargo equivalente em Niterói e **34% menos** que o EPPGG federal no início da carreira. No topo, a defasagem frente ao governo federal chega a **56%**."
+              fallback="O APPGG de São Paulo recebe **27% menos** que o equivalente em Niterói e **34% menos** que o EPPGG federal no início. No topo, a defasagem chega a **56%**."
               className="text-center text-sm font-light text-text-body mt-10 max-w-2xl mx-auto leading-relaxed"
             />
           </FadeIn>
@@ -299,7 +299,7 @@ const CampanhaSalarialPage = () => {
                 <CMSMarkdown
                   fields={f}
                   fieldKey="campanha-salarial.precedente.card1.texto"
-                  fallback={"O Ofício ATL SEI nº 159925158 cria quadro próprio para a carreira ambiental, com gestão centralizada pela Secretaria Municipal do Verde e do Meio Ambiente. A medida fortalece a identidade institucional da área, confere estrutura aderente às especificidades técnicas e atende, nas palavras da própria propositura, à *\"diretriz de valorização do servidor público, sempre orientada à melhoria da qualidade dos serviços oferecidos à população\"*. A APOGESP reconhece o mérito da iniciativa."}
+                  fallback={"O Ofício ATL SEI nº 159925158 cria quadro próprio para a carreira ambiental, fortalecendo sua identidade institucional e estrutura técnica. A APOGESP reconhece o mérito da iniciativa."}
                   className="text-sm font-light text-text-body leading-relaxed"
                 />
               </div>
@@ -312,7 +312,7 @@ const CampanhaSalarialPage = () => {
                 <CMSMarkdown
                   fields={f}
                   fieldKey="campanha-salarial.precedente.card2.texto"
-                  fallback={"A mesma propositura contempla a revalorização do Quadro de Gestão Administrativa Superior — QGAS, no qual se insere a carreira de APPGG. O topo proposto, porém, supera o da carreira ambiental em apenas R$ 98. O APPGG atua de forma **transversal** — em planejamento, orçamento, gestão de projetos, modernização administrativa, governança de dados e articulação interinstitucional — colaborando com todas as 23 secretarias municipais. A APOGESP pede que essa revalorização seja **consolidada na tramitação** e calibrada para refletir a amplitude e a complexidade sistêmica da carreira."}
+                  fallback={"A mesma propositura revaloriza o QGAS, que inclui o APPGG, mas o topo proposto supera o da carreira ambiental em apenas R$ 98. O APPGG atua de forma **transversal** em 23 secretarias. A APOGESP pede que a revalorização seja **consolidada** e calibrada à complexidade da carreira."}
                   className="text-sm font-light text-text-body leading-relaxed"
                 />
               </div>
@@ -322,7 +322,7 @@ const CampanhaSalarialPage = () => {
           <FadeIn delay={0.2}>
             <blockquote className="border-l-2 border-gold pl-6 py-2 max-w-3xl mx-auto">
               <p className="font-display text-lg md:text-xl font-light text-foreground italic leading-relaxed">
-                {field(f, "campanha-salarial.precedente.frase", "Se a Prefeitura reconhece, com justiça, a especificidade técnica do Analista de Meio Ambiente, o mesmo princípio se aplica — em maior escala — à carreira responsável por dar coerência transversal a todas as políticas municipais.")}
+                {field(f, "campanha-salarial.precedente.frase", "Se a Prefeitura reconhece a especificidade do Analista de Meio Ambiente, o mesmo princípio — em maior escala — se aplica ao APPGG, que dá coerência transversal às políticas municipais.")}
               </p>
             </blockquote>
           </FadeIn>
