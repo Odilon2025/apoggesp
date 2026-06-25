@@ -158,7 +158,7 @@ const CampanhaSalarialPage = () => {
   const totalOrgaos = snap?.totalOrgaos ?? 23;
   const lideranca = snap?.indicadores?.lideranca ?? 57;
   const liderancaPct = snap?.indicadores?.liderancaPct ?? 30.8;
-  const concursos = Array.isArray(snap?.ingresso) ? snap.ingresso.length : 6;
+  const concursos = 2; // Representando os dois concursos realizados (2015 e 2023)
 
   return (
     <PageLayout>
