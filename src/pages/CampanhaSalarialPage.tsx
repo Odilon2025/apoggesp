@@ -165,8 +165,8 @@ const CampanhaSalarialPage = () => {
       <SEO title="Campanha pela Recomposi\u00e7\u00e3o Salarial | APOGESP" description="Dados, fundamentos e atualiza\u00e7\u00f5es da campanha pela recomposi\u00e7\u00e3o salarial da carreira de Analistas de Pol\u00edticas P\u00fablicas e Gest\u00e3o Governamental de S\u00e3o Paulo." path="/campanha-salarial" />
       <PageHero
         label={field(f, "campanha-salarial.hero.label", "Campanha 2026")}
-        title={field(f, "campanha-salarial.hero.titulo", "Remuneração Justa para Quem Constrói a Cidade")}
-        subtitle={field(f, "campanha-salarial.hero.subtitulo", "Uma carreira estratégica não sobrevive com remuneração defasada. Conheça os números, compare com o governo federal e com outros municípios — e entenda por que a recomposição salarial dos APPGGs é urgente.")}
+        title={field(f, "campanha-salarial.hero.titulo", "Remuneração Justa para ajuda a construir a Cidade")}
+        subtitle={field(f, "campanha-salarial.hero.subtitulo", "Uma carreira estratégica não sobrevive com remuneração defasada. Conheça os números e entenda por que a recomposição salarial dos APPGGs é urgente.")}
       />
 
       {/* Contexto narrativo */}
@@ -177,7 +177,7 @@ const CampanhaSalarialPage = () => {
               <SectionTitle
                 label={field(f, "campanha-salarial.problema.label", "O Problema")}
                 title={field(f, "campanha-salarial.problema.titulo", "Uma Década Sem Equiparação")}
-                subtitle={field(f, "campanha-salarial.problema.subtitulo", "Em 2015, a carreira de APPGG foi criada como espelho municipal do EPPGG federal. Dez anos depois, a remuneração não acompanhou — nem o governo federal, nem municípios como Niterói.")}
+                subtitle={field(f, "campanha-salarial.problema.subtitulo", "A carreira de APPGG foi criada como espelho municipal do EPPGG federal, mas a remuneração não acompanhou — nem o governo federal, nem municípios como Niterói e carrerias congêneres da própria prefeitura estão com projetos de recomposição salarial superior ao dos APPGGs.\u00a0")}
               />
             </div>
             <div className="lg:col-span-7">
