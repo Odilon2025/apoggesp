@@ -1,59 +1,70 @@
-## Objetivo
+## Contexto
 
-Continuar o texto da página `/campanha-salarial` mostrando, **com dados concretos**, por que a carreira APPGG é estratégica para a cidade — e por que a defasagem salarial coloca esse patrimônio técnico em risco. Tudo respeitando o tom colaborativo (APPGG nunca como protagonista isolado) e o "quiet luxury" do site.
+O Ofício ATL SEI nº 159925158 (Prefeito Ricardo Nunes, 24/06/2026) encaminha à Câmara um Projeto de Lei que:
 
-## Onde entra
+1. Cria o **Quadro dos Profissionais do Meio Ambiente – QPMA**, com tabela de subsídio de **R$ 11.045,76 (QPMA1) a R$ 22.716,48 (QPMA17)**.
+2. Cria cargos e propõe **revalorização do QGAS** (carreira APPGG), com tabela de **R$ 12.674,83 (QGAS1) a R$ 22.814,56 (QGAS17)** — J40.
 
-Nova seção inserida **entre o bloco "Comparativo" e o "CTA"** em `src/pages/CampanhaSalarialPage.tsx`. Nada é removido; a tabela comparativa e o CTA permanecem.
+Ou seja: o Executivo já reconhece a necessidade de revalorizar carreiras técnicas municipais. O Analista de Meio Ambiente ganhou quadro próprio e tabela robusta; o APPGG entra na mesma propositura, mas com diferença de topo de apenas **R$ 98** sobre uma carreira de atuação setorial — sem refletir a **transversalidade**, a complexidade e o caráter de gestão sistêmica do APPGG.
 
-## Estrutura da nova seção
+## O que adicionar à página `/campanha-salarial`
 
-Dois blocos curtos com narrativa breve + grid de indicadores numéricos. Todos os textos passam pelo CMS (`field()` / `CMSMarkdown`) para edição posterior.
+Nova seção **"Um precedente que reforça nosso pedido"**, inserida **logo após a tabela "Comparativo com outras carreiras"** e antes do bloco de "Projetos de Alto Impacto". Tom institucional, respeitoso com a carreira de Meio Ambiente (sem demérito), agradecendo o movimento do Executivo e pedindo que a revalorização do APPGG seja consolidada e calibrada à altura da transversalidade da carreira.
 
-### Bloco A — "O que está em jogo" (Impacto da carreira)
+### Estrutura
 
-Fontes: `src/data/snapshot.json` (snapshot fev/2026).
+**a) SectionTitle**
+- Label: `Precedente institucional`
+- Título: `Meio Ambiente revalorizado: um passo certo que precisa alcançar o APPGG`
+- Subtítulo: `O Projeto de Lei encaminhado pelo Prefeito Ricardo Nunes em junho de 2026 cria o Quadro dos Profissionais do Meio Ambiente e propõe nova tabela de subsídios — reconhecendo, com acerto, o valor das carreiras técnicas municipais. A APOGESP saúda a iniciativa e pede que a revalorização do APPGG, contemplada na mesma propositura, seja calibrada à transversalidade e à complexidade da carreira.`
 
-Indicadores (4 cards em grid):
-- **185** APPGGs em exercício
-- **23** órgãos da administração direta com APPGGs colaborando
-- **57** em posições de coordenação/liderança (≈31% do quadro)
-- **6** concursos realizados desde 2016 (coortes 2016–2026)
+**b) Grid de 3 KPIs**
+- `R$ 22.716,48` — Topo proposto para Analista de Meio Ambiente (QPMA17)
+- `R$ 22.814,56` — Topo proposto para APPGG (QGAS17) — diferença de apenas R$ 98
+- `23 secretarias` — Alcance transversal atual do APPGG na Prefeitura
 
-Texto curto acima do grid:
-> "A carreira APPGG é hoje um tecido técnico distribuído por 23 secretarias e órgãos da Prefeitura. Não substitui ninguém — colabora com gestores, dirigentes e demais carreiras na formulação, implementação e avaliação de políticas públicas."
+**c) Dois cards lado a lado**
 
-### Bloco B — "O custo de não recompor" (Risco de evasão)
+Card 1 — *"O acerto do Executivo"*: parágrafo curto reconhecendo a criação do QPMA, a gestão centralizada pela SVMA e o fortalecimento da identidade institucional da área ambiental. Citar literalmente o trecho do ofício: *"valorização do servidor público, sempre orientada à melhoria da qualidade dos serviços oferecidos à população"*.
 
-Fontes: coortes do snapshot + categorias do Observatório de Evasões já documentadas no projeto.
+Card 2 — *"Por que o APPGG precisa de calibragem específica"*: parágrafo curto destacando que o APPGG atua de forma **transversal** (não setorial), em planejamento, orçamento, gestão de projetos, modernização administrativa, governança de dados e articulação interinstitucional — em todas as 23 secretarias. A diferença de R$ 98 no topo não reflete essa amplitude. Pedir que a revalorização do QGAS seja **consolidada na tramitação** e calibrada para refletir a complexidade sistêmica da carreira.
 
-Indicadores (3 cards):
-- **10 anos** desde o primeiro concurso (2016) sem equiparação salarial
-- **34%** abaixo do piso do EPPGG federal no ingresso (já mencionado, mas aqui ressignificado como vetor de evasão)
-- **4 frentes** de evasão monitoradas pelo Observatório: exonerações, LIPs, cedências, aposentadorias
+**d) Frase de fechamento + CTA discreto**
 
-Texto curto:
-> "Cada APPGG que sai leva conhecimento institucional irrecuperável. O Observatório de Evasões da APOGESP acompanha exonerações a pedido, licenças sem vencimento, cedências e aposentadorias — quatro vetores que, somados à defasagem salarial, comprometem a continuidade das políticas públicas municipais."
+Blockquote curto: *"Se a Prefeitura reconhece, com justiça, a especificidade técnica do Analista de Meio Ambiente, o mesmo princípio se aplica — em maior escala — à carreira responsável por dar coerência transversal a todas as políticas municipais."*
 
-Link discreto ao final do bloco: "Conheça o Observatório de Evasões →" para `/observatorio-evasoes`.
+Link discreto para o ofício no portal de processos da Prefeitura (código 159925158).
 
-## Detalhes técnicos
+## Implementação técnica
 
-- Arquivo único editado: `src/pages/CampanhaSalarialPage.tsx`.
-- Importar `getSnapshot` de `@/lib/cms` e consumir via `useEffect`/`useState` (ou criar pequeno hook local) — mesma abordagem usada em outras páginas que leem snapshot.
-- Indicadores em grid 2x2 / 1x3 com tipografia display para o número (text-4xl/5xl, `text-gold`) e caption em uppercase tracking luxury, seguindo o padrão de `ObservatorioEvasoesPage`.
-- Seção com `bg-card` para alternar com os fundos `bg-section-alt` que cercam.
-- Todos os textos (label, título, subtítulo, frases dos dois blocos) ficam atrás de chaves CMS:
-  - `campanha-salarial.dados.label`
-  - `campanha-salarial.dados.titulo`
-  - `campanha-salarial.dados.subtitulo`
-  - `campanha-salarial.dados.impacto.texto`
-  - `campanha-salarial.dados.risco.texto`
-- Nenhuma mudança de schema, migration, RLS ou dependências.
-- Tom: institucional, técnico; APPGG sempre como colaborador.
+Arquivo único editado: `src/pages/CampanhaSalarialPage.tsx`.
+
+- Reusar `SectionTitle`, `FadeIn`, `CMSMarkdown` e os utilitários `field()` já presentes na página.
+- Inserir a seção como `<section className="py-20 bg-section-alt">` (alternando com o fundo neutro adjacente).
+- Todos os textos atrás de chaves CMS para edição posterior:
+  - `campanha-salarial.precedente.label`
+  - `campanha-salarial.precedente.titulo`
+  - `campanha-salarial.precedente.subtitulo`
+  - `campanha-salarial.precedente.kpi1.num` / `.label`
+  - `campanha-salarial.precedente.kpi2.num` / `.label`
+  - `campanha-salarial.precedente.kpi3.num` / `.label`
+  - `campanha-salarial.precedente.card1.titulo` / `.texto` (markdown)
+  - `campanha-salarial.precedente.card2.titulo` / `.texto` (markdown)
+  - `campanha-salarial.precedente.frase`
+  - `campanha-salarial.precedente.link.label` / `.url`
+- KPIs com tipografia display (`text-4xl/5xl`, `text-gold`) e caption uppercase tracking, mesmo padrão dos outros KPIs da página.
+- Sem mudanças de schema, RLS, migrations ou dependências.
+- Sem alterar a tabela comparativa, os projetos de alto impacto, o CTA ou demais seções.
+
+## Tom
+
+- Institucional, técnico, agradece o movimento do Executivo.
+- **Nunca** sugere que Analista de Meio Ambiente é "menor" ou desmerece a carreira.
+- Foca em **transversalidade × especialização setorial** como o argumento de calibragem.
+- APPGG como colaborador da administração superior — não como protagonista isolado.
 
 ## Fora de escopo
 
-- Não altera tabela comparativa nem CTA.
-- Não cria novos campos no banco (usa snapshot existente e fallbacks hardcoded).
-- Não adiciona gráficos novos — apenas KPIs numéricos discretos.
+- Não cria página nova, não mexe em outras páginas.
+- Não publica o PDF do ofício no site (apenas link externo opcional).
+- Não altera dados do snapshot nem cria novas tabelas no banco.
