@@ -838,7 +838,30 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      page_fields_publicos: {
+        Row: {
+          key: string | null
+          ordem: number | null
+          pagina: string | null
+          tipo: string | null
+          value_publicado: string | null
+        }
+        Insert: {
+          key?: string | null
+          ordem?: number | null
+          pagina?: string | null
+          tipo?: string | null
+          value_publicado?: string | null
+        }
+        Update: {
+          key?: string | null
+          ordem?: number | null
+          pagina?: string | null
+          tipo?: string | null
+          value_publicado?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       discard_field_draft: { Args: { _key: string }; Returns: undefined }
