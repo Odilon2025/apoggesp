@@ -81,6 +81,8 @@ const App = () => (
           <Route path="/admin/dados/:tabela" element={<DadosCRUDPage />} />
           <Route path="/admin/revisoes" element={<RevisoesPendentesPage />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/.lovable/oauth/consent" element={<OAuthConsentPage />} />
           <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
