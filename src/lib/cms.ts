@@ -25,10 +25,9 @@ export function clearCmsCache() {
 export async function getPageFields(pagina: string): Promise<PageFields> {
   if (fieldsCache.has(pagina)) return fieldsCache.get(pagina)!;
   const { data, error } = await supabase
-    .from("page_fields")
+    .from("page_fields_publicos" as any)
     .select("key,value_publicado,tipo")
-    .eq("pagina", pagina)
-    .not("value_publicado", "is", null);
+    .eq("pagina", pagina);
   if (error) {
     console.warn("getPageFields error", error);
     return {};
