@@ -165,9 +165,9 @@ const CarreiraPage = () => {
         <SectionTitle label={field(f, "carreira.numeros.label", "Dados")} title={field(f, "carreira.numeros.titulo", "APPGGs em Números")} center />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-luxury-border mt-8 max-w-3xl mx-auto">
           {[
-            { num: "185", label: "APPGGs em exercício" },
-            { num: "23", label: "Órgãos e entidades com APPGGs" },
-            { num: "57", label: "Em funções de liderança" },
+            { num: String(snapshot.total), label: "APPGGs em exercício" },
+            { num: String(snapshot.totalOrgaos), label: "Órgãos e entidades com APPGGs" },
+            { num: String(snapshot.lideranca.total), label: "Em funções de liderança" },
             { num: "13", label: "Cedidos a outros entes" },
           ].map((stat, i) => (
             <FadeIn key={stat.label} delay={i * 0.08}>
