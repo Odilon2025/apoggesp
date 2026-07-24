@@ -1,36 +1,44 @@
 {
-  "geradoEm": "2026-05-07T12:46:12.349Z",
-  "mesReferencia": "fev/2026",
-  "total": 185,
+  "geradoEm": "2026-07-24T13:40:21.168Z",
+  "mesReferencia": "mai/2026",
+  "total": 194,
   "totalOrgaos": 23,
   "indicadores": {
-    "mulheres": 72,
-    "mulheresPct": 38.9,
-    "negros": 58,
-    "negrosPct": 31.4,
-    "pcd": 11,
-    "pcdPct": 5.9,
-    "lideranca": 57,
-    "liderancaPct": 30.8
+    "mulheres": 75,
+    "mulheresPct": 38.7,
+    "negros": 59,
+    "negrosPct": 30.4,
+    "pcd": 12,
+    "pcdPct": 6.2,
+    "lideranca": 64,
+    "liderancaPct": 33
   },
   "lideranca": {
-    "total": 57,
-    "mulheres": 25,
-    "mulheresPct": 43.9,
-    "negros": 21,
-    "negrosPct": 36.8
+    "total": 64,
+    "mulheres": 27,
+    "mulheresPct": 42.2,
+    "negros": 25,
+    "negrosPct": 39.1
   },
   "orgaos": [
     {
       "sigla": "SEGES",
-      "n": 68
+      "n": 62
     },
     {
       "sigla": "SEPLAN",
-      "n": 17
+      "n": 18
     },
     {
       "sigla": "SME",
+      "n": 12
+    },
+    {
+      "sigla": "SGM",
+      "n": 12
+    },
+    {
+      "sigla": "SMS",
       "n": 10
     },
     {
@@ -38,23 +46,19 @@
       "n": 10
     },
     {
-      "sigla": "SGM",
-      "n": 9
-    },
-    {
-      "sigla": "SMS",
-      "n": 8
-    },
-    {
-      "sigla": "SEHAB",
+      "sigla": "SMDHC",
       "n": 7
     },
     {
-      "sigla": "SMUL",
+      "sigla": "CGM",
+      "n": 7
+    },
+    {
+      "sigla": "SMC",
       "n": 6
     },
     {
-      "sigla": "SMDET",
+      "sigla": "SEHAB",
       "n": 6
     },
     {
@@ -62,11 +66,7 @@
       "n": 6
     },
     {
-      "sigla": "CGM",
-      "n": 5
-    },
-    {
-      "sigla": "PGM",
+      "sigla": "SMUL",
       "n": 5
     },
     {
@@ -74,23 +74,31 @@
       "n": 5
     },
     {
-      "sigla": "SMC",
-      "n": 4
-    },
-    {
       "sigla": "SEME",
       "n": 4
     },
     {
-      "sigla": "SMDHC",
+      "sigla": "SF",
       "n": 4
     },
     {
-      "sigla": "SF",
+      "sigla": "PGM",
+      "n": 4
+    },
+    {
+      "sigla": "SMDET",
+      "n": 4
+    },
+    {
+      "sigla": "GAB. PREFEITO",
       "n": 3
     },
     {
-      "sigla": "SMSU",
+      "sigla": "SMPED",
+      "n": 3
+    },
+    {
+      "sigla": "SMSUB",
       "n": 2
     },
     {
@@ -98,40 +106,32 @@
       "n": 2
     },
     {
-      "sigla": "SMSUB",
+      "sigla": "SMSU",
       "n": 1
     },
     {
       "sigla": "CASA CIVIL",
-      "n": 1
-    },
-    {
-      "sigla": "SMPED",
-      "n": 1
-    },
-    {
-      "sigla": "GAB. PREFEITO",
       "n": 1
     }
   ],
   "sexo": [
     {
       "name": "Masculino",
-      "value": 113
+      "value": 119
     },
     {
       "name": "Feminino",
-      "value": 72
+      "value": 75
     }
   ],
   "raca": [
     {
       "name": "Branca",
-      "value": 124
+      "value": 132
     },
     {
       "name": "Parda",
-      "value": 29
+      "value": 30
     },
     {
       "name": "Preta",
@@ -145,15 +145,15 @@
   "referencias": [
     {
       "ref": "APPGG1",
-      "n": 69
+      "n": 78
     },
     {
       "ref": "APPGG2",
-      "n": 60
+      "n": 36
     },
     {
       "ref": "APPGG3",
-      "n": 2
+      "n": 26
     },
     {
       "ref": "APPGG4",
@@ -161,11 +161,11 @@
     },
     {
       "ref": "APPGG5",
-      "n": 16
+      "n": 15
     },
     {
       "ref": "APPGG6",
-      "n": 37
+      "n": 38
     }
   ],
   "ingresso": [
@@ -191,11 +191,11 @@
     },
     {
       "ano": "2024",
-      "n": 47
+      "n": 46
     },
     {
       "ano": "2026",
-      "n": 17
+      "n": 27
     }
   ],
   "geracao": [
@@ -207,46 +207,46 @@
     {
       "faixa": "Geração X",
       "sub": "1965–1980",
-      "n": 20
+      "n": 21
     },
     {
       "faixa": "Millennials",
       "sub": "1981–1996",
-      "n": 153
+      "n": 159
     },
     {
       "faixa": "Geração Z",
       "sub": "1997+",
-      "n": 9
+      "n": 11
     }
   ],
   "comissaoGenero": [
     {
       "grupo": "Feminino",
-      "comBase": 72,
-      "comComissao": 25
+      "comBase": 75,
+      "comComissao": 27
     },
     {
       "grupo": "Masculino",
-      "comBase": 113,
-      "comComissao": 32
+      "comBase": 119,
+      "comComissao": 37
     }
   ],
   "comissaoRaca": [
     {
       "grupo": "Branca",
-      "comBase": 124,
-      "comComissao": 35
+      "comBase": 132,
+      "comComissao": 38
     },
     {
       "grupo": "Parda",
-      "comBase": 29,
-      "comComissao": 12
+      "comBase": 30,
+      "comComissao": 13
     },
     {
       "grupo": "Preta",
       "comBase": 29,
-      "comComissao": 9
+      "comComissao": 12
     },
     {
       "grupo": "Amarela",
@@ -268,52 +268,52 @@
     {
       "ref": "CDA-2",
       "fem": 4,
-      "masc": 0,
-      "branca": 3,
+      "masc": 2,
+      "branca": 5,
       "parda": 1,
       "preta": 0,
       "amarela": 0,
-      "total": 4
+      "total": 6
     },
     {
       "ref": "CDA-3",
-      "fem": 1,
-      "masc": 6,
-      "branca": 1,
+      "fem": 3,
+      "masc": 7,
+      "branca": 4,
       "parda": 3,
       "preta": 2,
       "amarela": 1,
-      "total": 7
+      "total": 10
     },
     {
       "ref": "CDA-4",
-      "fem": 8,
-      "masc": 13,
-      "branca": 14,
+      "fem": 7,
+      "masc": 14,
+      "branca": 12,
       "parda": 4,
-      "preta": 3,
+      "preta": 5,
       "amarela": 0,
       "total": 21
     },
     {
       "ref": "CDA-5",
-      "fem": 5,
+      "fem": 6,
       "masc": 5,
       "branca": 4,
       "parda": 3,
-      "preta": 3,
+      "preta": 4,
       "amarela": 0,
-      "total": 10
+      "total": 11
     },
     {
       "ref": "CDA-6",
       "fem": 5,
-      "masc": 7,
+      "masc": 8,
       "branca": 12,
-      "parda": 0,
+      "parda": 1,
       "preta": 0,
       "amarela": 0,
-      "total": 12
+      "total": 13
     }
   ],
   "coortes": [
@@ -334,54 +334,54 @@
     {
       "periodo": "2024",
       "label": "Consolidação técnica",
-      "total": 47,
-      "negros": 25.5,
-      "mulheres": 27.7
+      "total": 46,
+      "negros": 23.9,
+      "mulheres": 28.3
     },
     {
       "periodo": "2026",
       "label": "Coorte mais recente",
-      "total": 17,
-      "negros": 35.3,
-      "mulheres": 41.2
+      "total": 27,
+      "negros": 29.6,
+      "mulheres": 37
     }
   ],
   "secretariasDiv": [
     {
       "sigla": "SEGES",
-      "total": 68,
-      "mulheres": 48.5,
-      "negros": 30.9
+      "total": 62,
+      "mulheres": 45.2,
+      "negros": 25.8
     },
     {
       "sigla": "SEPLAN",
-      "total": 17,
-      "mulheres": 23.5,
-      "negros": 11.8
+      "total": 18,
+      "mulheres": 27.8,
+      "negros": 22.2
     },
     {
       "sigla": "SME",
+      "total": 12,
+      "mulheres": 41.7,
+      "negros": 16.7
+    },
+    {
+      "sigla": "SGM",
+      "total": 12,
+      "mulheres": 50,
+      "negros": 41.7
+    },
+    {
+      "sigla": "SMS",
       "total": 10,
-      "mulheres": 40,
-      "negros": 20
+      "mulheres": 30,
+      "negros": 50
     },
     {
       "sigla": "SVMA",
       "total": 10,
       "mulheres": 30,
       "negros": 20
-    },
-    {
-      "sigla": "SGM",
-      "total": 9,
-      "mulheres": 55.6,
-      "negros": 44.4
-    },
-    {
-      "sigla": "SMS",
-      "total": 8,
-      "mulheres": 25,
-      "negros": 50
     }
   ]
 }
