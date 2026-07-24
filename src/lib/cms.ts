@@ -33,7 +33,7 @@ export async function getPageFields(pagina: string): Promise<PageFields> {
     return {};
   }
   const out: PageFields = {};
-  for (const row of (data ?? []) as Array<{ key: string; value_publicado: string | null; tipo: string | null }>) {
+  for (const row of ((data ?? []) as unknown) as Array<{ key: string; value_publicado: string | null; tipo: string | null }>) {
     out[row.key] = { value: row.value_publicado ?? "", tipo: (row.tipo as "text" | "markdown") ?? "text" };
   }
   fieldsCache.set(pagina, out);
