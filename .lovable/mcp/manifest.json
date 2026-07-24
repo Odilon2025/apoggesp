@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "sdk_version": "0.24.0",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "oauth",
+    "issuer": "https://mwwuqrbxoxpcqyuvmvsu.supabase.co/auth/v1",
+    "accepted_audiences": [
+      "authenticated"
+    ]
+  },
+  "mcp": {
+    "server": {
+      "name": "apogesp-mcp",
+      "version": "0.1.0",
+      "title": "APOGESP"
+    },
+    "tools": [
+      {
+        "name": "list_noticias",
+        "title": "Listar notícias APOGESP",
+        "description": "Lista as notícias publicadas no site da APOGESP, ordenadas da mais recente para a mais antiga.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "limit": {
+              "description": "Número máximo de notícias (padrão 10).",
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_noticia",
+        "title": "Ler notícia por slug",
+        "description": "Retorna o conteúdo completo de uma notícia publicada da APOGESP pelo slug.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Slug da notícia (parte final da URL)."
+            }
+          },
+          "required": [
+            "slug"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_snapshot_carreira",
+        "title": "Snapshot da carreira APPGG",
+        "description": "Retorna os números, indicadores e dados demográficos publicados da carreira de APPGG.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_publicacoes",
+        "title": "Listar publicações",
+        "description": "Lista as publicações institucionais da APOGESP (estudos, notas técnicas, boletins).",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_wiki_verbetes",
+        "title": "Wiki da Carreira — verbetes",
+        "description": "Lista os verbetes publicados da Wiki da Carreira (Área do Associado). Requer que o usuário esteja autenticado como associado.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "slug": {
+              "description": "Se informado, retorna apenas o verbete com este slug (incluindo conteúdo).",
+              "type": "string"
+            }
+          }
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}

@@ -35,6 +35,8 @@ import DadosCRUDPage from "./pages/admin/DadosCRUDPage";
 import SnapshotEditorPage from "./pages/admin/SnapshotEditorPage";
 import RevisoesPendentesPage from "./pages/admin/RevisoesPendentesPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
+import LoginPage from "./pages/LoginPage";
+import OAuthConsentPage from "./pages/OAuthConsentPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -79,6 +81,8 @@ const App = () => (
           <Route path="/admin/dados/:tabela" element={<DadosCRUDPage />} />
           <Route path="/admin/revisoes" element={<RevisoesPendentesPage />} />
           <Route path="/reset-password" element={<ResetPasswordPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/.lovable/oauth/consent" element={<OAuthConsentPage />} />
           <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
