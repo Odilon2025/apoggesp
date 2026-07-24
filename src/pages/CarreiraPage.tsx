@@ -7,6 +7,7 @@ import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields } from "@/hooks/useCMS";
 import { field } from "@/lib/cms";
 import { cronologia as timelineItems } from "@/data/cronologia";
+import { snapshot } from "@/data/snapshot";
 import SEO from "@/components/SEO";
 
 const areasAtuacao: { texto: string; destaques: string[] }[] = [
