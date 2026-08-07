@@ -76,6 +76,7 @@ export const getBibliotecaItens = () => fetchList<{ titulo: string; categoria: s
 export const getValorizacaoAcoes = () => fetchList<{ titulo: string; eixo: string; status: string; descricao: string; proxima_etapa?: string }>("valorizacao_acoes");
 export const getGruposTrabalho = () => fetchList<{ nome: string; tema: string; coordenacao: string; descricao: string; frequencia: string; como_participar: string; ativo?: boolean }>("grupos_trabalho");
 export const getTransparenciaItens = () => fetchList<{ titulo: string; categoria: string; periodo: string; descricao: string; url: string }>("transparencia_itens");
+export const getLinksUteis = () => fetchList<{ categoria: string; titulo: string; descricao: string; url: string }>("links_uteis_itens");
 
 
 // --- Snapshot (singleton) ---

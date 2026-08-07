@@ -10,6 +10,7 @@ const navItems = [
   { label: "Notícias", path: "/noticias" },
   { label: "PAI", path: "/planos-atuacao" },
   { label: "Publicações", path: "/publicacoes" },
+  { label: "Links úteis", path: "/links-uteis" },
   { label: "Diversidade", path: "/diversidade" },
   { label: "Sustentabilidade", path: "/sustentabilidade" },
   { label: "Apogesp", path: "/apogesp" },
