@@ -350,6 +350,45 @@ export type Database = {
         }
         Relationships: []
       }
+      links_uteis_itens: {
+        Row: {
+          created_at: string
+          dados_publicado: Json | null
+          dados_rascunho: Json | null
+          deletado: boolean
+          id: string
+          ordem: number
+          publicado: boolean
+          tem_rascunho: boolean
+          updated_at: string
+          updated_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          dados_publicado?: Json | null
+          dados_rascunho?: Json | null
+          deletado?: boolean
+          id?: string
+          ordem?: number
+          publicado?: boolean
+          tem_rascunho?: boolean
+          updated_at?: string
+          updated_by?: string | null
+        }
+        Relationships: []
+      }
       mapa_atores_conexoes: {
         Row: {
           created_at: string

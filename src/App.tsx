@@ -24,6 +24,7 @@ import CampanhaNomeacaoPage from "./pages/CampanhaNomeacaoPage";
 import PlanosAtuacaoPage from "./pages/PlanosAtuacaoPage";
 import PlanosAmbientaisPage from "./pages/PlanosAmbientaisPage";
 import ObservatorioEvasoesPage from "./pages/ObservatorioEvasoesPage";
+import LinksUteisPage from "./pages/LinksUteisPage";
 import NoticiasPage from "./pages/NoticiasPage";
 import NoticiaDetalhePage from "./pages/NoticiaDetalhePage";
 import NoticiasAdminPage from "./pages/admin/NoticiasAdminPage";
@@ -68,8 +69,9 @@ const App = () => (
           <Route path="/campanha-nomeacao" element={<CampanhaNomeacaoPage />} />
           <Route path="/planos-atuacao" element={<PlanosAtuacaoPage />} />
           <Route path="/planos-ambientais" element={<PlanosAmbientaisPage />} />
-          <Route path="/observatorio-evasoes" element={<ObservatorioEvasoesPage />} />
-          <Route path="/noticias" element={<NoticiasPage />} />
+            <Route path="/observatorio-evasoes" element={<ObservatorioEvasoesPage />} />
+            <Route path="/links-uteis" element={<LinksUteisPage />} />
+            <Route path="/noticias" element={<NoticiasPage />} />
           <Route path="/noticias/:slug" element={<NoticiaDetalhePage />} />
           <Route path="/admin" element={<AdminHubPage />} />
           <Route path="/admin/noticias" element={<NoticiasAdminPage />} />

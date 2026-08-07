@@ -200,5 +200,17 @@ export const TABELAS: Record<string, TableSchema> = {
     ],
     resumo: (d) => `[${d?.categoria ?? ""}] ${d?.titulo ?? ""}`,
   },
+  links_uteis_itens: {
+    table: "links_uteis_itens",
+    titulo: "Links úteis",
+    descricao: "Links externos organizados por categoria na página Links úteis.",
+    campos: [
+      { key: "categoria", label: "Categoria", type: "select", options: ["Prefeitura de São Paulo", "Câmara Municipal", "Tribunal de Contas", "Diário Oficial", "Concursos e Bancas", "Legislação", "Outros"], required: true },
+      { key: "titulo", label: "Título", type: "text", required: true },
+      { key: "descricao", label: "Descrição", type: "textarea", rows: 2, required: true },
+      { key: "url", label: "URL", type: "url", required: true },
+    ],
+    resumo: (d) => `[${d?.categoria ?? ""}] ${d?.titulo ?? ""}`,
+  },
 };
 
