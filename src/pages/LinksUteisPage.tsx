@@ -48,9 +48,7 @@ const LinksUteisPage = () => {
           {categorias.map(([categoria, itens], idx) => (
             <FadeIn key={categoria} delay={idx * 0.05}>
               <div className="mb-16 last:mb-0">
-                <SectionTitle as="h2" className="mb-8">
-                  {categoria}
-                </SectionTitle>
+                <SectionTitle title={categoria} className="mb-8" />
                 <div className="grid grid-cols-1 gap-px bg-luxury-border">
                   {itens.map((link, i) => (
                     <a
