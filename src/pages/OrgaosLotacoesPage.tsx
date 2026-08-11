@@ -26,7 +26,7 @@ type Nodo = Orgao & { x: number; y: number; r: number; ang: number; dist: number
 
 const nodos: Nodo[] = orgaos.map((o, i) => {
   const t = Math.sqrt(o.total / maior);
-  const dist = 76 + (1 - t) * 214;
+  const dist = 118 + (1 - t) * 172;
   // ângulo dourado para distribuição orgânica, não geométrica
   const ang = i * 2.399963 + 0.6;
   return {
@@ -226,14 +226,15 @@ const PainelOrgao = ({ o }: { o: Orgao }) => {
         <span className="text-[10px] font-sans tracking-luxury uppercase text-text-caption">
           Distribuição por referência
         </span>
-        <div className="mt-4 flex items-end gap-2 h-20">
+        <div className="mt-4 flex items-end gap-2">
           {o.refs.map((r) => (
             <div key={r.ref} className="flex-1 flex flex-col items-center gap-2">
+              <span className="text-[10px] font-display text-foreground">{r.n}</span>
               <motion.div
                 initial={{ height: 0 }}
-                animate={{ height: `${(r.n / maxRef) * 100}%` }}
+                animate={{ height: Math.max(2, (r.n / maxRef) * 80) }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="w-full bg-gold/25 border-t border-gold min-h-[1px]"
+                className="w-full bg-gold/25 border-t border-gold"
               />
               <span className="text-[9px] text-text-caption font-sans">{r.ref.replace("APPGG", "")}</span>
             </div>
