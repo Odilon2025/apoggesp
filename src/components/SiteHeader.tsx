@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+type NavChild = { label: string; path: string; desc?: string };
+
 type NavItem = {
   label: string;
   path?: string;
-  children?: { label: string; path: string }[];
+  children?: NavChild[];
 };
 
 const navItems: NavItem[] = [
@@ -14,47 +16,63 @@ const navItems: NavItem[] = [
     label: "Carreira",
     path: "/carreira",
     children: [
-      { label: "O que é a carreira", path: "/carreira" },
-      { label: "Observatório de evasões", path: "/observatorio-evasoes" },
+      { label: "O que é a carreira", path: "/carreira", desc: "História, atribuições e legislação do APPGG" },
+      { label: "Estrutura remuneratória", path: "/campanha-salarial", desc: "Faixas, evolução salarial e comparativos" },
+      { label: "Observatório de evasões", path: "/observatorio-evasoes", desc: "Indicadores de saídas, LIP e afastamentos" },
+      { label: "Diversidade na carreira", path: "/diversidade", desc: "Perfil demográfico e representatividade" },
     ],
   },
   {
     label: "Atuação",
     path: "/atuacao",
     children: [
-      { label: "Casos e órgãos", path: "/atuacao" },
-      { label: "Planos de Atuação", path: "/planos-atuacao" },
-      { label: "Planos ambientais", path: "/planos-ambientais" },
+      { label: "Casos de impacto", path: "/atuacao", desc: "Projetos entregues por APPGGs nos órgãos" },
+      { label: "Órgãos e lotações", path: "/atuacao#orgaos", desc: "Onde a carreira está distribuída" },
+      { label: "Planos de Atuação", path: "/planos-atuacao", desc: "PAI e frentes de trabalho por secretaria" },
+      { label: "Planos ambientais", path: "/planos-ambientais", desc: "Agenda climática e sustentabilidade urbana" },
     ],
   },
   {
     label: "Conhecimento",
     path: "/publicacoes",
     children: [
-      { label: "Publicações", path: "/publicacoes" },
-      { label: "Notícias", path: "/noticias" },
-      { label: "Links úteis", path: "/links-uteis" },
+      { label: "Publicações", path: "/publicacoes", desc: "Notas técnicas, estudos e documentos" },
+      { label: "Notícias", path: "/noticias", desc: "Atualizações institucionais da APOGESP" },
+      { label: "Links úteis", path: "/links-uteis", desc: "Sistemas, dados abertos, legislação e ferramentas" },
+      { label: "Wiki da carreira", path: "/area-associado/wiki", desc: "Verbetes colaborativos sobre a carreira" },
     ],
   },
   {
     label: "Pautas",
     path: "/campanha-salarial",
     children: [
-      { label: "Campanha salarial", path: "/campanha-salarial" },
-      { label: "Nomeação", path: "/campanha-nomeacao" },
-      { label: "Diversidade", path: "/diversidade" },
-      { label: "Sustentabilidade", path: "/sustentabilidade" },
+      { label: "Campanha salarial", path: "/campanha-salarial", desc: "Dados e argumentos pela recomposição" },
+      { label: "Nomeações", path: "/campanha-nomeacao", desc: "Balanço das nomeações e agradecimentos" },
+      { label: "Diversidade", path: "/diversidade", desc: "Composição e equidade na carreira" },
+      { label: "Sustentabilidade", path: "/sustentabilidade", desc: "Compromissos ambientais e ESG público" },
     ],
   },
   {
     label: "APOGESP",
     path: "/apogesp",
     children: [
-      { label: "Institucional", path: "/apogesp" },
-      { label: "Contato", path: "/contato" },
+      { label: "Institucional", path: "/apogesp", desc: "Missão, diretoria e estatuto" },
+      { label: "Contato", path: "/contato", desc: "Canais oficiais de comunicação" },
+      { label: "Transparência", path: "/area-associado/transparencia", desc: "Prestação de contas da associação" },
     ],
   },
-  { label: "Área do Associado", path: "/area-associado" },
+  {
+    label: "Área do Associado",
+    path: "/area-associado",
+    children: [
+      { label: "Painel do associado", path: "/area-associado", desc: "Visão geral e novidades" },
+      { label: "Biblioteca da carreira", path: "/area-associado/biblioteca", desc: "Acervo técnico e normativo" },
+      { label: "Wiki da carreira", path: "/area-associado/wiki", desc: "Verbetes editáveis e comentários" },
+      { label: "Valorização e advocacy", path: "/area-associado/valorizacao", desc: "Mapa de atores e estratégias" },
+      { label: "Grupos de trabalho", path: "/area-associado/grupos", desc: "Frentes temáticas em andamento" },
+      { label: "Transparência APOGESP", path: "/area-associado/transparencia", desc: "Contas e documentos da entidade" },
+    ],
+  },
 ];
 
 const SiteHeader = () => {
@@ -138,23 +156,46 @@ const SiteHeader = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -6 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="absolute left-0 top-full pt-2 z-50 min-w-[220px]"
+                      className={`absolute top-full pt-3 z-50 w-[320px] ${
+                        item.label === "Área do Associado" || item.label === "APOGESP"
+                          ? "right-0"
+                          : "left-0"
+                      }`}
                     >
-                      <div className="bg-card border border-luxury-border shadow-[0_8px_30px_-12px_rgba(0,0,0,0.18)] py-2">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.path}
-                            to={child.path}
-                            onClick={() => setOpenGroup(null)}
-                            className={`block px-5 py-2.5 text-[13px] font-light tracking-wide transition-colors duration-200 hover:bg-secondary ${
-                              location.pathname === child.path
-                                ? "text-foreground"
-                                : "text-text-body hover:text-foreground"
-                            }`}
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
+                      <div className="bg-card border border-luxury-border shadow-[0_16px_40px_-16px_rgba(0,0,0,0.25)] py-2">
+                        <div className="px-5 pb-2 mb-1 border-b border-luxury-border/60">
+                          <span className="text-[10px] font-sans uppercase tracking-luxury text-text-caption">
+                            {item.label}
+                          </span>
+                        </div>
+                        {item.children.map((child) => {
+                          const childActive = location.pathname === child.path;
+                          return (
+                            <Link
+                              key={child.path + child.label}
+                              to={child.path}
+                              onClick={() => setOpenGroup(null)}
+                              className={`group/item block px-5 py-2.5 transition-colors duration-200 border-l-2 ${
+                                childActive
+                                  ? "border-gold bg-secondary/60"
+                                  : "border-transparent hover:border-gold/50 hover:bg-secondary"
+                              }`}
+                            >
+                              <span
+                                className={`block text-[13px] font-sans font-normal tracking-wide ${
+                                  childActive ? "text-foreground" : "text-text-body group-hover/item:text-foreground"
+                                }`}
+                              >
+                                {child.label}
+                              </span>
+                              {child.desc && (
+                                <span className="mt-0.5 block text-[11px] font-light leading-snug text-text-caption">
+                                  {child.desc}
+                                </span>
+                              )}
+                            </Link>
+                          );
+                        })}
                       </div>
                     </motion.div>
                   )}
@@ -221,20 +262,25 @@ const SiteHeader = () => {
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.25 }}
-                            className="overflow-hidden pl-4 pb-2"
+                            className="overflow-hidden pl-4 pb-2 border-l border-luxury-border/60 ml-1"
                           >
                             {item.children.map((child) => (
                               <Link
-                                key={child.path}
+                                key={child.path + child.label}
                                 to={child.path}
                                 onClick={() => setMobileOpen(false)}
-                                className={`block py-2.5 text-sm font-light tracking-wide transition-colors duration-300 ${
+                                className={`block py-2.5 transition-colors duration-300 ${
                                   location.pathname === child.path
                                     ? "text-foreground"
                                     : "text-text-caption hover:text-foreground"
                                 }`}
                               >
-                                {child.label}
+                                <span className="block text-sm font-light tracking-wide">{child.label}</span>
+                                {child.desc && (
+                                  <span className="mt-0.5 block text-[11px] font-light leading-snug text-text-caption/80">
+                                    {child.desc}
+                                  </span>
+                                )}
                               </Link>
                             ))}
                           </motion.div>
