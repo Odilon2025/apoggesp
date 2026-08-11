@@ -262,20 +262,25 @@ const SiteHeader = () => {
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.25 }}
-                            className="overflow-hidden pl-4 pb-2"
+                            className="overflow-hidden pl-4 pb-2 border-l border-luxury-border/60 ml-1"
                           >
                             {item.children.map((child) => (
                               <Link
-                                key={child.path}
+                                key={child.path + child.label}
                                 to={child.path}
                                 onClick={() => setMobileOpen(false)}
-                                className={`block py-2.5 text-sm font-light tracking-wide transition-colors duration-300 ${
+                                className={`block py-2.5 transition-colors duration-300 ${
                                   location.pathname === child.path
                                     ? "text-foreground"
                                     : "text-text-caption hover:text-foreground"
                                 }`}
                               >
-                                {child.label}
+                                <span className="block text-sm font-light tracking-wide">{child.label}</span>
+                                {child.desc && (
+                                  <span className="mt-0.5 block text-[11px] font-light leading-snug text-text-caption/80">
+                                    {child.desc}
+                                  </span>
+                                )}
                               </Link>
                             ))}
                           </motion.div>
