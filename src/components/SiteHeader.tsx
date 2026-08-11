@@ -156,23 +156,46 @@ const SiteHeader = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -6 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="absolute left-0 top-full pt-2 z-50 min-w-[220px]"
+                      className={`absolute top-full pt-3 z-50 w-[320px] ${
+                        item.label === "Área do Associado" || item.label === "APOGESP"
+                          ? "right-0"
+                          : "left-0"
+                      }`}
                     >
-                      <div className="bg-card border border-luxury-border shadow-[0_8px_30px_-12px_rgba(0,0,0,0.18)] py-2">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.path}
-                            to={child.path}
-                            onClick={() => setOpenGroup(null)}
-                            className={`block px-5 py-2.5 text-[13px] font-light tracking-wide transition-colors duration-200 hover:bg-secondary ${
-                              location.pathname === child.path
-                                ? "text-foreground"
-                                : "text-text-body hover:text-foreground"
-                            }`}
-                          >
-                            {child.label}
-                          </Link>
-                        ))}
+                      <div className="bg-card border border-luxury-border shadow-[0_16px_40px_-16px_rgba(0,0,0,0.25)] py-2">
+                        <div className="px-5 pb-2 mb-1 border-b border-luxury-border/60">
+                          <span className="text-[10px] font-sans uppercase tracking-luxury text-text-caption">
+                            {item.label}
+                          </span>
+                        </div>
+                        {item.children.map((child) => {
+                          const childActive = location.pathname === child.path;
+                          return (
+                            <Link
+                              key={child.path + child.label}
+                              to={child.path}
+                              onClick={() => setOpenGroup(null)}
+                              className={`group/item block px-5 py-2.5 transition-colors duration-200 border-l-2 ${
+                                childActive
+                                  ? "border-gold bg-secondary/60"
+                                  : "border-transparent hover:border-gold/50 hover:bg-secondary"
+                              }`}
+                            >
+                              <span
+                                className={`block text-[13px] font-sans font-normal tracking-wide ${
+                                  childActive ? "text-foreground" : "text-text-body group-hover/item:text-foreground"
+                                }`}
+                              >
+                                {child.label}
+                              </span>
+                              {child.desc && (
+                                <span className="mt-0.5 block text-[11px] font-light leading-snug text-text-caption">
+                                  {child.desc}
+                                </span>
+                              )}
+                            </Link>
+                          );
+                        })}
                       </div>
                     </motion.div>
                   )}
