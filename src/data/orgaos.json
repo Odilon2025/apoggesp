@@ -1,0 +1,951 @@
+{
+  "mesReferencia": "mai/2026",
+  "geradoEm": "2026-08-11T17:04:59.197Z",
+  "total": 194,
+  "totalOrgaos": 23,
+  "orgaos": [
+    {
+      "sigla": "SEGES",
+      "nome": "SECRETARIA MUNICIPAL DE GESTAO",
+      "total": 62,
+      "mulheres": 28,
+      "mulheresPct": 45.2,
+      "negros": 16,
+      "negrosPct": 25.8,
+      "comissao": 21,
+      "comissaoPct": 33.9,
+      "pcd": 3,
+      "ingressoMin": 2016,
+      "ingressoMax": 2026,
+      "idadeMedia": 41,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 18
+        },
+        {
+          "ref": "APPGG2",
+          "n": 15
+        },
+        {
+          "ref": "APPGG3",
+          "n": 9
+        },
+        {
+          "ref": "APPGG4",
+          "n": 1
+        },
+        {
+          "ref": "APPGG5",
+          "n": 6
+        },
+        {
+          "ref": "APPGG6",
+          "n": 13
+        }
+      ]
+    },
+    {
+      "sigla": "SEPLAN",
+      "nome": "SECRETARIA MUNICIPAL DE PLANEJAMENTO E EFICIENCIA",
+      "total": 18,
+      "mulheres": 5,
+      "mulheresPct": 27.8,
+      "negros": 4,
+      "negrosPct": 22.2,
+      "comissao": 7,
+      "comissaoPct": 38.9,
+      "pcd": 1,
+      "ingressoMin": 2016,
+      "ingressoMax": 2026,
+      "idadeMedia": 37,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 8
+        },
+        {
+          "ref": "APPGG2",
+          "n": 0
+        },
+        {
+          "ref": "APPGG3",
+          "n": 3
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 1
+        },
+        {
+          "ref": "APPGG6",
+          "n": 6
+        }
+      ]
+    },
+    {
+      "sigla": "SME",
+      "nome": "SECRETARIA MUNICIPAL DE EDUCACAO",
+      "total": 12,
+      "mulheres": 5,
+      "mulheresPct": 41.7,
+      "negros": 2,
+      "negrosPct": 16.7,
+      "comissao": 7,
+      "comissaoPct": 58.3,
+      "pcd": 1,
+      "ingressoMin": 2016,
+      "ingressoMax": 2026,
+      "idadeMedia": 39,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 6
+        },
+        {
+          "ref": "APPGG2",
+          "n": 2
+        },
+        {
+          "ref": "APPGG3",
+          "n": 0
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 0
+        },
+        {
+          "ref": "APPGG6",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "sigla": "SGM",
+      "nome": "SECRETARIA DO GOVERNO MUNICIPAL",
+      "total": 12,
+      "mulheres": 6,
+      "mulheresPct": 50,
+      "negros": 5,
+      "negrosPct": 41.7,
+      "comissao": 6,
+      "comissaoPct": 50,
+      "pcd": 1,
+      "ingressoMin": 2016,
+      "ingressoMax": 2026,
+      "idadeMedia": 41,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 4
+        },
+        {
+          "ref": "APPGG2",
+          "n": 3
+        },
+        {
+          "ref": "APPGG3",
+          "n": 1
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 2
+        },
+        {
+          "ref": "APPGG6",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "sigla": "SMS",
+      "nome": "SECRETARIA MUNICIPAL DA SAUDE",
+      "total": 10,
+      "mulheres": 3,
+      "mulheresPct": 30,
+      "negros": 5,
+      "negrosPct": 50,
+      "comissao": 2,
+      "comissaoPct": 20,
+      "pcd": 1,
+      "ingressoMin": 2016,
+      "ingressoMax": 2026,
+      "idadeMedia": 37,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 5
+        },
+        {
+          "ref": "APPGG2",
+          "n": 2
+        },
+        {
+          "ref": "APPGG3",
+          "n": 1
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 1
+        },
+        {
+          "ref": "APPGG6",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "sigla": "SVMA",
+      "nome": "SECRETARIA MUNICIPAL DO VERDE E DO MEIO AMBIENTE",
+      "total": 10,
+      "mulheres": 3,
+      "mulheresPct": 30,
+      "negros": 2,
+      "negrosPct": 20,
+      "comissao": 1,
+      "comissaoPct": 10,
+      "pcd": 1,
+      "ingressoMin": 2016,
+      "ingressoMax": 2024,
+      "idadeMedia": 43,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 3
+        },
+        {
+          "ref": "APPGG2",
+          "n": 1
+        },
+        {
+          "ref": "APPGG3",
+          "n": 1
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 1
+        },
+        {
+          "ref": "APPGG6",
+          "n": 4
+        }
+      ]
+    },
+    {
+      "sigla": "SMDHC",
+      "nome": "SECRETARIA MUNICIPAL DE DIREITOS HUMANOS E CIDADAN",
+      "total": 7,
+      "mulheres": 3,
+      "mulheresPct": 42.9,
+      "negros": 4,
+      "negrosPct": 57.1,
+      "comissao": 0,
+      "comissaoPct": 0,
+      "pcd": 0,
+      "ingressoMin": 2017,
+      "ingressoMax": 2026,
+      "idadeMedia": 36,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 5
+        },
+        {
+          "ref": "APPGG2",
+          "n": 0
+        },
+        {
+          "ref": "APPGG3",
+          "n": 1
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 1
+        },
+        {
+          "ref": "APPGG6",
+          "n": 0
+        }
+      ]
+    },
+    {
+      "sigla": "CGM",
+      "nome": "CONTROLADORIA GERAL DO MUNICIPIO",
+      "total": 7,
+      "mulheres": 3,
+      "mulheresPct": 42.9,
+      "negros": 1,
+      "negrosPct": 14.3,
+      "comissao": 3,
+      "comissaoPct": 42.9,
+      "pcd": 1,
+      "ingressoMin": 2016,
+      "ingressoMax": 2026,
+      "idadeMedia": 40,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 1
+        },
+        {
+          "ref": "APPGG2",
+          "n": 2
+        },
+        {
+          "ref": "APPGG3",
+          "n": 1
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 1
+        },
+        {
+          "ref": "APPGG6",
+          "n": 2
+        }
+      ]
+    },
+    {
+      "sigla": "SMC",
+      "nome": "SECRETARIA MUNICIPAL DE CULTURA E ECONOMIA CRIATIV",
+      "total": 6,
+      "mulheres": 2,
+      "mulheresPct": 33.3,
+      "negros": 4,
+      "negrosPct": 66.7,
+      "comissao": 1,
+      "comissaoPct": 16.7,
+      "pcd": 0,
+      "ingressoMin": 2016,
+      "ingressoMax": 2024,
+      "idadeMedia": 43,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 2
+        },
+        {
+          "ref": "APPGG2",
+          "n": 1
+        },
+        {
+          "ref": "APPGG3",
+          "n": 2
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 0
+        },
+        {
+          "ref": "APPGG6",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "sigla": "SEHAB",
+      "nome": "SECRETARIA MUNICIPAL DE HABITACAO",
+      "total": 6,
+      "mulheres": 5,
+      "mulheresPct": 83.3,
+      "negros": 1,
+      "negrosPct": 16.7,
+      "comissao": 1,
+      "comissaoPct": 16.7,
+      "pcd": 1,
+      "ingressoMin": 2016,
+      "ingressoMax": 2026,
+      "idadeMedia": 38,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 3
+        },
+        {
+          "ref": "APPGG2",
+          "n": 1
+        },
+        {
+          "ref": "APPGG3",
+          "n": 1
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 0
+        },
+        {
+          "ref": "APPGG6",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "sigla": "SMADS",
+      "nome": "SECRETARIA MUNICIPAL DE ASSIST E DESENV SOCIAL",
+      "total": 6,
+      "mulheres": 3,
+      "mulheresPct": 50,
+      "negros": 3,
+      "negrosPct": 50,
+      "comissao": 0,
+      "comissaoPct": 0,
+      "pcd": 0,
+      "ingressoMin": 2022,
+      "ingressoMax": 2026,
+      "idadeMedia": 40,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 4
+        },
+        {
+          "ref": "APPGG2",
+          "n": 2
+        },
+        {
+          "ref": "APPGG3",
+          "n": 0
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 0
+        },
+        {
+          "ref": "APPGG6",
+          "n": 0
+        }
+      ]
+    },
+    {
+      "sigla": "SMUL",
+      "nome": "SECRETARIA MUNICIPAL DE URBANISMO E LICENCIAMENTO",
+      "total": 5,
+      "mulheres": 2,
+      "mulheresPct": 40,
+      "negros": 1,
+      "negrosPct": 20,
+      "comissao": 3,
+      "comissaoPct": 60,
+      "pcd": 2,
+      "ingressoMin": 2016,
+      "ingressoMax": 2026,
+      "idadeMedia": 42,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 2
+        },
+        {
+          "ref": "APPGG2",
+          "n": 1
+        },
+        {
+          "ref": "APPGG3",
+          "n": 1
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 1
+        },
+        {
+          "ref": "APPGG6",
+          "n": 0
+        }
+      ]
+    },
+    {
+      "sigla": "SMT",
+      "nome": "SECRETARIA MUNICIPAL DE MOBILIDADE URBANA E TRANSP",
+      "total": 5,
+      "mulheres": 1,
+      "mulheresPct": 20,
+      "negros": 1,
+      "negrosPct": 20,
+      "comissao": 0,
+      "comissaoPct": 0,
+      "pcd": 0,
+      "ingressoMin": 2021,
+      "ingressoMax": 2024,
+      "idadeMedia": 38,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 2
+        },
+        {
+          "ref": "APPGG2",
+          "n": 1
+        },
+        {
+          "ref": "APPGG3",
+          "n": 2
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 0
+        },
+        {
+          "ref": "APPGG6",
+          "n": 0
+        }
+      ]
+    },
+    {
+      "sigla": "SEME",
+      "nome": "SECRETARIA MUNICIPAL DE ESPORTES E LAZER",
+      "total": 4,
+      "mulheres": 1,
+      "mulheresPct": 25,
+      "negros": 1,
+      "negrosPct": 25,
+      "comissao": 2,
+      "comissaoPct": 50,
+      "pcd": 0,
+      "ingressoMin": 2016,
+      "ingressoMax": 2024,
+      "idadeMedia": 37,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 2
+        },
+        {
+          "ref": "APPGG2",
+          "n": 1
+        },
+        {
+          "ref": "APPGG3",
+          "n": 0
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 0
+        },
+        {
+          "ref": "APPGG6",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "sigla": "SF",
+      "nome": "SECRETARIA MUNICIPAL DA FAZENDA",
+      "total": 4,
+      "mulheres": 0,
+      "mulheresPct": 0,
+      "negros": 0,
+      "negrosPct": 0,
+      "comissao": 3,
+      "comissaoPct": 75,
+      "pcd": 0,
+      "ingressoMin": 2016,
+      "ingressoMax": 2024,
+      "idadeMedia": 42,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 1
+        },
+        {
+          "ref": "APPGG2",
+          "n": 1
+        },
+        {
+          "ref": "APPGG3",
+          "n": 1
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 0
+        },
+        {
+          "ref": "APPGG6",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "sigla": "PGM",
+      "nome": "PROCURADORIA GERAL DO MUNICIPIO",
+      "total": 4,
+      "mulheres": 2,
+      "mulheresPct": 50,
+      "negros": 3,
+      "negrosPct": 75,
+      "comissao": 3,
+      "comissaoPct": 75,
+      "pcd": 0,
+      "ingressoMin": 2017,
+      "ingressoMax": 2024,
+      "idadeMedia": 39,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 2
+        },
+        {
+          "ref": "APPGG2",
+          "n": 1
+        },
+        {
+          "ref": "APPGG3",
+          "n": 0
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 1
+        },
+        {
+          "ref": "APPGG6",
+          "n": 0
+        }
+      ]
+    },
+    {
+      "sigla": "SMDET",
+      "nome": "SECRETARIA MUNICIPAL DE DESENVOLVIMENTO ECONOMICO",
+      "total": 4,
+      "mulheres": 1,
+      "mulheresPct": 25,
+      "negros": 2,
+      "negrosPct": 50,
+      "comissao": 0,
+      "comissaoPct": 0,
+      "pcd": 0,
+      "ingressoMin": 2021,
+      "ingressoMax": 2024,
+      "idadeMedia": 39,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 1
+        },
+        {
+          "ref": "APPGG2",
+          "n": 1
+        },
+        {
+          "ref": "APPGG3",
+          "n": 2
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 0
+        },
+        {
+          "ref": "APPGG6",
+          "n": 0
+        }
+      ]
+    },
+    {
+      "sigla": "GAB. PREFEITO",
+      "nome": "GABINETE DO PREFEITO",
+      "total": 3,
+      "mulheres": 0,
+      "mulheresPct": 0,
+      "negros": 2,
+      "negrosPct": 66.7,
+      "comissao": 2,
+      "comissaoPct": 66.7,
+      "pcd": 0,
+      "ingressoMin": 2016,
+      "ingressoMax": 2026,
+      "idadeMedia": 36,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 2
+        },
+        {
+          "ref": "APPGG2",
+          "n": 0
+        },
+        {
+          "ref": "APPGG3",
+          "n": 0
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 0
+        },
+        {
+          "ref": "APPGG6",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "sigla": "SMPED",
+      "nome": "SECRETARIA MUNICIPAL DA PESSOA COM DEFICIENCIA",
+      "total": 3,
+      "mulheres": 1,
+      "mulheresPct": 33.3,
+      "negros": 0,
+      "negrosPct": 0,
+      "comissao": 0,
+      "comissaoPct": 0,
+      "pcd": 0,
+      "ingressoMin": 2024,
+      "ingressoMax": 2026,
+      "idadeMedia": 37,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 3
+        },
+        {
+          "ref": "APPGG2",
+          "n": 0
+        },
+        {
+          "ref": "APPGG3",
+          "n": 0
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 0
+        },
+        {
+          "ref": "APPGG6",
+          "n": 0
+        }
+      ]
+    },
+    {
+      "sigla": "SMSUB",
+      "nome": "SECRETARIA MUNICIPAL DAS SUBPREFEITURAS",
+      "total": 2,
+      "mulheres": 0,
+      "mulheresPct": 0,
+      "negros": 1,
+      "negrosPct": 50,
+      "comissao": 1,
+      "comissaoPct": 50,
+      "pcd": 0,
+      "ingressoMin": 2016,
+      "ingressoMax": 2026,
+      "idadeMedia": 38,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 1
+        },
+        {
+          "ref": "APPGG2",
+          "n": 0
+        },
+        {
+          "ref": "APPGG3",
+          "n": 0
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 0
+        },
+        {
+          "ref": "APPGG6",
+          "n": 1
+        }
+      ]
+    },
+    {
+      "sigla": "SIURB",
+      "nome": "SECRETARIA MUNICIPAL DE INFRAESTRUTURA URBANA E OB",
+      "total": 2,
+      "mulheres": 1,
+      "mulheresPct": 50,
+      "negros": 1,
+      "negrosPct": 50,
+      "comissao": 1,
+      "comissaoPct": 50,
+      "pcd": 0,
+      "ingressoMin": 2024,
+      "ingressoMax": 2024,
+      "idadeMedia": 40,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 2
+        },
+        {
+          "ref": "APPGG2",
+          "n": 0
+        },
+        {
+          "ref": "APPGG3",
+          "n": 0
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 0
+        },
+        {
+          "ref": "APPGG6",
+          "n": 0
+        }
+      ]
+    },
+    {
+      "sigla": "SMSU",
+      "nome": "SECRETARIA MUNICIPAL DE SEGURANCA URBANA",
+      "total": 1,
+      "mulheres": 0,
+      "mulheresPct": 0,
+      "negros": 0,
+      "negrosPct": 0,
+      "comissao": 0,
+      "comissaoPct": 0,
+      "pcd": 0,
+      "ingressoMin": 2022,
+      "ingressoMax": 2022,
+      "idadeMedia": 50,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 0
+        },
+        {
+          "ref": "APPGG2",
+          "n": 1
+        },
+        {
+          "ref": "APPGG3",
+          "n": 0
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 0
+        },
+        {
+          "ref": "APPGG6",
+          "n": 0
+        }
+      ]
+    },
+    {
+      "sigla": "CASA CIVIL",
+      "nome": "CASA CIVIL",
+      "total": 1,
+      "mulheres": 0,
+      "mulheresPct": 0,
+      "negros": 0,
+      "negrosPct": 0,
+      "comissao": 0,
+      "comissaoPct": 0,
+      "pcd": 0,
+      "ingressoMin": 2026,
+      "ingressoMax": 2026,
+      "idadeMedia": 29,
+      "refs": [
+        {
+          "ref": "APPGG1",
+          "n": 1
+        },
+        {
+          "ref": "APPGG2",
+          "n": 0
+        },
+        {
+          "ref": "APPGG3",
+          "n": 0
+        },
+        {
+          "ref": "APPGG4",
+          "n": 0
+        },
+        {
+          "ref": "APPGG5",
+          "n": 0
+        },
+        {
+          "ref": "APPGG6",
+          "n": 0
+        }
+      ]
+    }
+  ]
+}

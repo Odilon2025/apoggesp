@@ -38,6 +38,7 @@ const navItems: NavItem[] = [
     children: [
       { label: "Publicações", path: "/publicacoes", desc: "Notas técnicas, estudos e documentos" },
       { label: "Notícias", path: "/noticias", desc: "Atualizações institucionais da APOGESP" },
+      { label: "Órgãos e lotações", path: "/orgaos-lotacoes", desc: "Onde a carreira está lotada na Prefeitura" },
       { label: "Links úteis", path: "/links-uteis", desc: "Sistemas, dados abertos, legislação e ferramentas" },
       { label: "Wiki da carreira", path: "/area-associado/wiki", desc: "Verbetes colaborativos sobre a carreira" },
     ],

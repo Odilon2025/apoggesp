@@ -25,6 +25,7 @@ import PlanosAtuacaoPage from "./pages/PlanosAtuacaoPage";
 import PlanosAmbientaisPage from "./pages/PlanosAmbientaisPage";
 import ObservatorioEvasoesPage from "./pages/ObservatorioEvasoesPage";
 import LinksUteisPage from "./pages/LinksUteisPage";
+import OrgaosLotacoesPage from "./pages/OrgaosLotacoesPage";
 import NoticiasPage from "./pages/NoticiasPage";
 import NoticiaDetalhePage from "./pages/NoticiaDetalhePage";
 import NoticiasAdminPage from "./pages/admin/NoticiasAdminPage";
@@ -71,6 +72,8 @@ const App = () => (
           <Route path="/planos-ambientais" element={<PlanosAmbientaisPage />} />
             <Route path="/observatorio-evasoes" element={<ObservatorioEvasoesPage />} />
             <Route path="/links-uteis" element={<LinksUteisPage />} />
+            <Route path="/orgaos-lotacoes" element={<OrgaosLotacoesPage />} />
+
             <Route path="/noticias" element={<NoticiasPage />} />
           <Route path="/noticias/:slug" element={<NoticiaDetalhePage />} />
           <Route path="/admin" element={<AdminHubPage />} />
