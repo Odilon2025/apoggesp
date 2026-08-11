@@ -25,6 +25,7 @@ import PlanosAtuacaoPage from "./pages/PlanosAtuacaoPage";
 import PlanosAmbientaisPage from "./pages/PlanosAmbientaisPage";
 import ObservatorioEvasoesPage from "./pages/ObservatorioEvasoesPage";
 import LinksUteisPage from "./pages/LinksUteisPage";
+import OrgaosLotacoesPage from "./pages/OrgaosLotacoesPage";
 import NoticiasPage from "./pages/NoticiasPage";
 import NoticiaDetalhePage from "./pages/NoticiaDetalhePage";
 import NoticiasAdminPage from "./pages/admin/NoticiasAdminPage";
