@@ -3,10 +3,12 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+type NavChild = { label: string; path: string; desc?: string };
+
 type NavItem = {
   label: string;
   path?: string;
-  children?: { label: string; path: string }[];
+  children?: NavChild[];
 };
 
 const navItems: NavItem[] = [
@@ -14,47 +16,63 @@ const navItems: NavItem[] = [
     label: "Carreira",
     path: "/carreira",
     children: [
-      { label: "O que é a carreira", path: "/carreira" },
-      { label: "Observatório de evasões", path: "/observatorio-evasoes" },
+      { label: "O que é a carreira", path: "/carreira", desc: "História, atribuições e legislação do APPGG" },
+      { label: "Estrutura remuneratória", path: "/campanha-salarial", desc: "Faixas, evolução salarial e comparativos" },
+      { label: "Observatório de evasões", path: "/observatorio-evasoes", desc: "Indicadores de saídas, LIP e afastamentos" },
+      { label: "Diversidade na carreira", path: "/diversidade", desc: "Perfil demográfico e representatividade" },
     ],
   },
   {
     label: "Atuação",
     path: "/atuacao",
     children: [
-      { label: "Casos e órgãos", path: "/atuacao" },
-      { label: "Planos de Atuação", path: "/planos-atuacao" },
-      { label: "Planos ambientais", path: "/planos-ambientais" },
+      { label: "Casos de impacto", path: "/atuacao", desc: "Projetos entregues por APPGGs nos órgãos" },
+      { label: "Órgãos e lotações", path: "/atuacao#orgaos", desc: "Onde a carreira está distribuída" },
+      { label: "Planos de Atuação", path: "/planos-atuacao", desc: "PAI e frentes de trabalho por secretaria" },
+      { label: "Planos ambientais", path: "/planos-ambientais", desc: "Agenda climática e sustentabilidade urbana" },
     ],
   },
   {
     label: "Conhecimento",
     path: "/publicacoes",
     children: [
-      { label: "Publicações", path: "/publicacoes" },
-      { label: "Notícias", path: "/noticias" },
-      { label: "Links úteis", path: "/links-uteis" },
+      { label: "Publicações", path: "/publicacoes", desc: "Notas técnicas, estudos e documentos" },
+      { label: "Notícias", path: "/noticias", desc: "Atualizações institucionais da APOGESP" },
+      { label: "Links úteis", path: "/links-uteis", desc: "Sistemas, dados abertos, legislação e ferramentas" },
+      { label: "Wiki da carreira", path: "/area-associado/wiki", desc: "Verbetes colaborativos sobre a carreira" },
     ],
   },
   {
     label: "Pautas",
     path: "/campanha-salarial",
     children: [
-      { label: "Campanha salarial", path: "/campanha-salarial" },
-      { label: "Nomeação", path: "/campanha-nomeacao" },
-      { label: "Diversidade", path: "/diversidade" },
-      { label: "Sustentabilidade", path: "/sustentabilidade" },
+      { label: "Campanha salarial", path: "/campanha-salarial", desc: "Dados e argumentos pela recomposição" },
+      { label: "Nomeações", path: "/campanha-nomeacao", desc: "Balanço das nomeações e agradecimentos" },
+      { label: "Diversidade", path: "/diversidade", desc: "Composição e equidade na carreira" },
+      { label: "Sustentabilidade", path: "/sustentabilidade", desc: "Compromissos ambientais e ESG público" },
     ],
   },
   {
     label: "APOGESP",
     path: "/apogesp",
     children: [
-      { label: "Institucional", path: "/apogesp" },
-      { label: "Contato", path: "/contato" },
+      { label: "Institucional", path: "/apogesp", desc: "Missão, diretoria e estatuto" },
+      { label: "Contato", path: "/contato", desc: "Canais oficiais de comunicação" },
+      { label: "Transparência", path: "/area-associado/transparencia", desc: "Prestação de contas da associação" },
     ],
   },
-  { label: "Área do Associado", path: "/area-associado" },
+  {
+    label: "Área do Associado",
+    path: "/area-associado",
+    children: [
+      { label: "Painel do associado", path: "/area-associado", desc: "Visão geral e novidades" },
+      { label: "Biblioteca da carreira", path: "/area-associado/biblioteca", desc: "Acervo técnico e normativo" },
+      { label: "Wiki da carreira", path: "/area-associado/wiki", desc: "Verbetes editáveis e comentários" },
+      { label: "Valorização e advocacy", path: "/area-associado/valorizacao", desc: "Mapa de atores e estratégias" },
+      { label: "Grupos de trabalho", path: "/area-associado/grupos", desc: "Frentes temáticas em andamento" },
+      { label: "Transparência APOGESP", path: "/area-associado/transparencia", desc: "Contas e documentos da entidade" },
+    ],
+  },
 ];
 
 const SiteHeader = () => {
