@@ -12,6 +12,7 @@ interface SEOProps {
 
 const SEO = ({ title, description, path = "/", jsonLd, ogType = "website" }: SEOProps) => {
   const url = `${SITE_URL}${path}`;
+  const image = `${SITE_URL}/og-apogesp.png`;
   const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
   return (
     <Helmet>
@@ -22,8 +23,10 @@ const SEO = ({ title, description, path = "/", jsonLd, ogType = "website" }: SEO
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content={ogType} />
+      <meta property="og:image" content={image} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
       {schemas.map((s, i) => (
         <script key={i} type="application/ld+json">{JSON.stringify(s)}</script>
       ))}
