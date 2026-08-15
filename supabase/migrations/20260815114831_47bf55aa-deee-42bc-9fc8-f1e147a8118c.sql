@@ -1,0 +1,3 @@
+update public.page_fields set value_publicado='Reconhecimento Institucional', value_rascunho=null, tem_rascunho=false where key='home.campanhas.nomeacao.eyebrow';
+update public.page_fields set value_publicado='53 novos APPGGs nomeados', value_rascunho=null, tem_rascunho=false where key='home.campanhas.nomeacao.titulo';
+update public.page_fields set value_publicado='A nomeação dos aprovados remanescentes fortalece a capacidade técnica da Prefeitura e conclui uma etapa importante de recomposição da carreira.', value_rascunho=null, tem_rascunho=false where key='home.campanhas.nomeacao.texto';

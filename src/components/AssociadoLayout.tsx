@@ -1,8 +1,9 @@
 import { ReactNode } from "react";
-import { NavLink, Navigate } from "react-router-dom";
+import { NavLink, Navigate, useLocation } from "react-router-dom";
 import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 import { useAuth } from "@/hooks/useAuth";
+import SEO from "@/components/SEO";
 
 const subnav = [
   { to: "/area-associado", label: "Painel", end: true },
@@ -22,6 +23,7 @@ interface Props {
 
 const AssociadoLayout = ({ label, titulo, subtitulo, children }: Props) => {
   const { user, loading } = useAuth();
+  const { pathname } = useLocation();
 
   if (loading) {
     return (
@@ -35,6 +37,11 @@ const AssociadoLayout = ({ label, titulo, subtitulo, children }: Props) => {
 
   return (
     <PageLayout>
+      <SEO
+        title={`${titulo} | APOGESP`}
+        description={subtitulo || `${titulo} — espaço dos associados da APOGESP.`}
+        path={pathname}
+      />
       <PageHero label={label} title={titulo} subtitle={subtitulo} />
       <nav className="border-b border-luxury-border bg-card sticky top-0 z-30">
         <div className="container">
