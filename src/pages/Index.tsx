@@ -200,17 +200,17 @@ const Index = () => {
             <FadeIn delay={0.1}>
               <Link to="/campanha-nomeacao" className="block bg-card p-10 md:p-12 h-full group hover:bg-card-hover transition-colors duration-300">
                 <Users size={20} strokeWidth={1.5} className="text-gold mb-5" />
-                <span className="text-[10px] font-medium tracking-luxury uppercase text-destructive block mb-3">
-                  {field(fields, "home.campanhas.nomeacao.eyebrow", "Nomeação Já")}
+                <span className="text-[10px] font-medium tracking-luxury uppercase text-gold block mb-3">
+                  {field(fields, "home.campanhas.nomeacao.eyebrow", "Reconhecimento Institucional")}
                 </span>
                 <h3 className="text-xl md:text-2xl font-display font-normal text-foreground mb-3 leading-tight">
-                  {field(fields, "home.campanhas.nomeacao.titulo", "53 APPGGs Aguardam Nomeação")}
+                  {field(fields, "home.campanhas.nomeacao.titulo", "53 novos APPGGs nomeados")}
                 </h3>
                 <p className="text-sm font-light text-text-body leading-relaxed mb-6">
-                  {field(fields, "home.campanhas.nomeacao.texto", "242 candidatos por vaga. 144 classificados. 80 nomeados. Restam 53 aprovados prontos — e 102 cargos vagos esperando por eles.")}
+                  {field(fields, "home.campanhas.nomeacao.texto", "A nomeação dos aprovados remanescentes fortalece a capacidade técnica da Prefeitura e conclui uma etapa importante de recomposição da carreira.")}
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-light text-accent group-hover:text-foreground transition-colors duration-300">
-                  Entenda a urgência <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
+                  Leia o posicionamento <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </Link>
             </FadeIn>
