@@ -904,6 +904,7 @@ export type Database = {
     }
     Functions: {
       discard_field_draft: { Args: { _key: string }; Returns: undefined }
+      is_associate: { Args: { _email: string }; Returns: boolean }
       is_editor: { Args: { _email: string }; Returns: boolean }
       publish_cms_all: { Args: { _table: string }; Returns: undefined }
       publish_cms_item: {
