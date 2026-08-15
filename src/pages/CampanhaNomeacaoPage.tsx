@@ -13,7 +13,7 @@ const agradecimentos = [
   {
     icon: Landmark,
     titulo: "Ao Prefeito de São Paulo",
-    desc: "Pela decisão de fortalecer a capacidade técnica da administração municipal e por reconhecer, com a nomeação, o papel estratégico dos Analistas de Planejamento e Políticas Públicas na entrega do Programa de Metas 2025–2028.",
+    desc: "Pela decisão de fortalecer a capacidade técnica da administração municipal e por reconhecer, com a nomeação, o papel estratégico dos Analistas de Políticas Públicas e Gestão Governamental na entrega do Programa de Metas 2025–2028.",
   },
   {
     icon: Building2,
@@ -58,7 +58,7 @@ const CampanhaNomeacaoPage = () => {
               <CMSMarkdown
                 fields={f}
                 fieldKey="campanha-nomeacao.narrativa.texto"
-                fallback={"Com a nomeação dos **53 aprovados remanescentes**, encerra-se um ciclo importante para a carreira de Analista de Planejamento e Políticas Públicas e para a administração municipal de São Paulo.\n\nA decisão fortalece a capacidade técnica das secretarias, valoriza o investimento público feito no concurso mais competitivo da história da carreira — **242 candidatos por vaga** — e sinaliza, de forma concreta, o compromisso da administração com uma gestão pública qualificada, baseada em evidências e orientada por resultados.\n\nA APOGESP registra publicamente seu agradecimento ao **Prefeito**, à **Secretaria Municipal de Gestão**, às **Vereadoras e Vereadores** que apoiaram a recomposição do quadro, e a todas as equipes técnicas que viabilizaram o processo. Que os novos colegas sejam bem-recebidos e que possam colaborar, com humildade e competência, com as prioridades da cidade."}
+                fallback={"Com a nomeação dos **53 aprovados remanescentes**, encerra-se um ciclo importante para a carreira de Analista de Políticas Públicas e Gestão Governamental e para a administração municipal de São Paulo.\n\nA decisão fortalece a capacidade técnica das secretarias, valoriza o investimento público feito no concurso mais competitivo da história da carreira — **242 candidatos por vaga** — e sinaliza, de forma concreta, o compromisso da administração com uma gestão pública qualificada, baseada em evidências e orientada por resultados.\n\nA APOGESP registra publicamente seu agradecimento ao **Prefeito**, à **Secretaria Municipal de Gestão**, às **Vereadoras e Vereadores** que apoiaram a recomposição do quadro, e a todas as equipes técnicas que viabilizaram o processo. Que os novos colegas sejam bem-recebidos e que possam colaborar, com humildade e competência, com as prioridades da cidade."}
                 className="space-y-6 text-base md:text-lg font-light text-text-body leading-relaxed"
               />
             </FadeIn>
