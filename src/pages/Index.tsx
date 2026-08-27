@@ -251,8 +251,36 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Atos Normativos */}
-      <section className="py-24 md:py-32 bg-card">
+      {/* Conheça a atuação dos APPGGs */}
+      <section className="py-20 md:py-24 bg-card">
+        <div className="container">
+          <FadeIn>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+              <div className="lg:col-span-8">
+                <SectionTitle
+                  label={field(fields, "home.atuacao.label", "Atuação técnica")}
+                  title={field(fields, "home.atuacao.titulo", "Conheça a atuação dos APPGGs")}
+                />
+                <p className="mt-6 text-sm md:text-base font-light text-text-body leading-relaxed max-w-2xl">
+                  {field(fields, "home.atuacao.texto", "Conheça contribuições de APPGGs em políticas, projetos e capacidades institucionais construídos em conjunto com órgãos, carreiras e equipes da Prefeitura de São Paulo.")}
+                </p>
+              </div>
+              <div className="lg:col-span-4 lg:text-right">
+                <Link
+                  to="/atuacao"
+                  className="group inline-flex items-center gap-2 text-sm font-light text-accent hover:text-foreground transition-colors duration-300"
+                >
+                  <span>Ver casos de atuação</span>
+                  <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
+                </Link>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Atos Normativos — resumo */}
+      <section className="py-24 md:py-32 bg-section-alt">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-4">
@@ -260,71 +288,51 @@ const Index = () => {
                 label={field(fields, "home.atos.label", "Marco Legal")}
                 title={field(fields, "home.atos.titulo", "Atos Normativos da Carreira")}
               />
-              <FadeIn>
-                <a
-                  href={atos.principal.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block group"
-                >
-                  <Scale size={20} strokeWidth={1.5} className="text-gold mb-4" />
-                  <h3 className="text-lg md:text-xl font-display font-normal text-foreground leading-tight group-hover:text-accent transition-colors duration-300">
-                    {atos.principal.titulo}
-                  </h3>
-                  <p className="text-sm font-light text-text-body mt-3 leading-relaxed">
-                    {atos.principal.descricao}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-xs font-light text-accent mt-5 group-hover:text-foreground transition-colors duration-300">
-                    Texto integral
-                    <ExternalLink size={12} strokeWidth={1.5} />
-                  </span>
-                </a>
-              </FadeIn>
             </div>
 
-            <div className="lg:col-span-8 space-y-12">
-              {[
-                { label: "Alterações", items: atos.alteracoes },
-                { label: "Anexos", items: atos.anexos },
-                { label: "Correlações", items: atos.correlacoes },
-              ].map((bloco) => (
-                <div key={bloco.label}>
-                  <span className="text-[10px] font-medium tracking-luxury uppercase text-text-caption block mb-5">
-                    {bloco.label}
-                  </span>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
-                    {bloco.items.map((item, i) => (
-                      <FadeIn key={item.url + i} delay={i * 0.05}>
-                        <a
-                          href={item.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group flex items-start gap-3 py-4 border-b border-luxury-border"
-                        >
-                          <FileText size={14} strokeWidth={1.5} className="text-gold mt-1 shrink-0" />
-                          <div className="flex-1">
-                            <p className="text-sm font-light text-foreground group-hover:text-accent transition-colors duration-300 leading-snug">
-                              {item.titulo}
-                            </p>
-                            <p className="text-xs font-light text-text-body mt-1 leading-relaxed">
-                              {item.descricao}
-                            </p>
-                          </div>
-                          <ExternalLink
-                            size={12}
-                            strokeWidth={1.5}
-                            className="text-text-caption mt-1.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                          />
-                        </a>
-                      </FadeIn>
-                    ))}
-                  </div>
-                </div>
-              ))}
+            <div className="lg:col-span-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
+                {atosResumo.map((item, i) => (
+                  <FadeIn key={item.url + i} delay={i * 0.05}>
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-start gap-3 py-5 border-b border-luxury-border"
+                    >
+                      <Scale size={16} strokeWidth={1.5} className="text-gold mt-1 shrink-0" />
+                      <div className="flex-1">
+                        <p className="text-sm font-light text-foreground group-hover:text-accent transition-colors duration-300 leading-snug">
+                          {item.titulo}
+                        </p>
+                        <p className="text-xs font-light text-text-body mt-1 leading-relaxed">
+                          {item.descricao}
+                        </p>
+                      </div>
+                      <ExternalLink
+                        size={12}
+                        strokeWidth={1.5}
+                        className="text-text-caption mt-1.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </a>
+                  </FadeIn>
+                ))}
+              </div>
+              <FadeIn>
+                <Link
+                  to="/carreira#marco-legal"
+                  className="group inline-flex items-center gap-2 mt-8 text-sm font-light text-accent hover:text-foreground transition-colors duration-300"
+                >
+                  <FileText size={14} strokeWidth={1.5} />
+                  <span>Consultar marco legal completo</span>
+                  <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
+                </Link>
+              </FadeIn>
             </div>
           </div>
         </div>
       </section>
+
 
 
       {/* Timeline */}
