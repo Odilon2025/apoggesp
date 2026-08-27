@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -7,29 +7,25 @@ type NavChild = { label: string; path: string; desc?: string };
 
 type NavItem = {
   label: string;
-  path?: string;
+  path: string;
   children?: NavChild[];
 };
 
-const navItems: NavItem[] = [
+export const navItems: NavItem[] = [
   {
-    label: "Carreira",
+    label: "A carreira",
     path: "/carreira",
     children: [
-      { label: "O que é a carreira", path: "/carreira", desc: "História, atribuições e legislação do APPGG" },
-      { label: "Estrutura remuneratória", path: "/campanha-salarial", desc: "Faixas, evolução salarial e comparativos" },
-      { label: "Observatório de evasões", path: "/observatorio-evasoes", desc: "Indicadores de saídas, LIP e afastamentos" },
-      { label: "Diversidade na carreira", path: "/diversidade", desc: "Perfil demográfico e representatividade" },
+      { label: "Visão geral", path: "/carreira", desc: "História, perfil e atribuições do APPGG" },
+      { label: "Marco legal", path: "/carreira#marco-legal", desc: "Lei, decretos e atos normativos da carreira" },
     ],
   },
   {
     label: "Atuação",
     path: "/atuacao",
     children: [
-      { label: "Casos de impacto", path: "/atuacao", desc: "Projetos entregues por APPGGs nos órgãos" },
-      { label: "Órgãos e lotações", path: "/atuacao#orgaos", desc: "Onde a carreira está distribuída" },
+      { label: "Casos de atuação", path: "/atuacao", desc: "Contribuições em políticas e projetos municipais" },
       { label: "Planos de Atuação", path: "/planos-atuacao", desc: "PAI e frentes de trabalho por secretaria" },
-      { label: "Planos ambientais", path: "/planos-ambientais", desc: "Agenda climática e sustentabilidade urbana" },
     ],
   },
   {
@@ -37,44 +33,34 @@ const navItems: NavItem[] = [
     path: "/publicacoes",
     children: [
       { label: "Publicações", path: "/publicacoes", desc: "Notas técnicas, estudos e documentos" },
-      { label: "Notícias", path: "/noticias", desc: "Atualizações institucionais da APOGESP" },
-      { label: "Órgãos e lotações", path: "/orgaos-lotacoes", desc: "Onde a carreira está lotada na Prefeitura" },
-      { label: "Links úteis", path: "/links-uteis", desc: "Sistemas, dados abertos, legislação e ferramentas" },
-      { label: "Wiki da carreira", path: "/area-associado/wiki", desc: "Verbetes colaborativos sobre a carreira" },
+      { label: "Observatório das Evasões", path: "/observatorio-evasoes", desc: "Indicadores de saídas, LIP e afastamentos" },
+      { label: "Links úteis", path: "/links-uteis", desc: "Sistemas, dados abertos e legislação" },
     ],
   },
   {
     label: "Pautas",
     path: "/campanha-salarial",
     children: [
-      { label: "Campanha salarial", path: "/campanha-salarial", desc: "Dados e argumentos pela recomposição" },
-      { label: "Nomeações", path: "/campanha-nomeacao", desc: "Balanço das nomeações e agradecimentos" },
-      { label: "Diversidade", path: "/diversidade", desc: "Composição e equidade na carreira" },
-      { label: "Sustentabilidade", path: "/sustentabilidade", desc: "Compromissos ambientais e ESG público" },
+      { label: "Valorização e remuneração", path: "/campanha-salarial", desc: "Dados e argumentos pela recomposição" },
+      { label: "Nomeações", path: "/campanha-nomeacao", desc: "Reconhecimento institucional da nomeação dos aprovados" },
     ],
   },
   {
-    label: "APOGESP",
+    label: "A associação",
     path: "/apogesp",
     children: [
-      { label: "Institucional", path: "/apogesp", desc: "Missão, diretoria e estatuto" },
+      { label: "Sobre a APOGESP", path: "/apogesp", desc: "Missão, diretoria e estatuto" },
+      { label: "Sustentabilidade", path: "/sustentabilidade", desc: "Compromissos ambientais e ESG público" },
       { label: "Contato", path: "/contato", desc: "Canais oficiais de comunicação" },
-      { label: "Transparência", path: "/area-associado/transparencia", desc: "Prestação de contas da associação" },
     ],
   },
   {
-    label: "Área do Associado",
+    label: "Área do associado",
     path: "/area-associado",
-    children: [
-      { label: "Painel do associado", path: "/area-associado", desc: "Visão geral e novidades" },
-      { label: "Biblioteca da carreira", path: "/area-associado/biblioteca", desc: "Acervo técnico e normativo" },
-      { label: "Wiki da carreira", path: "/area-associado/wiki", desc: "Verbetes editáveis e comentários" },
-      { label: "Valorização e advocacy", path: "/area-associado/valorizacao", desc: "Mapa de atores e estratégias" },
-      { label: "Grupos de trabalho", path: "/area-associado/grupos", desc: "Frentes temáticas em andamento" },
-      { label: "Transparência APOGESP", path: "/area-associado/transparencia", desc: "Contas e documentos da entidade" },
-    ],
   },
 ];
+
+const basePath = (p: string) => p.split("#")[0];
 
 const SiteHeader = () => {
   const location = useLocation();
@@ -82,6 +68,7 @@ const SiteHeader = () => {
   const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [mobileGroup, setMobileGroup] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const navRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -89,9 +76,34 @@ const SiteHeader = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close on route change
+  useEffect(() => {
+    setOpenGroup(null);
+    setMobileOpen(false);
+  }, [location.pathname, location.hash]);
+
+  // Close on outside click / Escape
+  useEffect(() => {
+    if (!openGroup) return;
+    const onDown = (e: MouseEvent | TouchEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) setOpenGroup(null);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenGroup(null);
+    };
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("touchstart", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("touchstart", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [openGroup]);
+
   const isGroupActive = (item: NavItem) =>
-    item.path === location.pathname ||
-    (item.children ?? []).some((c) => c.path === location.pathname);
+    basePath(item.path) === location.pathname ||
+    (item.children ?? []).some((c) => basePath(c.path) === location.pathname);
 
   return (
     <header
@@ -109,38 +121,65 @@ const SiteHeader = () => {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav ref={navRef} aria-label="Navegação principal" className="hidden lg:flex items-center gap-8">
           {navItems.map((item) => {
             const active = isGroupActive(item);
+            const expanded = openGroup === item.label;
+
+            if (!item.children) {
+              return (
+                <div key={item.label} className="relative">
+                  <Link
+                    to={item.path}
+                    aria-current={active ? "page" : undefined}
+                    className="flex items-center gap-1 py-2"
+                  >
+                    <span
+                      className={`text-[13px] font-sans tracking-wide transition-colors duration-300 ${
+                        active ? "text-foreground font-normal" : "text-text-body hover:text-foreground font-light"
+                      }`}
+                    >
+                      {item.label}
+                    </span>
+                    {active && (
+                      <motion.div
+                        layoutId="nav-underline"
+                        className="absolute -bottom-0.5 left-0 right-0 h-px bg-gold"
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                      />
+                    )}
+                  </Link>
+                </div>
+              );
+            }
+
             return (
-              <div
-                key={item.label}
-                className="relative"
-                onMouseEnter={() => setOpenGroup(item.label)}
-                onMouseLeave={() => setOpenGroup(null)}
-              >
-                <Link
-                  to={item.path ?? "/"}
-                  className="flex items-center gap-1 py-2 group"
-                  aria-haspopup={item.children ? "true" : undefined}
-                  aria-expanded={item.children ? openGroup === item.label : undefined}
+              <div key={item.label} className="relative">
+                <button
+                  type="button"
+                  onClick={() => setOpenGroup(expanded ? null : item.label)}
+                  onKeyDown={(e) => {
+                    if (e.key === "ArrowDown") {
+                      e.preventDefault();
+                      setOpenGroup(item.label);
+                    }
+                  }}
+                  aria-haspopup="true"
+                  aria-expanded={expanded}
+                  className="flex items-center gap-1 py-2"
                 >
                   <span
-                    className={`text-[13px] font-sans font-light tracking-wide transition-colors duration-300 ${
-                      active ? "text-foreground" : "text-text-body hover:text-foreground"
+                    className={`text-[13px] font-sans tracking-wide transition-colors duration-300 ${
+                      active ? "text-foreground font-normal" : "text-text-body hover:text-foreground font-light"
                     }`}
                   >
                     {item.label}
                   </span>
-                  {item.children && (
-                    <ChevronDown
-                      size={12}
-                      strokeWidth={1.5}
-                      className={`text-text-caption transition-transform duration-300 ${
-                        openGroup === item.label ? "rotate-180" : ""
-                      }`}
-                    />
-                  )}
+                  <ChevronDown
+                    size={12}
+                    strokeWidth={1.5}
+                    className={`text-text-caption transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
+                  />
                   {active && (
                     <motion.div
                       layoutId="nav-underline"
@@ -148,19 +187,17 @@ const SiteHeader = () => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     />
                   )}
-                </Link>
+                </button>
 
                 <AnimatePresence>
-                  {item.children && openGroup === item.label && (
+                  {expanded && (
                     <motion.div
                       initial={{ opacity: 0, y: -6 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -6 }}
                       transition={{ duration: 0.2, ease: "easeOut" }}
                       className={`absolute top-full pt-3 z-50 w-[320px] ${
-                        item.label === "Área do Associado" || item.label === "APOGESP"
-                          ? "right-0"
-                          : "left-0"
+                        item.label === "A associação" ? "right-0" : "left-0"
                       }`}
                     >
                       <div className="bg-card border border-luxury-border shadow-[0_16px_40px_-16px_rgba(0,0,0,0.25)] py-2">
@@ -170,16 +207,19 @@ const SiteHeader = () => {
                           </span>
                         </div>
                         {item.children.map((child) => {
-                          const childActive = location.pathname === child.path;
+                          const childActive =
+                            location.pathname === basePath(child.path) &&
+                            (child.path.includes("#") ? location.hash === `#${child.path.split("#")[1]}` : !location.hash);
                           return (
                             <Link
                               key={child.path + child.label}
                               to={child.path}
                               onClick={() => setOpenGroup(null)}
+                              aria-current={childActive ? "page" : undefined}
                               className={`group/item block px-5 py-2.5 transition-colors duration-200 border-l-2 ${
                                 childActive
                                   ? "border-gold bg-secondary/60"
-                                  : "border-transparent hover:border-gold/50 hover:bg-secondary"
+                                  : "border-transparent hover:border-gold/50 hover:bg-secondary focus-visible:border-gold/50 focus-visible:bg-secondary"
                               }`}
                             >
                               <span
@@ -211,6 +251,7 @@ const SiteHeader = () => {
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
           aria-expanded={mobileOpen}
+          aria-controls="mobile-nav"
           className="lg:hidden p-2 text-text-body hover:text-foreground transition-colors duration-300"
         >
           {mobileOpen ? <X size={18} strokeWidth={1.5} /> : <Menu size={18} strokeWidth={1.5} />}
@@ -221,6 +262,8 @@ const SiteHeader = () => {
       <AnimatePresence>
         {mobileOpen && (
           <motion.nav
+            id="mobile-nav"
+            aria-label="Navegação principal"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -239,12 +282,10 @@ const SiteHeader = () => {
                   {item.children ? (
                     <>
                       <button
-                        onClick={() =>
-                          setMobileGroup(mobileGroup === item.label ? null : item.label)
-                        }
+                        onClick={() => setMobileGroup(mobileGroup === item.label ? null : item.label)}
                         aria-expanded={mobileGroup === item.label}
-                        className={`w-full flex items-center justify-between py-3 text-sm font-light tracking-wide transition-colors duration-300 ${
-                          isGroupActive(item) ? "text-foreground" : "text-text-body"
+                        className={`w-full flex items-center justify-between py-3 text-sm tracking-wide transition-colors duration-300 ${
+                          isGroupActive(item) ? "text-foreground font-normal" : "text-text-body font-light"
                         }`}
                       >
                         {item.label}
@@ -271,7 +312,7 @@ const SiteHeader = () => {
                                 to={child.path}
                                 onClick={() => setMobileOpen(false)}
                                 className={`block py-2.5 transition-colors duration-300 ${
-                                  location.pathname === child.path
+                                  location.pathname === basePath(child.path)
                                     ? "text-foreground"
                                     : "text-text-caption hover:text-foreground"
                                 }`}
@@ -290,12 +331,12 @@ const SiteHeader = () => {
                     </>
                   ) : (
                     <Link
-                      to={item.path ?? "/"}
+                      to={item.path}
                       onClick={() => setMobileOpen(false)}
-                      className={`block py-3 text-sm font-light tracking-wide transition-colors duration-300 ${
+                      className={`block py-3 text-sm tracking-wide transition-colors duration-300 ${
                         location.pathname === item.path
-                          ? "text-foreground"
-                          : "text-text-body hover:text-foreground"
+                          ? "text-foreground font-normal"
+                          : "text-text-body font-light hover:text-foreground"
                       }`}
                     >
                       {item.label}
