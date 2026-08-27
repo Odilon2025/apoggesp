@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { navItems } from "./SiteHeader";
 
 const SiteFooter = () => (
   <footer className="bg-primary text-primary-foreground">
@@ -8,7 +9,7 @@ const SiteFooter = () => (
     <div className="container py-20">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
         {/* Brand */}
-        <div className="md:col-span-5">
+        <div className="md:col-span-4">
           <span className="text-xs font-sans font-medium tracking-luxury uppercase opacity-60">APOGESP</span>
           <p className="mt-6 text-sm font-light leading-relaxed opacity-70 max-w-sm">
             Associação dos Analistas de Políticas Públicas e Gestão Governamental do Município de São Paulo. Uma década fortalecendo a gestão pública da maior cidade da América Latina.
@@ -18,36 +19,41 @@ const SiteFooter = () => (
           </p>
         </div>
 
-        {/* Navigation */}
-        <div className="md:col-span-3">
-          <span className="text-[10px] font-medium tracking-luxury uppercase opacity-40 block mb-6">Navegação</span>
-          <ul className="space-y-3">
-            {[
-              { label: "A Carreira", path: "/carreira" },
-              { label: "Atuação", path: "/atuacao" },
-              { label: "Planos de Atuação", path: "/planos-atuacao" },
-              { label: "Publicações", path: "/publicacoes" },
-              { label: "Links úteis", path: "/links-uteis" },
-              { label: "Sustentabilidade", path: "/sustentabilidade" },
-              { label: "A APOGESP", path: "/apogesp" },
-              { label: "Área do Associado", path: "/area-associado" },
-              { label: "Contato", path: "/contato" },
-            ].map((item) => (
-              <li key={item.path}>
-                <Link
-                  to={item.path}
-                  className="text-sm font-light opacity-60 hover:opacity-100 transition-opacity duration-300"
-                >
+        {/* Navigation mirroring main menu */}
+        <div className="md:col-span-5 grid grid-cols-2 sm:grid-cols-3 gap-8">
+          {navItems
+            .filter((item) => item.children)
+            .map((item) => (
+              <div key={item.label}>
+                <span className="text-[10px] font-medium tracking-luxury uppercase opacity-40 block mb-4">
                   {item.label}
-                </Link>
-              </li>
+                </span>
+                <ul className="space-y-3">
+                  {item.children!.map((child) => (
+                    <li key={child.path + child.label}>
+                      <Link
+                        to={child.path}
+                        className="text-sm font-light opacity-60 hover:opacity-100 transition-opacity duration-300"
+                      >
+                        {child.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
         </div>
 
-        {/* Contact */}
-        <div className="md:col-span-4">
-          <span className="text-[10px] font-medium tracking-luxury uppercase opacity-40 block mb-6">Contato</span>
+        {/* Associado + Contact */}
+        <div className="md:col-span-3">
+          <span className="text-[10px] font-medium tracking-luxury uppercase opacity-40 block mb-4">Associados</span>
+          <Link
+            to="/area-associado"
+            className="text-sm font-light opacity-60 hover:opacity-100 transition-opacity duration-300"
+          >
+            Área do associado
+          </Link>
+          <span className="text-[10px] font-medium tracking-luxury uppercase opacity-40 block mt-8 mb-4">Contato</span>
           <p className="text-sm font-light opacity-60">apogesp@gmail.com</p>
           <p className="text-sm font-light opacity-60 mt-2">São Paulo — SP, Brasil</p>
         </div>
