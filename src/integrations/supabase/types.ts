@@ -836,6 +836,112 @@ export type Database = {
         }
         Relationships: []
       }
+      votacao_comentarios: {
+        Row: {
+          autor_email: string
+          created_at: string
+          id: string
+          texto: string
+          updated_at: string
+          votacao_id: string
+        }
+        Insert: {
+          autor_email: string
+          created_at?: string
+          id?: string
+          texto: string
+          updated_at?: string
+          votacao_id: string
+        }
+        Update: {
+          autor_email?: string
+          created_at?: string
+          id?: string
+          texto?: string
+          updated_at?: string
+          votacao_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "votacao_comentarios_votacao_id_fkey"
+            columns: ["votacao_id"]
+            isOneToOne: false
+            referencedRelation: "votacoes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      votacao_votos: {
+        Row: {
+          created_at: string
+          id: string
+          updated_at: string
+          votacao_id: string
+          votante_email: string
+          votante_nome: string | null
+          voto: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          updated_at?: string
+          votacao_id: string
+          votante_email: string
+          votante_nome?: string | null
+          voto: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          updated_at?: string
+          votacao_id?: string
+          votante_email?: string
+          votante_nome?: string | null
+          voto?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "votacao_votos_votacao_id_fkey"
+            columns: ["votacao_id"]
+            isOneToOne: false
+            referencedRelation: "votacoes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      votacoes: {
+        Row: {
+          closed_at: string | null
+          created_at: string
+          criado_por: string
+          descricao: string | null
+          id: string
+          status: string
+          titulo: string
+          updated_at: string
+        }
+        Insert: {
+          closed_at?: string | null
+          created_at?: string
+          criado_por: string
+          descricao?: string | null
+          id?: string
+          status?: string
+          titulo: string
+          updated_at?: string
+        }
+        Update: {
+          closed_at?: string | null
+          created_at?: string
+          criado_por?: string
+          descricao?: string | null
+          id?: string
+          status?: string
+          titulo?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       wiki_verbetes: {
         Row: {
           created_at: string
