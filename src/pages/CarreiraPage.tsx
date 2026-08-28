@@ -36,6 +36,15 @@ const renderComDestaques = (texto: string, destaques: string[]) => {
 
 const CarreiraPage = () => {
   const f = usePageFields("carreira");
+  const atosItems = useCMSList(getAtos, []);
+  const atos = agruparAtos(atosItems);
+  const grupos = [
+    { label: "Lei da carreira", itens: [atos.principal] },
+    { label: "Alterações", itens: atos.alteracoes },
+    { label: "Anexos", itens: atos.anexos },
+    { label: "Normas correlatas", itens: atos.correlacoes },
+  ].filter((g) => g.itens.length > 0);
+
   return (
   <PageLayout>
       <SEO title="Carreira APPGG \u2014 Hist\u00f3ria e estrutura | APOGESP" description="Conhe\u00e7a a carreira de Analista de Pol\u00edticas P\u00fablicas e Gest\u00e3o Governamental do Munic\u00edpio de S\u00e3o Paulo: hist\u00f3rico, atribui\u00e7\u00f5es, dados demogr\u00e1ficos e estrutura." path="/carreira" />
