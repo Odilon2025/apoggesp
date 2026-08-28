@@ -34,6 +34,8 @@ export const navItems: NavItem[] = [
     children: [
       { label: "Publicações", path: "/publicacoes", desc: "Notas técnicas, estudos e documentos" },
       { label: "Observatório das Evasões", path: "/observatorio-evasoes", desc: "Indicadores de saídas, LIP e afastamentos" },
+      { label: "Observatório do Estágio Probatório", path: "/observatorio-estagio-probatorio", desc: "Avaliação, riscos psicossociais e garantias" },
+
       { label: "Links úteis", path: "/links-uteis", desc: "Sistemas, dados abertos e legislação" },
     ],
   },
