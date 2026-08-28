@@ -844,24 +844,62 @@ const ObservatorioEstagioProbatorioPage = () => {
         </div>
       </section>
 
-      {/* Perguntas à Administração */}
-      <section id="perguntas" className="py-20 md:py-28 scroll-mt-24">
+      {/* Jurisprudência de primeiro grau */}
+      <section id="jurisprudencia" className="py-20 md:py-28 scroll-mt-24">
         <div className="container">
-          <SectionTitle label="Controle social" title="Perguntas públicas à Administração" />
-          <Accordion type="single" collapsible className="border-t border-luxury-border">
-            {perguntasAdministracao.map((p, i) => (
-              <AccordionItem key={p} value={`q-${i}`} className="border-b border-luxury-border">
-                <AccordionTrigger className="text-left text-sm font-normal text-text-display hover:text-gold">
-                  {p}
-                </AccordionTrigger>
-                <AccordionContent className="text-sm font-light text-text-body leading-relaxed">
-                  Questão dirigida à Administração Municipal. A APOGESP considera que a resposta deve ser
-                  pública, documentada e acompanhada dos instrumentos normativos, metodológicos e de
-                  registro correspondentes.
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <SectionTitle
+            label="Controle judicial"
+            title="Jurisprudência aplicável"
+            subtitle="Precedentes que indicam os limites da avaliação funcional e o dever de investigar as condições de trabalho."
+          />
+          <div className="overflow-x-auto border border-luxury-border">
+            <table className="w-full text-left text-sm">
+              <thead>
+                <tr className="border-b border-luxury-border bg-section-alt">
+                  <th scope="col" className="px-6 py-4 text-[10px] font-medium tracking-luxury uppercase text-text-caption">
+                    Precedente
+                  </th>
+                  <th scope="col" className="px-6 py-4 text-[10px] font-medium tracking-luxury uppercase text-text-caption">
+                    Tese que sustenta
+                  </th>
+                  <th scope="col" className="px-6 py-4 text-[10px] font-medium tracking-luxury uppercase text-text-caption">
+                    Aderência
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {jurisprudenciaTJ.map((j) => (
+                  <tr key={j.processo} className="border-b border-luxury-border last:border-0 bg-card">
+                    <td className="px-6 py-5 align-top whitespace-nowrap font-medium text-text-display">
+                      {j.processo}
+                    </td>
+                    <td className="px-6 py-5 align-top font-light text-text-body leading-relaxed">
+                      {j.tese}
+                    </td>
+                    <td className="px-6 py-5 align-top whitespace-nowrap">
+                      <span
+                        className={`inline-block border px-3 py-1 text-[10px] font-medium tracking-luxury uppercase ${
+                          j.aderencia === "Muito alta"
+                            ? "border-safe/30 bg-safe-soft text-safe"
+                            : j.aderencia === "Alta"
+                              ? "border-gold/40 bg-gold/10 text-gold"
+                              : "border-luxury-border bg-section-alt text-text-body"
+                        }`}
+                      >
+                        {j.aderencia}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-6 text-[11px] font-light text-text-caption leading-relaxed">
+            Referências de âmbito estadual (TJSP), indicadas como orientação argumentativa. A última linha
+            registra o contraponto: avaliações documentadas, motivadas e precedidas de acompanhamento não
+            são invalidadas por alegações genéricas — razão pela qual a APOGESP defende avaliação legítima,
+            e não ausência de avaliação.
+          </p>
         </div>
       </section>
 
