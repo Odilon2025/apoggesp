@@ -55,6 +55,8 @@ const Index = () => {
   }, []);
 
   const atos = agruparAtos(atosItems);
+  const atosResumo = [atos.principal, ...atos.alteracoes].slice(0, 4);
+
 
   const stats = [
     { num: String(snap.total), label: "analistas em exercício" },
