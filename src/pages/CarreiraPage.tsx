@@ -4,8 +4,25 @@ import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
 import CarreiraDashboard from "@/components/CarreiraDashboard";
 import CMSMarkdown from "@/components/CMSMarkdown";
-import { usePageFields } from "@/hooks/useCMS";
-import { field } from "@/lib/cms";
+import { usePageFields, useCMSList } from "@/hooks/useCMS";
+import { field, getAtos } from "@/lib/cms";
+import { Scale, ExternalLink } from "lucide-react";
+import { atosNormativos as atosFallback } from "@/data/atosNormativos";
+
+function agruparAtos(items: { categoria: string; titulo: string; descricao: string; url: string }[]) {
+  if (!items || items.length === 0) return atosFallback;
+  const principal = items.find((i) => i.categoria === "principal") ?? atosFallback.principal;
+  const alteracoes = items.filter((i) => i.categoria === "alteracao");
+  const anexos = items.filter((i) => i.categoria === "anexo");
+  const correlacoes = items.filter((i) => i.categoria === "correlacao");
+  return {
+    principal,
+    alteracoes: alteracoes.length ? alteracoes : atosFallback.alteracoes,
+    anexos: anexos.length ? anexos : atosFallback.anexos,
+    correlacoes: correlacoes.length ? correlacoes : atosFallback.correlacoes,
+  };
+}
+
 import { cronologia as timelineItems } from "@/data/cronologia";
 import { snapshot } from "@/data/snapshot";
 import SEO from "@/components/SEO";
