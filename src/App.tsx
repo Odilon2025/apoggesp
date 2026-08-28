@@ -67,6 +67,8 @@ const App = () => (
           <Route path="/area-associado/valorizacao" element={<ValorizacaoPage />} />
           <Route path="/area-associado/grupos" element={<GruposPage />} />
           <Route path="/area-associado/transparencia" element={<TransparenciaPage />} />
+          <Route path="/area-associado/votacoes" element={<VotacoesPage />} />
+
           <Route path="/campanha-salarial" element={<CampanhaSalarialPage />} />
           <Route path="/campanha-nomeacao" element={<CampanhaNomeacaoPage />} />
           <Route path="/planos-atuacao" element={<PlanosAtuacaoPage />} />
