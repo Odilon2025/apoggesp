@@ -64,11 +64,11 @@ const VotacoesPage = () => {
 
   return (
     <AssociadoLayout
-      label={field(fields, "hero_label", "Área do Associado")}
-      titulo={field(fields, "hero_titulo", "Votações ao Vivo")}
+      label={field(fields, "associado_votacoes.hero_label", "Área do Associado")}
+      titulo={field(fields, "associado_votacoes.hero_titulo", "Votações ao Vivo")}
       subtitulo={field(
         fields,
-        "hero_subtitulo",
+        "associado_votacoes.hero_subtitulo",
         "Deliberações abertas em reuniões: qualquer associado propõe um tema, o voto é nominal e o resultado atualiza em tempo real.",
       )}
     >
