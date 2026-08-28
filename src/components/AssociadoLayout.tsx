@@ -11,6 +11,7 @@ const subnav = [
   { to: "/area-associado/wiki", label: "Wiki da Carreira" },
   { to: "/area-associado/valorizacao", label: "Valorização e Advocacy" },
   { to: "/area-associado/grupos", label: "Grupos de Trabalho" },
+  { to: "/area-associado/votacoes", label: "Votações ao Vivo" },
   { to: "/area-associado/transparencia", label: "Transparência APOGESP" },
 ];
 

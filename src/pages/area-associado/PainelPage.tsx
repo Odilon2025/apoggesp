@@ -5,7 +5,7 @@ import AssociadoLayout from "@/components/AssociadoLayout";
 import { usePageFields, useCMSList } from "@/hooks/useCMS";
 import { field, getAssociadoAvisos } from "@/lib/cms";
 import { useAuth } from "@/hooks/useAuth";
-import { BookOpen, Megaphone, Users, FileSearch, LogOut, Library } from "lucide-react";
+import { BookOpen, Megaphone, Users, FileSearch, LogOut, Library, Vote } from "lucide-react";
 
 const tipoAccent: Record<string, string> = {
   info: "border-luxury-border",
@@ -18,6 +18,7 @@ const cards = [
   { to: "/area-associado/wiki", titulo: "Wiki da Carreira", desc: "Verbetes comentáveis sobre a carreira APPGG.", icon: Library },
   { to: "/area-associado/valorizacao", titulo: "Valorização e Advocacy", desc: "Campanhas e ações estratégicas em curso.", icon: Megaphone },
   { to: "/area-associado/grupos", titulo: "Grupos de Trabalho", desc: "Espaços colaborativos de construção coletiva.", icon: Users },
+  { to: "/area-associado/votacoes", titulo: "Votações ao Vivo", desc: "Delibere em reunião com voto nominal e comentários.", icon: Vote },
   { to: "/area-associado/transparencia", titulo: "Transparência APOGESP", desc: "Atas, prestação de contas e documentos.", icon: FileSearch },
 ];
 

@@ -17,6 +17,7 @@ import WikiVerbetePage from "./pages/area-associado/WikiVerbetePage";
 import ValorizacaoPage from "./pages/area-associado/ValorizacaoPage";
 import GruposPage from "./pages/area-associado/GruposPage";
 import TransparenciaPage from "./pages/area-associado/TransparenciaPage";
+import VotacoesPage from "./pages/area-associado/VotacoesPage";
 import DiversidadePage from "./pages/DiversidadePage";
 import SustentabilidadePage from "./pages/SustentabilidadePage";
 import CampanhaSalarialPage from "./pages/CampanhaSalarialPage";
@@ -66,6 +67,8 @@ const App = () => (
           <Route path="/area-associado/valorizacao" element={<ValorizacaoPage />} />
           <Route path="/area-associado/grupos" element={<GruposPage />} />
           <Route path="/area-associado/transparencia" element={<TransparenciaPage />} />
+          <Route path="/area-associado/votacoes" element={<VotacoesPage />} />
+
           <Route path="/campanha-salarial" element={<CampanhaSalarialPage />} />
           <Route path="/campanha-nomeacao" element={<CampanhaNomeacaoPage />} />
           <Route path="/planos-atuacao" element={<PlanosAtuacaoPage />} />
