@@ -5,7 +5,7 @@ import AssociadoLayout from "@/components/AssociadoLayout";
 import { usePageFields, useCMSList } from "@/hooks/useCMS";
 import { field, getAssociadoAvisos } from "@/lib/cms";
 import { useAuth } from "@/hooks/useAuth";
-import { BookOpen, Megaphone, Users, FileSearch, LogOut, Library } from "lucide-react";
+import { BookOpen, Megaphone, Users, FileSearch, LogOut, Library, Vote } from "lucide-react";
 
 const tipoAccent: Record<string, string> = {
   info: "border-luxury-border",
