@@ -17,6 +17,7 @@ import WikiVerbetePage from "./pages/area-associado/WikiVerbetePage";
 import ValorizacaoPage from "./pages/area-associado/ValorizacaoPage";
 import GruposPage from "./pages/area-associado/GruposPage";
 import TransparenciaPage from "./pages/area-associado/TransparenciaPage";
+import VotacoesPage from "./pages/area-associado/VotacoesPage";
 import DiversidadePage from "./pages/DiversidadePage";
 import SustentabilidadePage from "./pages/SustentabilidadePage";
 import CampanhaSalarialPage from "./pages/CampanhaSalarialPage";
