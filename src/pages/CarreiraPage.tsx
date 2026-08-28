@@ -4,8 +4,25 @@ import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
 import CarreiraDashboard from "@/components/CarreiraDashboard";
 import CMSMarkdown from "@/components/CMSMarkdown";
-import { usePageFields } from "@/hooks/useCMS";
-import { field } from "@/lib/cms";
+import { usePageFields, useCMSList } from "@/hooks/useCMS";
+import { field, getAtos } from "@/lib/cms";
+import { Scale, ExternalLink } from "lucide-react";
+import { atosNormativos as atosFallback } from "@/data/atosNormativos";
+
+function agruparAtos(items: { categoria: string; titulo: string; descricao: string; url: string }[]) {
+  if (!items || items.length === 0) return atosFallback;
+  const principal = items.find((i) => i.categoria === "principal") ?? atosFallback.principal;
+  const alteracoes = items.filter((i) => i.categoria === "alteracao");
+  const anexos = items.filter((i) => i.categoria === "anexo");
+  const correlacoes = items.filter((i) => i.categoria === "correlacao");
+  return {
+    principal,
+    alteracoes: alteracoes.length ? alteracoes : atosFallback.alteracoes,
+    anexos: anexos.length ? anexos : atosFallback.anexos,
+    correlacoes: correlacoes.length ? correlacoes : atosFallback.correlacoes,
+  };
+}
+
 import { cronologia as timelineItems } from "@/data/cronologia";
 import { snapshot } from "@/data/snapshot";
 import SEO from "@/components/SEO";
@@ -36,6 +53,15 @@ const renderComDestaques = (texto: string, destaques: string[]) => {
 
 const CarreiraPage = () => {
   const f = usePageFields("carreira");
+  const atosItems = useCMSList(getAtos, []);
+  const atos = agruparAtos(atosItems);
+  const grupos = [
+    { label: "Lei da carreira", itens: [atos.principal] },
+    { label: "Alterações", itens: atos.alteracoes },
+    { label: "Anexos", itens: atos.anexos },
+    { label: "Normas correlatas", itens: atos.correlacoes },
+  ].filter((g) => g.itens.length > 0);
+
   return (
   <PageLayout>
       <SEO title="Carreira APPGG \u2014 Hist\u00f3ria e estrutura | APOGESP" description="Conhe\u00e7a a carreira de Analista de Pol\u00edticas P\u00fablicas e Gest\u00e3o Governamental do Munic\u00edpio de S\u00e3o Paulo: hist\u00f3rico, atribui\u00e7\u00f5es, dados demogr\u00e1ficos e estrutura." path="/carreira" />
@@ -188,7 +214,7 @@ const CarreiraPage = () => {
     <CarreiraDashboard />
 
     {/* Marco Legal */}
-    <section className="py-24 md:py-32 bg-card">
+    <section id="marco-legal" className="py-24 md:py-32 bg-card scroll-mt-24">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
@@ -199,14 +225,50 @@ const CarreiraPage = () => {
               <CMSMarkdown
                 fields={f}
                 fieldKey="carreira.legal.texto"
-                fallback={"O artigo 13 da Lei nº 16.193/2015 define as atribuições do APPGG como: *\"implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas da Administração Direta e Indireta da Prefeitura do Município de São Paulo.\"* Poucas carreiras municipais no Brasil têm um mandato tão amplo — e tão exigente.\n\nOs APPGGs devem ser alocados prioritariamente em apoio à elaboração do Programa de Metas, ao planejamento orçamentário (LOA e PPA) e a projetos de reestruturação institucional. A alocação é realizada pela Assessoria de Carreiras Transversais da Secretaria Municipal de Gestão do Município de São Paulo.\u00a0"}
+                fallback={"O artigo 13 da Lei nº 16.193/2015 define as atribuições do APPGG como: *\"implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas da Administração Direta e Indireta da Prefeitura do Município de São Paulo.\"* Poucas carreiras municipais no Brasil têm um mandato tão amplo — e tão exigente.\n\nOs APPGGs devem ser alocados prioritariamente em apoio à elaboração do Programa de Metas, ao planejamento orçamentário (LOA e PPA) e a projetos de reestruturação institucional. A alocação é realizada pela Assessoria de Carreiras Transversais da Secretaria Municipal de Gestão do Município de São Paulo."}
                 className="space-y-5 text-sm font-light text-text-body leading-[1.8]"
               />
             </FadeIn>
+
+            <div className="mt-14 space-y-12">
+              {grupos.map((grupo) => (
+                <div key={grupo.label}>
+                  <span className="text-[10px] font-medium tracking-luxury uppercase text-gold block mb-4">
+                    {grupo.label}
+                  </span>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10">
+                    {grupo.itens.map((item, i) => (
+                      <FadeIn key={item.url + i} delay={i * 0.04}>
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-start gap-3 py-5 border-b border-luxury-border"
+                        >
+                          <Scale size={16} strokeWidth={1.5} className="text-gold mt-1 shrink-0" />
+                          <div className="flex-1">
+                            <p className="text-sm font-light text-foreground group-hover:text-accent transition-colors duration-300 leading-snug">
+                              {item.titulo}
+                            </p>
+                            <p className="text-xs font-light text-text-body mt-1 leading-relaxed">{item.descricao}</p>
+                          </div>
+                          <ExternalLink
+                            size={12}
+                            strokeWidth={1.5}
+                            className="text-text-caption mt-1.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          />
+                        </a>
+                      </FadeIn>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </section>
+
   </PageLayout>
   );
 };
