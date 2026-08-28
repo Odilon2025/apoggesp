@@ -57,6 +57,19 @@ export default {
           muted: "hsl(var(--gold-muted))",
         },
         "warm-gray": "hsl(var(--warm-gray))",
+        alert: {
+          DEFAULT: "hsl(var(--alert))",
+          soft: "hsl(var(--alert-soft))",
+        },
+        danger: {
+          DEFAULT: "hsl(var(--danger))",
+          soft: "hsl(var(--danger-soft))",
+        },
+        safe: {
+          DEFAULT: "hsl(var(--safe))",
+          soft: "hsl(var(--safe-soft))",
+        },
+
         "section-alt": "hsl(var(--section-alt))",
         "luxury-border": "hsl(var(--luxury-border))",
         "text-display": "hsl(var(--text-display))",
