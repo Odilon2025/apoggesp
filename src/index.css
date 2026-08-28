@@ -48,6 +48,15 @@
     --text-body: 220 10% 35%;
     --text-caption: 220 8% 55%;
 
+    /* Semântica de risco (visual law) */
+    --alert: 36 62% 42%;
+    --alert-soft: 38 60% 95%;
+    --danger: 2 58% 42%;
+    --danger-soft: 4 60% 96%;
+    --safe: 158 32% 30%;
+    --safe-soft: 158 30% 95%;
+
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
