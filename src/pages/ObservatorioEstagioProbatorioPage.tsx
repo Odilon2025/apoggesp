@@ -39,7 +39,8 @@ import {
   hipotesesImprobidade,
   matrizRiscos,
   niveisResponsabilidade,
-  perguntasAdministracao,
+  jurisprudenciaTJ as jurisprudenciaFallback,
+  type JurisprudenciaItem,
   perguntasDiagnostico,
   propostas,
   requisitosLegitimidade,
@@ -49,6 +50,8 @@ import {
   type CategoriaFonte,
   type NivelRisco,
 } from "@/data/estagioProbatorio";
+import { useCMSList } from "@/hooks/useCMS";
+import { getJurisprudencia } from "@/lib/cms";
 
 const nivelClasses: Record<NivelRisco, string> = {
   Alto: "bg-alert-soft text-alert border-alert/30",
@@ -88,6 +91,7 @@ const Fluxo = ({ passos, tone }: { passos: string[]; tone: "danger" | "safe" }) 
 
 const ObservatorioEstagioProbatorioPage = () => {
   const [filtro, setFiltro] = useState<CategoriaFonte | "Todas">("Todas");
+  const jurisprudencia = useCMSList<JurisprudenciaItem>(getJurisprudencia, jurisprudenciaFallback);
 
   const fundamentosFiltrados = useMemo(
     () => (filtro === "Todas" ? fundamentos : fundamentos.filter((f) => f.categoria === filtro)),
@@ -206,7 +210,7 @@ const ObservatorioEstagioProbatorioPage = () => {
                     ["#responsabilidade", "Responsabilidade da Administração"],
                     ["#matriz", "Matriz de riscos"],
                     ["#propostas", "O que a APOGESP defende"],
-                    ["#perguntas", "Perguntas públicas à Administração"],
+                    ["#jurisprudencia", "Jurisprudência aplicável"],
                     ["#fontes", "Fontes jurídicas"],
                   ].map(([href, label]) => (
                     <li key={href}>
@@ -868,7 +872,7 @@ const ObservatorioEstagioProbatorioPage = () => {
                 </tr>
               </thead>
               <tbody>
-                {jurisprudenciaTJ.map((j) => (
+                {jurisprudencia.map((j) => (
                   <tr key={j.processo} className="border-b border-luxury-border last:border-0 bg-card">
                     <td className="px-6 py-5 align-top whitespace-nowrap font-medium text-text-display">
                       {j.processo}
