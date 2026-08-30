@@ -212,5 +212,18 @@ export const TABELAS: Record<string, TableSchema> = {
     ],
     resumo: (d) => `[${d?.categoria ?? ""}] ${d?.titulo ?? ""}`,
   },
+  jurisprudencia_itens: {
+    table: "jurisprudencia_itens",
+    titulo: "Jurisprudência — Estágio probatório",
+    descricao: "Precedentes exibidos no Observatório do Estágio Probatório.",
+    campos: [
+      { key: "processo", label: "Precedente (nº do processo)", type: "text", required: true },
+      { key: "tese", label: "Tese que sustenta", type: "textarea", rows: 3, required: true },
+      { key: "aderencia", label: "Aderência", type: "select", options: ["Muito alta", "Alta", "Média", "Contraponto necessário"], required: true },
+      { key: "observacao", label: "Observação (opcional)", type: "textarea", rows: 2 },
+    ],
+    resumo: (d) => `${d?.processo ?? ""} — ${d?.aderencia ?? ""}`,
+  },
 };
+
 
