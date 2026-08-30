@@ -77,6 +77,7 @@ export const getValorizacaoAcoes = () => fetchList<{ titulo: string; eixo: strin
 export const getGruposTrabalho = () => fetchList<{ nome: string; tema: string; coordenacao: string; descricao: string; frequencia: string; como_participar: string; ativo?: boolean }>("grupos_trabalho");
 export const getTransparenciaItens = () => fetchList<{ titulo: string; categoria: string; periodo: string; descricao: string; url: string }>("transparencia_itens");
 export const getLinksUteis = () => fetchList<{ categoria: string; titulo: string; descricao: string; url: string }>("links_uteis_itens");
+export const getJurisprudencia = () => fetchList<{ processo: string; tese: string; aderencia: string; observacao?: string }>("jurisprudencia_itens");
 
 
 // --- Snapshot (singleton) ---
