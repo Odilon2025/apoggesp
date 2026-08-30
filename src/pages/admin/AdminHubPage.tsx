@@ -25,6 +25,7 @@ const Inner = () => {
     { to: "/admin/dados/transparencia_itens", titulo: "Associado — Transparência", desc: "Documentos de Transparência APOGESP." },
     { to: "/admin/dados/wiki_verbetes", titulo: "Associado — Wiki da Carreira", desc: "Verbetes da Wiki da Carreira (seções comentáveis pelos associados)." },
     { to: "/admin/dados/links_uteis_itens", titulo: "Links úteis", desc: "Links externos organizados por categoria." },
+    { to: "/admin/dados/jurisprudencia_itens", titulo: "Jurisprudência — Estágio probatório", desc: "Precedentes exibidos no Observatório do Estágio Probatório." },
   ];
 
   return (
