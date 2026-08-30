@@ -378,22 +378,19 @@ export const propostas = [
   { titulo: "Auditoria dos instrumentos", desc: "Revisão de avaliações baseadas em conceitos vagos, juízos de personalidade, referências genéricas a comportamento ou dificuldades decorrentes da organização do trabalho." },
 ];
 
-export const perguntasAdministracao = [
-  "Existe política municipal específica para riscos psicossociais dos servidores estatutários?",
-  "Quais órgãos são responsáveis por identificar esses riscos?",
-  "As CIPAs estão capacitadas para examinar fatores psicossociais?",
-  "Existem inventários ou diagnósticos por unidade?",
-  "Como a Administração diferencia problema individual de problema organizacional?",
-  "Como são definidos os critérios socioemocionais?",
-  "Quais fatos e documentos podem sustentar uma avaliação negativa?",
-  "Como é assegurado o contraditório?",
-  "Como são protegidos servidores que apresentam críticas ou denúncias?",
-  "Há mecanismos para avaliar a atuação das chefias?",
-  "As condições de trabalho são consideradas na avaliação?",
-  "Como são tratadas situações envolvendo deficiência e necessidade de adaptação?",
-  "Quem audita a consistência das avaliações?",
-  "Há análise de padrões de notas entre unidades e chefias?",
-  "Existe canal independente para relatos de retaliação?",
+export interface JurisprudenciaItem {
+  processo: string;
+  tese: string;
+  aderencia: string;
+  observacao?: string;
+}
+
+export const jurisprudenciaTJ: JurisprudenciaItem[] = [
+  { processo: "Ap. 1008196-83.2018.8.26.0624", tese: "Não se pode avaliar o servidor ignorando condições não fornecidas pela Administração.", aderencia: "Muito alta" },
+  { processo: "Ap. 0002164-22.2013.8.26.0053", tese: "Perseguição após atuação institucional e desqualificação podem gerar indenização.", aderencia: "Alta" },
+  { processo: "Ap. 0001409-20.2012.8.26.0348", tese: "Rotulação reiterada de incompetência e ameaça funcional configuram assédio.", aderencia: "Alta" },
+  { processo: "Ap. 1004925-54.2024.8.26.0269", tese: "Isolamento e esvaziamento funcional podem configurar assédio.", aderencia: "Alta" },
+  { processo: "Ap. 1025926-41.2025.8.26.0114", tese: "Avaliação documentada não é invalidada por alegações genéricas de perseguição.", aderencia: "Contraponto necessário" },
 ];
 
 export const condutasAssedio = [

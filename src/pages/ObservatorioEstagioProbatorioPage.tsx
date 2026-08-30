@@ -39,7 +39,8 @@ import {
   hipotesesImprobidade,
   matrizRiscos,
   niveisResponsabilidade,
-  perguntasAdministracao,
+  jurisprudenciaTJ as jurisprudenciaFallback,
+  type JurisprudenciaItem,
   perguntasDiagnostico,
   propostas,
   requisitosLegitimidade,
@@ -868,7 +869,7 @@ const ObservatorioEstagioProbatorioPage = () => {
                 </tr>
               </thead>
               <tbody>
-                {jurisprudenciaTJ.map((j) => (
+                {jurisprudencia.map((j) => (
                   <tr key={j.processo} className="border-b border-luxury-border last:border-0 bg-card">
                     <td className="px-6 py-5 align-top whitespace-nowrap font-medium text-text-display">
                       {j.processo}
