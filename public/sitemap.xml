@@ -5,6 +5,7 @@
   <url><loc>https://apogesp.org.br/atuacao</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://apogesp.org.br/noticias</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://apogesp.org.br/planos-atuacao</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://apogesp.org.br/integridade</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://apogesp.org.br/planos-ambientais</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://apogesp.org.br/publicacoes</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://apogesp.org.br/diversidade</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>

@@ -26,6 +26,7 @@ export const navItems: NavItem[] = [
     children: [
       { label: "Casos de atuação", path: "/atuacao", desc: "Contribuições em políticas e projetos municipais" },
       { label: "Planos de Atuação", path: "/planos-atuacao", desc: "PAI e frentes de trabalho por secretaria" },
+      { label: "Integridade e Combate à Corrupção", path: "/integridade", desc: "Prevenção, transparência e controle na gestão municipal" },
     ],
   },
   {
