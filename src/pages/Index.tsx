@@ -5,7 +5,7 @@ import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
 import NoticiaCard from "@/components/NoticiaCard";
-import { ArrowRight, FileText, TrendingUp, Users, LineChart, Scale, ExternalLink } from "lucide-react";
+import { ArrowRight, FileText, TrendingUp, Users, LineChart, Scale, ExternalLink, Shield } from "lucide-react";
 import { snapshot as snapshotFallback } from "@/data/snapshot";
 import { cronologia as cronologiaFallback } from "@/data/cronologia";
 import { atosNormativos as atosFallback } from "@/data/atosNormativos";
@@ -178,17 +178,17 @@ const Index = () => {
         </section>
       )}
 
-      {/* Campanhas — Impacto curto */}
+      {/* Destaques — Campanhas + Integridade */}
       <section className="py-20 md:py-24 bg-card">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-luxury-border">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-luxury-border">
             <FadeIn>
-              <Link to="/campanha-salarial" className="block bg-card p-10 md:p-12 h-full group hover:bg-card-hover transition-colors duration-300">
+              <Link to="/campanha-salarial" className="block bg-card p-8 md:p-10 h-full group hover:bg-card-hover transition-colors duration-300">
                 <TrendingUp size={20} strokeWidth={1.5} className="text-gold mb-5" />
                 <span className="text-[10px] font-medium tracking-luxury uppercase text-destructive block mb-3">
                   {field(fields, "home.campanhas.salarial.eyebrow", "Campanha 2026")}
                 </span>
-                <h3 className="text-xl md:text-2xl font-display font-normal text-foreground mb-3 leading-tight">
+                <h3 className="text-lg md:text-xl font-display font-normal text-foreground mb-3 leading-tight">
                   {field(fields, "home.campanhas.salarial.titulo", "Campanha Salarial")}
                 </h3>
                 <p className="text-sm font-light text-text-body leading-relaxed mb-6">
@@ -200,12 +200,12 @@ const Index = () => {
               </Link>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <Link to="/campanha-nomeacao" className="block bg-card p-10 md:p-12 h-full group hover:bg-card-hover transition-colors duration-300">
+              <Link to="/campanha-nomeacao" className="block bg-card p-8 md:p-10 h-full group hover:bg-card-hover transition-colors duration-300">
                 <Users size={20} strokeWidth={1.5} className="text-gold mb-5" />
                 <span className="text-[10px] font-medium tracking-luxury uppercase text-gold block mb-3">
                   {field(fields, "home.campanhas.nomeacao.eyebrow", "Reconhecimento Institucional")}
                 </span>
-                <h3 className="text-xl md:text-2xl font-display font-normal text-foreground mb-3 leading-tight">
+                <h3 className="text-lg md:text-xl font-display font-normal text-foreground mb-3 leading-tight">
                   {field(fields, "home.campanhas.nomeacao.titulo", "53 novos APPGGs nomeados")}
                 </h3>
                 <p className="text-sm font-light text-text-body leading-relaxed mb-6">
@@ -213,6 +213,23 @@ const Index = () => {
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-light text-accent group-hover:text-foreground transition-colors duration-300">
                   Leia o posicionamento <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <Link to="/integridade" className="block bg-card p-8 md:p-10 h-full group hover:bg-card-hover transition-colors duration-300">
+                <Shield size={20} strokeWidth={1.5} className="text-gold mb-5" />
+                <span className="text-[10px] font-medium tracking-luxury uppercase text-gold block mb-3">
+                  {field(fields, "home.campanhas.integridade.eyebrow", "Gestão de Riscos")}
+                </span>
+                <h3 className="text-lg md:text-xl font-display font-normal text-foreground mb-3 leading-tight">
+                  {field(fields, "home.campanhas.integridade.titulo", "Integridade e Combate à Corrupção")}
+                </h3>
+                <p className="text-sm font-light text-text-body leading-relaxed mb-6">
+                  {field(fields, "home.campanhas.integridade.texto", "APPGGs colaboram com órgãos de controle e secretarias para fortalecer prevenção, transparência e fiscalização — com resultados que protegem o erário.")}
+                </p>
+                <span className="inline-flex items-center gap-2 text-sm font-light text-accent group-hover:text-foreground transition-colors duration-300">
+                  Entenda a atuação <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </Link>
             </FadeIn>

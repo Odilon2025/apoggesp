@@ -24,6 +24,7 @@ import CampanhaSalarialPage from "./pages/CampanhaSalarialPage";
 import CampanhaNomeacaoPage from "./pages/CampanhaNomeacaoPage";
 import PlanosAtuacaoPage from "./pages/PlanosAtuacaoPage";
 import PlanosAmbientaisPage from "./pages/PlanosAmbientaisPage";
+import IntegridadePage from "./pages/IntegridadePage";
 import ObservatorioEvasoesPage from "./pages/ObservatorioEvasoesPage";
 import ObservatorioEstagioProbatorioPage from "./pages/ObservatorioEstagioProbatorioPage";
 
@@ -74,6 +75,7 @@ const App = () => (
           <Route path="/campanha-salarial" element={<CampanhaSalarialPage />} />
           <Route path="/campanha-nomeacao" element={<CampanhaNomeacaoPage />} />
           <Route path="/planos-atuacao" element={<PlanosAtuacaoPage />} />
+          <Route path="/integridade" element={<IntegridadePage />} />
           <Route path="/planos-ambientais" element={<PlanosAmbientaisPage />} />
             <Route path="/observatorio-evasoes" element={<ObservatorioEvasoesPage />} />
             <Route path="/observatorio-estagio-probatorio" element={<ObservatorioEstagioProbatorioPage />} />
