@@ -198,7 +198,7 @@ const IntegridadePage = () => {
             {pilares.map((p, i) => (
               <FadeIn key={p.titulo} delay={i * 0.05}>
                 <div className="bg-card p-10 h-full group hover:bg-card-hover transition-colors duration-300">
-                  <p.titulo
+                  <p.icon
                     size={22}
                     strokeWidth={1.25}
                     className="text-gold mb-5"
