@@ -90,7 +90,7 @@ const tabs: { id: Tab; label: string }[] = [
   { id: "ref", label: "Referência" },
   { id: "sexo", label: "Gênero" },
   { id: "raca", label: "Raça/Cor" },
-  { id: "geracao", label: "Geração" },
+  { id: "geracao", label: "Faixa etária" },
   { id: "comissao", label: "Liderança" },
 ];
 

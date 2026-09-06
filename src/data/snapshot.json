@@ -200,24 +200,24 @@
   ],
   "geracao": [
     {
-      "faixa": "Boomers",
-      "sub": "até 1964",
-      "n": 3
+      "faixa": "Até 29 anos",
+      "sub": "nascidos após 1996",
+      "n": 11
     },
     {
-      "faixa": "Geração X",
-      "sub": "1965–1980",
-      "n": 21
-    },
-    {
-      "faixa": "Millennials",
-      "sub": "1981–1996",
+      "faixa": "30 a 45 anos",
+      "sub": "nascidos entre 1981 e 1996",
       "n": 159
     },
     {
-      "faixa": "Geração Z",
-      "sub": "1997+",
-      "n": 11
+      "faixa": "46 a 61 anos",
+      "sub": "nascidos entre 1965 e 1980",
+      "n": 21
+    },
+    {
+      "faixa": "62 anos ou mais",
+      "sub": "nascidos até 1964",
+      "n": 3
     }
   ],
   "comissaoGenero": [
