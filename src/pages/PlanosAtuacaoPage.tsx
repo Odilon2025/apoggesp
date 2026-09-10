@@ -710,6 +710,28 @@ const PlanosAtuacaoPage = () => {
               </FadeIn>
             ))}
           </div>
+
+          <FadeIn>
+            <div className="mt-12 border-t border-luxury-border pt-8">
+              <p className="text-[10px] font-medium tracking-luxury uppercase text-text-caption mb-4">
+                Órgãos sem PAI vigente
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {semPai.map((o) => (
+                  <span
+                    key={o.sigla}
+                    title={o.orgao}
+                    className="text-[11px] px-2.5 py-1 rounded-sm border border-luxury-border text-text-caption tracking-wide"
+                  >
+                    {o.sigla} · {o.orgao}
+                  </span>
+                ))}
+              </div>
+              <p className="text-xs font-light text-text-caption mt-4 leading-relaxed">
+                Fonte: Sumário dos Projetos dos Planos de Atuação Institucional — Assessoria de Carreiras Transversais (ACT/SEGES), agosto de 2026.
+              </p>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
