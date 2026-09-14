@@ -28,13 +28,13 @@ import { snapshot } from "@/data/snapshot";
 import SEO from "@/components/SEO";
 
 const areasAtuacao: { texto: string; destaques: string[] }[] = [
-  { texto: "Colaboração com a formulação, implementação e avaliação de políticas públicas em todas as áreas de governo", destaques: ["formulação", "implementação", "avaliação"] },
-  { texto: "Apoio ao planejamento estratégico e ao monitoramento do Programa de Metas da cidade", destaques: ["planejamento estratégico", "Programa de Metas"] },
+  { texto: "Atuação na formulação, implementação e avaliação de políticas públicas em todas as áreas de governo", destaques: ["formulação", "implementação", "avaliação"] },
+  { texto: "Planejamento estratégico e monitoramento do Programa de Metas da cidade", destaques: ["planejamento estratégico", "Programa de Metas"] },
   { texto: "Participação na gestão de projetos prioritários e na coordenação de entregas intersetoriais", destaques: ["gestão de projetos", "entregas intersetoriais"] },
-  { texto: "Contribuição com inovação em serviços públicos, em parceria com equipes técnicas, por meio de ciências comportamentais e design centrado no cidadão", destaques: ["inovação em serviços públicos", "ciências comportamentais", "design centrado no cidadão"] },
+  { texto: "Atuação em inovação de serviços públicos, em parceria com equipes técnicas, por meio de ciências comportamentais e design centrado no cidadão", destaques: ["inovação em serviços públicos", "ciências comportamentais", "design centrado no cidadão"] },
   { texto: "Articulação entre secretarias e colaboração na construção de políticas transversais", destaques: ["políticas transversais"] },
   { texto: "Apoio à governança orçamentária, à gestão fiscal e às transferências entre entes", destaques: ["governança orçamentária", "gestão fiscal"] },
-  { texto: "Colaboração com a transformação digital, a gestão da informação e os sistemas de monitoramento", destaques: ["transformação digital", "gestão da informação"] },
+  { texto: "Atuação em transformação digital, gestão da informação e sistemas de monitoramento", destaques: ["transformação digital", "gestão da informação"] },
   { texto: "Apoio à formação de lideranças, ao desenvolvimento de equipes e à construção de capacidades estatais", destaques: ["formação de lideranças", "capacidades estatais"] },
 ];
 
@@ -68,7 +68,7 @@ const CarreiraPage = () => {
     <PageHero
       label={field(f, "carreira.hero.label", "A Carreira")}
       title={field(f, "carreira.hero.titulo", "Analistas de Políticas Públicas e Gestão Governamental")}
-      subtitle={field(f, "carreira.hero.subtitulo", "A carreira que colabora para que São Paulo transforme intenções em entregas que mudam a realidade e promovem uma cidade mais pujante, justa e democrática.")}
+      subtitle={field(f, "carreira.hero.subtitulo", "Carreira transversal criada para fortalecer a capacidade do Município de planejar, implementar, coordenar, monitorar e avaliar políticas públicas.")}
     />
 
     <section className="py-24 md:py-32 bg-card">
@@ -82,7 +82,7 @@ const CarreiraPage = () => {
               <CMSMarkdown
                 fields={f}
                 fieldKey="carreira.intro.texto"
-                fallback={"Em 2015, o município de São Paulo fez uma aposta: criar uma carreira de nível superior dedicada a colaborar com o fortalecimento da capacidade do governo municipal de planejar, implementar e avaliar políticas públicas. A Lei Municipal nº 16.193 deu nome a essa aposta — Analista de Políticas Públicas e Gestão Governamental — e definiu suas atribuições: implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas, sempre em apoio às prioridades fixadas pela administração superior.\n\nUma década depois, os frutos dessa decisão estão espalhados por toda a administração — sempre como produto de um trabalho conjunto. Os APPGGs colaboram, lado a lado com outras carreiras municipais e com as lideranças de cada pasta, na intersecção entre a formulação técnica e a realidade do território.\n\nA carreira atua na chamada burocracia de médio escalão: o espaço entre quem decide e quem executa. É ali que se contribui para traduzir diretrizes em projetos, indicadores em ações e compromissos em entregas mensuráveis — sempre em diálogo com as equipes técnicas, gestores e parceiros institucionais que conduzem cada iniciativa."}
+                fallback={"Em 2015, o Município de São Paulo institucionalizou uma capacidade transversal de gestão ao criar uma carreira de nível superior voltada a fortalecer o planejamento, a implementação e a avaliação de políticas públicas. A Lei Municipal nº 16.193 definiu suas atribuições: implementação, supervisão, coordenação, execução, monitoramento e avaliação de projetos, atividades e políticas públicas, em apoio às prioridades fixadas pela administração superior.\n\nUma década depois, os APPGGs atuam transversalmente, lado a lado com outras carreiras municipais e lideranças de cada pasta, na conexão entre formulação técnica e realidade do território. Essa capacidade permanente é mobilizada em diferentes políticas, órgãos e ciclos de governo.\n\nAPPGGs atuam nos pontos de conexão da administração municipal: entre formulação e implementação, estratégia e operação, diferentes secretarias e diferentes níveis de governo. Nesse espaço — associado pela literatura à burocracia de médio escalão — atuam na tradução de diretrizes em projetos, indicadores, processos e entregas, sempre em diálogo com equipes técnicas, gestores e parceiros institucionais."}
                 className="space-y-5 text-sm font-light text-text-body leading-[1.8]"
               />
             </FadeIn>
@@ -119,7 +119,7 @@ const CarreiraPage = () => {
               <CMSMarkdown
                 fields={f}
                 fieldKey="carreira.perfil.texto"
-                fallback={"Administradores públicos, economistas, cientistas sociais, engenheiros, advogados — os APPGGs chegam de formações diversas, mas convergem em uma competência comum: a capacidade de traduzir problemas complexos em decisões implementáveis. O ingresso ocorre por concurso público de provas e títulos, exigindo nível superior.\n\nNa prática, os analistas atuam como intérpretes — de problemas públicos, de dados, de contextos políticos e institucionais. Em diálogo com as equipes técnicas e com as lideranças de cada órgão, contribuem para identificar lacunas entre a diretriz e sua execução e participam da construção do caminho para preenchê-las. Ferramentas de gestão e planejamento são o vocabulário; a colaboração com a melhoria das políticas públicas, o objetivo.\n\nO trabalho vai além da técnica isolada. APPGGs participam de projetos, contribuem com a formação de novas lideranças, colaboram com laboratórios de inovação, apoiam o redesenho de processos e enfrentam problemas que nenhum manual previu."}
+                fallback={"Administradores públicos, economistas, cientistas sociais, engenheiros, advogados — os APPGGs chegam de formações diversas, mas convergem em uma competência comum: a capacidade de traduzir problemas complexos em decisões implementáveis. O ingresso ocorre por concurso público de provas e títulos, exigindo nível superior.\n\nNa prática, os analistas interpretam problemas públicos, dados e contextos políticos e institucionais. Em diálogo com equipes técnicas e lideranças de cada órgão, identificam lacunas entre diretrizes e execução e participam da construção de respostas viáveis. Ferramentas de gestão e planejamento são o vocabulário; o aprimoramento das políticas públicas, o objetivo.\n\nO trabalho vai além da técnica isolada. APPGGs atuam em projetos, na formação de lideranças, em laboratórios de inovação e no redesenho de processos, sempre conforme as responsabilidades documentadas em cada iniciativa."}
                 className="space-y-5 text-sm font-light text-text-body leading-[1.8]"
               />
             </FadeIn>
@@ -148,14 +148,14 @@ const CarreiraPage = () => {
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
           <div className="lg:col-span-4">
-            <SectionTitle label={field(f, "carreira.memoria.label", "Continuidade")} title={field(f, "carreira.memoria.titulo", "Memória Institucional das Políticas Públicas")} />
+            <SectionTitle label={field(f, "carreira.memoria.label", "Continuidade")} title={field(f, "carreira.memoria.titulo", "Carreiras permanentes preservam capacidades entre governos")} />
           </div>
           <div className="lg:col-span-8">
             <FadeIn>
               <CMSMarkdown
                 fields={f}
                 fieldKey="carreira.memoria.texto"
-                fallback={"Governos passam, ciclos políticos se sucedem, secretários chegam e partem. O que permanece — e o que sustenta a capacidade de São Paulo de governar a si mesma — é o conhecimento acumulado sobre como cada política pública foi pensada, executada e revisada ao longo do tempo. Os APPGGs são, em larga medida, responsáveis por preservar essa continuidade.\n\nPor estarem distribuídos nas secretarias, nos órgãos de planejamento, nos sistemas de monitoramento e nos projetos estratégicos, os analistas registram, documentam e preservam a trajetória das decisões: o que motivou determinada escolha, quais alternativas foram descartadas, quais entregas funcionaram, quais aprendizados ficaram. É uma memória técnica que não cabe em um único arquivo, mas que vive nas equipes, nos processos e nos sistemas que a carreira ajuda a construir.\n\nEssa função silenciosa — costurar passado, presente e futuro das políticas públicas municipais — é o que permite que cada nova gestão encontre, ao chegar, não uma página em branco, mas um repertório vivo. Preservar essa memória é, também, preservar o direito da cidade de aprender com a própria história."}
+                fallback={"Governos passam e ciclos políticos se sucedem. O conhecimento acumulado sobre como cada política foi planejada, implementada e revisada ajuda São Paulo a manter sua capacidade de governo. Pela atuação transversal e continuada, os APPGGs ajudam a preservar conhecimento sobre políticas, decisões, processos e aprendizados institucionais entre diferentes ciclos de governo.\n\nDistribuídos por secretarias, órgãos de planejamento, sistemas de monitoramento e projetos estratégicos, os analistas participam do registro e da documentação da trajetória das decisões. Essa memória técnica vive nas equipes, nos processos e nos sistemas construídos coletivamente.\n\nCarreiras permanentes ajudam cada gestão a encontrar não uma página em branco, mas um repertório institucional que pode ser revisto, aprimorado e mobilizado diante de novos desafios."}
                 className="space-y-5 text-sm font-light text-text-body leading-[1.8]"
               />
             </FadeIn>
@@ -194,7 +194,7 @@ const CarreiraPage = () => {
           {[
             { num: String(snapshot.total), label: "APPGGs em exercício" },
             { num: String(snapshot.totalOrgaos), label: "Órgãos e entidades com APPGGs" },
-            { num: String(snapshot.lideranca.total), label: "Em funções de liderança" },
+            { num: String(snapshot.lideranca.total), label: "Com responsabilidades de liderança confiadas pela Prefeitura" },
             { num: "13", label: "Cedidos a outros entes" },
           ].map((stat, i) => (
             <FadeIn key={stat.label} delay={i * 0.08}>
@@ -207,6 +207,9 @@ const CarreiraPage = () => {
         </div>
         <p className="text-[10px] font-light text-text-caption mt-6 tracking-wide text-center">
           {field(f, "carreira.numeros.legenda", "Snapshot fevereiro de 2026")}
+        </p>
+        <p className="text-sm font-light text-text-body mt-8 max-w-2xl mx-auto text-center leading-relaxed">
+          Além da atuação técnica transversal, APPGGs exercem funções de direção, coordenação, chefia e assessoramento, evidenciando que as competências da carreira são demandadas pela própria Administração.
         </p>
       </div>
     </section>

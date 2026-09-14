@@ -86,8 +86,8 @@ const ObservatorioEvasoesPage = () => {
       <SEO title="Observat\u00f3rio de Evas\u00f5es da carreira APPGG | APOGESP" description="Monitoramento de afastamentos, licen\u00e7as e exonera\u00e7\u00f5es na carreira de Analistas de Pol\u00edticas P\u00fablicas e Gest\u00e3o Governamental de S\u00e3o Paulo." path="/observatorio-evasoes" />
       <PageHero
         label={field(f, "observatorio-evasoes.hero.label", "Observatório")}
-        title={field(f, "observatorio-evasoes.hero.titulo", "Observatório das Evasões")}
-        subtitle={field(f, "observatorio-evasoes.hero.subtitulo", "Um esforço de memória institucional para compreender quem deixa a carreira de APPGG, por quais caminhos e com quais implicações para a capacidade de entrega do município.")}
+        title={field(f, "observatorio-evasoes.hero.titulo", "Quando um APPGG sai, a Prefeitura perde mais que uma vaga")}
+        subtitle={field(f, "observatorio-evasoes.hero.subtitulo", "O Observatório acompanha exonerações, licenças e afastamentos para compreender a capacidade do Município de reter profissionais que ele próprio selecionou e desenvolveu.")}
       />
 
       {/* Introdução */}
@@ -97,8 +97,8 @@ const ObservatorioEvasoesPage = () => {
             <div className="lg:col-span-4">
               <SectionTitle
                 label={field(f, "observatorio-evasoes.intro.label", "Por que observar")}
-                title={field(f, "observatorio-evasoes.intro.titulo", "Cada Saída Conta uma História")}
-                subtitle={field(f, "observatorio-evasoes.intro.subtitulo", "Exonerações, licenças e cedências não são apenas números de RH — são sinais sobre as condições de trabalho, as perspectivas de carreira e a atratividade do serviço público municipal.")}
+                title={field(f, "observatorio-evasoes.intro.titulo", "Retenção também é capacidade de governo")}
+                subtitle={field(f, "observatorio-evasoes.intro.subtitulo", "Exonerações, licenças e cedências são sinais sobre condições de trabalho, perspectivas de carreira e a capacidade do Município de preservar competências acumuladas.")}
               />
             </div>
             <div className="lg:col-span-8 space-y-6">
@@ -106,7 +106,7 @@ const ObservatorioEvasoesPage = () => {
                 <CMSMarkdown
                   fields={f}
                   fieldKey="observatorio-evasoes.intro.texto"
-                  fallback={`O Observatório das Evasões é uma iniciativa exclusiva da APOGESP, que se propõe a produzir dados públicos sobre a rotatividade na carreira de Analista de Políticas Públicas e Gestão Governamental.\n\nNão se trata de julgar escolhas individuais. Trata-se de reconhecer que, quando um APPGG deixa a carreira, a Prefeitura perde conhecimento acumulado sobre políticas públicas específicas — memória institucional que, uma vez dispersa, é difícil de reconstituir.`}
+                  fallback={`O Observatório das Evasões é uma iniciativa da APOGESP para produzir dados públicos sobre a rotatividade na carreira de Analista de Políticas Públicas e Gestão Governamental.\n\nNão se trata de julgar escolhas individuais. Trata-se de compreender se o Município consegue reter profissionais que selecionou e desenvolveu. Quando um APPGG deixa a carreira, a Prefeitura perde também conhecimento acumulado sobre políticas, decisões e processos — memória institucional difícil de reconstituir.`}
                   className="prose-cms text-base font-light text-text-body leading-relaxed [&>p]:mb-6 [&>p:last-child]:mb-0"
                 />
               </FadeIn>

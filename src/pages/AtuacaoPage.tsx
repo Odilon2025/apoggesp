@@ -429,17 +429,17 @@ const AtuacaoPage = () => {
     <PageLayout>
       <SEO title="Atua\u00e7\u00e3o t\u00e9cnica dos APPGGs | APOGESP" description="\u00c1reas em que os Analistas de Pol\u00edticas P\u00fablicas e Gest\u00e3o Governamental atuam na administra\u00e7\u00e3o municipal de S\u00e3o Paulo: inova\u00e7\u00e3o, planejamento, pol\u00edticas sociais." path="/atuacao" />
       <PageHero
-        label={field(f, "atuacao.hero.label", "Colaboração")}
+        label={field(f, "atuacao.hero.label", "Capacidade transversal")}
         title={field(f, "atuacao.hero.titulo", "Atuação dos APPGGs")}
-        subtitle={field(f, "atuacao.hero.subtitulo", "Mais de 50 casos de colaboração de Analistas de Políticas Públicas e Gestão Governamental com órgãos e equipes da Prefeitura de São Paulo. Do Caderno Gestão Pública em Rede ao 2º Seminário APPGG.")}
+        subtitle={field(f, "atuacao.hero.subtitulo", "Casos documentados de atuação de Analistas de Políticas Públicas e Gestão Governamental com órgãos, carreiras e equipes da Prefeitura de São Paulo.")}
       />
 
       <section className="py-24 md:py-32 bg-card">
         <div className="container">
           <SectionTitle
             label={field(f, "atuacao.casos.label", "Casos Documentados")}
-            title={field(f, "atuacao.casos.titulo", "Onde a Carreira Colaborou")}
-            subtitle={field(f, "atuacao.casos.subtitulo", "Cada caso abaixo registra contribuições de APPGGs em iniciativas conduzidas em conjunto com outras carreiras, gestores e parceiros institucionais, dentro das prioridades fixadas pela administração superior.")}
+            title={field(f, "atuacao.casos.titulo", "Capacidade estatal em prática")}
+            subtitle={field(f, "atuacao.casos.subtitulo", "Os casos abaixo mostram como competências permanentes de planejamento, coordenação, análise, inovação e gestão são mobilizadas em diferentes políticas e órgãos municipais, sempre em trabalho conjunto.")}
           />
 
           {/* Filter */}

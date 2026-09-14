@@ -127,8 +127,8 @@ const tabelaComparativa = [
 const argumentos = [
   {
     icon: TrendingDown,
-    titulo: "Defasagem Frente ao Governo Federal",
-    desc: "O APPGG paulistano inicia com R$ 13.208 — 34% abaixo do piso federal (R$ 20.000). No topo, a diferença chega a 56%.",
+    titulo: "Competitividade no setor público",
+    desc: "O APPGG paulistano inicia com R$ 13.208 — 34% abaixo do piso federal (R$ 20.000). No topo, a diferença chega a 56%, reduzindo a competitividade da carreira.",
   },
   {
     icon: Users,
@@ -137,8 +137,8 @@ const argumentos = [
   },
   {
     icon: Scale,
-    titulo: "Mesma Missão, Remuneração Desigual",
-    desc: "APPGGs e EPPGGs exercem funções análogas. A diferença não está na complexidade, mas no ente que remunera.",
+    titulo: "Referências comparáveis de remuneração",
+    desc: "APPGGs e EPPGGs exercem funções análogas. A comparação oferece uma referência objetiva para avaliar valorização e capacidade de retenção.",
   },
   {
     icon: AlertTriangle,
@@ -165,8 +165,8 @@ const CampanhaSalarialPage = () => {
       <SEO title="Campanha pela Recomposi\u00e7\u00e3o Salarial | APOGESP" description="Dados, fundamentos e atualiza\u00e7\u00f5es da campanha pela recomposi\u00e7\u00e3o salarial da carreira de Analistas de Pol\u00edticas P\u00fablicas e Gest\u00e3o Governamental de S\u00e3o Paulo." path="/campanha-salarial" />
       <PageHero
         label={field(f, "campanha-salarial.hero.label", "Campanha 2026")}
-        title={field(f, "campanha-salarial.hero.titulo", "Remuneração Justa para quem constrói a Cidade")}
-        subtitle={field(f, "campanha-salarial.hero.subtitulo", "Uma carreira estratégica não sobrevive com remuneração defasada. Conheça os números e entenda por que a recomposição salarial dos APPGGs é urgente.")}
+        title={field(f, "campanha-salarial.hero.titulo", "Valorizar quem São Paulo precisa reter")}
+        subtitle={field(f, "campanha-salarial.hero.subtitulo", "A Prefeitura investiu na criação, seleção e formação de uma carreira transversal de alta qualificação. A defasagem remuneratória coloca esse investimento em risco.")}
       />
 
       {/* Contexto narrativo */}
@@ -176,8 +176,8 @@ const CampanhaSalarialPage = () => {
             <div className="lg:col-span-5">
               <SectionTitle
                 label={field(f, "campanha-salarial.problema.label", "O Problema")}
-                title={field(f, "campanha-salarial.problema.titulo", "Uma Década Sem Equiparação")}
-                subtitle={field(f, "campanha-salarial.problema.subtitulo", "A carreira de APPGG foi criada como espelho municipal do EPPGG federal, mas a remuneração não acompanhou — nem o governo federal, nem municípios como Niterói.\u00a0")}
+                title={field(f, "campanha-salarial.problema.titulo", "Valorização e retenção em perspectiva")}
+                subtitle={field(f, "campanha-salarial.problema.subtitulo", "A comparação com carreiras análogas ajuda a medir a competitividade de São Paulo para preservar a capacidade transversal que institucionalizou.\u00a0")}
               />
             </div>
             <div className="lg:col-span-7">
@@ -206,7 +206,7 @@ const CampanhaSalarialPage = () => {
         <div className="container">
           <SectionTitle
             label={field(f, "campanha-salarial.comparativo.label", "Comparativo")}
-            title={field(f, "campanha-salarial.comparativo.titulo", "O Mesmo Trabalho, Três Realidades")}
+            title={field(f, "campanha-salarial.comparativo.titulo", "Três referências de competitividade")}
             subtitle={field(f, "campanha-salarial.comparativo.subtitulo", "Remuneração por nível: APPGG (SP), EPPGG (Federal, 2026) e APPGG (Niterói, com gratificação).")}
           />
           <FadeIn>
@@ -340,8 +340,8 @@ const CampanhaSalarialPage = () => {
         <div className="container">
           <SectionTitle
             label={field(f, "campanha-salarial.dados.label", "Dados Concretos")}
-            title={field(f, "campanha-salarial.dados.titulo", "Por Que Essa Carreira Importa para a Cidade")}
-            subtitle={field(f, "campanha-salarial.dados.subtitulo", "A defasagem salarial compromete a continuidade das políticas públicas. Os números mostram o que está em jogo.")}
+            title={field(f, "campanha-salarial.dados.titulo", "O valor público de uma capacidade permanente")}
+            subtitle={field(f, "campanha-salarial.dados.subtitulo", "A defasagem remuneratória compromete a retenção de competências e a continuidade institucional. Os números mostram o que está em jogo.")}
           />
 
           {/* Bloco A — Impacto da carreira */}
@@ -351,7 +351,7 @@ const CampanhaSalarialPage = () => {
                 {field(
                   f,
                   "campanha-salarial.dados.impacto.texto",
-                  "A carreira APPGG colabora com gestores e demais carreiras na formulação, implementação e avaliação de políticas públicas."
+                  "A carreira APPGG atua transversalmente com gestores e demais carreiras na formulação, implementação e avaliação de políticas públicas."
                 )}
               </p>
             </div>
@@ -360,7 +360,7 @@ const CampanhaSalarialPage = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-luxury-border border border-luxury-border mb-24">
             {[
               { num: String(total), label: "APPGGs em exercício" },
-              { num: String(totalOrgaos), label: "órgãos com APPGGs colaborando" },
+              { num: String(totalOrgaos), label: "órgãos com atuação de APPGGs" },
               { num: String(lideranca), label: `em coordenação e liderança · ${liderancaPct.toFixed(0)}% do quadro` },
               { num: String(concursos), label: "concursos realizados desde 2016" },
             ].map((kpi, i) => (
@@ -432,8 +432,8 @@ const CampanhaSalarialPage = () => {
         <div className="container">
           <SectionTitle
             label={field(f, "campanha-salarial.projetos.label", "Projetos de Alto Impacto")}
-            title={field(f, "campanha-salarial.projetos.titulo", "O Que a Cidade Construiu com a Colaboração de APPGGs")}
-            subtitle={field(f, "campanha-salarial.projetos.subtitulo", "Iniciativas em segurança, arrecadação, contratos, planejamento e transparência — áreas em que APPGGs colaboraram com resultados concretos para a cidade.")}
+            title={field(f, "campanha-salarial.projetos.titulo", "Capacidade estatal demonstrada em projetos")}
+            subtitle={field(f, "campanha-salarial.projetos.subtitulo", "Iniciativas em segurança, arrecadação, contratos, planejamento e transparência nas quais APPGGs atuaram com órgãos, equipes e parceiros institucionais.")}
           />
 
           <FadeIn>

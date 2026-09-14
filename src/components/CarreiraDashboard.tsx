@@ -314,7 +314,7 @@ const CarreiraDashboard = () => {
 
             <div className="lg:col-span-2 mt-4 p-5 border border-luxury-border bg-section-alt">
               <p className="text-[11px] font-light text-text-body leading-relaxed">
-                <span className="text-gold">Leitura.</span> Dos {TOTAL} APPGGs em exercício, {lideranca.total} ({lideranca.total === 0 ? 0 : ((lideranca.total / TOTAL) * 100).toFixed(1)}%) ocupam cargos em comissão. Mulheres representam {lideranca.mulheresPct}% das lideranças e pessoas negras (pretas e pardas), {lideranca.negrosPct}%. <span className="text-foreground">O recorte por referência (CDA) permite avaliar se a equidade observada no agregado se reproduz nos postos de decisão mais elevados</span> — quando a base da pirâmide é mais diversa que o topo, há sinal de desigualdade no acesso às posições estratégicas.
+                <span className="text-gold">Leitura.</span> A Prefeitura confia responsabilidades de liderança a {lideranca.total} dos {TOTAL} APPGGs em exercício ({lideranca.total === 0 ? 0 : ((lideranca.total / TOTAL) * 100).toFixed(1)}%). Mulheres representam {lideranca.mulheresPct}% das lideranças e pessoas negras (pretas e pardas), {lideranca.negrosPct}%. <span className="text-foreground">O recorte por referência (CDA) permite avaliar se a equidade observada no agregado se reproduz nos postos de decisão mais elevados</span> — quando a base da pirâmide é mais diversa que o topo, há sinal de desigualdade no acesso às posições estratégicas.
               </p>
             </div>
           </div>

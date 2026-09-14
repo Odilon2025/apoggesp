@@ -33,7 +33,7 @@ const eixosAtuacao = [
   {
     icon: BarChart3,
     titulo: "Planejamento e orçamento",
-    descricao: "Na posição de médio escalão, o APPGG converte diretrizes em metas, indicadores e alocação de recursos. Isso inclui desagregar informações por raça, gênero, território, deficiência e outros marcadores relevantes, evitando que médias gerais ocultem desigualdades específicas.",
+    descricao: "Nos pontos de conexão entre estratégia e operação, APPGGs atuam na tradução de diretrizes em metas, indicadores e alocação de recursos. Isso inclui desagregar informações por raça, gênero, território, deficiência e outros marcadores relevantes, evitando que médias gerais ocultem desigualdades específicas.",
   },
   {
     icon: Target,

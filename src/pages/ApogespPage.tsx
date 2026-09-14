@@ -62,8 +62,8 @@ const ApogespPage = () => {
       <SEO title="Sobre a APOGESP \u2014 Miss\u00e3o e governan\u00e7a | APOGESP" description="Quem \u00e9 a APOGESP, associa\u00e7\u00e3o civil independente dos APPGGs da Prefeitura de S\u00e3o Paulo: miss\u00e3o, estrutura, governan\u00e7a e princ\u00edpios." path="/apogesp" />
     <PageHero
       label={field(f, "apogesp.hero.label", "Institucional")}
-      title={field(f, "apogesp.hero.titulo", "A APOGESP")}
-      subtitle={field(f, "apogesp.hero.subtitulo", "A voz coletiva de quem dedica a carreira a fazer a gestão pública de São Paulo funcionar melhor.")}
+      title={field(f, "apogesp.hero.titulo", "A representação institucional dos APPGGs de São Paulo")}
+      subtitle={field(f, "apogesp.hero.subtitulo", "Defendemos a valorização da carreira e produzimos conhecimento para fortalecer a gestão pública municipal.")}
     />
 
     <section className="py-24 md:py-32 bg-card">
@@ -77,7 +77,7 @@ const ApogespPage = () => {
               <CMSMarkdown
                 fields={f}
                 fieldKey="apogesp.quem-somos.texto"
-                fallback={"A APOGESP nasceu de uma convicção simples: profissionais que compartilham uma missão precisam de um espaço para pensar juntos. Como entidade representativa dos Analistas de Políticas Públicas e Gestão Governamental do Município de São Paulo, a associação existe para amplificar o impacto coletivo da carreira.\n\nA APOGESP é uma entidade civil, sem fins lucrativos, independente de governo e de partidos. Sua atuação se organiza em três frentes: valorização da carreira, produção de conhecimento sobre gestão municipal e interlocução com órgãos públicos, entidades parceiras e sociedade civil.\n\nA independência da APOGESP é condição para sua relevância. É ela que permite à associação dialogar com diferentes governos, propor aprimoramentos à carreira com franqueza e produzir análises técnicas sem constrangimentos institucionais. A APOGESP fala em nome dos seus associados — e só deles."}
+                fallback={"A APOGESP é a entidade representativa dos Analistas de Políticas Públicas e Gestão Governamental do Município de São Paulo. Reúne profissionais da carreira para defender sua valorização, produzir conhecimento e qualificar o diálogo sobre a capacidade de gestão municipal.\n\nComo entidade civil sem fins lucrativos, independente de governos e partidos, atua em três frentes: representação institucional da carreira, produção de conhecimento sobre gestão municipal e interlocução com órgãos públicos, entidades parceiras e sociedade civil.\n\nEssa independência permite dialogar com diferentes governos, propor aprimoramentos com franqueza e produzir análises técnicas com autonomia. A APOGESP fala em nome de seus associados — e somente deles."}
                 className="space-y-5 text-sm font-light text-text-body leading-[1.8]"
               />
             </FadeIn>
