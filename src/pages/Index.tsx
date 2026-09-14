@@ -21,7 +21,7 @@ import { usePageFields, useCMSList } from "@/hooks/useCMS";
 import SEO from "@/components/SEO";
 
 const atuacaoFallback = [
-  { area: "Inovação", desc: "No Lab11, APPGGs colaboraram com equipes técnicas e parceiros para mostrar que nudges bem desenhados podem apoiar políticas de alimentação escolar, saúde pública no transporte e formalização de microempreendedores." },
+  { area: "Inovação", desc: "No Lab11, APPGGs atuaram com equipes técnicas e parceiros em projetos que demonstram como ciências comportamentais podem aprimorar políticas de alimentação escolar, saúde pública no transporte e formalização de microempreendedores." },
   { area: "Planejamento", desc: "O SMAE — desenvolvido em parceria com a FGV e sob diretrizes da administração superior — tornou-se memória institucional da Prefeitura, com cinco módulos, 500 usuários e decreto que o consolidou como patrimônio público permanente." },
   { area: "Primeira Infância", desc: "Quando a política de primeira infância exigiu integração entre saúde, educação e assistência social, APPGGs participaram da articulação entre secretarias, em colaboração com as lideranças de cada pasta." },
 ];
@@ -86,9 +86,9 @@ const Index = () => {
                 transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-normal text-primary-foreground leading-[1.05] text-balance"
               >
-                {field(fields, "home.hero.titulo_pre", "Políticas Públicas,")}{" "}
-                <em className="italic text-gold-muted">{field(fields, "home.hero.titulo_italico", "Gestão")}</em>{" "}
-                {field(fields, "home.hero.titulo_pos", "Governamental")}
+                {field(fields, "home.hero.titulo_pre", "Políticas Públicas.")}{" "}
+                <em className="italic text-gold-muted">{field(fields, "home.hero.titulo_italico", "Gestão Governamental.")}</em>{" "}
+                {field(fields, "home.hero.titulo_pos", "Capacidade de Estado.")}
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -96,7 +96,7 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className="mt-8 text-base md:text-lg text-primary-foreground/50 font-light max-w-lg leading-relaxed"
               >
-                {field(fields, "home.hero.subtitulo", "Uma década contribuindo para a capacidade institucional da maior cidade da América Latina.")}
+                {field(fields, "home.hero.subtitulo", "Há uma década, APPGGs ajudam São Paulo a transformar prioridades de governo em políticas, projetos e entregas.")}
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
@@ -192,7 +192,7 @@ const Index = () => {
                   {field(fields, "home.campanhas.salarial.titulo", "Campanha Salarial")}
                 </h3>
                 <p className="text-sm font-light text-text-body leading-relaxed mb-6">
-                  {field(fields, "home.campanhas.salarial.texto", "O APPGG inicia com R$ 13.208. O EPPGG federal começa com R$ 20.000 em 2026. Mesma missão, 34% de defasagem. É hora de corrigir.")}
+                  {field(fields, "home.campanhas.salarial.texto", "A defasagem remuneratória reduz a capacidade de São Paulo de reter uma carreira transversal que o próprio Município selecionou e desenvolveu. Conheça os dados.")}
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-light text-accent group-hover:text-foreground transition-colors duration-300">
                   Conheça os números <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -226,7 +226,7 @@ const Index = () => {
                   {field(fields, "home.campanhas.integridade.titulo", "Integridade e Combate à Corrupção")}
                 </h3>
                 <p className="text-sm font-light text-text-body leading-relaxed mb-6">
-                  {field(fields, "home.campanhas.integridade.texto", "APPGGs colaboram com órgãos de controle e secretarias para fortalecer prevenção, transparência e fiscalização — com resultados que protegem o erário.")}
+                  {field(fields, "home.campanhas.integridade.texto", "APPGGs atuam com órgãos de controle, secretarias e equipes técnicas em prevenção, transparência e fiscalização — capacidades que protegem o erário.")}
                 </p>
                 <span className="inline-flex items-center gap-2 text-sm font-light text-accent group-hover:text-foreground transition-colors duration-300">
                   Entenda a atuação <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -252,10 +252,10 @@ const Index = () => {
                     {field(fields, "home.observatorio.eyebrow", "Pesquisa institucional")}
                   </span>
                   <h3 className="text-2xl md:text-3xl font-display font-normal text-foreground mb-4 leading-tight">
-                    {field(fields, "home.observatorio.titulo", "Observatório das Evasões")}
+                    {field(fields, "home.observatorio.titulo", "Quando um APPGG sai, a Prefeitura perde mais que uma vaga")}
                   </h3>
                   <p className="text-sm md:text-base font-light text-text-body leading-relaxed max-w-2xl">
-                    {field(fields, "home.observatorio.texto", "Quem deixa a carreira de APPGG, por quais caminhos e com quais implicações? Um esforço de memória institucional sobre exonerações, licenças para tratar de interesses particulares, cedências e aposentadorias.")}
+                    {field(fields, "home.observatorio.texto", "O Observatório acompanha exonerações, licenças e afastamentos para compreender a capacidade do Município de reter profissionais que ele próprio selecionou e desenvolveu.")}
                   </p>
                 </div>
                 <div className="lg:col-span-4 lg:text-right">
@@ -278,10 +278,10 @@ const Index = () => {
               <div className="lg:col-span-8">
                 <SectionTitle
                   label={field(fields, "home.atuacao.label", "Atuação técnica")}
-                  title={field(fields, "home.atuacao.titulo", "Conheça a atuação dos APPGGs")}
+                  title={field(fields, "home.atuacao.titulo", "Capacidade estatal em prática")}
                 />
                 <p className="mt-6 text-sm md:text-base font-light text-text-body leading-relaxed max-w-2xl">
-                  {field(fields, "home.atuacao.texto", "Conheça contribuições de APPGGs em políticas, projetos e capacidades institucionais construídos em conjunto com órgãos, carreiras e equipes da Prefeitura de São Paulo.")}
+                  {field(fields, "home.atuacao.texto", "Casos documentados mostram como competências permanentes de planejamento, coordenação, análise, inovação e gestão são mobilizadas, em conjunto com órgãos, carreiras e equipes da Prefeitura.")}
                 </p>
               </div>
               <div className="lg:col-span-4 lg:text-right">
@@ -361,7 +361,7 @@ const Index = () => {
             <div className="lg:col-span-4">
               <SectionTitle
                 label={field(fields, "home.cronologia.label", "Cronologia")}
-                title={field(fields, "home.cronologia.titulo", "Uma Carreira que se Construiu Fazendo")}
+                title={field(fields, "home.cronologia.titulo", "Uma capacidade permanente construída ao longo de uma década")}
               />
             </div>
             <div className="lg:col-span-8">

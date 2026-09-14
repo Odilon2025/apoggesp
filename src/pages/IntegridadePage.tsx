@@ -35,7 +35,7 @@ const pilares: Pilar[] = [
     icon: Shield,
     titulo: "Prevenção e integridade",
     descricao:
-      "APPGGs colaboram na estruturação de programas de integridade, mapeamento de riscos e rotinas que reduzem vulnerabilidades antes que se tornem prejuízos.",
+      "APPGGs atuam na estruturação de programas de integridade, mapeamento de riscos e rotinas que reduzem vulnerabilidades antes que se tornem prejuízos.",
   },
   {
     icon: Eye,
@@ -121,7 +121,7 @@ const IntegridadePage = () => {
     <PageLayout>
       <SEO
         title="Integridade e Combate à Corrupção | APOGESP"
-        description="Como os Analistas de Políticas Públicas e Gestão Governamental colaboram com órgãos de controle e secretarias para prevenir perdas, fortalecer transparência e aprimorar a gestão de riscos na Prefeitura de São Paulo."
+        description="Como Analistas de Políticas Públicas e Gestão Governamental atuam com órgãos de controle e secretarias na prevenção, transparência e gestão de riscos em São Paulo."
         path="/integridade"
       />
 
@@ -135,7 +135,7 @@ const IntegridadePage = () => {
         subtitle={field(
           f,
           "integridade.hero.subtitulo",
-          "APPGGs colaboram com órgãos de controle, secretarias e equipes técnicas para fortalecer mecanismos de prevenção, transparência e fiscalização na administração municipal."
+          "APPGGs atuam com órgãos de controle, secretarias e equipes técnicas para fortalecer mecanismos de prevenção, transparência e fiscalização na administração municipal."
         )}
       />
 
@@ -185,7 +185,7 @@ const IntegridadePage = () => {
             title={field(
               f,
               "integridade.pilares.titulo",
-              "Onde os APPGGs contribuem"
+              "Capacidade de integridade em prática"
             )}
             subtitle={field(
               f,
@@ -258,7 +258,7 @@ const IntegridadePage = () => {
             title={field(
               f,
               "integridade.casos.titulo",
-              "Colaborações com resultados mensuráveis"
+              "Atuação com resultados mensuráveis"
             )}
             subtitle={field(
               f,
@@ -363,7 +363,7 @@ const IntegridadePage = () => {
               {field(
                 f,
                 "integridade.cta.texto",
-                "Conheça outros casos em que APPGGs colaboraram com secretarias, órgãos de controle e equipes técnicas para fortalecer a gestão pública municipal."
+                "Conheça outros casos em que APPGGs atuaram com secretarias, órgãos de controle e equipes técnicas para fortalecer a gestão pública municipal."
               )}
             </p>
             <Link

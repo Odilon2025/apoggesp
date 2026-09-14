@@ -99,7 +99,7 @@ const SustentabilidadePage = () => {
       <PageHero
         label={field(f, "sustentabilidade.hero.label", "Meio Ambiente")}
         title={field(f, "sustentabilidade.hero.titulo", "Sustentabilidade")}
-        subtitle={field(f, "sustentabilidade.hero.subtitulo", "Como os APPGGs colaboram com a construção de uma São Paulo mais sustentável, sempre em parceria com outras carreiras e dentro das diretrizes da administração superior.")}
+        subtitle={field(f, "sustentabilidade.hero.subtitulo", "Como APPGGs atuam na agenda ambiental de São Paulo, em parceria com outras carreiras e conforme as diretrizes da administração superior.")}
       />
 
       {/* Intro narrativa */}
@@ -109,7 +109,7 @@ const SustentabilidadePage = () => {
             <CMSMarkdown
               fields={f}
               fieldKey="sustentabilidade.intro.texto"
-              fallback={"São Paulo é a maior metrópole da América Latina — e também uma das mais vulneráveis às mudanças climáticas. Enchentes, ilhas de calor, crises hídricas e poluição atmosférica são desafios que exigem políticas públicas sofisticadas, baseadas em evidências e com visão de longo prazo.\n\nNesse cenário, os Analistas de Políticas Públicas e Gestão Governamental colaboram com diferentes secretarias para apoiar a tradução dos compromissos ambientais em programas concretos, indicadores mensuráveis e governança efetiva. Da Secretaria do Verde e Meio Ambiente à Secretaria de Infraestrutura Urbana, APPGGs participam — junto a equipes técnicas de outras carreiras e às lideranças setoriais — de iniciativas pactuadas nos Planos de Atuação Institucional."}
+              fallback={"São Paulo é a maior metrópole da América Latina — e também uma das mais vulneráveis às mudanças climáticas. Enchentes, ilhas de calor, crises hídricas e poluição atmosférica são desafios que exigem políticas públicas sofisticadas, baseadas em evidências e com visão de longo prazo.\n\nNesse cenário, os Analistas de Políticas Públicas e Gestão Governamental atuam com diferentes secretarias na tradução de compromissos ambientais em programas, indicadores e arranjos de governança. Da Secretaria do Verde e Meio Ambiente à Secretaria de Infraestrutura Urbana, APPGGs participam — junto a equipes técnicas de outras carreiras e lideranças setoriais — de iniciativas pactuadas nos Planos de Atuação Institucional."}
               className="space-y-6 text-lg font-light leading-relaxed text-text-body"
             />
           </FadeIn>
@@ -137,7 +137,7 @@ const SustentabilidadePage = () => {
         <div className="container">
           <SectionTitle
             label={field(f, "sustentabilidade.eixos.label", "Eixos Temáticos")}
-            title={field(f, "sustentabilidade.eixos.titulo", "Onde os APPGGs colaboram com a sustentabilidade")}
+            title={field(f, "sustentabilidade.eixos.titulo", "Capacidade de gestão na agenda ambiental")}
           />
 
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
