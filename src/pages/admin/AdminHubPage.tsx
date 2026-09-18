@@ -26,6 +26,7 @@ const Inner = () => {
     { to: "/admin/dados/wiki_verbetes", titulo: "Associado — Wiki da Carreira", desc: "Verbetes da Wiki da Carreira (seções comentáveis pelos associados)." },
     { to: "/admin/dados/links_uteis_itens", titulo: "Links úteis", desc: "Links externos organizados por categoria." },
     { to: "/admin/dados/jurisprudencia_itens", titulo: "Jurisprudência — Estágio probatório", desc: "Precedentes exibidos no Observatório do Estágio Probatório." },
+    { to: "/admin/dados/atlas_carreiras", titulo: "Atlas PPGG", desc: "Carreiras nacionais e internacionais exibidas na página A Carreira." },
   ];
 
   return (

@@ -5,9 +5,10 @@ import FadeIn from "@/components/FadeIn";
 import CarreiraDashboard from "@/components/CarreiraDashboard";
 import CMSMarkdown from "@/components/CMSMarkdown";
 import { usePageFields, useCMSList } from "@/hooks/useCMS";
-import { field, getAtos } from "@/lib/cms";
-import { Scale, ExternalLink } from "lucide-react";
+import { field, getAtos, getAtlasCarreiras } from "@/lib/cms";
+import { Scale, ExternalLink, Globe2, MapPin } from "lucide-react";
 import { atosNormativos as atosFallback } from "@/data/atosNormativos";
+import { atlasCarreiras as atlasFallback } from "@/data/atlasCarreiras";
 
 function agruparAtos(items: { categoria: string; titulo: string; descricao: string; url: string }[]) {
   if (!items || items.length === 0) return atosFallback;
@@ -54,6 +55,7 @@ const renderComDestaques = (texto: string, destaques: string[]) => {
 const CarreiraPage = () => {
   const f = usePageFields("carreira");
   const atosItems = useCMSList(getAtos, []);
+  const atlasItems = useCMSList(getAtlasCarreiras, atlasFallback);
   const atos = agruparAtos(atosItems);
   const grupos = [
     { label: "Lei da carreira", itens: [atos.principal] },
@@ -215,6 +217,61 @@ const CarreiraPage = () => {
     </section>
 
     <CarreiraDashboard />
+
+    <section id="atlas-ppgg" className="py-24 md:py-32 bg-section-alt scroll-mt-24">
+      <div className="container">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 mb-14">
+          <div className="lg:col-span-4">
+            <SectionTitle label="Referências" title="Atlas PPGG" />
+          </div>
+          <div className="lg:col-span-8">
+            <FadeIn>
+              <p className="text-lg font-display font-normal text-foreground leading-relaxed max-w-3xl">
+                Carreiras permanentes de gestão são parte da infraestrutura institucional do Estado.
+              </p>
+              <p className="mt-5 text-sm font-light text-text-body leading-[1.8] max-w-3xl">
+                O Atlas reúne experiências brasileiras e internacionais de profissionalização da gestão pública. As fichas permitem conhecer diferentes desenhos institucionais sem estabelecer hierarquias entre modelos, destacando mandatos, contextos e fontes oficiais.
+              </p>
+            </FadeIn>
+          </div>
+        </div>
+
+        {(["Brasil", "Internacional"] as const).map((recorte) => {
+          const carreiras = atlasItems.filter((item) => item.recorte === recorte);
+          if (carreiras.length === 0) return null;
+          return (
+            <div key={recorte} className="mt-14 first:mt-0">
+              <div className="flex items-center gap-3 border-b border-luxury-border pb-4 mb-1">
+                {recorte === "Brasil" ? <MapPin size={16} strokeWidth={1.5} className="text-gold" /> : <Globe2 size={16} strokeWidth={1.5} className="text-gold" />}
+                <h3 className="text-xs font-medium uppercase tracking-luxury text-foreground">{recorte}</h3>
+                <span className="ml-auto text-[10px] font-light text-text-caption">{carreiras.length} referências</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                {carreiras.map((carreira, index) => (
+                  <FadeIn key={`${carreira.sigla}-${carreira.localidade}`} delay={index * 0.04}>
+                    <article className={`h-full p-6 md:p-8 border-b border-luxury-border md:odd:border-r ${carreira.destaque ? "bg-card" : "bg-section-alt"}`}>
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <span className="text-[10px] font-medium uppercase tracking-luxury text-gold">{carreira.localidade}</span>
+                          <h4 className="mt-2 text-lg font-display font-normal text-foreground leading-snug">{carreira.nome}</h4>
+                        </div>
+                        <span className="shrink-0 border border-luxury-border px-2 py-1 text-[10px] font-medium text-text-caption">{carreira.sigla}</span>
+                      </div>
+                      <p className="mt-2 text-[11px] font-light text-text-caption">{carreira.esfera}</p>
+                      <p className="mt-5 text-sm font-light text-text-body leading-relaxed">{carreira.resumo}</p>
+                      <a href={carreira.url} target="_blank" rel="noopener noreferrer" className="group mt-6 inline-flex items-center gap-2 text-xs font-light text-accent hover:text-foreground transition-colors">
+                        {carreira.fonte}
+                        <ExternalLink size={12} strokeWidth={1.5} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+                      </a>
+                    </article>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
 
     {/* Marco Legal */}
     <section id="marco-legal" className="py-24 md:py-32 bg-card scroll-mt-24">

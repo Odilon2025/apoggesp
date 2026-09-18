@@ -17,6 +17,7 @@ export const navItems: NavItem[] = [
     path: "/carreira",
     children: [
       { label: "Visão geral", path: "/carreira", desc: "História, perfil e atribuições do APPGG" },
+      { label: "Atlas PPGG", path: "/carreira#atlas-ppgg", desc: "Carreiras de gestão pública no Brasil e no exterior" },
       { label: "Marco legal", path: "/carreira#marco-legal", desc: "Lei, decretos e atos normativos da carreira" },
     ],
   },
