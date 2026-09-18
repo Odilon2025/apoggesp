@@ -78,6 +78,18 @@ export const getGruposTrabalho = () => fetchList<{ nome: string; tema: string; c
 export const getTransparenciaItens = () => fetchList<{ titulo: string; categoria: string; periodo: string; descricao: string; url: string }>("transparencia_itens");
 export const getLinksUteis = () => fetchList<{ categoria: string; titulo: string; descricao: string; url: string }>("links_uteis_itens");
 export const getJurisprudencia = () => fetchList<{ processo: string; tese: string; aderencia: string; observacao?: string }>("jurisprudencia_itens");
+export type AtlasCarreira = {
+  recorte: "Brasil" | "Internacional";
+  localidade: string;
+  nome: string;
+  sigla: string;
+  esfera: string;
+  resumo: string;
+  fonte: string;
+  url: string;
+  destaque: boolean;
+};
+export const getAtlasCarreiras = () => fetchList<AtlasCarreira>("atlas_carreiras");
 
 
 // --- Snapshot (singleton) ---

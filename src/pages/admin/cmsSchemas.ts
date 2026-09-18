@@ -224,6 +224,23 @@ export const TABELAS: Record<string, TableSchema> = {
     ],
     resumo: (d) => `${d?.processo ?? ""} — ${d?.aderencia ?? ""}`,
   },
+  atlas_carreiras: {
+    table: "atlas_carreiras",
+    titulo: "Atlas PPGG",
+    descricao: "Carreiras de políticas públicas e gestão governamental no Brasil e no exterior.",
+    campos: [
+      { key: "recorte", label: "Recorte geográfico", type: "select", options: ["Brasil", "Internacional"], required: true },
+      { key: "localidade", label: "País ou estado", type: "text", required: true },
+      { key: "nome", label: "Nome da carreira", type: "text", required: true },
+      { key: "sigla", label: "Sigla", type: "text", required: true },
+      { key: "esfera", label: "Esfera", type: "text", required: true },
+      { key: "resumo", label: "Síntese institucional", type: "textarea", rows: 4, required: true },
+      { key: "fonte", label: "Base legal ou fonte oficial", type: "text", required: true },
+      { key: "url", label: "URL oficial", type: "url", required: true },
+      { key: "destaque", label: "Destacar ficha?", type: "boolean" },
+    ],
+    resumo: (d) => `[${d?.recorte ?? ""}] ${d?.sigla ?? ""} — ${d?.localidade ?? ""}`,
+  },
 };
 
 
