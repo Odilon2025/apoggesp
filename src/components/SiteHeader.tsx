@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import logoHor from "@/assets/brand/logo-apogesp-hor.webp.asset.json";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
