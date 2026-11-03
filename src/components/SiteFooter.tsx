@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { navItems } from "./SiteHeader";
+import logoVertNeg from "@/assets/brand/logo-apogesp-vert-neg.png.asset.json";
 
 const SiteFooter = () => (
   <footer className="bg-primary text-primary-foreground">
@@ -10,7 +11,7 @@ const SiteFooter = () => (
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
         {/* Brand */}
         <div className="md:col-span-4">
-          <span className="text-xs font-sans font-medium tracking-luxury uppercase opacity-60">APOGESP</span>
+          <img src={logoVertNeg.url} alt="APOGESP — Associação dos Analistas de Políticas Públicas e Gestão Governamental do Município de São Paulo" className="h-28 w-auto" loading="lazy" />
           <p className="mt-6 text-sm font-light leading-relaxed opacity-70 max-w-sm">
             Associação dos Analistas de Políticas Públicas e Gestão Governamental do Município de São Paulo. Uma década fortalecendo a gestão pública da maior cidade da América Latina.
           </p>

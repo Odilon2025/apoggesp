@@ -118,10 +118,8 @@ const SiteHeader = () => {
       }`}
     >
       <div className="container flex h-20 items-center justify-between">
-        <Link to="/" className="group flex items-center gap-3">
-          <span className="text-xs font-sans font-medium tracking-luxury uppercase text-foreground group-hover:text-gold transition-colors duration-300">
-            APOGESP
-          </span>
+        <Link to="/" className="group flex items-center gap-3" aria-label="APOGESP — página inicial">
+          <img src={logoHor.url} alt="APOGESP" className="h-12 w-auto transition-opacity duration-300 group-hover:opacity-80" />
         </Link>
 
         {/* Desktop nav */}
