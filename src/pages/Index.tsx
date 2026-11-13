@@ -5,6 +5,7 @@ import PageLayout from "@/components/PageLayout";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "@/components/FadeIn";
 import NoticiaCard from "@/components/NoticiaCard";
+import InstagramEmbed, { IG_URL, IG_USER } from "@/components/InstagramEmbed";
 import { ArrowRight, FileText, TrendingUp, Users, LineChart, Scale, ExternalLink, Shield } from "lucide-react";
 import { snapshot as snapshotFallback } from "@/data/snapshot";
 import { cronologia as cronologiaFallback } from "@/data/cronologia";
@@ -295,6 +296,41 @@ const Index = () => {
               </div>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Instagram — feed oficial à direita */}
+      <section className="py-20 md:py-24 bg-background">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="lg:col-span-7">
+              <SectionTitle
+                label={field(fields, "home.instagram.label", "Redes sociais")}
+                title={field(fields, "home.instagram.titulo", "Acompanhe a APOGESP no Instagram")}
+              />
+              <p className="text-sm md:text-base font-light text-text-body leading-relaxed max-w-xl">
+                {field(
+                  fields,
+                  "home.instagram.texto",
+                  "Publicações sobre a carreira, eventos da associação e a rotina institucional dos APPGGs na Prefeitura de São Paulo.",
+                )}
+              </p>
+              <a
+                href={IG_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 mt-8 text-sm font-light text-accent hover:text-foreground transition-colors duration-300"
+              >
+                <span>Seguir @{IG_USER}</span>
+                <ArrowRight size={14} strokeWidth={1.5} className="group-hover:translate-x-1 transition-transform duration-300" />
+              </a>
+            </div>
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <FadeIn delay={0.1} className="w-full max-w-[400px]">
+                <InstagramEmbed />
+              </FadeIn>
+            </div>
+          </div>
         </div>
       </section>
 
