@@ -65,10 +65,10 @@ const COORTES = [
 ] as const;
 
 const FAIXAS_GERACIONAIS = [
-  { faixa: "Boomers", sub: "até 1964", ate: 1964 },
-  { faixa: "Geração X", sub: "1965–1980", ate: 1980 },
-  { faixa: "Millennials", sub: "1981–1996", ate: 1996 },
-  { faixa: "Geração Z", sub: "1997+", ate: Infinity },
+  { faixa: "62 anos ou mais", sub: "nascidos até 1964", ate: 1964 },
+  { faixa: "46 a 61 anos", sub: "nascidos entre 1965 e 1980", ate: 1980 },
+  { faixa: "30 a 45 anos", sub: "nascidos entre 1981 e 1996", ate: 1996 },
+  { faixa: "Até 29 anos", sub: "nascidos após 1996", ate: Infinity },
 ] as const;
 
 // =============================================================================
@@ -258,7 +258,7 @@ function agregarGeracao(pessoas: Pessoa[]) {
     .map((p) => p.anoNascimento)
     .filter((n): n is number => n != null);
   const c = countBy(anos.map(classificarGeracao), (x) => x);
-  return FAIXAS_GERACIONAIS.map(({ faixa, sub }) => ({
+  return [...FAIXAS_GERACIONAIS].reverse().map(({ faixa, sub }) => ({
     faixa,
     sub,
     n: c[faixa] ?? 0,
