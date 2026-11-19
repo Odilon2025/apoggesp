@@ -25,7 +25,8 @@ da Prefeitura (formato `verificado_ativos_DD-MM-AAAA_mes-aaaa.xlsx`).
 
 A partir da planilha bruta:
 
-- Filtra apenas a carreira (`GRUPO = QPGG`).
+- Filtra apenas APPGGs (`GRUPO = QPGG` e `REF_CARGO_BAS` começando com `APPGG`; exclui auditores AMCI do mesmo grupo).
+- Faixas etárias (até 29, 30–45, 46–61, 62+) na chave `geracao`.
 - Deduplica por `REGISTRO`, mantendo o vínculo com cargo em comissão quando houver.
 - Calcula todos os agregados usados no site:
   - Distribuição por órgão, sexo, raça, referência (APPGG1–6) e geração.
