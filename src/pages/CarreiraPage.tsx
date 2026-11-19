@@ -195,7 +195,7 @@ const CarreiraPage = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-luxury-border mt-8 max-w-3xl mx-auto">
           {[
             { num: String(snapshot.total), label: "APPGGs em exercício" },
-            { num: String(snapshot.totalOrgaos), label: "Órgãos e entidades com APPGGs" },
+            { num: String(snapshot.totalOrgaos), label: "Órgãos com APPGGs" },
             { num: String(snapshot.lideranca.total), label: "Com responsabilidades de liderança confiadas pela Prefeitura" },
             { num: "13", label: "Cedidos a outros entes" },
           ].map((stat, i) => (

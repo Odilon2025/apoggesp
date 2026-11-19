@@ -61,7 +61,7 @@ const Index = () => {
 
   const stats = [
     { num: String(snap.total), label: "analistas em exercício" },
-    { num: String(snap.totalOrgaos), label: "órgãos e entidades" },
+    { num: String(snap.totalOrgaos), label: "órgãos" },
     { num: "11", label: "anos de carreira" },
   ];
 
