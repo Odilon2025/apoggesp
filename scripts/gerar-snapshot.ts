@@ -162,7 +162,7 @@ function validarColunas(amostra: RawRow): void {
 // =============================================================================
 
 function filtrarCarreira(rows: RawRow[]): RawRow[] {
-  return rows.filter((r) => norm(r.GRUPO) === GRUPO_APPGG);
+  return rows.filter((r) => norm(r.GRUPO) === GRUPO_APPGG && norm(r.REF_CARGO_BAS).startsWith("APPGG"));
 }
 
 /**
